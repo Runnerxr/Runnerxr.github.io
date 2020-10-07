@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://runnerxr.coding.net</id>
+    <id>https://https://Runnerxr.github.io</id>
     <title>Gridea</title>
-    <updated>2020-10-07T04:50:57.934Z</updated>
+    <updated>2020-10-07T04:51:55.658Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://runnerxr.coding.net"/>
-    <link rel="self" href="https://runnerxr.coding.net/atom.xml"/>
+    <link rel="alternate" href="https://https://Runnerxr.github.io"/>
+    <link rel="self" href="https://https://Runnerxr.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://runnerxr.coding.net/images/avatar.png</logo>
-    <icon>https://runnerxr.coding.net/favicon.ico</icon>
+    <logo>https://https://Runnerxr.github.io/images/avatar.png</logo>
+    <icon>https://https://Runnerxr.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[平凡的世界第二册摘录]]></title>
-        <id>https://runnerxr.coding.net/post/ping-fan-de-shi-jie-di-er-ce-zhai-lu/</id>
-        <link href="https://runnerxr.coding.net/post/ping-fan-de-shi-jie-di-er-ce-zhai-lu/">
+        <id>https://https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-er-ce-zhai-lu/</id>
+        <link href="https://https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-er-ce-zhai-lu/">
         </link>
         <updated>2020-08-16T14:16:32.000Z</updated>
         <content type="html"><![CDATA[<p>1、如今，生活已使他们天各一方；但不论怎样，他在内心深深地感谢润叶，她给他那像土块一样平凡的一生留下了太阳般光辉的一页。<br>
@@ -69,8 +69,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[平凡的世界第一册]]></title>
-        <id>https://runnerxr.coding.net/post/ping-fan-de-shi-jie-di-yi-ce/</id>
-        <link href="https://runnerxr.coding.net/post/ping-fan-de-shi-jie-di-yi-ce/">
+        <id>https://https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-yi-ce/</id>
+        <link href="https://https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-yi-ce/">
         </link>
         <updated>2020-08-16T12:28:37.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
@@ -107,8 +107,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://runnerxr.coding.net/post/hello-gridea/</id>
-        <link href="https://runnerxr.coding.net/post/hello-gridea/">
+        <id>https://https://Runnerxr.github.io/post/hello-gridea/</id>
+        <link href="https://https://Runnerxr.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
