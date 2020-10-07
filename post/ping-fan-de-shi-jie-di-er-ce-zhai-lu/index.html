@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>平凡的世界第二册摘录 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="shortcut icon" href="https://Runnerxr.github.io/favicon.ico?v=1602050754133">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://Runnerxr.github.io/favicon.ico?v=1602050691752">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Runnerxr.github.io/styles/main.css">
 
@@ -23,76 +21,80 @@
 
   
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://Runnerxr.github.io">
-        <img class="avatar" src="https://Runnerxr.github.io/images/avatar.png?v=1602050691752" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://Runnerxr.github.io">
-        <h1 class="site-title">Gridea</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Runnerxr.github.io">Gridea</a></h3>
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
         
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">平凡的世界第二册摘录</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-08-16</span>
+          <li>
             
-          </div>
-          <div class="post-content">
-            <p>1、如今，生活已使他们天各一方；但不论怎样，他在内心深深地感谢润叶，她给他那像土块一样平凡的一生留下了太阳般光辉的一页。<br>
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>平凡的世界第二册摘录</h1>
+            <p class="article-meta">
+              2020-08-16
+              
+            </p>
+            
+            <div class="post-content">
+              <p>1、如今，生活已使他们天各一方；但不论怎样，他在内心深深地感谢润叶，她给他那像土块一样平凡的一生留下了太阳般光辉的一页。<br>
 2、你知道，幸福不仅仅是吃饱穿暖，而是勇敢地去战胜困难……是的，他现在只能个一种更艰难的生活比较，而把眼前大街上幸福和幸运的人们忘掉。忘掉！忘掉温暖，忘掉温柔，忘掉一切享乐，而把饥饿、寒冷、受辱、受苦当做自己的正常生活——<br>
 3、每当背着石块爬坡的时候，他的意识就处于半麻痹状态。承重的石头几乎要把他挤压到土地里去。汗水像小溪一样在脸上纵横漫流，而他却腾不出手瞿揩一把；眼睛被汗水腌得火辣辣的疼，一路上只能半睁半闭。两条打颤的腿如同筛糠，随时都有倒下的危险。这个时候，世界上什么东西都不存在了，思维只集中在一点上:向前走，把石头背到箍窑的地方——那里对他来说，每一次都几乎是一个不可企及的伟大目标！<br>
 4、是的，小时候，我们常常把“亲戚”这两个字看得多么美好个重要。一旦长大成人，开始独立生活，我们便很快知道，亲戚关系常常是庸俗的；互相设法沾光，沾不上光就翻白眼；甚至你生活中最大的困难也常常是亲戚们造成的；生活同样会告诉你，亲戚往往不如朋友对你真诚。见鬼去吧，亲戚！<br>
@@ -142,58 +144,113 @@
 11.<br>
 没有爱情，人的生活就不堪设想。爱情啊！它使荒芜变成繁荣，平庸变为伟大;使死去的复活，活着的闪闪发光。即便爱情是不尽的煎熬，不尽的折磨，像冰霜般严厉，烈火般炙烤，但爱情对心理和身体健康的男女永远是那样的自然;同时又永远让我们感到新奇、神秘和不可思议……</p>
 
-          </div>
+            </div>
+          </article>
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-yi-ce/">
-              <h3 class="post-title">
-                下一篇：平凡的世界第一册
-              </h3>
-            </a>
-          </div>
+        <div class="paper" data-aos="fade-in">
           
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-yi-ce/">
+                <h3 class="post-title">
+                  平凡的世界第一册
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
       </div>
 
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Runnerxr.github.io/images/avatar.png?v=1602050754133" class="no-responsive avatar">
+    <div class="text-muted">温故而知新</div>
+    <div class="social-container">
       
         
-          <div id="gitalk-container"></div>
-        
-
+      
         
       
-
-      <div class="site-footer">
-  <div class="slogan">温故而知新</div>
-  <div class="social-container">
-    
+        
       
-    
+        
       
-    
+        
       
-    
-      
-    
-      
-    
+    </div>
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Runnerxr.github.io/atom.xml" target="_blank">RSS</a>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-er-ce-zhai-lu/">平凡的世界第二册摘录</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Runnerxr.github.io/post/ping-fan-de-shi-jie-di-yi-ce/">平凡的世界第一册</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Runnerxr.github.io/post/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Runnerxr.github.io/post/hello-gridea/">Hello Gridea</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Runnerxr.github.io/tag/Q-9IZxs5s/" class="badge warning">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Runnerxr.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
 </div>
 
 
     </div>
-    <script type="application/javascript">
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
 
 hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
 </script>
 
