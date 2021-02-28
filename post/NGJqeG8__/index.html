@@ -200,7 +200,7 @@ box.onclick = function(){
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title" >
-                                写在前面
+                                有关CAD的相关插件的整理
                             </h1>
                             
                                     <!--zh-->
@@ -209,12 +209,12 @@ box.onclick = function(){
                                         <a itemprop="author" rel="author" href="/">
                                             runnerxr
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2019-01-25</a></span>
-                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a href="#">0.7
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-11-15</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a href="#">8.0
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">201</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">2039</a></span>
                                         
-                                                <span id="/post/about/" data-hk-page="current" class="leancloud-visitors view">
+                                                <span id="/post/NGJqeG8__/" data-hk-page="current" class="leancloud-visitors view">
 													 阅读量:
 												     <a class="leancloud-visitors-count">-</a>
 												 </span>
@@ -224,35 +224,116 @@ box.onclick = function(){
                         </header>
                         
                         <div class="post-content">
-                            <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>博客建立的初期是在2020年8月份的样子，也是在一位程序员好友的怂恿下开始通过博客来记录一点东西，虽然自己也有其他的一些记笔记的方式，但是有些内容如果可以公开也是一种比较有意思的尝试。</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>非程序员，只是一名土木界的设计狗，只是希望用这样的一种方式来记录而已，也是一种新的方式，只是想找一个渠道写下来。慢慢的积累吧，才刚起步，自己就慢慢的积累，慢慢的成长。</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>跑步<br>
-健身<br>
-踢球<br>
-读书<br>
-深度思考</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                            <p>CAD中有各种插件，也值得自己花点时间去研究一下（如果自己有能力的化完全可以自己去开发，自己去写程序来编辑）<br>
+首先声明：这不是不可能的，这是完全有可能的。</p>
+<p>在目前的工作环境中有必要对插件做一个深入的研究和理解，我知道这里面会有各种各样的插件在里面，肯定是会对自己有帮助的，有意识的去做，去收集甚至去自己写这都是可以的，看你自己想不想去尝试吧。</p>
+<p>一、LISP<br>
+LISP是一种通用高级计算机程序语言，长期以来垄断人工智能领域的应用。LISP作为因应人工智能而设计的语言，是第一个声明式系内函数式程序设计语言，有别于命令式系内过程式的C、Fortran和面向对象的Java、C#等结构化程序设计语言。<br>
+AutoLISP是由Autodesk公司开发的一种LISP程序语言，LISP是List Processor的缩写。通过autolisp编程，可以节省工程师很多时间。AutoLISP语言作为嵌入在AutoCAD内部的具有智能特点的编程语言，是开发应用AutoCAD不可缺少的工具。<br>
+其中，仅利用AutoLisp语言进行二次开发绘制圆形，就有多种方法：<br>
+（一） COMMAND命令<br>
+通过cad界面下的tool-》autolisp-》visual lisp editor 打开AutoLisp二次开发的IDE。Lisp提供的一种特别简单的编程方法就是使用“command”命令。</p>
+<p>在command命令下，只需要将你鼠标的操作流程在cad界面下序列化成为一串代码，就能够一次性完成一连串的操作。其缺点就是一次只能运行一个命令。<br>
+其绘制圆的代码如下：<br>
+(defun c:cir()<br>
+(setq point1 (getpoint)) ;define center point of the circle<br>
+(command &quot;circle&quot; point1 100 &quot;&quot;);command<br>
+)<br>
+将lisp文件保存，并拖入cad或通过netload命令加载，只需要简单的两行代码，就可完成一个圆的绘制。<br>
+（二） ENTMAKE命令<br>
+在lisp语言的视角下，每个cad图元都是一连串属性的集合。这种属性的集合被定义为实体组。每个实体组都拥有一串代码。让我们读取一个普通的圆的实体组代码：<br>
+((-1 . &lt;Entity name: 7ff422e04d60&gt;) (0 . &quot;CIRCLE&quot;) (330 . &lt;Entity name: 7ff422e039f0&gt;) (5 . &quot;266&quot;) (100 . &quot;AcDbEntity&quot;) (67 . 0) (410 . &quot;Model&quot;) (8 . &quot;0&quot;) (100 . &quot;AcDbCircle&quot;) (10 17.5337 30.5646 0.0) (40 . 100.0) (210 0.0 0.0 1.0))<br>
+其中，(0 . &quot;CIRCLE&quot;)代表实体组为圆，(10 17.5337 30.5646 0.0) 代表圆心。。。。只要阅读相关说明，就能读取每个实体组代码的含义。那么，我们是否能够在cad中利用相关的实体组来生成一个圆呢？entmake命令可以达到这个目的。<br>
+以下是利用entmake命令绘制圆的代码：<br>
+(defun c:cir()<br>
+(entmake '( (0 . &quot;CIRCLE&quot;) ;define circle<br>
+(62 . 1) ;define color<br>
+(10 0.0 0.0 0.0) ;define center<br>
+(40 . 50.0) ; define radius<br>
+)<br>
+)<br>
+)<br>
+还是先加载lisp，输入命令，大功告成。</p>
+<p>（三）反应器<br>
+反应器是AutoCAD和用户的应用程序之间的简单链接，它允许用函数来响应发生在AutoCAD内的事件。例如可以创建反应器来通知用户的应用程序某个图元被删除。此时应用程序就会执行一些动作去响应这个事件。在窗体上的按钮是一个事件驱动程序的简单例子，它使用事件和响应来执行动作。当选择该按钮时，它就激活事件，就象信号或广播。该事件被反应器侦查到并通过使用被称为回调过程来执行作为结果的动作。<br>
+以下是利用反应器绘制圆的代码：<br>
+(defun c:cir()<br>
+(setq thisdrawing (vla-get-activedocument (vlax-get-acad-object))) ;get drawing object<br>
+(setq mspace (vla-get-modelspace thisdrawing));get model space<br>
+(setq pt1 (vlax-3d-point (getpoint &quot;\nCenter point: &quot;)));define center of circle<br>
+(vla-AddCircle mspace pt1 50) ;add circle<br>
+)<br>
+二、VBA<br>
+Visual Basic for Applications（VBA）是Visual Basic的一种宏语言，是微软开发出来在其桌面应用程序中执行通用的自动化(OLE)任务的编程语言。主要能用来扩展Windows的应用程序功能，特别是Microsoft Office软件。VBA同时也是AutoCAD的集成开发环境，VBA的加入扩展了AutoCAD的集成用户化能力。AutoCAD的开发环境也是一个可视化开发环境。<br>
+但是当我们尝试在AutoCAD中打开VBA的IDE时，却往往提示无相关程序。这是因为自AutoCAD2010以后，AutoCAD就取消了VBA的IDE界面。如果希望利用VBA来进行AutoCAD的二次开发，需要安装AutoCAD VBA enabler，下载地址如下：<br>
+(1)http://www.autodesk.com/vba-download<br>
+(2)http://www.cad8.net/thread-12322-1-1.html<br>
+当安装完成后，重复之前的操作或者在cad命令行输入vbaide，于是就出现了如图所示cad界面下的VBA的IDE</p>
+<p>这个界面和Excel中的VBA界面如出一辙。<br>
+是不是有点一筹莫展的感觉，输入F2，如下图所示，就会出现关于AutoCAD的VBA二次开发各个函数的路径。</p>
+<p>下面就是利用VBA在AutoCAD中绘制圆形的代码：<br>
+Sub addcir()<br>
+Dim point1(0 To 2) As Double 'define point1<br>
+Dim cir As AcadCircle 'define circle object<br>
+point1(0) = 0 'define coordinate of point1<br>
+point1(1) = 0<br>
+point1(2) = 0<br>
+Set cir = ThisDrawing.ModelSpace.AddCircle(point1, 100)<br>
+End Sub<br>
+以下是绘制过程：</p>
+<p>三、C#.NET<br>
+之于之前提及的VBA,VLisp，它们的优缺点是显而易见的:ObjectArx功能强大,编程效率高,但它的缺点是编程者必须掌握VC++,而这门语言非常的难学;VBA和VLisp虽然简单易上手,但它们对于开发大型的程序好象无能为力。那究竟有没有一种语言能结合它们的优点而尽量避免它们的缺点呢? 回答是肯定的,那就是微软新推出的21世纪编程语言C#。<br>
+C#是通过AutoCAD ActiveX 这座桥梁来和AutoCAD之间进行通讯的。AutoCAD ActiveX 使用户能够从 AutoCAD 的内部或外部以编程方式来操作 AutoCAD。它是通过将 AutoCAD 对象显示到“外部世界”来做到这一点的。一旦这些对象被显示，许多不同的编程语言和环境就可以访问它们。关于AutoCAD ActiveX 的情况，大家可以参考AutoCAD自带的帮助。<br>
+关于C#对AutoCAD二次开发环境的说明：<br>
+由于AutoCAD的开发框架的不断升级，不同版本的CAD需要对应不同版本的netframework框架，相应的对应不同的Visual Studio。各个开发版本要求如下：<br>
+小编的开发环境是Visual Studio 2010版本以及AutoCAD 2012。<br>
+开发流程：<br>
+（1）在VS中创建类库。</p>
+<p>（2）引用cad内部程序集，包括acdbmgd.dll、acmgd.dll、AcCui.dll和accoremgd.dll等。需要注意添加完引用后需要右键单击引用属性，将复制本地调整为false。</p>
+<p>（3）设置目标框架与调试方法。选中项目右键属性。选择合适的外部程序（acad.exe）和合适的框架。</p>
+<p>以下是利用C#.net绘制圆形的代码：<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using Autodesk.AutoCAD.DatabaseServices;<br>
+using Autodesk.AutoCAD.Geometry;<br>
+using Autodesk.AutoCAD.Runtime;<br>
+namespace Autodesk<br>
+{<br>
+public class Class1<br>
+{<br>
+[CommandMethod(&quot;Drawcir&quot;)]<br>
+//定义画圆函数<br>
+public void Drawcir()<br>
+{<br>
+//获取当前活动图形数据库<br>
+Database db = HostApplicationServices.WorkingDatabase;<br>
+//定义圆心<br>
+Point3d stPoint = new Point3d(0, 0, 0);<br>
+//定义圆<br>
+Circle cir= new Circle(stPoint,Vector3d.ZAxis,100);<br>
+using (Transaction tr = db.TransactionManager.StartTransaction())<br>
+{<br>
+BlockTable bt = (BlockTable)tr.GetObject(db.BlockTableId, OpenMode.ForRead);<br>
+BlockTableRecord btr = (BlockTableRecord)tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);<br>
+//将圆添加至块表。该方法具有返回值，可返回实体对象的id<br>
+btr.AppendEntity(cir);<br>
+//将对象添加到事务处理中<br>
+tr.AddNewlyCreatedDBObject(cir, true);<br>
+//提交事务处理<br>
+tr.Commit();<br>
+}<br>
+}<br>
+}<br>
+}<br>
+需要特别注意其中橙色的添加引用的几段代码。<br>
+代码编写完成，在项目右键生成，相应的项目路径的bin文件夹下会生成该项目的dll文件。在cad中利用netload命令加载相关dll文件，就可以得到相关成果。</p>
 
                         </div>
                         
                             <div class="post-toc">
-                                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+                                
                             </div>
                             
                                 
@@ -266,7 +347,7 @@ box.onclick = function(){
 
                                                 <p class="copyright-item">
                                                     <span>&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="http://localhost:4000/post/about/">http://localhost:4000/post/about/</a></span>
+                                                    <span><a href="http://localhost:4000/post/NGJqeG8__/">http://localhost:4000/post/NGJqeG8__/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -281,9 +362,9 @@ box.onclick = function(){
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://localhost:4000/post/about/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://localhost:4000/post/about/&sharesource=qzone&title=写在前面&pics=http://localhost:4000/images/avatar.png?v=1614500818648&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=http://localhost:4000/post/about/&sharesource=weibo&title=写在前面 + " - " + &pic="http://localhost:4000/images/avatar.png?v=1614500818648 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://localhost:4000/post/NGJqeG8__/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://localhost:4000/post/NGJqeG8__/&sharesource=qzone&title=有关CAD的相关插件的整理&pics=http://localhost:4000/images/avatar.png?v=1614500818648&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=http://localhost:4000/post/NGJqeG8__/&sharesource=weibo&title=有关CAD的相关插件的整理 + " - " + &pic="http://localhost:4000/images/avatar.png?v=1614500818648 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -315,7 +396,15 @@ box.onclick = function(){
                                                                                 <!---->
                                                                                 <section class="post-nav">
                                                                                     
+                                                                                        <a class="prev" rel="prev" href="http://localhost:4000/post/Zb1GH8Ayk/">
+                                                                                            CAD二次开发简介
+                                                                                        </a>
+                                                                                        
                                                                                             
+                                                                                                <a class="next" rel="next" href="http://localhost:4000/post/平凡的世界第二册摘录/">
+                                                                                                    平凡的世界第二册摘录
+                                                                                                </a>
+                                                                                                
                                                                                 </section>
                     </article>
                 </div>
