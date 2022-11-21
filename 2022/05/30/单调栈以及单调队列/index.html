@@ -1,257 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>单调栈以及单调队列 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="单调递减栈：从栈底到栈顶是单调递减的每次我们移动到数组中一个新的位置 iii，就将当前单调栈中所有小于 nums2[i] 的元素弹出单调栈，对于单调队列解决问题的模板：for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next">
-<meta property="og:type" content="article">
-<meta property="og:title" content="单调栈以及单调队列">
-<meta property="og:url" content="http://example.com/2022/05/30/%E5%8D%95%E8%B0%83%E6%A0%88%E4%BB%A5%E5%8F%8A%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="单调递减栈：从栈底到栈顶是单调递减的每次我们移动到数组中一个新的位置 iii，就将当前单调栈中所有小于 nums2[i] 的元素弹出单调栈，对于单调队列解决问题的模板：for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-30T13:10:44.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:27:49.615Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-单调栈以及单调队列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/30/%E5%8D%95%E8%B0%83%E6%A0%88%E4%BB%A5%E5%8F%8A%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="article-date">
-  <time class="dt-published" datetime="2022-05-30T13:10:44.000Z" itemprop="datePublished">2022-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      单调栈以及单调队列
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            单调栈以及单调队列
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/05/30 Mon 21:10&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:27
+        </div>
+    </div>
+    <div class="article-content">
         <p>单调递减栈：从<strong>栈底</strong>到<strong>栈顶</strong>是单调递减的<br>每次我们移动到数组中一个新的位置 iii，就将当前单调栈中所有<strong>小于 nums2[i]</strong> 的元素<strong>弹出</strong>单调栈，<br>对于单调队列解决问题的模板：for 循环要<strong>从后往前扫描元素</strong>，因为我们<strong>借助的是栈的结构</strong>，倒着入栈，其实是正着出栈。while 循环是把两个“<strong>高个</strong>”元素之间的<strong>元素排除</strong>，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next Great Number 了。<br>这个算法的时间复杂度不是那么直观，如果你看到 for 循环嵌套 while 循环，可能认为这个算法的复杂度也是 O(n^2)，但是实际上这个算法的复杂度只有 O(n)。<br>分析它的时间复杂度，要从整体来看：总共有 n 个元素，每个元素都被 push 入栈了一次，而最多会被 pop 一次，没有任何冗余操作。所以总的计算规模是和元素规模 n 成正比的，也就是 O(n) 的复杂度。</p>
 <h1 id="leetcoad496-下一个更大的元素I"><a href="#leetcoad496-下一个更大的元素I" class="headerlink" title="leetcoad496-下一个更大的元素I"></a>leetcoad496-下一个更大的元素I</h1><p>题目描述：<br>nums1 中数字 x 的 下一个更大元素 是指 x 在** nums2 中对应位置** 右侧 的 <strong>第一个 比 x 大</strong>的元素。<br>给你两个 <strong>没有重复元素</strong> 的数组 nums1 和 nums2 ，下标<strong>从 0 开始</strong>计数，其中nums1 是 nums2 的<strong>子集</strong>。<br>对于每个 0 &lt;&#x3D; i &lt; nums1.length ，找出满足 nums1[i] &#x3D;&#x3D; nums2[j] 的下标 j ，并且在 nums2 确定 nums2[j] 的 下一个更大元素 。如果不存在下一个更大元素，那么本次查询的答案是 -1 。<br>返回一个长度为 nums1.length 的数组 ans 作为答案，满足 ans[i] 是如上所述的 下一个更大元素 。<br>示例 1：<br>输入：nums1 &#x3D; [4,1,2], nums2 &#x3D; [1,3,4,2].<br>输出：[-1,3,-1]<br>解释：（这里的解释算是比较的清楚的表述的）<br>  对于num1中的数字4，在num2中不存在下一个更大元素，所以答案是 -1 。<br>  对于num1中的数字1，在num2中存在下一个更大元素是 3 。<br>  对于num1中的数字2，在num2中不存在下一个更大元素，所以答案是 -1 。</p>
 <p>示例 2：<br>输入：nums1 &#x3D; [2,4], nums2 &#x3D; [1,2,3,4].<br>输出：[3,-1]<br>解释：nums1 中每个值的下一个更大元素如下所述：<br>对于num1中的数字2，在num2中存在下一个更大元素是 3 。<br>对于num1中的数字4，在num2中不存在下一个更大元素，所以答案是 -1 。</p>
 <p>直接暴力解法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">nextGreaterElement</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 采用暴力的解法来解题</span></span><br><span class="line">        <span class="comment"># 定义一个结果数组，用来存放最后的值</span></span><br><span class="line">        n=<span class="built_in">len</span>(nums1)</span><br><span class="line">        res=[-<span class="number">1</span>]*n</span><br><span class="line">        <span class="comment"># 在nums1中进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="comment"># 在nums2中遍历,找到与nums1[i]相同的值nums2[j]</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums2)):</span><br><span class="line">                <span class="keyword">if</span> nums2[j]==nums1[i]:</span><br><span class="line">                    <span class="comment"># 然后在nums2[j]右侧继续找，找到一个比他大的数出来</span></span><br><span class="line">                    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(j+<span class="number">1</span>,<span class="built_in">len</span>(nums2)):</span><br><span class="line">                        <span class="keyword">if</span> nums2[k]&gt;=nums2[j]:</span><br><span class="line">                            res[i]=nums2[k]</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        # 采用暴力的解法来解题
+        # 定义一个结果数组，用来存放最后的值
+        n=len(nums1)
+        res=[-1]*n
+        # 在nums1中进行遍历
+        for i in range(n):
+            # 在nums2中遍历,找到与nums1[i]相同的值nums2[j]
+            for j in range(len(nums2)):
+                if nums2[j]==nums1[i]:
+                    # 然后在nums2[j]右侧继续找，找到一个比他大的数出来
+                    for k in range(j+1,len(nums2)):
+                        if nums2[k]&gt;=nums2[j]:
+                            res[i]=nums2[k]
+                            break
+        return res
+</code></pre>
 <p>思路分析：（借助栈来遍历分析）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">nextGreaterElement</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 若数组为空，直接返回空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        n=<span class="built_in">len</span>(nums1)</span><br><span class="line">        ans=[-<span class="number">1</span>]*n</span><br><span class="line">        <span class="comment"># 倒着往栈里面放元素</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># nums2.index(nums1[i]) 表示当遍历的元素是nums1[i]的时候，此时的这个元素在nums2中的下标是多少,</span></span><br><span class="line">            <span class="comment"># 用temp_index存储，表示临时下标的意思</span></span><br><span class="line">            <span class="comment"># 由于我们需要寻找nums2中对应位置的右侧，也就需要在nums2的[temp_index:]这个区间里面去找是否有比nums1[i]大的数</span></span><br><span class="line">            temp_index=nums2.index(nums1[i])</span><br><span class="line">            s=nums2[temp_index:][::-<span class="number">1</span>]</span><br><span class="line">            <span class="comment"># 栈不为空，并且栈顶元素不超过当前遍历的元素</span></span><br><span class="line">            <span class="keyword">while</span> s <span class="keyword">and</span> nums1[i]&gt;=s[-<span class="number">1</span>]:</span><br><span class="line">                <span class="comment"># 把当前的栈顶元素弹开</span></span><br><span class="line">                s.pop()</span><br><span class="line">            <span class="comment"># while循环结束</span></span><br><span class="line">            <span class="comment"># 如果当前栈有值，直接将栈顶值赋给ans[i],表示存在</span></span><br><span class="line">            ans[i]=s[-<span class="number">1</span>] <span class="keyword">if</span> s <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        # 若数组为空，直接返回空
+        if not nums1:
+            return []
+        n=len(nums1)
+        ans=[-1]*n
+        # 倒着往栈里面放元素
+        for i in range(n-1,-1,-1):
+            # nums2.index(nums1[i]) 表示当遍历的元素是nums1[i]的时候，此时的这个元素在nums2中的下标是多少,
+            # 用temp_index存储，表示临时下标的意思
+            # 由于我们需要寻找nums2中对应位置的右侧，也就需要在nums2的[temp_index:]这个区间里面去找是否有比nums1[i]大的数
+            temp_index=nums2.index(nums1[i])
+            s=nums2[temp_index:][::-1]
+            # 栈不为空，并且栈顶元素不超过当前遍历的元素
+            while s and nums1[i]&gt;=s[-1]:
+                # 把当前的栈顶元素弹开
+                s.pop()
+            # while循环结束
+            # 如果当前栈有值，直接将栈顶值赋给ans[i],表示存在
+            ans[i]=s[-1] if s else -1
+        return ans
+</code></pre>
 <p>看到官方的题解尽然可以优化：单调栈+哈希表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">nextGreaterElement</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        stack = []</span><br><span class="line">        <span class="comment"># 对反转之后的nums2进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">reversed</span>(nums2):</span><br><span class="line">            <span class="comment"># 当栈顶元素不为空，并且栈顶元素小于当前遍历的元素的时候</span></span><br><span class="line">            <span class="comment"># 将栈顶的元素进行弹出</span></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> num &gt;= stack[-<span class="number">1</span>]:</span><br><span class="line">                stack.pop()</span><br><span class="line">            <span class="comment"># 内循环结束之后，如果如果栈不为空，那么哈希表中遍历的值为栈顶的元素，如果栈为空，说明此时=右侧没有比他更大的数，直接返回-1</span></span><br><span class="line">            hashmap[num] = stack[-<span class="number">1</span>] <span class="keyword">if</span> stack <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line">            <span class="comment"># 将当前的num值加入栈中</span></span><br><span class="line">            stack.append(num)</span><br><span class="line">        <span class="comment"># 返回的值需要注意，遍历nums1,用相应的num值哈希表hashmap中去寻找</span></span><br><span class="line">        ans=[hashmap[num] <span class="keyword">for</span> num <span class="keyword">in</span> nums1]</span><br><span class="line">        <span class="comment"># 上面的是用的表达式求值，写起来要相对简洁一点；如果实际做题的时候不够熟练，可以用常规的方式来解题</span></span><br><span class="line">        <span class="comment"># ans=[]</span></span><br><span class="line">        <span class="comment"># for num in nums1:</span></span><br><span class="line">        <span class="comment">#     temp=hashmap.get(num)</span></span><br><span class="line">        <span class="comment">#     ans.append(temp)</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums1=[<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">    nums2=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>]</span><br><span class="line">    res=Solution().nextGreaterElement(nums1,nums2)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">from typing import List
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        hashmap = &#123;&#125;
+        stack = []
+        # 对反转之后的nums2进行遍历
+        for num in reversed(nums2):
+            # 当栈顶元素不为空，并且栈顶元素小于当前遍历的元素的时候
+            # 将栈顶的元素进行弹出
+            while stack and num &gt;= stack[-1]:
+                stack.pop()
+            # 内循环结束之后，如果如果栈不为空，那么哈希表中遍历的值为栈顶的元素，如果栈为空，说明此时=右侧没有比他更大的数，直接返回-1
+            hashmap[num] = stack[-1] if stack else -1
+            # 将当前的num值加入栈中
+            stack.append(num)
+        # 返回的值需要注意，遍历nums1,用相应的num值哈希表hashmap中去寻找
+        ans=[hashmap[num] for num in nums1]
+        # 上面的是用的表达式求值，写起来要相对简洁一点；如果实际做题的时候不够熟练，可以用常规的方式来解题
+        # ans=[]
+        # for num in nums1:
+        #     temp=hashmap.get(num)
+        #     ans.append(temp)
+        return ans
 
+if __name__==&#39;__main__&#39;:
+    nums1=[4,1,2]
+    nums2=[1,3,4,2]
+    res=Solution().nextGreaterElement(nums1,nums2)
+    print(res)
+</code></pre>
 <h1 id="leetcoad503-下一个更大的元素II"><a href="#leetcoad503-下一个更大的元素II" class="headerlink" title="leetcoad503-下一个更大的元素II"></a>leetcoad503-下一个更大的元素II</h1><p>题目描述：<br>给定一个<strong>循环数组</strong> nums （ nums[nums.length - 1] 的下一个元素是 nums[0] ），返回 nums 中<strong>每个元素</strong>的 <strong>下一个更大</strong>元素 。<br>数字 x 的 下一个更大的元素 是按数组遍历顺序，这个数字之后的第一个比它更大的数，这意味着你应该<strong>循环地搜索</strong>它的下一个更大的数。如果不存在，则输出 -1 。</p>
 <p>示例 1:<br>输入: nums &#x3D; [1,2,1]<br>输出: [2,-1,2]<br>解释: 第一个 1 的下一个更大的数是 2；<br>数字 2 找不到下一个更大的数；<br>第二个 1 的下一个最大的数需要循环搜索，结果也是 2。</p>
 <p>示例 2:<br>输入: nums &#x3D; [1,2,3,4,3]<br>输出: [2,3,4,-1,4]</p>
 <p>思路分析：因为用到了最小栈与最小队列的思想</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/30/%E5%8D%95%E8%B0%83%E6%A0%88%E4%BB%A5%E5%8F%8A%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" data-id="claqum2e4001zh0tk78gb5ucd" data-title="单调栈以及单调队列" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/06/12/%E5%85%B3%E4%BA%8Epython%E6%A1%86%E6%9E%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于python框架的一些知识点
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/05/18/python%E7%9A%84%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python的网站开发知识</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

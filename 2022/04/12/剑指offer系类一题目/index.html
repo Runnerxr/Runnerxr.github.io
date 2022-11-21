@@ -1,148 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>剑指offer系类一题目 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="剑指offer03-数组占用重复的数字创建一个哈希表，遍历数组，如果数组中没有这个元素，就将元素加入进去，如果 1234567891011class Solution:    def findRepeatNumber(self, nums: List[int]) -&gt; int:        # 创建一个哈希表，用来存储遍历到的数字        dic &#x3D; []        n &#x3D; le">
-<meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer系类一题目">
-<meta property="og:url" content="http://example.com/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="剑指offer03-数组占用重复的数字创建一个哈希表，遍历数组，如果数组中没有这个元素，就将元素加入进去，如果 1234567891011class Solution:    def findRepeatNumber(self, nums: List[int]) -&gt; int:        # 创建一个哈希表，用来存储遍历到的数字        dic &#x3D; []        n &#x3D; le">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651338595481.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651338683210.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652580591080.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650334552674.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650338941071.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650334161301.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650334167543.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650129779849.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650129747856.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464453326.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464463204.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464470734.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464478317.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464488128.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650464495073.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1650474963654.png">
-<meta property="article:published_time" content="2022-04-12T15:18:54.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:44:33.528Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1651338595481.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-剑指offer系类一题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" class="article-date">
-  <time class="dt-published" datetime="2022-04-12T15:18:54.000Z" itemprop="datePublished">2022-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      剑指offer系类一题目
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            剑指offer系类一题目
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/04/12 Tue 23:18&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:44
+        </div>
+    </div>
+    <div class="article-content">
         <p>剑指offer03-数组占用重复的数字<br>创建一个哈希表，遍历数组，如果数组中没有这个元素，就将元素加入进去，如果</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findRepeatNumber</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 创建一个哈希表，用来存储遍历到的数字</span></span><br><span class="line">        dic = []</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="comment"># 如果在哈希表中没有这个数字，就把该数字的下标加进来</span></span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">return</span> nums[i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic.append(nums[i])</span><br></pre></td></tr></table></figure>
-
-
+<pre><code class="python">class Solution:
+    def findRepeatNumber(self, nums: List[int]) -&gt; int:
+        # 创建一个哈希表，用来存储遍历到的数字
+        dic = []
+        n = len(nums)
+        for i in range(n):
+            # 如果在哈希表中没有这个数字，就把该数字的下标加进来
+            if nums[i] in dic:
+                return nums[i]
+            else:
+                dic.append(nums[i])
+</code></pre>
 <h1 id="剑指offer04-二维数组中的查找"><a href="#剑指offer04-二维数组中的查找" class="headerlink" title="剑指offer04-二维数组中的查找"></a>剑指offer04-二维数组中的查找</h1><p>从左下角开始查找</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findNumberIn2DArray</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 如果数组为空，返回false</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        n= <span class="built_in">len</span>(matrix)</span><br><span class="line">        m = <span class="built_in">len</span>(matrix[<span class="number">0</span>]) </span><br><span class="line">         <span class="comment"># 整体思路从左下角开始遍历</span></span><br><span class="line">        i = n-<span class="number">1</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(i&gt;=<span class="number">0</span> <span class="keyword">and</span> j &lt;m):</span><br><span class="line">            <span class="keyword">if</span> target&lt; matrix[i][j]:</span><br><span class="line">                i -=<span class="number">1</span></span><br><span class="line">                <span class="comment"># 如果正好找到，返回true</span></span><br><span class="line">            <span class="keyword">elif</span> target==matrix[i][j]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 如果目标值大于遍历的值，需要在下一列去寻找</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -&gt; bool:
+        # 如果数组为空，返回false
+        if not matrix:
+            return False
+        n= len(matrix)
+        m = len(matrix[0]) 
+         # 整体思路从左下角开始遍历
+        i = n-1
+        j = 0
+        while(i&gt;=0 and j &lt;m):
+            if target&lt; matrix[i][j]:
+                i -=1
+                # 如果正好找到，返回true
+            elif target==matrix[i][j]:
+                return True
+            # 如果目标值大于遍历的值，需要在下一列去寻找
+            else:
+                j +=1
+        return False
+</code></pre>
 <p>反思为什么用for循环反而会出错的原因：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findNumberIn2DArray</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 如果数组为空，返回false</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        n= <span class="built_in">len</span>(matrix)</span><br><span class="line">        m = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当数组只有一行的时候 </span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">                <span class="keyword">if</span> target==matrix[<span class="number">0</span>][j]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            </span><br><span class="line">         <span class="comment"># 当数组只有一列的时候 </span></span><br><span class="line">        <span class="keyword">if</span> m==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> target==matrix[j][<span class="number">0</span>]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 整体思路从左下角开始遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,<span class="number">0</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">                <span class="comment"># 如果目标值小于此时遍历的值，需要到上一行去寻找</span></span><br><span class="line">                <span class="keyword">if</span> target&lt; matrix[i][j]:</span><br><span class="line">                    i -=<span class="number">1</span></span><br><span class="line">                <span class="comment"># 如果正好找到，返回true</span></span><br><span class="line">                <span class="keyword">elif</span> target==matrix[i][j]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                <span class="comment"># 如果目标值大于遍历的值，需要在下一列去寻找</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    j +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -&gt; bool:
+        # 如果数组为空，返回false
+        if not matrix:
+            return False
+        n= len(matrix)
+        m = len(matrix[0])
 
+        # 当数组只有一行的时候 
+        if n==1:
+            for j in range(m):
+                if target==matrix[0][j]:
+                    return True
+            return False
+            
+         # 当数组只有一列的时候 
+        if m==1:
+            for j in range(n):
+                if target==matrix[j][0]:
+                    return True
+            return False
 
+        # 整体思路从左下角开始遍历
+        for i in range(n-1,0,-1):
+            for j in range(m):
+                # 如果目标值小于此时遍历的值，需要到上一行去寻找
+                if target&lt; matrix[i][j]:
+                    i -=1
+                # 如果正好找到，返回true
+                elif target==matrix[i][j]:
+                    return True
+                # 如果目标值大于遍历的值，需要在下一列去寻找
+                else:
+                    j +=1
+        return False
+</code></pre>
 <h1 id="剑指offer05-替换空格"><a href="#剑指offer05-替换空格" class="headerlink" title="剑指offer05-替换空格"></a>剑指offer05-替换空格</h1><p>方式一：采用python中内置的replace()函数可以直接将’ ‘ 替换为%20</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># 直接用replce函数进行替换</span></span><br><span class="line">        <span class="keyword">return</span> s.replace(<span class="string">&quot; &quot;</span>,<span class="string">&quot;%20&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def replaceSpace(self, s: str) -&gt; str:
+        # 直接用replce函数进行替换
+        return s.replace(&quot; &quot;,&quot;%20&quot;)
+</code></pre>
 <p>方式二：空数组不断加入以及组成新的数组的形式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        res = []</span><br><span class="line">        <span class="comment"># 在字符串中遍历，当遍历到空格的时候，加入%20，当遍历到字符串的时候，加入进去</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c == <span class="string">&#x27; &#x27;</span>: </span><br><span class="line">                res.append(<span class="string">&quot;%20&quot;</span>)</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                res.append(c)</span><br><span class="line">        <span class="comment"># 返回用&quot;.&quot;连接的字符串</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(res)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def replaceSpace(self, s: str) -&gt; str:
+        res = []
+        # 在字符串中遍历，当遍历到空格的时候，加入%20，当遍历到字符串的时候，加入进去
+        for c in s:
+            if c == &#39; &#39;: 
+                res.append(&quot;%20&quot;)
+            else: 
+                res.append(c)
+        # 返回用&quot;.&quot;连接的字符串
+        return &quot;&quot;.join(res)
+</code></pre>
 <h1 id="剑指offer09-用两个栈实现队列"><a href="#剑指offer09-用两个栈实现队列" class="headerlink" title="剑指offer09-用两个栈实现队列"></a>剑指offer09-用两个栈实现队列</h1><p>这里重在理解相应的题意，以及理解栈与队列的性质</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CQueue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 写一个方法，定义两个栈，其中栈A作为主栈，栈B作为辅助栈</span></span><br><span class="line">        <span class="comment"># 栈A实现入队功能，栈B实现出队功能</span></span><br><span class="line">        self.A,self.B=[],[]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义在队列尾部插入整数的函数，插入操作是有参数，没有返回值的</span></span><br><span class="line">    <span class="comment"># 直接在A中插入元素就可以</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">appendTail</span>(<span class="params">self, value: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.A.append(value)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义在头部删除整数的函数，删除操作没有参数，有返回值</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deleteHead</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 如果栈B有值的话，就弹出返回即可</span></span><br><span class="line">        <span class="keyword">if</span> self.B:</span><br><span class="line">            <span class="keyword">return</span> self.B.pop()</span><br><span class="line">        <span class="comment"># 如果栈A中没有值，表明此时构造的队列是空的，deleteHead操作返回-1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.A:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="comment"># 如果栈A中有元素，将栈A中的元素弹出添加到栈B中（栈B元素实现栈A元素的倒序）</span></span><br><span class="line">        <span class="keyword">while</span> self.A:</span><br><span class="line">            self.B.append(self.A.pop())</span><br><span class="line">        <span class="comment"># 栈B执行出栈，相当于删除A的栈底元素，实现队首元素的删除</span></span><br><span class="line">        <span class="keyword">return</span> self.B.pop()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class CQueue:
+    def __init__(self):
+        # 写一个方法，定义两个栈，其中栈A作为主栈，栈B作为辅助栈
+        # 栈A实现入队功能，栈B实现出队功能
+        self.A,self.B=[],[]
+
+    #定义在队列尾部插入整数的函数，插入操作是有参数，没有返回值的
+    # 直接在A中插入元素就可以
+    def appendTail(self, value: int) -&gt; None:
+        self.A.append(value)
+
+    # 定义在头部删除整数的函数，删除操作没有参数，有返回值
+    def deleteHead(self) -&gt; int:
+        # 如果栈B有值的话，就弹出返回即可
+        if self.B:
+            return self.B.pop()
+        # 如果栈A中没有值，表明此时构造的队列是空的，deleteHead操作返回-1
+        if not self.A:
+            return -1
+        # 如果栈A中有元素，将栈A中的元素弹出添加到栈B中（栈B元素实现栈A元素的倒序）
+        while self.A:
+            self.B.append(self.A.pop())
+        # 栈B执行出栈，相当于删除A的栈底元素，实现队首元素的删除
+        return self.B.pop()
+</code></pre>
 <p>最后的一个函数也可以做适当的变化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">deleteHead</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 如果栈A为空,直接返回-1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.A <span class="keyword">and</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 如果栈B为空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">while</span> self.A:</span><br><span class="line">                self.B.append(self.A.pop())</span><br><span class="line">        <span class="comment"># 栈B执行出栈，相当于删除A的栈底元素，实现队首元素的删除</span></span><br><span class="line">        <span class="keyword">return</span> self.B.pop()</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">def deleteHead(self) -&gt; int:
+        # 如果栈A为空,直接返回-1
+        if not self.A and not self.B:
+            return -1
+            
+        # 如果栈B为空
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        # 栈B执行出栈，相当于删除A的栈底元素，实现队首元素的删除
+        return self.B.pop()
+</code></pre>
 <p>同时联系之前的一道题，基本上同样的思维模式，其中的pop()函数和empty()函数在上一道题目中包含在deleteHead()函数中了。</p>
-<h1 id="leetcoad232-用栈实现队列"><a href="#leetcoad232-用栈实现队列" class="headerlink" title="leetcoad232-用栈实现队列"></a>leetcoad232-用栈实现队列</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyQueue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 定义两个栈</span></span><br><span class="line">        self.A,self.B=[],[]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将元素推到队列的末尾</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.A.append(x)</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 移除队首元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 如果栈B为空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">while</span> self.A:</span><br><span class="line">                self.B.append(self.A.pop())</span><br><span class="line">        <span class="keyword">return</span> self.B.pop()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回队列开头的元素(pop和peek的区别，一个是删除，一个是返回)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">peek</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">while</span> self.A:</span><br><span class="line">                self.B.append(self.A.pop())</span><br><span class="line">        <span class="keyword">return</span> self.B[-<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定义一个empy函数，如果为空返回true，如果不为空就返回false</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">empty</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 判断是否两个栈都为空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.A <span class="keyword">and</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h1 id="leetcoad232-用栈实现队列"><a href="#leetcoad232-用栈实现队列" class="headerlink" title="leetcoad232-用栈实现队列"></a>leetcoad232-用栈实现队列</h1><pre><code class="python">class MyQueue:
+    def __init__(self):
+        # 定义两个栈
+        self.A,self.B=[],[]
+
+    # 将元素推到队列的末尾
+    def push(self, x: int) -&gt; None:
+        self.A.append(x)
+ 
+    # 移除队首元素
+    def pop(self) -&gt; int:
+        # 如果栈B为空
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B.pop()
+    
+    # 返回队列开头的元素(pop和peek的区别，一个是删除，一个是返回)
+    def peek(self) -&gt; int:
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B[-1]
+    
+    # 定义一个empy函数，如果为空返回true，如果不为空就返回false
+    def empty(self) -&gt; bool:
+        # 判断是否两个栈都为空
+        if not self.A and not self.B:
+            return True
+        else:
+            return False
+</code></pre>
 <h1 id="剑指offer-06-从尾到头打印链表"><a href="#剑指offer-06-从尾到头打印链表" class="headerlink" title="剑指offer 06-从尾到头打印链表"></a>剑指offer 06-从尾到头打印链表</h1><p>备注：此题与反转链表之间的区别与联系<br>写法一：采用栈的写法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reversePrint</span>(<span class="params">self, head: ListNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 构建一个栈（也是一个数组）</span></span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            <span class="comment"># 把链表的头节点加入栈中</span></span><br><span class="line">            stack.append(head.val)</span><br><span class="line">            <span class="comment"># 不断的把头节点的值指向下一个结点，类似一个遍历的过程（不断的进行入栈的操作，直到头节点为空的时候跳出循环）</span></span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 直接返回倒序数组</span></span><br><span class="line">        <span class="keyword">return</span> stack[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 真正运用栈的思想的，只是从概念上去理解，实际没必要，因为多用了一个res数组</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reversePrint</span>(<span class="params">self, head: ListNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 构建一个栈</span></span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            <span class="comment"># 把链表的头节点加入栈中（push：入栈）</span></span><br><span class="line">            stack.append(head.val)</span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            <span class="comment"># pop：出栈</span></span><br><span class="line">            res.append(stack.pop())</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def reversePrint(self, head: ListNode) -&gt; List[int]:
+        # 构建一个栈（也是一个数组）
+        stack = []
+        while head:
+            # 把链表的头节点加入栈中
+            stack.append(head.val)
+            # 不断的把头节点的值指向下一个结点，类似一个遍历的过程（不断的进行入栈的操作，直到头节点为空的时候跳出循环）
+            head = head.next
+        # 直接返回倒序数组
+        return stack[::-1]
+</code></pre>
+<pre><code class="python"># 真正运用栈的思想的，只是从概念上去理解，实际没必要，因为多用了一个res数组
+class Solution:
+    def reversePrint(self, head: ListNode) -&gt; List[int]:
+        # 构建一个栈
+        stack = []
+        while head:
+            # 把链表的头节点加入栈中（push：入栈）
+            stack.append(head.val)
+            head = head.next
+        res=[]
+        while stack:
+            # pop：出栈
+            res.append(stack.pop())
+        return res
+</code></pre>
 <p>写法二：采用递归的方式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 另外写了一个DFS的函数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reversePrint</span>(<span class="params">self, head: ListNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">head</span>):</span><br><span class="line">            <span class="comment"># 递归终止条件</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">                <span class="keyword">return</span> []</span><br><span class="line">            <span class="comment"># 每次返回当前的list +当前的节点值，实现节点的倒序输出</span></span><br><span class="line">            <span class="keyword">return</span> dfs(head.<span class="built_in">next</span>) + [head.val] </span><br><span class="line">        <span class="keyword">return</span> dfs(head)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 另外写了一个DFS的函数
+class Solution:
+    def reversePrint(self, head: ListNode) -&gt; List[int]:
+        def dfs(head):
+            # 递归终止条件
+            if not head:
+                return []
+            # 每次返回当前的list +当前的节点值，实现节点的倒序输出
+            return dfs(head.next) + [head.val] 
+        return dfs(head)
+</code></pre>
 <p>或者采用这样的递归形式，利用已有的函数一步到位</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reversePrint</span>(<span class="params">self, head: ListNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 递归终止条件</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.reversePrint(head.<span class="built_in">next</span>) + [head.val]</span><br></pre></td></tr></table></figure>
-
-
+<pre><code class="python">class Solution:
+    def reversePrint(self, head: ListNode) -&gt; List[int]:
+        # 递归终止条件
+        if not head:
+            return []
+        else:
+            return self.reversePrint(head.next) + [head.val]
+</code></pre>
 <h1 id="剑指offer-11-旋转数组中的最小数字"><a href="#剑指offer-11-旋转数组中的最小数字" class="headerlink" title="剑指offer 11-旋转数组中的最小数字"></a>剑指offer 11-旋转数组中的最小数字</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/">https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/</a><br>有几个注意点：</p>
 <ol>
 <li>原来的数组是递增有序</li>
@@ -151,9 +281,37 @@
 <li>在采用的基础上，要用中间的值和右边的值进行比较才能知道旋转的数到底在哪个区间范围内（如果与左边的值进行比较的话，无法选定区间）</li>
 <li>为什么要单独区分中间值与右边值相等的情况:先记住</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minArray</span>(<span class="params">self, numbers: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(numbers)</span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> numbers[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># 采用二分查找的思路解题</span></span><br><span class="line">        left=<span class="number">0</span></span><br><span class="line">        right=n-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            mid = left +(right-left)//<span class="number">2</span></span><br><span class="line">            <span class="comment"># 如果中间的值大于右边的值，mid在左排序数组中，所以旋转的元素在右边区间：[mid+1,right]之间，left=mid+1</span></span><br><span class="line">            <span class="keyword">if</span> numbers[mid]&gt;numbers[right]:</span><br><span class="line">                left = mid+<span class="number">1</span></span><br><span class="line">            <span class="comment"># 如果中间的值小于右边的值，这是一个正常的排序，mid在右排序数组中，所以旋转的元素在[left,mid]之间，right=mid（mid也可能是一个旋转元素，不能排除mid比左边的元素更小）</span></span><br><span class="line">            <span class="keyword">elif</span> numbers[mid] &lt;numbers[right]:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="comment"># 如果中间的值等于右边的值，无法判断到底在哪个区间</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 一个一个的往前去遍历，找到那个最小值</span></span><br><span class="line">                <span class="keyword">return</span> self.findMin(numbers,left,right)</span><br><span class="line">        <span class="keyword">return</span> numbers[left]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 从头到尾遍历numbers获取最小值</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findMin</span>(<span class="params">self,numbers,left,right</span>):</span><br><span class="line">        res=numbers[left]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(left,right+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 一旦发现遍历的值还小于左边这个值，就更新这个最小值</span></span><br><span class="line">            <span class="keyword">if</span> numbers[i]&lt; res:</span><br><span class="line">                res=numbers[i]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def minArray(self, numbers: List[int]) -&gt; int:
+        n = len(numbers)
+        if n ==1:
+            return numbers[0]
+        # 采用二分查找的思路解题
+        left=0
+        right=n-1
+        while left &lt; right:
+            mid = left +(right-left)//2
+            # 如果中间的值大于右边的值，mid在左排序数组中，所以旋转的元素在右边区间：[mid+1,right]之间，left=mid+1
+            if numbers[mid]&gt;numbers[right]:
+                left = mid+1
+            # 如果中间的值小于右边的值，这是一个正常的排序，mid在右排序数组中，所以旋转的元素在[left,mid]之间，right=mid（mid也可能是一个旋转元素，不能排除mid比左边的元素更小）
+            elif numbers[mid] &lt;numbers[right]:
+                right = mid
+            # 如果中间的值等于右边的值，无法判断到底在哪个区间
+            else:
+                # 一个一个的往前去遍历，找到那个最小值
+                return self.findMin(numbers,left,right)
+        return numbers[left]
 
-
+    # 从头到尾遍历numbers获取最小值
+    def findMin(self,numbers,left,right):
+        res=numbers[left]
+        for i in range(left,right+1):
+            # 一旦发现遍历的值还小于左边这个值，就更新这个最小值
+            if numbers[i]&lt; res:
+                res=numbers[i]
+        return res
+</code></pre>
 <h1 id="剑指offer12-矩阵中的路径"><a href="#剑指offer12-矩阵中的路径" class="headerlink" title="剑指offer12-矩阵中的路径"></a>剑指offer12-矩阵中的路径</h1><p>题目描述：给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false 。<br>单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。<br>加上自己的一点理解：回溯，在每一层的搜索里面，不管有没有找到，都需要往回走<br>还有要把DFS想象成为一个多叉树，每个下面都是有多种选择的，如果不对就回退，接着进行选择<br>要解决什么叫搜索过的问题<br><img src="https://runnerxr.github.io/post-images/1651338595481.png"><br><img src="https://runnerxr.github.io/post-images/1651338683210.png"><br>需要将字符串进行拆分，一个一个元素进行匹配<br>通过两层嵌套覆盖所有的情况<br>写入dfs函数：<br><strong>终止条件：</strong></p>
 <ol>
 <li>边界情况的判断:行越界、列越界、以及网格中的任何一个元素都没有与word中的字母匹配，返回False</li>
@@ -166,10 +324,113 @@
 <li><strong>还原当前矩阵</strong>：一趟结束后，把原来设置的’#’改成匹配好的字符，以免影响后面dfs的遍历。将board[i][j]还原至初始值:work[k]  这里是自己在学习算法的时候最难立即的一点</li>
 </ol>
 <p><strong>返回值：</strong><br>返回布尔量res,代表是否搜索到目标的字符串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要加上自己的本地调试过程（必须要做到），同时还要结合岛屿数量的那一道题或者思路再整理一遍</span></span><br><span class="line"><span class="comment"># 深度优先搜索+剪枝</span></span><br><span class="line"><span class="comment"># 深度优先搜索：暴力遍历矩阵中所有字符串可能性，DFS通过递归，先朝一个反向搜搜索到底，再回溯到上一个节点，沿着另外的一个方向搜索，以此类推。</span></span><br><span class="line"><span class="comment"># 剪枝：在搜索中，遇到 这条路不可能和目标字符串匹配成功 的情况，（例如：此矩阵元素和目标字符不同、此元素已被访问[后面处理的方式也是一个亮点]），则应立即返回，称之为 可行性剪枝</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="comment"># 根据输入的条件，预计需要输出的是true,相当于作为一个理解题目的过程</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; </span></span><br><span class="line"><span class="string">    输入：board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]], word = &quot;ABCCED&quot;</span></span><br><span class="line"><span class="string">    输出：true</span></span><br><span class="line"><span class="string">     &quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, board: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]], word: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 二维网格的行数与列数</span></span><br><span class="line">        m,n = <span class="built_in">len</span>(board),<span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">      </span><br><span class="line">        <span class="comment"># 遍历网格,通过两层嵌套覆盖所有的情况，一个字母一个字母的尝试</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="comment"># 以左上角第一个元素为起点进行相应的dfs搜索，如果能够查到，直接返回true,所有的情况都没没有找到，返回False（是一个查找字符的过程）</span></span><br><span class="line">                <span class="keyword">if</span> self.dfs(board,word,i,j,<span class="number">0</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># dfs作用：查看在给定的网格中是否存在word这个路径</span></span><br><span class="line">    <span class="comment"># x 和y分别表示行和列数</span></span><br><span class="line">    <span class="comment"># k 表示访问到word中的字母的下标（递归参数有三个）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self,board: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]],word,x,y,k</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 对各种边界条件进行判断,两个终止条件</span></span><br><span class="line">        <span class="comment"># 终止条件一：行或列索引越界或当前矩阵元素与目标字符不同</span></span><br><span class="line">        <span class="keyword">if</span> x &lt;<span class="number">0</span> <span class="keyword">or</span> x&gt;=<span class="built_in">len</span>(board) <span class="keyword">or</span> y&lt;<span class="number">0</span> <span class="keyword">or</span> y &gt;=<span class="built_in">len</span>(board[<span class="number">0</span>]) <span class="keyword">or</span> board[x][y]!=word[k]:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当程序跑到word的最后一个字母的时候，不需要搜索，直接返回True</span></span><br><span class="line">        <span class="keyword">if</span> k==<span class="built_in">len</span>(word)-<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 把访问过的字母标记为&quot;#&quot;，代表已经遍历了，以免影响后面dfs的遍历使用</span></span><br><span class="line">        <span class="comment"># 只会保证当前的匹配方案中不要走回头路，一旦看到这个符号，说明不能走回头路，但是于此同时也只是影响当前的匹配方案，因为如果匹配成功与不成功，要回溯返回，此时需要取消标记（也就是后面的操作）</span></span><br><span class="line">        board[x][y]=<span class="string">&quot;#&quot;</span></span><br><span class="line">        <span class="comment"># 进行剪枝,按照上下左右的顺序进行搜索去匹配word中下一个字母，用res进行记录</span></span><br><span class="line">        <span class="comment"># 也即朝四个方向递归，看是否有能够匹配下一个字母的元素存在，只需要找到一条可行的路径就直接返回，不再做后续的dfs（一条不行就另外换一条路径）</span></span><br><span class="line">        res = self.dfs(board,word,x-<span class="number">1</span>,y,k+<span class="number">1</span>) <span class="keyword">or</span> self.dfs(board,word,x+<span class="number">1</span>,y,k+<span class="number">1</span>) <span class="keyword">or</span> self.dfs(board,word,x,y-<span class="number">1</span>,k+<span class="number">1</span>) <span class="keyword">or</span> self.dfs(board,word,x,y+<span class="number">1</span>,k+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 一趟结束后，把原来设置的&#x27;#&#x27;改成匹配好的字符，以免影响后面dfs的遍历,因为一旦没有找到还需要回退到上一层或上上层去寻找</span></span><br><span class="line">        board[x][y]=word[k]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果能够找到就返回res</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 头文件（本地调试的时候需要）</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 输入一个特定的需要求解的数组</span></span><br><span class="line">    board = [[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;E&quot;</span>],[<span class="string">&quot;S&quot;</span>,<span class="string">&quot;F&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;S&quot;</span>],[<span class="string">&quot;A&quot;</span>,<span class="string">&quot;D&quot;</span>,<span class="string">&quot;E&quot;</span>,<span class="string">&quot;E&quot;</span>]]</span><br><span class="line">    word=<span class="string">&quot;BFCE&quot;</span></span><br><span class="line">    res = Solution().exist(board,word)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br><span class="line">    <span class="comment"># print(&quot;  输出 =&gt; &quot; ,res)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>提供另外的一种解决思路</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 另外的一种思路：按照岛屿数量的思路来写，借鉴黑眼圈的写法</span></span><br><span class="line"><span class="comment"># 之前不算正真的理解，所以在调试之后发现还是很有新的收获的</span></span><br><span class="line"><span class="comment"># 主函数退出递归的条件：要么已经找到了一条完整的路径，要么网格已经遍历完全了（刚开始是自己一直疑惑的点）</span></span><br><span class="line"><span class="comment"># 但是这里的解法还是有问题，没有体现回溯的过程，还是不太建议采用</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, board: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]], word: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        m,n = <span class="built_in">len</span>(board),<span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> self.dfs(board,word,i,j,<span class="number">0</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self,board: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]],word,x,y,k</span>):</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 如果board[x][y]元素与words的第k个元素不相等，直接返回结果</span></span><br><span class="line">        <span class="keyword">if</span>  board[x][y]!=word[k]:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当程序跑到word的最后一个字母的时候，不需要搜索，直接返回</span></span><br><span class="line">        <span class="keyword">if</span> k==<span class="built_in">len</span>(word)-<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 原来位置的字符串，用临时变量进行存储，在每一个递归里面都会变化</span></span><br><span class="line">        temp = board[x][y]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 把访问过的字母标记为&quot;#&quot;，代表已经遍历了，以免影响后面dfs的遍历使用</span></span><br><span class="line">        board[x][y]=<span class="string">&quot;#&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 循环遍历当前位置的上、下、左、右四个方向</span></span><br><span class="line">        <span class="keyword">for</span> dx, dy <span class="keyword">in</span> ((-<span class="number">1</span>,<span class="number">0</span>),(<span class="number">1</span>,<span class="number">0</span>),(<span class="number">0</span>,-<span class="number">1</span>),(<span class="number">0</span>,<span class="number">1</span>)):</span><br><span class="line">            newX = dx + x</span><br><span class="line">            newY = dy + y</span><br><span class="line">            <span class="comment"># 如果新的位置超出了数组边界 或者 已经访问过</span></span><br><span class="line">            <span class="keyword">if</span> newX &lt;<span class="number">0</span> <span class="keyword">or</span> newX&gt;=<span class="built_in">len</span>(board) <span class="keyword">or</span> newY&lt;<span class="number">0</span> <span class="keyword">or</span> newY &gt;=<span class="built_in">len</span>(board[<span class="number">0</span>]) <span class="keyword">or</span> board[newX][newY]==<span class="string">&quot;#&quot;</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 递归搜索新的位置</span></span><br><span class="line">            <span class="keyword">if</span> self.dfs(board,word,newX,newY,k+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 恢复状态，这里恢复状态的方式也要注意理解：因为已经位于循环的外面，不能用上面的解法：board[x][y]=word[k],用的是变量temp进行存储的</span></span><br><span class="line">        board[x][y]=temp</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 要加上自己的本地调试过程（必须要做到），同时还要结合岛屿数量的那一道题或者思路再整理一遍
+# 深度优先搜索+剪枝
+# 深度优先搜索：暴力遍历矩阵中所有字符串可能性，DFS通过递归，先朝一个反向搜搜索到底，再回溯到上一个节点，沿着另外的一个方向搜索，以此类推。
+# 剪枝：在搜索中，遇到 这条路不可能和目标字符串匹配成功 的情况，（例如：此矩阵元素和目标字符不同、此元素已被访问[后面处理的方式也是一个亮点]），则应立即返回，称之为 可行性剪枝
+from typing import List
+# 根据输入的条件，预计需要输出的是true,相当于作为一个理解题目的过程
+&quot;&quot;&quot; 
+    输入：board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]], word = &quot;ABCCED&quot;
+    输出：true
+     &quot;&quot;&quot;
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -&gt; bool:
 
+        # 二维网格的行数与列数
+        m,n = len(board),len(board[0])
+      
+        # 遍历网格,通过两层嵌套覆盖所有的情况，一个字母一个字母的尝试
+        for i in range(m):
+            for j in range(n):
+                # 以左上角第一个元素为起点进行相应的dfs搜索，如果能够查到，直接返回true,所有的情况都没没有找到，返回False（是一个查找字符的过程）
+                if self.dfs(board,word,i,j,0):
+                    return True
+        return False
+    
+    # dfs作用：查看在给定的网格中是否存在word这个路径
+    # x 和y分别表示行和列数
+    # k 表示访问到word中的字母的下标（递归参数有三个）
+    def dfs(self,board: List[List[str]],word,x,y,k):
+
+        # 对各种边界条件进行判断,两个终止条件
+        # 终止条件一：行或列索引越界或当前矩阵元素与目标字符不同
+        if x &lt;0 or x&gt;=len(board) or y&lt;0 or y &gt;=len(board[0]) or board[x][y]!=word[k]:
+            return False
+
+        # 当程序跑到word的最后一个字母的时候，不需要搜索，直接返回True
+        if k==len(word)-1:
+            return True
+            
+        # 把访问过的字母标记为&quot;#&quot;，代表已经遍历了，以免影响后面dfs的遍历使用
+        # 只会保证当前的匹配方案中不要走回头路，一旦看到这个符号，说明不能走回头路，但是于此同时也只是影响当前的匹配方案，因为如果匹配成功与不成功，要回溯返回，此时需要取消标记（也就是后面的操作）
+        board[x][y]=&quot;#&quot;
+        # 进行剪枝,按照上下左右的顺序进行搜索去匹配word中下一个字母，用res进行记录
+        # 也即朝四个方向递归，看是否有能够匹配下一个字母的元素存在，只需要找到一条可行的路径就直接返回，不再做后续的dfs（一条不行就另外换一条路径）
+        res = self.dfs(board,word,x-1,y,k+1) or self.dfs(board,word,x+1,y,k+1) or self.dfs(board,word,x,y-1,k+1) or self.dfs(board,word,x,y+1,k+1)
+
+        # 一趟结束后，把原来设置的&#39;#&#39;改成匹配好的字符，以免影响后面dfs的遍历,因为一旦没有找到还需要回退到上一层或上上层去寻找
+        board[x][y]=word[k]
+
+        # 如果能够找到就返回res
+        return res
+
+# 头文件（本地调试的时候需要）
+if __name__ == &#39;__main__&#39;:
+    # 输入一个特定的需要求解的数组
+    board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]]
+    word=&quot;BFCE&quot;
+    res = Solution().exist(board,word)
+    print(res)
+    # print(&quot;  输出 =&gt; &quot; ,res)
+</code></pre>
+<p>提供另外的一种解决思路</p>
+<pre><code class="python"># 另外的一种思路：按照岛屿数量的思路来写，借鉴黑眼圈的写法
+# 之前不算正真的理解，所以在调试之后发现还是很有新的收获的
+# 主函数退出递归的条件：要么已经找到了一条完整的路径，要么网格已经遍历完全了（刚开始是自己一直疑惑的点）
+# 但是这里的解法还是有问题，没有体现回溯的过程，还是不太建议采用
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -&gt; bool:
+        m,n = len(board),len(board[0])
+    
+        for i in range(m):
+            for j in range(n):
+                if self.dfs(board,word,i,j,0):
+                    return True
+        return False
+        
+    def dfs(self,board: List[List[str]],word,x,y,k):
+        
+        # 如果board[x][y]元素与words的第k个元素不相等，直接返回结果
+        if  board[x][y]!=word[k]:
+            return False
+
+        # 当程序跑到word的最后一个字母的时候，不需要搜索，直接返回
+        if k==len(word)-1:
+            return True
+        
+        # 原来位置的字符串，用临时变量进行存储，在每一个递归里面都会变化
+        temp = board[x][y]
+
+        # 把访问过的字母标记为&quot;#&quot;，代表已经遍历了，以免影响后面dfs的遍历使用
+        board[x][y]=&quot;#&quot;
+
+        # 循环遍历当前位置的上、下、左、右四个方向
+        for dx, dy in ((-1,0),(1,0),(0,-1),(0,1)):
+            newX = dx + x
+            newY = dy + y
+            # 如果新的位置超出了数组边界 或者 已经访问过
+            if newX &lt;0 or newX&gt;=len(board) or newY&lt;0 or newY &gt;=len(board[0]) or board[newX][newY]==&quot;#&quot;:
+                continue
+
+            # 递归搜索新的位置
+            if self.dfs(board,word,newX,newY,k+1):
+                return True
+
+        # 恢复状态，这里恢复状态的方式也要注意理解：因为已经位于循环的外面，不能用上面的解法：board[x][y]=word[k],用的是变量temp进行存储的
+        board[x][y]=temp
+        return False
+</code></pre>
 <h1 id="剑指offer13-机器人的运动范围"><a href="#剑指offer13-机器人的运动范围" class="headerlink" title="剑指offer13-机器人的运动范围"></a>剑指offer13-机器人的运动范围</h1><p>再做第二遍的时候，思路及代码必须自己独立实现，不能辅助其他的方法，看懂之后再写。<br>题目分析：在一个m行n列的方格之中，机器人可以从[0.0]开始向上下左右移动，但是不能出界也不能进入到行坐标与列坐标的数位之和大于k的格子，问机器人最多能够达到多少的格子？<br>这里自己做了一个excel表格帮助自己去理解，其中m&#x3D;n&#x3D;20,k&#x3D;8,表中红色区域是满足要求的，并且机器人是可以达到的，黄色区域虽然满足数位之和的要求，但是机器人并不能达到，仍然不是题目中符合要求的格子。<br><img src="https://runnerxr.github.io/post-images/1652580591080.png"><br>有两个关键点记录一下：</p>
 <ol>
 <li>避免少统计：遍历所有能移动的格子</li>
@@ -177,58 +438,415 @@
 <li>还有一点：符合要求的区域机器人不一定能够到达（重点理解），中间有一些不符合要求的区域机器人无法跨越</li>
 <li>机器人从一个方向出发，直到达到不可到达的区域才会返回，是深度优先遍历</li>
 <li>机器人不断的<strong>重复从一个格子出发探索</strong>、<strong>返回携带数量以及清除区域操作</strong>，用<strong>递归</strong>来解决</li>
-<li>数位之和的计算可以用一个函数来辅助的计算（思维方式吧，实现的过程并不难，但是就是要十分的熟练）<br>使用图片来辅助理解<br><img src="https://runnerxr.github.io/post-images/1650334552674.png"><br><img src="https://runnerxr.github.io/post-images/1650338941071.png"><br><strong>移动机器人前进和后退的移动轨迹（也即DFS的递归和回溯过程）</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">movingCount</span>(<span class="params">self, m: <span class="built_in">int</span>, n: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 使用临时变量 visited 记录格子是否被访问过</span></span><br><span class="line">        visited=[[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 开始深度优先遍历</span></span><br><span class="line">        <span class="keyword">return</span> self.dfs(<span class="number">0</span>,<span class="number">0</span>,m,n,k,visited)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写一个深度优先遍历函数</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self,i,j,m,n,k,visited</span>):</span><br><span class="line">        <span class="comment"># 几种边界条件</span></span><br><span class="line">        <span class="comment"># 行列索引越界</span></span><br><span class="line">        <span class="keyword">if</span> i &gt;=m <span class="keyword">or</span> j &gt;=n :</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 数位和超出目标值 k ，即不满足行坐标和列坐标的数位之和小于 k 的格子（剪枝1）</span></span><br><span class="line">        <span class="keyword">if</span> self.<span class="built_in">sum</span>(i,j)&gt;k: </span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 已经被访问过的格子（剪枝2）</span></span><br><span class="line">        <span class="keyword">if</span> visited[i][j]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 机器人进入了一个新格子，标注这个格子被访问过</span></span><br><span class="line">        visited[i][j]= <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 沿着当前格子的右边和下边继续访问</span></span><br><span class="line">        <span class="comment"># 回溯返回值：返回1+下方搜索可达的解总数+右方搜索的可达解总数</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>+ self.dfs(i+<span class="number">1</span>,j,m,n,k,visited) +self.dfs(i,j+<span class="number">1</span>,m,n,k,visited)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写一个计算两个坐标之和的函数sum</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sum</span>(<span class="params">self,i,j</span>):</span><br><span class="line">        <span class="comment"># 通过求余与取整的方式来计算</span></span><br><span class="line">        ia,ib=i//<span class="number">10</span>,i%<span class="number">10</span></span><br><span class="line">        ja,jb=j//<span class="number">10</span>,j%<span class="number">10</span></span><br><span class="line">        s = ia +ib +ja +jb</span><br><span class="line">        <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把计算数位之和的函数优化一下</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">movingCount</span>(<span class="params">self, m: <span class="built_in">int</span>, n: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 使用临时变量 visited 记录格子是否被访问过</span></span><br><span class="line">        visited=[[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 开始深度优先遍历</span></span><br><span class="line">        <span class="keyword">return</span> self.dfs(<span class="number">0</span>,<span class="number">0</span>,m,n,k,visited)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写一个深度优先遍历函数</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self,i,j,m,n,k,visited</span>):</span><br><span class="line">        <span class="keyword">if</span> i &gt;=m <span class="keyword">or</span> j &gt;=n <span class="keyword">or</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> self.<span class="built_in">sum</span>(i)+self.<span class="built_in">sum</span>(j)&gt;k: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> visited[i][j]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        visited[i][j]= <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>+ self.dfs(i+<span class="number">1</span>,j,m,n,k,visited) +self.dfs(i,j+<span class="number">1</span>,m,n,k,visited)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sum</span>(<span class="params">self,i</span>):</span><br><span class="line">        s = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i!=<span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 计算数位之和</span></span><br><span class="line">            s+=i +i%<span class="number">10</span></span><br><span class="line">            <span class="comment"># 计算十位数</span></span><br><span class="line">            i = i//<span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure></li>
+<li>数位之和的计算可以用一个函数来辅助的计算（思维方式吧，实现的过程并不难，但是就是要十分的熟练）<br>使用图片来辅助理解<br><img src="https://runnerxr.github.io/post-images/1650334552674.png"><br><img src="https://runnerxr.github.io/post-images/1650338941071.png"><br><strong>移动机器人前进和后退的移动轨迹（也即DFS的递归和回溯过程）</strong></li>
 </ol>
+<pre><code class="python">class Solution:
+    def movingCount(self, m: int, n: int, k: int) -&gt; int:
+        # 使用临时变量 visited 记录格子是否被访问过
+        visited=[[0]*n for _ in range(m)]
+
+        # 开始深度优先遍历
+        return self.dfs(0,0,m,n,k,visited)
+
+    # 写一个深度优先遍历函数
+    def dfs(self,i,j,m,n,k,visited):
+        # 几种边界条件
+        # 行列索引越界
+        if i &gt;=m or j &gt;=n :
+            return 0
+        
+        # 数位和超出目标值 k ，即不满足行坐标和列坐标的数位之和小于 k 的格子（剪枝1）
+        if self.sum(i,j)&gt;k: 
+            return 0
+
+        # 已经被访问过的格子（剪枝2）
+        if visited[i][j]:
+            return 0
+
+        # 机器人进入了一个新格子，标注这个格子被访问过
+        visited[i][j]= True
+
+        # 沿着当前格子的右边和下边继续访问
+        # 回溯返回值：返回1+下方搜索可达的解总数+右方搜索的可达解总数
+        return 1+ self.dfs(i+1,j,m,n,k,visited) +self.dfs(i,j+1,m,n,k,visited)
+
+    # 写一个计算两个坐标之和的函数sum
+    def sum(self,i,j):
+        # 通过求余与取整的方式来计算
+        ia,ib=i//10,i%10
+        ja,jb=j//10,j%10
+        s = ia +ib +ja +jb
+        return s
+</code></pre>
+<pre><code class="python"># 把计算数位之和的函数优化一下
+class Solution:
+    def movingCount(self, m: int, n: int, k: int) -&gt; int:
+        # 使用临时变量 visited 记录格子是否被访问过
+        visited=[[0]*n for _ in range(m)]
+
+        # 开始深度优先遍历
+        return self.dfs(0,0,m,n,k,visited)
+
+    # 写一个深度优先遍历函数
+    def dfs(self,i,j,m,n,k,visited):
+        if i &gt;=m or j &gt;=n or:
+            return 0
+        if self.sum(i)+self.sum(j)&gt;k: return 0
+
+        if visited[i][j]:
+            return 0
+        visited[i][j]= True
+
+        return 1+ self.dfs(i+1,j,m,n,k,visited) +self.dfs(i,j+1,m,n,k,visited)
+
+    def sum(self,i):
+        s = 0
+        while i!=0:
+            # 计算数位之和
+            s+=i +i%10
+            # 计算十位数
+            i = i//10
+        return s
+</code></pre>
 <h1 id="剑指offer-18-删除链表的节点"><a href="#剑指offer-18-删除链表的节点" class="headerlink" title="剑指offer 18 删除链表的节点"></a>剑指offer 18 删除链表的节点</h1><p>需要定义两个指针，不断的向右移动<br>当cur指针访问到需要删除的元素的受，将pre指针指向cur的下一个指针（此时需要删除的节点，没有任何一个指针指向它）<br>最后返回链表的头节点就是删除后的链表<br>特殊情况的处理：当删除的节点就是头节点的时候，直接返回头节点的下一个节点<br>循环的终止条件：cur指针指向空或是cur指针指向的节点值就是要删除的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deleteNode</span>(<span class="params">self, head: ListNode, val: <span class="built_in">int</span></span>) -&gt; ListNode:</span><br><span class="line">        <span class="comment"># 特殊的情况处理</span></span><br><span class="line">        <span class="keyword">if</span> head.val==val:</span><br><span class="line">            <span class="keyword">return</span> head.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 遍历整个链表,要用指针来做,实质是一种二叉树的遍历框架</span></span><br><span class="line">        <span class="comment"># 定义两个指针pre,cur</span></span><br><span class="line">        pre,cur= head,head.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当cur的节点值等于val的时候跳出循环</span></span><br><span class="line">        <span class="keyword">while</span> cur <span class="keyword">and</span> cur.val != val:</span><br><span class="line">        <span class="comment"># while cur.val != val:</span></span><br><span class="line">            pre= cur</span><br><span class="line">            cur = cur.<span class="built_in">next</span></span><br><span class="line">        pre.<span class="built_in">next</span>= cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def deleteNode(self, head: ListNode, val: int) -&gt; ListNode:
+        # 特殊的情况处理
+        if head.val==val:
+            return head.next
+        # 遍历整个链表,要用指针来做,实质是一种二叉树的遍历框架
+        # 定义两个指针pre,cur
+        pre,cur= head,head.next
 
+        # 当cur的节点值等于val的时候跳出循环
+        while cur and cur.val != val:
+        # while cur.val != val:
+            pre= cur
+            cur = cur.next
+        pre.next= cur.next
+        return head
+</code></pre>
 <h1 id="剑指offer-21调整数组顺序使奇数位于偶数前面"><a href="#剑指offer-21调整数组顺序使奇数位于偶数前面" class="headerlink" title="剑指offer 21调整数组顺序使奇数位于偶数前面"></a>剑指offer 21调整数组顺序使奇数位于偶数前面</h1><p>采用双指针的做法：让left左边都是奇数，让right右边都属偶数<br>如果left指针指向的元素值是奇数，说明该元素在左侧，让left向右移动<br>如果right指针指向的元素是偶数，那么元素在右侧，让right向左移动<br>否则，要么left指向的为偶数，right指向的为奇数，交换两个位置的元素（空变量），题目不难，主要是找对思路就可以了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exchange</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 采用双指针的写法</span></span><br><span class="line">        left ,right = <span class="number">0</span>,<span class="built_in">len</span>(nums)-<span class="number">1</span></span><br><span class="line">        <span class="comment"># 采用二分查找的思路</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="comment"># 如果left指针指向的元素是奇数，说明该元素应该再左侧，让left向右移动</span></span><br><span class="line">            <span class="keyword">if</span> nums[left]%<span class="number">2</span>==<span class="number">1</span>:</span><br><span class="line">                left +=<span class="number">1</span></span><br><span class="line">            <span class="comment"># 如果right指针指向的元素是偶数，那么元素在右侧，让right向左移动</span></span><br><span class="line">            <span class="keyword">elif</span> nums[right]%<span class="number">2</span>==<span class="number">0</span>:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                temp = nums[left]</span><br><span class="line">                nums[left]= nums[right]</span><br><span class="line">                nums[right]=temp</span><br><span class="line">        <span class="keyword">return</span> nums</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def exchange(self, nums: List[int]) -&gt; List[int]:
+        # 采用双指针的写法
+        left ,right = 0,len(nums)-1
+        # 采用二分查找的思路
+        while left &lt; right:
+            # 如果left指针指向的元素是奇数，说明该元素应该再左侧，让left向右移动
+            if nums[left]%2==1:
+                left +=1
+            # 如果right指针指向的元素是偶数，那么元素在右侧，让right向左移动
+            elif nums[right]%2==0:
+                right-=1
+            else:
+                temp = nums[left]
+                nums[left]= nums[right]
+                nums[right]=temp
+        return nums
+</code></pre>
 <h1 id="剑指offer22-链表中倒数第k个节点"><a href="#剑指offer22-链表中倒数第k个节点" class="headerlink" title="剑指offer22 链表中倒数第k个节点"></a>剑指offer22 链表中倒数第k个节点</h1><p>仍然是采用双指针，同时让其中的一个节点先走k步(这里实现的过程也是一个考察点，需要自己注意)<br>然后两个指针同时向右移动，直到先行的指针指向为空此时后面的那个指针指向的就是要求的链表（理解这里的思想很重要）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getKthFromEnd</span>(<span class="params">self, head: ListNode, k: <span class="built_in">int</span></span>) -&gt; ListNode:</span><br><span class="line">        <span class="comment"># 定义两个指针</span></span><br><span class="line">        pre,cur=head,head</span><br><span class="line">        <span class="comment"># 让cur指针提前向右移动k步</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,k):</span><br><span class="line">            cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 让两个指针同时向向移动，跳出循环的条件是cur指针指向为空</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            pre=pre.<span class="built_in">next</span></span><br><span class="line">            cur = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> pre</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def getKthFromEnd(self, head: ListNode, k: int) -&gt; ListNode:
+        # 定义两个指针
+        pre,cur=head,head
+        # 让cur指针提前向右移动k步
+        for i in range(0,k):
+            cur=cur.next
+        # 让两个指针同时向向移动，跳出循环的条件是cur指针指向为空
+        while cur:
+            pre=pre.next
+            cur = cur.next
+        return pre
+</code></pre>
 <h1 id="剑指offer-26-树的子结构"><a href="#剑指offer-26-树的子结构" class="headerlink" title="剑指offer 26 树的子结构"></a>剑指offer 26 树的子结构</h1><p>利用二叉树递归的代码（做的时候，这几种情况记得再判断一下 ）<br>边界的判断：<br>空树不是任意一个树的子结构<br>查看几种情况：</p>
 <ol>
 <li>A的根节点与B的根节点相同，依次比较他们的子节点</li>
 <li>A的根节点与B的根节点不同，A的左子树与B的根节点比较</li>
-<li>A的根节点与B的根节点不同，A的右子树与B的根节点比较<br>用两张图来辅助理解：<br>要判断B是否是A的子结构，要么一开始就从A和B的根节点开始<br><img src="https://runnerxr.github.io/post-images/1650334161301.png"><br>如果根节点不相同，就需要判断B是否为A的左子树或右子树<br><img src="https://runnerxr.github.io/post-images/1650334167543.png"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSubStructure</span>(<span class="params">self, A: TreeNode, B: TreeNode</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 先从两个根节点出发进行判断</span></span><br><span class="line">        <span class="comment"># 如果一开始A或者B为空，直接返回False（特例情况：空树不是任何一个树的子结构）</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> A <span class="keyword">or</span> <span class="keyword">not</span> B:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 判单B是否是A的左子树含有右子树的结构：实际上是有以下的三种情况，都可以通过函数的递归抵用来解决</span></span><br><span class="line">        <span class="comment"># 接下来主要比较的点：A与B的根节点的比较（A的左右子树的节点与B的根节点的比较）,本质是对A进行一个先序遍历</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 情况一：如果找到相同的节点值，判断它们各自的左右子节点是否相同（以节点A为根节点的子树包含树B,直接用dfs）</span></span><br><span class="line">        <span class="comment"># 情况二：如果A根节点与B的根节点不同，比较A的左子树与B的根节点（树B是树A左子树的子结构,用isSubStructure(A.left,B)）</span></span><br><span class="line">        <span class="comment"># 情况三：如果A根节点与B的根节点不同，比较A的右子树与B的根节点 (树B是树A右子树的子结构,用isSubStructure(A.right,B)）</span></span><br><span class="line">        <span class="keyword">return</span>  self.dfs(A, B) <span class="keyword">or</span> self.isSubStructure(A.left,B) <span class="keyword">or</span> self.isSubStructure(A.right,B)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写一个函数，作用是：从上一个函数得到的根节点开始递归比较是否右子树</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self,A,B</span>):</span><br><span class="line">        <span class="comment"># 一开始去找A和B完全匹配的情况</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 递归的终止条件：</span></span><br><span class="line">        <span class="comment"># 终止条件一：# 对B不断的进行遍历，直到为空（B已经递归到叶子节点了），说明B的全部节点都和A的子结构能够匹配</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> B:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 终止条件二：如果A中的节点为空，B中的节点不为空，不能匹配</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> A:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 终止条件三：如果A和B都不为空，但是数值又不同，也是不匹配的（理解）</span></span><br><span class="line">        <span class="keyword">if</span> A.val != B.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 返回值：当前的这个点是匹配的（A.val= B.val），继续的递归判断左子树和右子树是否分别匹配（需要同时递归）</span></span><br><span class="line">        <span class="keyword">return</span> self.dfs(A.left,B.left) <span class="keyword">and</span> self.dfs(A.right,B.right)</span><br></pre></td></tr></table></figure></li>
+<li>A的根节点与B的根节点不同，A的右子树与B的根节点比较<br>用两张图来辅助理解：<br>要判断B是否是A的子结构，要么一开始就从A和B的根节点开始<br><img src="https://runnerxr.github.io/post-images/1650334161301.png"><br>如果根节点不相同，就需要判断B是否为A的左子树或右子树<br><img src="https://runnerxr.github.io/post-images/1650334167543.png"></li>
 </ol>
+<pre><code class="python"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def isSubStructure(self, A: TreeNode, B: TreeNode) -&gt; bool:
+        # 先从两个根节点出发进行判断
+        # 如果一开始A或者B为空，直接返回False（特例情况：空树不是任何一个树的子结构）
+        if not A or not B:
+            return False
+
+        # 判单B是否是A的左子树含有右子树的结构：实际上是有以下的三种情况，都可以通过函数的递归抵用来解决
+        # 接下来主要比较的点：A与B的根节点的比较（A的左右子树的节点与B的根节点的比较）,本质是对A进行一个先序遍历
+        
+        # 情况一：如果找到相同的节点值，判断它们各自的左右子节点是否相同（以节点A为根节点的子树包含树B,直接用dfs）
+        # 情况二：如果A根节点与B的根节点不同，比较A的左子树与B的根节点（树B是树A左子树的子结构,用isSubStructure(A.left,B)）
+        # 情况三：如果A根节点与B的根节点不同，比较A的右子树与B的根节点 (树B是树A右子树的子结构,用isSubStructure(A.right,B)）
+        return  self.dfs(A, B) or self.isSubStructure(A.left,B) or self.isSubStructure(A.right,B)
+
+
+    # 写一个函数，作用是：从上一个函数得到的根节点开始递归比较是否右子树
+    def dfs(self,A,B):
+        # 一开始去找A和B完全匹配的情况
+        
+        # 递归的终止条件：
+        # 终止条件一：# 对B不断的进行遍历，直到为空（B已经递归到叶子节点了），说明B的全部节点都和A的子结构能够匹配
+        if not B:
+            return True
+
+        # 终止条件二：如果A中的节点为空，B中的节点不为空，不能匹配
+        if not A:
+            return False
+
+        # 终止条件三：如果A和B都不为空，但是数值又不同，也是不匹配的（理解）
+        if A.val != B.val:
+            return False
+
+        # 返回值：当前的这个点是匹配的（A.val= B.val），继续的递归判断左子树和右子树是否分别匹配（需要同时递归）
+        return self.dfs(A.left,B.left) and self.dfs(A.right,B.right)
+</code></pre>
 <h1 id="剑指offer-27-二叉树的镜像"><a href="#剑指offer-27-二叉树的镜像" class="headerlink" title="剑指offer 27-二叉树的镜像"></a>剑指offer 27-二叉树的镜像</h1><p>总体的思路：</p>
 <ol>
 <li>把根节点的左子树先抽离出来进行保存</li>
 <li>把当前节点的右子树镜像到镜像的二叉树中</li>
 <li>把原左子树放到镜像二叉树的右子树中</li>
-<li>在整个的过程中都是递归的进行操作的<br><img src="https://runnerxr.github.io/post-images/1650129779849.png"><br><img src="https://runnerxr.github.io/post-images/1650129747856.png"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归的写法：类似于交换两个数的写法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">mirrorTree</span>(<span class="params">self, root: TreeNode</span>) -&gt; TreeNode:</span><br><span class="line">        <span class="comment"># 当节点为空时，直接返回</span></span><br><span class="line">        <span class="comment"># 递归的出口</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设置一个临时的节点 tmp 用来存储当前节点的左子树（避免覆盖后找到左右子节点）</span></span><br><span class="line">        temp = root.left</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 以下两个操作是在交换当前节点的左右子树</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 当前节点的左子树为节点的右子树</span></span><br><span class="line">        <span class="comment"># 同时递归下去，不停的交换子树中的节点</span></span><br><span class="line">        root.left=self.mirrorTree(root.right)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当前节点的右子树为节点的左子树</span></span><br><span class="line">        <span class="comment"># 同时递归下去，不停的交互子树中的节点</span></span><br><span class="line">        root.right=self.mirrorTree(temp)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 最后返回根节点</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-看到题解的时候发现还有很多其他的解法在里面，如果自己右精力的话可以去考虑一下。</li>
+<li>在整个的过程中都是递归的进行操作的<br><img src="https://runnerxr.github.io/post-images/1650129779849.png"><br><img src="https://runnerxr.github.io/post-images/1650129747856.png"></li>
 </ol>
+<pre><code class="python"># 递归的写法：类似于交换两个数的写法
+class Solution:
+    def mirrorTree(self, root: TreeNode) -&gt; TreeNode:
+        # 当节点为空时，直接返回
+        # 递归的出口
+        if not root:
+            return None
+
+        # 设置一个临时的节点 tmp 用来存储当前节点的左子树（避免覆盖后找到左右子节点）
+        temp = root.left
+
+        # 以下两个操作是在交换当前节点的左右子树
+        
+        # 当前节点的左子树为节点的右子树
+        # 同时递归下去，不停的交换子树中的节点
+        root.left=self.mirrorTree(root.right)
+
+        # 当前节点的右子树为节点的左子树
+        # 同时递归下去，不停的交互子树中的节点
+        root.right=self.mirrorTree(temp)
+
+        # 最后返回根节点
+        return root
+</code></pre>
+<p>看到题解的时候发现还有很多其他的解法在里面，如果自己右精力的话可以去考虑一下。</p>
 <h1 id="剑指offer28-对称的二叉树"><a href="#剑指offer28-对称的二叉树" class="headerlink" title="剑指offer28-对称的二叉树"></a>剑指offer28-对称的二叉树</h1><p>题目本身是一个定义题，自己之前也是做过的，二叉树的本质都是递归的做法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSymmetric</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 边界情况</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> self.isSymmetricalTree(root.left,root.right)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义一个判断两个二叉树是否对称的函数isSymmetricalTree</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSymmetricalTree</span>(<span class="params">self,left, right</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果根子树的左右两个节点同时为空，肯定是对称的，直接的返回true</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> left <span class="keyword">and</span> <span class="keyword">not</span> right:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果根子树的左右子树有一个为空，一个有值，不对称，返回false</span></span><br><span class="line">        <span class="keyword">elif</span> <span class="keyword">not</span> left <span class="keyword">or</span> <span class="keyword">not</span> right:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span> </span><br><span class="line"></span><br><span class="line">        <span class="comment"># 左右子树都是有值的</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 如果左子树与右子树的值不相等，不对称，返回fasle</span></span><br><span class="line">            <span class="keyword">if</span> left.val !=right.val:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 递归的对比当前节点的左子树的左子树与右子树的右子树、左子树的右子树与右子树的左子树是否对称</span></span><br><span class="line">            <span class="keyword">return</span> self.isSymmetricalTree(left.left,right.right) <span class="keyword">and</span> self.isSymmetricalTree(left.right,right.left)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把代码做一点简化操作</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSymmetric</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> self.isSymmetricalTree(root.left,root.right)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSymmetricalTree</span>(<span class="params">self,left, right</span>):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> left <span class="keyword">and</span> <span class="keyword">not</span> right:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 上面的几种判断的情况，由于返回值是相同的，可以进行合并</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> left <span class="keyword">or</span> <span class="keyword">not</span> right <span class="keyword">or</span> left.val !=right.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span> </span><br><span class="line">            <span class="comment"># 递归的对比当前节点的左子树的左子树与右子树的右子树、左子树的右子树与右子树的左子树是否对称</span></span><br><span class="line">        <span class="keyword">return</span> self.isSymmetricalTree(left.left,right.right) <span class="keyword">and</span> self.isSymmetricalTree(left.right,right.left)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        # 边界情况
+        if not root:
+            return True
+        return self.isSymmetricalTree(root.left,root.right)
 
+    # 定义一个判断两个二叉树是否对称的函数isSymmetricalTree
+    def isSymmetricalTree(self,left, right):
 
+        # 如果根子树的左右两个节点同时为空，肯定是对称的，直接的返回true
+        if not left and not right:
+            return True
+
+        # 如果根子树的左右子树有一个为空，一个有值，不对称，返回false
+        elif not left or not right:
+            return False 
+
+        # 左右子树都是有值的
+        else:
+            # 如果左子树与右子树的值不相等，不对称，返回fasle
+            if left.val !=right.val:
+                return False
+            # 递归的对比当前节点的左子树的左子树与右子树的右子树、左子树的右子树与右子树的左子树是否对称
+            return self.isSymmetricalTree(left.left,right.right) and self.isSymmetricalTree(left.right,right.left)
+</code></pre>
+<pre><code class="python"># 把代码做一点简化操作
+class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        if not root:
+            return True
+        return self.isSymmetricalTree(root.left,root.right)
+
+    def isSymmetricalTree(self,left, right):
+
+        if not left and not right:
+            return True
+        # 上面的几种判断的情况，由于返回值是相同的，可以进行合并
+        if not left or not right or left.val !=right.val:
+            return False 
+            # 递归的对比当前节点的左子树的左子树与右子树的右子树、左子树的右子树与右子树的左子树是否对称
+        return self.isSymmetricalTree(left.left,right.right) and self.isSymmetricalTree(left.right,right.left)
+</code></pre>
 <h1 id="剑指offer32-I从上到下打印二叉树II-树的按层打印，打印到一个数组中"><a href="#剑指offer32-I从上到下打印二叉树II-树的按层打印，打印到一个数组中" class="headerlink" title="剑指offer32-I从上到下打印二叉树II(树的按层打印，打印到一个数组中)"></a>剑指offer32-I从上到下打印二叉树II(树的按层打印，打印到一个数组中)</h1><p>后面的连续的三道题要求理解并加深相应的印象，对于理解层序遍历(BFS)概念十分有帮助！！！！<br>要点如下：</p>
 <ol>
 <li>边界条件的判断：当根节点为空的时候，返回空数组</li>
 <li>需要借助一个队列，先将二叉树的根节点入队，然后出队，访问出队节点</li>
 <li>如果有左子树，则将左子树的根节点入队，若有右子树，将右子树的根节点入队</li>
-<li>然后出队，访问根节点，如此反复直到队列为空<br>这里贴一段伪代码，加强学习与记忆：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">LevelOrder</span><span class="params">(BiTree T)</span>&#123;</span><br><span class="line">    InitQueue(Q) ;  <span class="comment">//初始化辅助队列</span></span><br><span class="line">    BiTree p;</span><br><span class="line">    EnQueue(Q,T);  <span class="comment">//将根节点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!IsEmpty(o))&#123;  <span class="comment">//队列不空则循环</span></span><br><span class="line">        DeQueue(Q,P)      <span class="comment">//队头节点出队</span></span><br><span class="line">        visit(p)                  <span class="comment">//访问出队节点</span></span><br><span class="line">        <span class="keyword">if</span> (p-&gt;left!=<span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q,P-&gt;left);  <span class="comment">//左子树不空，则左子树根节点入队</span></span><br><span class="line">        <span class="keyword">if</span> (p-&gt;right!=<span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q,P-&gt;right); <span class="comment">//右子树不空，则左子树根节点入队</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
-以下为本题的python的实现代码：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 根节点为空的情况返回空数组</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 生成一个队列，用来保存节点</span></span><br><span class="line">        <span class="comment"># queue=collections.deque()</span></span><br><span class="line">        queue=[]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 生成一个 res，用来保存输出的节点</span></span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 首先让根节点入队</span></span><br><span class="line">        queue.append(root)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历队列，直到队列为空</span></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">             <span class="comment"># 获取队列的头部元素(把队列的队头元素进行推出)</span></span><br><span class="line">             <span class="comment"># curNode=queue.popleft()</span></span><br><span class="line">             curNode=queue.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">             <span class="comment"># 把推出的结点值存放到 res 中</span></span><br><span class="line">             res.append(curNode.val)</span><br><span class="line"></span><br><span class="line">             <span class="comment"># 判断该节点是否有左右子节点</span></span><br><span class="line">             <span class="comment"># 如果左子节点有值，则把左子节点加入到队列中</span></span><br><span class="line">             <span class="keyword">if</span> curNode.left:</span><br><span class="line">                 queue.append(curNode.left)</span><br><span class="line">             <span class="comment"># 如果右子节点有值，则把右子节点加入到队列中 </span></span><br><span class="line">             <span class="keyword">if</span> curNode.right:</span><br><span class="line">                 queue.append(curNode.right)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></li>
+<li>然后出队，访问根节点，如此反复直到队列为空<br>这里贴一段伪代码，加强学习与记忆：</li>
 </ol>
+<pre><code class="c">void LevelOrder(BiTree T)&#123;
+    InitQueue(Q) ;  //初始化辅助队列
+    BiTree p;
+    EnQueue(Q,T);  //将根节点入队
+    while (!IsEmpty(o))&#123;  //队列不空则循环
+        DeQueue(Q,P)      //队头节点出队
+        visit(p)                  //访问出队节点
+        if (p-&gt;left!=NULL)
+            EnQueue(Q,P-&gt;left);  //左子树不空，则左子树根节点入队
+        if (p-&gt;right!=NULL)
+            EnQueue(Q,P-&gt;right); //右子树不空，则左子树根节点入队
+    &#125;
+&#125;   
+</code></pre>
+<p>以下为本题的python的实现代码：</p>
+<pre><code class="python">class Solution:
+    def levelOrder(self, root: TreeNode) -&gt; List[int]:
+        # 根节点为空的情况返回空数组
+        if not root:
+            return []
+        # 生成一个队列，用来保存节点
+        # queue=collections.deque()
+        queue=[]
+
+        # 生成一个 res，用来保存输出的节点
+        res = []
+
+        # 首先让根节点入队
+        queue.append(root)
+
+        # 遍历队列，直到队列为空
+        while queue:
+             # 获取队列的头部元素(把队列的队头元素进行推出)
+             # curNode=queue.popleft()
+             curNode=queue.pop(0)
+
+             # 把推出的结点值存放到 res 中
+             res.append(curNode.val)
+
+             # 判断该节点是否有左右子节点
+             # 如果左子节点有值，则把左子节点加入到队列中
+             if curNode.left:
+                 queue.append(curNode.left)
+             # 如果右子节点有值，则把右子节点加入到队列中 
+             if curNode.right:
+                 queue.append(curNode.right)
+        return res
+</code></pre>
 <h1 id="剑指offer32-II从上到下打印二叉树II-层序遍历"><a href="#剑指offer32-II从上到下打印二叉树II-层序遍历" class="headerlink" title="剑指offer32-II从上到下打印二叉树II(层序遍历)"></a>剑指offer32-II从上到下打印二叉树II(层序遍历)</h1><p>在上一题的基础上加入了需要每一层打印到一行，也是层序遍历的精髓所在。<br>主要是要通过图深刻的将层序遍历的思想彻底弄清楚，有几个要点：</p>
 <ol>
 <li>在大的循环下面（只要队列不为空就一直循环），打印的时候需要加入一个循环将队列中的元素不断加入到数组中，其中循环的次数与队列的长度（也即每层的节点的个数有关）</li>
 <li>每一层的循环结束后，把层的结果添加到最后的结果中<ol>
 <li>出队</li>
 <li>打印</li>
-<li>添加子节点<br><img src="https://runnerxr.github.io/post-images/1650464453326.png"><br><img src="https://runnerxr.github.io/post-images/1650464463204.png"><br><img src="https://runnerxr.github.io/post-images/1650464470734.png"><br><img src="https://runnerxr.github.io/post-images/1650464478317.png"><br><img src="https://runnerxr.github.io/post-images/1650464488128.png"><br><img src="https://runnerxr.github.io/post-images/1650464495073.png"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第二次写了，当成模板来记忆就行</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># 根节点为空的情况返回空数组</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 生成一个队列，用来保存节点</span></span><br><span class="line">        queue=[]</span><br><span class="line">        <span class="comment"># 生成temp和res，分别用来保存每一层的节点和全部层的结果</span></span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 首先让根节点入队</span></span><br><span class="line">        queue.append(root)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历队列，直到队列为空</span></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            <span class="comment"># 记录queue的长度，即每层节点的个数</span></span><br><span class="line">            n= <span class="built_in">len</span>(queue)</span><br><span class="line">            temp=[]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 用for循环将队列中的元素添加到temp数组中</span></span><br><span class="line">            <span class="comment"># temp =[num for num in queue]</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="comment"># 把队列的头部元素弹出</span></span><br><span class="line">                curNode=queue.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 用temp数组保存当前层的元素</span></span><br><span class="line">                temp.append(curNode.val)</span><br><span class="line">                <span class="comment"># print(temp)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 判断该节点是否有左右子节点</span></span><br><span class="line">                <span class="comment"># 如果左子节点有值，则把左子节点加入到队列中</span></span><br><span class="line">                <span class="keyword">if</span> curNode.left:</span><br><span class="line">                    queue.append(curNode.left)</span><br><span class="line">                <span class="comment"># 如果右子节点有值，则把右子节点加入到队列中 </span></span><br><span class="line">                <span class="keyword">if</span> curNode.right:</span><br><span class="line">                    queue.append(curNode.right)</span><br><span class="line">            <span class="comment"># 把每一层的元素加入到res数组中</span></span><br><span class="line">            res.append(temp)</span><br><span class="line">            <span class="built_in">print</span>(res)   </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></li>
+<li>添加子节点<br><img src="https://runnerxr.github.io/post-images/1650464453326.png"><br><img src="https://runnerxr.github.io/post-images/1650464463204.png"><br><img src="https://runnerxr.github.io/post-images/1650464470734.png"><br><img src="https://runnerxr.github.io/post-images/1650464478317.png"><br><img src="https://runnerxr.github.io/post-images/1650464488128.png"><br><img src="https://runnerxr.github.io/post-images/1650464495073.png"></li>
 </ol>
 </li>
 </ol>
-<h1 id="剑指offer32-III从上到下打印二叉树III-打印顺序按照层的奇偶性交替变化"><a href="#剑指offer32-III从上到下打印二叉树III-打印顺序按照层的奇偶性交替变化" class="headerlink" title="剑指offer32-III从上到下打印二叉树III(打印顺序按照层的奇偶性交替变化)"></a>剑指offer32-III从上到下打印二叉树III(打印顺序按照层的奇偶性交替变化)</h1><p>同时在打印的时候，创建的打印数组必须是双端队列，满足可以从队头或者队尾插入元素的要求：奇数层添加至尾部，偶数层添加至头部<br>需要用到python中的：from collections import deque<br>值得学习别人的一些比较好的做法，后面有时间再细细的研究<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/solution/mian-shi-ti-32-iii-cong-shang-dao-xia-da-yin-er--3/">https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/solution/mian-shi-ti-32-iii-cong-shang-dao-xia-da-yin-er--3/</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># 根节点为空的情况返回空数组</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 生成一个队列，用来保存节点</span></span><br><span class="line">        queue=[]</span><br><span class="line">        <span class="comment"># 生成temp和res，分别用来保存每一层的节点和全部层的结果</span></span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 首先让根节点入队</span></span><br><span class="line">        queue.append(root)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 写一个函数用来判断当前的层数是否为奇数层，最开始是为奇数层的</span></span><br><span class="line">        isOddNnumber = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历队列，直到队列为空</span></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            <span class="comment"># 记录queue的长度，即每层节点的个数,用于后面将每一层队列的元素加入到temp中</span></span><br><span class="line">            n= <span class="built_in">len</span>(queue)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 奇数与偶数层交替出现</span></span><br><span class="line">            <span class="comment"># 通过取反操作，判断当前的层数是否为奇数层</span></span><br><span class="line">            <span class="comment"># 由于isOddNnumber初始化为False，第一次进来这个while循环取反之后为true</span></span><br><span class="line">            isOddNnumber=~ isOddNnumber</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 生成一个双端队列,只有双端队列才可以从尾部加入到队列中</span></span><br><span class="line">            temp=collections.deque()</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 用for循环将队列中的元素添加到temp数组中</span></span><br><span class="line">            <span class="comment"># temp =[num for num in queue]</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="comment"># 把队列的头部元素弹出</span></span><br><span class="line">                curNode=queue.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 用temp数组保存当前层的元素</span></span><br><span class="line">                <span class="comment"># 如果发现是奇数层，需要从头加入到尾部</span></span><br><span class="line">                <span class="keyword">if</span> isOddNnumber:</span><br><span class="line">                    temp.append(curNode.val)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 如果发现是偶数层，需要从尾部加到头部</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    temp.appendleft(curNode.val)</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 判断该节点是否有左右子节点</span></span><br><span class="line">                <span class="comment"># 如果左子节点有值，则把左子节点加入到队列中</span></span><br><span class="line">                <span class="keyword">if</span> curNode.left:</span><br><span class="line">                    queue.append(curNode.left)</span><br><span class="line">                <span class="comment"># 如果右子节点有值，则把右子节点加入到队列中 </span></span><br><span class="line">                <span class="keyword">if</span> curNode.right:</span><br><span class="line">                    queue.append(curNode.right)</span><br><span class="line">            <span class="comment"># 把每一层的元素加入到res数组中</span></span><br><span class="line">            res.append(<span class="built_in">list</span>(temp))</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 第二次写了，当成模板来记忆就行
+class Solution:
+    def levelOrder(self, root: TreeNode) -&gt; List[List[int]]:
+        # 根节点为空的情况返回空数组
+        if not root:
+            return []
+        # 生成一个队列，用来保存节点
+        queue=[]
+        # 生成temp和res，分别用来保存每一层的节点和全部层的结果
+        res = []
 
+        # 首先让根节点入队
+        queue.append(root)
+
+        # 遍历队列，直到队列为空
+        while queue:
+            # 记录queue的长度，即每层节点的个数
+            n= len(queue)
+            temp=[]
+
+            # 用for循环将队列中的元素添加到temp数组中
+            # temp =[num for num in queue]
+            for i in range(n):
+                # 把队列的头部元素弹出
+                curNode=queue.pop(0)
+
+                # 用temp数组保存当前层的元素
+                temp.append(curNode.val)
+                # print(temp)
+
+                # 判断该节点是否有左右子节点
+                # 如果左子节点有值，则把左子节点加入到队列中
+                if curNode.left:
+                    queue.append(curNode.left)
+                # 如果右子节点有值，则把右子节点加入到队列中 
+                if curNode.right:
+                    queue.append(curNode.right)
+            # 把每一层的元素加入到res数组中
+            res.append(temp)
+            print(res)   
+        return res
+</code></pre>
+<h1 id="剑指offer32-III从上到下打印二叉树III-打印顺序按照层的奇偶性交替变化"><a href="#剑指offer32-III从上到下打印二叉树III-打印顺序按照层的奇偶性交替变化" class="headerlink" title="剑指offer32-III从上到下打印二叉树III(打印顺序按照层的奇偶性交替变化)"></a>剑指offer32-III从上到下打印二叉树III(打印顺序按照层的奇偶性交替变化)</h1><p>同时在打印的时候，创建的打印数组必须是双端队列，满足可以从队头或者队尾插入元素的要求：奇数层添加至尾部，偶数层添加至头部<br>需要用到python中的：from collections import deque<br>值得学习别人的一些比较好的做法，后面有时间再细细的研究<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/solution/mian-shi-ti-32-iii-cong-shang-dao-xia-da-yin-er--3/">https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/solution/mian-shi-ti-32-iii-cong-shang-dao-xia-da-yin-er--3/</a></p>
+<pre><code class="python">class Solution:
+    def levelOrder(self, root: TreeNode) -&gt; List[List[int]]:
+        # 根节点为空的情况返回空数组
+        if not root:
+            return []
+        # 生成一个队列，用来保存节点
+        queue=[]
+        # 生成temp和res，分别用来保存每一层的节点和全部层的结果
+        res = []
+
+        # 首先让根节点入队
+        queue.append(root)
+
+        # 写一个函数用来判断当前的层数是否为奇数层，最开始是为奇数层的
+        isOddNnumber = False
+
+        # 遍历队列，直到队列为空
+        while queue:
+            # 记录queue的长度，即每层节点的个数,用于后面将每一层队列的元素加入到temp中
+            n= len(queue)
+
+            # 奇数与偶数层交替出现
+            # 通过取反操作，判断当前的层数是否为奇数层
+            # 由于isOddNnumber初始化为False，第一次进来这个while循环取反之后为true
+            isOddNnumber=~ isOddNnumber
+
+            # 生成一个双端队列,只有双端队列才可以从尾部加入到队列中
+            temp=collections.deque()
+
+            # 用for循环将队列中的元素添加到temp数组中
+            # temp =[num for num in queue]
+            for i in range(n):
+                # 把队列的头部元素弹出
+                curNode=queue.pop(0)
+
+                # 用temp数组保存当前层的元素
+                # 如果发现是奇数层，需要从头加入到尾部
+                if isOddNnumber:
+                    temp.append(curNode.val)
+
+                # 如果发现是偶数层，需要从尾部加到头部
+                else:
+                    temp.appendleft(curNode.val)
+                
+                # 判断该节点是否有左右子节点
+                # 如果左子节点有值，则把左子节点加入到队列中
+                if curNode.left:
+                    queue.append(curNode.left)
+                # 如果右子节点有值，则把右子节点加入到队列中 
+                if curNode.right:
+                    queue.append(curNode.right)
+            # 把每一层的元素加入到res数组中
+            res.append(list(temp))
+        return res
+</code></pre>
 <h1 id="剑指offer33-二叉搜索树的后序遍历"><a href="#剑指offer33-二叉搜索树的后序遍历" class="headerlink" title="剑指offer33-二叉搜索树的后序遍历"></a>剑指offer33-二叉搜索树的后序遍历</h1><h1 id="剑指offer35-复杂链表的复制"><a href="#剑指offer35-复杂链表的复制" class="headerlink" title="剑指offer35-复杂链表的复制"></a>剑指offer35-复杂链表的复制</h1><h1 id="剑指offer36-二叉搜索树与双向链表"><a href="#剑指offer36-二叉搜索树与双向链表" class="headerlink" title="剑指offer36-二叉搜索树与双向链表"></a>剑指offer36-二叉搜索树与双向链表</h1><h1 id="剑指offer39-数组中出现次数超过一半的"><a href="#剑指offer39-数组中出现次数超过一半的" class="headerlink" title="剑指offer39-数组中出现次数超过一半的"></a>剑指offer39-数组中出现次数超过一半的</h1><h1 id="剑指offer41-数据流中的中位数"><a href="#剑指offer41-数据流中的中位数" class="headerlink" title="剑指offer41-数据流中的中位数"></a>剑指offer41-数据流中的中位数</h1><p>如果是奇数个数值，中位数是数值排序后中间的数值<br>如果是偶数个数值，中位数是数值排序后中间两个数的平均值<br>有几个注意点：</p>
 <ol>
 <li>数据在不断的变</li>
@@ -253,148 +871,23 @@
 <li>每次找到那个最小值之后，接下来的寻找过程应该忽略它了。</li>
 </ol>
 <h1 id="剑指-Offer-50-第一个只出现一次的字符"><a href="#剑指-Offer-50-第一个只出现一次的字符" class="headerlink" title="剑指 Offer 50. 第一个只出现一次的字符"></a>剑指 Offer 50. 第一个只出现一次的字符</h1>
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" data-id="claqum2e3001xh0tk5jh7aoth" data-title="剑指offer系类一题目" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          剑指offer系类二题目
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

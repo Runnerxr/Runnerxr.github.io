@@ -1,120 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>动态规划合集（系列二） | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="几个资料链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;chengwei920412&#x2F;article&#x2F;details&#x2F;44097347?spm&#x3D;1001.2101.3001.6661.1&amp;utm_medium&#x3D;distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_aa&amp;amp">
-<meta property="og:type" content="article">
-<meta property="og:title" content="动态规划合集（系列二）">
-<meta property="og:url" content="http://example.com/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="几个资料链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;chengwei920412&#x2F;article&#x2F;details&#x2F;44097347?spm&#x3D;1001.2101.3001.6661.1&amp;utm_medium&#x3D;distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_aa&amp;amp">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649255599114.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652253592980.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652152922115.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652153564707.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652153661113.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652158223941.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654012765422.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654091179443.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654091187242.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654091251312.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654091687251.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654095768350.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652194185867.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652192059144.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652234949755.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652235526690.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652234928403.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652175614590.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652191419226.png">
-<meta property="article:published_time" content="2022-03-18T01:29:02.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:31:10.781Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1649255599114.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-动态规划合集（系列二）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2022-03-18T01:29:02.000Z" itemprop="datePublished">2022-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      动态规划合集（系列二）
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            动态规划合集（系列二）
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/18 Fri 09:29&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:31
+        </div>
+    </div>
+    <div class="article-content">
         <p>几个资料链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/chengwei920412/article/details/44097347?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_aa&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_aa&amp;utm_relevant_index=1">https://blog.csdn.net/chengwei920412/article/details/44097347?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_aa&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_aa&amp;utm_relevant_index=1</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zyzn1425077119/article/details/52858439?spm=1001.2101.3001.6650.5&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5.pc_relevant_paycolumn_v3&amp;utm_relevant_index=10">https://blog.csdn.net/zyzn1425077119/article/details/52858439?spm=1001.2101.3001.6650.5&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5.pc_relevant_paycolumn_v3&amp;utm_relevant_index=10</a></p>
 <p>主要有以下地一些题目：</p>
@@ -140,33 +86,241 @@
 <h1 id="完全平方数"><a href="#完全平方数" class="headerlink" title="完全平方数"></a>完全平方数</h1><p>按照找零钱的思路（按照吴师兄的解题步骤：两个题目相互结合起来一起掌握）</p>
 <ol>
 <li>设置一个数组，用来储存小于n的那些完全平方数</li>
-<li>用dp[i]表示数字i需要完全平方数的最小数量（最开始初始化为-1，表示还没有计量）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numSquares</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 设置一个数组，用来存储小于 n 的那些完全平方数</span></span><br><span class="line">        square=[]</span><br><span class="line">        idx= <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> idx * idx &lt;=n:</span><br><span class="line">            square.append(idx * idx)</span><br><span class="line">            idx +=<span class="number">1</span></span><br><span class="line">        <span class="comment"># dp[i] 表示数字 i  需要完全平方数的最少数量</span></span><br><span class="line">        <span class="comment"># 先让 dp 初始化为 -1，代表 dp[i] 还没有计算，有n+1个初始值，用于储存0~n的所有情况</span></span><br><span class="line">        dp=[-<span class="number">1</span>]*(n+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># dp[0] 表示数字 0 需要完全平方数的最少数量</span></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 开始填充 dp[]</span></span><br><span class="line">        <span class="comment">#注意这里i的范围，因为题目给定的n是一个大于等于1的数，所以从1开始遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 在每次填充的过程中，都去遍历 square 数组</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(square)):</span><br><span class="line">                <span class="comment"># 如果发现此时 square 的元素值大于了 i</span></span><br><span class="line">                <span class="comment"># 那么 square 后面的那些元素没有必要参与进来计算 i 了</span></span><br><span class="line">                <span class="comment"># 直接退出当前的 j 的循环判断，让 i++</span></span><br><span class="line">                <span class="keyword">if</span> square[j] &gt;i:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="comment"># 否则，如果 dp[i] 还没有找到数字 i 需要完全平方数的最少数量</span></span><br><span class="line">                <span class="comment"># 或者此时计算的新值更小，那么更新 dp[i]</span></span><br><span class="line">                <span class="keyword">if</span> dp[i]==-<span class="number">1</span> <span class="keyword">or</span> dp[i] &gt; dp[i-square[j]]+<span class="number">1</span>:</span><br><span class="line">                    <span class="comment"># 更新 dp[i]</span></span><br><span class="line">                    <span class="comment"># dp[i] 表示数字 i  需要完全平方数的最少数量</span></span><br><span class="line">                    <span class="comment"># 这个时候 dp[i] 为获取数字为 square.get(j) 的那 1 个完全平方数</span></span><br><span class="line">                    <span class="comment"># 加上获取数字为 i-square.get(j) 最少需要 dp[i-square.get(j)] 个数</span></span><br><span class="line">                    dp[i]=dp[i-square[j]]+<span class="number">1</span></span><br><span class="line">        <span class="comment"># dp[n] 表示数字 n 需要完全平方数的最少数量</span></span><br><span class="line">        <span class="comment"># 返回这个结果就行</span></span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
-尝试采用其他的方式来求解(后面补充进来)：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"><span class="comment"># leetcoad120-三角形最小路径和(middle)</span></span><br><span class="line">充分的理解题意:寻找每一层数据的条件的限制</span><br><span class="line">按照动态规划的思路来讲这道题并不是很好理解清楚，用下面的图片来进行辅助的理解。，对于第i层来说，第i+<span class="number">1</span>层的数据比这一层要多一个，并且理解当前层的每一个数与i+<span class="number">1</span>层的数的数学关系，确定好数学关系后（如果正位于当前行的下标i，下一步可以移动到下一行的下标i或i+<span class="number">1</span>），就需要再考虑如何进行更新的问题，是一个至底向上的问题</span><br><span class="line">采用递归的方式：既然dp[i][j]只与与该点相邻两点到底边的最小路径和中的较小值有关，结合这道题目采用递归的解法进行相应的尝试,至上而下，存在重复子问题的计算，时间复杂度O(<span class="number">2</span>^n)</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumTotal</span>(<span class="params">self, triangle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#本质是一个dfs算法（递归的思路），对每个顶点查找其相邻点的过程</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i,j,triangle</span>):</span><br><span class="line">            <span class="comment"># 如果此时的数据正好位于三角形的最底层，没有对应的相邻值，相当于找到递归的出口，直接返回对应的二维数组的值，也就是需要注意的边界问题</span></span><br><span class="line">            <span class="keyword">if</span> i== <span class="built_in">len</span>(triangle)-<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> triangle[i][j]</span><br><span class="line">            <span class="keyword">return</span> triangle[i][j]+<span class="built_in">min</span>(dfs(i+<span class="number">1</span>,j,triangle),dfs(i+<span class="number">1</span>,j+<span class="number">1</span>,triangle))</span><br><span class="line">        <span class="comment"># dfs(0,0,triangle)就是要求的最小路径和</span></span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>,<span class="number">0</span>,triangle)</span><br></pre></td></tr></table></figure>
-最后一行换一个位置：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumTotal</span>(<span class="params">self, triangle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>,<span class="number">0</span>,triangle)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i,j,triangle</span>):</span><br><span class="line">    <span class="keyword">if</span> i== <span class="built_in">len</span>(triangle)-<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> triangle[i][j]</span><br><span class="line">    <span class="keyword">return</span> triangle[i][j]+<span class="built_in">min</span>(dfs(i+<span class="number">1</span>,j,triangle),dfs(i+<span class="number">1</span>,j+<span class="number">1</span>,triangle))</span><br></pre></td></tr></table></figure>
-<strong>递归+记忆化（至底向上）</strong><br>定义一个二维数组进行记忆化（以下的两种写法本质上是一样的，只不过一种写的是对原数组进行修改，一种是定义一个dp数组来储存，只不过是以两种方式记录了每次递归的结果）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumTotal</span>(<span class="params">self, triangle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(triangle):</span><br><span class="line">        <span class="comment"># 行至下而上</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 列至右向左</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,length+<span class="number">1</span>):</span><br><span class="line">                <span class="comment">#理解为不断对原list进行修改的一个过程，相较下面的不需要额外的O(n)空间</span></span><br><span class="line">                triangle[length-i][length-j] = triangle[length-i][length-j] + </span><br><span class="line">                <span class="built_in">min</span>(triangle[length-i+<span class="number">1</span>][length-j],triangle[length-i+<span class="number">1</span>][length-j+<span class="number">1</span>])</span><br><span class="line">    <span class="comment">#最后返回顶部的值</span></span><br><span class="line">    <span class="keyword">return</span> triangle[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumTotal</span>(<span class="params">self, triangle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># triangle 是个二维数组</span></span><br><span class="line">        <span class="comment"># 先获取 triangle 的层数，即一维数组的个数</span></span><br><span class="line">        n = <span class="built_in">len</span>(triangle)</span><br><span class="line">        dp[i][j]表示从点(i,j)到底边的最小路径和</span><br><span class="line">        dp=[<span class="number">0</span>]*(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 从最后一层开始计算节点的最短路径，直到顶层 0 层为止，索引从n-1~0,其中step=-1，应为0的上一个下一个状态时-1，所以for i in range(n-1,-1,-1),也算一种小的细节方面吧。</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># dp 中存储的是前 i 个位置存储的是到达第 i 层各个节点的最小路径和</span></span><br><span class="line">            <span class="comment"># 从每一层的第 0 个位置开始，对于第i层的数据来说，有i列数据，本来j的索引从0~i-1,但是因为相邻元素的原因有j+1的情况，为了避免越界的判断，申请i+1列数据，所以range(i+1)</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># dp[j] 表示第 i 层中第 j 个节点的最小路径和</span></span><br><span class="line">                dp[i[j]=triangle[i][j] +<span class="built_in">min</span>(dp[i+<span class="number">1</span>][j],dp[i+<span class="number">1</span>][j+<span class="number">1</span>])</span><br><span class="line">        <span class="comment"># 返回结果</span></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-** 尝试对空间进行优化**<br> 解题步骤：</li>
+<li>用dp[i]表示数字i需要完全平方数的最小数量（最开始初始化为-1，表示还没有计量）</li>
+</ol>
+<pre><code class="python">class Solution:
+    def numSquares(self, n: int) -&gt; int:
+        # 设置一个数组，用来存储小于 n 的那些完全平方数
+        square=[]
+        idx= 1
+        while idx * idx &lt;=n:
+            square.append(idx * idx)
+            idx +=1
+        # dp[i] 表示数字 i  需要完全平方数的最少数量
+        # 先让 dp 初始化为 -1，代表 dp[i] 还没有计算，有n+1个初始值，用于储存0~n的所有情况
+        dp=[-1]*(n+1)
+
+        # dp[0] 表示数字 0 需要完全平方数的最少数量
+        dp[0] = 0
+
+        # 开始填充 dp[]
+        #注意这里i的范围，因为题目给定的n是一个大于等于1的数，所以从1开始遍历
+        for i in range(1,n+1):
+            # 在每次填充的过程中，都去遍历 square 数组
+            for j in range(len(square)):
+                # 如果发现此时 square 的元素值大于了 i
+                # 那么 square 后面的那些元素没有必要参与进来计算 i 了
+                # 直接退出当前的 j 的循环判断，让 i++
+                if square[j] &gt;i:
+                    break
+                # 否则，如果 dp[i] 还没有找到数字 i 需要完全平方数的最少数量
+                # 或者此时计算的新值更小，那么更新 dp[i]
+                if dp[i]==-1 or dp[i] &gt; dp[i-square[j]]+1:
+                    # 更新 dp[i]
+                    # dp[i] 表示数字 i  需要完全平方数的最少数量
+                    # 这个时候 dp[i] 为获取数字为 square.get(j) 的那 1 个完全平方数
+                    # 加上获取数字为 i-square.get(j) 最少需要 dp[i-square.get(j)] 个数
+                    dp[i]=dp[i-square[j]]+1
+        # dp[n] 表示数字 n 需要完全平方数的最少数量
+        # 返回这个结果就行
+        return dp[n]
+</code></pre>
+<p>尝试采用其他的方式来求解(后面补充进来)：</p>
+<pre><code class="python">
+</code></pre>
+<h1 id="leetcoad120-三角形最小路径和-middle"><a href="#leetcoad120-三角形最小路径和-middle" class="headerlink" title="leetcoad120-三角形最小路径和(middle)"></a>leetcoad120-三角形最小路径和(middle)</h1><p>充分的理解题意:寻找每一层数据的条件的限制<br>按照动态规划的思路来讲这道题并不是很好理解清楚，用下面的图片来进行辅助的理解。，对于第i层来说，第i+1层的数据比这一层要多一个，并且理解当前层的每一个数与i+1层的数的数学关系，确定好数学关系后（如果正位于当前行的下标i，下一步可以移动到下一行的下标i或i+1），就需要再考虑如何进行更新的问题，是一个至底向上的问题<br>采用递归的方式：既然dp[i][j]只与与该点相邻两点到底边的最小路径和中的较小值有关，结合这道题目采用递归的解法进行相应的尝试,至上而下，存在重复子问题的计算，时间复杂度O(2^n)</p>
+<pre><code class="python">class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -&gt; int:
+        #本质是一个dfs算法（递归的思路），对每个顶点查找其相邻点的过程
+        def dfs(i,j,triangle):
+            # 如果此时的数据正好位于三角形的最底层，没有对应的相邻值，相当于找到递归的出口，直接返回对应的二维数组的值，也就是需要注意的边界问题
+            if i== len(triangle)-1:
+                return triangle[i][j]
+            return triangle[i][j]+min(dfs(i+1,j,triangle),dfs(i+1,j+1,triangle))
+        # dfs(0,0,triangle)就是要求的最小路径和
+        return dfs(0,0,triangle)
+</code></pre>
+<p>最后一行换一个位置：</p>
+<pre><code class="python">class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -&gt; int:
+        return dfs(0,0,triangle)
+def dfs(i,j,triangle):
+    if i== len(triangle)-1:
+        return triangle[i][j]
+    return triangle[i][j]+min(dfs(i+1,j,triangle),dfs(i+1,j+1,triangle))
+</code></pre>
+<p><strong>递归+记忆化（至底向上）</strong><br>定义一个二维数组进行记忆化（以下的两种写法本质上是一样的，只不过一种写的是对原数组进行修改，一种是定义一个dp数组来储存，只不过是以两种方式记录了每次递归的结果）</p>
+<pre><code class="python">class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -&gt; int:
+        n = len(triangle):
+        # 行至下而上
+        for i in range(2,n+1):
+            # 列至右向左
+            for j in range(i,length+1):
+                #理解为不断对原list进行修改的一个过程，相较下面的不需要额外的O(n)空间
+                triangle[length-i][length-j] = triangle[length-i][length-j] + 
+                min(triangle[length-i+1][length-j],triangle[length-i+1][length-j+1])
+    #最后返回顶部的值
+    return triangle[0][0]
+</code></pre>
+<pre><code class="python">class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -&gt; int:
+        # triangle 是个二维数组
+        # 先获取 triangle 的层数，即一维数组的个数
+        n = len(triangle)
+        dp[i][j]表示从点(i,j)到底边的最小路径和
+        dp=[0]*(n+1)] for _ in range(n+1)]
+        # 从最后一层开始计算节点的最短路径，直到顶层 0 层为止，索引从n-1~0,其中step=-1，应为0的上一个下一个状态时-1，所以for i in range(n-1,-1,-1),也算一种小的细节方面吧。
+        for i in range(n-1,-1,-1):
+            # dp 中存储的是前 i 个位置存储的是到达第 i 层各个节点的最小路径和
+            # 从每一层的第 0 个位置开始，对于第i层的数据来说，有i列数据，本来j的索引从0~i-1,但是因为相邻元素的原因有j+1的情况，为了避免越界的判断，申请i+1列数据，所以range(i+1)
+            for j in range(i+1):
+                # dp[j] 表示第 i 层中第 j 个节点的最小路径和
+                dp[i[j]=triangle[i][j] +min(dp[i+1][j],dp[i+1][j+1])
+        # 返回结果
+        return dp[0][0]
+</code></pre>
+<p>** 尝试对空间进行优化**<br> 解题步骤：</p>
+<ol>
 <li>需要先获取三角形的层数</li>
 <li>创建dp[i]存储的是到i+1层节点的最小路径和，其中前i个位置存储的是到达第i层各个节点的最小路径和（理解二维数组压缩为一维数组的思想：详见注释）</li>
-<li>通过for循环更新dp数组<br><img src="https://runnerxr.github.io/post-images/1649255599114.png"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对二维的动态规划问题进行空间优化</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumTotal</span>(<span class="params">self, triangle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># triangle 是个二维数组</span></span><br><span class="line">        <span class="comment"># 先获取 triangle 的层数，即一维数组的个数</span></span><br><span class="line">        n = <span class="built_in">len</span>(triangle)</span><br><span class="line">        <span class="comment"># 设置一个一维数组，动态的更新每一层中当前节点对应的最短路径</span></span><br><span class="line">        <span class="comment"># 在上面的代码中，我们虽然定义了NXN的dp数组，但是递归的时候只用到了下一行的dp[i+1][j]和dp[i+1][j+1],因此dp数组不需要定义n行，定义一行就行了，将O(N^2)的复杂度优化为O(N)</span></span><br><span class="line">        <span class="comment"># 这里由后面的分析可知，对于存储j的值，因为最底层有一个j+1的缘故，所以数组的长度为n+1</span></span><br><span class="line">        dp=[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 从最后一层开始计算节点的最短路径，直到顶层 0 层为止,避免了从顶至底边界判断的问题</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># dp 中存储的是前 i 个位置存储的是到达第 i 层各个节点的最小路径和</span></span><br><span class="line">            <span class="comment"># 从每一层的第 0 个位置开始</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># dp[j] 表示第 i 层中第 j 个节点的最小路径和</span></span><br><span class="line">                dp[j]=triangle[i][j] +<span class="built_in">min</span>(dp[j],dp[j+<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 返回结果</span></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure></li>
+<li>通过for循环更新dp数组<br><img src="https://runnerxr.github.io/post-images/1649255599114.png"></li>
 </ol>
+<pre><code class="python"># 对二维的动态规划问题进行空间优化
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -&gt; int:
+        # triangle 是个二维数组
+        # 先获取 triangle 的层数，即一维数组的个数
+        n = len(triangle)
+        # 设置一个一维数组，动态的更新每一层中当前节点对应的最短路径
+        # 在上面的代码中，我们虽然定义了NXN的dp数组，但是递归的时候只用到了下一行的dp[i+1][j]和dp[i+1][j+1],因此dp数组不需要定义n行，定义一行就行了，将O(N^2)的复杂度优化为O(N)
+        # 这里由后面的分析可知，对于存储j的值，因为最底层有一个j+1的缘故，所以数组的长度为n+1
+        dp=[0 for _ in range(n+1)]
+        # 从最后一层开始计算节点的最短路径，直到顶层 0 层为止,避免了从顶至底边界判断的问题
+        for i in range(n-1,-1,-1):
+            # dp 中存储的是前 i 个位置存储的是到达第 i 层各个节点的最小路径和
+            # 从每一层的第 0 个位置开始
+            for j in range(i+1):
+                # dp[j] 表示第 i 层中第 j 个节点的最小路径和
+                dp[j]=triangle[i][j] +min(dp[j],dp[j+1])
+
+        # 返回结果
+        return dp[0]
+</code></pre>
 <h1 id="leetcoad62-不同路径-middle"><a href="#leetcoad62-不同路径-middle" class="headerlink" title="leetcoad62-不同路径(middle)"></a>leetcoad62-不同路径(middle)</h1><p>获取数组的行和列<br>设置dp[i][j]表示从第0行第0列到达i行j列时不同的路径的数量<br>同时要注意边界：这里自己再写的时候要注意</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 应该是最好理解和简单的版本了</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">uniquePaths</span>(<span class="params">self, m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#创建dp数组，并用0进行填充</span></span><br><span class="line">        dp=[[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line">        <span class="comment"># 设置初始条件，从左上角走到左上角的位置</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">        <span class="comment">#当机器人只在第0列移动的时候</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            dp[i][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">        <span class="comment">#当机器人只在第0行移动的时候</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            dp[<span class="number">0</span>][j]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment">#dp[i][j]数组的含义：机器人走到第i行第j列的所有路径之和</span></span><br><span class="line">                dp[i][j]=dp[i-<span class="number">1</span>][j]+dp[i][j-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 应该是最好理解和简单的版本了
+  def uniquePaths(self, m: int, n: int) -&gt; int:
+        #创建dp数组，并用0进行填充
+        dp=[[0]*n for _ in range(m)]
+        # 设置初始条件，从左上角走到左上角的位置
+        dp[0][0]=1
+        #当机器人只在第0列移动的时候
+        for i in range(m):
+            dp[i][0]=1
+        #当机器人只在第0行移动的时候
+        for j in range(n):
+            dp[0][j]=1
+
+        for i in range(1,m):
+            for j in range(1,n):
+                #dp[i][j]数组的含义：机器人走到第i行第j列的所有路径之和
+                dp[i][j]=dp[i-1][j]+dp[i][j-1]
+        return dp[m-1][n-1]
+</code></pre>
 <p>上面的代码做一点精简化的处理：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">uniquePaths</span>(<span class="params">self, m: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">      <span class="comment">#创建dp数组，并用0和1进行填充,其中对于第0行和第0列的数据填1</span></span><br><span class="line">      dp=[ [<span class="number">1</span>]*n] + [ [<span class="number">1</span>] + [<span class="number">0</span>]*(n-<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line">      dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">          <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">              dp[i][j]=dp[i-<span class="number">1</span>][j]+dp[i][j-<span class="number">1</span>]</span><br><span class="line">      <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">  def uniquePaths(self, m: int, n: int) -&gt; int:
+        #创建dp数组，并用0和1进行填充,其中对于第0行和第0列的数据填1
+        dp=[ [1]*n] + [ [1] + [0]*(n-1) for _ in range(m)]
+        dp[0][0]=1
+        for i in range(1,m):
+            for j in range(1,n):
+                dp[i][j]=dp[i-1][j]+dp[i][j-1]
+        return dp[m-1][n-1]
+</code></pre>
 <p><strong>优化为一维动态规划</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有空再补充</span><br></pre></td></tr></table></figure>
+<pre><code class="python">有空再补充
+</code></pre>
 <h1 id="不同路径II"><a href="#不同路径II" class="headerlink" title="不同路径II"></a>不同路径II</h1><p>注意两个特殊的情况，设置两个初始化的情况（一旦发现障碍物就直接退出循环的，不用再往下进行遍历）<br>其他不是第0行或者是第0列的时候（一旦发现障碍物就退出当前的执行，直接到一个循环中去）<br>再设置dp数组的时候，观察是否发现障碍物</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">uniquePathsWithObstacles</span>(<span class="params">self, obstacleGrid: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 设置二维数组 dp 用来储存到达每个位置时不同路径的数量</span></span><br><span class="line">        m = <span class="built_in">len</span>(obstacleGrid)</span><br><span class="line">        n = <span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])</span><br><span class="line">        <span class="comment"># 用0来填充mxn行的二维数组</span></span><br><span class="line">        dp = [[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># i 从 0 遍历到 m - 1 </span></span><br><span class="line">        <span class="comment"># 获取从第 0 行第 0 列到达第 j 行第 0 列时不同路径的数量</span></span><br><span class="line">        <span class="comment"># 由于每次只能向下或者向右移动一步，此时只能向下移动一步</span></span><br><span class="line">        <span class="comment"># 所以，只能一直向下走，只有这一条路径</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">            <span class="comment"># 一旦出现了障碍，那么后面所有的位置都是到达不了的，都是默认的 0</span></span><br><span class="line">            <span class="comment"># 循环就像跑圈，当你跑到中途时，遇到了break，就退场，再也不跑了。当你跑到中途时，遇到了continue，就返回起点，开始跑下一圈</span></span><br><span class="line">            <span class="keyword">if</span> obstacleGrid[i][<span class="number">0</span>]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># 仅此一条，别无分路</span></span><br><span class="line">            dp[i][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">                </span><br><span class="line"></span><br><span class="line">        <span class="comment"># j 从 0 遍历到 n - 1 </span></span><br><span class="line">        <span class="comment"># 获取从第 0 行第 0 列到达第 0 行第 i 列时不同路径的数量</span></span><br><span class="line">        <span class="comment"># 由于每次只能向下或者向右移动一步，此时只能向右移动一步</span></span><br><span class="line">        <span class="comment"># 所以，只能一直向右走，只有这一条路径</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n):</span><br><span class="line">            <span class="comment"># 一旦出现了障碍，那么后面所有的位置都是到达不了的，都是默认的 0</span></span><br><span class="line">            <span class="keyword">if</span> obstacleGrid[<span class="number">0</span>][j]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># 仅此一条，别无分路</span></span><br><span class="line">            dp[<span class="number">0</span>][j]=<span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="comment"># 接下来从第 1 行到第 m - 1 行</span></span><br><span class="line">        <span class="comment"># 从第 1 列到 n - 1 列</span></span><br><span class="line">        <span class="comment"># 填充二维数组 dp 里面的值</span></span><br><span class="line">        <span class="comment"># dp[i][j] 表示从第 0 行第 0 列到达第 i 行第 j 列时不同路径的数量</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment"># 由于每次只能向下或者向右移动一步</span></span><br><span class="line">                <span class="comment"># 如果此时出现了障碍，那么由于无法到达这个位置，因此不用处理</span></span><br><span class="line">                <span class="keyword">if</span> obstacleGrid[i][j]==<span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 位置 (i,j) 的不同路径的数量是由</span></span><br><span class="line">                <span class="comment"># 1、上边位置 dp[ i - 1 ][j] 的不同路径的数量</span></span><br><span class="line">                <span class="comment"># 2、左边位置 dp[i][ j - 1 ] 的不同路径的数量</span></span><br><span class="line">                <span class="comment"># 两者之和获取到的</span></span><br><span class="line">                dp[i][j]=dp[i-<span class="number">1</span>][j]+dp[i][j-<span class="number">1</span>]</span><br><span class="line">        <span class="comment"># dp[ m - 1][ n - 1 ] 表示从第 0 行第 0 列到达第 m - 1 行第 n - 1 列时不同路径的数量</span></span><br><span class="line">        <span class="comment"># 即到达终点的数量</span></span><br><span class="line">        <span class="comment"># 返回这个结果即可</span></span><br><span class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -&gt; int:
+        # 设置二维数组 dp 用来储存到达每个位置时不同路径的数量
+        m = len(obstacleGrid)
+        n = len(obstacleGrid[0])
+        # 用0来填充mxn行的二维数组
+        dp = [[0]*n for _ in range(m)]
+
+        # i 从 0 遍历到 m - 1 
+        # 获取从第 0 行第 0 列到达第 j 行第 0 列时不同路径的数量
+        # 由于每次只能向下或者向右移动一步，此时只能向下移动一步
+        # 所以，只能一直向下走，只有这一条路径
+        for i in range(m):
+            # 一旦出现了障碍，那么后面所有的位置都是到达不了的，都是默认的 0
+            # 循环就像跑圈，当你跑到中途时，遇到了break，就退场，再也不跑了。当你跑到中途时，遇到了continue，就返回起点，开始跑下一圈
+            if obstacleGrid[i][0]==1:
+                break
+            # 仅此一条，别无分路
+            dp[i][0]=1
+                
+
+        # j 从 0 遍历到 n - 1 
+        # 获取从第 0 行第 0 列到达第 0 行第 i 列时不同路径的数量
+        # 由于每次只能向下或者向右移动一步，此时只能向右移动一步
+        # 所以，只能一直向右走，只有这一条路径
+        for j in range(0,n):
+            # 一旦出现了障碍，那么后面所有的位置都是到达不了的，都是默认的 0
+            if obstacleGrid[0][j]==1:
+                break
+            # 仅此一条，别无分路
+            dp[0][j]=1
+                
+        # 接下来从第 1 行到第 m - 1 行
+        # 从第 1 列到 n - 1 列
+        # 填充二维数组 dp 里面的值
+        # dp[i][j] 表示从第 0 行第 0 列到达第 i 行第 j 列时不同路径的数量
+        for i in range(1,m):
+
+            for j in range(1,n):
+                # 由于每次只能向下或者向右移动一步
+                # 如果此时出现了障碍，那么由于无法到达这个位置，因此不用处理
+                if obstacleGrid[i][j]==1:
+                    continue
+
+                # 位置 (i,j) 的不同路径的数量是由
+                # 1、上边位置 dp[ i - 1 ][j] 的不同路径的数量
+                # 2、左边位置 dp[i][ j - 1 ] 的不同路径的数量
+                # 两者之和获取到的
+                dp[i][j]=dp[i-1][j]+dp[i][j-1]
+        # dp[ m - 1][ n - 1 ] 表示从第 0 行第 0 列到达第 m - 1 行第 n - 1 列时不同路径的数量
+        # 即到达终点的数量
+        # 返回这个结果即可
+        return dp[m-1][n-1]
+</code></pre>
 <h1 id="leetcoad343-整数拆分（middle）"><a href="#leetcoad343-整数拆分（middle）" class="headerlink" title="leetcoad343-整数拆分（middle）"></a>leetcoad343-整数拆分（middle）</h1><p>dp[i]表示正整数i拆分之后结果的最大乘积<br>dp[i-j]表示正整数i-j拆分之后结果的最大乘积<br>对于i有两种拆法：</p>
 <ol>
 <li>j * (i-j) 表示把i拆分为j和i-j这两个数</li>
 <li>j * dp[i - j] 表示把i拆分为j和dp[i-j]这两个数</li>
 </ol>
 <p>这个过程其实是需要证明的<br> j * dp[i - j]   &gt;dp[j]  * dp[i-j]<br> dp[j]  * dp[i-j]肯定在之前的dp[j-k]*dp[k]*dp[i-j]中已经计算过了<br> 比如拆分10 为4和6<br> dp[4]<em>dp[6]已经在2</em>dp[8]这种情况中得到了相应的回答了<br>同样也要注意拆分从你那个3数字开始，dp[2]就是一个边界条件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">integerBreak</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># dp[2] 表示正整数 2 拆分之后结果的最大乘积</span></span><br><span class="line">        <span class="comment"># dp[3] 表示正整数 3 拆分之后结果的最大乘积</span></span><br><span class="line">        <span class="comment"># dp[i] 表示正整数 i 拆分之后结果的最大乘积</span></span><br><span class="line">        dp = [ <span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>( n + <span class="number">1</span> )]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 你可以假设 n 不小于 2 且不大于 58</span></span><br><span class="line">        <span class="comment"># 初始化 dp[2]</span></span><br><span class="line">        dp[<span class="number">2</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 填充数组 dp 里面的值</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>( <span class="number">3</span> , n + <span class="number">1</span> ) : </span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span> ( <span class="number">1</span> , i - <span class="number">1</span> ): </span><br><span class="line">                <span class="comment"># 并且，并不是说拆分之后乘积就必然大于 i，比如 i = 2，拆分之后的乘积为 1</span></span><br><span class="line">                <span class="comment"># 因此，需要比较这三者，取较大值</span></span><br><span class="line">                dp[i] = <span class="built_in">max</span>(dp[i], <span class="built_in">max</span>(j * ( i - j ), j * dp[ i - j ]))</span><br><span class="line">        <span class="comment"># 返回这个结果即可</span></span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def integerBreak(self, n: int) -&gt; int:
+        # dp[2] 表示正整数 2 拆分之后结果的最大乘积
+        # dp[3] 表示正整数 3 拆分之后结果的最大乘积
+        # dp[i] 表示正整数 i 拆分之后结果的最大乘积
+        dp = [ 0 for _ in range( n + 1 )]
 
+        # 你可以假设 n 不小于 2 且不大于 58
+        # 初始化 dp[2]
+        dp[2] = 1
 
+        # 填充数组 dp 里面的值
+        for i in range( 3 , n + 1 ) : 
+            for j in range ( 1 , i - 1 ): 
+                # 并且，并不是说拆分之后乘积就必然大于 i，比如 i = 2，拆分之后的乘积为 1
+                # 因此，需要比较这三者，取较大值
+                dp[i] = max(dp[i], max(j * ( i - j ), j * dp[ i - j ]))
+        # 返回这个结果即可
+        return dp[n]
+</code></pre>
 <h1 id="地下城游戏"><a href="#地下城游戏" class="headerlink" title="地下城游戏"></a>地下城游戏</h1><p>dp[i][j]表示骑士来到第i行第j列时必须拥有的最小生命值<br>应该是从右下角开始填充的，从后往前，所以此时的初始状态是反的 </p>
 <h1 id="leetcoad416-分割等和子集"><a href="#leetcoad416-分割等和子集" class="headerlink" title="leetcoad416-分割等和子集"></a>leetcoad416-分割等和子集</h1><p>这道题要十分深刻的掌握！！！（也是今天的死任务，在代码和思维层面都不能有思维的漏洞。）<br>题目的意思要深刻解析：给你一个只包含整数的非空数组nums，请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。<br>等价转换：<strong>是否可以从输入的数组中挑出一些正整数，使得这些数的和等于整个数组元素和的一半。</strong>（数组的和一定得是偶数,并且这里的思维转化才是最妙的，如果背包问题没有十分清晰和深刻的认识很难想到用这个方法，也是题目的一大思路点！！！！！！）<br>与0-1背包的区别：</p>
 <ol>
@@ -184,23 +338,133 @@
 <li>j恰好等于nums[i]的情况，j&#x3D;&#x3D;nms[i]（这里是非常特殊的情况：既然容量和给的值正好相等自然是没有问题的）</li>
 </ol>
 <p>初始化：dp[0][0]&#x3D;False：<strong>待选的nums[0]是整数，凑不出和为0的情况</strong>（这种思维太细了，联想0-1背包问题就是：有物品，但是么有背包容量，此时的背包啥也装不下，这里也是一样的，一个正整数无法凑出一个为0的值。）<br>下面的这张表是为了让自己有更加深入的了解。<br><img src="https://runnerxr.github.io/post-images/1652253592980.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下为python代码的实现过程，仿照了0-1背包的思路</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">canPartition</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 将问题转化为为0-1背包问题的形式</span></span><br><span class="line">        <span class="comment"># 判读数组的和是否是偶数，如果是奇数就直接pass</span></span><br><span class="line">        temp=<span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> temp %<span class="number">2</span>==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 构建总的背包容量</span></span><br><span class="line">        target=temp//<span class="number">2</span></span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 构建dp数组，其中行数为数组的长度，列数为target+1</span></span><br><span class="line">        <span class="comment"># 构建dp数组,默认里面是填充的False,和0-1背包问题默认填0是一个道理</span></span><br><span class="line">        dp=[[<span class="literal">False</span>]*(target+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="comment">#print(dp)</span></span><br><span class="line">        <span class="comment"># 设置初始状态,也就是当为nums[0]的时候，由于nums[0]是一个正整数，所以无法凑出0出来。</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="literal">False</span></span><br><span class="line">        <span class="comment"># dp[i][j]的含义:在前i个数字中能否找到和为j的数字，如果能的话就是True，如果不能的话就是False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(target+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 想想0-1背包的问题</span></span><br><span class="line">                <span class="comment"># 首先判断当前值是否是比j要大的，如果是大的话肯定是不能够凑出来的</span></span><br><span class="line">                <span class="comment"># 就需要看前面的数能否凑出j来，也即此时的状态是依赖于上一行的状态</span></span><br><span class="line">                <span class="keyword">if</span> j&lt;nums[i]:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">                <span class="comment"># 如果当前的值正好是等于j值，这个时候也是可以凑出来的。</span></span><br><span class="line">                <span class="keyword">elif</span> j==nums[i]:</span><br><span class="line">                    dp[i][j]=<span class="literal">True</span></span><br><span class="line">                <span class="comment"># 最后一种情况j&gt;nums[i]</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 这里的情况又要分两种情况</span></span><br><span class="line">                    <span class="comment"># 选择把把当前元素作为备选的情况，在剩下的元素中找是否有值等于j-nums[i]</span></span><br><span class="line">                    <span class="comment"># 以及直接不选nums[i],看之前的数里面能否找到，这两种情况只要有一种是可以的就行</span></span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j-nums[i]] <span class="keyword">or</span> dp[i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][target]</span><br></pre></td></tr></table></figure>
-
-
+<pre><code class="python"># 以下为python代码的实现过程，仿照了0-1背包的思路
+class Solution:
+    def canPartition(self, nums: List[int]) -&gt; bool:
+        # 将问题转化为为0-1背包问题的形式
+        # 判读数组的和是否是偶数，如果是奇数就直接pass
+        temp=sum(nums)
+        if temp %2==1:
+            return False
+        # 构建总的背包容量
+        target=temp//2
+        n=len(nums)
+        # 构建dp数组，其中行数为数组的长度，列数为target+1
+        # 构建dp数组,默认里面是填充的False,和0-1背包问题默认填0是一个道理
+        dp=[[False]*(target+1) for _ in range(n)]
+        #print(dp)
+        # 设置初始状态,也就是当为nums[0]的时候，由于nums[0]是一个正整数，所以无法凑出0出来。
+        dp[0][0]=False
+        # dp[i][j]的含义:在前i个数字中能否找到和为j的数字，如果能的话就是True，如果不能的话就是False
+        for i in range(n):
+            for j in range(target+1):
+                # 想想0-1背包的问题
+                # 首先判断当前值是否是比j要大的，如果是大的话肯定是不能够凑出来的
+                # 就需要看前面的数能否凑出j来，也即此时的状态是依赖于上一行的状态
+                if j&lt;nums[i]:
+                    dp[i][j]=dp[i-1][j]
+                # 如果当前的值正好是等于j值，这个时候也是可以凑出来的。
+                elif j==nums[i]:
+                    dp[i][j]=True
+                # 最后一种情况j&gt;nums[i]
+                else:
+                    # 这里的情况又要分两种情况
+                    # 选择把把当前元素作为备选的情况，在剩下的元素中找是否有值等于j-nums[i]
+                    # 以及直接不选nums[i],看之前的数里面能否找到，这两种情况只要有一种是可以的就行
+                    dp[i][j]=dp[i-1][j-nums[i]] or dp[i-1][j]
+        return dp[n-1][target]
+</code></pre>
 <h1 id="leetcoad198-打家劫舍"><a href="#leetcoad198-打家劫舍" class="headerlink" title="leetcoad198-打家劫舍"></a>leetcoad198-打家劫舍</h1><p>定义子问题：从k个房间中能够偷到的最大金额<br>1.方案一：只偷前k-1个房间，最后一间不偷</p>
 <ol>
-<li>方案二：偷前k-2个房间，再偷最后一间<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rob</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 先获取全部房间的总数</span></span><br><span class="line">        n= <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        value=[<span class="number">0</span>]*n</span><br><span class="line">        value[<span class="number">0</span>]=nums[<span class="number">0</span>]</span><br><span class="line">        value[<span class="number">1</span>]=<span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># value[1] 表示前 1 个房间可以偷取的最大金额</span></span><br><span class="line">        <span class="comment"># 只有 1 个房间，那么只能偷这个房间的东西，所以存放结果为这个房间的金额</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从 i = 2 直到 i = n，value 中存放的结果由前 i - 2 和 i - 1 共同决定</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n):</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 转移方程：value[i] 等于 value[ i - 1 ]  和 value[ i - 2 ] + num[ i - 1] 中的较大值</span></span><br><span class="line">            value[i]=<span class="built_in">max</span>(value[i-<span class="number">1</span>],value[i-<span class="number">2</span>]+nums[i])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 最后返回 value 的最后一个值</span></span><br><span class="line">        <span class="keyword">return</span> value[n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure></li>
+<li>方案二：偷前k-2个房间，再偷最后一间</li>
 </ol>
+<pre><code class="python">class Solution:
+    def rob(self, nums: List[int]) -&gt; int:
+        # 先获取全部房间的总数
+        n= len(nums)
+        if n==1:
+            return nums[0]
+        value=[0]*n
+        value[0]=nums[0]
+        value[1]=max(nums[0],nums[1])
+
+        # value[1] 表示前 1 个房间可以偷取的最大金额
+        # 只有 1 个房间，那么只能偷这个房间的东西，所以存放结果为这个房间的金额
+
+        # 从 i = 2 直到 i = n，value 中存放的结果由前 i - 2 和 i - 1 共同决定
+        for i in range(2,n):
+
+            # 转移方程：value[i] 等于 value[ i - 1 ]  和 value[ i - 2 ] + num[ i - 1] 中的较大值
+            value[i]=max(value[i-1],value[i-2]+nums[i])
+
+        # 最后返回 value 的最后一个值
+        return value[n-1]
+</code></pre>
 <h1 id="leetcoad213-打家劫舍II"><a href="#leetcoad213-打家劫舍II" class="headerlink" title="leetcoad213-打家劫舍II"></a>leetcoad213-打家劫舍II</h1><p><strong>定义子问题：</strong><br>从k个房间中能够偷到的最大金额（与上一题相同）<br>1.方案一：只偷前k-1个房间，最后一间不偷（第一家<del>倒数第二家）：nums[1:],有一个最大的金额<br>2. 方案二：偷前k-2个房间，再偷最后一间（第二家</del>倒数第一家）：nums[:n-1],有一个最大金额<br><strong>处理房间环的问题</strong>：<br>变化点：房间是一个首位相连的，把一个环的头去掉，就变成打家劫舍的问题（此题的难点和精髓所在）<br>把环状排列房间问题简化为两个单排列的房间问题，分而治之，把一个问题分成多个规模更小的子问题<br>房间环状排列 意味着第一间和最后一间不能同时选择，因此我们可以分成两种情况来讨论：（装换成两个打家劫舍的问题，然后再求较大值）</p>
 <ol>
 <li>不偷窃最后一间房间，那么问题转化为偷窃1号到i - 1号房间所能获得的最高金额。</li>
 <li>不偷窃第一间房间，那么问题转化为偷窃2号到i号房间所能获得的最高金额。</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不写函数，直接分类讨论两种情况</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rob</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 先获取全部房间的总数</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 初始状态</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 方案一：nums[:-1],最后一间不偷的情况</span></span><br><span class="line">        <span class="comment"># 1号~i-1号房间所能获得的最高金额</span></span><br><span class="line">        value = [ <span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 只偷窃1号房间所能获得的最高金额nums[0]</span></span><br><span class="line">        value[<span class="number">1</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># 从2号遍历到n-1号房间</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>( <span class="number">2</span> , n ) : </span><br><span class="line">            value[i] = <span class="built_in">max</span>(value[i - <span class="number">1</span>] ,value[i - <span class="number">2</span>] + nums[i - <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 方案二：nums[:n-1]偷前面的n-2个房间，最后一间可以选择偷或者不偷都行</span></span><br><span class="line">        <span class="comment"># 2~i号房间所能获得的最高金额，把第二间房当成单排排列的起点</span></span><br><span class="line">        dp = [ <span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 只偷窃2号房间所能获得的最高金额</span></span><br><span class="line">        dp[<span class="number">2</span>] = nums[<span class="number">1</span>]</span><br><span class="line">        <span class="comment">#  从3号遍历到n号房间</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>( <span class="number">3</span> , n+<span class="number">1</span>) : </span><br><span class="line">            dp[j] = <span class="built_in">max</span>(dp[j - <span class="number">1</span>] ,dp[j -<span class="number">2</span>] + nums[j - <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 返回值的时候也要注意：需要返回两种请款的较大值，同时要注意下标 </span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(value[n-<span class="number">1</span>],dp[n])</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 调用函数进行封装，这种方式从大局到细节都要掌握</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rob</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 先获取全部房间的总数</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment">#边界条件</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span> :  </span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span> :  </span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        <span class="comment">#返回的是只偷前k-1个房间 以及不偷第一家这两种情况的一个最大值</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(self.myRob(nums[:-<span class="number">1</span>]),self.myRob(nums[<span class="number">1</span>:]))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 写了一个myRob函数，求这两种情况的一个最大值的问题</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">myRob</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 多创建了一个数组</span></span><br><span class="line">        value = [ <span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>( n + <span class="number">1</span>)]</span><br><span class="line">        value[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        value[<span class="number">1</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># 从 i = 2 直到 i = n，value 中存放的结果由前 i - 2 和 i - 1 共同决定</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>( <span class="number">2</span> , n + <span class="number">1</span> ) : </span><br><span class="line">            <span class="comment"># 转移方程：value[i] 等于 value[ i - 1 ]  和 value[ i - 2 ] + num[ i - 1] 中的较大值</span></span><br><span class="line">            value[i] = <span class="built_in">max</span>(value[i - <span class="number">1</span>] ,value[i - <span class="number">2</span>] + nums[i - <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> value[n]</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 不写函数，直接分类讨论两种情况
+class Solution:
+    def rob(self, nums: List[int]) -&gt; int:
+        # 先获取全部房间的总数
+        n = len(nums)
+        # 初始状态
+        if n==0:
+            return 0
+        if n==1:
+            return nums[0]
 
+        # 方案一：nums[:-1],最后一间不偷的情况
+        # 1号~i-1号房间所能获得的最高金额
+        value = [ 0 for _ in range(n+1)]
 
+        # 只偷窃1号房间所能获得的最高金额nums[0]
+        value[1] = nums[0]
+        # 从2号遍历到n-1号房间
+        for i in range( 2 , n ) : 
+            value[i] = max(value[i - 1] ,value[i - 2] + nums[i - 1])
 
+        # 方案二：nums[:n-1]偷前面的n-2个房间，最后一间可以选择偷或者不偷都行
+        # 2~i号房间所能获得的最高金额，把第二间房当成单排排列的起点
+        dp = [ 0 for _ in range(n+1)]
+
+        # 只偷窃2号房间所能获得的最高金额
+        dp[2] = nums[1]
+        #  从3号遍历到n号房间
+        for j in range( 3 , n+1) : 
+            dp[j] = max(dp[j - 1] ,dp[j -2] + nums[j - 1])
+
+        # 返回值的时候也要注意：需要返回两种请款的较大值，同时要注意下标 
+        return max(value[n-1],dp[n])
+</code></pre>
+<pre><code class="python"># 调用函数进行封装，这种方式从大局到细节都要掌握
+class Solution:
+    def rob(self, nums: List[int]) -&gt; int:
+        # 先获取全部房间的总数
+        n = len(nums)
+        #边界条件
+        if n == 0 :  
+            return 0
+        if n == 1 :  
+            return nums[0]
+        #返回的是只偷前k-1个房间 以及不偷第一家这两种情况的一个最大值
+        return max(self.myRob(nums[:-1]),self.myRob(nums[1:]))
+    
+    # 写了一个myRob函数，求这两种情况的一个最大值的问题
+    def myRob(self, nums: List[int]) -&gt; int:
+        n = len(nums)
+        # 多创建了一个数组
+        value = [ 0 for _ in range( n + 1)]
+        value[0] = 0
+        value[1] = nums[0]
+        # 从 i = 2 直到 i = n，value 中存放的结果由前 i - 2 和 i - 1 共同决定
+        for i in range( 2 , n + 1 ) : 
+            # 转移方程：value[i] 等于 value[ i - 1 ]  和 value[ i - 2 ] + num[ i - 1] 中的较大值
+            value[i] = max(value[i - 1] ,value[i - 2] + nums[i - 1])
+        return value[n]
+</code></pre>
 <h1 id="打家劫舍III-仅学习，是一种树形dp"><a href="#打家劫舍III-仅学习，是一种树形dp" class="headerlink" title="打家劫舍III(仅学习，是一种树形dp)"></a>打家劫舍III(仅学习，是一种树形dp)</h1><h1 id="关于子串和子序列动态规划合集"><a href="#关于子串和子序列动态规划合集" class="headerlink" title="关于子串和子序列动态规划合集"></a>关于子串和子序列动态规划合集</h1><p>这里发现有很多关于子序列与子串的动态规划的问题，这类问题现在这里做一个统一的整理，务必要弄懂和明白，不能有知识的漏洞：<br>子序列：由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串<br>回文子串：正读和反读都一样的字符串<br>回文子序列：它逆序输出和输出之前的序列是一样的<br><strong>常见的几种类型：</strong></p>
 <ol>
 <li>求两个数组或两个字符串的最长子序列的问题肯定是需要用动态规划的思想的</li>
@@ -229,24 +493,91 @@
 <li>最长回文子串和子序列也有相似之处（回文子串只能在原字符串截取，但是回文子序列可以删除原序列的字符来组成）</li>
 </ol>
 <h1 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h1><p>牛客网上做这道题哈还是翻车了，根本没有思路，无法下手<br>而且在东哥的算法小抄中也是一道重点的题型，经过几次的回顾之后，发现这道题出现的频率还是比较的高，值得自己把它搞懂，搞透，并且要把这一类的问题触类旁通，也是典型的二维dp的问题，并且是两个字符串之间的。遇到子序列的问题就要想到动态规划的思路。子序列的问题用穷举是很难写出来的，动态规划的思想就是<strong>穷举+剪枝</strong>，是一种很好的匹配的方式。<br><img src="https://runnerxr.github.io/post-images/1652152922115.png"><br>重点是这里的思路！！！！！！！! ! ! (必须弄懂)<br>dp[i][j]表示text1前i个字符和text2中前j个字符的最长公共子序列<br>当前这两个最后的元素是否相同，往前推<br>实际上是分了三种情况进行考虑的<br><strong>当最后的一个字符相同的时候：</strong><br>dp[i-1][j-1]表示text1前i-1个字符和text2中前j-1个字符的最长公共子序列的长度是多少的问题<br>由于当前两个序列最后的一个元素是相同的，所以dp[i][j]&#x3D;dp[i-1][j-1]+1<br><strong>当最后的一个字符不相同的时候：</strong><br>无法在之前的基础上多得到延申，要么在text1中得到延申，要么在text2中得到延申，现在就是要去找延申哪个字符的问题（为什么要这样想的思路要十分的清晰，这里就有了很明显的动态规划的思想了）<br>dp[i][j-1]表示text1前i个字符和text2中前j-1个字符的最长公共子序列的长度<br><img src="https://runnerxr.github.io/post-images/1652153564707.png">：把text1进行延申<br>dp[i-1][j]表示text1前i-1个字符和text2中前j个字符的最长公共子序列的长度<br><img src="https://runnerxr.github.io/post-images/1652153661113.png"><br>两者的较大值就是dp[i][j]的值<br><img src="https://runnerxr.github.io/post-images/1652158223941.png"><br>这里的注意点：需要创建m+1行以及n+1列</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestCommonSubsequence</span>(<span class="params">self, text1: <span class="built_in">str</span>, text2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        m,n=<span class="built_in">len</span>(text1),<span class="built_in">len</span>(text2)</span><br><span class="line">        dp=[[<span class="number">0</span>]*(n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># print(dp)</span></span><br><span class="line">        <span class="comment"># 对text1和text2进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 如果当前两个字符串最后一个字符相等的话</span></span><br><span class="line">                <span class="keyword">if</span> text1[i-<span class="number">1</span>]==text2[j-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j]=<span class="built_in">max</span>(dp[i][j-<span class="number">1</span>],dp[i-<span class="number">1</span>][j])</span><br><span class="line">        <span class="keyword">return</span> dp[m][n]</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -&gt; int:
+        m,n=len(text1),len(text2)
+        dp=[[0]*(n+1) for _ in range(m+1)]
+        # print(dp)
+        # 对text1和text2进行遍历
+        for i in range(1,m+1):
+            for j in range(1,n+1):
+                # 如果当前两个字符串最后一个字符相等的话
+                if text1[i-1]==text2[j-1]:
+                    dp[i][j]=dp[i-1][j-1]+1
+                else:
+                    dp[i][j]=max(dp[i][j-1],dp[i-1][j])
+        return dp[m][n]
+</code></pre>
 <h1 id="leetcoad300-最长递增子序列"><a href="#leetcoad300-最长递增子序列" class="headerlink" title="leetcoad300-最长递增子序列"></a>leetcoad300-最长递增子序列</h1><p>这里地关键点是：最长子序列结尾地元素可能是以nums中任意元素结尾(理解的关键点)<br>同样通过动画自己也是基本已经理解了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLIS</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 设置一个dp数组，并将其中的值初始化为1</span></span><br><span class="line">        <span class="comment"># dp[i]表示以nums[i]结尾的最长递增子序列的长度</span></span><br><span class="line">        dp=[<span class="number">1</span>]*n</span><br><span class="line">        <span class="comment"># 设置一个数组来记录初始的长度</span></span><br><span class="line">        maxlength=<span class="number">1</span></span><br><span class="line">        <span class="comment"># 对dp数组进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="comment"># 对原数组进行遍历，其中在遍历的时候不能超过dp中对应的位置</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">                <span class="comment"># 如果发现nums[i] &gt; nums[j] 并且当前的dp+1要比dp[i]的值要大，说明以最后的一个元素结尾组成的子序列要大一些</span></span><br><span class="line">                <span class="keyword">if</span> nums[i] &gt;nums[j] <span class="keyword">and</span> dp[i] &lt;dp[j] +<span class="number">1</span>:</span><br><span class="line">                    dp[i] = dp[j]+<span class="number">1</span></span><br><span class="line">            <span class="comment"># 在每次遍历完内层循环之后(更新dp[i]的过程中)，都需要比较一下此时dp[i]的值与初始化的1哪个更大</span></span><br><span class="line">            <span class="keyword">if</span> maxlength &lt; dp[i]:</span><br><span class="line">                <span class="comment"># 把更长的子序列的长度赋予给maxlength</span></span><br><span class="line">                maxlength=dp[i]</span><br><span class="line">        <span class="keyword">return</span> maxlength</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def lengthOfLIS(self, nums: List[int]) -&gt; int:
+        n = len(nums)
+        # 设置一个dp数组，并将其中的值初始化为1
+        # dp[i]表示以nums[i]结尾的最长递增子序列的长度
+        dp=[1]*n
+        # 设置一个数组来记录初始的长度
+        maxlength=1
+        # 对dp数组进行遍历
+        for i in range(n):
+            # 对原数组进行遍历，其中在遍历的时候不能超过dp中对应的位置
+            for j in range(i):
+                # 如果发现nums[i] &gt; nums[j] 并且当前的dp+1要比dp[i]的值要大，说明以最后的一个元素结尾组成的子序列要大一些
+                if nums[i] &gt;nums[j] and dp[i] &lt;dp[j] +1:
+                    dp[i] = dp[j]+1
+            # 在每次遍历完内层循环之后(更新dp[i]的过程中)，都需要比较一下此时dp[i]的值与初始化的1哪个更大
+            if maxlength &lt; dp[i]:
+                # 把更长的子序列的长度赋予给maxlength
+                maxlength=dp[i]
+        return maxlength
+</code></pre>
 <h1 id="leetcoad674-最长连续递增序列（easy）"><a href="#leetcoad674-最长连续递增序列（easy）" class="headerlink" title="leetcoad674-最长连续递增序列（easy）"></a>leetcoad674-最长连续递增序列（easy）</h1><p>给定一个未经排序的整数数组，找到最长且 连续递增的子序列，并返回该序列的长度。<br>连续递增的子序列 可以由两个下标 l 和 r（l &lt; r）确定，如果<strong>对于每个 l &lt;&#x3D; i &lt; r，都有 nums[i] &lt; nums[i + 1]</strong> ，那么子序列 [nums[l], nums[l + 1], …, nums[r - 1], nums[r]] 就是连续递增子序列。<br>分析：</p>
 <ol>
 <li>连续递增的子序列，大于它左侧的元素，小于它右侧的元素</li>
 <li>如果用动态规划的思路的话：dp[i]的含义：<strong>以nums[i]结尾的最长连续递增序列的长度</strong><br>将每一个位置都填充为1（理解）</li>
 <li>要找到最长的，需要定义一个最长的长度</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findLengthOfLCIS</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 采用动态规划的思路来解题</span></span><br><span class="line">        <span class="comment"># 定义一个变量来定义最长的序列长度，初始值为1，表示只要有元素，最小值肯定是1</span></span><br><span class="line">        maxlengh=<span class="number">1</span></span><br><span class="line">        <span class="comment"># dp[i]表示以nums[i]结尾的最长连续递增子序列的长度</span></span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        dp=[<span class="number">1</span>]*n</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="comment"># 如果发现后面的数大于前面的数</span></span><br><span class="line">            <span class="keyword">if</span> i &gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]&gt;nums[i-<span class="number">1</span>]:</span><br><span class="line">                <span class="comment"># 更新dp[i]</span></span><br><span class="line">                dp[i]=dp[i-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">            <span class="comment"># 每次判断之后就将dp[i]与maxlength进行比较，maxlength只存储最大的值</span></span><br><span class="line">            <span class="keyword">if</span> dp[i]&gt;maxlengh:</span><br><span class="line">                maxlengh=dp[i]</span><br><span class="line">        <span class="keyword">return</span> maxlengh</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -&gt; int:
+        # 采用动态规划的思路来解题
+        # 定义一个变量来定义最长的序列长度，初始值为1，表示只要有元素，最小值肯定是1
+        maxlengh=1
+        # dp[i]表示以nums[i]结尾的最长连续递增子序列的长度
+        n=len(nums)
+        dp=[1]*n
+        for i in range(1,n):
+            # 如果发现后面的数大于前面的数
+            if i &gt;0 and nums[i]&gt;nums[i-1]:
+                # 更新dp[i]
+                dp[i]=dp[i-1]+1
+            # 每次判断之后就将dp[i]与maxlength进行比较，maxlength只存储最大的值
+            if dp[i]&gt;maxlengh:
+                maxlengh=dp[i]
+        return maxlengh
+</code></pre>
 <p>运用滑动窗口的思想：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1h54y1n7yf?spm_id_from=333.337.search-card.all.click">https://www.bilibili.com/video/BV1h54y1n7yf?spm_id_from=333.337.search-card.all.click</a></p>
 <h1 id="leetcoad5-最长回文子串"><a href="#leetcoad5-最长回文子串" class="headerlink" title="leetcoad5-最长回文子串"></a>leetcoad5-最长回文子串</h1><p>再次回顾这一题的时候希望有不同的感受<br>题目描述：给你一个字符串 s，找到 s 中最长的回文子串。<br>示例 1：<br>输入：s &#x3D; “babad”<br>输出：”bab”<br>解释：”aba” 同样是符合题意的答案。<br>示例 2：</p>
 <p>输入：s &#x3D; “cbbd”<br>输出：”bb”</p>
 <h2 id="方法一：采用暴力的方法解题"><a href="#方法一：采用暴力的方法解题" class="headerlink" title="方法一：采用暴力的方法解题"></a>方法一：采用暴力的方法解题</h2><p>要截取字符串的所有子串，然后再判断这些子串中哪些是回文的，最后返回回文子串中最长的即可<br>这里我们可以使用两个变量，一个记录最长回文子串开始的位置，一个记录最长回文子串的长度，最后再截取<br>为了加快访问的速度，我们从最长的字符串开始缩短，这样第一个满足回文子串要求的就是最长的，也即满足题目要求的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestPalindrome</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(s)</span><br><span class="line">        <span class="comment"># 从最大的长度开始遍历</span></span><br><span class="line">        <span class="keyword">for</span> length <span class="keyword">in</span> <span class="built_in">range</span>(n,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 开始位置</span></span><br><span class="line">            <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n-length+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 截下来的字符串</span></span><br><span class="line">                sub_string=s[index:length+index]</span><br><span class="line">                <span class="comment"># 将截下来的字符串倒序</span></span><br><span class="line">                temp=sub_string[::-<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> sub_string==temp:</span><br><span class="line">                    <span class="comment"># 返回匹配的结果</span></span><br><span class="line">                    <span class="keyword">return</span> sub_string</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    s=<span class="string">&quot;cbbd&quot;</span></span><br><span class="line">    res=Solution().longestPalindrome(s) </span><br><span class="line">    <span class="built_in">print</span>(res)   </span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def longestPalindrome(self, s: str) -&gt; str:
+        n=len(s)
+        # 从最大的长度开始遍历
+        for length in range(n,-1,-1):
+            # 开始位置
+            for index in range(0,n-length+1):
+                # 截下来的字符串
+                sub_string=s[index:length+index]
+                # 将截下来的字符串倒序
+                temp=sub_string[::-1]
+                if sub_string==temp:
+                    # 返回匹配的结果
+                    return sub_string
 
+if __name__==&#39;__main__&#39;:
+    s=&quot;cbbd&quot;
+    res=Solution().longestPalindrome(s) 
+    print(res)   
+</code></pre>
 <h2 id="联系最长公共子串的方法"><a href="#联系最长公共子串的方法" class="headerlink" title="联系最长公共子串的方法"></a>联系最长公共子串的方法</h2><p>根据回文串的定义：正着读和反着读是一样的，我们可以<strong>把原来的字符串倒置，然后找到最长的公共子串就可以了</strong>。求最长公共子串的方法有很多，下面也会整理关于最长公共子串的解法。</p>
 <h2 id="方法二：采用中心扩散的方法"><a href="#方法二：采用中心扩散的方法" class="headerlink" title="方法二：采用中心扩散的方法"></a>方法二：采用中心扩散的方法</h2><p>枚举了所有可能的回文子串的中心的位置<br>中心位置可能是一个字符，有可能是有两个相邻的字符<br>记录最长回文子串的相关变量<br><img src="https://runnerxr.github.io/post-images/1654012765422.png"><br>具体的代码如下：</p>
 <ol>
@@ -258,13 +589,55 @@
 </li>
 <li>左边界向左，有边界向右，直到不能够匹配为止</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码略，后续感兴趣的时候再做更加深入的了解。</span><br></pre></td></tr></table></figure>
+<pre><code class="python">代码略，后续感兴趣的时候再做更加深入的了解。
+</code></pre>
 <h2 id="方法三采用动态规划的思路"><a href="#方法三采用动态规划的思路" class="headerlink" title="方法三采用动态规划的思路"></a>方法三采用动态规划的思路</h2><p>回文串具有天然的状态转移性质的<br><img src="https://runnerxr.github.io/post-images/1654091179443.png"><br><img src="https://runnerxr.github.io/post-images/1654091187242.png"><br><img src="https://runnerxr.github.io/post-images/1654091251312.png"><br><img src="https://runnerxr.github.io/post-images/1654091687251.png"><br>思路来源：例如对于字符串 “ababa”，如果我们已经知道 “bab” 是回文串，那么 “ababa” 一定是回文串，这是因为它的首尾两个字母都是 “a”。（反过来也是的：<strong>一个回文去掉两头之后，剩下的部分依然是回文</strong>）<br>根据这个思路：<br>在<strong>两头字符相等</strong>的情况下，<strong>整体是否是回文</strong>由<strong>中间是否是回文</strong>来决定<br>dp[i][j]的含义：<strong>字符串s第i个字符和第j个字符之间的子串是否是回文子串</strong>（状态转移方程写出来也不容易，还有就是dp数组中存放的是布尔值）<br>只有[i+1，j-1]是回文子串，并且s的第i个元素和第j个字母相同的时候，s[i:j]才会是回文串<br>并且在处理的时候，只需要处理i在j左侧的情况，所以也就对应了下面对i和j遍历时候的取值<br>考虑<strong>边界情况</strong>：</p>
 <ol>
 <li>如果数组中只有一个元素，一定是回文子串</li>
-<li>如果只有两个元素，但是两个元素的值是相同的，那么也是回文子串<br>最终的答案：<br>所有dp[i][j]&#x3D;True中 j-i+1的最大值（从长度较短的字符串向长度较长的字符串进行转移，要注意动态规划的循环顺序）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getLongestPalindrome</span>(<span class="params">self , A: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 首先回顾回文子串的定义</span></span><br><span class="line">        <span class="comment"># 构建dp数组，其中dp[i]表示以当前的元素结尾的回文子串的长度，默认回文子串的长度均为1</span></span><br><span class="line">        <span class="comment"># dp[i][j]的含义：**字符串s第i个字符和第j个字符之间的子串是否是回文子串**</span></span><br><span class="line">        n=<span class="built_in">len</span>(A)</span><br><span class="line">        dp=[[<span class="literal">False</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="comment"># 构建判断条件，此元素的对称位置元素相同，这样在这个区间内就构成了一个回文子串</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            dp[i][i]=<span class="literal">True</span></span><br><span class="line">        <span class="comment"># 记录最长回文子串的长度</span></span><br><span class="line">        max_len=<span class="number">1</span></span><br><span class="line">        <span class="comment"># 设置变量记录最长的回文子串的开始位置</span></span><br><span class="line">        <span class="comment"># 从后向前寻找</span></span><br><span class="line">        begin=n-<span class="number">1</span></span><br><span class="line">        <span class="comment"># 不断地逼近二维数组最右上角地位置，求dp[0][n-1]</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment"># 如果发现首尾相等</span></span><br><span class="line">                <span class="keyword">if</span> A[i]==A[j]:</span><br><span class="line">                    <span class="comment"># 如果[i,j]这个区间只有两个字符，并且两个字符还是一样，则必然是回文子串</span></span><br><span class="line">                    <span class="keyword">if</span> (j-i+<span class="number">1</span>)==<span class="number">2</span>:</span><br><span class="line">                        dp[i][j]=<span class="literal">True</span></span><br><span class="line">                    <span class="comment"># 否则，当前这个区间是否是回文子串取决于[i+1，j-1]是不是回文子串</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        dp[i][j]=dp[i+<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">                <span class="comment"># 如果首尾不相等地话就必然不是回文子串</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j]=<span class="literal">False</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 更新回文子串地长度</span></span><br><span class="line">                <span class="keyword">if</span> dp[i][j] <span class="keyword">and</span> j-i+<span class="number">1</span>&gt;max_len:</span><br><span class="line">                    <span class="comment"># 更新最长回文子串地长度</span></span><br><span class="line">                    max_len=j-i+<span class="number">1</span></span><br><span class="line">                    <span class="comment"># 更新最长回文子串开始的位置</span></span><br><span class="line">                    begin=i</span><br><span class="line">        <span class="comment"># 通过截取的方式返回最长回文子串</span></span><br><span class="line">        <span class="comment"># return A[begin:begin+max_len]</span></span><br><span class="line">        <span class="keyword">return</span> max_len              </span><br></pre></td></tr></table></figure>
-写完动态规划的解法之后，有几点重要的位置仍然需要自己好好的琢磨一下，用云线在图中标识出来了<br><img src="https://runnerxr.github.io/post-images/1654095768350.png"></li>
+<li>如果只有两个元素，但是两个元素的值是相同的，那么也是回文子串<br>最终的答案：<br>所有dp[i][j]&#x3D;True中 j-i+1的最大值（从长度较短的字符串向长度较长的字符串进行转移，要注意动态规划的循环顺序）</li>
 </ol>
+<pre><code class="python">class Solution:
+    def getLongestPalindrome(self , A: str) -&gt; int:
+        # write code here
+        # 首先回顾回文子串的定义
+        # 构建dp数组，其中dp[i]表示以当前的元素结尾的回文子串的长度，默认回文子串的长度均为1
+        # dp[i][j]的含义：**字符串s第i个字符和第j个字符之间的子串是否是回文子串**
+        n=len(A)
+        dp=[[False]*n for _ in range(n)]
+        # 构建判断条件，此元素的对称位置元素相同，这样在这个区间内就构成了一个回文子串
+        for i in range(n):
+            dp[i][i]=True
+        # 记录最长回文子串的长度
+        max_len=1
+        # 设置变量记录最长的回文子串的开始位置
+        # 从后向前寻找
+        begin=n-1
+        # 不断地逼近二维数组最右上角地位置，求dp[0][n-1]
+        for i in range(n-1,-1,-1):
+            for j in range(i+1,n):
+                # 如果发现首尾相等
+                if A[i]==A[j]:
+                    # 如果[i,j]这个区间只有两个字符，并且两个字符还是一样，则必然是回文子串
+                    if (j-i+1)==2:
+                        dp[i][j]=True
+                    # 否则，当前这个区间是否是回文子串取决于[i+1，j-1]是不是回文子串
+                    else:
+                        dp[i][j]=dp[i+1][j-1]
+                # 如果首尾不相等地话就必然不是回文子串
+                else:
+                    dp[i][j]=False
+                
+                # 更新回文子串地长度
+                if dp[i][j] and j-i+1&gt;max_len:
+                    # 更新最长回文子串地长度
+                    max_len=j-i+1
+                    # 更新最长回文子串开始的位置
+                    begin=i
+        # 通过截取的方式返回最长回文子串
+        # return A[begin:begin+max_len]
+        return max_len              
+</code></pre>
+<p>写完动态规划的解法之后，有几点重要的位置仍然需要自己好好的琢磨一下，用云线在图中标识出来了<br><img src="https://runnerxr.github.io/post-images/1654095768350.png"></p>
 <h1 id="leetcoad516-最长回文子序列"><a href="#leetcoad516-最长回文子序列" class="headerlink" title="leetcoad516-最长回文子序列"></a>leetcoad516-最长回文子序列</h1><p>题目描述：<br>给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。<br>理解回文子序列的定义：<br>子序列：不改变剩余顺序的情况下，删除某些字符或者不删除任何字符形成的序列<br>子数组：必须连续的<br><img src="https://runnerxr.github.io/post-images/1652194185867.png">用这张图片来帮助自己去理解<br>在找到一个回文子序列的基础上继续进行查找，找到一个更长的回文子序列：在已有的回文子序列左右两端加入新的元素组成新的区间，并判断左右两端加入后的长度是否大于之前的回文子序列的长度，如果是就更新最长回文子序列，继续进行查找</p>
 <ol>
 <li>当左右两边加入的值不相等的时候，需要进行分类讨论</li>
@@ -279,8 +652,27 @@
 <li>j始终在i的右侧</li>
 <li>i从最右边开始，然后往左边移动，j在i的右边，向右边移动（无法直接找到中间两个点然后向两边进行相应的延申）</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestPalindromeSubseq</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 采用动态规划的思路</span></span><br><span class="line">        <span class="comment"># dp[i][j]表示字符串s[i...j]之间的最长回文子序列的长度</span></span><br><span class="line">        <span class="comment"># 这里的遍历方式要结合相应的动画来分析：i从后向前遍历，j从i的右边开始从左向右开始遍历</span></span><br><span class="line">        n=<span class="built_in">len</span>(s)</span><br><span class="line">        dp=[[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            dp[i][i]=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment"># 当发现s[i]==s[j]的时候，可以让dp[i-1][j-1]上进行相应的扩充，长度+1</span></span><br><span class="line">                <span class="keyword">if</span> s[i]==s[j]:</span><br><span class="line">                    dp[i][j]=dp[i+<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">2</span></span><br><span class="line">                <span class="comment"># 当s[i]!=s[j]的时候，这个时候体现了动态规划的思路。将左边的字符串加入和将右边的字符串加入dp[i-][j-1]构成：dp[i][j-1]和dp[i+1][j]</span></span><br><span class="line">                <span class="comment"># 比较两者的最大值作为dp[i][j]的值</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j]=<span class="built_in">max</span>(dp[i][j-<span class="number">1</span>],dp[i+<span class="number">1</span>][j])</span><br><span class="line">        <span class="comment"># 循环结束，返回最后的值</span></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def longestPalindromeSubseq(self, s: str) -&gt; int:
+        # 采用动态规划的思路
+        # dp[i][j]表示字符串s[i...j]之间的最长回文子序列的长度
+        # 这里的遍历方式要结合相应的动画来分析：i从后向前遍历，j从i的右边开始从左向右开始遍历
+        n=len(s)
+        dp=[[0]*n for _ in range(n)]
+        for i in range(n):
+            dp[i][i]=1
+        for i in range(n-1,-1,-1):
+            for j in range(i+1,n):
+                # 当发现s[i]==s[j]的时候，可以让dp[i-1][j-1]上进行相应的扩充，长度+1
+                if s[i]==s[j]:
+                    dp[i][j]=dp[i+1][j-1]+2
+                # 当s[i]!=s[j]的时候，这个时候体现了动态规划的思路。将左边的字符串加入和将右边的字符串加入dp[i-][j-1]构成：dp[i][j-1]和dp[i+1][j]
+                # 比较两者的最大值作为dp[i][j]的值
+                else:
+                    dp[i][j]=max(dp[i][j-1],dp[i+1][j])
+        # 循环结束，返回最后的值
+        return dp[0][n-1]
+</code></pre>
 <h1 id="BM65-最长公共子序列"><a href="#BM65-最长公共子序列" class="headerlink" title="BM65-最长公共子序列"></a>BM65-最长公共子序列</h1><p>题目的主要信息：</p>
 <ol>
 <li>找到两个字符串的最长公共子序列</li>
@@ -288,160 +680,140 @@
 <li>没有找到的时候，返回-1，需要变换（这里是一个隐藏的坑）</li>
 </ol>
 <p>思路：先得到最长公共子序列的长度（获取长度的思路已经知晓），然后根据这个长度来获取这个子序列（这里才是本道题有一个重点的部分，用到了栈的弹出的小知识，也是一个很关键的点，如果不是做题的话估计自己也很难想到这样的方法。需要对栈进行活学活用，而且要能够快速的反应过来，确实很考验代码和逻辑的思维能力！！！！！！）<br>在构造表的同时，用一个二维矩阵记录上面状态转移时选择的方向，用1表示来自左上方，用2表示来至左边，用3表示来自上边。<br>获取这个序列的时候，根据从最后一位开始，根据记录方向，不断地递归往前组装字符，只有来自左上的时候才添加本级字符（<strong>这种情况是动态规划中两个字符相等的情况，字符相等的时候才可以用</strong>）<br>这里看得到一个非常好的练习的线上的表格，帮自己完完全全的梳理了一下这个过程，一下子茅塞顿开。<br>链接如下：<a target="_blank" rel="noopener" href="https://alchemist-al.com/algorithms/longest-common-subsequence">https://alchemist-al.com/algorithms/longest-common-subsequence</a><br><img src="https://runnerxr.github.io/post-images/1652192059144.png"><br>自己也用excel手动做了一个表格的演示过程<br>这是一张动态规划的过程图：我用箭头表示的方向就是表的数值不断形成的方向（当遍历的时候最后两个字符不等，来自左边和上边相同的时候，我人为优先来自左边，实际计算机会判断，两个一样大的时候任取一个就行）<br><img src="https://runnerxr.github.io/post-images/1652234949755.png"><br>下面两张是回溯的过程，目的是为了找到最长的公共子序列到底是哪几个的问题？以下的两种方法都能够找到最长的公共子序列’bcba’,这也是写代码的核心基础部分，这个过程至少是要十分熟悉的。<br>一开始选择来自上方的情况，就是红色的这个路径：<br><img src="https://runnerxr.github.io/post-images/1652235526690.png"><br>一开始选择来自左方的情况，就是绿色的这个路径：<br><img src="https://runnerxr.github.io/post-images/1652234928403.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">LCS</span>(<span class="params">self , s1: <span class="built_in">str</span>, s2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 首先采用二维dp来解题</span></span><br><span class="line">        <span class="comment"># dp[i][j]表示s1中前i个字符和s2中前j个字符的最长公公共子序列</span></span><br><span class="line">        <span class="comment"># 当两个字符串最后一个字符是相同的时候</span></span><br><span class="line">        <span class="comment"># dp[i][j]=dp[i-1][j-1]+1</span></span><br><span class="line">        <span class="comment"># 当两个字符串最后一个字符不是相同的时候，看到底是由s1延申过来，还是由s2延申过程</span></span><br><span class="line">        <span class="comment"># dp[i][j-1]:表示s1中前i个字符与s2中前j-1个字符的最长公共给子序列</span></span><br><span class="line">        <span class="comment"># dp[i-1][j]表示s1中的前i-1个字符与s2中前j个字符的最长公共子序列</span></span><br><span class="line">        m,n=<span class="built_in">len</span>(s1),<span class="built_in">len</span>(s2)</span><br><span class="line">        dp=[[<span class="number">0</span>]*(n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 初始条件</span></span><br><span class="line">        <span class="comment"># 当s1或者s2为空字符串的时候,最长公共子串均为0</span></span><br><span class="line">        <span class="keyword">if</span> m==<span class="number">0</span> <span class="keyword">or</span> n==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;-1&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 判断当前遍历的最后一个字符是否相</span></span><br><span class="line">                <span class="keyword">if</span> s1[i-<span class="number">1</span>]==s2[j-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">                <span class="comment"># 当最后一个字符不相等的时候</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j]=<span class="built_in">max</span>(dp[i][j-<span class="number">1</span>],dp[i-<span class="number">1</span>][j])</span><br><span class="line">        <span class="comment"># 找到最大长度之后，还要把对应的值给输出来</span></span><br><span class="line">        <span class="comment"># return dp[m][n]</span></span><br><span class="line">        <span class="comment">#print(dp)</span></span><br><span class="line">        <span class="comment"># # 从动态规划数组的末尾开始</span></span><br><span class="line">        i,j=m,n</span><br><span class="line">        <span class="comment"># 构建一个临时的栈，用来从后向前储存相同的字符</span></span><br><span class="line">        temp=[]</span><br><span class="line">        <span class="keyword">while</span> dp[i][j] !=<span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 来自左方向</span></span><br><span class="line">            <span class="keyword">if</span> dp[i][j]==dp[i-<span class="number">1</span>][j]:</span><br><span class="line">                i=i-<span class="number">1</span></span><br><span class="line">            <span class="comment"># 来自上方向</span></span><br><span class="line">            <span class="keyword">elif</span> dp[i][j]==dp[i][j-<span class="number">1</span>]:</span><br><span class="line">                j= j-<span class="number">1</span></span><br><span class="line">            <span class="comment"># 来自左上方</span></span><br><span class="line">            <span class="keyword">elif</span> dp[i][j]&gt;dp[i-<span class="number">1</span>][j-<span class="number">1</span>]:</span><br><span class="line">                i-=<span class="number">1</span></span><br><span class="line">                j-=<span class="number">1</span></span><br><span class="line">                <span class="comment"># 只有左上方才是字符相等的情况，入栈，逆序使用</span></span><br><span class="line">                temp.append(s1[i])</span><br><span class="line">        <span class="comment"># 循环结束之后，进行子序列的拼接</span></span><br><span class="line">        <span class="comment"># print(temp)</span></span><br><span class="line">        res=<span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">while</span> <span class="built_in">len</span>(temp)!=<span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 将temp中的元素不断地弹出并加入到res字符串中</span></span><br><span class="line">            res+=temp.pop()</span><br><span class="line">        <span class="comment">#如果两个完全不同，返回字符串为空，需要改为-1</span></span><br><span class="line">        <span class="keyword">if</span> res <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> res==<span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;-1&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def LCS(self , s1: str, s2: str) -&gt; str:
+        # write code here
+        # 首先采用二维dp来解题
+        # dp[i][j]表示s1中前i个字符和s2中前j个字符的最长公公共子序列
+        # 当两个字符串最后一个字符是相同的时候
+        # dp[i][j]=dp[i-1][j-1]+1
+        # 当两个字符串最后一个字符不是相同的时候，看到底是由s1延申过来，还是由s2延申过程
+        # dp[i][j-1]:表示s1中前i个字符与s2中前j-1个字符的最长公共给子序列
+        # dp[i-1][j]表示s1中的前i-1个字符与s2中前j个字符的最长公共子序列
+        m,n=len(s1),len(s2)
+        dp=[[0]*(n+1) for _ in range(m+1)]
+        # 初始条件
+        # 当s1或者s2为空字符串的时候,最长公共子串均为0
+        if m==0 or n==0:
+            return &#39;-1&#39;
+        for i in range(1,m+1):
+            for j in range(1,n+1):
+                # 判断当前遍历的最后一个字符是否相
+                if s1[i-1]==s2[j-1]:
+                    dp[i][j]=dp[i-1][j-1]+1
+                # 当最后一个字符不相等的时候
+                else:
+                    dp[i][j]=max(dp[i][j-1],dp[i-1][j])
+        # 找到最大长度之后，还要把对应的值给输出来
+        # return dp[m][n]
+        #print(dp)
+        # # 从动态规划数组的末尾开始
+        i,j=m,n
+        # 构建一个临时的栈，用来从后向前储存相同的字符
+        temp=[]
+        while dp[i][j] !=0:
+            # 来自左方向
+            if dp[i][j]==dp[i-1][j]:
+                i=i-1
+            # 来自上方向
+            elif dp[i][j]==dp[i][j-1]:
+                j= j-1
+            # 来自左上方
+            elif dp[i][j]&gt;dp[i-1][j-1]:
+                i-=1
+                j-=1
+                # 只有左上方才是字符相等的情况，入栈，逆序使用
+                temp.append(s1[i])
+        # 循环结束之后，进行子序列的拼接
+        # print(temp)
+        res=&#39;&#39;
+        while len(temp)!=0:
+            # 将temp中的元素不断地弹出并加入到res字符串中
+            res+=temp.pop()
+        #如果两个完全不同，返回字符串为空，需要改为-1
+        if res is None or res==&#39;&#39;:
+            return &#39;-1&#39;
+        else:
+            return res
+</code></pre>
 <h1 id="BM66-最长公共子串"><a href="#BM66-最长公共子串" class="headerlink" title="BM66- 最长公共子串"></a>BM66- 最长公共子串</h1><p>注意审题：<strong>最长的公共子串</strong>，不是最长的公共子序列，<strong>子序列可以不是连续的</strong>，但是<strong>子串一定是连续的</strong>。（这里的理解对于做题来说是十分的关键的，一道题能够读懂也十分重要的）<br>看到题解的时候有<strong>一个枚举的思路</strong>，对于自己的思维锻炼很有帮助，而且动态规划就是<strong>从枚举的思路上发展而来的</strong>，需要考验的是自己的能够<strong>有枚举的思路</strong>，而且还能<strong>由枚举来想到用动态规划的思路</strong>。（枚举是思维的核心所在！！！！）<br>参考链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/f33f5adc55f444baa0e0ca87ad8a6aac?tpId=295&amp;tqId=991150&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj">https://www.nowcoder.com/practice/f33f5adc55f444baa0e0ca87ad8a6aac?tpId=295&amp;tqId=991150&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj</a><br>枚举所有的子串进行比较，不用完全枚举的形式，尝试做一点改良</p>
 <ol>
 <li>遍历两个字符串的所有字符串作为起始(实际上遍历小的就可以了，所以最开始有一个<strong>比较大小</strong>并互换的过程)</li>
 <li>同时开始检查字符是否相等，相等的话就不断地后移，增加子串地长度，<strong>如果不说明以这两个为起点地子串截至了，不会再有了</strong>。(这里也是同动态规划地思想一致的)</li>
-<li>后续比较长度维护最大值即可。<br><img src="https://runnerxr.github.io/post-images/1652175614590.png"><br>下面的这种代码的思路上面写的是有点区别的，主要是这行代码：<code>if str1[i - max_len : i + 1] in str2: </code>，可能也是python比较巧妙地一个地方所在。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写代码的核心思维思维</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">LCS</span>(<span class="params">self , str1: <span class="built_in">str</span>, str2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment">#让str1为较长的字符串</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(str1) &lt; <span class="built_in">len</span>(str2): </span><br><span class="line">            str1, str2 = str2, str1</span><br><span class="line">        res = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        max_len = <span class="number">0</span></span><br><span class="line">        <span class="comment">#遍历str1的长度</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(str1)): </span><br><span class="line">            <span class="comment">#查找是否存在</span></span><br><span class="line">            <span class="keyword">if</span> str1[i - max_len : i + <span class="number">1</span>] <span class="keyword">in</span> str2: </span><br><span class="line">                res = str1[i - max_len : i + <span class="number">1</span>]</span><br><span class="line">                max_len += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-<strong>采用动态规划的思路来解题：</strong><br>这题和最长的公共子序列也有一定的联系：比如构建dp数组的含义，dp数组的长度以及大小（这种题型要形成自己的思考定式下次碰到的时候就可以直接写了）<br>定义dp[i][j]表示字符串<strong>str1中第i个字符</strong>和<strong>str2种第j个字符</strong>为<strong>最后一个元素</strong>所构成的最长公共子串。如果要求dp[i][j]，也就是str1的第i个字符和str2的第j个字符为最后一个元素所构成的最长公共子串，我们<strong>首先需要判断这两个字符是否相等</strong>。(相当于是递推公式)</li>
-<li>如果不相等，那么他们就不能构成公共子串，也就是dp[i][j]&#x3D;0</li>
-<li>如果相等的话，我们还需要计算前面相等字符的个数：即dp[i-1][j-1]<br><img src="https://runnerxr.github.io/post-images/1652191419226.png"><br>自己用表格罗列了这样的一个过程，帮助自己去理解。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#很遗憾，采用动态规划的思路，用例并不能全盘的通过</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">LCS</span>(<span class="params">self , str1: <span class="built_in">str</span>, str2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 设置二维dp数组,dp[i][j]表示在str1的前i个字符，str2的前j个字符中最长公共子串的个数</span></span><br><span class="line">        <span class="comment"># 当其中某个字符串长度为0的时候一定是空串</span></span><br><span class="line">        m,n=<span class="built_in">len</span>(str1),<span class="built_in">len</span>(str2)</span><br><span class="line">        maxlengh=<span class="number">0</span></span><br><span class="line">        dp=[[<span class="number">0</span>]*(n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 分别在两个字符串中进行遍历</span></span><br><span class="line">        <span class="comment"># 目的是为了找到最长公共子串的长度</span></span><br><span class="line">        <span class="comment"># 其中公共子串是需要连续的</span></span><br><span class="line">        <span class="comment"># i在第一个字符串中进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># j在第二个字符串中进行遍历</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 如果两个字符串当前遍历的最后一个字符相等,就增加公共子串的长度</span></span><br><span class="line">                <span class="keyword">if</span> str1[i-<span class="number">1</span>]==str2[j-<span class="number">1</span>]:</span><br><span class="line">                    <span class="comment"># 更新，找到它斜上角的值+1</span></span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">                <span class="comment"># 如果不相等的话，需要将dp[i][j]置为0，一旦不等的时候就会断开</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j]=<span class="number">0</span></span><br><span class="line">                <span class="comment"># 判断结束之后，用一个数组来接受最大的长度</span></span><br><span class="line">                <span class="keyword">if</span> dp[i][j]&gt;maxlengh:</span><br><span class="line">                    <span class="comment"># 更新最大值</span></span><br><span class="line">                    maxlengh=dp[i][j]</span><br><span class="line">                    <span class="comment"># 此时pos记录的就是正常字符串的下标（从0开始的）</span></span><br><span class="line">                    pos=i-<span class="number">1</span></span><br><span class="line">        <span class="comment"># 最后通过对任意一个字符串进行切分来返回最长的公共子串</span></span><br><span class="line">        <span class="keyword">return</span> str1[pos-maxlengh+<span class="number">1</span>:pos+<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-再次回顾的时候，发现还是做不出来！！！大哭大哭</li>
+<li>后续比较长度维护最大值即可。<br><img src="https://runnerxr.github.io/post-images/1652175614590.png"><br>下面的这种代码的思路上面写的是有点区别的，主要是这行代码：<code>if str1[i - max_len : i + 1] in str2: </code>，可能也是python比较巧妙地一个地方所在。</li>
 </ol>
+<pre><code class="python"># 写代码的核心思维思维
+class Solution:
+    def LCS(self , str1: str, str2: str) -&gt; str:
+        #让str1为较长的字符串
+        if len(str1) &lt; len(str2): 
+            str1, str2 = str2, str1
+        res = &#39;&#39;
+        max_len = 0
+        #遍历str1的长度
+        for i in range(len(str1)): 
+            #查找是否存在
+            if str1[i - max_len : i + 1] in str2: 
+                res = str1[i - max_len : i + 1]
+                max_len += 1
+        return res
+</code></pre>
+<p><strong>采用动态规划的思路来解题：</strong><br>这题和最长的公共子序列也有一定的联系：比如构建dp数组的含义，dp数组的长度以及大小（这种题型要形成自己的思考定式下次碰到的时候就可以直接写了）<br>定义dp[i][j]表示字符串<strong>str1中第i个字符</strong>和<strong>str2种第j个字符</strong>为<strong>最后一个元素</strong>所构成的最长公共子串。如果要求dp[i][j]，也就是str1的第i个字符和str2的第j个字符为最后一个元素所构成的最长公共子串，我们<strong>首先需要判断这两个字符是否相等</strong>。(相当于是递推公式)</p>
+<ol>
+<li>如果不相等，那么他们就不能构成公共子串，也就是dp[i][j]&#x3D;0</li>
+<li>如果相等的话，我们还需要计算前面相等字符的个数：即dp[i-1][j-1]<br><img src="https://runnerxr.github.io/post-images/1652191419226.png"><br>自己用表格罗列了这样的一个过程，帮助自己去理解。</li>
+</ol>
+<pre><code class="python">#很遗憾，采用动态规划的思路，用例并不能全盘的通过
+class Solution:
+    def LCS(self , str1: str, str2: str) -&gt; str:
+        # write code here
+        # 设置二维dp数组,dp[i][j]表示在str1的前i个字符，str2的前j个字符中最长公共子串的个数
+        # 当其中某个字符串长度为0的时候一定是空串
+        m,n=len(str1),len(str2)
+        maxlengh=0
+        dp=[[0]*(n+1) for _ in range(m+1)]
+        # 分别在两个字符串中进行遍历
+        # 目的是为了找到最长公共子串的长度
+        # 其中公共子串是需要连续的
+        # i在第一个字符串中进行遍历
+        for i in range(1,m+1):
+            # j在第二个字符串中进行遍历
+            for j in range(1,n+1):
+                # 如果两个字符串当前遍历的最后一个字符相等,就增加公共子串的长度
+                if str1[i-1]==str2[j-1]:
+                    # 更新，找到它斜上角的值+1
+                    dp[i][j]=dp[i-1][j-1]+1
+                # 如果不相等的话，需要将dp[i][j]置为0，一旦不等的时候就会断开
+                else:
+                    dp[i][j]=0
+                # 判断结束之后，用一个数组来接受最大的长度
+                if dp[i][j]&gt;maxlengh:
+                    # 更新最大值
+                    maxlengh=dp[i][j]
+                    # 此时pos记录的就是正常字符串的下标（从0开始的）
+                    pos=i-1
+        # 最后通过对任意一个字符串进行切分来返回最长的公共子串
+        return str1[pos-maxlengh+1:pos+1]
+</code></pre>
+<p>再次回顾的时候，发现还是做不出来！！！大哭大哭</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%89/" data-id="claqum2e40021h0tk57t57uge" data-title="动态规划合集（系列二）" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          动态规划算法合集（系列一）
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/17/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E5%90%88%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">贪心算法合集</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

@@ -1,100 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>关于python爬虫一点小的整理 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="以一个例子作为开头 从大师网站自动下载项目的高清图片参考链接：https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;pqFR4TigBCS--barsfuz1A这个程序写的有点东西，而且这个例子说实话是有点偏难的，因为已经用到了一些爬虫相关的知识点，这也是自己没能掌握的，不过这些东西都是自己后面会掌握的一部分，所以也没啥好说的。没有使用Selenium，采用纯代码的方式，省下浏览器打开图片渲染页面">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于python爬虫一点小的整理">
-<meta property="og:url" content="http://example.com/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="以一个例子作为开头 从大师网站自动下载项目的高清图片参考链接：https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;pqFR4TigBCS--barsfuz1A这个程序写的有点东西，而且这个例子说实话是有点偏难的，因为已经用到了一些爬虫相关的知识点，这也是自己没能掌握的，不过这些东西都是自己后面会掌握的一部分，所以也没啥好说的。没有使用Selenium，采用纯代码的方式，省下浏览器打开图片渲染页面">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-30T13:42:45.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:20:40.385Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-关于python爬虫一点小的整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2022-07-30T13:42:45.000Z" itemprop="datePublished">2022-07-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      关于python爬虫一点小的整理
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            关于python爬虫一点小的整理
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/07/30 Sat 21:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:20
+        </div>
+    </div>
+    <div class="article-content">
         <p>以一个例子作为开头</p>
 <h1 id="从大师网站自动下载项目的高清图片"><a href="#从大师网站自动下载项目的高清图片" class="headerlink" title="从大师网站自动下载项目的高清图片"></a>从大师网站自动下载项目的高清图片</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pqFR4TigBCS--barsfuz1A">https://mp.weixin.qq.com/s/pqFR4TigBCS--barsfuz1A</a><br>这个程序写的有点东西，而且这个例子说实话是有点偏难的，因为已经用到了一些爬虫相关的知识点，这也是自己没能掌握的，不过这些东西都是自己后面会掌握的一部分，所以也没啥好说的。<br>没有使用<strong>Selenium</strong>，采用纯代码的方式，省下浏览器打开图片渲染页面的时间消耗<br>具体的步骤如下：</p>
 <ol>
@@ -103,149 +69,127 @@
 <li>在项目的详细介绍网页中找到高清大图的地址</li>
 <li>下载图片</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入requests：是python实现的简单易用的HTTP库</span></span><br><span class="line"><span class="comment"># 导入re库：re库是python的标准库，主要用于字符串匹配</span></span><br><span class="line"><span class="keyword">import</span> requests, re, os</span><br><span class="line"><span class="comment"># Beautifulsoup包：用python写的一个HTML/XML的解析器，可以很好的处理不规则标记并生成剖析树（parse tres）,他提供了简单又常用的导航（navigating）,搜索以及修改剖析树的操作，大大节省编程的时间。</span></span><br><span class="line"><span class="comment"># 使用from bs4 import BeautifulSoup直接将BeautifulSoup类导入到当前命名空间，直接使用，不需要再带包名</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入大师的网址，这里的r是转义符，即raw string，会自动的将反斜杠进行相应的转义</span></span><br><span class="line">project_url = <span class="string">r&#x27;https://calatrava.com/projects.html?all=yes&#x27;</span></span><br><span class="line"><span class="comment"># 访问网站的模块，以后需要访问网站的时候都会用到这个函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">download_page</span>(<span class="params">url</span>):</span><br><span class="line">    headers = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0&#x27;</span></span><br><span class="line">               &#125;</span><br><span class="line">    data = requests.get(url, headers=headers).content.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="comment">#####从页面的html语言中解析出项目地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析得到标题与项目地址的列表</span></span><br><span class="line"><span class="comment"># 拆分出：1.每个项目的信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_html</span>(<span class="params">url</span>):</span><br><span class="line">    html = download_page(url)</span><br><span class="line">    soup = BeautifulSoup(html, features=<span class="string">&#x27;lxml&#x27;</span>)</span><br><span class="line">    project_list_part=soup.find(<span class="string">&quot;div&quot;</span>,&#123;<span class="string">&quot;class&quot;</span>:<span class="string">&quot;mod_cal_project_list thumb_view block&quot;</span>&#125;)</span><br><span class="line">    project_list_soup = project_list_part.find_all(<span class="string">&#x27;li&#x27;</span>, &#123;<span class="string">&#x27;class&#x27;</span>: &#123;<span class="string">&#x27;odd&#x27;</span>,<span class="string">&quot;even&quot;</span>&#125;&#125;)</span><br><span class="line">    <span class="keyword">return</span> project_list_soup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在项目信息中提取项目的名称，得到一个列表</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_project_title</span>(<span class="params">project_list_soup</span>):</span><br><span class="line">    project_title = []</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> project_list_soup:</span><br><span class="line">        project_year = link.find(<span class="string">&#x27;span&#x27;</span>, &#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;year&#x27;</span>&#125;)</span><br><span class="line">        links = link.find(<span class="string">&#x27;a&#x27;</span>)[<span class="string">&#x27;href&#x27;</span>]</span><br><span class="line">        name = <span class="built_in">str</span>(project_year.string) + <span class="string">&#x27;--&#x27;</span>+ <span class="built_in">str</span>(links[<span class="number">9</span>:-<span class="number">5</span>])</span><br><span class="line">        project_title.append(name)</span><br><span class="line">    <span class="keyword">return</span> project_title</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析出每个项目的地址，得到一个列表</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_project_link</span>(<span class="params">project_list_soup</span>):</span><br><span class="line">    project_link = []</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> project_list_soup:</span><br><span class="line">        links = link.find(<span class="string">&#x27;a&#x27;</span>)[<span class="string">&#x27;href&#x27;</span>]</span><br><span class="line">        <span class="comment">#因为项目的详细页面的默认状态是看文字介绍，所以还需要在后面加入一个进入画廊状态的字符串</span></span><br><span class="line">        links = <span class="built_in">str</span>(<span class="string">r&quot;https://calatrava.com/&quot;</span> + links+<span class="string">r&quot;?view_mode=gallery&quot;</span>)</span><br><span class="line">        project_link.append(links)</span><br><span class="line">    <span class="keyword">return</span> project_link</span><br><span class="line"></span><br><span class="line"><span class="comment">### 在项目详细介绍的网页找到高清大图的地址（解析出隐藏在翻页动画背后的高清大图的存储结构）</span></span><br><span class="line"><span class="comment">### 页面的动画效果是通过一个JavaScript代码实现的，每个项目的大图都是结构化的存储在这段json对象中，直接用正则表达式提取出来就可以</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析项目子项页面，得到图片地址的列表</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_sub_html</span>(<span class="params">project_link</span>):</span><br><span class="line">    html = download_page(project_link)</span><br><span class="line">    project_soup = BeautifulSoup(html, features=<span class="string">&#x27;lxml&#x27;</span>)</span><br><span class="line">    <span class="comment"># 抓取JavaScript代码，解析出图片存放的实际地址</span></span><br><span class="line">    project_img_links_script=project_soup.find_all(<span class="string">&quot;script&quot;</span>)</span><br><span class="line">    project_img_links=re.findall(<span class="string">r&quot;&#x27;(?P&lt;addr&gt;files.*)&#x27;,  title&quot;</span>,<span class="built_in">str</span>(project_img_links_script))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(project_img_links)):</span><br><span class="line">        project_img_links[i]=<span class="built_in">str</span>(<span class="string">r&quot;https://calatrava.com/&quot;</span>)+project_img_links[i]</span><br><span class="line">    <span class="comment"># print(str(project_img_links_script))</span></span><br><span class="line">    <span class="built_in">print</span>(project_img_links)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;此项目大图数量 = &quot;</span>+<span class="string">&quot;len(project_img_links&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> project_img_links</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据图片地址的列表，设定命名规则，保存图片</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_img</span>(<span class="params">links, name</span>):</span><br><span class="line">    headers = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0&#x27;</span>&#125;</span><br><span class="line">    os.makedirs(<span class="string">&#x27;./Calatrava project img/&#x27;</span>, exist_ok=<span class="literal">True</span>)</span><br><span class="line">    t = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">        filename = <span class="built_in">str</span>(<span class="string">&#x27;./Calatrava project img/&#x27;</span> + <span class="built_in">str</span>(name) + <span class="string">&#x27;%s.jpg&#x27;</span> % (<span class="built_in">repr</span>(t)))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Downloading----&quot;</span>,<span class="built_in">str</span>(filename))</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> img:</span><br><span class="line">            img.write(requests.get(link, headers=headers).content)</span><br><span class="line">            t += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组装成一个main函数运行就可以进行后面的收图工作</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    soup = parse_html(project_url)</span><br><span class="line">    <span class="comment"># 得到项目名称以及项目地址</span></span><br><span class="line">    name = get_project_title(soup)</span><br><span class="line">    link = get_project_link(soup)</span><br><span class="line">    <span class="built_in">print</span>(link)</span><br><span class="line">    <span class="comment"># 进入项目子项地址下载图片</span></span><br><span class="line">    <span class="comment"># 引入项目代号t可以从第t个项目开始下载，以防网络错误</span></span><br><span class="line">    t = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> t &lt; <span class="built_in">len</span>(name):</span><br><span class="line">        <span class="comment"># 考虑空项目地址引起download函数报错</span></span><br><span class="line">        <span class="keyword">if</span> link[t] == <span class="string">&quot;&quot;</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Skip it,Because it is null,Hurry coding,,Fix it later&quot;</span>)</span><br><span class="line">            t += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            img_list = parse_sub_html(link[t])</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;Project Name is :&#x27;</span>, name[t])</span><br><span class="line">            save_name = <span class="built_in">str</span>(<span class="built_in">repr</span>(t + <span class="number">1</span>)+<span class="string">&quot;-&quot;</span> + name[t])</span><br><span class="line">            save_img(img_list, save_name)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;No %s is ok&#x27;</span> % <span class="built_in">repr</span>(t + <span class="number">1</span>))</span><br><span class="line">            t += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
+<pre><code class="python"># 导入requests：是python实现的简单易用的HTTP库
+# 导入re库：re库是python的标准库，主要用于字符串匹配
+import requests, re, os
+# Beautifulsoup包：用python写的一个HTML/XML的解析器，可以很好的处理不规则标记并生成剖析树（parse tres）,他提供了简单又常用的导航（navigating）,搜索以及修改剖析树的操作，大大节省编程的时间。
+# 使用from bs4 import BeautifulSoup直接将BeautifulSoup类导入到当前命名空间，直接使用，不需要再带包名
+from bs4 import BeautifulSoup
+
+# 输入大师的网址，这里的r是转义符，即raw string，会自动的将反斜杠进行相应的转义
+project_url = r&#39;https://calatrava.com/projects.html?all=yes&#39;
+# 访问网站的模块，以后需要访问网站的时候都会用到这个函数
+def download_page(url):
+    headers = &#123;&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0&#39;
+               &#125;
+    data = requests.get(url, headers=headers).content.decode(&#39;utf-8&#39;)
+    return data
+
+#####从页面的html语言中解析出项目地址
+
+# 解析得到标题与项目地址的列表
+# 拆分出：1.每个项目的信息
+def parse_html(url):
+    html = download_page(url)
+    soup = BeautifulSoup(html, features=&#39;lxml&#39;)
+    project_list_part=soup.find(&quot;div&quot;,&#123;&quot;class&quot;:&quot;mod_cal_project_list thumb_view block&quot;&#125;)
+    project_list_soup = project_list_part.find_all(&#39;li&#39;, &#123;&#39;class&#39;: &#123;&#39;odd&#39;,&quot;even&quot;&#125;&#125;)
+    return project_list_soup
+
+# 在项目信息中提取项目的名称，得到一个列表
+def get_project_title(project_list_soup):
+    project_title = []
+    for link in project_list_soup:
+        project_year = link.find(&#39;span&#39;, &#123;&#39;class&#39;: &#39;year&#39;&#125;)
+        links = link.find(&#39;a&#39;)[&#39;href&#39;]
+        name = str(project_year.string) + &#39;--&#39;+ str(links[9:-5])
+        project_title.append(name)
+    return project_title
+
+# 解析出每个项目的地址，得到一个列表
+def get_project_link(project_list_soup):
+    project_link = []
+    for link in project_list_soup:
+        links = link.find(&#39;a&#39;)[&#39;href&#39;]
+        #因为项目的详细页面的默认状态是看文字介绍，所以还需要在后面加入一个进入画廊状态的字符串
+        links = str(r&quot;https://calatrava.com/&quot; + links+r&quot;?view_mode=gallery&quot;)
+        project_link.append(links)
+    return project_link
+
+### 在项目详细介绍的网页找到高清大图的地址（解析出隐藏在翻页动画背后的高清大图的存储结构）
+### 页面的动画效果是通过一个JavaScript代码实现的，每个项目的大图都是结构化的存储在这段json对象中，直接用正则表达式提取出来就可以
+
+
+# 解析项目子项页面，得到图片地址的列表
+def parse_sub_html(project_link):
+    html = download_page(project_link)
+    project_soup = BeautifulSoup(html, features=&#39;lxml&#39;)
+    # 抓取JavaScript代码，解析出图片存放的实际地址
+    project_img_links_script=project_soup.find_all(&quot;script&quot;)
+    project_img_links=re.findall(r&quot;&#39;(?P&lt;addr&gt;files.*)&#39;,  title&quot;,str(project_img_links_script))
+    for i in range(len(project_img_links)):
+        project_img_links[i]=str(r&quot;https://calatrava.com/&quot;)+project_img_links[i]
+    # print(str(project_img_links_script))
+    print(project_img_links)
+    print(&quot;此项目大图数量 = &quot;+&quot;len(project_img_links&quot;)
+    return project_img_links
+
+# 根据图片地址的列表，设定命名规则，保存图片
+def save_img(links, name):
+    headers = &#123;&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0&#39;&#125;
+    os.makedirs(&#39;./Calatrava project img/&#39;, exist_ok=True)
+    t = 1
+    for link in links:
+        filename = str(&#39;./Calatrava project img/&#39; + str(name) + &#39;%s.jpg&#39; % (repr(t)))
+        print(&quot;Downloading----&quot;,str(filename))
+        with open(filename, &quot;wb&quot;) as img:
+            img.write(requests.get(link, headers=headers).content)
+            t += 1
+
+# 组装成一个main函数运行就可以进行后面的收图工作
+def main():
+    soup = parse_html(project_url)
+    # 得到项目名称以及项目地址
+    name = get_project_title(soup)
+    link = get_project_link(soup)
+    print(link)
+    # 进入项目子项地址下载图片
+    # 引入项目代号t可以从第t个项目开始下载，以防网络错误
+    t = 0
+    while t &lt; len(name):
+        # 考虑空项目地址引起download函数报错
+        if link[t] == &quot;&quot;:
+            print(&quot;Skip it,Because it is null,Hurry coding,,Fix it later&quot;)
+            t += 1
+        else:
+            img_list = parse_sub_html(link[t])
+            print(&#39;Project Name is :&#39;, name[t])
+            save_name = str(repr(t + 1)+&quot;-&quot; + name[t])
+            save_img(img_list, save_name)
+            print(&#39;No %s is ok&#39; % repr(t + 1))
+            t += 1
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/" data-id="claqum2dy001mh0tka4qz6q5s" data-title="关于python爬虫一点小的整理" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于matalab的数据分析
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/07/30/%E5%85%B3%E4%BA%8E%E6%9F%A5%E8%AF%A2%E8%87%AA%E5%B7%B1%E5%88%B0%E5%BA%95%E5%AE%89%E8%A3%85%E4%BA%86%E5%93%AA%E4%BA%9B%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">关于查询自己到底安装了哪些包</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

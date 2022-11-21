@@ -1,145 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>SQL数据库的相关知识 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="数据库的知识就暂时整理到这里，后面有能力和需求再继续补充 76条经典的数据库语言自带的字符客户端MySQL 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SQL数据库的相关知识">
-<meta property="og:url" content="http://example.com/2022/04/29/SQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库的知识就暂时整理到这里，后面有能力和需求再继续补充 76条经典的数据库语言自带的字符客户端MySQL 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651190998091.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651191007546.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651191015075.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651798689687.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651798696639.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651798703145.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651885146959.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651885162682.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651885205646.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651969510813.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651969531524.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651969568520.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651970004534.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651970261734.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651970861524.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651971815585.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651972039858.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1651972118574.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652407572995.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652408057875.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652408275502.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652409136146.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652409078094.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652409830358.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652410994899.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652411073802.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652411195906.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652411370903.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652411454402.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652423682028.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652424175061.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652424541717.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652425662691.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652426009213.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652426546777.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652431502891.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652432970173.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652433048521.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652433705231.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652434865938.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1652436296166.png">
-<meta property="article:published_time" content="2022-04-29T00:05:28.000Z">
-<meta property="article:modified_time" content="2022-06-12T13:48:51.418Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io//post-images/1651190998091.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-SQL数据库的相关知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/29/SQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="article-date">
-  <time class="dt-published" datetime="2022-04-29T00:05:28.000Z" itemprop="datePublished">2022-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      SQL数据库的相关知识
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            SQL数据库的相关知识
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/04/29 Fri 08:05&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/06/12 Sun 21:48
+        </div>
+    </div>
+    <div class="article-content">
         <p>数据库的知识就暂时整理到这里，后面有能力和需求再继续补充</p>
 <p>76条经典的数据库语言<br>自带的字符客户端MySQL</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line">-- 删除已经创建的表</span><br><span class="line">drop table dept;</span><br><span class="line">drop table employees;</span><br><span class="line">drop table managers;</span><br><span class="line">-- 创建部门表</span><br><span class="line">create table dept(</span><br><span class="line">deptno int primary key,</span><br><span class="line">dname varchar(9),</span><br><span class="line">loc varchar(10));</span><br><span class="line"></span><br><span class="line">-- 创建员工表</span><br><span class="line">create table employees(</span><br><span class="line">empno int primary key ,</span><br><span class="line">name char(10) not null,</span><br><span class="line">deptno int,</span><br><span class="line">manager int,</span><br><span class="line">hiredate date,</span><br><span class="line">salary numeric(7, 2)) ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 创建经理表</span><br><span class="line">create table managers(</span><br><span class="line">empno int primary key,</span><br><span class="line">title varchar(16));</span><br><span class="line"></span><br><span class="line">-- insert 语句向员工表中插入记录，包括所有字段的值</span><br><span class="line">insert into employees values(1,&#x27;张三&#x27;,1,2,&#x27;2011-03-03&#x27;,4400.00);</span><br><span class="line">insert into employees values(2,&#x27;王五&#x27;,1,2,&#x27;2013-01-03&#x27;,4100.00);</span><br><span class="line">insert into employees values(3,&#x27;李四&#x27;,2,4,&#x27;2021-02-10&#x27;,3900.00);</span><br><span class="line">insert into employees values(5,&#x27;李明&#x27;,3,5,&#x27;2004-09-11&#x27;,5200.00);</span><br><span class="line">insert into employees values(6,&#x27;孙军&#x27;,3,5,&#x27;2016-05-22&#x27;,4700.00);</span><br><span class="line">insert into employees values(7,&#x27;钱杰&#x27;,3,5,&#x27;2013-07-22&#x27;,4900.00);</span><br><span class="line">insert into employees values(8,&#x27;李爱国&#x27;,3,5,&#x27;2013-07-22&#x27;,4900.00);</span><br><span class="line">-- 向员工表中插入记录，只包括部分字段的值</span><br><span class="line">insert into employees(empno,name,salary) values(4,&#x27;赵六&#x27;,5000.00);</span><br><span class="line">insert into employees(empno,name,hiredate,salary) values(9,&#x27;刘国强&#x27;,&#x27;2010-04-12&#x27;,5000.00);</span><br><span class="line">-- 向部门表中插入记录</span><br><span class="line">insert into dept values(1,&#x27;技术部&#x27;,&#x27;一楼a 区&#x27;);</span><br><span class="line">insert into dept values(2,&#x27;销售部&#x27;,&#x27;二楼a 区&#x27;);</span><br><span class="line">insert into dept values(3,&#x27;行政部&#x27;,&#x27;一楼b 区&#x27;);</span><br><span class="line"></span><br><span class="line">-- 向经理表中插入记录</span><br><span class="line">insert into managers values(2,&#x27;技术部经理&#x27;);</span><br><span class="line">insert into managers values(4,&#x27;销售部经理&#x27;);</span><br><span class="line">insert into managers values(5,&#x27;行政部经理&#x27;);</span><br><span class="line">insert into managers values(99,&#x27;总裁&#x27;);</span><br><span class="line"></span><br><span class="line">-- 主键重复的记录无法插入</span><br><span class="line">insert into employees values(1,&#x27;郭君声&#x27;,1,2,&#x27;2010-04-11&#x27;,6100.00);</span><br><span class="line">insert into dept values(3,&#x27;市场部&#x27;,&#x27;一楼a 区&#x27;);</span><br><span class="line">-- 不能将现有的记录修改成违反主键约束的记录</span><br><span class="line">update managers set empno=2 where empno=4;</span><br><span class="line"></span><br><span class="line">-- select 语句查询员工表的所有记录的所有字段</span><br><span class="line">select * from employees;</span><br><span class="line">-- select 语句查询员工表的所有记录的姓名和工资字段</span><br><span class="line">select name,salary from employees;</span><br><span class="line"></span><br><span class="line">-- distinct 去重复值查询员工表中的所有经理号</span><br><span class="line">select manager from employees;</span><br><span class="line">-- 查询员工表中的不重复的经理号</span><br><span class="line">select distinct manager from employees;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- where 条件过滤查询在3 部门的员工的员工的姓名和工资：</span><br><span class="line">select name,salary from employees where deptno=3;</span><br><span class="line">-- 查询2010 年前入职的员工的姓名和工资：</span><br><span class="line">select name,salary from employees where hiredate&lt;&#x27;2010-01-01&#x27;;</span><br><span class="line"></span><br><span class="line">-- and 和or 运算符查询出第3 部门里工资大于等于5 千的员工</span><br><span class="line">select * from employees where deptno=3 and salary&gt;=5000;</span><br><span class="line"></span><br><span class="line">-- 查询出第3 部门或者工资大于等于5 千的员工：</span><br><span class="line">select * from employees where deptno=3 or salary&gt;=5000;</span><br><span class="line">-- 查询出第3 部门或者第1 部门中工资大于等于5 千的员工：</span><br><span class="line">select * from employees where (deptno=3 or deptno=1) and salary&lt;5000;</span><br><span class="line"></span><br><span class="line">-- like 搜索匹配的字符串找出在一楼办公的部门：</span><br><span class="line">select * from dept where loc like &#x27;一楼%&#x27;;</span><br><span class="line">-- 找出姓李的员工</span><br><span class="line">select * from employees where name like &#x27;李%&#x27;;</span><br><span class="line"></span><br><span class="line">-- in 匹配多个值列出员工号为3 和5 的员工：</span><br><span class="line">select name from employees where empno in (3,5);</span><br><span class="line">-- 前面的SQL 语句相当于</span><br><span class="line">select name from employees where empno=3 or empno=5;</span><br><span class="line">-- 找出不在部门3 和部门5 的员工的姓名</span><br><span class="line">select name from employees where empno not in (3,5);</span><br><span class="line">-- 找出在一楼办公的员工的姓名：</span><br><span class="line">select name from employees where deptno in (select deptno from dept where loc like &#x27;一楼%&#x27;);</span><br><span class="line"></span><br><span class="line">-- between 查询出在2013 年之间入职的员工的姓名：</span><br><span class="line">select name from employees where hiredate between &#x27;2013-01-01&#x27; and &#x27;2013-12-31&#x27;;</span><br><span class="line"></span><br><span class="line">-- 查询出不在2013 年入职的员工：</span><br><span class="line">select name from employees where hiredate not between &#x27;2013-01-01&#x27; and &#x27;2013-12-31&#x27;;</span><br><span class="line"></span><br><span class="line">-- 按工资从低到高列出员工姓名和工资：</span><br><span class="line">select name,salary from employees order by salary;</span><br><span class="line">-- 如果要按从高到低输出，加上desc 的关键字：</span><br><span class="line">select name,salary from employees order by salary desc;</span><br><span class="line"></span><br><span class="line">-- 下面的命令按照员工的入职顺序列出员工：</span><br><span class="line">select name,hiredate from employees order by hiredate;</span><br><span class="line">-- update 修改数据先查询一下员工号为4 的员工信息：</span><br><span class="line">select * from employees where empno=4;</span><br><span class="line">-- 下面的sql 语句将这个员工所属的部门改成2，经理改成4:</span><br><span class="line">update employees set deptno=2, manager=4 where empno=4;</span><br><span class="line">-- 修改完成后再次查询这个员工的记录如下：</span><br><span class="line">select * from employees where empno=4;</span><br><span class="line"></span><br><span class="line">-- delete 删除记录查询9 号员工的记录：</span><br><span class="line">select * from employees where empno=9;</span><br><span class="line">-- 删除9 号员工的记录：</span><br><span class="line">delete from employees where empno=9;</span><br><span class="line">-- 再次查询9 号员工的记录：</span><br><span class="line">select * from employees where empno=9;</span><br><span class="line">-- create index 创建索引在表employees 的name 字段上创建索引</span><br><span class="line">create index in_name on employees(name);</span><br><span class="line"></span><br><span class="line">-- create view 创建视图创建一个视图名为employees_2015 的视图，包括2015 年之前入</span><br><span class="line">职的员工的姓名和工资。</span><br><span class="line">create view employees_2015 as select name,salary from employees where hiredate &lt;&#x27;2015-01-01&#x27;;</span><br><span class="line">-- 查询这个视图</span><br><span class="line">select * from employees_2015;</span><br><span class="line">-- 更新这个视图，把张三的工资增加400 元：</span><br><span class="line">update employees_2015 set salary=salary+400 where name=&#x27;张三&#x27;;</span><br><span class="line">-- 再次查询这个视图，发现已经更新成功：</span><br><span class="line">select * from employees_2015;</span><br><span class="line"></span><br><span class="line">-- 检查底层表，发现也已经更新成功：</span><br><span class="line">select name,salary from employees where name=&#x27;张三&#x27;;</span><br><span class="line"></span><br><span class="line">-- 删除视图</span><br><span class="line">drop view employees_2015;</span><br><span class="line">-- null 值查询不属于任何部门的员工的信息</span><br><span class="line">select * from employees where deptno is null;</span><br><span class="line"></span><br><span class="line">-- 查询有经理的员工的信息：</span><br><span class="line">select * from employees where manager is not null;</span><br><span class="line">-- 字段或表的别名把字段名换成中文，表意更明确；把表名换成简短的字符串，写起</span><br><span class="line">来更方便</span><br><span class="line"></span><br><span class="line">select name 姓名, salary 工资from employees e;</span><br><span class="line">-- 把count(*)的字段用汉字“总人数”代替，表意更清楚</span><br><span class="line">select count(*) 总人数from employees;</span><br><span class="line"></span><br><span class="line">-- join 连接表inner join 内连接，内连接查询出员工表和经理表中都存在的员工的姓名</span><br><span class="line">和头衔</span><br><span class="line">select name,title from employees inner join managers on employees.empno=managers.empno;</span><br><span class="line"></span><br><span class="line">-- left join 左连接查询员工表中的所有记录，并列出他们在经理表中的头衔，如果在经</span><br><span class="line">理表中没有记录头衔用null 代替</span><br><span class="line">select name,title from employees left join managers on employees.empno=managers.empno;</span><br><span class="line"></span><br><span class="line">-- right join 右连接查询经理表中的所有记录，并列出他们在员工表中的姓名，如果在员</span><br><span class="line">工表中没有记录姓名用null 代替</span><br><span class="line">select name,title from employees right join managers on</span><br><span class="line">employees.empno=managers.empno;</span><br><span class="line"></span><br><span class="line">-- 子查询查询在二楼办公的员工的姓名</span><br><span class="line">select name from employees where deptno in (select deptno from dept where loc like &#x27;二楼%&#x27;);</span><br><span class="line"></span><br><span class="line">-- 查询不在员工表中的经理</span><br><span class="line">select * from managers where empno not in (select empno from employees);</span><br><span class="line"></span><br><span class="line">--常用的函数</span><br><span class="line">-- count 函数count(*)统计统计员工表中的所有员工</span><br><span class="line">select count(*) from employees ;</span><br><span class="line"></span><br><span class="line">-- 统计员工表中所有部门号不为null 的员工</span><br><span class="line">select count(deptno) from employees ;</span><br><span class="line"></span><br><span class="line">-- 查询员工表中部门号为null 的员工</span><br><span class="line">select * from employees where deptno is null;</span><br><span class="line"></span><br><span class="line">-- max 函数查询员工表中工资最高的员工</span><br><span class="line">select max(salary) from employees;</span><br><span class="line"></span><br><span class="line">-- min 函数查询员工表中最早入职的员工</span><br><span class="line">select min(hiredate) from employees;</span><br><span class="line"></span><br><span class="line">-- avg 函数查询员工表中员工的平均工资</span><br><span class="line">select avg(salary) from employees;</span><br><span class="line"></span><br><span class="line">-- sum 函数查询员工表中员工的工资合计</span><br><span class="line">select sum(salary) from employees;</span><br><span class="line"></span><br><span class="line">-- group by 分组统计按部门统计员工的平均工资</span><br><span class="line">select deptno,avg(salary) from employees group by deptno;</span><br><span class="line"></span><br><span class="line">-- having 过滤分组统计查询部门员工平均工资小于4500 的部门</span><br><span class="line">select deptno,avg(salary) from employees group by deptno having avg(salary)&lt;4500;</span><br></pre></td></tr></table></figure>
+<pre><code>-- 删除已经创建的表
+drop table dept;
+drop table employees;
+drop table managers;
+-- 创建部门表
+create table dept(
+deptno int primary key,
+dname varchar(9),
+loc varchar(10));
+
+-- 创建员工表
+create table employees(
+empno int primary key ,
+name char(10) not null,
+deptno int,
+manager int,
+hiredate date,
+salary numeric(7, 2)) ;
+
+
+-- 创建经理表
+create table managers(
+empno int primary key,
+title varchar(16));
+
+-- insert 语句向员工表中插入记录，包括所有字段的值
+insert into employees values(1,&#39;张三&#39;,1,2,&#39;2011-03-03&#39;,4400.00);
+insert into employees values(2,&#39;王五&#39;,1,2,&#39;2013-01-03&#39;,4100.00);
+insert into employees values(3,&#39;李四&#39;,2,4,&#39;2021-02-10&#39;,3900.00);
+insert into employees values(5,&#39;李明&#39;,3,5,&#39;2004-09-11&#39;,5200.00);
+insert into employees values(6,&#39;孙军&#39;,3,5,&#39;2016-05-22&#39;,4700.00);
+insert into employees values(7,&#39;钱杰&#39;,3,5,&#39;2013-07-22&#39;,4900.00);
+insert into employees values(8,&#39;李爱国&#39;,3,5,&#39;2013-07-22&#39;,4900.00);
+-- 向员工表中插入记录，只包括部分字段的值
+insert into employees(empno,name,salary) values(4,&#39;赵六&#39;,5000.00);
+insert into employees(empno,name,hiredate,salary) values(9,&#39;刘国强&#39;,&#39;2010-04-12&#39;,5000.00);
+-- 向部门表中插入记录
+insert into dept values(1,&#39;技术部&#39;,&#39;一楼a 区&#39;);
+insert into dept values(2,&#39;销售部&#39;,&#39;二楼a 区&#39;);
+insert into dept values(3,&#39;行政部&#39;,&#39;一楼b 区&#39;);
+
+-- 向经理表中插入记录
+insert into managers values(2,&#39;技术部经理&#39;);
+insert into managers values(4,&#39;销售部经理&#39;);
+insert into managers values(5,&#39;行政部经理&#39;);
+insert into managers values(99,&#39;总裁&#39;);
+
+-- 主键重复的记录无法插入
+insert into employees values(1,&#39;郭君声&#39;,1,2,&#39;2010-04-11&#39;,6100.00);
+insert into dept values(3,&#39;市场部&#39;,&#39;一楼a 区&#39;);
+-- 不能将现有的记录修改成违反主键约束的记录
+update managers set empno=2 where empno=4;
+
+-- select 语句查询员工表的所有记录的所有字段
+select * from employees;
+-- select 语句查询员工表的所有记录的姓名和工资字段
+select name,salary from employees;
+
+-- distinct 去重复值查询员工表中的所有经理号
+select manager from employees;
+-- 查询员工表中的不重复的经理号
+select distinct manager from employees;
+
+
+-- where 条件过滤查询在3 部门的员工的员工的姓名和工资：
+select name,salary from employees where deptno=3;
+-- 查询2010 年前入职的员工的姓名和工资：
+select name,salary from employees where hiredate&lt;&#39;2010-01-01&#39;;
+
+-- and 和or 运算符查询出第3 部门里工资大于等于5 千的员工
+select * from employees where deptno=3 and salary&gt;=5000;
+
+-- 查询出第3 部门或者工资大于等于5 千的员工：
+select * from employees where deptno=3 or salary&gt;=5000;
+-- 查询出第3 部门或者第1 部门中工资大于等于5 千的员工：
+select * from employees where (deptno=3 or deptno=1) and salary&lt;5000;
+
+-- like 搜索匹配的字符串找出在一楼办公的部门：
+select * from dept where loc like &#39;一楼%&#39;;
+-- 找出姓李的员工
+select * from employees where name like &#39;李%&#39;;
+
+-- in 匹配多个值列出员工号为3 和5 的员工：
+select name from employees where empno in (3,5);
+-- 前面的SQL 语句相当于
+select name from employees where empno=3 or empno=5;
+-- 找出不在部门3 和部门5 的员工的姓名
+select name from employees where empno not in (3,5);
+-- 找出在一楼办公的员工的姓名：
+select name from employees where deptno in (select deptno from dept where loc like &#39;一楼%&#39;);
+
+-- between 查询出在2013 年之间入职的员工的姓名：
+select name from employees where hiredate between &#39;2013-01-01&#39; and &#39;2013-12-31&#39;;
+
+-- 查询出不在2013 年入职的员工：
+select name from employees where hiredate not between &#39;2013-01-01&#39; and &#39;2013-12-31&#39;;
+
+-- 按工资从低到高列出员工姓名和工资：
+select name,salary from employees order by salary;
+-- 如果要按从高到低输出，加上desc 的关键字：
+select name,salary from employees order by salary desc;
+
+-- 下面的命令按照员工的入职顺序列出员工：
+select name,hiredate from employees order by hiredate;
+-- update 修改数据先查询一下员工号为4 的员工信息：
+select * from employees where empno=4;
+-- 下面的sql 语句将这个员工所属的部门改成2，经理改成4:
+update employees set deptno=2, manager=4 where empno=4;
+-- 修改完成后再次查询这个员工的记录如下：
+select * from employees where empno=4;
+
+-- delete 删除记录查询9 号员工的记录：
+select * from employees where empno=9;
+-- 删除9 号员工的记录：
+delete from employees where empno=9;
+-- 再次查询9 号员工的记录：
+select * from employees where empno=9;
+-- create index 创建索引在表employees 的name 字段上创建索引
+create index in_name on employees(name);
+
+-- create view 创建视图创建一个视图名为employees_2015 的视图，包括2015 年之前入
+职的员工的姓名和工资。
+create view employees_2015 as select name,salary from employees where hiredate &lt;&#39;2015-01-01&#39;;
+-- 查询这个视图
+select * from employees_2015;
+-- 更新这个视图，把张三的工资增加400 元：
+update employees_2015 set salary=salary+400 where name=&#39;张三&#39;;
+-- 再次查询这个视图，发现已经更新成功：
+select * from employees_2015;
+
+-- 检查底层表，发现也已经更新成功：
+select name,salary from employees where name=&#39;张三&#39;;
+
+-- 删除视图
+drop view employees_2015;
+-- null 值查询不属于任何部门的员工的信息
+select * from employees where deptno is null;
+
+-- 查询有经理的员工的信息：
+select * from employees where manager is not null;
+-- 字段或表的别名把字段名换成中文，表意更明确；把表名换成简短的字符串，写起
+来更方便
+
+select name 姓名, salary 工资from employees e;
+-- 把count(*)的字段用汉字“总人数”代替，表意更清楚
+select count(*) 总人数from employees;
+
+-- join 连接表inner join 内连接，内连接查询出员工表和经理表中都存在的员工的姓名
+和头衔
+select name,title from employees inner join managers on employees.empno=managers.empno;
+
+-- left join 左连接查询员工表中的所有记录，并列出他们在经理表中的头衔，如果在经
+理表中没有记录头衔用null 代替
+select name,title from employees left join managers on employees.empno=managers.empno;
+
+-- right join 右连接查询经理表中的所有记录，并列出他们在员工表中的姓名，如果在员
+工表中没有记录姓名用null 代替
+select name,title from employees right join managers on
+employees.empno=managers.empno;
+
+-- 子查询查询在二楼办公的员工的姓名
+select name from employees where deptno in (select deptno from dept where loc like &#39;二楼%&#39;);
+
+-- 查询不在员工表中的经理
+select * from managers where empno not in (select empno from employees);
+
+--常用的函数
+-- count 函数count(*)统计统计员工表中的所有员工
+select count(*) from employees ;
+
+-- 统计员工表中所有部门号不为null 的员工
+select count(deptno) from employees ;
+
+-- 查询员工表中部门号为null 的员工
+select * from employees where deptno is null;
+
+-- max 函数查询员工表中工资最高的员工
+select max(salary) from employees;
+
+-- min 函数查询员工表中最早入职的员工
+select min(hiredate) from employees;
+
+-- avg 函数查询员工表中员工的平均工资
+select avg(salary) from employees;
+
+-- sum 函数查询员工表中员工的工资合计
+select sum(salary) from employees;
+
+-- group by 分组统计按部门统计员工的平均工资
+select deptno,avg(salary) from employees group by deptno;
+
+-- having 过滤分组统计查询部门员工平均工资小于4500 的部门
+select deptno,avg(salary) from employees group by deptno having avg(salary)&lt;4500;
+</code></pre>
 <p>数据存放在数据库库中,SQL是用于访问和处理数据库的标准计算机语言，是指结构化查询语言，机会所有的关系数据库都可以用，不需要区分大小写。</p>
 <h1 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h1><h2 id="如何定义数据的存储格式"><a href="#如何定义数据的存储格式" class="headerlink" title="如何定义数据的存储格式"></a>如何定义数据的存储格式</h2><p><strong>为了便于程序保存和读取数据</strong>，而且，能直<strong>接通过条件快速查询到指定的数据</strong>，就出现了数据库（Database）这种专门用于集中存储和查询的软件。<br>数据库软件诞生的历史非常久远，早在1950年数据库就诞生了。经历了<strong>网状数据库</strong>，<strong>层次数据库</strong>，<strong>关系数据库</strong>，我们现在广泛使用的关系数据库是20世纪70年代基于关系模型的基础上诞生的。</p>
 <h2 id="数据库的类型"><a href="#数据库的类型" class="headerlink" title="数据库的类型"></a>数据库的类型</h2><pre><code>* MySQL，大家都在用，一般错不了；
@@ -154,9 +271,45 @@
 <li>要操作关系数据库，首先需要<strong>连接到数据库</strong>，一个数据库连接称为Connection；</li>
 <li>连接到数据库后，需要打开游标，称之为Cursor，<strong>通过Cursor执行SQL语句</strong>，然后，获得执行结果。</li>
 <li>Python定义了一套操作数据库的<strong>API接口</strong>，任何数据库要连接到Python，只需要提供符合Python标准的数据库驱动即可。</li>
-<li>由于SQLite的驱动内置在Python标准库中，所以我们可以直接来操作SQLite数据库。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入SQLite驱动:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="comment"># 连接到SQLite数据库</span></span><br><span class="line"><span class="comment"># 数据库文件是test.db</span></span><br><span class="line"><span class="comment"># 如果文件不存在，会自动在当前目录创建:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>conn = sqlite3.connect(<span class="string">&#x27;test.db&#x27;</span>)</span><br><span class="line"><span class="comment"># 创建一个Cursor:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor = conn.cursor()</span><br><span class="line"><span class="comment"># 执行一条SQL语句，创建user表:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.execute(<span class="string">&#x27;create table user (id varchar(20) primary key, name varchar(20))&#x27;</span>)</span><br><span class="line">&lt;sqlite3.Cursor <span class="built_in">object</span> at <span class="number">0x10f8aa260</span>&gt;</span><br><span class="line"><span class="comment"># 继续执行一条SQL语句，插入一条记录:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.execute(<span class="string">&#x27;insert into user (id, name) values (\&#x27;1\&#x27;, \&#x27;Michael\&#x27;)&#x27;</span>)</span><br><span class="line">&lt;sqlite3.Cursor <span class="built_in">object</span> at <span class="number">0x10f8aa260</span>&gt;</span><br><span class="line"><span class="comment"># 通过rowcount获得插入的行数:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.rowcount</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="comment"># 提交事务:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>conn.commit()</span><br><span class="line"><span class="comment"># 关闭Cursor:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.close()</span><br><span class="line"><span class="comment"># 关闭Connection:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>conn.close()</span><br></pre></td></tr></table></figure>
-查询记录<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>conn = sqlite3.connect(<span class="string">&#x27;test.db&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor = conn.cursor()</span><br><span class="line"><span class="comment"># 执行查询语句:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.execute(<span class="string">&#x27;select * from user where id=?&#x27;</span>, (<span class="string">&#x27;1&#x27;</span>,))</span><br><span class="line">&lt;sqlite3.Cursor <span class="built_in">object</span> at <span class="number">0x10f8aa340</span>&gt;</span><br><span class="line"><span class="comment"># 获得查询结果集:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>values = cursor.fetchall()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>values</span><br><span class="line">[(<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;Michael&#x27;</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cursor.close()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>conn.close()</span><br></pre></td></tr></table></figure></li>
+<li>由于SQLite的驱动内置在Python标准库中，所以我们可以直接来操作SQLite数据库。</li>
 </ol>
+<pre><code class="python"># 导入SQLite驱动:
+&gt;&gt;&gt; import sqlite3
+# 连接到SQLite数据库
+# 数据库文件是test.db
+# 如果文件不存在，会自动在当前目录创建:
+&gt;&gt;&gt; conn = sqlite3.connect(&#39;test.db&#39;)
+# 创建一个Cursor:
+&gt;&gt;&gt; cursor = conn.cursor()
+# 执行一条SQL语句，创建user表:
+&gt;&gt;&gt; cursor.execute(&#39;create table user (id varchar(20) primary key, name varchar(20))&#39;)
+&lt;sqlite3.Cursor object at 0x10f8aa260&gt;
+# 继续执行一条SQL语句，插入一条记录:
+&gt;&gt;&gt; cursor.execute(&#39;insert into user (id, name) values (\&#39;1\&#39;, \&#39;Michael\&#39;)&#39;)
+&lt;sqlite3.Cursor object at 0x10f8aa260&gt;
+# 通过rowcount获得插入的行数:
+&gt;&gt;&gt; cursor.rowcount
+1
+# 提交事务:
+&gt;&gt;&gt; conn.commit()
+# 关闭Cursor:
+&gt;&gt;&gt; cursor.close()
+# 关闭Connection:
+&gt;&gt;&gt; conn.close()
+</code></pre>
+<p>查询记录</p>
+<pre><code class="python">&gt;&gt;&gt; conn = sqlite3.connect(&#39;test.db&#39;)
+&gt;&gt;&gt; cursor = conn.cursor()
+# 执行查询语句:
+&gt;&gt;&gt; cursor.execute(&#39;select * from user where id=?&#39;, (&#39;1&#39;,))
+&lt;sqlite3.Cursor object at 0x10f8aa340&gt;
+# 获得查询结果集:
+&gt;&gt;&gt; values = cursor.fetchall()
+&gt;&gt;&gt; values
+[(&#39;1&#39;, &#39;Michael&#39;)]
+&gt;&gt;&gt; cursor.close()
+&gt;&gt;&gt; conn.close()
+</code></pre>
 <h2 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h2><ol>
 <li>使用Python的DB-API时，只要搞清楚<strong>Connection和Cursor对象</strong>，打开后一定记得关闭（否则会出现资源的泄露），就可以放心地使用。</li>
 <li>使用Cursor对象执行insert，update，delete语句时，执行结果由<strong>rowcount</strong>返回影响的行数，就可以拿到执行结果。</li>
@@ -164,10 +317,45 @@
 <li>如果SQL语句带有参数，那么需要把参数按照位置传递给execute()方法，有几个?占位符就必须对应几个参数</li>
 </ol>
 <h1 id="在python中连接MySQL"><a href="#在python中连接MySQL" class="headerlink" title="在python中连接MySQL:"></a>在python中连接MySQL:</h1><p>使用MySQL的原因：MySQL是Web世界中使用最广泛的数据库服务器。<strong>SQLite的特点是轻量级</strong>、<strong>可嵌入</strong>，<strong>但不能承受高并发访问</strong>，<strong>适合桌面和移动应用</strong>。而MySQL是为服务器端设计的数据库，<strong>能承受高并发访问</strong>，同时<strong>占用的内存也远远大于SQLite</strong>。<br>为什么要连接？（这一步可以跳过，自己已经连接好了）<br>由于MySQL服务器以独立的进程运行，并通过网络对外服务，所以，需要支持Python的MySQL驱动来连接到MySQL服务器。MySQL官方提供了mysql-connector-python驱动，但是安装的时候需要给pip命令加上参数–allow-external：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 自己已经试验成功的，没有啥问题</span><br><span class="line"># 以下为如何连接到MySQL服务器的test数据库：</span><br><span class="line"># 由于Pythonde DB-API定义都是以通用的，操作MySQL的数据库代码和SQLite类似。</span><br><span class="line">&gt;&gt;&gt; import mysql.connector</span><br><span class="line">&gt;&gt;&gt; conn = mysql.connector.connect(user=&#x27;root&#x27;, password=&#x27;xr1806144220092&#x27;,database=&#x27;test&#x27;)</span><br><span class="line">&gt;&gt;&gt; cursor = conn.cursor()</span><br><span class="line">&gt;&gt;&gt; cursor.execute(&#x27;create table user (id varchar(20) primary key, name varchar(20))&#x27;)</span><br><span class="line">&gt;&gt;&gt; cursor.execute(&#x27;insert into user (id, name) values (%s, %s)&#x27;, [&#x27;1&#x27;, &#x27;Michael&#x27;])</span><br><span class="line">&gt;&gt;&gt; cursor.rowcount</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; conn.commit()</span><br><span class="line">&gt;&gt;&gt; cursor.close()</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; cursor = conn.cursor()</span><br><span class="line">&gt;&gt;&gt; cursor.execute(&#x27;select * from user where id = %s&#x27;, (&#x27;1&#x27;,))</span><br><span class="line">&gt;&gt;&gt; values = cursor.fetchall()</span><br><span class="line">&gt;&gt;&gt; values</span><br><span class="line">[(&#x27;1&#x27;, &#x27;Michael&#x27;)]</span><br><span class="line">&gt;&gt;&gt; cursor.close()</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; conn.close()</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<pre><code># 自己已经试验成功的，没有啥问题
+# 以下为如何连接到MySQL服务器的test数据库：
+# 由于Pythonde DB-API定义都是以通用的，操作MySQL的数据库代码和SQLite类似。
+&gt;&gt;&gt; import mysql.connector
+&gt;&gt;&gt; conn = mysql.connector.connect(user=&#39;root&#39;, password=&#39;xr1806144220092&#39;,database=&#39;test&#39;)
+&gt;&gt;&gt; cursor = conn.cursor()
+&gt;&gt;&gt; cursor.execute(&#39;create table user (id varchar(20) primary key, name varchar(20))&#39;)
+&gt;&gt;&gt; cursor.execute(&#39;insert into user (id, name) values (%s, %s)&#39;, [&#39;1&#39;, &#39;Michael&#39;])
+&gt;&gt;&gt; cursor.rowcount
+1
+&gt;&gt;&gt; conn.commit()
+&gt;&gt;&gt; cursor.close()
+True
+&gt;&gt;&gt; cursor = conn.cursor()
+&gt;&gt;&gt; cursor.execute(&#39;select * from user where id = %s&#39;, (&#39;1&#39;,))
+&gt;&gt;&gt; values = cursor.fetchall()
+&gt;&gt;&gt; values
+[(&#39;1&#39;, &#39;Michael&#39;)]
+&gt;&gt;&gt; cursor.close()
+True
+&gt;&gt;&gt; conn.close()
+&gt;&gt;&gt;
+</code></pre>
 <h2 id="使用SQLAlchemy"><a href="#使用SQLAlchemy" class="headerlink" title="使用SQLAlchemy"></a>使用SQLAlchemy</h2><p>可以用Python的数据结构表示出来，用list表示多行，list的每一个元素是tuple,但是用tuple表示一行很难看出表的结构。如果<strong>把一个tuple用class实例来表示</strong>，就可以更容易地看出表的结构来：<br>更多关于ORM框架的知识可以后面去学习</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也即ORM技术：把关系数据库的表映射到对象上</span></span><br><span class="line"><span class="comment"># 用ORM框架来做转换（SQLAlchemy）</span></span><br><span class="line"><span class="comment"># ORM就是把数据库表的行与列相应的对象建立关联，互相转换</span></span><br><span class="line"><span class="comment"># 由于关系数据库的多个表还可以用外键实现一对多、多对多等关联，相应地，ORM框架也可以提供两个对象之间的一对多、多对多等功能</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">User</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, <span class="built_in">id</span>, name</span>):</span><br><span class="line">        self.<span class="built_in">id</span> = <span class="built_in">id</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    User(<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;Michael&#x27;</span>),</span><br><span class="line">    User(<span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>),</span><br><span class="line">    User(<span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;Adam&#x27;</span>)</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 也即ORM技术：把关系数据库的表映射到对象上
+# 用ORM框架来做转换（SQLAlchemy）
+# ORM就是把数据库表的行与列相应的对象建立关联，互相转换
+# 由于关系数据库的多个表还可以用外键实现一对多、多对多等关联，相应地，ORM框架也可以提供两个对象之间的一对多、多对多等功能
+class User(object):
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
 
+[
+    User(&#39;1&#39;, &#39;Michael&#39;),
+    User(&#39;2&#39;, &#39;Bob&#39;),
+    User(&#39;3&#39;, &#39;Adam&#39;)
+]
+</code></pre>
 <h1 id="数据模型："><a href="#数据模型：" class="headerlink" title="数据模型："></a>数据模型：</h1><p>按照数据结构来组织、存储和管理数据，一共有三种模型：</p>
 <ol>
 <li>层次模型：上下级的层次关系来组织数据的方式，像一颗树</li>
@@ -235,7 +423,13 @@
 <li>SELECT语句可以对结果集的列进行重命名。</li>
 </ol>
 <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>对于使用SELECT查询的时候，查询的结果通常是按照id排序的（根据主键排序），这是大部分数据库的做法，如果想要根据其他的条件排序的话，可以用ORDER BY子句<br>例子一：SELECT id,name,gender,score FROM students order by score;(按照score从低到高)<br><img src="https://runnerxr.github.io//post-images/1652409136146.png"><br>如果score列有相同的数据，要进一步排序，可以继续添加列名，使用ORDER BY score DESC,gender表示先按score列排序，如果有相同的分数，再按照gender列排序<br>例子二：SELECT id,name,gender, score FROM students ORDER BY score DESC,gender;(按照score,gender排序)<br><img src="https://runnerxr.github.io//post-images/1652409078094.png"><br>默认的排序规则是ASC:升序，即从小到大，ASC可以省略，ORDER BY score ASC 和ORDER BY score效果一样，如果有WHERE子句，那么ORDER BY 子句要放到WHERE子句后面<br>例子三：带WHERE条件的ORDER BY:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询一班的学生成绩，并按照倒序排序</span><br><span class="line"># 结果集合仅包含符合WHERE条件的记录，并按照ORDER BY的设定排序</span><br><span class="line">SELECT id ,name,gender,score</span><br><span class="line">FROM students</span><br><span class="line">WHERE class_id = 1</span><br><span class="line">ORDER BY score DESC;</span><br></pre></td></tr></table></figure>
+<pre><code># 查询一班的学生成绩，并按照倒序排序
+# 结果集合仅包含符合WHERE条件的记录，并按照ORDER BY的设定排序
+SELECT id ,name,gender,score
+FROM students
+WHERE class_id = 1
+ORDER BY score DESC;
+</code></pre>
 <p><img src="https://runnerxr.github.io//post-images/1652409830358.png"></p>
 <h3 id="小结如下："><a href="#小结如下：" class="headerlink" title="小结如下："></a>小结如下：</h3><ol>
 <li>使用ORDER BY可以对结果集进行排序</li>
@@ -244,12 +438,37 @@
 <h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>使用SELECT查询时，数据量很大的时候，放在一个页面显示数据量太大，可以分页显示每次显示100条。<br>如何实现分页功能：</p>
 <ol>
 <li>从结果集中显示第1<del>100条记录作为第一页，显示101</del>200条记录作为第二页</li>
-<li>归纳如下：从结果集中’截取’出第M~N条记录，查询可以通过LIMIT <N-M> OFFSET <M>子句实现<br>以下为一些实现的过程：<br>第一步：SELECT id ,name,gender, score FROM students ORDER BY score DESC;<br><img src="https://runnerxr.github.io//post-images/1652410994899.png"><br>第二步：把结果集分页，每页3条记录，要获取第一页的记录，可以使用LIMIT 3 OFFSET 0:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询第一页</span><br><span class="line">SELECT id, name,gender,score</span><br><span class="line">FROM students</span><br><span class="line">ORDER BY score DESC</span><br><span class="line">LIMIT 3 OFFSET 0;   # 对结果集从0号记录开始，最多取3条，注意SQL记录集的索引从0开始</span><br></pre></td></tr></table></figure>
-<img src="https://runnerxr.github.io//post-images/1652411073802.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询第2页，将OFFSET  3(跳过前3条)</span><br><span class="line">SELECT id, name, gender, score</span><br><span class="line">FROM students</span><br><span class="line">ORDER BY score DESC</span><br><span class="line">LIMIT 3 OFFSET 3;</span><br></pre></td></tr></table></figure>
-<img src="https://runnerxr.github.io//post-images/1652411195906.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询第3页，将OFFSET  6(跳过前6条)</span><br><span class="line">SELECT id, name, gender, score</span><br><span class="line">FROM students</span><br><span class="line">ORDER BY score DESC</span><br><span class="line">LIMIT 3 OFFSET 6;</span><br></pre></td></tr></table></figure>
-<img src="https://runnerxr.github.io//post-images/1652411370903.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询第4页，将OFFSET  9(跳过前9条)</span><br><span class="line"># 最后一页只有一条记录</span><br><span class="line">SELECT id, name, gender, score</span><br><span class="line">FROM students</span><br><span class="line">ORDER BY score DESC</span><br><span class="line">LIMIT 3 OFFSET 9;</span><br></pre></td></tr></table></figure>
-<img src="https://runnerxr.github.io//post-images/1652411454402.png"></li>
+<li>归纳如下：从结果集中’截取’出第M~N条记录，查询可以通过LIMIT <N-M> OFFSET <M>子句实现<br>以下为一些实现的过程：<br>第一步：SELECT id ,name,gender, score FROM students ORDER BY score DESC;<br><img src="https://runnerxr.github.io//post-images/1652410994899.png"><br>第二步：把结果集分页，每页3条记录，要获取第一页的记录，可以使用LIMIT 3 OFFSET 0:</li>
 </ol>
+<pre><code># 查询第一页
+SELECT id, name,gender,score
+FROM students
+ORDER BY score DESC
+LIMIT 3 OFFSET 0;   # 对结果集从0号记录开始，最多取3条，注意SQL记录集的索引从0开始
+</code></pre>
+<p><img src="https://runnerxr.github.io//post-images/1652411073802.png"></p>
+<pre><code># 查询第2页，将OFFSET  3(跳过前3条)
+SELECT id, name, gender, score
+FROM students
+ORDER BY score DESC
+LIMIT 3 OFFSET 3;
+</code></pre>
+<p><img src="https://runnerxr.github.io//post-images/1652411195906.png"></p>
+<pre><code># 查询第3页，将OFFSET  6(跳过前6条)
+SELECT id, name, gender, score
+FROM students
+ORDER BY score DESC
+LIMIT 3 OFFSET 6;
+</code></pre>
+<p><img src="https://runnerxr.github.io//post-images/1652411370903.png"></p>
+<pre><code># 查询第4页，将OFFSET  9(跳过前9条)
+# 最后一页只有一条记录
+SELECT id, name, gender, score
+FROM students
+ORDER BY score DESC
+LIMIT 3 OFFSET 9;
+</code></pre>
+<p><img src="https://runnerxr.github.io//post-images/1652411454402.png"></p>
 <h3 id="总结如下："><a href="#总结如下：" class="headerlink" title="总结如下："></a>总结如下：</h3><p>分页的关键在于首先要确定每页需要显示的结果数量pageSize(3),然后根据当前页的索引pageindex（从1开始），确定LIMIT和OFFSET应该设定的值，然后就能正确的查询出第N页的记录集</p>
 <ol>
 <li>LIMIT总是设定为pageSize</li>
@@ -263,21 +482,57 @@
 <p>COUNT(<em>):<br>表示查询所有列的行数，要注意聚合的计算结果虽然是一个数字，但**查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是COUNT(</em>)*<em>。<br>通常，使用聚合查询时，我们应该给列名设置一个别名，便于处理结果：<br>SELECT COUNT(</em>) num FROM students;<br>COUNT(<em>)和COUNT(id)实际上是一样的效果，聚合查询同样可以使用WHERE条件，我们可以方便的统计出有多少男生、多少女生、多少80分以上的学生等<br>例子：SELECT COUNT(</em>)  boys FROM students WHERE gender &#x3D; ‘M’;<br><img src="https://runnerxr.github.io//post-images/1652424175061.png"><br>除了COUNT()函数外，SQL还提供了如下的聚合函数：<br>SUM:  计算某一列的合计值，该列必须为数值类型<br>AVG:  计算某一列的平均值 ，且必须为数值类型<br>MAX:  …(不限数值类型，会返回排序最后的字符)<br>MIN:   ….(不限数值类型，会返回排序最前的字符)<br>例子：SELECT AVG(score) average FROM students WHERE gender &#x3D; ‘M’;(使用聚合查询计算男生平均的成绩)<br><img src="https://runnerxr.github.io//post-images/1652424541717.png"><br><strong>注意点</strong>：如果聚合查询WHERE条件没有匹配到任何行，COUNT()会返回0，而SUM() 、AVG()  MAX()  MIN()会返回NULL<br><strong>question</strong>:每页三条记录，如何通过聚合查询获得总页数：SELECT CEILING(COUNT(*)&#x2F;3) FROM students;</p>
 <h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>SELECT COUNT(<em>) num FROM students WHERE class_id &#x3D; 1;可以用来查询1班的学生数量，<br>如果像继续统计二班、三班的学生数量的话，SQL提供了一个<strong>分组聚合</strong>的功能<br>按照class_id进行分组：SELECT COUNT(</em>) num FROM students GROUP BY class_id;<br><img src="https://runnerxr.github.io//post-images/1652425662691.png"><br>GROUP BY 子句指定了按class_id分组，因此，在执行SELECT语句的时，会把class_id相同的列先分组，再分别计算，得到3行结果，但是有一个缺陷，无法看出分别时哪三个班级，我们可以把class_id列的结果放入结果集合中：<br>SELECT class_id, COUNT(<em>) num FROM students GROUP BY class_id;(可以十分清晰的看出各个班级的学生人数)<br><img src="https://runnerxr.github.io//post-images/1652426009213.png"><br>也可以使用多个列进行分组，比如想统计各班的男生和女生人数：<br>SELECT class_id , gender ,COUNT(</em>) num FROM students GROUP BY class_id, gender;(按照class_id和gender进行分组，以下的6条记录分别对应3个班的男生和女生的人数)<br><img src="https://runnerxr.github.io//post-images/1652426546777.png"><br><strong>questions</strong>:使用一条select查询出每个班级的平均分：SELECT class_id,AVG(score) average FROM students GROUP BY class_id;<br><strong>questions</strong>:使用一条select查询出每个班级男生和女生的平均分：SELECT class_id,gender, AVG(score) average FROM students GROUP BY class_id, gender;</p>
 <h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><p>SELECT查询不仅可以从一张表查询数据，还可以从多张表中同时查询数据，语法如下：SELECT *FROM &lt;表1&gt; &lt;表2&gt;<br>SELECT * FROM students,classes;  (同时从students和classes表的乘积，即查询数据)<br>一次查询两个表的数据，查询的结果也是一个二维表，是students表和classes表的乘积，即students表的每一行与classes表的每一行都两两拼在一起返回，<strong>结果集的列数是students表和classes表的列数之和，行数是students表和classes表的行数之积</strong>，其中有两列id（分别是students表和class表的id）和两列name(分别是students表和class表的name),<strong>但是在结果集中却无法区分</strong><br><strong>解决的方法</strong>：利用投影查询的’设置列的别名’来给两个表各自的id和name起别名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">        students.id sid,</span><br><span class="line">        students.name,</span><br><span class="line">        students.gender,</span><br><span class="line">        students.score,</span><br><span class="line">        classes.id cid,</span><br><span class="line">        classes.name cname</span><br><span class="line">FROM students, classes;</span><br></pre></td></tr></table></figure>
+<pre><code>SELECT
+        students.id sid,
+        students.name,
+        students.gender,
+        students.score,
+        classes.id cid,
+        classes.name cname
+FROM students, classes;
+</code></pre>
 <p>注意点：多表查询时，要<strong>使用表名.列名这样的方式来引用列和设置别名</strong>，这样就避免了结果集的列名重复的问题，但是当每个表的列数很多的时候就会很麻烦，<br><strong>解决办法</strong>：SQL允许给表设置一个别名，让在投影查询中引用起来稍微简洁一点:<strong>用别名s和c分别表示students表和classes表。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT </span><br><span class="line">        s.id sid,</span><br><span class="line">        s.name,</span><br><span class="line">        s.gender,</span><br><span class="line">        c.score,</span><br><span class="line">        c.id cid,</span><br><span class="line">        c.name cname</span><br><span class="line">FROM students s, classes c;</span><br></pre></td></tr></table></figure>
+<pre><code>SELECT 
+        s.id sid,
+        s.name,
+        s.gender,
+        c.score,
+        c.id cid,
+        c.name cname
+FROM students s, classes c;
+</code></pre>
 <p>多表查询也可以添加WHERE条件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT </span><br><span class="line">        s.id sid,</span><br><span class="line">        s.name,</span><br><span class="line">        s.gender,</span><br><span class="line">        s.score,</span><br><span class="line">        c.id cid,</span><br><span class="line">        c.name cname</span><br><span class="line">FROM students s, classes c</span><br><span class="line">WHERE s.gender = &#x27;M&#x27; AND c.id = 1;</span><br></pre></td></tr></table></figure>
+<pre><code>SELECT 
+        s.id sid,
+        s.name,
+        s.gender,
+        s.score,
+        c.id cid,
+        c.name cname
+FROM students s, classes c
+WHERE s.gender = &#39;M&#39; AND c.id = 1;
+</code></pre>
 <p>这个表的特点：结果集每行记录都满足条件s.gender &#x3D; ‘M’和c.id &#x3D; 1,<strong>添加WHERE条件后结果集的数量大大减少</strong>。</p>
 <h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>连接查询是另一种类型的多表查询，连接查询对多个表进行JOIN运算：先确定一个主表作为结果集，<strong>然后把其他表的行有选择性的“连接”在主表结果集上</strong>。<br>举例说明：<br>SELECT s.id, s.name, s.class_id, s.gender, s.score FROM students s;<br>运行的结果如下：<br><img src="https://runnerxr.github.io//post-images/1652431502891.png"><br>增加需求：我们希望结果集合中包含所在班级的名称，上面的结果集只有class_id列，缺少name列<br>解决办法：根据students表的class_id，找到classes表对应的行，再取出name列就可以获得班级名称，<strong>使用最常用的内部连接——INNER JOIN来实现</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.id, s.name, s.class_id,c.name class_name, s.gender,s.score</span><br><span class="line">FROM students s</span><br><span class="line">INNER JOIN classes c</span><br><span class="line">ON s.class_id = c.id;</span><br></pre></td></tr></table></figure>
+<pre><code>SELECT s.id, s.name, s.class_id,c.name class_name, s.gender,s.score
+FROM students s
+INNER JOIN classes c
+ON s.class_id = c.id;
+</code></pre>
 <p><img src="https://runnerxr.github.io//post-images/1652432970173.png"><br>INNER JOIN查询的写法的注意事项：</p>
 <ol>
 <li>先确定主表：FROM&lt;表1&gt;</li>
 <li>再确定需要连接的表：INNER JOIN &lt;表2&gt;</li>
 <li>然后确定连接的条件：使用ON&lt;条件…&gt;,这里的条件是：<strong>s.class_id &#x3D; c.id</strong>,表示students表的class_id列与classes表的id列相同的行需要连接。</li>
-<li>可选：加上WHERE子句、ORDER BY等子句<br>如果是使用OUTER JOIN <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.id, s.name, s.class_id,c.name class_name, s.gender,s.score</span><br><span class="line">FROM students s</span><br><span class="line">RIGHT OUTER JOIN classes c</span><br><span class="line">ON s.class_id = c.id;</span><br></pre></td></tr></table></figure>
-<img src="https://runnerxr.github.io//post-images/1652433048521.png"><br><strong>比较INNER JOIN和OUTER JOIN的结果</strong></li>
+<li>可选：加上WHERE子句、ORDER BY等子句<br>如果是使用OUTER JOIN</li>
+</ol>
+<pre><code>SELECT s.id, s.name, s.class_id,c.name class_name, s.gender,s.score
+FROM students s
+RIGHT OUTER JOIN classes c
+ON s.class_id = c.id;
+</code></pre>
+<p><img src="https://runnerxr.github.io//post-images/1652433048521.png"><br><strong>比较INNER JOIN和OUTER JOIN的结果</strong></p>
+<ol>
 <li>多出了一行是’四班’，与学生相关的列name  gender score 都为NULL,students表中并不存在class_id&#x3D;4的行</li>
 <li>有RIGHT OUTER JOIN 就有LEFT OUTER JOIN以及FULL OUTER JOIN <ol>
 <li>INNER JOIN只返回同时存在于两张表的行数据</li>
@@ -294,158 +549,45 @@
 <li>DELETE:删除已有的记录</li>
 </ol>
 <h2 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h2><p>基本语法：INSERT INTO &lt;表名&gt; (字段1, 字段2, …) VALUES (值1, 值2, …);<br>举例说明：向students表中插入一条新记录，先列举出需要插入的字段名称，然后在VALUES子句中依次写出对应字段的值：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (class_id, name,gender,score) VALUES (2,&#x27;大牛&#x27; ,&#x27;M&#x27; ,80);</span><br><span class="line">SELECT *FROM students;</span><br></pre></td></tr></table></figure>
+<pre><code>INSERT INTO students (class_id, name,gender,score) VALUES (2,&#39;大牛&#39; ,&#39;M&#39; ,80);
+SELECT *FROM students;
+</code></pre>
 <p><img src="https://runnerxr.github.io//post-images/1652434865938.png"><br>还可以一次性添加多条记录，只需要在VALUE子句中指定多个记录，每个记录是由（…）包含的一组值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (class_id,name,gender,score) VALUES</span><br><span class="line">    (1,&#x27;大宝&#x27;,&#x27;M&#x27;,87),</span><br><span class="line">    (1,&#x27;二宝&#x27;,&#x27;M&#x27;,81)</span><br><span class="line">SELECT * FROM students;</span><br></pre></td></tr></table></figure>
+<pre><code>INSERT INTO students (class_id,name,gender,score) VALUES
+    (1,&#39;大宝&#39;,&#39;M&#39;,87),
+    (1,&#39;二宝&#39;,&#39;M&#39;,81)
+SELECT * FROM students;
+</code></pre>
 <h2 id="dudata"><a href="#dudata" class="headerlink" title="dudata"></a>dudata</h2><p>基本语句：UPDATE &lt;表名&gt; SET 字段1&#x3D;值1, 字段2&#x3D;值2, … WHERE …;<br>需求：想更新students表id&#x3D;1的记录的name和score这两个字段，先写出<strong>UPDATE students SET name &#x3D; ‘大牛’，scores&#x3D;66</strong>,然后在WHERE子句中写出需要更新的行的筛选条件：<strong>id&#x3D;1</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--更新id=1的记录</span><br><span class="line">UPDATE students SET name = &#x27;大牛&#x27;，score=66 WHERE id=1;</span><br><span class="line">--查询并观察结果</span><br><span class="line">SELECT * FROM students WHERE id=1;</span><br></pre></td></tr></table></figure>
+<pre><code>--更新id=1的记录
+UPDATE students SET name = &#39;大牛&#39;，score=66 WHERE id=1;
+--查询并观察结果
+SELECT * FROM students WHERE id=1;
+</code></pre>
 <p>在此基础上，一次更新多条记录：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE students SET name = &#x27;大牛&#x27;，score=77 WHERE id&gt;=5 AND id&lt;=7;</span><br><span class="line">SELECT *FROM sudents;</span><br></pre></td></tr></table></figure>
+<pre><code>UPDATE students SET name = &#39;大牛&#39;，score=77 WHERE id&gt;=5 AND id&lt;=7;
+SELECT *FROM sudents;
+</code></pre>
 <p><img src="https://runnerxr.github.io//post-images/1652436296166.png"></p>
 <h1 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h1><p>在MYSQL clinet中输入的SQL语句通过TCPO连接发送到MySQL Sever,默认的端口是3306，即如果发送到本机MYSQL Sever，地址就是127.0.0.1：3306<br>也可以只只安装MySQL Lient,然后连接到远程MySQL Sever<br>命令运行程序mysql实际上是MySQL客户端，真正的MySQL服务器程序是myqld,在后台运行。<br>要管理MYSQL，可以使用可视化图形界面My Workbench，是一个图形的客户端，它对MYSQL的操作是发送SQL语句并执行.MySQL Workbench 和MySQL交互，唯一的接口就是SQL<br>在一个运行MySQL的服务器上，<strong>实际上可以创建多个数据库</strong>（Datebase),要列出所有的数据库有如下的：<br>mysql&gt; SHOW DATABASES;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| mysql              |<br>| performance_schema |<br>| shici              |<br>| sys                |<br>| test               |<br>| school             |<br>+——————–+<br>informaiton_schema  mysql  performace_scheam和sys是系统库，不需要去改动，其他的是用户创建的数据库</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/29/SQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" data-id="claqum2dc0009h0tk61d4dw08" data-title="SQL数据库的相关知识" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/04/29/Git%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          GIT相关知识点
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/04/16/%E5%85%B3%E4%BA%8E%E5%AD%97%E5%85%B8%E6%A0%91%E4%B8%8E%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">关于字典树与并查集</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

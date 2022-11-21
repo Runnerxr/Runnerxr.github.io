@@ -1,119 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>链表的基础以及相关衍生的题目 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="单链表(线性表的链式存储)定义：非连续、非顺序的存储结构数据域+指针域数据域：存储相应的数据指针域：存储下一个节点的地址一些特性：  适用于数据数量不能预知的情况 逻辑相邻的两元素的存储空间可以不连续 链表一般有数据元素和指针域两部分组成 存储空间需要动态分配  分类:  单向链表 双向链表 循环链表  一些类型:  链表的搜索:查找链表中第一个key&#x3D; k的元素,返回该元素的指针123">
-<meta property="og:type" content="article">
-<meta property="og:title" content="链表的基础以及相关衍生的题目">
-<meta property="og:url" content="http://example.com/2022/03/06/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="单链表(线性表的链式存储)定义：非连续、非顺序的存储结构数据域+指针域数据域：存储相应的数据指针域：存储下一个节点的地址一些特性：  适用于数据数量不能预知的情况 逻辑相邻的两元素的存储空间可以不连续 链表一般有数据元素和指针域两部分组成 存储空间需要动态分配  分类:  单向链表 双向链表 循环链表  一些类型:  链表的搜索:查找链表中第一个key&#x3D; k的元素,返回该元素的指针123">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1653832257085.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1653832272113.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1653832286975.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1653832301656.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1653832346012.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654528804497.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654528985077.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654529090594.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654529392558.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654529513119.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652603382074.gif">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652603630612.gif">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652603780711.jpg">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654529827582.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654530025019.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654530273016.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654530644621.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654531300211.png">
-<meta property="article:published_time" content="2022-03-06T14:53:57.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:37:44.853Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1653832257085.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-链表的基础以及相关衍生的题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/06/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE/" class="article-date">
-  <time class="dt-published" datetime="2022-03-06T14:53:57.000Z" itemprop="datePublished">2022-03-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      链表的基础以及相关衍生的题目
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            链表的基础以及相关衍生的题目
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/06 Sun 22:53&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:37
+        </div>
+    </div>
+    <div class="article-content">
         <p>单链表(线性表的链式存储)<br>定义：非连续、非顺序的存储结构<br><strong>数据域+指针域</strong><br>数据域：存储相应的数据<br>指针域：存储下一个节点的地址<br>一些特性：</p>
 <ol>
 <li>适用于数据数量不能预知的情况</li>
@@ -129,10 +76,34 @@
 </ol>
 <p>一些类型:</p>
 <ol>
-<li>链表的搜索:查找链表中第一个key&#x3D; k的元素,返回该元素的指针<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LIST-SEARCH(L,K)</span><br><span class="line">x = L.head</span><br><span class="line">while x!=None and x.key !=k</span><br><span class="line">    x = x.next</span><br><span class="line">return x</span><br></pre></td></tr></table></figure></li>
-<li>链表的插入:给定一个已设置key的元素x,将其接入链表的前端<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LIST-INSERT(L,X)</span><br><span class="line">x.next = L.head</span><br><span class="line">if L.head !=None</span><br><span class="line">    L.head.prev = x</span><br><span class="line">L.head = x</span><br><span class="line">x.prev = None</span><br></pre></td></tr></table></figure></li>
-<li>链表删除:将一个元素从链表中删除<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LIST-DELETE(L,X)</span><br><span class="line">if x.prev !=None</span><br><span class="line">    x.pre.next = x.next</span><br><span class="line">else L.hea = x.next</span><br><span class="line">if x.next !=None</span><br><span class="line">    x.next.prev = x.prev</span><br></pre></td></tr></table></figure></li>
+<li>链表的搜索:查找链表中第一个key&#x3D; k的元素,返回该元素的指针</li>
 </ol>
+<pre><code>LIST-SEARCH(L,K)
+x = L.head
+while x!=None and x.key !=k
+    x = x.next
+return x
+</code></pre>
+<ol start="2">
+<li>链表的插入:给定一个已设置key的元素x,将其接入链表的前端</li>
+</ol>
+<pre><code>LIST-INSERT(L,X)
+x.next = L.head
+if L.head !=None
+    L.head.prev = x
+L.head = x
+x.prev = None
+</code></pre>
+<ol start="3">
+<li>链表删除:将一个元素从链表中删除</li>
+</ol>
+<pre><code>LIST-DELETE(L,X)
+if x.prev !=None
+    x.pre.next = x.next
+else L.hea = x.next
+if x.next !=None
+    x.next.prev = x.prev
+</code></pre>
 <p><strong>关于头节点与头指针</strong></p>
 <ol>
 <li>第一个数据节点的位置被存放在头结点的指针域中，链表的第一个位置上的操作和表的其他位置上操作相同，不用特殊处理</li>
@@ -140,14 +111,360 @@
 </ol>
 <p><strong>关于链表的解题方法：</strong><br>先画图（在纸上把过程先画出来），再分析，最后写代码<br>一般创建单链表，先设置一个虚拟头结点，这样每一个结点都有一个前驱结点，完美解决需要加各种判空逻辑的烦恼。</p>
 <h1 id="单向链表的实现"><a href="#单向链表的实现" class="headerlink" title="单向链表的实现"></a>单向链表的实现</h1><p>这种纯构造的，只能是对概念十分清楚之后才会做的，而且自己要能够十分熟练的构造出来。<br>以下的一些图片可以帮助自己去辅助理解相应的一些构造过程<br><img src="https://runnerxr.github.io/post-images/1653832257085.png"><br><img src="https://runnerxr.github.io/post-images/1653832272113.png"><br><img src="https://runnerxr.github.io/post-images/1653832286975.png"><br><img src="https://runnerxr.github.io/post-images/1653832301656.png"><br><img src="https://runnerxr.github.io/post-images/1653832346012.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 总体思路：需要定义两个类，一个是结点类，一个是链表类</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 先定义一个结点类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="comment"># 定义结点类的方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,data</span>):</span><br><span class="line">        <span class="comment"># self.item 存放自定义的数据 </span></span><br><span class="line">        <span class="comment"># sele.next 存放下一个结点对象的地址，一开始指向为None</span></span><br><span class="line">        self.data=data</span><br><span class="line">        self.<span class="built_in">next</span>=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义单向链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SingleLinkList</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="comment"># 定义链表类的方法,并初始化方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,node=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="comment"># 一个私有的head属性，指向None</span></span><br><span class="line">        self.__head=<span class="literal">None</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 以下为对象的方法</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断链表是否为空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isempty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 判断链表是否指向None,如果是None就是空链表</span></span><br><span class="line">        <span class="comment"># if self.__head==None:</span></span><br><span class="line">        <span class="comment">#     return True</span></span><br><span class="line">        <span class="comment"># else:</span></span><br><span class="line">        <span class="comment">#     return False</span></span><br><span class="line">        <span class="comment"># 直接返回表达式的结果，把判断的结果当作函数的返回值</span></span><br><span class="line">        <span class="keyword">return</span> self.__head==<span class="literal">None</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">     <span class="comment"># 计算链表的长度</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">length</span>(<span class="params">self</span>):</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 定义一个cur指针，让它一开始指向头结点</span></span><br><span class="line">        cur=self.__head</span><br><span class="line">        <span class="comment"># 让头结点进行移动，直到指向None</span></span><br><span class="line">        <span class="keyword">while</span> cur !=<span class="literal">None</span>:</span><br><span class="line">            count+=<span class="number">1</span></span><br><span class="line">            <span class="comment"># 把游标往后移动一个位置</span></span><br><span class="line">            cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 最后返回的就是链表的长度</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历链表的方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">travel</span>(<span class="params">self</span>):</span><br><span class="line">        cur = self.__head</span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 打印当前的结点</span></span><br><span class="line">            <span class="built_in">print</span>(cur.item,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            <span class="comment"># 让指向继续向后移动</span></span><br><span class="line">            cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在链表头部添加结点（头插法）</span></span><br><span class="line">    <span class="comment"># 这里注意思考的过程，还要注意一个顺序的问题，为了保证原有链表的所有节点不丢掉</span></span><br><span class="line">    <span class="comment"># 先操作新节点的next域，让它指向原有的首节点</span></span><br><span class="line">    <span class="comment"># 想想特殊的情况，也可以用这三行来表示，不需要进行特殊的判断</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self,item</span>):</span><br><span class="line">        <span class="comment"># 将传入的值构造成结点（把item数据封装成链表所使用的）</span></span><br><span class="line">        node=ListNode(item)</span><br><span class="line">        <span class="comment"># 1. 将新的节点的链接域next指向头节点</span></span><br><span class="line">        node.<span class="built_in">next</span>=self.__head</span><br><span class="line">        <span class="comment"># 2.将链表的头节点指向新节点</span></span><br><span class="line">        self.__head=node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在链表的尾部添加节点的方法（尾插法）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self,item</span>):</span><br><span class="line">        node=ListNode(item)</span><br><span class="line">        <span class="comment"># 判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> self.isempty():</span><br><span class="line">            <span class="comment"># 直接让self.__head指向node</span></span><br><span class="line">            self.__head=node</span><br><span class="line">        <span class="comment"># 链表不为空</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur=self.__head</span><br><span class="line">            <span class="comment"># 这个时候的循环判断条件发生变化</span></span><br><span class="line">            <span class="keyword">while</span> cur.<span class="built_in">next</span>!=<span class="literal">None</span>:</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">            <span class="comment"># 循环结束的时候cur.next指向为None</span></span><br><span class="line">            <span class="comment"># 修改最后一个节点的指向，将cur.next指向node </span></span><br><span class="line">            cur.<span class="built_in">next</span>=node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在任意的指定位置插入节点的方法</span></span><br><span class="line">    <span class="comment"># 同样的思考相应的过程</span></span><br><span class="line">    <span class="comment"># 1. 先调整新节点的next域</span></span><br><span class="line">    <span class="comment"># 2. 然后再改变原有链表之间的链接关系</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">insert</span>(<span class="params">self,pos,item</span>):</span><br><span class="line">        <span class="comment"># 先找到下标所指的位置在哪</span></span><br><span class="line">        <span class="comment"># 考虑pos的特殊情况</span></span><br><span class="line">        <span class="comment"># 如果传入的pos是小于等于0的数，默认的将节点插入头部</span></span><br><span class="line">        <span class="keyword">if</span> pos &lt;<span class="number">0</span>:</span><br><span class="line">            self.add(item)</span><br><span class="line">        <span class="comment"># 如果pos的值大于链表的长度，默认将节点添加到尾部</span></span><br><span class="line">        <span class="keyword">elif</span> pos&gt;(self.length()-<span class="number">1</span>):</span><br><span class="line">            self.append(item)</span><br><span class="line">        <span class="comment"># 除此之外的情况就包含在内的情况</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            node=ListNode(item)</span><br><span class="line">            <span class="comment"># 让pre指针指向头节点的位置</span></span><br><span class="line">            pre=self.__head</span><br><span class="line">            <span class="comment"># 用来计数</span></span><br><span class="line">            count=<span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> count &lt;(pos-<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># pre指针移动到指定位置的前一个位置（如果移动到指定位置，之后前面的就无法操作了）</span></span><br><span class="line">                <span class="comment"># 先去改变node节点的next区域</span></span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">                pre=pre.<span class="built_in">next</span></span><br><span class="line">                </span><br><span class="line">            <span class="comment"># 当循环退出之后，pre指向pos-1的位置</span></span><br><span class="line">            <span class="comment"># 修改指向</span></span><br><span class="line">            <span class="comment"># 将前一个节点的next指向插入位置节点</span></span><br><span class="line">            node.<span class="built_in">next</span>=pre.<span class="built_in">next</span></span><br><span class="line">            <span class="comment"># 让pre所指的指向我的节点</span></span><br><span class="line">            pre.<span class="built_in">next</span>=node </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删除节点</span></span><br><span class="line">    <span class="comment"># 需要两个游标来解决（也可以只用一个游标，但是写法上就不是那么的好理解）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">self,item</span>):</span><br><span class="line">        pre=<span class="literal">None</span></span><br><span class="line">        cur = self.__head</span><br><span class="line">        <span class="comment"># 保证之前地每一个节点都被比较过</span></span><br><span class="line">        <span class="comment"># 查看特殊地情况：对于空链表，当前地代码满足要求（While不执行）</span></span><br><span class="line">        <span class="comment"># 如果要删除地节点恰好是首节点</span></span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> cur.data==item:</span><br><span class="line">                <span class="comment"># 先判断次节点是否是头节点</span></span><br><span class="line">                <span class="keyword">if</span> cur==self.__head:</span><br><span class="line">                    self.__head=cur.<span class="built_in">next</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 怎么删除节点</span></span><br><span class="line">                    <span class="comment"># 整个链表已经完成了一条主线了（这里地理解太关键了）</span></span><br><span class="line">                    <span class="comment"># 对于只有一个节点地可以这行代码来执行</span></span><br><span class="line">                    <span class="comment"># 对于要删除最后一个节点也可以用这行代码实现</span></span><br><span class="line">                    pre.<span class="built_in">next</span>=cur.<span class="built_in">next</span></span><br><span class="line">                <span class="comment"># 删除完毕后退出循环</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 让两个指针往后移动，始终保证pre在cur的前面</span></span><br><span class="line">                <span class="comment"># 这两个游标的移动顺序</span></span><br><span class="line">                pre=cur</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 针对返回值问题，有两种</span></span><br><span class="line">        <span class="comment"># 1. 返回删除的数据</span></span><br><span class="line">        <span class="comment"># 2. 返回要删除的数据的下标（我删除的是链表中的几个元素）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 查找节点是否存在</span></span><br><span class="line">    <span class="comment"># 对于特殊情况也可以表示</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self,item</span>):</span><br><span class="line">        cur=self.__head</span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 不断地进行比对</span></span><br><span class="line">            <span class="keyword">if</span> cur.data==item:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义主函数</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 初始化一个为空的单向链表</span></span><br><span class="line">    sll=SingleLinkList()</span><br><span class="line">    <span class="built_in">print</span>(sll.isempty())</span><br><span class="line">    <span class="built_in">print</span>(sll.length())</span><br><span class="line">    sll.append(<span class="number">10</span>)</span><br><span class="line">    sll.append(<span class="number">20</span>)</span><br><span class="line">    sll.append(<span class="number">30</span>)</span><br><span class="line">    sll.append(<span class="number">40</span>)</span><br><span class="line">    sll.append(<span class="number">50</span>)</span><br><span class="line">    sll.add(<span class="number">5</span>)</span><br><span class="line">    sll.insert(<span class="number">2</span>,<span class="number">35</span>)</span><br><span class="line">    <span class="built_in">print</span>(sll.isempty())</span><br><span class="line">    <span class="built_in">print</span>(sll.length())</span><br><span class="line">    sll.travel()</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 总体思路：需要定义两个类，一个是结点类，一个是链表类
+
+# 先定义一个结点类
+class ListNode(object):
+    # 定义结点类的方法
+    def __init__(self,data):
+        # self.item 存放自定义的数据 
+        # sele.next 存放下一个结点对象的地址，一开始指向为None
+        self.data=data
+        self.next=None
+
+# 定义单向链表类
+class SingleLinkList(object):
+    # 定义链表类的方法,并初始化方法
+    def __init__(self,node=None):
+        # 一个私有的head属性，指向None
+        self.__head=None
+    
+
+    # 以下为对象的方法
+
+    # 判断链表是否为空
+    def isempty(self):
+        # 判断链表是否指向None,如果是None就是空链表
+        # if self.__head==None:
+        #     return True
+        # else:
+        #     return False
+        # 直接返回表达式的结果，把判断的结果当作函数的返回值
+        return self.__head==None
+    
+
+     # 计算链表的长度
+    def length(self):
+        count=0
+        # 定义一个cur指针，让它一开始指向头结点
+        cur=self.__head
+        # 让头结点进行移动，直到指向None
+        while cur !=None:
+            count+=1
+            # 把游标往后移动一个位置
+            cur=cur.next
+        # 最后返回的就是链表的长度
+        return count
+
+
+    # 遍历链表的方法
+    def travel(self):
+        cur = self.__head
+        while cur!=None:
+            # 打印当前的结点
+            print(cur.item,end=&#39; &#39;)
+            # 让指向继续向后移动
+            cur=cur.next
+        print(&#39;&#39;)
+
+    
+    # 在链表头部添加结点（头插法）
+    # 这里注意思考的过程，还要注意一个顺序的问题，为了保证原有链表的所有节点不丢掉
+    # 先操作新节点的next域，让它指向原有的首节点
+    # 想想特殊的情况，也可以用这三行来表示，不需要进行特殊的判断
+    def add(self,item):
+        # 将传入的值构造成结点（把item数据封装成链表所使用的）
+        node=ListNode(item)
+        # 1. 将新的节点的链接域next指向头节点
+        node.next=self.__head
+        # 2.将链表的头节点指向新节点
+        self.__head=node
+
+
+    # 在链表的尾部添加节点的方法（尾插法）
+    def append(self,item):
+        node=ListNode(item)
+        # 判断链表是否为空
+        if self.isempty():
+            # 直接让self.__head指向node
+            self.__head=node
+        # 链表不为空
+        else:
+            cur=self.__head
+            # 这个时候的循环判断条件发生变化
+            while cur.next!=None:
+                cur=cur.next
+            # 循环结束的时候cur.next指向为None
+            # 修改最后一个节点的指向，将cur.next指向node 
+            cur.next=node
+
+
+    # 在任意的指定位置插入节点的方法
+    # 同样的思考相应的过程
+    # 1. 先调整新节点的next域
+    # 2. 然后再改变原有链表之间的链接关系
+    def insert(self,pos,item):
+        # 先找到下标所指的位置在哪
+        # 考虑pos的特殊情况
+        # 如果传入的pos是小于等于0的数，默认的将节点插入头部
+        if pos &lt;0:
+            self.add(item)
+        # 如果pos的值大于链表的长度，默认将节点添加到尾部
+        elif pos&gt;(self.length()-1):
+            self.append(item)
+        # 除此之外的情况就包含在内的情况
+        else:
+            node=ListNode(item)
+            # 让pre指针指向头节点的位置
+            pre=self.__head
+            # 用来计数
+            count=0
+            while count &lt;(pos-1):
+                # pre指针移动到指定位置的前一个位置（如果移动到指定位置，之后前面的就无法操作了）
+                # 先去改变node节点的next区域
+                count+=1
+                pre=pre.next
+                
+            # 当循环退出之后，pre指向pos-1的位置
+            # 修改指向
+            # 将前一个节点的next指向插入位置节点
+            node.next=pre.next
+            # 让pre所指的指向我的节点
+            pre.next=node 
+
+
+    # 删除节点
+    # 需要两个游标来解决（也可以只用一个游标，但是写法上就不是那么的好理解）
+    def remove(self,item):
+        pre=None
+        cur = self.__head
+        # 保证之前地每一个节点都被比较过
+        # 查看特殊地情况：对于空链表，当前地代码满足要求（While不执行）
+        # 如果要删除地节点恰好是首节点
+        while cur!=None:
+            if cur.data==item:
+                # 先判断次节点是否是头节点
+                if cur==self.__head:
+                    self.__head=cur.next
+                else:
+                    # 怎么删除节点
+                    # 整个链表已经完成了一条主线了（这里地理解太关键了）
+                    # 对于只有一个节点地可以这行代码来执行
+                    # 对于要删除最后一个节点也可以用这行代码实现
+                    pre.next=cur.next
+                # 删除完毕后退出循环
+                break
+            else:
+                # 让两个指针往后移动，始终保证pre在cur的前面
+                # 这两个游标的移动顺序
+                pre=cur
+                cur=cur.next
+        # 针对返回值问题，有两种
+        # 1. 返回删除的数据
+        # 2. 返回要删除的数据的下标（我删除的是链表中的几个元素）
+
+
+    # 查找节点是否存在
+    # 对于特殊情况也可以表示
+    def search(self,item):
+        cur=self.__head
+        while cur!=None:
+            # 不断地进行比对
+            if cur.data==item:
+                return True
+            else:
+                cur=cur.next
+        return False
+
+
+# 定义主函数
+if __name__==&#39;__main__&#39;:
+    # 初始化一个为空的单向链表
+    sll=SingleLinkList()
+    print(sll.isempty())
+    print(sll.length())
+    sll.append(10)
+    sll.append(20)
+    sll.append(30)
+    sll.append(40)
+    sll.append(50)
+    sll.add(5)
+    sll.insert(2,35)
+    print(sll.isempty())
+    print(sll.length())
+    sll.travel()
+</code></pre>
 <h1 id="双向链表的实现"><a href="#双向链表的实现" class="headerlink" title="双向链表的实现"></a>双向链表的实现</h1><p>同样要把实现方式、存储方式以及这个数据结构所支持的操作函数<br>每个节点有两个链接，一个指向前一个节点，<strong>当此节点为第一个节点时，指向空值</strong>；另一个指向一下一个节点，<strong>当此节点为最后一个节点时，指向空值</strong>。<br>针对判空，求链表长度以及遍历链表和单链表的方法是一样的，可以采用继承的方式来解决（这里的理解十分的重要，将单链表的类进行封装就可以不用重复再写了，面对对象的思想）<br>头插法：加入一行代码<br>尾插法：加入一行代码<br>在指定位置插入：由于已经有了前驱节点，就只需要一个游标了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义节点类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,data</span>):</span><br><span class="line">        self.data=data</span><br><span class="line">        self.<span class="built_in">next</span>=<span class="literal">None</span></span><br><span class="line">        self.prev=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义双向链表类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DoubleLinkList</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__inint__</span>(<span class="params">self</span>):</span><br><span class="line">        self.__head=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断链表是否为空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isempty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.__head==<span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算链表的长度</span></span><br><span class="line">    <span class="comment"># 在求长度的过程中就把它当成单链表进行求解就行</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">length</span>(<span class="params">self</span>):</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 定义一个cur指针，让它一开始指向头结点</span></span><br><span class="line">        cur=self.__head</span><br><span class="line">        <span class="comment"># 让头结点进行移动，直到指向None</span></span><br><span class="line">        <span class="keyword">while</span> cur !=<span class="literal">None</span>:</span><br><span class="line">            count+=<span class="number">1</span></span><br><span class="line">            <span class="comment"># 把游标往后移动一个位置</span></span><br><span class="line">            cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 最后返回的就是链表的长度</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历链表的方法</span></span><br><span class="line">    <span class="comment"># 和单链表同样</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">travel</span>(<span class="params">self</span>):</span><br><span class="line">        cur = self.__head</span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 打印当前的结点</span></span><br><span class="line">            <span class="built_in">print</span>(cur.item,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            <span class="comment"># 让指向继续向后移动</span></span><br><span class="line">            cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在链表头部添加结点（头插法）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self,item</span>):</span><br><span class="line">        <span class="comment"># 将传入的值构造成结点（把item数据封装成链表所使用的）</span></span><br><span class="line">        node=ListNode(item)</span><br><span class="line">        <span class="comment"># 1. 将新的节点的链接域next指向头节点</span></span><br><span class="line">        node.<span class="built_in">next</span>=self.__head</span><br><span class="line">        <span class="comment"># 2.将链表的头节点指向新节点</span></span><br><span class="line">        self.__head=node</span><br><span class="line">        <span class="comment"># 3.原有节点的p区需要改变指向(通过画图来理解,这里需要重点理解)</span></span><br><span class="line">        node.<span class="built_in">next</span>.prev=node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在链表的尾部添加节点的方法（尾插法）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self,item</span>):</span><br><span class="line">        node=ListNode(item)</span><br><span class="line">        <span class="comment"># 判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> self.isempty():</span><br><span class="line">            <span class="comment"># 直接让self.__head指向node</span></span><br><span class="line">            self.__head=node</span><br><span class="line">        <span class="comment"># 链表不为空</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur=self.__head</span><br><span class="line">            <span class="comment"># 这个时候的循环判断条件发生变化</span></span><br><span class="line">            <span class="keyword">while</span> cur.<span class="built_in">next</span>!=<span class="literal">None</span>:</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">            <span class="comment"># 循环结束的时候cur.next指向为None</span></span><br><span class="line">            <span class="comment"># 修改最后一个节点的指向，将cur.next指向node </span></span><br><span class="line">            cur.<span class="built_in">next</span>=node</span><br><span class="line">            <span class="comment"># 相比单链表，再加入一行代码(把node的前驱指向cur就OK了)</span></span><br><span class="line">            node.prev=cur</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在任意的指定位置插入节点的方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">insert</span>(<span class="params">self,pos,item</span>):</span><br><span class="line">        <span class="comment"># 先找到下标所指的位置在哪</span></span><br><span class="line">        <span class="comment"># 考虑pos的特殊情况</span></span><br><span class="line">        <span class="comment"># 如果传入的pos是小于等于0的数，默认的将节点插入头部</span></span><br><span class="line">        <span class="keyword">if</span> pos &lt;<span class="number">0</span>:</span><br><span class="line">            self.add(item)</span><br><span class="line">        <span class="comment"># 如果pos的值大于链表的长度，默认将节点添加到尾部</span></span><br><span class="line">        <span class="keyword">elif</span> pos&gt;(self.length()-<span class="number">1</span>):</span><br><span class="line">            self.append(item)</span><br><span class="line">        <span class="comment"># 除此之外的情况就包含在内的情况</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur=self.__head</span><br><span class="line">            count=<span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> count&lt;pos:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">            <span class="comment"># 循环退出,cur指向pos的位置</span></span><br><span class="line">            node=ListNode(item)</span><br><span class="line">            node.<span class="built_in">next</span>=cur</span><br><span class="line">            node.prev=cur.prev</span><br><span class="line">            <span class="comment"># 然后把原有的两条链接打断,这里的顺序很重要</span></span><br><span class="line">            <span class="comment"># 1. 先把前面节点的next指向node</span></span><br><span class="line">            cur.prev.<span class="built_in">next</span>=node</span><br><span class="line">            <span class="comment"># 2. cur节点的前驱指向node</span></span><br><span class="line">            cur.prev=node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删除节点</span></span><br><span class="line">    <span class="comment"># 核心思想要弄懂</span></span><br><span class="line">    <span class="comment"># cur.prev.next=cur.next</span></span><br><span class="line">    <span class="comment"># cur.next.prev=cur.prev</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">self,item</span>):</span><br><span class="line">        cur = self.__head</span><br><span class="line">        <span class="comment"># 只要cur没有到最尾就还是要去找</span></span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> cur.data==item:</span><br><span class="line">                <span class="comment"># 先判断次节点是否是头节点</span></span><br><span class="line">                <span class="comment"># 在单链表的基础上加上cur.next.prev=None</span></span><br><span class="line">                <span class="keyword">if</span> cur==self.__head:</span><br><span class="line">                    self.__head=cur.<span class="built_in">next</span></span><br><span class="line">                    <span class="comment"># 对于只有一个节点的情况，还要再加入一个判断（这里不是特别的好想）</span></span><br><span class="line">                    <span class="comment"># 如果cur.next已经指向空，空的节点没有相应的前驱节点</span></span><br><span class="line">                    <span class="keyword">if</span> cur.<span class="built_in">next</span>:</span><br><span class="line">                        cur.<span class="built_in">next</span>.prev=<span class="literal">None</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    cur.prev.<span class="built_in">next</span>=cur.<span class="built_in">next</span></span><br><span class="line">                    <span class="comment"># 针对如果指向的是最后一个节点的情况，还要再加入一个判断（认真理解）</span></span><br><span class="line">                    <span class="comment"># 如果cur.next已经指向为None，空的节点没有相应的前驱节点</span></span><br><span class="line">                    <span class="keyword">if</span> cur.<span class="built_in">next</span>:</span><br><span class="line">                        cur.<span class="built_in">next</span>.prev=cur.prev</span><br><span class="line">                <span class="comment"># 删除完毕后退出循环</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 查找节点是否存在</span></span><br><span class="line">    <span class="comment"># 也是可以当作单链表来对待</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self,item</span>):</span><br><span class="line">        cur=self.__head</span><br><span class="line">        <span class="keyword">while</span> cur!=<span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 不断地进行比对</span></span><br><span class="line">            <span class="keyword">if</span> cur.data==item:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur=cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主函数</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>(self):</span><br><span class="line">    dll=DoubleLinkList()</span><br><span class="line">    <span class="built_in">print</span>(dll.isempty())</span><br><span class="line">    <span class="built_in">print</span>(dll.length())</span><br><span class="line">    dll.append(<span class="number">10</span>)</span><br><span class="line">    dll.append(<span class="number">20</span>)</span><br><span class="line">    dll.append(<span class="number">30</span>)</span><br><span class="line">    dll.append(<span class="number">40</span>)</span><br><span class="line">    dll.append(<span class="number">50</span>)</span><br><span class="line">    dll.add(<span class="number">5</span>)</span><br><span class="line">    dll.insert(<span class="number">2</span>,<span class="number">35</span>)</span><br><span class="line">    <span class="built_in">print</span>(dll.isempty())</span><br><span class="line">    <span class="built_in">print</span>(dll.length())</span><br><span class="line">    dll.travel()</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 定义节点类
+class ListNode(object):
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+        self.prev=None
 
 
+# 定义双向链表类
+class DoubleLinkList(object):
+    def __inint__(self):
+        self.__head=None
+
+
+    # 判断链表是否为空
+    def isempty(self):
+        return self.__head==None
+
+
+    # 计算链表的长度
+    # 在求长度的过程中就把它当成单链表进行求解就行
+    def length(self):
+        count=0
+        # 定义一个cur指针，让它一开始指向头结点
+        cur=self.__head
+        # 让头结点进行移动，直到指向None
+        while cur !=None:
+            count+=1
+            # 把游标往后移动一个位置
+            cur=cur.next
+        # 最后返回的就是链表的长度
+        return count
+
+
+    # 遍历链表的方法
+    # 和单链表同样
+    def travel(self):
+        cur = self.__head
+        while cur!=None:
+            # 打印当前的结点
+            print(cur.item,end=&#39; &#39;)
+            # 让指向继续向后移动
+            cur=cur.next
+        print(&#39;&#39;)
+
+
+    # 在链表头部添加结点（头插法）
+    def add(self,item):
+        # 将传入的值构造成结点（把item数据封装成链表所使用的）
+        node=ListNode(item)
+        # 1. 将新的节点的链接域next指向头节点
+        node.next=self.__head
+        # 2.将链表的头节点指向新节点
+        self.__head=node
+        # 3.原有节点的p区需要改变指向(通过画图来理解,这里需要重点理解)
+        node.next.prev=node
+
+
+    # 在链表的尾部添加节点的方法（尾插法）
+    def append(self,item):
+        node=ListNode(item)
+        # 判断链表是否为空
+        if self.isempty():
+            # 直接让self.__head指向node
+            self.__head=node
+        # 链表不为空
+        else:
+            cur=self.__head
+            # 这个时候的循环判断条件发生变化
+            while cur.next!=None:
+                cur=cur.next
+            # 循环结束的时候cur.next指向为None
+            # 修改最后一个节点的指向，将cur.next指向node 
+            cur.next=node
+            # 相比单链表，再加入一行代码(把node的前驱指向cur就OK了)
+            node.prev=cur
+
+
+    # 在任意的指定位置插入节点的方法
+    def insert(self,pos,item):
+        # 先找到下标所指的位置在哪
+        # 考虑pos的特殊情况
+        # 如果传入的pos是小于等于0的数，默认的将节点插入头部
+        if pos &lt;0:
+            self.add(item)
+        # 如果pos的值大于链表的长度，默认将节点添加到尾部
+        elif pos&gt;(self.length()-1):
+            self.append(item)
+        # 除此之外的情况就包含在内的情况
+        else:
+            cur=self.__head
+            count=0
+            while count&lt;pos:
+                count+=1
+                cur=cur.next
+            # 循环退出,cur指向pos的位置
+            node=ListNode(item)
+            node.next=cur
+            node.prev=cur.prev
+            # 然后把原有的两条链接打断,这里的顺序很重要
+            # 1. 先把前面节点的next指向node
+            cur.prev.next=node
+            # 2. cur节点的前驱指向node
+            cur.prev=node
+
+
+    # 删除节点
+    # 核心思想要弄懂
+    # cur.prev.next=cur.next
+    # cur.next.prev=cur.prev
+    def remove(self,item):
+        cur = self.__head
+        # 只要cur没有到最尾就还是要去找
+        while cur!=None:
+            if cur.data==item:
+                # 先判断次节点是否是头节点
+                # 在单链表的基础上加上cur.next.prev=None
+                if cur==self.__head:
+                    self.__head=cur.next
+                    # 对于只有一个节点的情况，还要再加入一个判断（这里不是特别的好想）
+                    # 如果cur.next已经指向空，空的节点没有相应的前驱节点
+                    if cur.next:
+                        cur.next.prev=None
+                else:
+                    cur.prev.next=cur.next
+                    # 针对如果指向的是最后一个节点的情况，还要再加入一个判断（认真理解）
+                    # 如果cur.next已经指向为None，空的节点没有相应的前驱节点
+                    if cur.next:
+                        cur.next.prev=cur.prev
+                # 删除完毕后退出循环
+                break
+            else:
+                cur=cur.next
+
+
+    # 查找节点是否存在
+    # 也是可以当作单链表来对待
+    def search(self,item):
+        cur=self.__head
+        while cur!=None:
+            # 不断地进行比对
+            if cur.data==item:
+                return True
+            else:
+                cur=cur.next
+        return False
+
+
+# 主函数
+if __name__==&#39;__main__&#39;(self):
+    dll=DoubleLinkList()
+    print(dll.isempty())
+    print(dll.length())
+    dll.append(10)
+    dll.append(20)
+    dll.append(30)
+    dll.append(40)
+    dll.append(50)
+    dll.add(5)
+    dll.insert(2,35)
+    print(dll.isempty())
+    print(dll.length())
+    dll.travel()
+</code></pre>
 <h1 id="单向循环链表的实现"><a href="#单向循环链表的实现" class="headerlink" title="单向循环链表的实现"></a>单向循环链表的实现</h1><p>略<br>以下为一些对应的题目</p>
 <h1 id="leetcoad206-x2F-92-反转链表和反转链表II（easy-x2F-middle）"><a href="#leetcoad206-x2F-92-反转链表和反转链表II（easy-x2F-middle）" class="headerlink" title="leetcoad206&#x2F;92-反转链表和反转链表II（easy&#x2F;middle）"></a>leetcoad206&#x2F;92-反转链表和反转链表II（easy&#x2F;middle）</h1><p>这道题是一道很经典的题目。很适合理解一些常用的算法以及递归的知识，值得自己反复的去做，反复的去刷，理解其中的一些内涵！！！属于必做和必须深入理解的类型。<br>反转链表：<br>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a><br>视频链接：&lt;&gt;<br>题目要求：给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。<br>输入：head &#x3D; [1,2,3,4,5]<br>输出：[5,4,3,2,1]<br><strong>常规思路：采用递归的写法</strong><br><img src="https://runnerxr.github.io/post-images/1654528804497.png"><br>首先要明白递推公式的含义：对于节点1来说：<strong>只需要知道它之后的所有节点反转之后的结果就可以了</strong>，也即递推公式的含义：<strong>把拿到的链表进行反转，然后返回新的头结点</strong><br><img src="https://runnerxr.github.io/post-images/1654528985077.png"><br>结点1之后的结点，经过递归公式reverseList处理之后的结果如下图：<br><img src="https://runnerxr.github.io/post-images/1654529090594.png"><br>看了很多的题解之后才发现当初自己根本没有把每一行的代码正真的弄懂</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head</span>):</span><br><span class="line">    <span class="comment"># 调用递推公式反转当前结点之后的所有结点</span></span><br><span class="line">    <span class="comment"># 返回的结果是反转后的链表的头结点</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">def reverseList(self, head):
+    # 调用递推公式反转当前结点之后的所有结点
+    # 返回的结果是反转后的链表的头结点
+</code></pre>
 <p>接下来要做的是反转结点1，将head指向的结点作为其下一个结点的下一个结点<code>head.next.next=head</code><br><img src="https://runnerxr.github.io/post-images/1654529392558.png"><br>最后，将head指向的结点下一个结点置为None，就完成了整个链表的反转<br><img src="https://runnerxr.github.io/post-images/1654529513119.png"></p>
 <ol>
 <li><p>寻找递归的终止条件</p>
@@ -164,8 +481,26 @@
 </ul>
 </li>
 <li><p>把每一次反转后的结果传递给上一层:return cur（每次返回的cur是最后一个节点，在递归函数内部改变的是当前节点的指向）<br>核心中的核心：当前链表的次节点往后都已经反转好了，只要反转头两个节点就好了。用下面的这张动图来辅助理解。递归的写法往往是抽象的，确实很难理解。十分锻炼自己的抽象思维能力。<br><img src="https://runnerxr.github.io/post-images/1652603382074.gif"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head</span>):</span><br><span class="line">        <span class="comment">#递归的终止条件：当前为空或者下一个为空（当前为空是为了防止链表不存在的情况）</span></span><br><span class="line">        <span class="comment">#正确的说法应该是：当链表只有一个节点或者是空表的情况，啥也不用干，直接返回head</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> == <span class="literal">None</span>):</span><br><span class="line">            <span class="comment">#此处属于第一次返回，当遍历到最后一个节点的时候触发</span></span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        <span class="comment">#这里的cur就是最后一个节点，也即新链表的头结点</span></span><br><span class="line">        cur = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">        <span class="comment">#从这里开始，节点开始反转，节点的下一个节点的下一个节点指向它本身了。</span></span><br><span class="line">        head.<span class="built_in">next</span>.<span class="built_in">next</span> = head      </span><br><span class="line">        <span class="comment">#同时把头节点的下一个节点指向空（原先是指向顺序结构的，现在指向反转，防止循环指向）</span></span><br><span class="line">        head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">        <span class="comment">#把下一个递归过程的结果传递给上一个递归过程</span></span><br><span class="line">        <span class="comment">#每层的递归函数都返回cur，就是最后一个节点，理解为返回的是已经反转过的那部分的头指针，而恰好头指针是确定的。</span></span><br><span class="line">        <span class="keyword">return</span> cur</span><br></pre></td></tr></table></figure></li>
+</li>
 </ol>
+<pre><code class="python"># 递归
+class Solution(object):
+    def reverseList(self, head):
+        #递归的终止条件：当前为空或者下一个为空（当前为空是为了防止链表不存在的情况）
+        #正确的说法应该是：当链表只有一个节点或者是空表的情况，啥也不用干，直接返回head
+        if(head == None or head.next == None):
+            #此处属于第一次返回，当遍历到最后一个节点的时候触发
+            return head
+        #这里的cur就是最后一个节点，也即新链表的头结点
+        cur = self.reverseList(head.next)
+        #从这里开始，节点开始反转，节点的下一个节点的下一个节点指向它本身了。
+        head.next.next = head      
+        #同时把头节点的下一个节点指向空（原先是指向顺序结构的，现在指向反转，防止循环指向）
+        head.next = None
+        #把下一个递归过程的结果传递给上一个递归过程
+        #每层的递归函数都返回cur，就是最后一个节点，理解为返回的是已经反转过的那部分的头指针，而恰好头指针是确定的。
+        return cur
+</code></pre>
 <p><strong>非递归（双指针迭代）：</strong><br><img src="https://runnerxr.github.io/post-images/1652603630612.gif"><br>这里点当时自己是<strong>理解了好久好久</strong>，甚至是在图上画了一遍又一遍的演示过程，才慢慢的理解其中的一些过程的，用迭代的写法可以弄懂里面每一步的细致过程。<img src="https://runnerxr.github.io/post-images/1652603780711.jpg"><br>在遍历列表时，将<strong>当前节点的next指针改为指向前一个节点</strong>（这一过程就是反转），由于节点没有引用其前一个节点，必须事先存储前一个节点，在更改引用之前，还<strong>需要存储后一个节点</strong>，最后返回新的头引用。<br>解题思路如下：<strong>将链表所有节点的next指针指向它的前面的节点</strong>（如果不考虑递归的细节，这就是一个大的方向）</p>
 <ol>
 <li>首先定义一个cur指针，指向头结点，再定义一个pre指针，初始化为null。</li>
@@ -173,18 +508,56 @@
 <li>改变cur-&gt;next节点的指向，将它指向pre(反转了第一个节点，也是很重要的一步过程：每次迭代到cur，都将cur的next指向pre)</li>
 <li>更新pre和cur指针（pre指针后cur指针分别后移一位），都迭代完了，pre就是最后一个节点<ul>
 <li>pre &#x3D; cur</li>
-<li>cur &#x3D; tmp<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span><br><span class="line">        cur = head  <span class="comment">#定义一个cur指针，指向头节点head</span></span><br><span class="line">        pre = <span class="literal">None</span> <span class="comment">#定义一个pre指针，初始化为None</span></span><br><span class="line">        <span class="keyword">while</span>(cur !=<span class="literal">None</span>):   <span class="comment">#当cur为空的时候循环结束，不断的将cur指向pre的过程</span></span><br><span class="line">                temp = cur.<span class="built_in">next</span>  <span class="comment">#保存一下 cur的下一个节点，因为接下来要改变cur-&gt;next</span></span><br><span class="line">                cur.<span class="built_in">next</span> = pre <span class="comment">#反转</span></span><br><span class="line">                <span class="comment">#更新pre、cur指针</span></span><br><span class="line">                pre = cur</span><br><span class="line">                cur = temp</span><br><span class="line">        <span class="keyword">return</span> pre</span><br></pre></td></tr></table></figure></li>
+<li>cur &#x3D; tmp</li>
 </ul>
 </li>
 </ol>
+<pre><code class="python">class Solution:
+    def reverseList(self, head: ListNode) -&gt; ListNode:
+        cur = head  #定义一个cur指针，指向头节点head
+        pre = None #定义一个pre指针，初始化为None
+        while(cur !=None):   #当cur为空的时候循环结束，不断的将cur指向pre的过程
+                temp = cur.next  #保存一下 cur的下一个节点，因为接下来要改变cur-&gt;next
+                cur.next = pre #反转
+                #更新pre、cur指针
+                pre = cur
+                cur = temp
+        return pre
+</code></pre>
 <h1 id="反转链表II"><a href="#反转链表II" class="headerlink" title="反转链表II:"></a>反转链表II:</h1><p>将链表的<strong>部分元素</strong>进行<strong>反转</strong><br>反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。<br>说明:<br>1 ≤ m ≤ n ≤ 链表长度。<br>示例:<br>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, m &#x3D; 2, n &#x3D; 4<br>输出: 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;NULL<br>仍然是辅助一些图片来加深理解：<br><img src="https://runnerxr.github.io/post-images/1654529827582.png"><br>在这里，head指向结点1，<strong>不用关注其后的所有结点如何将m&#x3D;3与n&#x3D;5之间的部分是如何反转的，只需要知道反转之后的结果就行了</strong>，也即这里的递推的公式的含义为：<strong>将拿到的链表反转，然后返回反转后的链表的头结点</strong><br><img src="https://runnerxr.github.io/post-images/1654530025019.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseBetween</span>(<span class="params">self, head, m, n</span>):</span><br><span class="line">        between = self.reverseBetween(head.<span class="built_in">next</span>,m-<span class="number">1</span>,n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution(object):
+    def reverseBetween(self, head, m, n):
+        between = self.reverseBetween(head.next,m-1,n-1)
+</code></pre>
 <p>接下来将递推公式返回的结果<strong>挂在head之后</strong>，即<code> head.next=between</code><br><img src="https://runnerxr.github.io/post-images/1654530273016.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseBetween</span>(<span class="params">self, head, m, n</span>):</span><br><span class="line">        between = self.reverseBetween(head.<span class="built_in">next</span>,m-<span class="number">1</span>,n-<span class="number">1</span>)</span><br><span class="line">        head.<span class="built_in">next</span>=between</span><br><span class="line">    <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution(object):
+    def reverseBetween(self, head, m, n):
+        between = self.reverseBetween(head.next,m-1,n-1)
+        head.next=between
+    return head
+</code></pre>
 <p>递推的部分已经完成了，现在就是需要明确递归的终止条件<br><img src="https://runnerxr.github.io/post-images/1654530644621.png"><br>原问题：     反转链表1–&gt;2–&gt;3–&gt;4–&gt;5–&gt;None  m&#x3D;3和n&#x3D;5之间的部分<br>更小的子问题：反转链表：2–&gt;3–4–5–6–&gt;None m&#x3D;2和n&#x3D;4之间的部分<br>进一步的反转链表：3–4–5–6–&gt;None m&#x3D;1和n&#x3D;3之间的部分<br>通过分析我们知道，当m&#x3D;&#x3D;1的时候，递归需要停止</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseBetween</span>(<span class="params">self, head, m, n</span>):</span><br><span class="line">        <span class="keyword">if</span> m==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">pass</span></span><br><span class="line">        between = self.reverseBetween(head.<span class="built_in">next</span>,m-<span class="number">1</span>,n-<span class="number">1</span>)</span><br><span class="line">        head.<span class="built_in">next</span>=between</span><br><span class="line">    <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution(object):
+    def reverseBetween(self, head, m, n):
+        if m==1:
+            return pass
+        between = self.reverseBetween(head.next,m-1,n-1)
+        head.next=between
+    return head
+</code></pre>
 <p>接下来的重点问题就是如何利用递归的思想反转3–4–5–6–&gt;None   m&#x3D;1和n&#x3D;3 即如何反转链表的前n个结点<br>借用东哥的代码的思路，需要的参数有两个：带反转的链表的头结点  以及 反转前几个结点（n值）<br><img src="https://runnerxr.github.io/post-images/1654531300211.png"><br>因此写出反转前n个结点的函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">reverseN</span>(<span class="params">head,n</span>):</span><br><span class="line">           <span class="comment"># 当反转的就是第一个节点，直接返回头节点就行</span></span><br><span class="line">           <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">               <span class="keyword">return</span> head</span><br><span class="line">           <span class="comment"># 以 head.next 为起点，需要反转前 n - 1 个节点</span></span><br><span class="line">           last = reverseN(head.<span class="built_in">next</span>, n-<span class="number">1</span>)</span><br><span class="line">           successor = head.<span class="built_in">next</span>.<span class="built_in">next</span> </span><br><span class="line">           <span class="comment"># 以head.next为开头的链表已经完成翻转，那么head.next.next正确指向后继节点</span></span><br><span class="line">           head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">           head.<span class="built_in">next</span> = successor</span><br><span class="line">           <span class="keyword">return</span> last</span><br></pre></td></tr></table></figure>
+<pre><code class="python"> def reverseN(head,n):
+            # 当反转的就是第一个节点，直接返回头节点就行
+            if n == 1:
+                return head
+            # 以 head.next 为起点，需要反转前 n - 1 个节点
+            last = reverseN(head.next, n-1)
+            successor = head.next.next 
+            # 以head.next为开头的链表已经完成翻转，那么head.next.next正确指向后继节点
+            head.next.next = head
+            head.next = successor
+            return last
+</code></pre>
 <p>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list-ii/">https://leetcode-cn.com/problems/reverse-linked-list-ii/</a><br>视频链接：<a target="_blank" rel="noopener" href="https://ke.algomooc.com/detail/v_621d9b82e4b066e9608a2c07/3">https://ke.algomooc.com/detail/v_621d9b82e4b066e9608a2c07/3</a><br>参考leetcoad上的一篇题解：<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/java-shuang-zhi-zhen-tou-cha-fa-by-mu-yi-cheng-zho/">https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/java-shuang-zhi-zhen-tou-cha-fa-by-mu-yi-cheng-zho/</a><br>解题思路：（此道题的解题思路要和合并两个有序链表那题一起来看，重要的是思路+代码实现）</p>
 <ol>
 <li>一开始设置一个虚拟节点，为了让原链表的所有节点都可以按照统一的方式进行翻转</li>
@@ -195,9 +568,69 @@
 <li>for循环：结束后，pre的右节点就是要翻转的节点，cur指向就是需要翻转的节点<br> + pre不断的向右移动，直到找到翻转的左区间为止<br> + cur不断的向右移动，找到需要翻转的第一个节点</li>
 <li>开始翻转这些节点：（最要的三句代码）</li>
 <li>设置临时变量，保存当前需要翻转节点的后面的节点<br> + 让temp和cur两个节点翻转：cur.next &#x3D; cur.next.next(想让2的下一个节点不是3而是4，就需要需要把cur的下一节点指向temp的下一个节点)<br> + temp.next &#x3D; pre.next（执行代码的目的：让temp的下一个节点是2而不是4<br> + pre.next &#x3D; temp(pre的下一节点是等号右侧的值)</li>
-<li>最后返回虚拟头节点的下一个节点（虚拟头节点不在链表中，用完之后就可以丢弃了）<br><strong>附上相关的代码：</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#本质上采用的是双指针+头插法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseBetween</span>(<span class="params">self, head: ListNode, left: <span class="built_in">int</span>, right: <span class="built_in">int</span></span>) -&gt; ListNode:</span><br><span class="line">        <span class="comment">#此处定义虚拟指针是为了方便处理（但凡是需要考虑左右边界的时候就需要考虑虚拟节点）</span></span><br><span class="line">        <span class="comment">#设置一个虚拟节点，指向原链表的头部</span></span><br><span class="line">        dummy = ListNode(-<span class="number">1</span>)</span><br><span class="line">        <span class="comment">#让虚拟节点指向原链表的头部</span></span><br><span class="line">        dummy.<span class="built_in">next</span> = head</span><br><span class="line"></span><br><span class="line">        <span class="comment">#初始化指针的位置</span></span><br><span class="line">        <span class="comment">#设置一个虚拟指针，指向以虚拟节点为链表的头部位置</span></span><br><span class="line">        pre = dummy</span><br><span class="line">        <span class="comment">#设置一个指针，指向原链表的头部位置</span></span><br><span class="line">        cur = head</span><br><span class="line"></span><br><span class="line">        <span class="comment">#将指针移动到相应的位置</span></span><br><span class="line">        <span class="comment">#从虚拟节点出发，pre走left-1步找到需要翻转的左区间</span></span><br><span class="line">        <span class="comment">#for循环：结束后，pre的右节点就是要翻转的节点，cur指向的就是要翻转的节点（需要结合相应的动画来理解）</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(left -<span class="number">1</span>):</span><br><span class="line">            <span class="comment">#pre不断的向右移动，直到走到翻转的左区间为止</span></span><br><span class="line">            pre = pre.<span class="built_in">next</span></span><br><span class="line">            <span class="comment">#cur不断的向右移动，找到了需要翻转的第一个节点</span></span><br><span class="line">            cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#开始翻转这些节点（也即用头插法插入节点）</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span> (right -left):</span><br><span class="line">            <span class="comment">#设置临时变量，保存当前需要翻转节点的后面的节点</span></span><br><span class="line">            temp = cur.<span class="built_in">next</span></span><br><span class="line">            <span class="comment">#接后面</span></span><br><span class="line">            cur.<span class="built_in">next</span>= cur.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">            <span class="comment">#头插</span></span><br><span class="line">            temp.<span class="built_in">next</span> = pre.<span class="built_in">next</span></span><br><span class="line">            pre.<span class="built_in">next</span> = temp</span><br><span class="line"></span><br><span class="line">        <span class="comment">#最后返回虚拟头结点的下一个节点（虚拟头结点不在链表中，用完之后就可以丢弃）</span></span><br><span class="line">        <span class="keyword">return</span> dummy.<span class="built_in">next</span></span><br><span class="line">        <span class="comment">#时间复杂度：O(N):N是链表节点总数，最多只遍历了链表一次</span></span><br><span class="line">        <span class="comment">#空间复杂度：O(1)：只使用到了常数个变量</span></span><br></pre></td></tr></table></figure>
-递归版本：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归的思路太难想了，要写的化还是迭代的思路要清晰一些</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseBetween</span>(<span class="params">self, head, m, n</span>):</span><br><span class="line">        <span class="comment"># 借助反转前n个节点的函数</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">reverseN</span>(<span class="params">head,n</span>):</span><br><span class="line">            <span class="comment"># 当反转的就是第一个节点，直接返回头节点就行</span></span><br><span class="line">            <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> head</span><br><span class="line">            <span class="comment"># 以 head.next 为起点，需要反转前 n - 1 个节点</span></span><br><span class="line">            last = reverseN(head.<span class="built_in">next</span>, n-<span class="number">1</span>)</span><br><span class="line">            successor = head.<span class="built_in">next</span>.<span class="built_in">next</span> </span><br><span class="line">            <span class="comment"># 以head.next为开头的链表已经完成翻转，那么head.next.next正确指向后继节点</span></span><br><span class="line">            head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">            head.<span class="built_in">next</span> = successor</span><br><span class="line">            <span class="keyword">return</span> last</span><br><span class="line">        <span class="comment"># 如果m==1,就像相当于  </span></span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> reverseN(head,n)</span><br><span class="line">        head.<span class="built_in">next</span> = self.reverseBetween(head.<span class="built_in">next</span>,m-<span class="number">1</span>,n-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure></li>
+<li>最后返回虚拟头节点的下一个节点（虚拟头节点不在链表中，用完之后就可以丢弃了）<br><strong>附上相关的代码：</strong></li>
 </ol>
+<pre><code class="python">#本质上采用的是双指针+头插法
+class Solution:
+    def reverseBetween(self, head: ListNode, left: int, right: int) -&gt; ListNode:
+        #此处定义虚拟指针是为了方便处理（但凡是需要考虑左右边界的时候就需要考虑虚拟节点）
+        #设置一个虚拟节点，指向原链表的头部
+        dummy = ListNode(-1)
+        #让虚拟节点指向原链表的头部
+        dummy.next = head
+
+        #初始化指针的位置
+        #设置一个虚拟指针，指向以虚拟节点为链表的头部位置
+        pre = dummy
+        #设置一个指针，指向原链表的头部位置
+        cur = head
+
+        #将指针移动到相应的位置
+        #从虚拟节点出发，pre走left-1步找到需要翻转的左区间
+        #for循环：结束后，pre的右节点就是要翻转的节点，cur指向的就是要翻转的节点（需要结合相应的动画来理解）
+        for _ in range(left -1):
+            #pre不断的向右移动，直到走到翻转的左区间为止
+            pre = pre.next
+            #cur不断的向右移动，找到了需要翻转的第一个节点
+            cur = cur.next
+
+        #开始翻转这些节点（也即用头插法插入节点）
+        for _ in range (right -left):
+            #设置临时变量，保存当前需要翻转节点的后面的节点
+            temp = cur.next
+            #接后面
+            cur.next= cur.next.next
+            #头插
+            temp.next = pre.next
+            pre.next = temp
+
+        #最后返回虚拟头结点的下一个节点（虚拟头结点不在链表中，用完之后就可以丢弃）
+        return dummy.next
+        #时间复杂度：O(N):N是链表节点总数，最多只遍历了链表一次
+        #空间复杂度：O(1)：只使用到了常数个变量
+</code></pre>
+<p>递归版本：</p>
+<pre><code class="python"># 递归的思路太难想了，要写的化还是迭代的思路要清晰一些
+class Solution(object):
+    def reverseBetween(self, head, m, n):
+        # 借助反转前n个节点的函数
+        def reverseN(head,n):
+            # 当反转的就是第一个节点，直接返回头节点就行
+            if n == 1:
+                return head
+            # 以 head.next 为起点，需要反转前 n - 1 个节点
+            last = reverseN(head.next, n-1)
+            successor = head.next.next 
+            # 以head.next为开头的链表已经完成翻转，那么head.next.next正确指向后继节点
+            head.next.next = head
+            head.next = successor
+            return last
+        # 如果m==1,就像相当于  
+        if m == 1:
+            return reverseN(head,n)
+        head.next = self.reverseBetween(head.next,m-1,n-1)
+        return head
+</code></pre>
 <h1 id="leetcoad21-x2F-23-合并两-x2F-k个有序链表-easy-x2F-hard"><a href="#leetcoad21-x2F-23-合并两-x2F-k个有序链表-easy-x2F-hard" class="headerlink" title="leetcoad21&#x2F;23-合并两&#x2F;k个有序链表(easy&#x2F;hard)"></a>leetcoad21&#x2F;23-合并两&#x2F;k个有序链表(easy&#x2F;hard)</h1><p><strong>合并两个有序链表</strong><br>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">https://leetcode-cn.com/problems/merge-two-sorted-lists/</a><br>视频链接：<a target="_blank" rel="noopener" href="https://www.algomooc.com/658.html">https://www.algomooc.com/658.html</a><br>解题思路如下：<br>    + 一开始设置一个虚拟节点，它的值为 -1，它的值可以设置为任何的数，因为我们根本不需要使用它的值（dummy）<br>    + 设置一个指针，指向虚拟节点(pre &#x3D; dummy)<br>    + 通过一个循环，不断的比较L1和L2中当前节点值的大小，直到L1或者L2遍历完毕为止（指出这个循环就是问题的关键）</p>
 <pre><code>    + 如果 l1 当前节点的值小于等于了 l2 当前节点的值
         + 让 pre 指向节点的 next 指针指向这个更小值的节l1 
@@ -216,159 +649,168 @@
 + 最后返回虚拟节点的next指针
 </code></pre>
 <p>自己调试的版本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将传入的数组转化为链表</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_linked_list</span>(<span class="params">arr</span>):</span><br><span class="line">    head = ListNode(arr[<span class="number">0</span>])</span><br><span class="line">    cur = head</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(arr)):</span><br><span class="line">        cur.<span class="built_in">next</span> = ListNode(arr[i])</span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line"><span class="comment">#传入链表头节点，以数组形式返回</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_linked_list</span>(<span class="params">head</span>):</span><br><span class="line">    cur = head</span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        res.append(cur.val)</span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">mergeTwoLists</span>(<span class="params">self, l1, l2</span>):</span><br><span class="line">        pre = ListNode(<span class="number">0</span>)</span><br><span class="line">        head = pre</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1.val &gt;= l2.val:</span><br><span class="line">                pre.<span class="built_in">next</span> = l2</span><br><span class="line">                l2 = l2.<span class="built_in">next</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                pre.<span class="built_in">next</span> = l1</span><br><span class="line">                l1 = l1.<span class="built_in">next</span></span><br><span class="line">            pre = pre.<span class="built_in">next</span></span><br><span class="line">        pre.<span class="built_in">next</span> = l1 <span class="keyword">if</span> l1 <span class="keyword">else</span> l2</span><br><span class="line">        <span class="keyword">return</span> head.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    head1 = create_linked_list([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line">    head2 = create_linked_list([<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">    solution = Solution()</span><br><span class="line">    sorted_lists = solution.mergeTwoLists(head1, head2)</span><br><span class="line">    <span class="built_in">print</span>(print_linked_list(sorted_lists))</span><br><span class="line"><span class="comment">#输出：[1, 1, 2, 3, 4, 4]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">#定义节点
+class ListNode():
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+#将传入的数组转化为链表
+def create_linked_list(arr):
+    head = ListNode(arr[0])
+    cur = head
+    for i in range(1, len(arr)):
+        cur.next = ListNode(arr[i])
+        cur = cur.next
+    return head
+
+#传入链表头节点，以数组形式返回
+def print_linked_list(head):
+    cur = head
+    res = []
+    while cur:
+        res.append(cur.val)
+        cur = cur.next
+    return res
+
+class Solution():
+    def mergeTwoLists(self, l1, l2):
+        pre = ListNode(0)
+        head = pre
+        while l1 and l2:
+            if l1.val &gt;= l2.val:
+                pre.next = l2
+                l2 = l2.next
+            else:
+                pre.next = l1
+                l1 = l1.next
+            pre = pre.next
+        pre.next = l1 if l1 else l2
+        return head.next
+
+if __name__ == &quot;__main__&quot;:
+    head1 = create_linked_list([1, 2, 4])
+    head2 = create_linked_list([1, 3, 4])
+    solution = Solution()
+    sorted_lists = solution.mergeTwoLists(head1, head2)
+    print(print_linked_list(sorted_lists))
+#输出：[1, 1, 2, 3, 4, 4]
+</code></pre>
 <p>吴师兄给的思路的方法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Merge</span>(<span class="params">self , L1: ListNode, L2: ListNode</span>) -&gt; ListNode:</span><br><span class="line">        <span class="comment">#设置一个虚拟节点,因为不知道构建的结果中，开头的元素到底是l1还是l2,就是为了在后面比较后加入才直到，所以设置后就可以不用管了</span></span><br><span class="line">        dummy = ListNode(-<span class="number">1</span>)</span><br><span class="line">        <span class="comment">#设置一个虚拟指针，指向虚拟节点。这个虚拟指针是可以移动的，目的是让指针指向链表的最后一个元素，可以是l1，也可以是l2,是按照从小到大的顺序不断的进行移动的</span></span><br><span class="line">        pre = dummy</span><br><span class="line">        <span class="comment">#通过一个循环，不断的比较L1和L2中当前节点值的大小，直到L1或者L2遍历完为止</span></span><br><span class="line">        <span class="keyword">while</span> L1 <span class="keyword">and</span> L2:</span><br><span class="line">            <span class="comment">#如果L1对应的节点值更小，就把pre指向节点的next指针指向L1</span></span><br><span class="line">            <span class="keyword">if</span>  L1.val &lt;= L2.val:</span><br><span class="line">                pre.<span class="built_in">next</span> = L1</span><br><span class="line">                <span class="comment">#然后把L1向前移动（很重要的一步）</span></span><br><span class="line">                L1= L1.<span class="built_in">next</span></span><br><span class="line">            <span class="comment">#如果L2对应的节点值更小，就把pre指向节点的next指针指向L2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                pre.<span class="built_in">next</span> = L2</span><br><span class="line">                 <span class="comment">#然后把L2向前移动</span></span><br><span class="line">                L2 = L2.<span class="built_in">next</span></span><br><span class="line">            <span class="comment">#让pre不断的向后移动</span></span><br><span class="line">            pre = pre.<span class="built_in">next</span></span><br><span class="line">        <span class="comment">#跳出循环后，L1和L2中可能有剩余的节点没有观察到</span></span><br><span class="line">        <span class="comment">#直接把剩下的节点加入到pre的next指针位置</span></span><br><span class="line">        <span class="keyword">if</span> L1 !=<span class="literal">None</span>:</span><br><span class="line">            pre.<span class="built_in">next</span>=L1</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">if</span> L2 !=<span class="literal">None</span>:</span><br><span class="line">            pre.<span class="built_in">next</span> = L2</span><br><span class="line">        <span class="keyword">return</span> dummy.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def Merge(self , L1: ListNode, L2: ListNode) -&gt; ListNode:
+        #设置一个虚拟节点,因为不知道构建的结果中，开头的元素到底是l1还是l2,就是为了在后面比较后加入才直到，所以设置后就可以不用管了
+        dummy = ListNode(-1)
+        #设置一个虚拟指针，指向虚拟节点。这个虚拟指针是可以移动的，目的是让指针指向链表的最后一个元素，可以是l1，也可以是l2,是按照从小到大的顺序不断的进行移动的
+        pre = dummy
+        #通过一个循环，不断的比较L1和L2中当前节点值的大小，直到L1或者L2遍历完为止
+        while L1 and L2:
+            #如果L1对应的节点值更小，就把pre指向节点的next指针指向L1
+            if  L1.val &lt;= L2.val:
+                pre.next = L1
+                #然后把L1向前移动（很重要的一步）
+                L1= L1.next
+            #如果L2对应的节点值更小，就把pre指向节点的next指针指向L2
+            else:
+                pre.next = L2
+                 #然后把L2向前移动
+                L2 = L2.next
+            #让pre不断的向后移动
+            pre = pre.next
+        #跳出循环后，L1和L2中可能有剩余的节点没有观察到
+        #直接把剩下的节点加入到pre的next指针位置
+        if L1 !=None:
+            pre.next=L1
+            
+        if L2 !=None:
+            pre.next = L2
+        return dummy.next
+</code></pre>
 <p>尝试写一下递归的版本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">**合并k个升序链表**</span><br><span class="line">leetcoad链接：&lt;https://leetcode-cn.com/problems/merge-k-<span class="built_in">sorted</span>-lists/&gt;</span><br><span class="line">这题是在合并两个有序链表的基础上衍生出来的（把递归的知识再融合进去）</span><br><span class="line">```python</span><br><span class="line">代码待填充.......</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">
+</code></pre>
+<p><strong>合并k个升序链表</strong><br>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">https://leetcode-cn.com/problems/merge-k-sorted-lists/</a><br>这题是在合并两个有序链表的基础上衍生出来的（把递归的知识再融合进去）</p>
+<pre><code class="python">代码待填充.......
+</code></pre>
 <p><strong>leetcoad25-每k个一组翻转链表</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">Definition <span class="keyword">for</span> singly-linked <span class="built_in">list</span>.</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, val=<span class="number">0</span>, <span class="built_in">next</span>=<span class="literal">None</span></span>):</span><br><span class="line">        self.val = val</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="built_in">next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseKGroup</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode], k: <span class="built_in">int</span></span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        <span class="comment"># 采用迭代地思路解题</span></span><br><span class="line">        dummy=ListNode(-<span class="number">1</span>)</span><br><span class="line">        dummy.<span class="built_in">next</span>=head</span><br><span class="line">        <span class="comment"># 设置两个指针，一个pre指针指向虚拟结点，一个end指针，初始时指向虚拟结点，后面表示每次要翻转地链表地尾结点</span></span><br><span class="line">        <span class="comment"># pre:-1--&gt;1--&gt;2--&gt;3</span></span><br><span class="line">        <span class="comment"># end:-1--&gt;1--&gt;2--&gt;3</span></span><br><span class="line">        pre,end=dummy,dummy</span><br><span class="line">        <span class="comment"># 通过循环不断地找到翻转链表的尾部</span></span><br><span class="line">        <span class="keyword">while</span> end.<span class="built_in">next</span>!=<span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">                <span class="keyword">if</span> end <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># end不断地向后移动，移动k次达到每一组翻转链表地尾部</span></span><br><span class="line">                    end=end.<span class="built_in">next</span></span><br><span class="line">            <span class="comment"># 如果发现end==None，说明此时翻转地链表地节点数小于k，保存原有的顺序</span></span><br><span class="line">            <span class="keyword">if</span> end <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="comment"># 直接跳出循环，执行下面的翻转操作</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># next表示【待翻转区域】里面的第一个结点</span></span><br><span class="line">            <span class="built_in">next</span>=end.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 翻转区域的最尾部结点先断开</span></span><br><span class="line">            end.<span class="built_in">next</span>=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># start表示【翻转区域】里面的第一个结点</span></span><br><span class="line">            start=pre.<span class="built_in">next</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 此时翻转区域的头结点时start，尾结点时end,执行后续的翻转操作</span></span><br><span class="line">            <span class="comment"># start--&gt;---&gt;end  变成 end---&gt;----&gt;start</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 要翻转的链表的头结点的【上一个节点】的 next 指针指向这次翻转的结果</span></span><br><span class="line">            pre.<span class="built_in">next</span>=self.reverseList(start)</span><br><span class="line">            <span class="comment"># 【翻转区域】里面的尾结点的next指针指向【待翻转区域】的第一个结点</span></span><br><span class="line">            start.<span class="built_in">next</span>=<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># pre表示每次翻转的链表的头结点的上一个结点</span></span><br><span class="line">            pre=start</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 将end重置为[待翻转链表区]的头节点的上一个节点</span></span><br><span class="line">            end=start</span><br><span class="line">        <span class="keyword">return</span> dummy.<span class="built_in">next</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self,head:ListNode</span>):</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> == <span class="literal">None</span>):</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        cur = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">        head.<span class="built_in">next</span>.<span class="built_in">next</span> = head      </span><br><span class="line">        head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> cur</span><br></pre></td></tr></table></figure>
+<pre><code class="python">Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -&gt; Optional[ListNode]:
+        # 采用迭代地思路解题
+        dummy=ListNode(-1)
+        dummy.next=head
+        # 设置两个指针，一个pre指针指向虚拟结点，一个end指针，初始时指向虚拟结点，后面表示每次要翻转地链表地尾结点
+        # pre:-1--&gt;1--&gt;2--&gt;3
+        # end:-1--&gt;1--&gt;2--&gt;3
+        pre,end=dummy,dummy
+        # 通过循环不断地找到翻转链表的尾部
+        while end.next!=None:
+            for i in range(k):
+                if end is None:
+                    break
+                else:
+                    # end不断地向后移动，移动k次达到每一组翻转链表地尾部
+                    end=end.next
+            # 如果发现end==None，说明此时翻转地链表地节点数小于k，保存原有的顺序
+            if end is None:
+                # 直接跳出循环，执行下面的翻转操作
+                break
+            
+            # next表示【待翻转区域】里面的第一个结点
+            next=end.next
 
+            # 翻转区域的最尾部结点先断开
+            end.next=None
+
+            # start表示【翻转区域】里面的第一个结点
+            start=pre.next
+            
+            # 此时翻转区域的头结点时start，尾结点时end,执行后续的翻转操作
+            # start--&gt;---&gt;end  变成 end---&gt;----&gt;start
+
+            # 要翻转的链表的头结点的【上一个节点】的 next 指针指向这次翻转的结果
+            pre.next=self.reverseList(start)
+            # 【翻转区域】里面的尾结点的next指针指向【待翻转区域】的第一个结点
+            start.next=next
+
+            # pre表示每次翻转的链表的头结点的上一个结点
+            pre=start
+
+            # 将end重置为[待翻转链表区]的头节点的上一个节点
+            end=start
+        return dummy.next
+    
+    def reverseList(self,head:ListNode):
+        if(head == None or head.next == None):
+            return head
+        cur = self.reverseList(head.next)
+        head.next.next = head      
+        head.next = None
+        return cur
+</code></pre>
 <h1 id="leetcoad142-环形链表II-middle"><a href="#leetcoad142-环形链表II-middle" class="headerlink" title="leetcoad142-环形链表II(middle)"></a>leetcoad142-环形链表II(middle)</h1><p>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">https://leetcode-cn.com/problems/linked-list-cycle-ii/</a><br>视频链接：<a target="_blank" rel="noopener" href="https://www.algomooc.com/746.html">https://www.algomooc.com/746.html</a><br>涉及到的知识点:快慢指针<br>有一些理解的东西可能也很重要，自己要内化成为自己的东西</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/06/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE/" data-id="claqum2es0030h0tkbs1c8q56" data-title="链表的基础以及相关衍生的题目" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E5%88%B7%E5%9F%BA%E7%A1%80%E9%A2%98%E5%80%BC%E5%BE%97%E8%AE%B0%E5%BD%95%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E5%B0%B1%E6%95%B4%E7%90%86%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          牛客网刷基础题值得记录的一些问题（值得就整理）
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/06/leetcoad643-%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E6%95%B0I/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">leetcoad643-子数组最大平均数I</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

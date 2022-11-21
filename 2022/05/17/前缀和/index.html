@@ -1,108 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>前缀和 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="前缀和：参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;260739067https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;48t0y13XB7URrkSR5A20Iw这里我在写的时候还是需要注意关于原数组于前缀和数组的关系，自己也是做了一部分题目出来的，也不是完全什么都不懂的人，前缀和正好是原数组多一个。  presum[i]就是num[0:i]的和（这里这里因为是pyt">
-<meta property="og:type" content="article">
-<meta property="og:title" content="前缀和">
-<meta property="og:url" content="http://example.com/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前缀和：参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;260739067https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;48t0y13XB7URrkSR5A20Iw这里我在写的时候还是需要注意关于原数组于前缀和数组的关系，自己也是做了一部分题目出来的，也不是完全什么都不懂的人，前缀和正好是原数组多一个。  presum[i]就是num[0:i]的和（这里这里因为是pyt">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651905310576.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651980505027.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651915864334.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651941152655.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651979391370.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651996690685.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651996705610.png">
-<meta property="article:published_time" content="2022-05-17T04:24:00.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:28:21.606Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1651905310576.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-前缀和" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" class="article-date">
-  <time class="dt-published" datetime="2022-05-17T04:24:00.000Z" itemprop="datePublished">2022-05-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      前缀和
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            前缀和
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/05/17 Tue 12:24&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:28
+        </div>
+    </div>
+    <div class="article-content">
         <h1 id="前缀和："><a href="#前缀和：" class="headerlink" title="前缀和："></a>前缀和：</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260739067">https://zhuanlan.zhihu.com/p/260739067</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/48t0y13XB7URrkSR5A20Iw">https://mp.weixin.qq.com/s/48t0y13XB7URrkSR5A20Iw</a><br>这里我在写的时候还是需要注意关于原数组于前缀和数组的关系，自己也是做了一部分题目出来的，也不是完全什么都不懂的人，前缀和正好是原数组多一个。</p>
 <ol>
 <li>presum[i]就是num[0:i]的和（这里这里因为是python的语言，<strong>所以是不包含nums[i]的值</strong>，就是nums[i]前面的元素之和</li>
@@ -115,177 +73,309 @@
 <li>leetcoad 560 和为K的子数组</li>
 <li>leetcoad974-和可被K整除的子数组；</li>
 </ol>
-<h1 id="leetcode-724-寻找数组的中心索引"><a href="#leetcode-724-寻找数组的中心索引" class="headerlink" title="leetcode 724. 寻找数组的中心索引"></a>leetcode 724. 寻找数组的中心索引</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己做的时候的思路如下，相对比较笨，先构建出前缀和数组，然后根据题目的意思找出相应的等量关系</span></span><br><span class="line"><span class="comment"># 这样做太浪费空间了，如果数值更大的话，会超出内存限制</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        presum=[<span class="number">0</span>]</span><br><span class="line">        <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 创建出前缀和数组</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="built_in">sum</span>+=nums[i]</span><br><span class="line">            presum.append(<span class="built_in">sum</span>)</span><br><span class="line">        <span class="built_in">print</span>(presum)</span><br><span class="line">        <span class="comment"># 对前缀和数组进行遍历</span></span><br><span class="line">        <span class="comment"># 如果发现抛开第一个数的所有和为0</span></span><br><span class="line">        <span class="keyword">if</span> presum[n]-nums[<span class="number">0</span>]==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 如果发现相邻两个前缀和等于最后一个前缀和</span></span><br><span class="line">            <span class="keyword">if</span> presum[i-<span class="number">1</span>]+presum[i]==presum[n]:</span><br><span class="line">                <span class="keyword">return</span> i-<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="leetcode-724-寻找数组的中心索引"><a href="#leetcode-724-寻找数组的中心索引" class="headerlink" title="leetcode 724. 寻找数组的中心索引"></a>leetcode 724. 寻找数组的中心索引</h1><pre><code class="python"># 自己做的时候的思路如下，相对比较笨，先构建出前缀和数组，然后根据题目的意思找出相应的等量关系
+# 这样做太浪费空间了，如果数值更大的话，会超出内存限制
+class Solution:
+    def pivotIndex(self, nums: List[int]) -&gt; int:
+        n=len(nums)
+        presum=[0]
+        sum=0
+        # 创建出前缀和数组
+        for i in range(n):
+            sum+=nums[i]
+            presum.append(sum)
+        print(presum)
+        # 对前缀和数组进行遍历
+        # 如果发现抛开第一个数的所有和为0
+        if presum[n]-nums[0]==0:
+            return 0
+        for i in range(1,n+1):
+            # 如果发现相邻两个前缀和等于最后一个前缀和
+            if presum[i-1]+presum[i]==presum[n]:
+                return i-1
+        return -1
+</code></pre>
 <p>对该方法进行改进，可以优化很多空间，不需要每次计算左半部分和右半部分的和，可以根据上一次计算的做左半部分和右半部分的和，以及新增或删除元素来获得当前左半部分和右半部分的和。合理的利用了数组的切分</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 第一个值</span></span><br><span class="line">        a=<span class="built_in">sum</span>(nums[:<span class="number">0</span>])</span><br><span class="line">        <span class="comment"># 对切开第一个数之后的数组求和</span></span><br><span class="line">        b=<span class="built_in">sum</span>(nums[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(nums)-<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 如果发现a==b，直接返回对应的i</span></span><br><span class="line">            <span class="keyword">if</span> a==b:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            <span class="comment"># 继续向右移动，求左右两部分</span></span><br><span class="line">            <span class="comment"># 这里很容易忽略，a需要将nums[i]加入，b需要将nums[i+1]剔除</span></span><br><span class="line">            a+=nums[i]</span><br><span class="line">            b-=nums[i+<span class="number">1</span>]</span><br><span class="line">        <span class="comment"># 当遍历到最后一个元素，即循环结束</span></span><br><span class="line">        <span class="keyword">if</span> a==b:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">len</span>(nums)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def pivotIndex(self, nums: List[int]) -&gt; int:
+        # 第一个值
+        a=sum(nums[:0])
+        # 对切开第一个数之后的数组求和
+        b=sum(nums[1:])
+        for i in range(0,len(nums)-1):
+            # 如果发现a==b，直接返回对应的i
+            if a==b:
+                return i
+            # 继续向右移动，求左右两部分
+            # 这里很容易忽略，a需要将nums[i]加入，b需要将nums[i+1]剔除
+            a+=nums[i]
+            b-=nums[i+1]
+        # 当遍历到最后一个元素，即循环结束
+        if a==b:
+            return len(nums)-1
+        else:
+            return -1
+</code></pre>
 <h1 id="leetcode-523-连续的子数组和"><a href="#leetcode-523-连续的子数组和" class="headerlink" title="leetcode 523 连续的子数组和"></a>leetcode 523 连续的子数组和</h1><p><img src="https://runnerxr.github.io/post-images/1651980505027.png"><br>理清题目的要求：</p>
 <ol>
 <li>子数组的大小至少为2</li>
-<li>子数组元素总和为k的倍数，如果存在返回true，如果不存在就返回false<br>首先想到的就是用暴力解法，发现果然是超时的，只能通过一部分的案例<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">checkSubarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 做题步骤</span></span><br><span class="line">        <span class="comment"># 1. 首先定义一个子数组</span></span><br><span class="line">        <span class="comment"># 2 .判断子数组的和是否等于k的整数倍</span></span><br><span class="line">        <span class="comment"># 3. 如果不是，就不停的添加新的元素重新计算</span></span><br><span class="line">        n= <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 外层固定数组的长度，内存表示子数组第一个下标</span></span><br><span class="line">        <span class="comment"># 外层循环是子数组的长度,最短有两个，最长有n个</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 内层循环时子数组的第一个值的下标,下标的范围从0~n-i-1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n-i+<span class="number">1</span>):</span><br><span class="line">                a=<span class="built_in">sum</span>(nums[j:j+i])</span><br><span class="line">                <span class="comment"># 如果a除以k的余数为0</span></span><br><span class="line">                <span class="keyword">if</span> a%k==<span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 如果循环结束周仍然没有返回（没有找到和为k的倍数的）</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">2</span> <span class="keyword">and</span> <span class="built_in">sum</span>(nums)%k==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<strong>现在要对代码进行相应的优化，用到前缀和和哈希表的知识</strong><br>看到几项的和为条件的判断，考虑前缀和，同时引入同余定理（当两个数除以每个数的余数相等，两者相减之后肯定可以被该数整除，这里其实可以简单的知道一些证明的过程），采用前缀和方式进行判断，后面的数字总和必然包含它之前的内容，维护一个hash表，记录{余数：下标}，存在前n个数字恰好被k整除的情况，预制一个字典{0：-1}来规避这样的问题<br><img src="https://runnerxr.github.io/post-images/1651915864334.png"><br>在利用的时候，没有把列表全部更新一遍，只要更新列表每个字段为前缀和内容再二次判断（自己理解：如果全部循环必然会很费时间，更新presum遍历一遍，用的时候可能还要再遍历一遍），<strong>所以在需要多次循环列表的时候，我们只需要维护一个初始值为0的数字，每次加等就可以</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写出符合自己的方法</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">checkSubarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 创建字典</span></span><br><span class="line">        hashmap=<span class="built_in">dict</span>()</span><br><span class="line">        <span class="comment"># 添加一个初始值,添加初始值的原因保证和数组的索引同步（这里的构造方法和560题的思考方式是一致的，注意运用的情况）</span></span><br><span class="line">        hashmap[<span class="number">0</span>]=-<span class="number">1</span></span><br><span class="line">        <span class="comment"># 一边构造前缀和一边用哈希表进行查找</span></span><br><span class="line">        presum=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> index,num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            presum+=num</span><br><span class="line">            <span class="comment"># 取前缀和</span></span><br><span class="line">            <span class="comment"># 整除k的余数</span></span><br><span class="line">            rem=presum%k</span><br><span class="line">            <span class="comment"># 如果发现该余数不在哈希表中,就将余数与当前的索引作为键和值加入hashmap中</span></span><br><span class="line">            <span class="keyword">if</span> rem <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">                hashmap[rem]=index</span><br><span class="line">            <span class="comment"># 如果发现余数已经在哈希表中,这个时候就要看此时的索引与之前的索引的差值有没有大于等于2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 用get()函数获取之前的索引</span></span><br><span class="line">                i = hashmap.get(rem)</span><br><span class="line">                <span class="comment">#print(i)</span></span><br><span class="line">                <span class="comment"># 比较现在的索引与原索引的差值</span></span><br><span class="line">                <span class="keyword">if</span> index -i &gt;=<span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主函数</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">    res=Solution().checkSubarraySum(nums,<span class="number">6</span>)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure></li>
+<li>子数组元素总和为k的倍数，如果存在返回true，如果不存在就返回false<br>首先想到的就是用暴力解法，发现果然是超时的，只能通过一部分的案例</li>
 </ol>
+<pre><code class="python">class Solution: 
+    def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+        # 做题步骤
+        # 1. 首先定义一个子数组
+        # 2 .判断子数组的和是否等于k的整数倍
+        # 3. 如果不是，就不停的添加新的元素重新计算
+        n= len(nums)
+        # 外层固定数组的长度，内存表示子数组第一个下标
+        # 外层循环是子数组的长度,最短有两个，最长有n个
+        for i in range(2,n+1):
+            # 内层循环时子数组的第一个值的下标,下标的范围从0~n-i-1
+            for j in range(n-i+1):
+                a=sum(nums[j:j+i])
+                # 如果a除以k的余数为0
+                if a%k==0:
+                    return True
+        # 如果循环结束周仍然没有返回（没有找到和为k的倍数的）
+        if n==2 and sum(nums)%k==0:
+            return True
+        else:
+            return False
+</code></pre>
+<p><strong>现在要对代码进行相应的优化，用到前缀和和哈希表的知识</strong><br>看到几项的和为条件的判断，考虑前缀和，同时引入同余定理（当两个数除以每个数的余数相等，两者相减之后肯定可以被该数整除，这里其实可以简单的知道一些证明的过程），采用前缀和方式进行判断，后面的数字总和必然包含它之前的内容，维护一个hash表，记录{余数：下标}，存在前n个数字恰好被k整除的情况，预制一个字典{0：-1}来规避这样的问题<br><img src="https://runnerxr.github.io/post-images/1651915864334.png"><br>在利用的时候，没有把列表全部更新一遍，只要更新列表每个字段为前缀和内容再二次判断（自己理解：如果全部循环必然会很费时间，更新presum遍历一遍，用的时候可能还要再遍历一遍），<strong>所以在需要多次循环列表的时候，我们只需要维护一个初始值为0的数字，每次加等就可以</strong></p>
+<pre><code class="python"># 写出符合自己的方法
+from typing import List
+class Solution:
+    def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+        # 创建字典
+        hashmap=dict()
+        # 添加一个初始值,添加初始值的原因保证和数组的索引同步（这里的构造方法和560题的思考方式是一致的，注意运用的情况）
+        hashmap[0]=-1
+        # 一边构造前缀和一边用哈希表进行查找
+        presum=0
+        for index,num in enumerate(nums):
+            presum+=num
+            # 取前缀和
+            # 整除k的余数
+            rem=presum%k
+            # 如果发现该余数不在哈希表中,就将余数与当前的索引作为键和值加入hashmap中
+            if rem not in hashmap:
+                hashmap[rem]=index
+            # 如果发现余数已经在哈希表中,这个时候就要看此时的索引与之前的索引的差值有没有大于等于2
+            else:
+                # 用get()函数获取之前的索引
+                i = hashmap.get(rem)
+                #print(i)
+                # 比较现在的索引与原索引的差值
+                if index -i &gt;=2:
+                    return True
+        return False
+
+# 主函数
+if __name__==&#39;__main__&#39;:
+    nums=[1,2,3]
+    res=Solution().checkSubarraySum(nums,6)
+    print(res)
+</code></pre>
 <h1 id="leetcoad-560-和为K的子数组"><a href="#leetcoad-560-和为K的子数组" class="headerlink" title="leetcoad 560 和为K的子数组"></a>leetcoad 560 和为K的子数组</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/python3-by-wu-qiong-sheng-gao-de-qia-non-w6jw/">https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/python3-by-wu-qiong-sheng-gao-de-qia-non-w6jw/</a><br>以下的解法都是在实操的层面不断的进行相应的优化的，其实也是十分的灵活的，所以自己要不断的敲才能认真的掌握。在平时的练习的时候确实是值得反复的思考，让自己的思维活跃起来，真正的把前缀和运用好。<br><strong>储备知识</strong>：怎么求一个数组的连续子数组（只是为了理解题意，也是为后面的代码做出一定的参考）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">n=<span class="built_in">len</span>(nums)</span><br><span class="line">subnums=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n):</span><br><span class="line">        subnums.append(nums[i:j+<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(subnums)</span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">[[<span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">2</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">3</span>]]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">nums=[1,2,3]
+n=len(nums)
+subnums=[]
+for i in range(n):
+    for j in range(i,n):
+        subnums.append(nums[i:j+1])
+print(subnums)
+#输出结果
+[[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]]
+</code></pre>
 <p>暴力的解法，是有一些案例通不过的，并且是超时的（自己想的写法）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 90个案例通过61个</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 外层循环表示数组的长度</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 内层循环，记录子数组第一个下标的变化范围</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n-i+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 统计子数组的和</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span>(nums[j:j+i])==k:</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 90个案例通过61个
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -&gt; int:
+        n = len(nums)
+        count=0
+        # 外层循环表示数组的长度
+        for i in range(1,n+1):
+            # 内层循环，记录子数组第一个下标的变化范围
+            for j in range(0,n-i+1):
+                # 统计子数组的和
+                if sum(nums[j:j+i])==k:
+                    count+=1
+        return count
+</code></pre>
 <p>仍然是暴力解法（可能也是最直接的理解层面上的东西）<br>时间复杂度O(n^3):两层循环还有一层求和的过程</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n):</span><br><span class="line">                <span class="comment"># 充分利用了nums切片的性质</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span>(nums[i:j+<span class="number">1</span>])==k:</span><br><span class="line">                    count +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def subarraySum(self, nums: List[int], k: int) -&gt; int:
+        n = len(nums)
+        count=0
+        for i in range(n):
+            for j in range(i,n):
+                # 充分利用了nums切片的性质
+                if sum(nums[i:j+1])==k:
+                    count +=1
+        return count
+</code></pre>
 <p>在上面的基础上继续进行优化：将时间复杂度优化为O(n^2)<br>这里优化的点在于：在求nums[i:j+1]的下一次nums[i:j+1+1]的时候，不需要哉从i开始算了，直接哉上一次的结果上+nums[j+1],但是记住内层循环结束的时候需要将sum置0（如果不置0，会一直累加，这样并不是区间的和）<br>双循环，仍然是超出时间限制,90个案例通过72个</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n):</span><br><span class="line">                <span class="built_in">sum</span>+=nums[j]</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span>==k:</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">            <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def subarraySum(self, nums: List[int], k: int) -&gt; int:
+        n = len(nums)
+        count=0
+        sum=0
+        for i in range(n):
+            for j in range(i,n):
+                sum+=nums[j]
+                if sum==k:
+                    count+=1
+            sum=0
+        return count
+</code></pre>
 <p>要计算i和j之间的和：nums[i]+nums[i+1]+⋯+nums[j]<br>可以看作是nums[0]+nums[1]+⋯+nums[i]+nums[i+1]+⋯+nums[j]   减去   nums[0]+nums[1]+⋯+nums[i−1]<br>也即：preSum[j]−preSum[i−1]<br>操作如下：先遍历一次数组，求出前缀和数组，用这个数组代替最开始的暴力解法的sum函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        subnums=[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 求前缀和数组的过程</span></span><br><span class="line">        temp=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            temp+=nums[i]</span><br><span class="line">            subnums.append(temp)</span><br><span class="line">        <span class="comment"># print(subnums)</span></span><br><span class="line">        <span class="comment"># 求和为k的连续子数组出现的次数</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 这里要注意相应的下标,subnums的长度为n+1,下标从1开始</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> subnums[j]-subnums[i-<span class="number">1</span>]==k:</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主函数</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">    res=Solution().subarraySum(nums,<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">from typing import List
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -&gt; int:
+        n=len(nums)
+        subnums=[0]
+
+        # 求前缀和数组的过程
+        temp=0
+        for i in range(n):
+            temp+=nums[i]
+            subnums.append(temp)
+        # print(subnums)
+        # 求和为k的连续子数组出现的次数
+        count=0
+        # 这里要注意相应的下标,subnums的长度为n+1,下标从1开始
+        for i in range(1,n+1):
+            for j in range(i,n+1):
+                if subnums[j]-subnums[i-1]==k:
+                    count+=1
+        return count
+
+# 主函数
+if __name__==&#39;__main__&#39;:
+    nums=[1,1,1]
+    res=Solution().subarraySum(nums,2)
+    print(res)
+</code></pre>
 <p>再进一步优化，边计算前缀和边统计这个过程，只关心次数，不关心具体的解，用哈希表加速运算，由于保存了之前相同前缀和的数目，计算区间总数的时候不是一个个加的，时间复杂度减低到O(N)<br>优化的过程也要采用<strong>前缀和+hashmap的思路</strong>，<strong>有点两数之和的味道</strong>，将所有的<strong>前缀和</strong>和该<strong>前缀出现的次数</strong>存放到字典中，用下面的这张图来进行辅助理解(这种思路也就是在做题的时候才会认认真真的想的到的方式，也是一种很巧妙的方式，主要在于理解哈希表的存放数据)<br><img src="https://runnerxr.github.io/post-images/1651941152655.png"><br>计算到i位置的前缀和（包含i）-目标k在字典中出现的次数，假设出现过m次，代表<strong>第i位以前</strong>（不含i）<strong>有m个连续子数组的和为presum-k</strong>。每一个都可以和presum组成为presum-(presum-k)&#x3D;k<br>备注：自己实操的时候才发现有几个大坑，自己可能平时都没有怎么注意到这个问题，对if else语句的理解并不是特别的到位，特别是一些关键的位置，这里贴两份代码，其中一份是错的（用图片的形式），另一份是正确的。这种错误错误坚决不能够再犯了。<br><img src="https://runnerxr.github.io/post-images/1651979391370.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正确的代码</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraySum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 采用前缀和+哈希表</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 创建字典，字典存储的是前缀和以及前缀和出现的次数，并将0：1加入字典中</span></span><br><span class="line">        <span class="comment"># 加入的原因：在开始的时候，和为0的情况发生了一次（这是比较容易忽略的地方）</span></span><br><span class="line">        hashmap=&#123;<span class="number">0</span>:<span class="number">1</span>&#125;</span><br><span class="line">        <span class="comment"># 统计前缀和</span></span><br><span class="line">        presum=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 对nums进行遍历，并统计相应的前缀和</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            presum+=nums[i]</span><br><span class="line">            <span class="comment"># 查看presum-k是否在hashmap中存在，如果存在的话，那么presum-k出现的次数就是连续子数组为k出现的次数</span></span><br><span class="line">            <span class="keyword">if</span> presum-k <span class="keyword">in</span> hashmap:</span><br><span class="line">                count+=hashmap[presum-k]</span><br><span class="line">            hashmap[presum]=hashmap.get(presum,<span class="number">0</span>)+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">    res=Solution().subarraySum(nums,<span class="number">3</span>)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 正确的代码
+from typing import List
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -&gt; int:
+        # 采用前缀和+哈希表
+        count=0
+        # 创建字典，字典存储的是前缀和以及前缀和出现的次数，并将0：1加入字典中
+        # 加入的原因：在开始的时候，和为0的情况发生了一次（这是比较容易忽略的地方）
+        hashmap=&#123;0:1&#125;
+        # 统计前缀和
+        presum=0
+        # 对nums进行遍历，并统计相应的前缀和
+        for i in range(len(nums)):
+            presum+=nums[i]
+            # 查看presum-k是否在hashmap中存在，如果存在的话，那么presum-k出现的次数就是连续子数组为k出现的次数
+            if presum-k in hashmap:
+                count+=hashmap[presum-k]
+            hashmap[presum]=hashmap.get(presum,0)+1
+        return count
 
+if __name__==&#39;__main__&#39;:
+    nums=[1,2,3]
+    res=Solution().subarraySum(nums,3)
+    print(res)
+</code></pre>
 <h1 id="leetcoad974-和可被K整除的子数组"><a href="#leetcoad974-和可被K整除的子数组" class="headerlink" title="leetcoad974-和可被K整除的子数组"></a>leetcoad974-和可被K整除的子数组</h1><p>还是一样，先是常规思路</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraysDivByK</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n):</span><br><span class="line">                <span class="built_in">sum</span>+=nums[j]</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span>%k==<span class="number">0</span>:</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">            <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -&gt; int:
+        n=len(nums)
+        count=0
+        sum=0
+        for i in range(n):
+            for j in range(i,n):
+                sum+=nums[j]
+                if sum%k==0:
+                    count+=1
+            sum=0
+        return count
+</code></pre>
 <p>先将前缀和处理，然后计算子数组和能够被k整除的情况</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraysDivByK</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        presum=[<span class="number">0</span>]</span><br><span class="line">        temp=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            temp+=nums[i]</span><br><span class="line">            presum.append(temp)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 在前缀和数组中找子数组的和可以被k整除的情况，在区间[i:j+1]的范围内presum[j]-presum[i]</span></span><br><span class="line">        <span class="comment"># 外层循环是前缀和数组的下标，从下标0开始,总共有n+1个数，n个下标</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 内层循环时，下标从i+1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 计算子数组的和是否可以被k整除</span></span><br><span class="line">                <span class="keyword">if</span> (presum[j]-presum[i])%k==<span class="number">0</span>:</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">                    <span class="comment"># 这里多加了一行满足条件的子数组的打印，可以更好的理解这里的过程</span></span><br><span class="line">                    <span class="built_in">print</span>(nums[i:j+<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">0</span>,-<span class="number">2</span>,-<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">    res=Solution().subarraysDivByK(nums,<span class="number">5</span>)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对分步的输出结果</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>, <span class="number">0</span>, -<span class="number">2</span>, -<span class="number">3</span>, <span class="number">1</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">0</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">0</span>, -<span class="number">2</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">0</span>, -<span class="number">2</span>, -<span class="number">3</span>, <span class="number">1</span>]</span><br><span class="line">[<span class="number">0</span>, -<span class="number">2</span>]</span><br><span class="line">[<span class="number">0</span>, -<span class="number">2</span>, -<span class="number">3</span>, <span class="number">1</span>]</span><br><span class="line">[-<span class="number">2</span>, -<span class="number">3</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -&gt; int:
+        n = len(nums)
+        count=0
+        presum=[0]
+        temp=0
+        for i in range(n):
+            temp+=nums[i]
+            presum.append(temp)
+        
+        # 在前缀和数组中找子数组的和可以被k整除的情况，在区间[i:j+1]的范围内presum[j]-presum[i]
+        # 外层循环是前缀和数组的下标，从下标0开始,总共有n+1个数，n个下标
+        for i in range(n+1):
+            # 内层循环时，下标从i+1
+            for j in range(i+1,n+1):
+                # 计算子数组的和是否可以被k整除
+                if (presum[j]-presum[i])%k==0:
+                    count+=1
+                    # 这里多加了一行满足条件的子数组的打印，可以更好的理解这里的过程
+                    print(nums[i:j+1])
+        return count
+
+if __name__==&#39;__main__&#39;:
+    nums=[4,5,0,-2,-3,1]
+    res=Solution().subarraysDivByK(nums,5)
+    print(res)
+
+# 针对分步的输出结果
+[4, 5, 0, -2, -3, 1]
+[5, 0]
+[5, 0, -2]
+[5, 0, -2, -3, 1]
+[0, -2]
+[0, -2, -3, 1]
+[-2, -3, 1]
+</code></pre>
 <p>采用前缀和+哈希表的方式<br>这里贴一张自己的理解过程，终于在理解的基础上通过了这道题，并且可以说对哈希表有了一个比较深的认识<br><img src="https://runnerxr.github.io/post-images/1651996690685.png"><br><img src="https://runnerxr.github.io/post-images/1651996705610.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subarraysDivByK</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 采用前缀和+哈希表的知识</span></span><br><span class="line">        <span class="comment"># 构建一个哈希表，并传入0：1</span></span><br><span class="line">        <span class="comment"># 其中哈希表中存入的是余数：余数出现的次数</span></span><br><span class="line">        hashmap=&#123;<span class="number">0</span>:<span class="number">1</span>&#125;</span><br><span class="line">        <span class="comment"># 统计能够被k整除的数目</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 统计前缀和</span></span><br><span class="line">        presum=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 开始进行遍历并统计，采用边遍历，边哈希查找的方式</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="comment"># 更新前缀和</span></span><br><span class="line">            presum+=num</span><br><span class="line">            <span class="comment"># 取前缀和与k除的余数</span></span><br><span class="line">            rem=presum%k</span><br><span class="line">            <span class="comment"># 采用同余定理，并用哈希表进行查找</span></span><br><span class="line">            <span class="keyword">if</span> rem <span class="keyword">in</span> hashmap:</span><br><span class="line">                count+=hashmap[rem]</span><br><span class="line">            hashmap[rem]=hashmap.get(rem,<span class="number">0</span>)+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
-      
+<pre><code class="python">class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -&gt; int:
+        # 采用前缀和+哈希表的知识
+        # 构建一个哈希表，并传入0：1
+        # 其中哈希表中存入的是余数：余数出现的次数
+        hashmap=&#123;0:1&#125;
+        # 统计能够被k整除的数目
+        count=0
+        # 统计前缀和
+        presum=0
+        # 开始进行遍历并统计，采用边遍历，边哈希查找的方式
+        for num in nums:
+            # 更新前缀和
+            presum+=num
+            # 取前缀和与k除的余数
+            rem=presum%k
+            # 采用同余定理，并用哈希表进行查找
+            if rem in hashmap:
+                count+=hashmap[rem]
+            hashmap[rem]=hashmap.get(rem,0)+1
+        return count
+</code></pre>
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" data-id="claqum2e1001uh0tk563pc1ub" data-title="前缀和" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/05/18/python%E7%9A%84%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python的网站开发知识
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/05/11/%E6%94%B6%E9%9B%86%E5%87%A0%E9%81%93%E8%80%83%E8%BF%87%E7%9A%84%E9%A2%98%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">收集几道考过的题目</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

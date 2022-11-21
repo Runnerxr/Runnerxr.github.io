@@ -1,117 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>动态规划算法合集（系列一） | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="基础知识铺垫重新回顾分治法的主要思想：  divide:将大的问题分解为若干较小的问题 conquer:继续分解子问题，直到base case,直接求解 combine：层层合并子问题的解，直到得到原始大问题的解  对问题进行分析：  当子问题不关联、不重叠的时候，分治是一种较好的求解方法 当子问题重叠的时候，分治会造成计算资源的浪费 动态规划中每个子问题的求解只依赖于更小规模子问题的求解，由底向">
-<meta property="og:type" content="article">
-<meta property="og:title" content="动态规划算法合集（系列一）">
-<meta property="og:url" content="http://example.com/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基础知识铺垫重新回顾分治法的主要思想：  divide:将大的问题分解为若干较小的问题 conquer:继续分解子问题，直到base case,直接求解 combine：层层合并子问题的解，直到得到原始大问题的解  对问题进行分析：  当子问题不关联、不重叠的时候，分治是一种较好的求解方法 当子问题重叠的时候，分治会造成计算资源的浪费 动态规划中每个子问题的求解只依赖于更小规模子问题的求解，由底向">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1651162537918.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652243232072.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652249143427.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1648520653749.jpg">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1648520677848.jpg">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649599396610.jpg">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649601266089.jpg">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649601142486.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652280775207.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654617289325.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654498134520.gif">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649082291844.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649082703864.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649082753823.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1654504193955.png">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1649316265786.png">
-<meta property="article:published_time" content="2022-03-18T01:49:00.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:31:01.534Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1651162537918.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-动态规划算法合集（系列一）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2022-03-18T01:49:00.000Z" itemprop="datePublished">2022-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      动态规划算法合集（系列一）
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            动态规划算法合集（系列一）
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/18 Fri 09:49&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:31
+        </div>
+    </div>
+    <div class="article-content">
         <h1 id="基础知识铺垫"><a href="#基础知识铺垫" class="headerlink" title="基础知识铺垫"></a>基础知识铺垫</h1><p><strong>重新回顾分治法的主要思想：</strong></p>
 <ol>
 <li>divide:将大的问题分解为若干较小的问题</li>
@@ -153,9 +102,14 @@
 <li>确定dp数组的初始状态</li>
 </ol>
 <p>这里也给自己自己整理了一个模板出来了：（参考东哥的题解）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化状态</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>][...]=base <span class="keyword">case</span></span><br><span class="line"><span class="comment"># 进行状态转移</span></span><br><span class="line"><span class="keyword">for</span> 状态一  <span class="keyword">in</span> 状态<span class="number">1</span>的所有值</span><br><span class="line">    <span class="keyword">for</span> 状态二  <span class="keyword">in</span> 状态<span class="number">2</span>的所有值</span><br><span class="line">        <span class="keyword">for</span> ...</span><br><span class="line">            dp[状态一][状态二][...] =求最值(选择<span class="number">1</span>，选择<span class="number">2</span>，选择<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-
+<pre><code class="python"># 初始化状态
+dp[0][0][...]=base case
+# 进行状态转移
+for 状态一  in 状态1的所有值
+    for 状态二  in 状态2的所有值
+        for ...
+            dp[状态一][状态二][...] =求最值(选择1，选择2，选择3)
+</code></pre>
 <p>主要的几种题目类型：</p>
 <ol>
 <li>背包问题</li>
@@ -193,8 +147,31 @@
 <li>现在看第4个物品有没有被装入，如果没有被装入的话，那么它应该和前3个物品背包所能装的最大价值一致</li>
 <li>但是我们通过表格发现1个是9，一个是10，说明4号物品被装进了背包</li>
 <li>既然4号物品被装进了背包，空间由8变为3去装其他物品，现在问题转化为考虑前三个物品且背包容量为3的情况下所能够装的最大价值</li>
-<li>3号物品到底有没有被装进去，如果3号没有被装入，也即考虑前3个物品和考虑前2个物品的是一样的，看表发现确实是一样的，说明3号物品确实没有被装入进去。依次类推，2号物品被装入，1号物品没有装入。<br>dp[i][j]:表示前i个物品，背包重量为j的情况下能够装的最大价值，其中并不是表示要将i个物品全部装入，而是i个物品满足装入背包条件下的最大价值。<br>dp[i][j] &#x3D; max(dp[i-1][j] ,dp[i-1][j-w[i]] +v[i])<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 物品的重量</span></span><br><span class="line">W=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment"># 物品的价值</span></span><br><span class="line">V=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="comment"># 物品编号和背包容量</span></span><br><span class="line">m,n=<span class="number">4</span>,<span class="number">8</span></span><br><span class="line"><span class="comment"># 创建dp数组</span></span><br><span class="line">dp=[[<span class="number">0</span>]*(n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line"><span class="comment"># 注意边界条件，创建数组的时候处理过了</span></span><br><span class="line"><span class="comment">#print(dp)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 如果发现背包的容量小于当前物品的重量</span></span><br><span class="line">        <span class="comment"># 和放入i-1个物品的情况相同</span></span><br><span class="line">        <span class="keyword">if</span> j &lt;W[i-<span class="number">1</span>]:</span><br><span class="line">            dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">            <span class="comment">#print(dp[i][j])</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dp[i][j]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][j],dp[i-<span class="number">1</span>][j-W[i-<span class="number">1</span>]]+V[i-<span class="number">1</span>])</span><br><span class="line">            <span class="comment">#print(dp[i][j])</span></span><br><span class="line"><span class="comment">#print(dp)</span></span><br><span class="line"><span class="built_in">print</span>(dp[m][n])</span><br></pre></td></tr></table></figure></li>
+<li>3号物品到底有没有被装进去，如果3号没有被装入，也即考虑前3个物品和考虑前2个物品的是一样的，看表发现确实是一样的，说明3号物品确实没有被装入进去。依次类推，2号物品被装入，1号物品没有装入。<br>dp[i][j]:表示前i个物品，背包重量为j的情况下能够装的最大价值，其中并不是表示要将i个物品全部装入，而是i个物品满足装入背包条件下的最大价值。<br>dp[i][j] &#x3D; max(dp[i-1][j] ,dp[i-1][j-w[i]] +v[i])</li>
 </ol>
+<pre><code class="python"># 物品的重量
+W=[2,3,4,5]
+# 物品的价值
+V=[3,4,5,6]
+# 物品编号和背包容量
+m,n=4,8
+# 创建dp数组
+dp=[[0]*(n+1) for _ in range(m+1)]
+# 注意边界条件，创建数组的时候处理过了
+#print(dp)
+for i in range(1,m+1):
+    for j in range(1,n+1):
+        # 如果发现背包的容量小于当前物品的重量
+        # 和放入i-1个物品的情况相同
+        if j &lt;W[i-1]:
+            dp[i][j]=dp[i-1][j]
+            #print(dp[i][j])
+        else:
+            dp[i][j]=max(dp[i-1][j],dp[i-1][j-W[i-1]]+V[i-1])
+            #print(dp[i][j])
+#print(dp)
+print(dp[m][n])
+</code></pre>
 <h2 id="完全背包问题：每件物品可以选无限次（只要背包容量够）"><a href="#完全背包问题：每件物品可以选无限次（只要背包容量够）" class="headerlink" title="完全背包问题：每件物品可以选无限次（只要背包容量够）"></a>完全背包问题：<strong>每件物品可以选无限次（只要背包容量够）</strong></h2><p>一个容量为m的背包，现在有n种物品，每种物品有无限多件，他们的重量分别为Wi(1&lt;&#x3D;i&lt;&#x3D;n),他们的价值为Vi(1&lt;&#x3D;i&lt;&#x3D;n),求能放入背包的最大价值？<br>最大价值是物品数量i和背包容量j的函数，f[i][j]表示考虑前i件物品放入容量为j的背包下的最大价值，<strong>最终的最大价值就是物品数量i从0<del>n,背包容量j从0</del>m时的f[m][n]</strong><br>当前背包容量为j我们要考虑第i件物品能否放入？是否一定要放入？</p>
 <ol>
 <li>不能放入:f[i][j]&#x3D;f[i-1][j]</li>
@@ -204,8 +181,32 @@
 </ol>
 </li>
 <li>如果不让第i个物品装入，那么最大价值就是上面过来的6</li>
-<li>如果让第i个物品装入，那么将空间由5–&gt;2此时，此时看前i物品（第i件物品仍然可以再次被选中），在背包容量为2的情况下的最大价值，通过查表我们我们可以看到此时最大价值为3，加上装入的4，总共的最大价值为4+3&#x3D;7<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 附上相应的代码进行理解</span></span><br><span class="line"><span class="comment"># 物品的重量</span></span><br><span class="line">W=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment"># 物品的价值</span></span><br><span class="line">V=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="comment"># 物品编号和背包容量</span></span><br><span class="line">m,n=<span class="number">4</span>,<span class="number">8</span></span><br><span class="line"><span class="comment"># 创建dp数组</span></span><br><span class="line">dp=[[<span class="number">0</span>]*(n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line"><span class="comment"># 注意边界条件，创建数组的时候处理过了</span></span><br><span class="line"><span class="comment">#print(dp)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 如果发现背包的容量小于当前物品的重量</span></span><br><span class="line">        <span class="comment"># 和放入i-1个物品的情况相同</span></span><br><span class="line">        <span class="keyword">if</span> j &lt;W[i-<span class="number">1</span>]:</span><br><span class="line">            dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">            <span class="comment">#print(dp[i][j])</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dp[i][j]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][j],dp[i][j-W[i-<span class="number">1</span>]]+V[i-<span class="number">1</span>])</span><br><span class="line">            <span class="comment">#print(dp[i][j])</span></span><br><span class="line"><span class="comment"># print(dp)</span></span><br><span class="line"><span class="built_in">print</span>(dp[m][n])</span><br></pre></td></tr></table></figure></li>
+<li>如果让第i个物品装入，那么将空间由5–&gt;2此时，此时看前i物品（第i件物品仍然可以再次被选中），在背包容量为2的情况下的最大价值，通过查表我们我们可以看到此时最大价值为3，加上装入的4，总共的最大价值为4+3&#x3D;7</li>
 </ol>
+<pre><code class="python"># 附上相应的代码进行理解
+# 物品的重量
+W=[2,3,4,5]
+# 物品的价值
+V=[3,4,5,6]
+# 物品编号和背包容量
+m,n=4,8
+# 创建dp数组
+dp=[[0]*(n+1) for _ in range(m+1)]
+# 注意边界条件，创建数组的时候处理过了
+#print(dp)
+for i in range(1,m+1):
+    for j in range(1,n+1):
+        # 如果发现背包的容量小于当前物品的重量
+        # 和放入i-1个物品的情况相同
+        if j &lt;W[i-1]:
+            dp[i][j]=dp[i-1][j]
+            #print(dp[i][j])
+        else:
+            dp[i][j]=max(dp[i-1][j],dp[i][j-W[i-1]]+V[i-1])
+            #print(dp[i][j])
+# print(dp)
+print(dp[m][n])
+</code></pre>
 <p>以下是主要的一些题目：</p>
 <ol>
 <li>leetcoad509-斐波那契数列</li>
@@ -229,17 +230,79 @@
 <li>暴力递归法</li>
 <li>带备忘录递归写法</li>
 <li>动态规划的迭代写法（存储所有的状态）</li>
-<li>优化动态规划的写法（只储存前两个状态进行滚动）<br><strong>暴力递归法</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self , n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span> <span class="keyword">or</span> n ==<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 围绕这个数学表达式的形式</span></span><br><span class="line">            <span class="keyword">return</span> self.Fibonacci(n -<span class="number">1</span>) + self.Fibonacci(n - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-参考链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/">https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/</a><br>解法的弊端：<br>时间复杂度：子问题个数x解决子问题需要的时间&#x3D;O(2^n) xO(1) &#x3D;O(2^n)<br>低效的原因：存在太多重复计算的问题</li>
+<li>优化动态规划的写法（只储存前两个状态进行滚动）<br><strong>暴力递归法</strong></li>
 </ol>
+<pre><code class="python">class Solution:
+    def Fibonacci(self , n: int) -&gt; int:
+        if n ==1 or n ==2:
+            return 1
+        else:
+            # 围绕这个数学表达式的形式
+            return self.Fibonacci(n -1) + self.Fibonacci(n - 2)
+</code></pre>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/">https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/</a><br>解法的弊端：<br>时间复杂度：子问题个数x解决子问题需要的时间&#x3D;O(2^n) xO(1) &#x3D;O(2^n)<br>低效的原因：存在太多重复计算的问题</p>
 <p><strong>采用带备忘录的递归写法（记忆化备忘录）</strong><br>采用带备忘录的递归写法(至顶向下)：<br>每次遇到一个子问题先去「备忘录」里查一查，如果发现之前已经解决过这个问题了，直接把答案拿出来用，不要再耗时去计算了。一般使用一个数组充当这个「备忘录」，当然你也可以使用哈希表（字典），思想都是一样的。<br><img src="https://runnerxr.github.io/post-images/1648520653749.jpg"><br><img src="https://runnerxr.github.io/post-images/1648520677848.jpg"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 时间复杂度大大降低</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        memo = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Solution.helper(memo, n) </span><br><span class="line">    <span class="comment"># 进行带备忘录的递归</span></span><br><span class="line">    <span class="comment"># 把一颗存在巨量冗余的递归树通过剪枝，改造成一幅不存在冗余的递归树，极大的减少子问题（递归图中节点）的个数</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">memo:<span class="built_in">list</span>, n:<span class="built_in">int</span></span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span> <span class="keyword">or</span> n ==<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">        <span class="keyword">if</span> memo[n] != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> memo[n]</span><br><span class="line">        memo[n] = Solution.helper(memo, n - <span class="number">1</span>) + Solution.helper(memo, n - <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> memo[n]</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 时间复杂度大大降低
+class Solution:
+    def fib(self, n: int) -&gt; int:
+        memo = [0]*(n+1)
+        return Solution.helper(memo, n) 
+    # 进行带备忘录的递归
+    # 把一颗存在巨量冗余的递归树通过剪枝，改造成一幅不存在冗余的递归树，极大的减少子问题（递归图中节点）的个数
+    def helper(memo:list, n:int):
+        if not n:
+            return 0
+        if n ==1 or n ==2:
+            return 1 
+        if memo[n] != 0:
+            return memo[n]
+        memo[n] = Solution.helper(memo, n - 1) + Solution.helper(memo, n - 2)
+        return memo[n]
+</code></pre>
 <p><strong>dp数组的迭代写法</strong><br>状态转移方程是解决问题的核心，状态转移方程是直接代表着暴力解法的，只要能够写出暴力解法，优化方法就是用备忘录或者DPtable来解决的。<br>把备忘录独立出来一张表<br><img src="https://runnerxr.github.io/post-images/1649599396610.jpg"><br>这个dp表像之前剪枝的结果，但是是反过来的，本质上差不多，所以在效率上也就差不多。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        dp =[<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 这里需要加入if elif语句表明递归的出口</span></span><br><span class="line">        <span class="comment">#if not n:</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment">#第2个判断语句也可以用if来写，只要不与上一个发生冲突就行</span></span><br><span class="line">        <span class="comment"># if n in [1,2]:</span></span><br><span class="line">        <span class="comment">#   return 1</span></span><br><span class="line">        <span class="keyword">elif</span> n&lt;=<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        dp[<span class="number">1</span>]=dp[<span class="number">2</span>]=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 围绕这个数学表达式的形式</span></span><br><span class="line">            dp[i]=dp[i-<span class="number">1</span>]+dp[i-<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def fib(self, n: int) -&gt; int:
+        dp =[0]*(n+1)
+        # 这里需要加入if elif语句表明递归的出口
+        #if not n:
+        if n==0:
+            return 0
+        #第2个判断语句也可以用if来写，只要不与上一个发生冲突就行
+        # if n in [1,2]:
+        #   return 1
+        elif n&lt;=2:
+            return 1
+        dp[1]=dp[2]=1
+        for i in range(3,n+1):
+            # 围绕这个数学表达式的形式
+            dp[i]=dp[i-1]+dp[i-2]
+        return dp[n]
+</code></pre>
 <p><strong>优化dp动态规划</strong><br>状态压缩，每次状态转移只需要DP table中的一部分，只记录必要的数据，当前状态只和之前的两个状态有关，不需要dp表来存储所有的状态，想办法只存储之前的两个状态（把DP table的大小从n缩小到2），将空间复杂度从O(N)降低到O(1)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self , n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span> <span class="keyword">or</span> n ==<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        prev,curr = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 记录前两个状态的和</span></span><br><span class="line">            <span class="built_in">sum</span> = prev + curr</span><br><span class="line">            <span class="comment">#不断的向前滚动这两个状态</span></span><br><span class="line">            prev = curr</span><br><span class="line">            curr = <span class="built_in">sum</span></span><br><span class="line">        <span class="keyword">return</span> curr</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def Fibonacci(self , n: int) -&gt; int:
+        if n ==1 or n ==2:
+            return 1
+        prev,curr = 1,1
+        for i in range(3,n+1):
+            # 记录前两个状态的和
+            sum = prev + curr
+            #不断的向前滚动这两个状态
+            prev = curr
+            curr = sum
+        return curr
+</code></pre>
 <p>附上另一个大佬的版本(运用了python的语法)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="comment"># 这里的f就是类似于一个dp表格，用来记录加和的值，值得最后的一个值就是最终的结果</span></span><br><span class="line">        f = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">        i=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=n):</span><br><span class="line">            f.append(f[i-<span class="number">1</span>]+f[i-<span class="number">2</span>])</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> f[n]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def Fibonacci(self, n):
+        # 这里的f就是类似于一个dp表格，用来记录加和的值，值得最后的一个值就是最终的结果
+        f = [0,1,1]
+        i=3;
+        while(i&lt;=n):
+            f.append(f[i-1]+f[i-2])
+            i = i + 1
+        return f[n]
+</code></pre>
 <h1 id="leetcoad322-零钱兑换的问题-middle"><a href="#leetcoad322-零钱兑换的问题-middle" class="headerlink" title="leetcoad322-零钱兑换的问题(middle)"></a>leetcoad322-零钱兑换的问题(middle)</h1><p>把题目在好好的梳理一遍：给你一个整数数组coins，<strong>表示不同面额的硬币</strong>，以及一个整数amount,表示总金额，<strong>计算并返回可以凑成总金额所需的最少的硬币的个数</strong>，如果<strong>没有任何一种硬币的组合能组成总金额，返回-1</strong>，你可以认为<strong>每一种硬币的数量是无限的</strong>。</p>
 <p>看评论区的方法：方法很多，有背包(动态规划)、深度遍历（dfs）、广度遍历（bfs）、暴力递归的方式<br>这个问题是动态规划问题，因为它具有「最优子结构」的。要符合「最优子结构」，子问题间必须互相独立。<br>思考如何列出正确的状态转移方程：</p>
 <ol>
@@ -249,11 +312,63 @@
 <li>明确dp函数&#x2F;数组的定义：<strong>输入一个目标金额n,返回凑出目标金额n的最少硬币数量</strong></li>
 </ol>
 <p>如果是采用暴力的方式：这种写法是超时的，也是需要消除重叠子问题的问题<br>时间复杂度分析：子问题总数 x每个子问题的时间&#x3D;O(n^k)[递归树的结点总数] xO(k)[每个子问题都含有一个for循环]&#x3D;O(k*n^k)[指数级别的]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">coinChange</span>(<span class="params">self, coins: <span class="type">List</span>[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">n</span>):</span><br><span class="line">        <span class="comment"># 确定边界条条件</span></span><br><span class="line">        <span class="comment">#目标金额为0，需要0,目标金额为负的时候，返回-1</span></span><br><span class="line">            <span class="keyword">if</span> n == <span class="number">0</span>: </span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> n &lt; <span class="number">0</span>: </span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            <span class="comment"># 求最小值，所以初始化为正无穷</span></span><br><span class="line">            res = <span class="built_in">float</span>(<span class="string">&#x27;INF&#x27;</span>)</span><br><span class="line">            <span class="keyword">for</span> coin <span class="keyword">in</span> coins:</span><br><span class="line">                subproblem = dp(n - coin)</span><br><span class="line">                <span class="comment"># 子问题无解，跳过</span></span><br><span class="line">                <span class="keyword">if</span> subproblem == -<span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                res = <span class="built_in">min</span>(res, <span class="number">1</span> + subproblem)</span><br><span class="line">                <span class="keyword">return</span> res <span class="keyword">if</span> res != <span class="built_in">float</span>(<span class="string">&#x27;INF&#x27;</span>) <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> dp(amount)</span><br><span class="line">                <span class="comment">#下面的5行代码可以通过简化的上面的2行代码来写</span></span><br><span class="line">            <span class="comment"># if res != float(&#x27;INF&#x27;) :</span></span><br><span class="line">            <span class="comment">#     return res</span></span><br><span class="line">            <span class="comment"># else:</span></span><br><span class="line">            <span class="comment">#     return -1</span></span><br><span class="line">        <span class="comment"># return dp(amount)</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def coinChange(self, coins: List[int], amount: int) -&gt; int:
+        def dp(n):
+        # 确定边界条条件
+        #目标金额为0，需要0,目标金额为负的时候，返回-1
+            if n == 0: 
+                return 0
+            if n &lt; 0: 
+                return -1
+            # 求最小值，所以初始化为正无穷
+            res = float(&#39;INF&#39;)
+            for coin in coins:
+                subproblem = dp(n - coin)
+                # 子问题无解，跳过
+                if subproblem == -1:
+                    continue
+                res = min(res, 1 + subproblem)
+                return res if res != float(&#39;INF&#39;) else -1
+        return dp(amount)
+                #下面的5行代码可以通过简化的上面的2行代码来写
+            # if res != float(&#39;INF&#39;) :
+            #     return res
+            # else:
+            #     return -1
+        # return dp(amount)
+</code></pre>
 <p><strong>带备忘录的递归（至顶向下相除重叠问题）</strong><br>子问题总数：小于n，是O(n)级别的<br>处理一个子问题的时间：O(k)<br>总的时间复杂度：O(nk)<br>现在就要通过备忘录的方式消除一部分重叠子问题（代码不一定是最好的模板，但是分析的思路是很好的，值得学习）：<br><img src="https://runnerxr.github.io/post-images/1649601266089.jpg"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minMoney</span>(<span class="params">self , arr: <span class="type">List</span>[<span class="built_in">int</span>], aim: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#备忘录</span></span><br><span class="line">        memo = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">n</span>):</span><br><span class="line">            <span class="comment">#查备忘录避免重复计算</span></span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> memo:</span><br><span class="line">                <span class="keyword">return</span> memo[n]</span><br><span class="line">            <span class="comment"># 确定边界条条件</span></span><br><span class="line">            <span class="keyword">if</span> n == <span class="number">0</span>: </span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> n &lt; <span class="number">0</span>: </span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            <span class="comment"># 求最小值，所以初始化为正无穷</span></span><br><span class="line">            res = <span class="built_in">float</span>(<span class="string">&#x27;INF&#x27;</span>)</span><br><span class="line">            <span class="keyword">for</span> coin <span class="keyword">in</span> arr:</span><br><span class="line">                subproblem = dp(n - coin)</span><br><span class="line">                <span class="comment"># 子问题无解，跳过</span></span><br><span class="line">                <span class="keyword">if</span> subproblem == -<span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                res = <span class="built_in">min</span>(res, <span class="number">1</span> + subproblem)</span><br><span class="line">                </span><br><span class="line">            <span class="comment">#记入备忘录</span></span><br><span class="line">            memo[n] = res <span class="keyword">if</span> res != <span class="built_in">float</span>(<span class="string">&#x27;INF&#x27;</span>) <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> memo[n]</span><br><span class="line">        <span class="keyword">return</span> dp(aim)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def minMoney(self , arr: List[int], aim: int) -&gt; int:
+        #备忘录
+        memo = dict()
+        def dp(n):
+            #查备忘录避免重复计算
+            if n in memo:
+                return memo[n]
+            # 确定边界条条件
+            if n == 0: 
+                return 0
+            if n &lt; 0: 
+                return -1
+            # 求最小值，所以初始化为正无穷
+            res = float(&#39;INF&#39;)
+            for coin in arr:
+                subproblem = dp(n - coin)
+                # 子问题无解，跳过
+                if subproblem == -1:
+                    continue
+                res = min(res, 1 + subproblem)
+                
+            #记入备忘录
+            memo[n] = res if res != float(&#39;INF&#39;) else -1
+            return memo[n]
+        return dp(aim)
+</code></pre>
 <p><strong>通过dp数组的迭代写法（至底向上相除重叠问题）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略（采用吴师兄的写法比较好理解）</span><br></pre></td></tr></table></figure>
+<pre><code class="python">略（采用吴师兄的写法比较好理解）
+</code></pre>
 <p>总结：只要通过状态转移方程写出暴力递归写法，剩下的就是优化递归树，消除重叠子问题<br>解决问题：穷举，穷举所有的可能性，算法设计就是先思考“如何穷举”，然后再追求如何聪明的穷举<br>列出动态转移方程就是解决“如何穷举的问题”<br>归纳出相应的状态转移方程：<br><img src="https://runnerxr.github.io/post-images/1649601142486.png"><br>难点：</p>
 <ul>
 <li>穷举需要递归实现</li>
@@ -261,22 +376,203 @@
 <li>备忘录和dp table就是在追求“如何聪明穷举”，用空间换时间的思路，以此来降低时间复杂度</li>
 </ul>
 <p><strong>采用吴师兄的解法思路如下（保姆式）：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">coinChange</span>(<span class="params">self, coins: <span class="type">List</span>[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 初始化数组 dp，长度为 amount + 1，因为在 dp 数组中还会存储金额为 0 的情况</span></span><br><span class="line">        <span class="comment"># 首先将数组 dp 里面的值都初始化为 -1（一种做题的方式，比如上面用的是正无穷）</span></span><br><span class="line">        <span class="comment"># -1 表示当前的金额还没有找到需要的最少硬币个数</span></span><br><span class="line">        <span class="comment"># dp[i]的含义：当目标金额为i时，至少需要dp[i]枚硬币凑出</span></span><br><span class="line">        dp = [-<span class="number">1</span>]*(amount +<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 想要凑齐 0 元的最少硬币个数是 0 个</span></span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 依次计算想要凑齐 1 元到 amount 的最少硬币个数是多少</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 对于每个金额 i 来说，coins 中的每个面值小于 i 的硬币都可以尝试去拼凑 i</span></span><br><span class="line">            <span class="comment"># 比如 i = 8 ，coins 为 [1,2,5,7,10]</span></span><br><span class="line">            <span class="comment"># 其中 1，2，5，7 都小于 8</span></span><br><span class="line">            <span class="comment"># 1 可以尝试去拼凑 8</span></span><br><span class="line">            <span class="comment"># 2 可以尝试去拼凑 8</span></span><br><span class="line">            <span class="comment"># 5 可以尝试去拼凑 8</span></span><br><span class="line">            <span class="comment"># 7 可以尝试去拼凑 8</span></span><br><span class="line">            <span class="comment"># 所以，设置一个变量 j ，遍历数组 coins</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)):</span><br><span class="line">                <span class="comment"># 1、如果当前的硬币面值 coins[j] 小于了 i，表示这枚硬币有可能可以拼凑到 i</span></span><br><span class="line">                <span class="comment"># 2、那么 i - coins[j] 表示面值 coins[j] 的硬币想要拼凑 i 需要那些面值的硬币金额</span></span><br><span class="line">                <span class="comment"># 3、而 dp[i-coins[j]] 表示想要凑齐 i - coins[j] 元需要的最少硬币个数</span></span><br><span class="line">                <span class="comment"># 4、如果 dp[i-coins[j]] != -1 ，表示想要凑齐 i - coins[j] 元需要的最少硬币个数有结果</span></span><br><span class="line">                <span class="comment">#if dp[i-coins[j]] != -1 and coins[j] &lt;=i:这里的这种写法是存在问题的，只有在coin[j] &lt;=i满足的情况下才会去判断dp[i-coins[j]]!=-1的情况，不能够颠倒</span></span><br><span class="line">                <span class="keyword">if</span> coins[j] &lt;=i <span class="keyword">and</span> dp[i-coins[j]] != -<span class="number">1</span> :  </span><br><span class="line">                    <span class="comment"># 这个时候，对于金额 i 来说</span></span><br><span class="line">                    <span class="comment"># 1、如果它之前还没有找到凑齐 i 元需要的最少硬币个数</span></span><br><span class="line">                    <span class="comment"># 2、如果此时计算的最少硬币个数比之前保存的结果 dp[i] 更小</span></span><br><span class="line">                    <span class="comment"># 那么更新 dp[i]</span></span><br><span class="line">                    <span class="keyword">if</span> dp[i]==-<span class="number">1</span> <span class="keyword">or</span> dp[i] &gt;dp[i-coins[j]] +<span class="number">1</span>:</span><br><span class="line">                        <span class="comment"># 更新 dp[i]</span></span><br><span class="line">                        <span class="comment"># dp[i] 表示想要凑齐 i 元需要的最少硬币个数</span></span><br><span class="line">                        <span class="comment"># 这个时候 dp[i] 为获取面值为 j 的那 1 个硬币</span></span><br><span class="line">                        <span class="comment"># 加上获取面值为 i - coins[j] 最少需要 dp[i - coins[j]] 个硬币</span></span><br><span class="line">                        dp[i] = dp[i-coins[j]] +<span class="number">1</span></span><br><span class="line">        <span class="comment"># dp[amount] 表示想要凑齐 amount 元需要的最少硬币个数</span></span><br><span class="line">        <span class="comment"># 返回这个结果就行</span></span><br><span class="line">        <span class="keyword">return</span> dp[amount]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def coinChange(self, coins: List[int], amount: int) -&gt; int:
+        # 初始化数组 dp，长度为 amount + 1，因为在 dp 数组中还会存储金额为 0 的情况
+        # 首先将数组 dp 里面的值都初始化为 -1（一种做题的方式，比如上面用的是正无穷）
+        # -1 表示当前的金额还没有找到需要的最少硬币个数
+        # dp[i]的含义：当目标金额为i时，至少需要dp[i]枚硬币凑出
+        dp = [-1]*(amount +1)
+        # 想要凑齐 0 元的最少硬币个数是 0 个
+        dp[0]=0
+        # 依次计算想要凑齐 1 元到 amount 的最少硬币个数是多少
+        for i in range(1,amount+1):
+            # 对于每个金额 i 来说，coins 中的每个面值小于 i 的硬币都可以尝试去拼凑 i
+            # 比如 i = 8 ，coins 为 [1,2,5,7,10]
+            # 其中 1，2，5，7 都小于 8
+            # 1 可以尝试去拼凑 8
+            # 2 可以尝试去拼凑 8
+            # 5 可以尝试去拼凑 8
+            # 7 可以尝试去拼凑 8
+            # 所以，设置一个变量 j ，遍历数组 coins
+            for j in range(len(coins)):
+                # 1、如果当前的硬币面值 coins[j] 小于了 i，表示这枚硬币有可能可以拼凑到 i
+                # 2、那么 i - coins[j] 表示面值 coins[j] 的硬币想要拼凑 i 需要那些面值的硬币金额
+                # 3、而 dp[i-coins[j]] 表示想要凑齐 i - coins[j] 元需要的最少硬币个数
+                # 4、如果 dp[i-coins[j]] != -1 ，表示想要凑齐 i - coins[j] 元需要的最少硬币个数有结果
+                #if dp[i-coins[j]] != -1 and coins[j] &lt;=i:这里的这种写法是存在问题的，只有在coin[j] &lt;=i满足的情况下才会去判断dp[i-coins[j]]!=-1的情况，不能够颠倒
+                if coins[j] &lt;=i and dp[i-coins[j]] != -1 :  
+                    # 这个时候，对于金额 i 来说
+                    # 1、如果它之前还没有找到凑齐 i 元需要的最少硬币个数
+                    # 2、如果此时计算的最少硬币个数比之前保存的结果 dp[i] 更小
+                    # 那么更新 dp[i]
+                    if dp[i]==-1 or dp[i] &gt;dp[i-coins[j]] +1:
+                        # 更新 dp[i]
+                        # dp[i] 表示想要凑齐 i 元需要的最少硬币个数
+                        # 这个时候 dp[i] 为获取面值为 j 的那 1 个硬币
+                        # 加上获取面值为 i - coins[j] 最少需要 dp[i - coins[j]] 个硬币
+                        dp[i] = dp[i-coins[j]] +1
+        # dp[amount] 表示想要凑齐 amount 元需要的最少硬币个数
+        # 返回这个结果就行
+        return dp[amount]
+</code></pre>
 <p>精简版(其实最后写出来就只有几行代码，难的是里面的思想)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">coinChange</span>(<span class="params">self, coins: <span class="type">List</span>[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        dp = [-<span class="number">1</span>]*(amount +<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(coins)):</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> coins[j] &lt;=i <span class="keyword">and</span> dp[i-coins[j]] != -<span class="number">1</span> :  </span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> dp[i]==-<span class="number">1</span> <span class="keyword">or</span> dp[i] &gt;dp[i-coins[j]] +<span class="number">1</span>:</span><br><span class="line">                        dp[i] = dp[i-coins[j]] +<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[amount]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def coinChange(self, coins: List[int], amount: int) -&gt; int:
+        dp = [-1]*(amount +1)
+        dp[0]=0
+        for i in range(1,amount+1):
+
+            for j in range(len(coins)):
+
+                if coins[j] &lt;=i and dp[i-coins[j]] != -1 :  
+
+                    if dp[i]==-1 or dp[i] &gt;dp[i-coins[j]] +1:
+                        dp[i] = dp[i-coins[j]] +1
+
+        return dp[amount]
+</code></pre>
 <p>后面自己又做了一遍，发现这个问题在当时只是熟悉了一下做题的套路，等再次来看这道题的时候，还是很懵，所以<strong>没办法就只能死磕</strong>，把这个问题给整理清楚，发现每次写的还都不一样，也许就是这些题目比较经典的原因，<strong>需要反反复复的去做，才能体会里面的一些精髓所在</strong>:<br>以下为自己后来又实现代码的过程，同时自己也实地的用excel做了一份用于自己的理解的过程：<br><img src="https://runnerxr.github.io/post-images/1652280775207.png"><br>以其中的一个值为例子来理解这个表，dp[1][4]这个位置，表示此时的硬币值为1，金额为4，可以进行找零过程（我用箭头标注的这个过程就是十分标准的完全背包的过程）</p>
 <ol>
 <li>如果不选第i枚硬币的话，dp[0][4]&#x3D;12，</li>
-<li>在选第i枚硬币的情况下dp[1][4]&#x3D;dp[1][4-1]+1&#x3D;dp[1][3]+1&#x3D;4,取两种情况下的最小值4为此时的最小硬币的数量。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">coinChange</span>(<span class="params">self, coins: <span class="type">List</span>[<span class="built_in">int</span>], amount: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(coins)</span><br><span class="line">        <span class="comment"># 构建dp数组，dp[i][j]表示选择前i种硬币能凑齐j元需要的最少的硬币的数量</span></span><br><span class="line">        <span class="comment"># 这里一定是有硬币的，所以在构建dp数组的时候需要注意,初始化为一个较大的值+inf或者是amount+1</span></span><br><span class="line">        dp=[[amount+<span class="number">1</span>]*(amount+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 设置初始条件：需要找零的金额为0的时候，所需要的硬币是为0的</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 第一层循环遍历硬币</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 第二层循环遍历背包</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(amount+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 采用完全背包的思路</span></span><br><span class="line">                <span class="comment"># 如果当前的硬币面值大于要凑成的金额，没有办法参与找零（容量有限，无法选择第i种硬币），直接copy值下来</span></span><br><span class="line">                <span class="keyword">if</span> j&lt;coins[i-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">                <span class="comment"># 当当前的硬币值小于要凑成的金额的时候，这个时候才是可以参与找零的过程</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 有两种选择的方案（十分标准的完全背包的套路问题）</span></span><br><span class="line">                    <span class="comment"># 一种是选用该硬币，看看硬币能否凑成amount-nums[i],dp[i][j]=dp[i][j-coins[i-1]]+1</span></span><br><span class="line">                    <span class="comment"># 第二种是，不选用该硬币，直接用前面的硬币来组成：dp[i][j]=p[i-1][j]</span></span><br><span class="line">                    <span class="comment"># 取两种结果的最小值作为</span></span><br><span class="line">                    dp[i][j]=<span class="built_in">min</span>(dp[i-<span class="number">1</span>][j],dp[i][j-coins[i-<span class="number">1</span>]]+<span class="number">1</span>)</span><br><span class="line">        res=dp[n][amount]</span><br><span class="line">        <span class="comment"># 还用进行最后的判断，对于没有任何一种硬币能够组成的情况，直接返回-1，也就是之前自己设置的amount+1的情况</span></span><br><span class="line">        <span class="keyword">if</span> res!=amount+<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></li>
+<li>在选第i枚硬币的情况下dp[1][4]&#x3D;dp[1][4-1]+1&#x3D;dp[1][3]+1&#x3D;4,取两种情况下的最小值4为此时的最小硬币的数量。</li>
 </ol>
+<pre><code class="python">class Solution:
+    def coinChange(self, coins: List[int], amount: int) -&gt; int:
+        n=len(coins)
+        # 构建dp数组，dp[i][j]表示选择前i种硬币能凑齐j元需要的最少的硬币的数量
+        # 这里一定是有硬币的，所以在构建dp数组的时候需要注意,初始化为一个较大的值+inf或者是amount+1
+        dp=[[amount+1]*(amount+1) for _ in range(n+1)]
+        # 设置初始条件：需要找零的金额为0的时候，所需要的硬币是为0的
+        dp[0][0]=0
+        # 第一层循环遍历硬币
+        for i in range(1,n+1):
+            # 第二层循环遍历背包
+            for j in range(amount+1):
+                # 采用完全背包的思路
+                # 如果当前的硬币面值大于要凑成的金额，没有办法参与找零（容量有限，无法选择第i种硬币），直接copy值下来
+                if j&lt;coins[i-1]:
+                    dp[i][j]=dp[i-1][j]
+                # 当当前的硬币值小于要凑成的金额的时候，这个时候才是可以参与找零的过程
+                else:
+                    # 有两种选择的方案（十分标准的完全背包的套路问题）
+                    # 一种是选用该硬币，看看硬币能否凑成amount-nums[i],dp[i][j]=dp[i][j-coins[i-1]]+1
+                    # 第二种是，不选用该硬币，直接用前面的硬币来组成：dp[i][j]=p[i-1][j]
+                    # 取两种结果的最小值作为
+                    dp[i][j]=min(dp[i-1][j],dp[i][j-coins[i-1]]+1)
+        res=dp[n][amount]
+        # 还用进行最后的判断，对于没有任何一种硬币能够组成的情况，直接返回-1，也就是之前自己设置的amount+1的情况
+        if res!=amount+1:
+            return res
+        else:
+            return -1
+</code></pre>
 <h1 id="leetcoad518-零钱兑换II-middle"><a href="#leetcoad518-零钱兑换II-middle" class="headerlink" title="leetcoad518-零钱兑换II(middle)"></a>leetcoad518-零钱兑换II(middle)</h1><p>先对题目进行解析：给一个整数数组coins表示<strong>不同面额的硬币</strong>，另给一个整数<strong>amount表示总金额</strong>，计算并返回<strong>可以凑成总金额的硬币组合数</strong>，如果任何的硬币组合数都无法凑出总金额，<strong>返回0</strong>，<strong>假设每一种面额的硬币有无限个</strong>，数据结果符合32位带符合整数。<br>与上一题的区别：计算凑成总金额的<strong>最小硬币的数量</strong><br>本题：凑成硬币的<strong>组合数的情况</strong><br>对于第0行和第0列的情况来分析，没有硬币的时候无法找零，所以所有的第0行的的组合数为0，第0列表示，在需要找零为0的情况的硬币的组合情况，<strong>如果要用到当前的硬币作为组合的话，它的起始条件就是1</strong>（这有点不是特别的好想），真正难的还是它的状态转移方程，<strong>和纯完全背包又不太一样，强调的是组合数</strong><br>用下面的这张图来辅助理解完全背包的问题，可以说再次回顾的时候还是发现了很多的细节的，也加深对这道题的理解，透过这道题进行相应的发散才是最关键的问题。<br><img src="https://runnerxr.github.io/post-images/1654617289325.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">change</span>(<span class="params">self, amount: <span class="built_in">int</span>, coins: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(coins)</span><br><span class="line">        <span class="comment"># 构建dp数组并明确dp数组的函数，选用前i个种类的硬币在凑齐金额为j的情况下的组合数</span></span><br><span class="line">        dp=[[<span class="number">0</span>]*(amount+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 把第0列的情况更改为1,表示直接不需要任何面值，可以把情况记录为1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            dp[j][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">        <span class="comment"># 采用完全背包的思路来解题</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 如果发现当前的硬币值大虚需要找零的金额的时候，无法进行找零，组合数为上一行复制过来的</span></span><br><span class="line">                <span class="keyword">if</span> coins[i-<span class="number">1</span>] &gt;j:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">                <span class="comment"># 如果发现能够进行相应的找零，需要分两种情况</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 情况一：不选用第i枚硬币，此时dp[i][j]=dp[i-1][j]</span></span><br><span class="line">                    <span class="comment"># 请款二：选用第i枚硬币的情况,此时dp[i][j]=dp[i][j-coins[i]]</span></span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j]+dp[i][j-coins[i-<span class="number">1</span>]]</span><br><span class="line">        <span class="keyword">return</span> dp[n][amount]</span><br></pre></td></tr></table></figure>
-
-
+<pre><code class="python">class Solution:
+    def change(self, amount: int, coins: List[int]) -&gt; int:
+        n=len(coins)
+        # 构建dp数组并明确dp数组的函数，选用前i个种类的硬币在凑齐金额为j的情况下的组合数
+        dp=[[0]*(amount+1) for _ in range(n+1)]
+        # 把第0列的情况更改为1,表示直接不需要任何面值，可以把情况记录为1
+        for j in range(1,n+1):
+            dp[j][0]=1
+        # 采用完全背包的思路来解题
+        for i in range(1,n+1):
+            for j in range(1,amount+1):
+                # 如果发现当前的硬币值大虚需要找零的金额的时候，无法进行找零，组合数为上一行复制过来的
+                if coins[i-1] &gt;j:
+                    dp[i][j]=dp[i-1][j]
+                # 如果发现能够进行相应的找零，需要分两种情况
+                else:
+                    # 情况一：不选用第i枚硬币，此时dp[i][j]=dp[i-1][j]
+                    # 请款二：选用第i枚硬币的情况,此时dp[i][j]=dp[i][j-coins[i]]
+                    dp[i][j]=dp[i-1][j]+dp[i][j-coins[i-1]]
+        return dp[n][amount]
+</code></pre>
 <h1 id="leetcoad53-最大子数组和"><a href="#leetcoad53-最大子数组和" class="headerlink" title="leetcoad53-最大子数组和"></a>leetcoad53-最大子数组和</h1><p>弄清楚连续子数组的定义<br>弄清楚dp[i]的含义：表示以第i个元素结尾的最大子数组的和（肯定是以第i个元素进行结尾，但是不一定包括前面所有的数）<br>最后返回dp数组中最大的那个数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSubArray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 因为后面会使用到 nums 的长度</span></span><br><span class="line">        <span class="comment"># 所以先进行判空操作</span></span><br><span class="line">        <span class="comment"># 如果数组 nums 为空，返回 0</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">        <span class="comment">#if len(nums)==0:</span></span><br><span class="line">        <span class="comment">#if nums is None:</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">        <span class="comment"># 获取数组的长度</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 设置一个数组 dp，长度和数组 nums 长度一致</span></span><br><span class="line">        <span class="comment"># dp[0] 表示以第 0 个元素结尾的最大子数组的和</span></span><br><span class="line">        <span class="comment"># dp[1] 表示以第 1 个元素结尾的最大子数组的和</span></span><br><span class="line">        <span class="comment"># dp[i] 表示以第 i 个元素结尾的最大子数组的和</span></span><br><span class="line">        dp =[<span class="number">0</span>]*n</span><br><span class="line">        <span class="comment">#dp =[0 for _ in range(n)]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># dp[0] 表示以第 0 个元素结尾的最大子数组的和</span></span><br><span class="line">        <span class="comment"># 初始化 dp[0]</span></span><br><span class="line">        dp[<span class="number">0</span>]=nums[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 变量 maxNum 表示数组 dp 中最大的那个值</span></span><br><span class="line">        <span class="comment"># 即 maxNum 表示最大的连续字段和</span></span><br><span class="line">        maxNum=dp[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从 1 开始遍历数组 nums</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 在遍历的过程中，去获取以第 i 个元素结尾的最大子数组的和</span></span><br><span class="line">            <span class="comment"># 如果以 nums[i-1]结尾的最大字段和为正数</span></span><br><span class="line">            <span class="comment"># 那么以第 i 个元素结尾的最大子数组的和就是自己本身加上以 nums[i-1]结尾的最大字段和</span></span><br><span class="line">            <span class="keyword">if</span> dp[i-<span class="number">1</span>]&gt;<span class="number">0</span>:</span><br><span class="line">                <span class="comment"># dp[i-1] 是正数</span></span><br><span class="line">                <span class="comment"># 所以 dp[i] 的值为 nums[i] 加上 dp[i-1]</span></span><br><span class="line">                <span class="comment"># 因为 正数 + 变量 &gt; 变量</span></span><br><span class="line">                <span class="comment"># dp[i -1] + nums[i] &gt; nums[i]</span></span><br><span class="line">                dp[i]=dp[i-<span class="number">1</span>]+nums[i]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 否则 dp[i-1] 不是正数，为负数或者 0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 那么 dp[i] 的值为 nums[i]</span></span><br><span class="line">                <span class="comment"># 因为 负数 + 变量 &lt; 变量</span></span><br><span class="line">                <span class="comment"># dp[i -1] + nums[i] &lt; nums[i]</span></span><br><span class="line">                dp[i]=nums[i]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 在更新 dp[i] 的过程中，更新 maxNum 的值</span></span><br><span class="line">            <span class="comment"># 如果此时 dp[i] 的值大于了 maxNum</span></span><br><span class="line">            <span class="keyword">if</span> dp[i]&gt;maxNum:</span><br><span class="line">                <span class="comment"># 那么 maxNum 更新为 dp[i]</span></span><br><span class="line">                maxNum=dp[i]</span><br><span class="line">        <span class="comment"># 最后返回 maxNum</span></span><br><span class="line">        <span class="keyword">return</span> maxNum</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def maxSubArray(self, nums: List[int]) -&gt; int:
+        # 因为后面会使用到 nums 的长度
+        # 所以先进行判空操作
+        # 如果数组 nums 为空，返回 0
+        if not nums:
+        #if len(nums)==0:
+        #if nums is None:
+            return 0
+       
+        # 获取数组的长度
+        n = len(nums)
+        # 设置一个数组 dp，长度和数组 nums 长度一致
+        # dp[0] 表示以第 0 个元素结尾的最大子数组的和
+        # dp[1] 表示以第 1 个元素结尾的最大子数组的和
+        # dp[i] 表示以第 i 个元素结尾的最大子数组的和
+        dp =[0]*n
+        #dp =[0 for _ in range(n)]
+
+        # dp[0] 表示以第 0 个元素结尾的最大子数组的和
+        # 初始化 dp[0]
+        dp[0]=nums[0]
+
+        # 变量 maxNum 表示数组 dp 中最大的那个值
+        # 即 maxNum 表示最大的连续字段和
+        maxNum=dp[0]
+
+        # 从 1 开始遍历数组 nums
+        for i in range(1,n):
+
+            # 在遍历的过程中，去获取以第 i 个元素结尾的最大子数组的和
+            # 如果以 nums[i-1]结尾的最大字段和为正数
+            # 那么以第 i 个元素结尾的最大子数组的和就是自己本身加上以 nums[i-1]结尾的最大字段和
+            if dp[i-1]&gt;0:
+                # dp[i-1] 是正数
+                # 所以 dp[i] 的值为 nums[i] 加上 dp[i-1]
+                # 因为 正数 + 变量 &gt; 变量
+                # dp[i -1] + nums[i] &gt; nums[i]
+                dp[i]=dp[i-1]+nums[i]
+
+                # 否则 dp[i-1] 不是正数，为负数或者 0
+            else:
+                # 那么 dp[i] 的值为 nums[i]
+                # 因为 负数 + 变量 &lt; 变量
+                # dp[i -1] + nums[i] &lt; nums[i]
+                dp[i]=nums[i]
+
+            # 在更新 dp[i] 的过程中，更新 maxNum 的值
+            # 如果此时 dp[i] 的值大于了 maxNum
+            if dp[i]&gt;maxNum:
+                # 那么 maxNum 更新为 dp[i]
+                maxNum=dp[i]
+        # 最后返回 maxNum
+        return maxNum
+</code></pre>
 <h1 id="leetcoad64-最小路径和-middle"><a href="#leetcoad64-最小路径和-middle" class="headerlink" title="leetcoad64-最小路径和(middle)"></a>leetcoad64-最小路径和(middle)</h1><p>解题的关键：<br>对于不在第一行和第一列的元素，可以从其上方相邻元素向下移动一步到达，或者从其左方相邻元素向右移动一步到达，元素对应的最小路径和等于其上方相邻元素与其左方相邻元素两者对应的最小路径和中的最小值加上当前元素的值。由于每个元素对应的最小路径和与其相邻元素对应的最小路径和有关，因此可以使用动态规划求解。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minPathSum</span>(<span class="params">self, grid: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># m 表示有多少行</span></span><br><span class="line">        m= <span class="built_in">len</span>(grid)</span><br><span class="line">        <span class="comment"># n 表示有多少列</span></span><br><span class="line">        n = <span class="built_in">len</span>(grid[<span class="number">0</span>])</span><br><span class="line">        dp=[[<span class="number">0</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line">        <span class="comment">#dp=[[0 for _ in range(n)] for _ in range(m)]</span></span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=grid[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># i 从 1 遍历到 n - 1 </span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            dp[<span class="number">0</span>][i]=dp[<span class="number">0</span>][i-<span class="number">1</span>]+grid[<span class="number">0</span>][i]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># j 从 1 遍历到 m - 1 </span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">            dp[j][<span class="number">0</span>]=dp[j-<span class="number">1</span>][<span class="number">0</span>] +grid[j][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 接下来从第 1 行到第 m - 1 行</span></span><br><span class="line">        <span class="comment"># 从第 1 列到底 n - 1 列</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">                dp[i][j]=<span class="built_in">min</span>(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>]) +grid[i][j]</span><br><span class="line">        <span class="comment"># dp[m-1][n-1] 表示第 m - 1 行第 n - 1 列的最优解</span></span><br><span class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def minPathSum(self, grid: List[List[int]]) -&gt; int:
+        # m 表示有多少行
+        m= len(grid)
+        # n 表示有多少列
+        n = len(grid[0])
+        dp=[[0]*n for _ in range(m)]
+        #dp=[[0 for _ in range(n)] for _ in range(m)]
+
+        dp[0][0]=grid[0][0]
+
+        # i 从 1 遍历到 n - 1 
+        for i in range(1,n):
+            dp[0][i]=dp[0][i-1]+grid[0][i]
+        
+        # j 从 1 遍历到 m - 1 
+        for j in range(1,m):
+            dp[j][0]=dp[j-1][0] +grid[j][0]
+
+        # 接下来从第 1 行到第 m - 1 行
+        # 从第 1 列到底 n - 1 列
+        for i in range(1,m):
+            for j in range(1,n):
+                dp[i][j]=min(dp[i-1][j],dp[i][j-1]) +grid[i][j]
+        # dp[m-1][n-1] 表示第 m - 1 行第 n - 1 列的最优解
+        return dp[m-1][n-1]
+</code></pre>
 <h1 id="leetcoad72-编辑距离"><a href="#leetcoad72-编辑距离" class="headerlink" title="leetcoad72-编辑距离"></a>leetcoad72-编辑距离</h1><p>刚拿到这个题目的时候肯定是特别的难想的：尽管题目也已经说了一些相应的操作，但是代码如何实现确实是一个问题（可以说是根本想不到的方式），而且代码的逻辑根本也不是像题目中描述的那样的，所以第一次做的时候肯定也是一头雾水。需要想到动态规划的思路，这才是问题的本源<br>还有如果一旦遇到一个新的题目，如何从一个一维dp切换到一个二维的dp也是问题的关键（<strong>这里就是一个很关键的思考流程在里面</strong>）<br>这道题总的来说还是比较难的，这里应该要花一点时间好好整理一下，而且最好方法尽量的多元化一点</p>
 <h2 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h2><p>在看labuladong的时候一些比较好的地方<br><img src="https://runnerxr.github.io/post-images/1654498134520.gif"><br>这张动图很好的展示了这样的一个过程，关键在于如何正确做出选择，根据这张动图就可以配合后面的代码来加深对递归代码的理解。<br>这里用两个指针分别指向字符串的最后，然后一步步的往前走，缩小问题的规模，根据上面的步骤，出现了四种操作：</p>
 <ol>
@@ -286,7 +582,27 @@
 <li>然后就是不好处理的递归的代码部分</li>
 </ol>
 <p>递归的出口：上面已经写清楚了<br>递归的代码部分：<br>理解函数的部分：dp(i,j) :该函数的返回值就是s1[0…i]和s1[0…j]的最小编辑距离</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minDistance</span>(<span class="params">self, word1: <span class="built_in">str</span>, word2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 定义dp函数(只是一个代号)</span></span><br><span class="line">        <span class="comment"># dp(i,j) :该函数的返回值就是s1[0...i]和s1[0...j]的最小编辑距离</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">i,j</span>):</span><br><span class="line">            <span class="comment"># 定义递归的出口</span></span><br><span class="line">            <span class="comment"># 当s1或s2走完了，直接返回另一个字符串剩下的长度</span></span><br><span class="line">            <span class="keyword">if</span> i==-<span class="number">1</span>: <span class="keyword">return</span> j+<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j==-<span class="number">1</span>: <span class="keyword">return</span> i+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> s1[i]==s2[j]:</span><br><span class="line">                <span class="comment"># 什么都可以不用做</span></span><br><span class="line">                <span class="comment"># s1[0..i]和s2[0...j]的编辑距离与s1[0..i-1]和s2[0...j-1]的编辑距离相同</span></span><br><span class="line">                <span class="keyword">return</span> dp(i,j)=dp(i-<span class="number">1</span>,j-<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># s1[i]!=s2[j]的情况的时候</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 返回的分别是替换  删除与插入的操作</span></span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">min</span>(dp(i-<span class="number">1</span>,j-<span class="number">1</span>),dp(i-<span class="number">1</span>,j),dp(i,j-<span class="number">1</span>))+<span class="number">1</span></span><br><span class="line">        <span class="comment"># i,j初始化指向最后一个索引</span></span><br><span class="line">        <span class="keyword">return</span> dp(<span class="built_in">len</span>(s1)-<span class="number">1</span>,<span class="built_in">len</span>(s2)-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def minDistance(self, word1: str, word2: str) -&gt; int:
+        # 定义dp函数(只是一个代号)
+        # dp(i,j) :该函数的返回值就是s1[0...i]和s1[0...j]的最小编辑距离
+        def dp(i,j):
+            # 定义递归的出口
+            # 当s1或s2走完了，直接返回另一个字符串剩下的长度
+            if i==-1: return j+1
+            if j==-1: return i+1
+
+            if s1[i]==s2[j]:
+                # 什么都可以不用做
+                # s1[0..i]和s2[0...j]的编辑距离与s1[0..i-1]和s2[0...j-1]的编辑距离相同
+                return dp(i,j)=dp(i-1,j-1)
+            # s1[i]!=s2[j]的情况的时候
+            else:
+                # 返回的分别是替换  删除与插入的操作
+                return min(dp(i-1,j-1),dp(i-1,j),dp(i,j-1))+1
+        # i,j初始化指向最后一个索引
+        return dp(len(s1)-1,len(s2)-1)
+</code></pre>
 <h2 id="动态规划的解法"><a href="#动态规划的解法" class="headerlink" title="动态规划的解法"></a>动态规划的解法</h2><p>其实也是对暴力的解法做了一定的优化<br>参考吴师兄的解题思路，做了如下的一些整理的过程<br>总共有三种方案：<br><img src="https://runnerxr.github.io/post-images/1649082291844.png"><br><img src="https://runnerxr.github.io/post-images/1649082703864.png"><br><img src="https://runnerxr.github.io/post-images/1649082753823.png"></p>
 <ol>
 <li>将word1中前L1-1个数字改为word2中的前L2-1个数字，再把a—-&gt;b</li>
@@ -297,11 +613,91 @@
 <p>为了进一步更好的弄清楚相应的解题过程，这里自己用表格来详细的模拟了这样的一个过程</p>
 <ol>
 <li>初始化表格，行数为s1中的长度，列数为s2中的长度，同时对于0的时候，预定的是空字符串的时候（对于索引为0的时候这里理解为空字符串确实是有点费解）</li>
-<li>在对边界条件的处理上后面的代码中都会有详细的注释，特别是对于dp[0][j]和dp[i][0]的填充，本质上也是一种很好的初始化的过程，只有在脑海里面已经有了一个很明晰的二维表格的时候才能算是真正的看懂了<br><img src="https://runnerxr.github.io/post-images/1654504193955.png"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minDistance</span>(<span class="params">self, word1: <span class="built_in">str</span>, word2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 获取两个字符串的长度</span></span><br><span class="line">        L1,L2=<span class="built_in">len</span>(word1),<span class="built_in">len</span>(word2)</span><br><span class="line">        <span class="comment"># 二维数组dp[i][j]表示word1的前i个字符转化为word2中的前j个字符所需要的最少的操作</span></span><br><span class="line">        <span class="comment"># dp[0][0]:word1的前0个字符转化为word2的前0个字符需要的最少操作（说人话就是空字符串变成空字符串需要的最少的一个操作）</span></span><br><span class="line">        <span class="comment"># dp[L1][L2]表示word1中的前L1个字符转化为word2中的前L2个字符所需要的最少的操作</span></span><br><span class="line">        dp=[[<span class="number">0</span>]*(L2+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(L1+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># print(dp)</span></span><br><span class="line">        <span class="comment"># dp[i][0]表示:把word1中的前i个字符转化为word2中的前0个字符需要的最少的操作(也即把word1中的前i个字符全部都删除,变成空字符串需要的操作数)</span></span><br><span class="line">        <span class="comment"># 只需要每次对word1中的字符执行删除操作,就可以将word1中的字符全部删除</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(L1+<span class="number">1</span>):</span><br><span class="line">            dp[i][<span class="number">0</span>]=i</span><br><span class="line"></span><br><span class="line">        <span class="comment"># dp[0][j]表示:将word1中的前0个字符转化为word2中的前j个字符所需要的最少的操作次数(空字符串经过多少次变化变成word2中的前j个字符)</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(L2+<span class="number">1</span>):</span><br><span class="line">            dp[<span class="number">0</span>][j]=j</span><br><span class="line">        <span class="comment"># print(dp)</span></span><br><span class="line">        <span class="comment"># 通过两个for循环来设置二维数组中所有元素的值</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,L1+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,L2+<span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 如果发现word1[i-1]==word2[j-1] 即当word1中的前i-1个字符成功转化为word2中的前j-1个字符后</span></span><br><span class="line">                <span class="comment"># 自然而然word1中的前i个字符也成功的转化为word2中的前j个字符(因为两个字符串下一个字符是相等的不需要转换操作)</span></span><br><span class="line">                <span class="keyword">if</span> word1[i-<span class="number">1</span>]==word2[j-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j]=dp[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">                <span class="comment"># 当当前遍历的元素不相等的时候,意味着在dp[i-1][j-1]的基础上上还要转换当前的元素</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 此时的dp[i][j]可以从三种状态中转换过来</span></span><br><span class="line">                    <span class="comment"># 状态一:dp[i-1][j-1]---&gt;dp[i][j]  当前遍历的字符.两个都不相等(a---&gt;b)</span></span><br><span class="line">                    <span class="comment"># 状态二:dp[i-1][j]---&gt;dp[i][j],word1中的前i-1个字符已经转换成为了word2中的前j个字符(直接删除word1中当前遍历的元素)</span></span><br><span class="line">                    <span class="comment"># 状态三:dp[i][j-1]---&gt;dp[i][j],word1中当前的前i个字符已经转换了word2中的前j-1个字符(在word1中插入word2中当前遍历的字符)</span></span><br><span class="line">                    <span class="comment"># 取三者状态中最小值,作为最终的dp[i][j]的值</span></span><br><span class="line">                    dp[i][j]=<span class="built_in">min</span>(dp[i-<span class="number">1</span>][j-<span class="number">1</span>],dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])+<span class="number">1</span></span><br><span class="line">        <span class="comment"># 将最后的结果返回</span></span><br><span class="line">        <span class="keyword">return</span> dp[L1][L2]</span><br></pre></td></tr></table></figure></li>
+<li>在对边界条件的处理上后面的代码中都会有详细的注释，特别是对于dp[0][j]和dp[i][0]的填充，本质上也是一种很好的初始化的过程，只有在脑海里面已经有了一个很明晰的二维表格的时候才能算是真正的看懂了<br><img src="https://runnerxr.github.io/post-images/1654504193955.png"></li>
 </ol>
+<pre><code class="python">class Solution:
+    def minDistance(self, word1: str, word2: str) -&gt; int:
+        # 获取两个字符串的长度
+        L1,L2=len(word1),len(word2)
+        # 二维数组dp[i][j]表示word1的前i个字符转化为word2中的前j个字符所需要的最少的操作
+        # dp[0][0]:word1的前0个字符转化为word2的前0个字符需要的最少操作（说人话就是空字符串变成空字符串需要的最少的一个操作）
+        # dp[L1][L2]表示word1中的前L1个字符转化为word2中的前L2个字符所需要的最少的操作
+        dp=[[0]*(L2+1) for _ in range(L1+1)]
+        # print(dp)
+        # dp[i][0]表示:把word1中的前i个字符转化为word2中的前0个字符需要的最少的操作(也即把word1中的前i个字符全部都删除,变成空字符串需要的操作数)
+        # 只需要每次对word1中的字符执行删除操作,就可以将word1中的字符全部删除
+        for i in range(L1+1):
+            dp[i][0]=i
+
+        # dp[0][j]表示:将word1中的前0个字符转化为word2中的前j个字符所需要的最少的操作次数(空字符串经过多少次变化变成word2中的前j个字符)
+        for j in range(L2+1):
+            dp[0][j]=j
+        # print(dp)
+        # 通过两个for循环来设置二维数组中所有元素的值
+        for i in range(1,L1+1):
+            for j in range(1,L2+1):
+                # 如果发现word1[i-1]==word2[j-1] 即当word1中的前i-1个字符成功转化为word2中的前j-1个字符后
+                # 自然而然word1中的前i个字符也成功的转化为word2中的前j个字符(因为两个字符串下一个字符是相等的不需要转换操作)
+                if word1[i-1]==word2[j-1]:
+                    dp[i][j]=dp[i-1][j-1]
+                # 当当前遍历的元素不相等的时候,意味着在dp[i-1][j-1]的基础上上还要转换当前的元素
+                else:
+                    # 此时的dp[i][j]可以从三种状态中转换过来
+                    # 状态一:dp[i-1][j-1]---&gt;dp[i][j]  当前遍历的字符.两个都不相等(a---&gt;b)
+                    # 状态二:dp[i-1][j]---&gt;dp[i][j],word1中的前i-1个字符已经转换成为了word2中的前j个字符(直接删除word1中当前遍历的元素)
+                    # 状态三:dp[i][j-1]---&gt;dp[i][j],word1中当前的前i个字符已经转换了word2中的前j-1个字符(在word1中插入word2中当前遍历的字符)
+                    # 取三者状态中最小值,作为最终的dp[i][j]的值
+                    dp[i][j]=min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])+1
+        # 将最后的结果返回
+        return dp[L1][L2]
+</code></pre>
 <h1 id="leetcoad494-目标和"><a href="#leetcoad494-目标和" class="headerlink" title="leetcoad494-目标和"></a>leetcoad494-目标和</h1><p>做题分析：<br>要与分割等和子集的题目进行比较分析：那一题只是要返回是否可以进行进行相应的分割，我们在定义dp数组的时候的需要记录到底是True还是False目标和这道题：不仅要找出能够满足目标和要求的，还要求返回返回方法数，<strong>dp数组中需要记录的就是具体的方法数</strong><br>如何把该问题合理的转化为0-1背包问题才是问题的关键和要点</p>
 <p>定义状态：根据背包问题的经验，将dp[i][j]定义为<strong>从数组nums中0~i的元素进行加减可以得到j的方法的数量</strong>或者换一种解释的方式：<strong>我们要做的就是从数组nums中选出若干数字（每个元素最多选择一次），使其和刚好等于target,并计算有多少种不同的选择方式。</strong><br>这里再重新回顾一下0-1背包问题的原型：有w个物品，有容量N的背包，其中每件物品都有一定的容量以及相应的价值，问背包中能够装入的最大的价值<br>难点：根据状态去考虑如何利用子问题的转移从而得到整体的解，<strong>问题的关键不是nums[i]的选与不选，而是nums[i]是+还是-，这就导致状态方程会有一定的变化</strong><br><code>dp[i][j]=dp[i-1][j-nums[i]]+dp[i-1][j+nums[i]]</code><br>其中nums[i]这个元素可以执行＋，也可以执行-，那么dp[i][j]的结果值就是+&#x2F;-之后对应位置的和<br>以下的代码实际上参考了东哥的解法，本质上还是对该问题做了一个转化，转化成为了0-1背包问题，其实边界问题一直是细节。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findTargetSumWays</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 参照东哥的解法</span></span><br><span class="line">        <span class="comment"># 先求nums数组中的和</span></span><br><span class="line">        <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="built_in">sum</span>+=c</span><br><span class="line">        <span class="comment"># print(sum)</span></span><br><span class="line">        <span class="comment"># 当nums中所有非负的和都不能等于target或者sum+target是奇数的话也不可能找到对应的数</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">sum</span> &lt;<span class="built_in">abs</span>(target) <span class="keyword">or</span> (<span class="built_in">sum</span>+target)%<span class="number">2</span>==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 以下写一个函数，转化为0~1背包的问题，其中背包的容量为(sum+target)//2</span></span><br><span class="line">        <span class="comment"># 注意这个问题已经被转化了，所以就不要盯着之前的问题来看</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">subsets</span>(<span class="params">nums,s</span>):</span><br><span class="line">            <span class="comment"># 以下就是0-1背包问题的模板了</span></span><br><span class="line">            n=<span class="built_in">len</span>(nums)</span><br><span class="line">            <span class="comment"># 构建dp[i][j]:表示在前i件物品中选择，能够正好凑齐s的一些选择</span></span><br><span class="line">            dp=[[<span class="number">0</span>]*(s+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">            <span class="comment"># 当背包的容量的0的时候，此时需要把dp[i][j]的值全部置为1，表示：什么都不装也h是一种解法</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n+<span class="number">1</span>):</span><br><span class="line">                dp[i][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">            <span class="comment"># print(dp)</span></span><br><span class="line">            <span class="comment"># n/c  0  1  2  3  4 </span></span><br><span class="line">            <span class="comment"># 0    1  0  0  0  0</span></span><br><span class="line">            <span class="comment"># 1    1</span></span><br><span class="line">            <span class="comment"># 1    1</span></span><br><span class="line">            <span class="comment"># 1    1   </span></span><br><span class="line">            <span class="comment"># 1    1</span></span><br><span class="line">            <span class="comment"># 1    1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 初始化dp数组，因为要能够刚好凑齐</span></span><br><span class="line">            <span class="comment"># 当s=0的时候，对应的值为0</span></span><br><span class="line">            <span class="comment"># 选择i件物品放入背包和不选择第i件物品放入背包这个两种</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,s+<span class="number">1</span>):</span><br><span class="line">                    <span class="comment"># 当当前的背包容量小于此时的数值的时候，此时放入的物品由上一个状态决定</span></span><br><span class="line">                    <span class="keyword">if</span> nums[i-<span class="number">1</span>]&gt;j:</span><br><span class="line">                        dp[i][j]=dp[i-<span class="number">1</span>][j]</span><br><span class="line">                    <span class="comment"># 当前的背包容量大于当前的数值的时候就有两种选择</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        dp[i][j]=dp[i-<span class="number">1</span>][j]+dp[i-<span class="number">1</span>][j-nums[i-<span class="number">1</span>]]</span><br><span class="line">            <span class="keyword">return</span> dp[n][s]</span><br><span class="line">        <span class="comment"># 实际上就是用这个函数来求对应的返回的符合条件的数目</span></span><br><span class="line">        <span class="keyword">return</span> subsets(nums,(<span class="built_in">sum</span>+target)//<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -&gt; int:
+        # 参照东哥的解法
+        # 先求nums数组中的和
+        sum=0
+        for c in nums:
+            sum+=c
+        # print(sum)
+        # 当nums中所有非负的和都不能等于target或者sum+target是奇数的话也不可能找到对应的数
+        if sum &lt;abs(target) or (sum+target)%2==1:
+            return 0
+        # 以下写一个函数，转化为0~1背包的问题，其中背包的容量为(sum+target)//2
+        # 注意这个问题已经被转化了，所以就不要盯着之前的问题来看
+        def subsets(nums,s):
+            # 以下就是0-1背包问题的模板了
+            n=len(nums)
+            # 构建dp[i][j]:表示在前i件物品中选择，能够正好凑齐s的一些选择
+            dp=[[0]*(s+1) for _ in range(n+1)]
+            # 当背包的容量的0的时候，此时需要把dp[i][j]的值全部置为1，表示：什么都不装也h是一种解法
+            for i in range(0,n+1):
+                dp[i][0]=1
+            # print(dp)
+            # n/c  0  1  2  3  4 
+            # 0    1  0  0  0  0
+            # 1    1
+            # 1    1
+            # 1    1   
+            # 1    1
+            # 1    1
+
+            # 初始化dp数组，因为要能够刚好凑齐
+            # 当s=0的时候，对应的值为0
+            # 选择i件物品放入背包和不选择第i件物品放入背包这个两种
+            for i in range(1,n+1):
+                for j in range(0,s+1):
+                    # 当当前的背包容量小于此时的数值的时候，此时放入的物品由上一个状态决定
+                    if nums[i-1]&gt;j:
+                        dp[i][j]=dp[i-1][j]
+                    # 当前的背包容量大于当前的数值的时候就有两种选择
+                    else:
+                        dp[i][j]=dp[i-1][j]+dp[i-1][j-nums[i-1]]
+            return dp[n][s]
+        # 实际上就是用这个函数来求对应的返回的符合条件的数目
+        return subsets(nums,(sum+target)//2)
+</code></pre>
 <p>这题做完之后，把该题与分割等和子集的问题拆分起来一起看，有相通的地方，也有不同的地方。同原版的0-1背包问题对比也有一些差异。以下也是做一些相应的总结“</p>
 <ol>
 <li>首先问题的转化就是一个难点：存在一定的公式推导，转化为装满容量为s的背包有几种方法：</li>
@@ -333,171 +729,242 @@
 </ol>
 </li>
 </ol>
-<p><strong>leetcode121-买卖股票的最佳时期(easy)（限定交易次数k&#x3D;1）</strong><br>题目描述：给定一个<strong>数组 prices</strong> ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。<br>你只能选择 <strong>某一天 <strong>买入这只股票，并选择在 <strong>未来的某一个</strong>不同的日子 卖出该股票。</strong>设计一个算法来计算你所能获取的最大利润</strong>。<br>返回你<strong>可以从这笔交易中获取的最大利润</strong>。如果你<strong>不能获取</strong>任何利润，<strong>返回 0</strong> 。<br>示例1：<br>输入: [7,1,5,3,6,4]<br>输出: 5<br>解释: 在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出，最大利润 &#x3D; 6-1 &#x3D; 5 。注意利润不能是 7-1 &#x3D; 6, 因为卖出价格需要大于买入价格。<br>示例2：<br>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单单论这道题，如果是用这样的一种方法，可能用时比较的长，但是也是有助于理解的。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">      <span class="comment"># 先获取数组的长度</span></span><br><span class="line">      n = <span class="built_in">len</span>(prices)</span><br><span class="line"></span><br><span class="line">      <span class="comment"># 设置一个三维数组 dp</span></span><br><span class="line">      <span class="comment"># dp[i][k][b]</span></span><br><span class="line">      <span class="comment"># i 表示天数，dp[i] 表示第 i 天的最大利润</span></span><br><span class="line">      <span class="comment"># k 表示最多交易次数，每次交易包含买入和卖出，这里只在买入的时候将 k - 1</span></span><br><span class="line">      <span class="comment"># 注意：【 k 表示最多交易次数，而不是实际交易次数，比如最多交易两次可能实际只交易一次】</span></span><br><span class="line">      <span class="comment"># b 表示当前是否持有股票，取值为 0 和 1</span></span><br><span class="line">      <span class="comment"># 其中 0 表示当前持有 0 份股票，即【不持有】股票</span></span><br><span class="line">      <span class="comment"># 而 1 表示当前持有 1 份股票，即【持有】股票</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 在本题中，k 的值为 1，i 的取值范围为数组 prices 的长度，从 0 开始</span></span><br><span class="line">      <span class="comment"># 越在前面的维度，总体上是越出现在后面</span></span><br><span class="line">      <span class="comment"># dp =[[[0]*2]*2]*n</span></span><br><span class="line">      dp = [[[<span class="number">0</span>] *<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)]<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line"></span><br><span class="line">      <span class="comment"># dp[0][0][0] 表示在第 0 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 0 次交易的情况下可以获得的最大收益</span></span><br><span class="line">      <span class="comment"># 此时，就是什么都没做，利润为 0</span></span><br><span class="line">      dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">      <span class="comment"># dp[0][1][0] 表示在第 0 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益</span></span><br><span class="line">      <span class="comment"># 此时，就是什么都没做，利润为 0</span></span><br><span class="line">      dp[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">      <span class="comment"># dp[0][1][1] 表示在第 0 天结束时，即收盘后，手上持有 1 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益</span></span><br><span class="line">      <span class="comment"># 手上持有了 1 份股票，那肯定是执行了买入操作，然后又还没有卖出，那么钱都投入了股票中，利润就是负的，即为 -prices[0]</span></span><br><span class="line">      <span class="comment"># 相当于是贷款的形式</span></span><br><span class="line">      dp[<span class="number">0</span>][<span class="number">1</span>][<span class="number">1</span>]=-prices[<span class="number">0</span>]</span><br><span class="line">      <span class="comment"># 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑</span></span><br><span class="line">      <span class="comment"># 这里i的范围是从1开始的，因为i=0的时候是没有前一个和状态的说法的，由后面的两种状态需要的值发现，需要三个初始值</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">          <span class="comment"># 对于每个坑来说，都有两种状态</span></span><br><span class="line">          <span class="comment"># 今天也就是第 i 天</span></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 1、今天【不持有】股票</span></span><br><span class="line">          <span class="comment"># 第 i - 1 天【持有】股票，第 i 天卖出</span></span><br><span class="line">          <span class="comment"># 昨天【持有】股票，今天卖出</span></span><br><span class="line">          <span class="comment"># vs</span></span><br><span class="line">          <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天不操作</span></span><br><span class="line">          <span class="comment"># 昨天【不持有】股票，今天不操作</span></span><br><span class="line">          <span class="comment"># dp[i][k][0]=max(dp[i-1][k][1]+prices[i],dp[i-1][k][0])</span></span><br><span class="line">          dp[i][<span class="number">1</span>][<span class="number">0</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 2、今天【持有】股票</span></span><br><span class="line">          <span class="comment"># 第 i - 1 天【持有】股票，第 i 天不操作</span></span><br><span class="line">          <span class="comment"># 昨天【持有】股票，今天不操作</span></span><br><span class="line">          <span class="comment"># vs</span></span><br><span class="line">          <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天买入</span></span><br><span class="line">          <span class="comment"># 昨天【不持有】股票，今天买入</span></span><br><span class="line">          <span class="comment"># dp[i][k][1]=max(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])</span></span><br><span class="line">          dp[i][<span class="number">1</span>][<span class="number">1</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>],dp[i-<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line"></span><br><span class="line">      <span class="comment"># for 循环结束后，dp 数组填充完毕</span></span><br><span class="line">      <span class="comment"># dp[length - 1][1][0]</span></span><br><span class="line">      <span class="comment"># 表示第 length - 1 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益</span></span><br><span class="line">      <span class="keyword">return</span> dp[n-<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure><br>尝试采用其他的方法：在做剑指offer的时候的一些解法（）<br>剑指offer和这题的区别的地方：这题的数组可以为空，offer上的那道题的数组一定是有值的，所以不能完全把代码直接复制过去<br><strong>状态定义</strong>：设置动态dp，dp[i]表示代表以price[i]为结尾的子数组的最大利润（前i日的而最大利润）<br><strong>转移方程</strong>：前i日的最大利润&#x3D;前i-1的最大利润<strong>dp[i-1]<strong>和</strong>第i日卖出的最大利润</strong>中最大值<br>用方程来表示的话：dp[i]&#x3D;max(dp[i−1],prices[i]−min(prices[0:i]))<br><strong>初始状态</strong>：p[0]&#x3D;0 ，即首日利润为 0<br><strong>返回值</strong>：dp[n−1] ，其中 n 为 dp 列表长度。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这种写法相对来说非常的慢</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(prices)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> prices:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        dp=[<span class="number">0</span>]*n</span><br><span class="line">        <span class="comment"># 初始状态</span></span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            dp[i]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>],prices[i]-<span class="built_in">min</span>(prices[:i]))</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>看了K神优化后的代码，这里也放在这里学习一下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n=<span class="built_in">len</span>(prices)</span><br><span class="line">        <span class="comment"># 将成本预先定义成无穷大</span></span><br><span class="line">        <span class="comment"># 用profit变量代替了状态变量</span></span><br><span class="line">        cost, profit = <span class="built_in">float</span>(<span class="string">&quot;+inf&quot;</span>), <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</span><br><span class="line">            <span class="comment"># cost总是存储之前cost和目前遍历的价格的最小值</span></span><br><span class="line">            cost = <span class="built_in">min</span>(cost, price)</span><br><span class="line">            profit = <span class="built_in">max</span>(profit, price - cost)</span><br><span class="line">        <span class="keyword">return</span> profit</span><br></pre></td></tr></table></figure>
+<p><strong>leetcode121-买卖股票的最佳时期(easy)（限定交易次数k&#x3D;1）</strong><br>题目描述：给定一个<strong>数组 prices</strong> ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。<br>你只能选择 <strong>某一天 <strong>买入这只股票，并选择在 <strong>未来的某一个</strong>不同的日子 卖出该股票。</strong>设计一个算法来计算你所能获取的最大利润</strong>。<br>返回你<strong>可以从这笔交易中获取的最大利润</strong>。如果你<strong>不能获取</strong>任何利润，<strong>返回 0</strong> 。<br>示例1：<br>输入: [7,1,5,3,6,4]<br>输出: 5<br>解释: 在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出，最大利润 &#x3D; 6-1 &#x3D; 5 。注意利润不能是 7-1 &#x3D; 6, 因为卖出价格需要大于买入价格。<br>示例2：<br>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</p>
+<pre><code class="python">#单单论这道题，如果是用这样的一种方法，可能用时比较的长，但是也是有助于理解的。
+class Solution:
+  def maxProfit(self, prices: List[int]) -&gt; int:
+      # 先获取数组的长度
+      n = len(prices)
 
+      # 设置一个三维数组 dp
+      # dp[i][k][b]
+      # i 表示天数，dp[i] 表示第 i 天的最大利润
+      # k 表示最多交易次数，每次交易包含买入和卖出，这里只在买入的时候将 k - 1
+      # 注意：【 k 表示最多交易次数，而不是实际交易次数，比如最多交易两次可能实际只交易一次】
+      # b 表示当前是否持有股票，取值为 0 和 1
+      # 其中 0 表示当前持有 0 份股票，即【不持有】股票
+      # 而 1 表示当前持有 1 份股票，即【持有】股票
+
+      # 在本题中，k 的值为 1，i 的取值范围为数组 prices 的长度，从 0 开始
+      # 越在前面的维度，总体上是越出现在后面
+      # dp =[[[0]*2]*2]*n
+      dp = [[[0] *2 for _ in range(2)]for _ in range(n)]
+
+      # dp[0][0][0] 表示在第 0 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 0 次交易的情况下可以获得的最大收益
+      # 此时，就是什么都没做，利润为 0
+      dp[0][0][0]=0
+      # dp[0][1][0] 表示在第 0 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益
+      # 此时，就是什么都没做，利润为 0
+      dp[0][1][0]=0
+      # dp[0][1][1] 表示在第 0 天结束时，即收盘后，手上持有 1 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益
+      # 手上持有了 1 份股票，那肯定是执行了买入操作，然后又还没有卖出，那么钱都投入了股票中，利润就是负的，即为 -prices[0]
+      # 相当于是贷款的形式
+      dp[0][1][1]=-prices[0]
+      # 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑
+      # 这里i的范围是从1开始的，因为i=0的时候是没有前一个和状态的说法的，由后面的两种状态需要的值发现，需要三个初始值
+      for i in range(1,n):
+          # 对于每个坑来说，都有两种状态
+          # 今天也就是第 i 天
+
+          # 1、今天【不持有】股票
+          # 第 i - 1 天【持有】股票，第 i 天卖出
+          # 昨天【持有】股票，今天卖出
+          # vs
+          # 第 i - 1 天【不持有】股票，第 i 天不操作
+          # 昨天【不持有】股票，今天不操作
+          # dp[i][k][0]=max(dp[i-1][k][1]+prices[i],dp[i-1][k][0])
+          dp[i][1][0]=max(dp[i-1][1][1]+prices[i],dp[i-1][1][0])
+
+
+          # 2、今天【持有】股票
+          # 第 i - 1 天【持有】股票，第 i 天不操作
+          # 昨天【持有】股票，今天不操作
+          # vs
+          # 第 i - 1 天【不持有】股票，第 i 天买入
+          # 昨天【不持有】股票，今天买入
+          # dp[i][k][1]=max(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])
+          dp[i][1][1]=max(dp[i-1][1][1],dp[i-1][0][0]-prices[i])
+
+      # for 循环结束后，dp 数组填充完毕
+      # dp[length - 1][1][0]
+      # 表示第 length - 1 天结束时，即收盘后，手上持有 0 份股票，且此时最多进行了 1 次交易的情况下可以获得的最大收益
+      return dp[n-1][1][0]
+</code></pre>
+<p>尝试采用其他的方法：在做剑指offer的时候的一些解法（）<br>剑指offer和这题的区别的地方：这题的数组可以为空，offer上的那道题的数组一定是有值的，所以不能完全把代码直接复制过去<br><strong>状态定义</strong>：设置动态dp，dp[i]表示代表以price[i]为结尾的子数组的最大利润（前i日的而最大利润）<br><strong>转移方程</strong>：前i日的最大利润&#x3D;前i-1的最大利润<strong>dp[i-1]<strong>和</strong>第i日卖出的最大利润</strong>中最大值<br>用方程来表示的话：dp[i]&#x3D;max(dp[i−1],prices[i]−min(prices[0:i]))<br><strong>初始状态</strong>：p[0]&#x3D;0 ，即首日利润为 0<br><strong>返回值</strong>：dp[n−1] ，其中 n 为 dp 列表长度。</p>
+<pre><code class="python"># 这种写法相对来说非常的慢
+class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n=len(prices)
+        if not prices:
+            return 0
+        dp=[0]*n
+        # 初始状态
+        dp[0]=0
+        for i in range(1,n):
+            dp[i]=max(dp[i-1],prices[i]-min(prices[:i]))
+        return dp[n-1]
+</code></pre>
+<p>看了K神优化后的代码，这里也放在这里学习一下：</p>
+<pre><code class="python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n=len(prices)
+        # 将成本预先定义成无穷大
+        # 用profit变量代替了状态变量
+        cost, profit = float(&quot;+inf&quot;), 0
+        for price in prices:
+            # cost总是存储之前cost和目前遍历的价格的最小值
+            cost = min(cost, price)
+            profit = max(profit, price - cost)
+        return profit
+</code></pre>
 <p>采用贪心算法的思路：</p>
 <p><strong>leetcode122-买卖股票的最佳时期II(middle)（限定交易次数k无限大）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(prices)</span><br><span class="line">        <span class="comment">#设置二维的dp数组</span></span><br><span class="line">        dp = [[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="comment">#dp[0][1]表示：在第0天结束的时候，手上持有1份股票</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>]=-prices[<span class="number">0</span>]</span><br><span class="line">        <span class="comment">#dp[0][0]表示：在第0天结束的时候，手上持有0份股票</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="comment">#今天不持有股票的情况</span></span><br><span class="line">            <span class="comment"># 第一种状态：第i-1天持有股票，在第i天卖出：dp[i][0]=dp[i-1][1]+prices[i]</span></span><br><span class="line">            <span class="comment"># 第二种状态：第i-1天不持有股票，第i天休息:dp[i][0]= dp[i-1][0]</span></span><br><span class="line">            dp[i][<span class="number">0</span>]= <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">            <span class="comment">#今天持有股票的情况</span></span><br><span class="line">            <span class="comment"># 第一种状态：第i-1天持有股票，第i天不操作:dp[i][1]=dp[i-1][1]</span></span><br><span class="line">            <span class="comment"># 第二种状态：第i-1天不持有股票，第i天进行买入操作:dp[i][1]=dp[i-1][0]-prices[i]</span></span><br><span class="line">            dp[i][<span class="number">1</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>],dp[i-<span class="number">1</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        #设置二维的dp数组
+        dp = [[0]*2 for _ in range(n)]
+        #dp[0][1]表示：在第0天结束的时候，手上持有1份股票
+        dp[0][1]=-prices[0]
+        #dp[0][0]表示：在第0天结束的时候，手上持有0份股票
+        dp[0][0]=0
+        for i in range(1,n):
+            #今天不持有股票的情况
+            # 第一种状态：第i-1天持有股票，在第i天卖出：dp[i][0]=dp[i-1][1]+prices[i]
+            # 第二种状态：第i-1天不持有股票，第i天休息:dp[i][0]= dp[i-1][0]
+            dp[i][0]= max(dp[i-1][1]+prices[i],dp[i-1][0])
 
+            #今天持有股票的情况
+            # 第一种状态：第i-1天持有股票，第i天不操作:dp[i][1]=dp[i-1][1]
+            # 第二种状态：第i-1天不持有股票，第i天进行买入操作:dp[i][1]=dp[i-1][0]-prices[i]
+            dp[i][1]=max(dp[i-1][1],dp[i-1][0]-prices[i])
+        return dp[n-1][0]
+</code></pre>
 <p>尝试采用其他的解法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="python">
+</code></pre>
 <p>相较于上一题，这里的k值为正无穷<br><strong>leetcode123-买卖股票的最佳时期III(hard)（限定交易次数k&#x3D;2）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 先获取数组的长度</span></span><br><span class="line">        n = <span class="built_in">len</span>(prices)</span><br><span class="line">        <span class="comment"># 设置一个三维数组 dp</span></span><br><span class="line">        <span class="comment"># dp[i][k][b]</span></span><br><span class="line">        dp = [[[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="comment">#设置几种初始状态</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">2</span>][<span class="number">1</span>] = -prices[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">2</span>][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>][<span class="number">1</span>] = -prices[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="comment"># 对于每个坑来说，都有两种状态</span></span><br><span class="line">            <span class="comment"># 今天也就是第 i 天</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 1、今天【不持有】股票，且此时最多进行了 2 次</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][2][0]=dp[i-1][2][1]+prices[i]</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][2][0]= dp[i-1][2][0]</span></span><br><span class="line">            dp[i][<span class="number">2</span>][<span class="number">0</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">2</span>][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][<span class="number">2</span>][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 2、今天【持有】股票，且此时最多进行了 2 次</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【持有】股票，第 i 天不操作：dp[i][2][1]=dp[i-1][2][1]</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天买入：dp[i][2][1]=dp[i-1][1][0]-prices[i]</span></span><br><span class="line">            dp[i][<span class="number">2</span>][<span class="number">1</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">2</span>][<span class="number">1</span>],dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line">             </span><br><span class="line">            <span class="comment"># 3、今天【不持有】股票，且此时最多进行了 1 次</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][1][0]=dp[i-1][1][1]+prices[i]</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][1][0]=dp[i-1][1][0]</span></span><br><span class="line">            dp[i][<span class="number">1</span>][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 4、今天【持有】股票，且此时最多进行了 1 次</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【持有】股票，第 i 天不操作:dp[i][1][1]=dp[i-1][1][1]</span></span><br><span class="line">            <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天买入:dp[i][1][1]=dp[i-1][0][0]-prices[i]</span></span><br><span class="line">            dp[i][<span class="number">1</span>][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>],dp[i-<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][<span class="number">2</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        # 先获取数组的长度
+        n = len(prices)
+        # 设置一个三维数组 dp
+        # dp[i][k][b]
+        dp = [[[0]*2 for _ in range(3)] for _ in range(n)]
+        #设置几种初始状态
+        dp[0][2][1] = -prices[0]
+        dp[0][2][0] = 0
+        dp[0][1][0] = 0
+        dp[0][1][1] = -prices[0]
+        dp[0][0][0] = 0
+        # 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑
+        for i in range(1,n):
+            # 对于每个坑来说，都有两种状态
+            # 今天也就是第 i 天
 
+            # 1、今天【不持有】股票，且此时最多进行了 2 次
+            # 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][2][0]=dp[i-1][2][1]+prices[i]
+            # 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][2][0]= dp[i-1][2][0]
+            dp[i][2][0]=max(dp[i-1][2][1]+prices[i],dp[i-1][2][0])
+
+            # 2、今天【持有】股票，且此时最多进行了 2 次
+            # 第 i - 1 天【持有】股票，第 i 天不操作：dp[i][2][1]=dp[i-1][2][1]
+            # 第 i - 1 天【不持有】股票，第 i 天买入：dp[i][2][1]=dp[i-1][1][0]-prices[i]
+            dp[i][2][1]=max(dp[i-1][2][1],dp[i-1][1][0]-prices[i])
+             
+            # 3、今天【不持有】股票，且此时最多进行了 1 次
+            # 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][1][0]=dp[i-1][1][1]+prices[i]
+            # 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][1][0]=dp[i-1][1][0]
+            dp[i][1][0] = max(dp[i-1][1][1]+prices[i],dp[i-1][1][0])
+
+            # 4、今天【持有】股票，且此时最多进行了 1 次
+            # 第 i - 1 天【持有】股票，第 i 天不操作:dp[i][1][1]=dp[i-1][1][1]
+            # 第 i - 1 天【不持有】股票，第 i 天买入:dp[i][1][1]=dp[i-1][0][0]-prices[i]
+            dp[i][1][1] = max(dp[i-1][1][1],dp[i-1][0][0]-prices[i])
+        return dp[n-1][2][0]
+</code></pre>
 <p><strong>leetcode188-买卖股票的最佳时期IV(hard)（限定交易次数最多为k）</strong><br>这种情况相当于是股票问题的一个通用的版本（重点理解）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, k: <span class="built_in">int</span>, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#题目这里有一个陷阱：prices[i]的长度是有可能为0,此时数组为空，需要加一个判断语句</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> prices:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 先获取数组的长度</span></span><br><span class="line">        n = <span class="built_in">len</span>(prices)</span><br><span class="line">        <span class="comment"># 设置一个三维数组 dp</span></span><br><span class="line">        <span class="comment"># dp[i][k][b]</span></span><br><span class="line">        dp = [[[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(k+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="comment">#用一个for循环来遍历可能的交易的次数</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,k+<span class="number">1</span>):</span><br><span class="line">            <span class="comment">#设置几种初始状态</span></span><br><span class="line">            dp[<span class="number">0</span>][j][<span class="number">1</span>] = -prices[<span class="number">0</span>]</span><br><span class="line">            dp[<span class="number">0</span>][j][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            dp[<span class="number">0</span>][j-<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">            <span class="comment"># 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment"># 对于每个坑来说，都有两种状态</span></span><br><span class="line">                <span class="comment"># 今天也就是第 i 天</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 1、今天【不持有】股票，且此时最多进行了 j 次</span></span><br><span class="line">                <span class="comment"># 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][j][0]=dp[i-1][j][1]+prices[i]</span></span><br><span class="line">                <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][j][0]= dp[i-1][j][0]</span></span><br><span class="line">                dp[i][j][<span class="number">0</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][j][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][j][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 2、今天【持有】股票，且此时最多进行了 j 次</span></span><br><span class="line">                <span class="comment"># 第 i - 1 天【持有】股票，第 i 天不操作：dp[i][j][1]=dp[i-1][j][1]</span></span><br><span class="line">                <span class="comment"># 第 i - 1 天【不持有】股票，第 i 天买入：dp[i][j][1]=dp[i-1][j-1][0]-prices[i]</span></span><br><span class="line">                dp[i][j][<span class="number">1</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][j][<span class="number">1</span>],dp[i-<span class="number">1</span>][j-<span class="number">1</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][k][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -&gt; int:
+        #题目这里有一个陷阱：prices[i]的长度是有可能为0,此时数组为空，需要加一个判断语句
+        if not prices:
+            return 0
+        # 先获取数组的长度
+        n = len(prices)
+        # 设置一个三维数组 dp
+        # dp[i][k][b]
+        dp = [[[0]*2 for _ in range(k+1)] for _ in range(n)]
+        #用一个for循环来遍历可能的交易的次数
+        for j in range(1,k+1):
+            #设置几种初始状态
+            dp[0][j][1] = -prices[0]
+            dp[0][j][0] = 0
+            dp[0][j-1][0] = 0
+        
+            # 动态规划：自底向上，即从前向后遍历，实现一个萝卜一个坑
+            for i in range(1,n):
+                # 对于每个坑来说，都有两种状态
+                # 今天也就是第 i 天
+
+                # 1、今天【不持有】股票，且此时最多进行了 j 次
+                # 第 i - 1 天【持有】股票，第 i 天卖出:dp[i][j][0]=dp[i-1][j][1]+prices[i]
+                # 第 i - 1 天【不持有】股票，第 i 天不操作:dp[i][j][0]= dp[i-1][j][0]
+                dp[i][j][0]=max(dp[i-1][j][1]+prices[i],dp[i-1][j][0])
+
+                # 2、今天【持有】股票，且此时最多进行了 j 次
+                # 第 i - 1 天【持有】股票，第 i 天不操作：dp[i][j][1]=dp[i-1][j][1]
+                # 第 i - 1 天【不持有】股票，第 i 天买入：dp[i][j][1]=dp[i-1][j-1][0]-prices[i]
+                dp[i][j][1]=max(dp[i-1][j][1],dp[i-1][j-1][0]-prices[i])
+        return dp[n-1][k][0]
+</code></pre>
 <p><strong>leetcode309-最佳买卖股票时机含冷冻期（含有交易冷冻期）</strong><br>注意点：</p>
 <ol>
 <li>在卖出股票后，无法在第二天买入股票</li>
-<li>不能同时参与多笔交易（在再次购买前出售掉之前的股票）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(prices)</span><br><span class="line">        dp = [[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>]=-prices[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            dp[i][<span class="number">0</span>]= <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>]+prices[i],dp[i-<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">            <span class="comment">#和122个问题的逻辑点是相同的，唯一的区别就是这一行代码的差别，加入了一个if else的判断语句。</span></span><br><span class="line">            dp[i][<span class="number">1</span>]= <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>],  (dp[i-<span class="number">2</span>][<span class="number">0</span>] <span class="keyword">if</span> i &gt;=<span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span>)-prices[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<strong>leetcod714-买卖股票的最佳时期含手续费（每次交易含手续费）</strong><br>加入了交易的手续费，k也是一个无限的交易次数，每笔都需要进行手续费<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>], fee: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(prices)</span><br><span class="line">        dp = [[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>]=-prices[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            <span class="comment">#和122问题唯一的区别是这里减去了一个交易的费用问题</span></span><br><span class="line">            dp[i][<span class="number">0</span>]= <span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>]+prices[i]-fee,dp[i-<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">            dp[i][<span class="number">1</span>]=<span class="built_in">max</span>(dp[i-<span class="number">1</span>][<span class="number">1</span>],dp[i-<span class="number">1</span>][<span class="number">0</span>]-prices[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n-<span class="number">1</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure></li>
+<li>不能同时参与多笔交易（在再次购买前出售掉之前的股票）</li>
 </ol>
+<pre><code class="python">class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        dp = [[0]*2 for _ in range(n)]
+        dp[0][1]=-prices[0]
+        dp[0][0]=0
+        for i in range(1,n):
+            dp[i][0]= max(dp[i-1][1]+prices[i],dp[i-1][0])
+            #和122个问题的逻辑点是相同的，唯一的区别就是这一行代码的差别，加入了一个if else的判断语句。
+            dp[i][1]= max(dp[i-1][1],  (dp[i-2][0] if i &gt;=2 else 0)-prices[i])
+        return dp[n-1][0]
+</code></pre>
+<p><strong>leetcod714-买卖股票的最佳时期含手续费（每次交易含手续费）</strong><br>加入了交易的手续费，k也是一个无限的交易次数，每笔都需要进行手续费</p>
+<pre><code class="python">class Solution:
+    def maxProfit(self, prices: List[int], fee: int) -&gt; int:
+        n = len(prices)
+        dp = [[0]*2 for _ in range(n)]
+        dp[0][1]=-prices[0]
+        dp[0][0]=0
+        for i in range(1,n):
+            #和122问题唯一的区别是这里减去了一个交易的费用问题
+            dp[i][0]= max(dp[i-1][1]+prices[i]-fee,dp[i-1][0])
+            dp[i][1]=max(dp[i-1][1],dp[i-1][0]-prices[i])
+        return dp[n-1][0]
+</code></pre>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%89/" data-id="claqum2e50022h0tk1xdb9kti" data-title="动态规划算法合集（系列一）" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/19/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%B8%80/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          二叉树相关题目汇总一
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%90%88%E9%9B%86%EF%BC%88%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">动态规划合集（系列二）</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

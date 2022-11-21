@@ -1,100 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>哈希表问题汇总（散列函数） | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1 Two Sum (Easy) 217 Contains Duplicate (Easy) 594 Longest Harmonious Subsequence (Easy) 128 Longest Consecutive Sequence (Hard) 349 两个数组的交集（easy） 350 两个数组的交集 II（easy） 242 有效的字母异位词（easy） 202 快乐数（easy">
-<meta property="og:type" content="article">
-<meta property="og:title" content="哈希表问题汇总（散列函数）">
-<meta property="og:url" content="http://example.com/2022/03/21/%E5%93%88%E5%B8%8C%E8%A1%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%88%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1 Two Sum (Easy) 217 Contains Duplicate (Easy) 594 Longest Harmonious Subsequence (Easy) 128 Longest Consecutive Sequence (Hard) 349 两个数组的交集（easy） 350 两个数组的交集 II（easy） 242 有效的字母异位词（easy） 202 快乐数（easy">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-21T15:48:30.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:40:48.632Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-哈希表问题汇总（散列函数）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/21/%E5%93%88%E5%B8%8C%E8%A1%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%88%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2022-03-21T15:48:30.000Z" itemprop="datePublished">2022-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      哈希表问题汇总（散列函数）
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            哈希表问题汇总（散列函数）
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/21 Mon 23:48&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:40
+        </div>
+    </div>
+    <div class="article-content">
         <ul>
 <li>1 Two Sum (Easy)</li>
 <li>217 Contains Duplicate (Easy)</li>
@@ -137,7 +103,21 @@
 <li>需要占用大量的内存，内存浪费多，但是list相反，占用空间小，浪费内存很小</li>
 <li>在需要高速查找的地方无处不在，关键点：dict的key必须是不可变对象：通过key计算位置的算法为哈希算法，要保证算法的正确性，作为key的对象就不能变[字符串–整数等都是不可变的]（hash）,list是可变的，不能作为key</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 附上代码加强理解</span></span><br><span class="line"><span class="comment"># 新建一个字典，存入&#x27;名字-成绩&#x27;的对照表（无论表多大，查找的速度都不会慢）</span></span><br><span class="line">d = &#123; <span class="string">&#x27;Michael&#x27;</span>: <span class="number">95</span>, <span class="string">&#x27;Bob&#x27;</span>: <span class="number">75</span>,<span class="string">&#x27;Tracy&#x27;</span>: <span class="number">85</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;d[\&#x27;Michael\&#x27;] =&#x27;</span>, d[<span class="string">&#x27;Michael&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;d[\&#x27;Bob\&#x27;] =&#x27;</span>, d[<span class="string">&#x27;Bob&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;d[\&#x27;Tracy\&#x27;] =&#x27;</span>, d[<span class="string">&#x27;Tracy&#x27;</span>])</span><br><span class="line"><span class="comment"># 通过dict提供的get()方法，如果key不存在，返回自己指定的&#x27;-1&#x27;,这里是查看Thomas的成绩是否存在，如果不存在就返回-1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;d.get(\&#x27;Thomas\&#x27;, -1) =&#x27;</span>, d.get(<span class="string">&#x27;Thomas&#x27;</span>, -<span class="number">1</span>))</span><br><span class="line"><span class="comment"># 打印输出结果</span></span><br><span class="line"><span class="comment"># d[&#x27;Michael&#x27;] = 95       </span></span><br><span class="line"><span class="comment"># d[&#x27;Bob&#x27;] = 75</span></span><br><span class="line"><span class="comment"># d[&#x27;Tracy&#x27;] = 85</span></span><br><span class="line"><span class="comment"># d.get(&#x27;Thomas&#x27;, -1) = -1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 附上代码加强理解
+# 新建一个字典，存入&#39;名字-成绩&#39;的对照表（无论表多大，查找的速度都不会慢）
+d = &#123; &#39;Michael&#39;: 95, &#39;Bob&#39;: 75,&#39;Tracy&#39;: 85&#125;
+
+print(&#39;d[\&#39;Michael\&#39;] =&#39;, d[&#39;Michael&#39;])
+print(&#39;d[\&#39;Bob\&#39;] =&#39;, d[&#39;Bob&#39;])
+print(&#39;d[\&#39;Tracy\&#39;] =&#39;, d[&#39;Tracy&#39;])
+# 通过dict提供的get()方法，如果key不存在，返回自己指定的&#39;-1&#39;,这里是查看Thomas的成绩是否存在，如果不存在就返回-1
+print(&#39;d.get(\&#39;Thomas\&#39;, -1) =&#39;, d.get(&#39;Thomas&#39;, -1))
+# 打印输出结果
+# d[&#39;Michael&#39;] = 95       
+# d[&#39;Bob&#39;] = 75
+# d[&#39;Tracy&#39;] = 85
+# d.get(&#39;Thomas&#39;, -1) = -1
+</code></pre>
 <p><strong>set:需要好好的理解，并且要运用好</strong></p>
 <ol>
 <li><strong>与dict比较的类似</strong>，一组key的集合，但不存储value，在set中没有重复的key</li>
@@ -148,8 +128,33 @@
 <li><strong>set可以看成数学意义上的无序和无重复元素的集合</strong>，两个set可以做数学意义上的交集、并集等操作。</li>
 <li><strong>和dic的唯一区别：没有存储对应的value值</strong></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 附上代码，加强对set的理解</span></span><br><span class="line">s1 = <span class="built_in">set</span>([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重复元素在set中自动被过滤</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line">s2 = <span class="built_in">set</span>([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印s1和s2的交集</span></span><br><span class="line"><span class="built_in">print</span>(s1 &amp; s2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印s1和s2的并集</span></span><br><span class="line"><span class="built_in">print</span>(s1 | s2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过add(key)的方法添加4到set中</span></span><br><span class="line">s1.add(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过remove(key)的方法删除s2中的元素</span></span><br><span class="line">s2.remove(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(s2)</span><br><span class="line"><span class="comment"># 输出结果如下：</span></span><br><span class="line"><span class="comment"># &#123;1, 2, 3&#125;</span></span><br><span class="line"><span class="comment"># &#123;2, 3&#125;</span></span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"><span class="comment"># &#123;3, 4&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 附上代码，加强对set的理解
+s1 = set([1, 1, 2, 2, 3, 3])
 
+# 重复元素在set中自动被过滤
+print(s1)
+s2 = set([2, 3, 4])
+
+# 打印s1和s2的交集
+print(s1 &amp; s2)
+
+#打印s1和s2的并集
+print(s1 | s2)
+
+# 通过add(key)的方法添加4到set中
+s1.add(4)
+print(s1)
+
+# 通过remove(key)的方法删除s2中的元素
+s2.remove(2)
+print(s2)
+# 输出结果如下：
+# &#123;1, 2, 3&#125;
+# &#123;2, 3&#125;
+# &#123;1, 2, 3, 4&#125;
+# &#123;1, 2, 3, 4&#125;
+# &#123;3, 4&#125;
+</code></pre>
 <h1 id="通俗理解set和dict背后的哈希表"><a href="#通俗理解set和dict背后的哈希表" class="headerlink" title="通俗理解set和dict背后的哈希表"></a>通俗理解set和dict背后的哈希表</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39657125/article/details/111293311">https://blog.csdn.net/weixin_39657125/article/details/111293311</a><br>set,dict都是基于哈希表的数据结构<br>哈希表的实现基于数组和链表<br>哈希表是重要的数据结构；Python使用它们来实现两种重要的内置数据类型，dict和set（哈希表不是字典，字典和集合这两种数据类型是由哈希表来实现的）<br>字典是将键映射到值的一般概念。实现这种映射有很多方法，红黑树也可以实现字典</p>
 <h1 id="关于python中字典的一些操作"><a href="#关于python中字典的一些操作" class="headerlink" title="关于python中字典的一些操作"></a>关于python中字典的一些操作</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cjavapy.com/article/934/">https://www.cjavapy.com/article/934/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/guifei010/article/details/79165785?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.pc_relevant_default&amp;utm_relevant_index=1">https://blog.csdn.net/guifei010/article/details/79165785?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&amp;utm_relevant_index=1</a><br>因为字典相对运用的也不少，所以要做一个比较全面的总结，方便后续代码的撰写<br><strong>创建字典：</strong></p>
 <ol>
@@ -157,55 +162,277 @@
 <li>d &#x3D; dict()</li>
 <li>导入pytho内置的模块：<br><strong>访问字典里面的值</strong></li>
 <li>通过在方括号内引用其键名来访问字典的各项 ：x&#x3D; d[“name”]  获取key为“name”的值</li>
-<li>用get()方法来访问:x&#x3D;d.get(“age”)   获取”age”键的值<br><strong>改变字典中的值</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thisdict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;cjavapy&quot;</span>,<span class="string">&quot;age&quot;</span>: <span class="number">3</span>,<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;man&quot;</span>&#125;</span><br><span class="line">thisdict[<span class="string">&quot;age&quot;</span>] = <span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(thisdict)</span><br><span class="line"><span class="comment"># &#123;&quot;name&quot;: &quot;cjavapy&quot;,&quot;age&quot;: 5,&quot;gender&quot;: &quot;man&quot;&#125;</span></span><br></pre></td></tr></table></figure>
-<strong>遍历字典（用的最多的）</strong><br>写在前面：遍历字典中这三个是用得非常非常多的，必须要牢记住： keys()  、values() 、items()，分别是返回字典中的所有key、返回字典中的所有值、返回字典中的所有key&#x3D;value的值（返回的就是一个可以迭代的对象）</li>
-<li>用for 循环来遍历字典：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 逐行但打印字典中所有键的名称</span></span><br><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> thisdict:</span><br><span class="line">    <span class="comment">#print(x)</span></span><br><span class="line">    value=thisdict[x]</span><br><span class="line">    <span class="comment"># print(&quot;%s:%s&quot;%(x,value))</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#123;:&#125;:&#123;:&#125;&quot;</span>.<span class="built_in">format</span>(x,value))</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line"><span class="comment"># 输出如下：</span></span><br><span class="line"><span class="comment"># name:XR</span></span><br><span class="line"><span class="comment"># age:28</span></span><br><span class="line"><span class="comment"># gender:man</span></span><br><span class="line"><span class="comment"># address:web</span></span><br><span class="line"><span class="comment"># 逐行打印字典中的所有值</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> thisdict:</span><br><span class="line">    <span class="built_in">print</span>(thisdict[x])</span><br></pre></td></tr></table></figure></li>
-<li>用values()方法来返回字典的值(和上面输出的是相同的)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vales= thisdict.values()  # 这种就是取出了所有的value值了</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> thisdict.values():</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure></li>
-<li>使用items()来循环遍历键和值<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这道题是牛客网上的一道题，用的字典来写的，磕磕巴巴的写出来的</span></span><br><span class="line">hashmap=&#123;<span class="string">&#x27;rzuwnjvnuz 633&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;atl 637&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;rwyfvzsopsuiqjnr 647&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;eez 648&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;fmwafhhgeyawnool 649&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;c 637&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;f 633&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;ywzqaop 631&#x27;</span>: <span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环遍历键和值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> hashmap.items():</span><br><span class="line">    <span class="comment"># 注释的写法就是本质，不过这样写太麻烦了</span></span><br><span class="line">    <span class="comment"># print(key+ &quot; &quot; +str(value))</span></span><br><span class="line">    <span class="built_in">print</span>(key,value)</span><br><span class="line"><span class="comment"># 输出结果如下：</span></span><br><span class="line"><span class="comment"># rzuwnjvnuz 633 1</span></span><br><span class="line"><span class="comment"># atl 637 1</span></span><br><span class="line"><span class="comment"># rwyfvzsopsuiqjnr 647 1</span></span><br><span class="line"><span class="comment"># eez 648 1</span></span><br><span class="line"><span class="comment"># fmwafhhgeyawnool 649 1</span></span><br><span class="line"><span class="comment"># c 637 1</span></span><br><span class="line"><span class="comment"># f 633 1</span></span><br><span class="line"><span class="comment"># ywzqaop 631 2</span></span><br></pre></td></tr></table></figure>
-<strong>判断Key是否存在：</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thisdict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;cjavapy&quot;</span>,<span class="string">&quot;age&quot;</span>: <span class="number">3</span>,<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;man&quot;</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="string">&quot;name&quot;</span> <span class="keyword">in</span> thisdict:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#x27;name&#x27;存在字典中&quot;</span>)   </span><br><span class="line"><span class="comment"># &#x27;name&#x27;存在字典中</span></span><br></pre></td></tr></table></figure>
-<strong>字典的长度：</strong><br>主要是为了确定字典中有多少项（键值对）<br>print(len(thisdict))</li>
+<li>用get()方法来访问:x&#x3D;d.get(“age”)   获取”age”键的值<br><strong>改变字典中的值</strong></li>
 </ol>
+<pre><code class="python">thisdict = &#123;&quot;name&quot;: &quot;cjavapy&quot;,&quot;age&quot;: 3,&quot;gender&quot;: &quot;man&quot;&#125;
+thisdict[&quot;age&quot;] = 5
+print(thisdict)
+# &#123;&quot;name&quot;: &quot;cjavapy&quot;,&quot;age&quot;: 5,&quot;gender&quot;: &quot;man&quot;&#125;
+</code></pre>
+<p><strong>遍历字典（用的最多的）</strong><br>写在前面：遍历字典中这三个是用得非常非常多的，必须要牢记住： keys()  、values() 、items()，分别是返回字典中的所有key、返回字典中的所有值、返回字典中的所有key&#x3D;value的值（返回的就是一个可以迭代的对象）</p>
+<ol>
+<li>用for 循环来遍历字典：</li>
+</ol>
+<pre><code class="python"># 逐行但打印字典中所有键的名称
+thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+for x in thisdict:
+    #print(x)
+    value=thisdict[x]
+    # print(&quot;%s:%s&quot;%(x,value))
+    print(&quot;&#123;:&#125;:&#123;:&#125;&quot;.format(x,value))
+    print()
+# 输出如下：
+# name:XR
+# age:28
+# gender:man
+# address:web
+# 逐行打印字典中的所有值
+for x in thisdict:
+    print(thisdict[x])
+</code></pre>
+<ol start="2">
+<li>用values()方法来返回字典的值(和上面输出的是相同的)</li>
+</ol>
+<pre><code class="python"># vales= thisdict.values()  # 这种就是取出了所有的value值了
+for x in thisdict.values():
+    print(x)
+</code></pre>
+<ol start="3">
+<li>使用items()来循环遍历键和值</li>
+</ol>
+<pre><code class="python"># 这道题是牛客网上的一道题，用的字典来写的，磕磕巴巴的写出来的
+hashmap=&#123;&#39;rzuwnjvnuz 633&#39;: 1, &#39;atl 637&#39;: 1, &#39;rwyfvzsopsuiqjnr 647&#39;: 1, &#39;eez 648&#39;: 1, &#39;fmwafhhgeyawnool 649&#39;: 1, &#39;c 637&#39;: 1, &#39;f 633&#39;: 1, &#39;ywzqaop 631&#39;: 2&#125;
+
+# 循环遍历键和值
+for key,value in hashmap.items():
+    # 注释的写法就是本质，不过这样写太麻烦了
+    # print(key+ &quot; &quot; +str(value))
+    print(key,value)
+# 输出结果如下：
+# rzuwnjvnuz 633 1
+# atl 637 1
+# rwyfvzsopsuiqjnr 647 1
+# eez 648 1
+# fmwafhhgeyawnool 649 1
+# c 637 1
+# f 633 1
+# ywzqaop 631 2
+</code></pre>
+<p><strong>判断Key是否存在：</strong></p>
+<pre><code class="python">thisdict = &#123;&quot;name&quot;: &quot;cjavapy&quot;,&quot;age&quot;: 3,&quot;gender&quot;: &quot;man&quot;&#125;
+if &quot;name&quot; in thisdict:
+    print(&quot;&#39;name&#39;存在字典中&quot;)   
+# &#39;name&#39;存在字典中
+</code></pre>
+<p><strong>字典的长度：</strong><br>主要是为了确定字典中有多少项（键值对）<br>print(len(thisdict))</p>
 <p><strong>向字典中添加项目元素</strong><br>主要通过新的索引键为其分配值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thisdict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;   XR&quot;</span>,<span class="string">&quot;age&quot;</span>: <span class="number">28</span>,<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;man&quot;</span>&#125;</span><br><span class="line">thisdict[<span class="string">&quot;address&quot;</span>] = <span class="string">&quot;web&quot;</span></span><br><span class="line"><span class="built_in">print</span>(thisdict)</span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;   XR&#x27;, &#x27;age&#x27;: 28, &#x27;gender&#x27;: &#x27;man&#x27;, &#x27;address&#x27;: &#x27;web&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">thisdict = &#123;&quot;name&quot;: &quot;   XR&quot;,&quot;age&quot;: 28,&quot;gender&quot;: &quot;man&quot;&#125;
+thisdict[&quot;address&quot;] = &quot;web&quot;
+print(thisdict)
+# &#123;&#39;name&#39;: &#39;   XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+</code></pre>
 <p><strong>删除字典中项目元素</strong></p>
 <ol>
-<li>pop()方法移除具有指定key的项:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">thisdict.pop(<span class="string">&quot;age&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(thisdict)</span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;XR&#x27;, &#x27;gender&#x27;: &#x27;man&#x27;, &#x27;address&#x27;: &#x27;web&#x27;&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>popitem()方法删除最后插入的项<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">thisdict.popitem()</span><br><span class="line"><span class="built_in">print</span>(thisdict)</span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;XR&#x27;, &#x27;age&#x27;: 28, &#x27;gender&#x27;: &#x27;man&#x27;&#125;</span></span><br><span class="line">````</span><br><span class="line"><span class="number">3.</span> <span class="keyword">del</span>()关键字删除具有指定键名的项目</span><br><span class="line">```python</span><br><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> thisdict[<span class="string">&quot;gender&quot;</span>]</span><br><span class="line"><span class="built_in">print</span>(thisdict)</span><br><span class="line"><span class="comment">#  &#123;&#x27;name&#x27;: &#x27;XR&#x27;, &#x27;age&#x27;: 28, &#x27;address&#x27;: &#x27;web&#x27;&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>clear()方法清空字典<br>thisdict.clear()<br><strong>复制一个字典：</strong><br>不能简单地通过输入dict2 &#x3D; dict1来复制字典，因为dict2将仅是对dict1的引用，对dict1所做的更改也将自动被改为indict2。<br>有很多方法可以制作副本，一种方法是使用内置的Dictionary方法copy()。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用copy（）方法制作字典的副本：</span></span><br><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">mydict=thisdict.copy()</span><br><span class="line"><span class="built_in">print</span>(mydict)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用内置函数dict()</span></span><br><span class="line">```python</span><br><span class="line">thisdict =&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">mydict=<span class="built_in">dict</span>(thisdict)</span><br><span class="line"><span class="built_in">print</span>(mydict)</span><br></pre></td></tr></table></figure>
-<strong>嵌套的字典：</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建一个字典，嵌套了三个字典</span></span><br><span class="line">myfamily = &#123;</span><br><span class="line"><span class="string">&quot;child1&quot;</span> : &#123;<span class="string">&quot;name&quot;</span> : <span class="string">&quot;Emil&quot;</span>,<span class="string">&quot;year&quot;</span> : <span class="number">2004</span>&#125;,</span><br><span class="line"><span class="string">&quot;child2&quot;</span> : &#123;<span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tobias&quot;</span>,<span class="string">&quot;year&quot;</span> : <span class="number">2007</span>&#125;,</span><br><span class="line"><span class="string">&quot;child3&quot;</span> : &#123;<span class="string">&quot;name&quot;</span> : <span class="string">&quot;Linus&quot;</span>,<span class="string">&quot;year&quot;</span> : <span class="number">2011</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<strong>通过 sorted函数，可以进行排序（</strong>）：**<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;APP&#x27;</span>: <span class="number">4</span>, <span class="string">&#x27;each&#x27;</span>: <span class="number">7</span>&#125;</span><br><span class="line">lis1=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> d:d[<span class="number">0</span>]) <span class="comment">#按键来排序</span></span><br><span class="line">lis2=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> d:d[<span class="number">1</span>]) <span class="comment">#按值来排序</span></span><br><span class="line"><span class="built_in">print</span>(lis1)</span><br><span class="line"><span class="built_in">print</span>(lis2)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">[(<span class="string">&#x27;A&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;APP&#x27;</span>, <span class="number">4</span>), (<span class="string">&#x27;C&#x27;</span>, <span class="number">5</span>), (<span class="string">&#x27;each&#x27;</span>, <span class="number">7</span>)]</span><br><span class="line">[(<span class="string">&#x27;A&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;APP&#x27;</span>, <span class="number">4</span>), (<span class="string">&#x27;C&#x27;</span>, <span class="number">5</span>), (<span class="string">&#x27;each&#x27;</span>, <span class="number">7</span>)]</span><br></pre></td></tr></table></figure>
-<strong>d.values()  以列表返回字典中的所有值</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hashmap = &#123;<span class="number">8</span>: <span class="number">46828</span>, <span class="number">24</span>: <span class="number">47153</span>, <span class="number">3</span>: <span class="number">93735</span>, <span class="number">13</span>: <span class="number">72600</span>, <span class="number">4</span>: <span class="number">44422</span>&#125;</span><br><span class="line">l=hashmap.values() </span><br><span class="line"><span class="built_in">print</span>(l)</span><br><span class="line"><span class="comment"># dict_values([46828, 47153, 93735, 72600, 44422])</span></span><br></pre></td></tr></table></figure>
-<strong>d.keys()    返回列表中所有的键</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hashmap = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">l=hashmap.keys() </span><br><span class="line"><span class="built_in">print</span>(l)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="comment"># dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27;, &#x27;address&#x27;])</span></span><br></pre></td></tr></table></figure>
-<strong>d.items()      以列表的形式返回可遍历的元组数组</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hashmap = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line">l=hashmap.items() </span><br><span class="line"><span class="built_in">print</span>(l)</span><br><span class="line"><span class="comment"># dict_items([(&#x27;name&#x27;, &#x27;XR&#x27;), (&#x27;age&#x27;, 28), (&#x27;gender&#x27;, &#x27;man&#x27;), (&#x27;address&#x27;, &#x27;web&#x27;)])</span></span><br></pre></td></tr></table></figure>
-<strong>用dict.get()返回指定键的值</strong><br>语法如下：dict.get(key[,value])</li>
+<li>pop()方法移除具有指定key的项:</li>
+</ol>
+<pre><code class="python">thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+thisdict.pop(&quot;age&quot;)
+print(thisdict)
+# &#123;&#39;name&#39;: &#39;XR&#39;, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+</code></pre>
+<ol start="2">
+<li>popitem()方法删除最后插入的项</li>
+</ol>
+<pre><code class="python">thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+thisdict.popitem()
+print(thisdict)
+# &#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;&#125;
+</code></pre>
+<ol start="3">
+<li>del()关键字删除具有指定键名的项目</li>
+</ol>
+<pre><code class="python">thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+del thisdict[&quot;gender&quot;]
+print(thisdict)
+#  &#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;address&#39;: &#39;web&#39;&#125;
+</code></pre>
+<ol start="4">
+<li>clear()方法清空字典<br>thisdict.clear()<br><strong>复制一个字典：</strong><br>不能简单地通过输入dict2 &#x3D; dict1来复制字典，因为dict2将仅是对dict1的引用，对dict1所做的更改也将自动被改为indict2。<br>有很多方法可以制作副本，一种方法是使用内置的Dictionary方法copy()。</li>
+</ol>
+<pre><code class="python"># 使用copy（）方法制作字典的副本：
+thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+mydict=thisdict.copy()
+print(mydict)
+</code></pre>
+<pre><code class="python"># 使用内置函数dict()
+```python
+thisdict =&#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+mydict=dict(thisdict)
+print(mydict)
+</code></pre>
+<p><strong>嵌套的字典：</strong></p>
+<pre><code class="python"># 构建一个字典，嵌套了三个字典
+myfamily = &#123;
+&quot;child1&quot; : &#123;&quot;name&quot; : &quot;Emil&quot;,&quot;year&quot; : 2004&#125;,
+&quot;child2&quot; : &#123;&quot;name&quot; : &quot;Tobias&quot;,&quot;year&quot; : 2007&#125;,
+&quot;child3&quot; : &#123;&quot;name&quot; : &quot;Linus&quot;,&quot;year&quot; : 2011&#125;
+&#125;
+</code></pre>
+<p><strong>通过 sorted函数，可以进行排序（</strong>）：**</p>
+<pre><code class="python">dict=&#123;&#39;A&#39;: 1, &#39;C&#39;: 5, &#39;APP&#39;: 4, &#39;each&#39;: 7&#125;
+lis1=sorted(dict.items(),key=lambda d:d[0]) #按键来排序
+lis2=sorted(dict.items(),key=lambda d:d[1]) #按值来排序
+print(lis1)
+print(lis2)
+# 输出结果
+[(&#39;A&#39;, 1), (&#39;APP&#39;, 4), (&#39;C&#39;, 5), (&#39;each&#39;, 7)]
+[(&#39;A&#39;, 1), (&#39;APP&#39;, 4), (&#39;C&#39;, 5), (&#39;each&#39;, 7)]
+</code></pre>
+<p><strong>d.values()  以列表返回字典中的所有值</strong></p>
+<pre><code class="python">hashmap = &#123;8: 46828, 24: 47153, 3: 93735, 13: 72600, 4: 44422&#125;
+l=hashmap.values() 
+print(l)
+# dict_values([46828, 47153, 93735, 72600, 44422])
+</code></pre>
+<p><strong>d.keys()    返回列表中所有的键</strong></p>
+<pre><code class="python">hashmap = &#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+l=hashmap.keys() 
+print(l)
+# 输出结果
+# dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;gender&#39;, &#39;address&#39;])
+</code></pre>
+<p><strong>d.items()      以列表的形式返回可遍历的元组数组</strong></p>
+<pre><code class="python">hashmap = &#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+l=hashmap.items() 
+print(l)
+# dict_items([(&#39;name&#39;, &#39;XR&#39;), (&#39;age&#39;, 28), (&#39;gender&#39;, &#39;man&#39;), (&#39;address&#39;, &#39;web&#39;)])
+</code></pre>
+<p><strong>用dict.get()返回指定键的值</strong><br>语法如下：dict.get(key[,value])</p>
+<ol>
 <li>key–字典中要查的键</li>
-<li>value—如果指定的键值存在，返回默认值<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 辅助理解这个知识点</span></span><br><span class="line">hashmap = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;XR&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">28</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>, <span class="string">&#x27;address&#x27;</span>: <span class="string">&#x27;web&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 直接查询</span></span><br><span class="line"><span class="built_in">print</span>(hashmap.get(<span class="string">&#x27;name&#x27;</span>))</span><br><span class="line"><span class="comment"># 直接查询，查询不成功返回None</span></span><br><span class="line"><span class="built_in">print</span>(hashmap.get(<span class="string">&#x27;birth&#x27;</span>))</span><br><span class="line"><span class="comment"># 直接查询，查询不成功返回指定的输出</span></span><br><span class="line"><span class="built_in">print</span>(hashmap.get(<span class="string">&#x27;parent&#x27;</span>),<span class="string">&#x27;该项信息缺失&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印结果如下</span></span><br><span class="line">XR</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="literal">None</span> 该项信息缺失</span><br></pre></td></tr></table></figure>
-与dict[key]的区别：</li>
+<li>value—如果指定的键值存在，返回默认值</li>
+</ol>
+<pre><code class="python"># 辅助理解这个知识点
+hashmap = &#123;&#39;name&#39;: &#39;XR&#39;, &#39;age&#39;: 28, &#39;gender&#39;: &#39;man&#39;, &#39;address&#39;: &#39;web&#39;&#125;
+# 直接查询
+print(hashmap.get(&#39;name&#39;))
+# 直接查询，查询不成功返回None
+print(hashmap.get(&#39;birth&#39;))
+# 直接查询，查询不成功返回指定的输出
+print(hashmap.get(&#39;parent&#39;),&#39;该项信息缺失&#39;)
+# 打印结果如下
+XR
+None
+None 该项信息缺失
+</code></pre>
+<p>与dict[key]的区别：</p>
+<ol>
 <li>get(key) 方法在 key（键）不在字典中时，可以返回默认值 None 或者设置的默认值。</li>
 <li>dict[key]：在Key不在字典中的时候，会触发KeyError异常</li>
 </ol>
 <p><strong>d.fromkeys(seq[,val])   创建一个新字典   以序列seq中的元素做键   val做字典所有键对应的初始值</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nums =[<span class="number">0</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">8</span>]</span><br><span class="line">d1=<span class="built_in">dict</span>.fromkeys(nums, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(d1)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="comment"># &#123;0: 1, 2: 1, 5: 1, 8: 1&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">nums =[0,2,5,8]
+d1=dict.fromkeys(nums, 1)
+print(d1)
+# 输出结果
+# &#123;0: 1, 2: 1, 5: 1, 8: 1&#125;
+</code></pre>
 <p><strong>使用模块里面的字典以及与lambda结合的用法</strong><br>以一个例子来说明：<br>需要生成一个字典，对于任意key的查询，value都返回XR</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一种实现</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func1</span>():</span><br><span class="line">    <span class="keyword">return</span> XR</span><br><span class="line">func2=defaultdict(func1)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第二种实现：采用与lambda结合的方式（不用这种方式就会忘掉）</span></span><br><span class="line"><span class="comment"># 表示用默认的字典defaultdict,如果没有找到对应的value值，会返回一个默认值</span></span><br><span class="line">func2=defaultdict(<span class="keyword">lambda</span>:XR)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 第一种实现
+from collections import defaultdict 
+def func1():
+    return XR
+func2=defaultdict(func1)
+</code></pre>
+<pre><code class="python"># 第二种实现：采用与lambda结合的方式（不用这种方式就会忘掉）
+# 表示用默认的字典defaultdict,如果没有找到对应的value值，会返回一个默认值
+func2=defaultdict(lambda:XR)
+</code></pre>
 <p><strong>用于统计一个字符中各个字符串的数量</strong><br>这个例子使用字典特别的巧妙，值得自己去整理</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="string">&quot;ABBC&quot;</span></span><br><span class="line"><span class="comment"># hashmap=dict((i,t.count(i)) for i t)</span></span><br><span class="line"><span class="comment"># 换一种好理解的方式</span></span><br><span class="line">hashmap=<span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> t:</span><br><span class="line">    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">        hashmap[c]=<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hashmap[c]+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(hashmap)</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;B&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">t=&quot;ABBC&quot;
+# hashmap=dict((i,t.count(i)) for i t)
+# 换一种好理解的方式
+hashmap=dict()
+for c in t:
+    if c not in hashmap:
+        hashmap[c]=1
+    else:
+        hashmap[c]+=1
+print(hashmap)
+# 打印结果如下：
+&#123;&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 1&#125;
+</code></pre>
 <p>以下为leetcoad上的一些关于哈希表的比较典型的几道题目，需要重点掌握。</p>
 <h1 id="leetcoad01-两数之和"><a href="#leetcoad01-两数之和" class="headerlink" title="leetcoad01-两数之和"></a>leetcoad01-两数之和</h1><p>这是leetcoad上一道比较简单的题目，也是第一题，解法一用到了常规的思路，解法二用到了散列表也即哈希表的知识点<br>解题思路如下：<br>    * 定义一个二维数组（为了存储找到的两个数）<br>    * 写一个两层的循环，范围是0~num.size<br>    * 判断如下：如果下标为i和j的两个数之和等于目标值并且下标不相等<br>    * 把下标为i和j的两个数储存在定义的数组a里面去。<br>    * 循环结束将a输出来</p>
 <p>解法一：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> :</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="built_in">list</span> = [<span class="number">0</span>,<span class="number">0</span>]    <span class="comment">#定义一个二维的数组</span></span><br><span class="line">        <span class="comment">#写两层循环直接进行遍历寻找到符合相应条件的值</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">if</span> nums[i]+nums[j] == target <span class="keyword">and</span> i != j:</span><br><span class="line">                <span class="comment">#把相应的符合条件的下标赋值给之前定义的数组</span></span><br><span class="line">                    <span class="built_in">list</span>[<span class="number">0</span>]=i</span><br><span class="line">                    <span class="built_in">list</span>[<span class="number">1</span>]=j</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution :
+    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+        list = [0,0]    #定义一个二维的数组
+        #写两层循环直接进行遍历寻找到符合相应条件的值
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j] == target and i != j:
+                #把相应的符合条件的下标赋值给之前定义的数组
+                    list[0]=i
+                    list[1]=j
+        return list
+</code></pre>
 <p>解法二：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本质上将数组的值和索引存入map中，当遍历到某个值num的时候，判断map中是否含有target-x</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        two sum的做法，实际就是在nums[i+1:],求解target为-nums[i]的two sum</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">       <span class="comment"># 首先构建一个哈希表，用来存放数组的元素值以及索引值</span></span><br><span class="line">       <span class="comment"># 其中 key 是数组中的元素值</span></span><br><span class="line">       <span class="comment"># value 为数组中元素值的索引</span></span><br><span class="line">       <span class="built_in">map</span> = <span class="built_in">dict</span>()</span><br><span class="line">       <span class="comment"># 接下来，遍历整个数组，利用enumerate函数可以输出下标以及对应的值</span></span><br><span class="line">       <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">           <span class="comment"># 另外的一个值用目标值-num</span></span><br><span class="line">           anotherNum = target - num</span><br><span class="line">           <span class="comment"># 查看这个值是否在哈希表中</span></span><br><span class="line">           <span class="keyword">if</span> anotherNum <span class="keyword">in</span> <span class="built_in">map</span> :</span><br><span class="line">               <span class="comment"># 因为题目的意思答案是唯一额，如果有就可以直接输出来，返回两个数的下标</span></span><br><span class="line">               <span class="keyword">return</span> [ <span class="built_in">map</span>[ target - num ] , i ]</span><br><span class="line">           <span class="keyword">else</span>:</span><br><span class="line">               <span class="comment"># 按照nums[i] :i的格式添加到res中，key是对应的值，value是对应的下标</span></span><br><span class="line">             <span class="built_in">map</span>[nums[i]] = i</span><br><span class="line">       <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python"># 本质上将数组的值和索引存入map中，当遍历到某个值num的时候，判断map中是否含有target-x
+class Solution:
+    &#39;&#39;&#39;
+        two sum的做法，实际就是在nums[i+1:],求解target为-nums[i]的two sum
+    &#39;&#39;&#39;
+    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+       # 首先构建一个哈希表，用来存放数组的元素值以及索引值
+       # 其中 key 是数组中的元素值
+       # value 为数组中元素值的索引
+       map = dict()
+       # 接下来，遍历整个数组，利用enumerate函数可以输出下标以及对应的值
+       for i, num in enumerate(nums):
+           # 另外的一个值用目标值-num
+           anotherNum = target - num
+           # 查看这个值是否在哈希表中
+           if anotherNum in map :
+               # 因为题目的意思答案是唯一额，如果有就可以直接输出来，返回两个数的下标
+               return [ map[ target - num ] , i ]
+           else:
+               # 按照nums[i] :i的格式添加到res中，key是对应的值，value是对应的下标
+             map[nums[i]] = i
+       return []
+</code></pre>
 <h1 id="leetcoad15-三数之和"><a href="#leetcoad15-三数之和" class="headerlink" title="leetcoad15-三数之和"></a>leetcoad15-三数之和</h1><p>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/3sum/">https://leetcode-cn.com/problems/3sum/</a><br>视频链接：<a target="_blank" rel="noopener" href="https://www.algomooc.com/1287.html">https://www.algomooc.com/1287.html</a><br>难点分析：如何去除重复解的问题(这道题也是一个关键的题目。务必要牢牢的掌握里面的框架以及实现的细节)<br><strong>算法流程：排序+双指针</strong><br>不重复的本质：（用排序就可以解决）</p>
 <ol>
 <li>第二重循环枚举到的元素不小于当前第一重循环枚举到的元素</li>
-<li>第三重循环枚举到的元素不小于当前第二重循环枚举到的元素<br>对于每一重循环 :相邻两次枚举的元素不能相同，也需要剔除掉，跳到下一个不相同的元素<br>基于三重循环的伪代码实现：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nums.sort()</span><br><span class="line"><span class="keyword">for</span> first = <span class="number">0</span> .. n-<span class="number">1</span></span><br><span class="line">    // 只有和上一次枚举的元素不相同，我们才会进行枚举</span><br><span class="line">    <span class="keyword">if</span> first == <span class="number">0</span> <span class="keyword">or</span> nums[first] != nums[first-<span class="number">1</span>] then</span><br><span class="line">        <span class="keyword">for</span> second = first+<span class="number">1</span> .. n-<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> second == first+<span class="number">1</span> <span class="keyword">or</span> nums[second] != nums[second-<span class="number">1</span>] then</span><br><span class="line">                <span class="keyword">for</span> third = second+<span class="number">1</span> .. n-<span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> third == second+<span class="number">1</span> <span class="keyword">or</span> nums[third] != nums[third-<span class="number">1</span>] then</span><br><span class="line">                        // 判断是否有 a+b+c==<span class="number">0</span></span><br><span class="line">                        check(first, second, third)</span><br></pre></td></tr></table></figure>
-由于固定一个a，那么另外的b和c是联动的，也即第二重循环和第三重循环是并列的关系，继续优化，保持第二重循环不变，将第三重循环变成从数组的最右端开始向左移动的指针<br>伪代码实现如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">nums.sort()</span><br><span class="line">for first = 0 .. n-1</span><br><span class="line">    if first == 0 or nums[first] != nums[first-1] then</span><br><span class="line">        // 第三重循环对应的指针</span><br><span class="line">        third = n-1</span><br><span class="line">        for second = first+1 .. n-1</span><br><span class="line">            if second == first+1 or nums[second] != nums[second-1] then</span><br><span class="line">                // 向左移动指针，直到 a+b+c 不大于 0</span><br><span class="line">                while nums[first]+nums[second]+nums[third] &gt; 0</span><br><span class="line">                    third = third-1</span><br><span class="line">                // 判断是否有 a+b+c==0</span><br><span class="line">                check(first, second, third)</span><br></pre></td></tr></table></figure>
-流程如下：</li>
+<li>第三重循环枚举到的元素不小于当前第二重循环枚举到的元素<br>对于每一重循环 :相邻两次枚举的元素不能相同，也需要剔除掉，跳到下一个不相同的元素<br>基于三重循环的伪代码实现：</li>
+</ol>
+<pre><code class="python">nums.sort()
+for first = 0 .. n-1
+    // 只有和上一次枚举的元素不相同，我们才会进行枚举
+    if first == 0 or nums[first] != nums[first-1] then
+        for second = first+1 .. n-1
+            if second == first+1 or nums[second] != nums[second-1] then
+                for third = second+1 .. n-1
+                    if third == second+1 or nums[third] != nums[third-1] then
+                        // 判断是否有 a+b+c==0
+                        check(first, second, third)
+</code></pre>
+<p>由于固定一个a，那么另外的b和c是联动的，也即第二重循环和第三重循环是并列的关系，继续优化，保持第二重循环不变，将第三重循环变成从数组的最右端开始向左移动的指针<br>伪代码实现如下：</p>
+<pre><code>nums.sort()
+for first = 0 .. n-1
+    if first == 0 or nums[first] != nums[first-1] then
+        // 第三重循环对应的指针
+        third = n-1
+        for second = first+1 .. n-1
+            if second == first+1 or nums[second] != nums[second-1] then
+                // 向左移动指针，直到 a+b+c 不大于 0
+                while nums[first]+nums[second]+nums[third] &gt; 0
+                    third = third-1
+                // 判断是否有 a+b+c==0
+                check(first, second, third)
+</code></pre>
+<p>流程如下：</p>
+<ol>
 <li>特判，对于数组长度 n，如果数组为 null 或者数组长度小于 3，返回 []。</li>
 <li>对数组进行排序。</li>
 <li>遍历排序后数组：<span id="more"></span>
@@ -223,176 +450,317 @@
 </ol>
 <p><strong>复杂度分析</strong><br>时间复杂度：O(n2),数组排序O(NlogN),遍历数组O(n),双指针遍历O(n),总体上来说：O(NlogN)+O(n) *O(n)<br>空间复杂度：O(1)</p>
 <!-- more -->
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment">#题目存在多组解，每一组解都是一个数组，使用二维数组才存储所有的解</span></span><br><span class="line">        ans = []</span><br><span class="line">        <span class="comment">#获取数组的长度</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment">#边界情况的判断</span></span><br><span class="line">        <span class="keyword">if</span> nums == <span class="literal">None</span> <span class="keyword">or</span> n &lt;<span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">        <span class="comment">#对数组进行排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line"></span><br><span class="line">        <span class="comment">#开始遍历整个数组</span></span><br><span class="line">        <span class="comment">#在遍历的过程中，观察设置的三个位置的元素之和的大小</span></span><br><span class="line">        <span class="comment">#nums[i]为从左到右观察过去的元素</span></span><br><span class="line">        <span class="comment">#left 为从i到 len-1的元素</span></span><br><span class="line">        <span class="comment">#right为从len -1向左移动到i的元素</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n):</span><br><span class="line">            <span class="comment">#如果发现nums[i]&gt;0，那么三数之和一定&gt;0,直接退出相应的循环</span></span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt;<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="comment">#由于不能包含重复的元素，执行一个去重的操作</span></span><br><span class="line">            <span class="comment">#为了不产生越界的情况，需要注明i的范围是&gt;0的</span></span><br><span class="line">            <span class="keyword">if</span> i &gt;<span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i -<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="comment">#left 为从i到 len-1的元素，向右移动</span></span><br><span class="line">            left = i + <span class="number">1</span></span><br><span class="line">            <span class="comment">#right为从len -1向左移动到i的元素，向左移动</span></span><br><span class="line">            right = n - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> left &lt; right:</span><br><span class="line">                <span class="comment">#计算这三者之和</span></span><br><span class="line">                <span class="built_in">sum</span> = nums[i] +nums[left] +nums[right]</span><br><span class="line">                <span class="comment">#发现三者之和为0</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span> ==<span class="number">0</span>:</span><br><span class="line">                    <span class="comment">#把相应的结果记录下来</span></span><br><span class="line">                    ans.append([nums[i],nums[left],nums[right]])</span><br><span class="line">                    <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[left] == nums[left + <span class="number">1</span>]:</span><br><span class="line">                        <span class="comment">#left向右移动</span></span><br><span class="line">                        left +=<span class="number">1</span></span><br><span class="line">                    <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[right] == nums[right -<span class="number">1</span>]:</span><br><span class="line">                        right -=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 当上述的情况满足要求的时候，这个时候两个指针需要同时移动才能满足下一次的搜寻要求</span></span><br><span class="line">                    <span class="comment">#left向右移动</span></span><br><span class="line">                    left +=<span class="number">1</span></span><br><span class="line">                    <span class="comment">#right向左移动</span></span><br><span class="line">                    right -=<span class="number">1</span></span><br><span class="line">                <span class="comment">#如果三者之和&lt;0,那么需要去寻找一个更大的数出来</span></span><br><span class="line">                <span class="keyword">elif</span> <span class="built_in">sum</span> &lt; <span class="number">0</span>:</span><br><span class="line">                    <span class="comment">#left向右移动</span></span><br><span class="line">                    left +=<span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> <span class="built_in">sum</span> &gt;<span class="number">0</span>:</span><br><span class="line">                    <span class="comment">#right向左移动</span></span><br><span class="line">                    right -=<span class="number">1</span></span><br><span class="line">        <span class="comment">#返回结果</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def threeSum(self, nums: List[int]) -&gt; List[List[int]]:
+        #题目存在多组解，每一组解都是一个数组，使用二维数组才存储所有的解
+        ans = []
+        #获取数组的长度
+        n = len(nums)
+        #边界情况的判断
+        if nums == None or n &lt;3:
+            return ans
 
+        #对数组进行排序
+        nums.sort()
+
+        #开始遍历整个数组
+        #在遍历的过程中，观察设置的三个位置的元素之和的大小
+        #nums[i]为从左到右观察过去的元素
+        #left 为从i到 len-1的元素
+        #right为从len -1向左移动到i的元素
+        for i in range(0,n):
+            #如果发现nums[i]&gt;0，那么三数之和一定&gt;0,直接退出相应的循环
+            if nums[i] &gt;0:
+                break
+            #由于不能包含重复的元素，执行一个去重的操作
+            #为了不产生越界的情况，需要注明i的范围是&gt;0的
+            if i &gt;0 and nums[i] == nums[i -1]:
+                continue
+            #left 为从i到 len-1的元素，向右移动
+            left = i + 1
+            #right为从len -1向左移动到i的元素，向左移动
+            right = n - 1
+            while left &lt; right:
+                #计算这三者之和
+                sum = nums[i] +nums[left] +nums[right]
+                #发现三者之和为0
+                if sum ==0:
+                    #把相应的结果记录下来
+                    ans.append([nums[i],nums[left],nums[right]])
+                    while left &lt; right and nums[left] == nums[left + 1]:
+                        #left向右移动
+                        left +=1
+                    while left &lt; right and nums[right] == nums[right -1]:
+                        right -=1
+
+                    # 当上述的情况满足要求的时候，这个时候两个指针需要同时移动才能满足下一次的搜寻要求
+                    #left向右移动
+                    left +=1
+                    #right向左移动
+                    right -=1
+                #如果三者之和&lt;0,那么需要去寻找一个更大的数出来
+                elif sum &lt; 0:
+                    #left向右移动
+                    left +=1
+                elif sum &gt;0:
+                    #right向左移动
+                    right -=1
+        #返回结果
+        return ans
+</code></pre>
 <p>如果采用哈希表又应该怎么去做<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/3sum/solution/you-qian-ru-shen-di-jin-si-jie-fa-jiao-w-sm3j/">https://leetcode-cn.com/problems/3sum/solution/you-qian-ru-shen-di-jin-si-jie-fa-jiao-w-sm3j/</a><br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-xiao-bai-ye-neng-dong-d-ngdl/">https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-xiao-bai-ye-neng-dong-d-ngdl/</a>后面有时间看看这两篇题解，也是写得不错的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 借鉴别人的思路补充一个哈希+双层循环的思路（两数之和+一次哈希）</span></span><br><span class="line"><span class="comment"># 自定义一个target=-nums[i]，遍历剩下的元素，使用HashSet来寻找是否满足b +c=-a的结果</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># 判断边界条件</span></span><br><span class="line">        n= <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums <span class="keyword">or</span> n&lt;<span class="number">3</span>: <span class="keyword">return</span> []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 创建哈希set集合</span></span><br><span class="line">        res = <span class="built_in">set</span>()</span><br><span class="line">        <span class="comment"># 对数组进行排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="comment"># 如果最小的数大于0或最大的数是小于0的，都说明是不符合要求的</span></span><br><span class="line">        <span class="keyword">if</span> nums[<span class="number">0</span>]&gt;<span class="number">0</span> <span class="keyword">or</span> nums[-<span class="number">1</span>]&lt;<span class="number">0</span>: <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 遍历数组</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">2</span>):</span><br><span class="line">            <span class="comment"># 三元组a去重，如果发现后一个数和前一个数相等，执行下一次循环</span></span><br><span class="line">            <span class="keyword">if</span> i &gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]==nums[i-<span class="number">1</span>]: <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 一旦发现nums[i]大于0，因为数组时经过排序的，所有不可能有三个数之和等于0，直接跳出循环</span></span><br><span class="line">            <span class="keyword">if</span> nums[i]&gt;<span class="number">0</span>: <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># 将问题转换为两数之和的问题，创建一个目标值：target=-nums[i]，这里的思路和两数之和如出一辙，也是值得反复回味的。</span></span><br><span class="line">            target=-nums[i]</span><br><span class="line">            <span class="comment"># 创建一个哈希集合</span></span><br><span class="line">            HashSet=<span class="built_in">set</span>()</span><br><span class="line">            <span class="comment"># j从i的下一个数开始遍历,为了寻找第三个数</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n):</span><br><span class="line">                <span class="comment"># 要想凑成0，就要满足第三数=target-nums[j]</span></span><br><span class="line">                anotheNumber=target-nums[j]</span><br><span class="line">                <span class="comment"># 如果b的值不在在哈希表中，就把b的值加入到哈希表中，然后开始下一轮循环</span></span><br><span class="line">                <span class="keyword">if</span> anotheNumber <span class="keyword">not</span> <span class="keyword">in</span> HashSet:</span><br><span class="line">                    HashSet.add(nums[j])</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                  </span><br><span class="line">                <span class="comment"># 形成一个三元数组：[a,b,c]</span></span><br><span class="line">                temp = [nums[i],anotheNumber,nums[j]]</span><br><span class="line">                <span class="comment"># 对这个三元数组再次排序</span></span><br><span class="line">                temp.sort()</span><br><span class="line">                <span class="comment"># 把这个三元数组转化为元组(去重)，如果不在res数组中，就把这个三元数组以元组的形式加入res中</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">tuple</span>(temp) <span class="keyword">not</span> <span class="keyword">in</span> res:</span><br><span class="line">                    res.add(<span class="built_in">tuple</span>(temp))    </span><br><span class="line">        <span class="comment"># 把res中的元组数据转化为列表后输出最后的结果（列表生成式的写法)</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="built_in">list</span>(num) <span class="keyword">for</span> num <span class="keyword">in</span> res ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 头文件</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums=[-<span class="number">2</span>,<span class="number">0</span>,<span class="number">3</span>,-<span class="number">1</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,-<span class="number">3</span>,-<span class="number">5</span>,<span class="number">4</span>,<span class="number">0</span>]</span><br><span class="line">    res = Solution().threeSum(nums)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;输出 =&gt; &quot;</span> ,res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 借鉴别人的思路补充一个哈希+双层循环的思路（两数之和+一次哈希）
+# 自定义一个target=-nums[i]，遍历剩下的元素，使用HashSet来寻找是否满足b +c=-a的结果
+from typing import List
 
+class Solution:
+    def threeSum(self, nums: List[int]) -&gt; List[List[int]]:
+        # 判断边界条件
+        n= len(nums)
+        if not nums or n&lt;3: return []
+        
+        # 创建哈希set集合
+        res = set()
+        # 对数组进行排序
+        nums.sort()
+        # 如果最小的数大于0或最大的数是小于0的，都说明是不符合要求的
+        if nums[0]&gt;0 or nums[-1]&lt;0: return []
+
+        # 遍历数组
+        for i in range(n-2):
+            # 三元组a去重，如果发现后一个数和前一个数相等，执行下一次循环
+            if i &gt;0 and nums[i]==nums[i-1]: continue
+
+            # 一旦发现nums[i]大于0，因为数组时经过排序的，所有不可能有三个数之和等于0，直接跳出循环
+            if nums[i]&gt;0: break
+            # 将问题转换为两数之和的问题，创建一个目标值：target=-nums[i]，这里的思路和两数之和如出一辙，也是值得反复回味的。
+            target=-nums[i]
+            # 创建一个哈希集合
+            HashSet=set()
+            # j从i的下一个数开始遍历,为了寻找第三个数
+            for j in range(i+1,n):
+                # 要想凑成0，就要满足第三数=target-nums[j]
+                anotheNumber=target-nums[j]
+                # 如果b的值不在在哈希表中，就把b的值加入到哈希表中，然后开始下一轮循环
+                if anotheNumber not in HashSet:
+                    HashSet.add(nums[j])
+                    continue
+                  
+                # 形成一个三元数组：[a,b,c]
+                temp = [nums[i],anotheNumber,nums[j]]
+                # 对这个三元数组再次排序
+                temp.sort()
+                # 把这个三元数组转化为元组(去重)，如果不在res数组中，就把这个三元数组以元组的形式加入res中
+                if tuple(temp) not in res:
+                    res.add(tuple(temp))    
+        # 把res中的元组数据转化为列表后输出最后的结果（列表生成式的写法)
+        return [list(num) for num in res ]
+
+# 头文件
+if __name__ == &#39;__main__&#39;:
+    nums=[-2,0,3,-1,4,0,3,4,1,1,1,-3,-5,4,0]
+    res = Solution().threeSum(nums)
+    print(&quot;输出 =&gt; &quot; ,res)
+</code></pre>
 <h1 id="leetcoad349-两个数组的交集-easy"><a href="#leetcoad349-两个数组的交集-easy" class="headerlink" title="leetcoad349-两个数组的交集(easy)"></a>leetcoad349-两个数组的交集(easy)</h1><p>给定两个数组 nums1 和 nums2 ，返回 它们的交集 。输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersection</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 考虑边界条件：如果两个数组都是空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1 <span class="keyword">and</span> <span class="keyword">not</span> nums2:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 考虑采用哈希表来解题,构建两个set集合</span></span><br><span class="line">        map1=<span class="built_in">set</span>(nums1)</span><br><span class="line">        <span class="built_in">print</span>(map1)</span><br><span class="line">        map2=<span class="built_in">set</span>(nums2)</span><br><span class="line">        <span class="built_in">print</span>(map2)</span><br><span class="line">        <span class="comment"># 创建一个结果数组，用来存储交集元素</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="comment"># 在map1中查找</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> map1:</span><br><span class="line">            <span class="comment"># 看查找的值是否在map2中存在</span></span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> map2:</span><br><span class="line">                <span class="comment"># 如果存在，就把这个数加入到结果数组中</span></span><br><span class="line">                res.append(num) </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        # 考虑边界条件：如果两个数组都是空
+        if not nums1 and not nums2:
+            return []
+        # 考虑采用哈希表来解题,构建两个set集合
+        map1=set(nums1)
+        print(map1)
+        map2=set(nums2)
+        print(map2)
+        # 创建一个结果数组，用来存储交集元素
+        res=[]
+        # 在map1中查找
+        for num in map1:
+            # 看查找的值是否在map2中存在
+            if num in map2:
+                # 如果存在，就把这个数加入到结果数组中
+                res.append(num) 
+        return res
+</code></pre>
 <h1 id="leetcoad350-两个数组的交集II-easy"><a href="#leetcoad350-两个数组的交集II-easy" class="headerlink" title="leetcoad350-两个数组的交集II(easy)"></a>leetcoad350-两个数组的交集II(easy)</h1><p>大体思路：由于同一个数字在两个数组中都可能出现多次，因此需要用哈希表存储每个数字出现的次数。对于一个数字，其在交集中出现的次数等于该数字在两个数组中出现次数的最小值。</p>
 <ol>
 <li>首先遍历第一个数组，并在哈希表中记录第一个数组中的每个数字以及对应出现的次数</li>
-<li>遍历第二个数组，对于第二个数组中的每个数字，如果在哈希表中存在这个数字且计数为正，则将该数字添加到答案，并减少哈希表中该数字出现的次数。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自己第一次写的代码</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 考虑边界条件：如果两个数组都是空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1 <span class="keyword">and</span> <span class="keyword">not</span> nums2:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 考虑采用哈希表来解题,构建两个set集合</span></span><br><span class="line">        map1=<span class="built_in">set</span>(nums1)</span><br><span class="line">        map2=<span class="built_in">set</span>(nums2)</span><br><span class="line">        <span class="comment"># print(map2)</span></span><br><span class="line">        <span class="comment"># 创建一个结果数组，用来存储交集元素</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="comment"># 在map1中查找</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> map1:</span><br><span class="line">            <span class="comment"># 看查找的值是否在map2中存在</span></span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> map2:</span><br><span class="line">                <span class="comment"># 如果存在，统计在两个数组中出现这个数字的次数，取一个较小值</span></span><br><span class="line">                <span class="comment"># 不断的循环加入res数组中</span></span><br><span class="line">                a = <span class="built_in">min</span>(nums1.count(num),nums2.count(num))</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(a):</span><br><span class="line">                    res.append(num)     </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-看了别人写的做一点优化<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1 <span class="keyword">or</span> <span class="keyword">not</span> nums2: <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 利用dict里面的fromkesc创建哈希表，其中key值设置为0</span></span><br><span class="line">        hashmap1 = <span class="built_in">dict</span>.fromkeys(nums1, <span class="number">0</span>)</span><br><span class="line">        hashmap2 = <span class="built_in">dict</span>.fromkeys(nums2, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 通过for循环不断的计数，最后更新哈希表值为：元素：元素的个数</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums1:</span><br><span class="line">            hashmap1[num] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 查看map1中的元素是否在map2中出现</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums2:</span><br><span class="line">            <span class="comment"># 如果num在1中的次数大于0进行进行循环</span></span><br><span class="line">            <span class="comment"># 这样的好处，无论交集元素是在nums1中多还是在nums2中多，都可以找到比较小的那个值</span></span><br><span class="line">            <span class="comment"># 如果是nums1中多，跳出的是for num in nums2，找到最小的交集个数</span></span><br><span class="line">            <span class="comment"># 如果是nums2中多，跳出的是if hashmap1[num]&gt;0，找到最小的交集个数</span></span><br><span class="line">            <span class="keyword">if</span> hashmap1.get(num) <span class="keyword">and</span> hashmap1[num]&gt;<span class="number">0</span>:</span><br><span class="line">                <span class="comment"># 在mp2中把该key值的计数+1</span></span><br><span class="line">                hashmap2[num] += <span class="number">1</span></span><br><span class="line">                <span class="comment"># 在map1中把该key值的计数-1</span></span><br><span class="line">                hashmap1[num] -= <span class="number">1</span></span><br><span class="line">        <span class="comment"># print(hashmap2)</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="comment"># 这里采用item函数，items() 方法的遍历：items() 方法把字典中每对 key 和 value 组成一个元组，并把这些元组放在列表中返回。</span></span><br><span class="line">        <span class="comment"># k是需要加入结果数组的元素，v是需要加入的次数</span></span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> hashmap2.items():</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(v):</span><br><span class="line">                res.append(k)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></li>
+<li>遍历第二个数组，对于第二个数组中的每个数字，如果在哈希表中存在这个数字且计数为正，则将该数字添加到答案，并减少哈希表中该数字出现的次数。</li>
 </ol>
+<pre><code class="python"># 自己第一次写的代码
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        # 考虑边界条件：如果两个数组都是空
+        if not nums1 and not nums2:
+            return []
+        # 考虑采用哈希表来解题,构建两个set集合
+        map1=set(nums1)
+        map2=set(nums2)
+        # print(map2)
+        # 创建一个结果数组，用来存储交集元素
+        res=[]
+        # 在map1中查找
+        for num in map1:
+            # 看查找的值是否在map2中存在
+            if num in map2:
+                # 如果存在，统计在两个数组中出现这个数字的次数，取一个较小值
+                # 不断的循环加入res数组中
+                a = min(nums1.count(num),nums2.count(num))
+                for i in range(a):
+                    res.append(num)     
+        return res
+</code></pre>
+<p>看了别人写的做一点优化</p>
+<pre><code class="python">class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -&gt; List[int]:
+        if not nums1 or not nums2: return []
+        # 利用dict里面的fromkesc创建哈希表，其中key值设置为0
+        hashmap1 = dict.fromkeys(nums1, 0)
+        hashmap2 = dict.fromkeys(nums2, 0)
+
+        # 通过for循环不断的计数，最后更新哈希表值为：元素：元素的个数
+        for num in nums1:
+            hashmap1[num] += 1
+
+        # 查看map1中的元素是否在map2中出现
+        for num in nums2:
+            # 如果num在1中的次数大于0进行进行循环
+            # 这样的好处，无论交集元素是在nums1中多还是在nums2中多，都可以找到比较小的那个值
+            # 如果是nums1中多，跳出的是for num in nums2，找到最小的交集个数
+            # 如果是nums2中多，跳出的是if hashmap1[num]&gt;0，找到最小的交集个数
+            if hashmap1.get(num) and hashmap1[num]&gt;0:
+                # 在mp2中把该key值的计数+1
+                hashmap2[num] += 1
+                # 在map1中把该key值的计数-1
+                hashmap1[num] -= 1
+        # print(hashmap2)
+        res = []
+        # 这里采用item函数，items() 方法的遍历：items() 方法把字典中每对 key 和 value 组成一个元组，并把这些元组放在列表中返回。
+        # k是需要加入结果数组的元素，v是需要加入的次数
+        for k, v in hashmap2.items():
+            for _ in range(v):
+                res.append(k)
+        return res
+</code></pre>
 <p>牛客网上的三道题也是值得整理的：</p>
 <h1 id="数组中出现次数超过一半的数字"><a href="#数组中出现次数超过一半的数字" class="headerlink" title="数组中出现次数超过一半的数字"></a>数组中出现次数超过一半的数字</h1><p>做题链接：<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/e8a1b01a2df14cb2b228b30ee6a92163?tpId=295&amp;tqId=23271&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj">https://www.nowcoder.com/practice/e8a1b01a2df14cb2b228b30ee6a92163?tpId=295&amp;tqId=23271&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj</a><br>自己在提交的时候采用了两种方法：<br>方法一：采用哈希表法<br>用哈希表快速统计每一个元素出现的次数，然后将次数出现超过数组长度一半的数挑选出来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">MoreThanHalfNum_Solution</span>(<span class="params">self , numbers: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 使用字典进行搜索</span></span><br><span class="line">        <span class="comment"># 建立一个哈希集合,里面存放每个数字出现的次数</span></span><br><span class="line">        hashmap=<span class="built_in">dict</span>()</span><br><span class="line">        <span class="comment"># 数组长度</span></span><br><span class="line">        n = <span class="built_in">len</span>(numbers)</span><br><span class="line">        <span class="comment"># 边界情况的处理</span></span><br><span class="line">        <span class="comment"># 题目说数组非空，且保证有解，这种情况排除</span></span><br><span class="line"><span class="comment">#         if not nums:</span></span><br><span class="line"><span class="comment">#             return None</span></span><br><span class="line">        <span class="comment"># 如果数组只有一个，那么这个数就是</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> numbers[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># 让num在nums种遍历</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> numbers:</span><br><span class="line">            <span class="comment"># 如果不在哈希表种，就把这个数加进去,并且将num的初始化为1</span></span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">                hashmap[num]=<span class="number">1</span></span><br><span class="line">            <span class="comment"># 如果num已经在哈希表中了，就把对应的值在原来的基础上+1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hashmap[num] +=<span class="number">1</span></span><br><span class="line">                <span class="comment"># 是否存在元素出现的次数超过数组长度的一半</span></span><br><span class="line">                <span class="keyword">if</span> hashmap[num] &gt;n/<span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> num</span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Solution:
+    def MoreThanHalfNum_Solution(self , numbers: List[int]) -&gt; int:
+        # write code here
+        # 使用字典进行搜索
+        # 建立一个哈希集合,里面存放每个数字出现的次数
+        hashmap=dict()
+        # 数组长度
+        n = len(numbers)
+        # 边界情况的处理
+        # 题目说数组非空，且保证有解，这种情况排除
+#         if not nums:
+#             return None
+        # 如果数组只有一个，那么这个数就是
+        if n==1:
+            return numbers[0]
+        # 让num在nums种遍历
+        for num in numbers:
+            # 如果不在哈希表种，就把这个数加进去,并且将num的初始化为1
+            if num not in hashmap:
+                hashmap[num]=1
+            # 如果num已经在哈希表中了，就把对应的值在原来的基础上+1
+            else:
+                hashmap[num] +=1
+                # 是否存在元素出现的次数超过数组长度的一半
+                if hashmap[num] &gt;n/2:
+                    return num
+</code></pre>
 <p>代码还能做点简化，一步到位，不适合现在的自己</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全当作学习来看待</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">majorityElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        counts = collections.Counter(nums)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(counts.keys(), key=counts.get)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 全当作学习来看待
+class Solution:
+    def majorityElement(self, nums: List[int]) -&gt; int:
+        counts = collections.Counter(nums)
+        return max(counts.keys(), key=counts.get)
+</code></pre>
 <p>方法二：采用Boyer-Moore 投票算法(也是吴师兄课上用到的方法)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这种方法也值得自己去深入的思考（有时间的话）</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">MoreThanHalfNum_Solution</span>(<span class="params">self , numbers: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        candidate = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 在给定的数组中进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> numbers:</span><br><span class="line">            <span class="keyword">if</span> count==<span class="number">0</span>:</span><br><span class="line">                <span class="comment"># 假设当前的众数为num</span></span><br><span class="line">                candidate=num</span><br><span class="line">            <span class="comment"># 遍历到的数字与存放的数字相同</span></span><br><span class="line">            <span class="keyword">if</span> num==candidate:</span><br><span class="line">                <span class="comment"># 计数+1</span></span><br><span class="line">                count +=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count -=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> candidate</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python"># 这种方法也值得自己去深入的思考（有时间的话）
+class Solution:
+    def MoreThanHalfNum_Solution(self , numbers: List[int]) -&gt; int:
+        count = 0
+        candidate = 0
+        # 在给定的数组中进行遍历
+        for num in numbers:
+            if count==0:
+                # 假设当前的众数为num
+                candidate=num
+            # 遍历到的数字与存放的数字相同
+            if num==candidate:
+                # 计数+1
+                count +=1
+            else:
+                count -=1
+        return candidate
+</code></pre>
 <h1 id="数组中只出现一次的两个数字"><a href="#数组中只出现一次的两个数字" class="headerlink" title="数组中只出现一次的两个数字"></a>数组中只出现一次的两个数字</h1><p>做题链接：<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/389fc1c3d3be4479a154f63f495abff8?tpId=295&amp;tqId=1375231&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj">https://www.nowcoder.com/practice/389fc1c3d3be4479a154f63f495abff8?tpId=295&amp;tqId=1375231&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 采用的哈希列表的方式，找出出现次数为2的元素，然后按照升序输出即可</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">FindNumsAppearOnce</span>(<span class="params">self , array: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 创建一个二维数组，用于存放结果</span></span><br><span class="line">        res=[]</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 创建一个set集合</span></span><br><span class="line">        hashmap=<span class="built_in">dict</span>()</span><br><span class="line">        <span class="comment"># 开始统计元素出现的频率</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> array:</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">                hashmap[num]=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hashmap[num] +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> array:</span><br><span class="line">            <span class="keyword">if</span> hashmap[i]==<span class="number">1</span>:</span><br><span class="line">                res.append(i)     </span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sorted</span>(res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 采用的哈希列表的方式，找出出现次数为2的元素，然后按照升序输出即可
+class Solution:
+    def FindNumsAppearOnce(self , array: List[int]) -&gt; List[int]:
+        # write code here
+        # 创建一个二维数组，用于存放结果
+        res=[]
+        count = 0
+        # 创建一个set集合
+        hashmap=dict()
+        # 开始统计元素出现的频率
+        for num in array:
+            if num not in hashmap:
+                hashmap[num]=1
+            else:
+                hashmap[num] +=1
+        for i in array:
+            if hashmap[i]==1:
+                res.append(i)     
+        return sorted(res)
+</code></pre>
 <h1 id="缺失的一个正整数（leetcoad41同题型）"><a href="#缺失的一个正整数（leetcoad41同题型）" class="headerlink" title="缺失的一个正整数（leetcoad41同题型）"></a>缺失的一个正整数（leetcoad41同题型）</h1><p>做题链接：<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/50ec6a5b0e4e45348544348278cdcee5?tpId=295&amp;tqId=2188893&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=/exam/oj">https://www.nowcoder.com/practice/50ec6a5b0e4e45348544348278cdcee5?tpId=295&amp;tqId=2188893&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj</a><br>方法一：采用哈希表的方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 总体思路，用哈希表把nums中的元素记录下来，然后看1-n中是否有元素在这个哈希表中，如果没有找到，把数加入到结果数组中，那么这个结果数组中最小的值就是没有找到的就是缺失的第一个正整数，如果都找了，这里我判断的是res数组为空，此时丢失的数就是n+1这个数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minNumberDisappeared</span>(<span class="params">self , nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 先找到没有出现的元素</span></span><br><span class="line">        <span class="comment"># 然后取出没有出现的元素的最小值</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        res=[]</span><br><span class="line">        <span class="comment"># 构建一个哈希表存放nums中原本有的数</span></span><br><span class="line">        hashmap =&#123;num <span class="keyword">for</span> num <span class="keyword">in</span> nums&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 如果在哈希表中没有这个数，说明缺失的数就是这个数</span></span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">                res.append(i)</span><br><span class="line">            <span class="comment"># 如果1-n都存在这个数，那么说明这个数是n+1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="comment"># 对结果数组进行判断，如果为空，说明1-n在nums中都有，直接返回n+1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> res:</span><br><span class="line">            <span class="keyword">return</span> n+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(res)</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 总体思路，用哈希表把nums中的元素记录下来，然后看1-n中是否有元素在这个哈希表中，如果没有找到，把数加入到结果数组中，那么这个结果数组中最小的值就是没有找到的就是缺失的第一个正整数，如果都找了，这里我判断的是res数组为空，此时丢失的数就是n+1这个数
+class Solution:
+    def minNumberDisappeared(self , nums: List[int]) -&gt; int:
+        # write code here
+        # 先找到没有出现的元素
+        # 然后取出没有出现的元素的最小值
+        n = len(nums)
+        res=[]
+        # 构建一个哈希表存放nums中原本有的数
+        hashmap =&#123;num for num in nums&#125;
+        for i in range(1,n+1):
+            # 如果在哈希表中没有这个数，说明缺失的数就是这个数
+            if i not in hashmap:
+                res.append(i)
+            # 如果1-n都存在这个数，那么说明这个数是n+1
+            else:
+                continue
+        # 对结果数组进行判断，如果为空，说明1-n在nums中都有，直接返回n+1
+        if not res:
+            return n+1
+        return min(res)
+</code></pre>
 <p>在leetcoad上针对这道题还有很多其他的解法，有时间也可以自己仔细地看看，研究研究。<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/first-missing-positive/">https://leetcode-cn.com/problems/first-missing-positive/</a></p>
 <h1 id="leetcoad217-存在重复元素"><a href="#leetcoad217-存在重复元素" class="headerlink" title="leetcoad217-存在重复元素"></a>leetcoad217-存在重复元素</h1><h1 id="leetcoad219-存在重复元素II"><a href="#leetcoad219-存在重复元素II" class="headerlink" title="leetcoad219-存在重复元素II"></a>leetcoad219-存在重复元素II</h1><h1 id="leetcoad220-存在重复元素III"><a href="#leetcoad220-存在重复元素III" class="headerlink" title="leetcoad220-存在重复元素III"></a>leetcoad220-存在重复元素III</h1>
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/21/%E5%93%88%E5%B8%8C%E8%A1%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%88%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0%EF%BC%89/" data-id="claqum2e80028h0tk3rda0qq7" data-title="哈希表问题汇总（散列函数）" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/23/%E7%B3%BB%E7%BB%9F%E8%AF%A6%E7%BB%86%E7%9A%84%E6%95%B4%E7%90%86%E5%85%B3%E4%BA%8Epython%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          系统详细的整理关于python中的面向对象编程/面对对象高级编程
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/21/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">二叉树相关题目汇总二</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

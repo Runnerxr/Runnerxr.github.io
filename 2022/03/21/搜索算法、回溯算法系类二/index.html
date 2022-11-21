@@ -1,102 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>搜索算法、回溯算法系类二 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="leetcaod22-括号生成：正确的思考思路应该是这样的：(暴力解法)  生成所有的序列 检查是否有效 模式识别：子问题和原问题具有相同的结构，考虑至上而下的递归  然后通过判断优化解题方法：（回溯）暴力解法中直到序列生成完才进行相应的筛选，其中已经生成了很多无序的序列，现在考虑在生成过程中确保每一步都能产生有序序列，利用回溯搜索其他可能的解答。 1.  这点有一题解写的非常好，摘录在这里htt">
-<meta property="og:type" content="article">
-<meta property="og:title" content="搜索算法、回溯算法系类二">
-<meta property="og:url" content="http://example.com/2022/03/21/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E3%80%81%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%B3%BB%E7%B1%BB%E4%BA%8C/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="leetcaod22-括号生成：正确的思考思路应该是这样的：(暴力解法)  生成所有的序列 检查是否有效 模式识别：子问题和原问题具有相同的结构，考虑至上而下的递归  然后通过判断优化解题方法：（回溯）暴力解法中直到序列生成完才进行相应的筛选，其中已经生成了很多无序的序列，现在考虑在生成过程中确保每一步都能产生有序序列，利用回溯搜索其他可能的解答。 1.  这点有一题解写的非常好，摘录在这里htt">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1652618958937.jpg">
-<meta property="article:published_time" content="2022-03-21T01:50:46.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:43:04.655Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1652618958937.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-搜索算法、回溯算法系类二" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/21/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E3%80%81%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%B3%BB%E7%B1%BB%E4%BA%8C/" class="article-date">
-  <time class="dt-published" datetime="2022-03-21T01:50:46.000Z" itemprop="datePublished">2022-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      搜索算法、回溯算法系类二
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            搜索算法、回溯算法系类二
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/21 Mon 09:50&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:43
+        </div>
+    </div>
+    <div class="article-content">
         <h1 id="leetcaod22-括号生成："><a href="#leetcaod22-括号生成：" class="headerlink" title="leetcaod22-括号生成："></a>leetcaod22-括号生成：</h1><p>正确的思考思路应该是这样的：(暴力解法)</p>
 <ol>
 <li>生成所有的序列</li>
@@ -107,154 +71,77 @@
 <p>1. </p>
 <p>这点有一题解写的非常好，摘录在这里<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-parentheses/solution/zui-jian-dan-yi-dong-de-dong-tai-gui-hua-bu-lun-da/">https://leetcode.cn/problems/generate-parentheses/solution/zui-jian-dan-yi-dong-de-dong-tai-gui-hua-bu-lun-da/</a></p>
 <p>根据题解的思路自己也手动模拟一个这个实现的过程，十分标准的二叉树的回溯过程，其中上面的一张是不管其他条件，生成的类似于全排列的序列，下面的是看考虑剪枝的一个过程：右边的括号数量大于左边的时候就需要剪枝（可以去除很多无用的答案），所以这题既是要有思路，同时对于回溯算法的具体还要熟悉，实际的要求并不算低，还是很考验能力水平的。自己既然做这道题就把相应的每个细节都要考虑到。<br><img src="https://runnerxr.github.io/post-images/1652618958937.jpg"><br>先把最基本的实现所有组合实现出来，然后再去改进这个过程</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本质上是一个树的深度优先搜索（前序遍历：首先收集左孩子，然后走到底，到了叶子节点再回头收拾右子节点）</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">generateParenthesis</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span><br><span class="line">        <span class="keyword">if</span> n &lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res=[]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">paths</span>):</span><br><span class="line">            <span class="comment"># 括号是成队出现的</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(paths)==n*<span class="number">2</span>:</span><br><span class="line">                res.append(paths)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            dfs(paths+<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">            dfs(paths+<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        dfs(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    ans=Solution().generateParenthesis(<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(ans)</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line">[<span class="string">&#x27;((((&#x27;</span>, <span class="string">&#x27;((()&#x27;</span>, <span class="string">&#x27;(()(&#x27;</span>, <span class="string">&#x27;(())&#x27;</span>, <span class="string">&#x27;()((&#x27;</span>, <span class="string">&#x27;()()&#x27;</span>, <span class="string">&#x27;())(&#x27;</span>, <span class="string">&#x27;()))&#x27;</span>, <span class="string">&#x27;)(((&#x27;</span>, <span class="string">&#x27;)(()&#x27;</span>, <span class="string">&#x27;)()(&#x27;</span>, <span class="string">&#x27;)())&#x27;</span>, <span class="string">&#x27;))((&#x27;</span>, <span class="string">&#x27;))()&#x27;</span>, <span class="string">&#x27;)))(&#x27;</span>, <span class="string">&#x27;))))&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 本质上是一个树的深度优先搜索（前序遍历：首先收集左孩子，然后走到底，到了叶子节点再回头收拾右子节点）
+from typing import List
+class Solution:
+    def generateParenthesis(self, n: int) -&gt; List[str]:
+        if n &lt;=0:
+            return []
+        res=[]
+
+        def dfs(paths):
+            # 括号是成队出现的
+            if len(paths)==n*2:
+                res.append(paths)
+                return
+            dfs(paths+&#39;(&#39;)
+            dfs(paths+&#39;)&#39;)
+        dfs(&#39;&#39;)
+        return res
+
+if __name__==&#39;__main__&#39;:
+    ans=Solution().generateParenthesis(2)
+    print(ans)
+# 打印结果如下：
+[&#39;((((&#39;, &#39;((()&#39;, &#39;(()(&#39;, &#39;(())&#39;, &#39;()((&#39;, &#39;()()&#39;, &#39;())(&#39;, &#39;()))&#39;, &#39;)(((&#39;, &#39;)(()&#39;, &#39;)()(&#39;, &#39;)())&#39;, &#39;))((&#39;, &#39;))()&#39;, &#39;)))(&#39;, &#39;))))&#39;]
+</code></pre>
 <p>在上面的基础上，将一些不用的结果进行去除：限制左括号与右括号的数量，增加left与right参数，分别代表左括号与右括号的数量，每生成一个就增加一个<br>其中不是有效的情况是：右边的括号数量大于左边的括号数量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">generateParenthesis</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span><br><span class="line">        <span class="keyword">if</span> n &lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res=[]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">paths,left,right</span>):</span><br><span class="line">            <span class="comment"># 限制左括号的数量不超过n，右括号的数量不超过左括号的数量</span></span><br><span class="line">            <span class="keyword">if</span> left&gt;n <span class="keyword">or</span> right &gt;left:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="comment"># 括号是成队出现的</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(paths)==n*<span class="number">2</span>:</span><br><span class="line">                res.append(paths)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            dfs(paths+<span class="string">&#x27;(&#x27;</span>,left+<span class="number">1</span>,right)</span><br><span class="line">            dfs(paths+<span class="string">&#x27;)&#x27;</span>,left,right+<span class="number">1</span>)</span><br><span class="line">        dfs(<span class="string">&#x27;&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    ans=Solution().generateParenthesis(<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(ans)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">[<span class="string">&#x27;(())&#x27;</span>, <span class="string">&#x27;()()&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">from typing import List
+class Solution:
+    def generateParenthesis(self, n: int) -&gt; List[str]:
+        if n &lt;=0:
+            return []
+        res=[]
+
+        def dfs(paths,left,right):
+            # 限制左括号的数量不超过n，右括号的数量不超过左括号的数量
+            if left&gt;n or right &gt;left:
+                return
+            # 括号是成队出现的
+            if len(paths)==n*2:
+                res.append(paths)
+                return
+            dfs(paths+&#39;(&#39;,left+1,right)
+            dfs(paths+&#39;)&#39;,left,right+1)
+        dfs(&#39;&#39;,0,0)
+        return res
+
+if __name__==&#39;__main__&#39;:
+    ans=Solution().generateParenthesis(2)
+    print(ans)
+# 输出结果
+[&#39;(())&#39;, &#39;()()&#39;]
+</code></pre>
 <p>采用深度优先搜索的方式解题：<br>&lt;&gt;<br>可以生出左枝叶的条件：左括号的剩余数量（严格）大于0：<br>可以生出右枝叶的条件：左括号剩余数量（严格）小于右括号剩余数量</p>
 <p>采用动态规划的思路来解题：</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/21/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E3%80%81%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%B3%BB%E7%B1%BB%E4%BA%8C/" data-id="claqum2ei002hh0tk15oe0r0g" data-title="搜索算法、回溯算法系类二" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/21/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%BA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          二叉树相关题目汇总二
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/21/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E3%80%81%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">搜索算法、回溯算法系列一</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

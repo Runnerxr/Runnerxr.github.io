@@ -1,110 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>关于栈与队列基础知识及相关衍生的题目汇总一(important) | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="栈与队列通常放到一起来学习，也是基础中的基础，概念一定要十分的清晰明了 栈是先进后出的线性表s.top():获取栈底元素s.empty():判断栈是否为空s.push():往栈中添加一个元素s.pop():栈顶元素的弹出s.size()：获取栈的长度  构建一个栈（基础）1234567891011121314151617181920212223242526272829303132333435363">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于栈与队列基础知识及相关衍生的题目汇总一(important)">
-<meta property="og:url" content="http://example.com/2022/03/08/%E5%85%B3%E4%BA%8E%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%B8%80(important)/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="栈与队列通常放到一起来学习，也是基础中的基础，概念一定要十分的清晰明了 栈是先进后出的线性表s.top():获取栈底元素s.empty():判断栈是否为空s.push():往栈中添加一个元素s.pop():栈顶元素的弹出s.size()：获取栈的长度  构建一个栈（基础）1234567891011121314151617181920212223242526272829303132333435363">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1653788994859.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1646804844746.png">
-<meta property="og:image" content="https://runnerxr.github.io//post-images/1653317536073.png">
-<meta property="article:published_time" content="2022-03-08T02:46:17.000Z">
-<meta property="article:modified_time" content="2022-06-06T13:32:36.710Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="python知识小记">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io//post-images/1653788994859.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-关于栈与队列基础知识及相关衍生的题目汇总一(important)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/08/%E5%85%B3%E4%BA%8E%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%B8%80(important)/" class="article-date">
-  <time class="dt-published" datetime="2022-03-08T02:46:17.000Z" itemprop="datePublished">2022-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      关于栈与队列基础知识及相关衍生的题目汇总一(important)
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            关于栈与队列基础知识及相关衍生的题目汇总一(important)
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/03/08 Tue 10:46&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/06/06 Mon 21:32
+        </div>
+    </div>
+    <div class="article-content">
         <p>栈与队列通常放到一起来学习，也是基础中的基础，概念一定要十分的清晰明了</p>
 <h1 id="栈是先进后出的线性表"><a href="#栈是先进后出的线性表" class="headerlink" title="栈是先进后出的线性表"></a>栈是先进后出的线性表</h1><p>s.top():获取栈底元素<br>s.empty():判断栈是否为空<br>s.push():往栈中添加一个元素<br>s.pop():栈顶元素的弹出<br>s.size()：获取栈的长度</p>
 <hr>
-<h1 id="构建一个栈（基础）"><a href="#构建一个栈（基础）" class="headerlink" title="构建一个栈（基础）"></a>构建一个栈（基础）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="comment">#定义初始化方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment">#初始化一个空列表</span></span><br><span class="line">        self.__<span class="built_in">list</span>=[]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 入栈和出栈的函数体现了先进后出的理念</span></span><br><span class="line">    <span class="comment"># 入栈：将一个元素加入栈顶</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self,item</span>):</span><br><span class="line">        self.__<span class="built_in">list</span>.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#出栈：将一个元素从栈顶删除</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.__<span class="built_in">list</span>.pop()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#返回栈顶元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">peek</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.__<span class="built_in">list</span>[<span class="built_in">len</span>(self.__<span class="built_in">list</span>)-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#判断栈是否为空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.__<span class="built_in">list</span> == []</span><br><span class="line"></span><br><span class="line">    <span class="comment">#计算栈的大小</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.__<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    stack=Stack()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;是否空栈吗&#x27;</span>,stack.is_empty())</span><br><span class="line">    <span class="comment">#压栈</span></span><br><span class="line">    stack.push(<span class="number">1</span>)</span><br><span class="line">    stack.push(<span class="number">2</span>)</span><br><span class="line">    stack.push(<span class="number">3</span>)</span><br><span class="line">    stack.push(<span class="number">4</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;是否空栈吗&#x27;</span>, stack.is_empty())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;栈的长度：&#x27;</span>,stack.size())</span><br><span class="line">    <span class="comment">#弹出</span></span><br><span class="line">    <span class="built_in">print</span>(stack.pop())</span><br><span class="line">    <span class="built_in">print</span>(stack.pop())</span><br><span class="line">    <span class="built_in">print</span>(stack.pop())</span><br><span class="line">    <span class="built_in">print</span>(stack.pop())</span><br><span class="line">    <span class="comment"># 打印结果</span></span><br><span class="line">    是否空栈吗 <span class="literal">True</span></span><br><span class="line">是否空栈吗 <span class="literal">False</span></span><br><span class="line">栈的长度： <span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="构建一个栈（基础）"><a href="#构建一个栈（基础）" class="headerlink" title="构建一个栈（基础）"></a>构建一个栈（基础）</h1><pre><code class="python">class Stack(object):
+    #定义初始化方法
+    def __init__(self):
+        #初始化一个空列表
+        self.__list=[]
 
+    # 入栈和出栈的函数体现了先进后出的理念
+    # 入栈：将一个元素加入栈顶
+    def push(self,item):
+        self.__list.append(item)
+
+    #出栈：将一个元素从栈顶删除
+    def pop(self):
+        return self.__list.pop()
+
+    #返回栈顶元素
+    def peek(self):
+        return self.__list[len(self.__list)-1]
+
+    #判断栈是否为空
+    def is_empty(self):
+        return self.__list == []
+
+    #计算栈的大小
+    def size(self):
+        return len(self.__list)
+
+if __name__ == &#39;__main__&#39;:
+    stack=Stack()
+    print(&#39;是否空栈吗&#39;,stack.is_empty())
+    #压栈
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    print(&#39;是否空栈吗&#39;, stack.is_empty())
+    print(&#39;栈的长度：&#39;,stack.size())
+    #弹出
+    print(stack.pop())
+    print(stack.pop())
+    print(stack.pop())
+    print(stack.pop())
+    # 打印结果
+    是否空栈吗 True
+是否空栈吗 False
+栈的长度： 4
+4
+3
+2
+1
+</code></pre>
 <h1 id="队列是先进先出的线性表"><a href="#队列是先进先出的线性表" class="headerlink" title="队列是先进先出的线性表"></a>队列是先进先出的线性表</h1><p>q.front():获取队列的队头元素<br>q.push():在队尾添加一个新的元素进队列中<br>q.pop()：把我们的队头元素进行弹出<br>q.empty()：判断我们的队列是否为空<br>q.size():去求队列中的元素的个数</p>
 <h1 id="python标准库中包含四种队列："><a href="#python标准库中包含四种队列：" class="headerlink" title="python标准库中包含四种队列："></a>python标准库中包含四种队列：</h1><ol>
 <li>queue.Queue</li>
@@ -114,23 +124,169 @@
 </ol>
 <p>下面的这这张图很好的展示了这样的一个过程，它们的方式确实不太一样，不要弄混淆了<br><img src="https://runnerxr.github.io//post-images/1653788994859.png"></p>
 <h1 id="构建一个单端队列（基础必须掌握-顺序存储）"><a href="#构建一个单端队列（基础必须掌握-顺序存储）" class="headerlink" title="构建一个单端队列（基础必须掌握-顺序存储）"></a>构建一个单端队列（基础必须掌握-顺序存储）</h1><h2 id="第一种创建方式：用列表创建"><a href="#第一种创建方式：用列表创建" class="headerlink" title="第一种创建方式：用列表创建"></a>第一种创建方式：用列表创建</h2><p>这个知识点是自己必须要掌握的点：将<strong>列表的末尾</strong>当作<strong>队列的头部</strong>，<strong>队列的尾部</strong>是列表<strong>下标为0</strong>的位置，主要实现以下几个函数：<strong>进队</strong>、<strong>出队</strong>、<strong>判断是否为空</strong>、<strong>计算队列的长度</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.queue=[]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 进队和出队的函数体现了队列的先进先出的特点</span></span><br><span class="line">    <span class="comment"># 进队：将元素添加到队尾</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">enqueue</span>(<span class="params">self,item</span>):</span><br><span class="line">        self.queue.insert(<span class="number">0</span>,item)  </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 出队：将元素从队头删除</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dequeue</span>(<span class="params">self</span>):</span><br><span class="line">        self.queue.pop() </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断队列是否为空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.queue==[]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算队列的大小</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.queue)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    queue=Queue()</span><br><span class="line">    queue.enqueue(<span class="number">10</span>)</span><br><span class="line">    queue.enqueue(<span class="number">20</span>)</span><br><span class="line">    queue.enqueue(<span class="number">30</span>)</span><br><span class="line">    <span class="comment">#判断队列是否空</span></span><br><span class="line">    <span class="built_in">print</span>(queue.is_empty())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;队列大小&#x27;</span>,queue.size())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-----出队---------&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(queue.dequeue())</span><br><span class="line">    <span class="built_in">print</span>(queue.dequeue())</span><br><span class="line">    <span class="built_in">print</span>(queue.dequeue())</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line">队列大小 <span class="number">3</span></span><br><span class="line">-----出队---------</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">class Queue:
+    def __init__(self):
+        self.queue=[]
+    
+    # 进队和出队的函数体现了队列的先进先出的特点
+    # 进队：将元素添加到队尾
+    def enqueue(self,item):
+        self.queue.insert(0,item)  
+
+    # 出队：将元素从队头删除
+    def dequeue(self):
+        self.queue.pop() 
+
+    # 判断队列是否为空
+    def is_empty(self):
+        return self.queue==[]
+
+    # 计算队列的大小
+    def size(self):
+        return len(self.queue)
+    
+if __name__ == &#39;__main__&#39;:
+    queue=Queue()
+    queue.enqueue(10)
+    queue.enqueue(20)
+    queue.enqueue(30)
+    #判断队列是否空
+    print(queue.is_empty())
+    print(&#39;队列大小&#39;,queue.size())
+    print(&#39;-----出队---------&#39;)
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
+# 打印结果如下：
+False
+队列大小 3
+-----出队---------
+None
+None
+None
+</code></pre>
 <h2 id="第二种创建方式：python中的模块的方式"><a href="#第二种创建方式：python中的模块的方式" class="headerlink" title="第二种创建方式：python中的模块的方式"></a>第二种创建方式：python中的模块的方式</h2><p>略</p>
 <h1 id="构建一个双端队列"><a href="#构建一个双端队列" class="headerlink" title="构建一个双端队列"></a>构建一个双端队列</h1><p>这里既然讲到了双端队列的问题，就做一点相应的知识整理：<br>deque是双端队列（double-ended queue）的缩写，由于两端都能编辑(<strong>有两个头部和尾部</strong>，可以在<strong>双端</strong>进行数据的<strong>插入</strong>和<strong>删除</strong>)，deque既可以用来实现栈（stack）也可以用来实现队列（queue），栈与队列的完美结合。<br>deque支持丰富的操作方法，主要方法如图：<img src="https://runnerxr.github.io//post-images/1646804844746.png"><br>相比于list实现的队列，deque实现拥有更低的时间和空间复杂度。<br>list实现在出队（pop）和插入（insert）时的空间复杂度大约为O(n)，<br>deque在出队（pop）和入队（append）时的时间复杂度是O(1)。<br>细部剩余知识详见：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lincappu/p/12890765.html">https://www.cnblogs.com/lincappu/p/12890765.html</a><br><a target="_blank" rel="noopener" href="https://www.jb51.net/article/183382.htm">https://www.jb51.net/article/183382.htm</a>  </p>
 <h2 id="第一种创建方式：用python内置的双端队列模块"><a href="#第一种创建方式：用python内置的双端队列模块" class="headerlink" title="第一种创建方式：用python内置的双端队列模块"></a>第一种创建方式：用python内置的双端队列模块</h2><p><strong>创建双向对队列：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d = collections.deque()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d = collections.deque()
+</code></pre>
 <p><strong>append(往右边添加一个元素)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d = collections.deque()</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">deque([<span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d = collections.deque()
+d.append(1)
+d.append(2)
+print(d)
+# 打印结果
+deque([1, 2])
+</code></pre>
 <p><strong>appendleft（往左边添加一个元素）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d = collections.deque()</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.appendleft(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">deque([<span class="number">2</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d = collections.deque()
+d.append(1)
+d.appendleft(2)
+print(d)
+# 打印结果
+deque([2, 1])
+</code></pre>
 <p><strong>clear(清空队列)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d=collections.deque()</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.clear()</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">deque([])</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d=collections.deque()
+d.append(1)
+d.clear()
+print(d)
+# 打印结果
+deque([])
+</code></pre>
 <p><strong>copy(浅拷贝)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d=collections.deque()</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">new_d=d.copy()</span><br><span class="line"><span class="built_in">print</span>(new_d)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">deque([<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d=collections.deque()
+d.append(1)
+new_d=d.copy()
+print(new_d)
+# 打印结果
+deque([1])
+</code></pre>
 <p><strong>count(返回指定元素的出现次数)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">d=collections.deque()</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(d.count(<span class="number">1</span>))</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">import collections
+d=collections.deque()
+d.append(1)
+d.append(1)
+print(d.count(1))
+# 打印结果
+2
+</code></pre>
 <h2 id="第二种创建方式：使用列表来创建"><a href="#第二种创建方式：使用列表来创建" class="headerlink" title="第二种创建方式：使用列表来创建"></a>第二种创建方式：使用列表来创建</h2><p>将<strong>列表的末尾</strong>作为双端队列的<strong>前端</strong>，列表中<strong>下标索引为0</strong>的位置作为双端队列的<strong>后端</strong>（和列表的模拟十分相似）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用列表来实现一个双端队列</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span>:</span><br><span class="line">    <span class="comment"># 构造方法创建一个空列表</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.deque=[]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 向双端队列的两端添加元素</span></span><br><span class="line">    <span class="comment"># 通过append()向列表的末尾添加（即向双端队列的前端添加）</span></span><br><span class="line">    <span class="comment"># 通过insert()向列表的索引为0的位置添加（即向双端队列的后端添加）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">addFront</span>(<span class="params">self,item</span>):</span><br><span class="line">        self.deque.append(item)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">addRear</span>(<span class="params">self,item</span>):</span><br><span class="line">        self.deque.insert(<span class="number">0</span>,item)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 通过pop()移除列表的末尾元素（即删除前端元素）</span></span><br><span class="line">    <span class="comment"># 通过pop(0)移除列表的索引为0的元素（即删除后端元素）</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deleteFront</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.deque.pop()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deleteRear</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.deque.pop(<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回双端队列的前端元素</span></span><br><span class="line">    <span class="comment"># 返回双端队列的后端元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">displayFront</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.deque[<span class="built_in">len</span>(self.deque)-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">displayRear</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.deque[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断双端队列是否为空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.deque==[]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回双端队列的数目</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.deque)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试如下：</span></span><br><span class="line"><span class="comment"># 创建一个空的双端队列，即创建一个对象，对象名称=类名称()</span></span><br><span class="line">d=Deque()</span><br><span class="line"><span class="built_in">print</span>(d.is_empty()) <span class="comment"># 判断双端队列是否为空</span></span><br><span class="line"><span class="built_in">print</span>(d.size())  <span class="comment"># 统计双端队列的长度</span></span><br><span class="line">d.addFront(<span class="number">123</span>)  <span class="comment"># 向双端队列的前端添加元素</span></span><br><span class="line">d.addFront(<span class="number">456</span>)</span><br><span class="line">d.addRear(<span class="string">&#x27;xr&#x27;</span>)  <span class="comment"># 向双端队列的后端添加元素</span></span><br><span class="line">d.addRear(<span class="string">&#x27;1996-07-26&#x27;</span>) </span><br><span class="line"><span class="built_in">print</span>(d.size())</span><br><span class="line"><span class="built_in">print</span>(d.displayFront())</span><br><span class="line"><span class="built_in">print</span>(d.displayRear())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------&#x27;</span>)</span><br><span class="line">d.deleteFront()  <span class="comment"># 删除双端队列的前端元素</span></span><br><span class="line"><span class="built_in">print</span>(d.size())</span><br><span class="line"><span class="built_in">print</span>(d.displayFront())</span><br><span class="line">d.deleteRear()  <span class="comment"># 删除双端队列的后端元素</span></span><br><span class="line"><span class="built_in">print</span>(d.size())</span><br><span class="line"><span class="built_in">print</span>(d.displayRear())</span><br><span class="line"><span class="built_in">print</span>(d.is_empty())</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">456</span>       </span><br><span class="line"><span class="number">1996</span>-07-<span class="number">26</span></span><br><span class="line">-------   </span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">123</span>       </span><br><span class="line"><span class="number">2</span></span><br><span class="line">xr</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 用列表来实现一个双端队列
+class Deque:
+    # 构造方法创建一个空列表
+    def __init__(self):
+        self.deque=[]
+    
+    # 向双端队列的两端添加元素
+    # 通过append()向列表的末尾添加（即向双端队列的前端添加）
+    # 通过insert()向列表的索引为0的位置添加（即向双端队列的后端添加）
+    def addFront(self,item):
+        self.deque.append(item)
+    def addRear(self,item):
+        self.deque.insert(0,item)
+    
+    # 通过pop()移除列表的末尾元素（即删除前端元素）
+    # 通过pop(0)移除列表的索引为0的元素（即删除后端元素）
+    def deleteFront(self):
+        return self.deque.pop()
+    def deleteRear(self):
+        return self.deque.pop(0)
+    
+    # 返回双端队列的前端元素
+    # 返回双端队列的后端元素
+    def displayFront(self):
+        return self.deque[len(self.deque)-1]
+    def displayRear(self):
+        return self.deque[0]
+
+    # 判断双端队列是否为空
+    def is_empty(self):
+        return self.deque==[]
+    
+    # 返回双端队列的数目
+    def size(self):
+        return len(self.deque)
+    
+
+# 测试如下：
+# 创建一个空的双端队列，即创建一个对象，对象名称=类名称()
+d=Deque()
+print(d.is_empty()) # 判断双端队列是否为空
+print(d.size())  # 统计双端队列的长度
+d.addFront(123)  # 向双端队列的前端添加元素
+d.addFront(456)
+d.addRear(&#39;xr&#39;)  # 向双端队列的后端添加元素
+d.addRear(&#39;1996-07-26&#39;) 
+print(d.size())
+print(d.displayFront())
+print(d.displayRear())
+print(&#39;-------&#39;)
+d.deleteFront()  # 删除双端队列的前端元素
+print(d.size())
+print(d.displayFront())
+d.deleteRear()  # 删除双端队列的后端元素
+print(d.size())
+print(d.displayRear())
+print(d.is_empty())
+# 打印结果如下：
+True
+0
+4
+456       
+1996-07-26
+-------   
+3
+123       
+2
+xr
+False
+</code></pre>
 <p>以下为主要的几道题目：</p>
 <ol>
 <li>leetcoad155-最小栈（基础题）</li>
@@ -149,166 +305,149 @@
 <li>定义一个push函数:（针对普通栈和辅助栈都要执行：普通栈直接加入,最小栈看是不是比原来的元素更下再选择加入）</li>
 <li>定义一个pop函数：（针对普通栈和辅助栈都要执行：普通栈直接弹出，最小栈当顶元素和普通栈相等的时候才会弹出）</li>
 <li>定义一个top函数：在普通栈中操作，最后一个元素</li>
-<li>定义getmim函数：在最小栈中操作，最后一个元素<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        initialize your data structure here.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 定义好两个栈，一个栈用作正常操作，一个栈用作获取栈中的最小值</span></span><br><span class="line">        <span class="comment"># stack普通栈，负责栈的正常进出</span></span><br><span class="line">        self.stack=[]</span><br><span class="line">        <span class="comment"># min_stack：用栈顶来保存所有元素的最小值，负责获取和存储stack中的最小值</span></span><br><span class="line">        self.min_stack=[]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 入栈</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># 把先添加的元素放入到stack中</span></span><br><span class="line">        self.stack.append(x)</span><br><span class="line">        <span class="comment"># 判断min_stack是否为空，如果为空，把新的元素添加进来</span></span><br><span class="line">        <span class="keyword">if</span> self.min_stack:</span><br><span class="line">            <span class="comment"># 获取min_stack的栈顶元素</span></span><br><span class="line">            top = self.min_stack[-<span class="number">1</span>]</span><br><span class="line">            <span class="comment"># 是否加入的元素是小于栈顶元素的</span></span><br><span class="line">            <span class="keyword">if</span> x&lt;=top:</span><br><span class="line">                self.min_stack.append(x)</span><br><span class="line">        <span class="comment"># 如果min_stack为空的话，直接把元素添加进去。</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.min_stack.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 出栈</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># 记录此时出栈的元素</span></span><br><span class="line">        x = self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># stack执行出栈操作</span></span><br><span class="line">        self.stack.pop()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># stack中的元素出栈，min_stack同步进行</span></span><br><span class="line">        <span class="comment"># 获取min_stack的栈顶元素</span></span><br><span class="line">        top=self.min_stack[-<span class="number">1</span>]</span><br><span class="line">        <span class="comment">#判断top 是否与stack中弹出的的元素相等，如果相等，需要把min_stack中的栈顶元素一并出栈</span></span><br><span class="line">        <span class="keyword">if</span> top ==x:</span><br><span class="line">            self.min_stack.pop()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取栈顶元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">top</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取栈中的最小元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">min</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> self.min_stack[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure></li>
+<li>定义getmim函数：在最小栈中操作，最后一个元素</li>
 </ol>
+<pre><code class="python">class MinStack:
+
+    def __init__(self):
+        &quot;&quot;&quot;
+        initialize your data structure here.
+        &quot;&quot;&quot;
+        # 定义好两个栈，一个栈用作正常操作，一个栈用作获取栈中的最小值
+        # stack普通栈，负责栈的正常进出
+        self.stack=[]
+        # min_stack：用栈顶来保存所有元素的最小值，负责获取和存储stack中的最小值
+        self.min_stack=[]
+
+    # 入栈
+    def push(self, x: int) -&gt; None:
+        # 把先添加的元素放入到stack中
+        self.stack.append(x)
+        # 判断min_stack是否为空，如果为空，把新的元素添加进来
+        if self.min_stack:
+            # 获取min_stack的栈顶元素
+            top = self.min_stack[-1]
+            # 是否加入的元素是小于栈顶元素的
+            if x&lt;=top:
+                self.min_stack.append(x)
+        # 如果min_stack为空的话，直接把元素添加进去。
+        else:
+            self.min_stack.append(x)
+
+    # 出栈
+    def pop(self) -&gt; None:
+        # 记录此时出栈的元素
+        x = self.stack[-1]
+
+        # stack执行出栈操作
+        self.stack.pop()
+
+        # stack中的元素出栈，min_stack同步进行
+        # 获取min_stack的栈顶元素
+        top=self.min_stack[-1]
+        #判断top 是否与stack中弹出的的元素相等，如果相等，需要把min_stack中的栈顶元素一并出栈
+        if top ==x:
+            self.min_stack.pop()
+
+    # 获取栈顶元素
+    def top(self) -&gt; int:
+        return self.stack[-1]
+
+    # 获取栈中的最小元素
+    def min(self) -&gt; int:
+        return self.min_stack[-1]
+</code></pre>
 <h1 id="leetcoad232-用两个栈实现队列"><a href="#leetcoad232-用两个栈实现队列" class="headerlink" title="leetcoad232-用两个栈实现队列"></a>leetcoad232-用两个栈实现队列</h1><p>这里的关键点我认为有以下几点：（看过动画之后一切都十分的明白了）</p>
 <ol>
 <li>一个栈负责压入元素，一个栈负责弹出元素（返回队首元素）</li>
 <li>压入元素很简单，但弹出元素就很讲究（弹出的过程中，如果不为空直接弹出元素，如果为空，一定要让进入的栈的全部元素都转移到弹出栈中再弹出元素）<ol>
 <li>如果负责弹出的栈有元素，直接弹出</li>
-<li>如果发现进入的栈不为空，就不停的将一个栈的元素转移到另一个栈中<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyQueue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 定义两个栈</span></span><br><span class="line">        self.A,self.B=[],[]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将元素推到队列的末尾</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.A.append(x)</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 移除队首元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 如果栈B为空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">while</span> self.A:</span><br><span class="line">                self.B.append(self.A.pop())</span><br><span class="line">        <span class="keyword">return</span> self.B.pop()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回队列开头的元素(pop和peek的区别，一个是删除，一个是返回)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">peek</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">while</span> self.A:</span><br><span class="line">                self.B.append(self.A.pop())</span><br><span class="line">        <span class="keyword">return</span> self.B[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义一个empy函数，如果为空返回true，如果不为空就返回false</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">empty</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 判断是否两个栈都为空</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.A <span class="keyword">and</span> <span class="keyword">not</span> self.B:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 牛客网上也有相同的题</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># stack1负责进栈</span></span><br><span class="line">        <span class="comment"># stack2负责出栈</span></span><br><span class="line">        self.stack1 = []</span><br><span class="line">        self.stack2 = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, node</span>):</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment"># 将元素加入stack1中，表示队列的入队操作</span></span><br><span class="line">        self.stack1.append(node)</span><br><span class="line">        <span class="comment"># print(self.stack1)</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># return xx</span></span><br><span class="line">        <span class="comment"># 将stack2中的元素进行弹出，构成队列的队头元素（先进先出）</span></span><br><span class="line">        <span class="comment"># 如果stack2空的，只要stack1有元素，stack2就不断添加stack1弹出来的元素</span></span><br><span class="line">        <span class="comment"># 入股哟stack2不是空的，直接弹出就行</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.stack2:</span><br><span class="line">            <span class="keyword">while</span> self.stack1:</span><br><span class="line">                self.stack2.append(self.stack1.pop())</span><br><span class="line">                <span class="comment">#print(self.stack1)</span></span><br><span class="line">                <span class="comment">#print(self.stack2)</span></span><br><span class="line">        <span class="keyword">return</span> self.stack2.pop()</span><br></pre></td></tr></table></figure></li>
+<li>如果发现进入的栈不为空，就不停的将一个栈的元素转移到另一个栈中</li>
 </ol>
 </li>
 </ol>
+<pre><code class="python">class MyQueue:
+    def __init__(self):
+        # 定义两个栈
+        self.A,self.B=[],[]
+
+    # 将元素推到队列的末尾
+    def push(self, x: int) -&gt; None:
+        self.A.append(x)
+ 
+    # 移除队首元素
+    def pop(self) -&gt; int:
+        # 如果栈B为空
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B.pop()
+    
+    # 返回队列开头的元素(pop和peek的区别，一个是删除，一个是返回)
+    def peek(self) -&gt; int:
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B[-1]
+
+
+    # 定义一个empy函数，如果为空返回true，如果不为空就返回false
+    def empty(self) -&gt; bool:
+        # 判断是否两个栈都为空
+        if not self.A and not self.B:
+            return True
+        else:
+            return False
+</code></pre>
+<pre><code class="python"># 牛客网上也有相同的题
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        # stack1负责进栈
+        # stack2负责出栈
+        self.stack1 = []
+        self.stack2 = []
+
+    def push(self, node):
+        # write code here
+        # 将元素加入stack1中，表示队列的入队操作
+        self.stack1.append(node)
+        # print(self.stack1)
+        return
+
+    def pop(self):
+        # return xx
+        # 将stack2中的元素进行弹出，构成队列的队头元素（先进先出）
+        # 如果stack2空的，只要stack1有元素，stack2就不断添加stack1弹出来的元素
+        # 入股哟stack2不是空的，直接弹出就行
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+                #print(self.stack1)
+                #print(self.stack2)
+        return self.stack2.pop()
+</code></pre>
 <h1 id="leetcoad225-用队列实现栈"><a href="#leetcoad225-用队列实现栈" class="headerlink" title="leetcoad225-用队列实现栈"></a>leetcoad225-用队列实现栈</h1><p>请你仅使用<strong>两个队列</strong>实现一个<strong>后入先出（LIFO）的栈</strong>，并支持<strong>普通栈的全部四种操作</strong>（push、top、pop 和 empty）。<br>实现 MyStack 类：<br>    * void push(int x) 将元素 x 压入栈顶。<br>    * int pop() 移除并返回栈顶元素。<br>    * int top() 返回栈顶元素。<br>    * boolean empty() 如果栈是空的，返回 true ；否则，返回 false 。</p>
 <p>  注意：<br>    * 你只能使用队列的基本操作 —— 也就是 push to back、peek&#x2F;pop from front、size 和 is empty 这些操作。<br>    * 你所使用的语言也许不支持队列。 你可以使用 list （列表）或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。</p>
 <h1 id="leetcoad42-接雨水"><a href="#leetcoad42-接雨水" class="headerlink" title="leetcoad42-接雨水"></a>leetcoad42-接雨水</h1><p>题目描述：给定** n 个非负整数<strong>表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，</strong>下雨之后能接多少雨水**。<br>示例：<br><img src="https://runnerxr.github.io//post-images/1653317536073.png"><br>输入：height &#x3D; [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出：6<br>解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。<br>思路：这道题用到了单调递增栈的思想（之所以放在这里就是这个原因，题目本身并不简单，但是重在里面的思维的点）</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/08/%E5%85%B3%E4%BA%8E%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%B8%80(important)/" data-id="claqum2dz001nh0tk6tm9bo3c" data-title="关于栈与队列基础知识及相关衍生的题目汇总一(important)" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li></ul>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/09/%E5%85%B3%E4%BA%8E%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%9A%84%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB%E4%BA%8C(important)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于栈与队列基础知识及相关衍生的题目汇总二(important)
-        
-      </div>
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/03/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E5%88%B7%E5%9F%BA%E7%A1%80%E9%A2%98%E5%80%BC%E5%BE%97%E8%AE%B0%E5%BD%95%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E5%B0%B1%E6%95%B4%E7%90%86%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">牛客网刷基础题值得记录的一些问题（值得就整理）</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

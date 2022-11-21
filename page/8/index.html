@@ -1,516 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/8/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-结构分析的哪些操作可以用python来实现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-09-21T03:20:24.000Z" itemprop="datePublished">2021-09-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+</div>
+        <div class="main">
+    <!-- <div class="posts">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/">结构分析的哪些操作可以用python来实现</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>专注去做一件事，专注我们的行业。在结构分析设计这个行当，Python真正能帮我们做哪些事情，有哪些工作可以让Python去干，我们要根据我们的需求去学。<br>        当然可能有些人要提python人工智能出图这个概念，其实这离我们的日常还有一些遥远。据我所知，现有程序目前还没法代替人工，人工智能要获得自主意识抢夺我们的工作岗位可能还只存在科幻片里了。<br>转载自”非解构”公众号里面的一篇文章<br>那我就简单说说Python能做哪些具体的工作。</p>
-<p>1、采用python可以实<strong>现ABAQUS参数化建模</strong>。ABAQUS支持Python脚本语言，也可以编写后处理及开发abaqus gui界面；<br>2、用python编写Grasshopper建模及算法的电池。Rhino+Grasshopper的支持脚本语言gpython，<strong>python在GH中进行可视化编程</strong>。软件有相关的帮助文档可以查看。<br>3、python<strong>采用ctype调用sap2000 和ETABS 的OAPI进行建模及分析前后处理</strong>。具体可以参考下其OPAI帮助文档中的实例和函数。非解构公众号最近有gh连接sap2000的视频介绍。我后续也会有一些相关的开发和分享。<br>4、python第三方包openssepy，在python中可以使用opensees，并且支持Matplotlib绘图。为开源的opensees在python中的拓展。网站链接：<a target="_blank" rel="noopener" href="https://openseespydoc.readthedocs.io/en/latest/">https://openseespydoc.readthedocs.io/en/latest/</a><br>5、python<strong>读取截面求解器XTRACT二进制文件</strong>，并输出到text中。已将此程序嵌入我司超限分析平台，大家可以观看视频号structurevspoem（与公众号同名），有此软件完全不用人工数据处理及绘图。<br>6、python<strong>求解地震波反应谱曲线</strong>，生成人工波曲线，修改波曲线。终于可以甩开matlab复杂的安装包了，放心用python吧。最近用c++写了一个读取地震波生成谱并绘图的工具，稍后文章再分享实用工具。可以查看下崔博士网站，吴博士及非解构等公众号上也有相关反应谱的介绍。<br>7、python<strong>采用sqlite3数据库，读取yjk和pkpm模型数据库及进行模型转换</strong>。目前已实现yjk转opensees tcl的几何模型转换及显示。可以参考下博文<br>8、python<strong>读取yjk文本结果或ETABS的mdb数据库，并存入excel中</strong>。这个应该最简单了，只需要知道正则表达式及python字符串处理以及xlsxwriter包的函数就可以了。我前期写的一些小震中震数据处理程序就是这个应用，但现在改成C++来写了，效率会更高一些，但python确实是在我没掌握C++之前最好的处理工具了。<br>9、python写一个生成xtract模型.xpj的程序，其实xtract模型为文本文件，按照固定的格式排列数据（具体可以搜我新浪博客有一些相关介绍），可以生成各种复杂的型钢混凝土柱截面。<br>10、python进行常用的计算软件模型转换，例如sap2000的s2k,etabs的e2k及midas gen的mgt，abaqus的等文本格式，都是按照固定规律排列，大概就是<strong>节点</strong>，<strong>单元</strong>，<strong>材料</strong>，<strong>附加质量</strong>，<strong>节点荷载</strong>，<strong>线荷载</strong>，<strong>面荷载等区块</strong>。Python是处理字符串最好的软件，转换这些文本文件的效率也挺高。<br>       当然python还有很多 ，限于为给大家留更多思考空间，不全部写出，大家可以留言写下自己的应用或者设想也可以，不怕实现不了就怕想不到。当然有人要说爬虫和词云生成，编写机器人跟自己聊天啥的，这些都不在本行业的范围了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" data-id="claqum2em002qh0tk9f3ihg1x" data-title="结构分析的哪些操作可以用python来实现" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CAD二次开发简介" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/" class="article-date">
-  <time class="dt-published" datetime="2020-11-16T15:06:16.000Z" itemprop="datePublished">2020-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" class="post-title-link">
+                    结构分析的哪些操作可以用python来实现
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    21-09-21
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/">CAD二次开发简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>AutoCAD的二次开发主要涉及以下内容：</p>
-<p>（1）编写各种用户自定义函数并形成若干LISP、ARX、VLX或ADS文件，以及一些DCL文件。</p>
-<p>（2）建立符合自己要求的菜单文件，一般可在AutoCAD原菜单文件内添加自己的内容，然后经交互方式加入到系统中去。</p>
-<p>（3）在系统的ACAD.LSP或类似文件中加入某些内容以便进行各种初始化操作，如在启动时立即装入一些文件等。</p>
-<p>（4）通过系统对话框设置某些路径。这些操作在程序开发成功后向其它AutoCAD系统上安装应用，特别是需要大批安装时，需要进行很多文件检索、内容增删、子目录创建、文件拷贝、系统设置等繁琐工作，如能令上述工作全部自动进行，使整个二次开发程序在无人干预的情况下嵌入系统，将大大提高工作效率。</p>
-<pre><code>    AutoCAD荣登全球绘图软件的龙头宝座，主要是因为它具有开放的体系结构。它允许用户和开发者采用高级编程语言对其进行扩充和修改，即二次开发，能最大限度地满足用户的特殊要求。AutoCAD第一版于1982年11月由AutoDESK公司推出，其二次开发语言及工具也在不断地涌现
-</code></pre>
-<p>1 AutoLISP</p>
-<p>AutoLISP的全名是LIST Processing Language，她出现于1985年推出的AutoCAD R2.18中，是一种嵌入在AutoCAD内部的编程语言，是LISP原版的一个子集，她一直是低版本AutoCAD的首选编程语言。它是一种表处理语言，是被解释执行的，任何一个语句键入后就能马上执行，它对于交互式的程序开发非常方便。其缺点是继承了LISP语言的编程规则而导致繁多的括号。</p>
-<p>2 ADS</p>
-<p>ADS的全名是AutoCAD Development System，它是AutoCAD的C语言开发系统，ADS本质上是一组可以用C语言编写AutoCAD应用程序的头文件和目标库，它直接利用用户熟悉的各种流行的C语言编译器，将应用程序编译成可执行的文件在AutoCAD环境下运行，这种可以在AutoCAD环境中直接运行的可执行文件叫做ADS应用程序。ADS由于其速度快，又采用结构化的编程体系，因而很适合于高强度的数据处理，如二次开发的机械设计CAD、工程分析CAD、建筑结构CAD、土木工程CAD、化学工程CAD、电气工程CAD等。</p>
-<p>3 ObjectARX</p>
-<p>ObjectARX是一种崭新的开发AutoCAD应用程序的工具，她以C++为编程语言，采用先进的面向对象的编程原理，提供可与AutoCAD直接交互的开发环境，能使用户方便快捷地开发出高效简洁的Auto CAD应用程序。ObjectARX并没有包含在AutoCAD中，可在AutoDESK公司网站中去下载，其最新版本是ObjectARX for AutoCAD 2000，它能够对AutoCAD的所有事务进行完整的、先进的、面向对象的设计与开发，并且开发的应用程序速度更快、集成度更高、稳定性更强。ObjectARX从本质上讲，是一种特定的C++编程环境，她包括一组动态链接库（DLL），这些库与AutoCAD在同一地址空间运行并能直接利用AutoCAD核心数据结构和代码，库中包含一组通用工具，使得二次开发者可以充分利用AutoCAD的开放结构，直接访问AutoCAD数据库结构、图形系统以及CAD几何造型核心，以便能在运行期间实时扩展AutoCAD的功能，创建能全面享受AutoCAD固有命令的新命令。ObjectARX的核心是两组关键的API，即AcDb(Auto CAD数据库)和AcEd(Auto CAD编译器)，另外还有其它的一些重要库组件，如AcRX(Auto CAD实时扩展)、AcGi(Auto CAD图形接口)、AcGe(Auto CAD几何库)、ADSRX(Auto CAD开发系统实时扩展）。ObjectARX 还可以按需要加载应用程序；使用ObjectARX进行应用开发还可以在同一水平上与Windows系统集成，并与其它Windows应用程序实现交互操作。</p>
-<p>4  VisualLISP</p>
-<p>VisualLISP已经被完整地集成到AutoCAD 2000中，她为开发者提供了崭新的、增强的集成开发环境，一改过去在AutoCAD中内嵌AtuoLISP运行引擎的机制，这样开发者可以直接使用AutoCAD中的对象和反应器，进行更底层的开发。用它开发AutoLISP程序的时间被大大地缩短，原始代码能被保密，以防盗版和被更改；能帮助大家使用ActiveX对象及其事件；使用了流行的有色代码编辑器和完善的调试工具，使大家很容易创建和分析LISP程序的运行情况。在VisualLISP中新增了一些函数：如基于AutoLISP的ActiveX&#x2F;COM自动化操作接口；用于执行基于Auto CAD内部事件的LISP程序的对象反应器；新增了能够对操作系统文件进行操作的函数。</p>
-<p>5 VBA</p>
-<p>VBA 即Mcrosoft office中的Visual Basic for Applications。VBA为开发者提供了一种新的选择，也为用户访问AutoCAD 2000中丰富的技术框架打开一条新的通道。VBA和AutoCAD中强大的ActiveX自动化对象模型的结合，代表了一种新型的定制AutoCAD的模式构架。通过VBA，我们可以操作AutoCAD，控制ActiveX和其它一些应用程序，使之相互之间发生互易活动。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/" data-id="claqum2d20001h0tkavojhapn" data-title="CAD二次开发简介" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-有关CAD的相关插件的整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2020-11-15T14:56:34.000Z" itemprop="datePublished">2020-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/" class="post-title-link">
+                    CAD二次开发简介
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    20-11-16
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/">有关CAD的相关插件的整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>CAD中有各种插件，也值得自己花点时间去研究一下（如果自己有能力的化完全可以自己去开发，自己去写程序来编辑）<br>首先声明：这不是不可能的，这是完全有可能的。</p>
-<p>在目前的工作环境中有必要对插件做一个深入的研究和理解，我知道这里面会有各种各样的插件在里面，肯定是会对自己有帮助的，有意识的去做，去收集甚至去自己写这都是可以的，看你自己想不想去尝试吧。</p>
-<p>一、LISP<br>LISP是一种通用高级计算机程序语言，长期以来垄断人工智能领域的应用。LISP作为因应人工智能而设计的语言，是第一个声明式系内函数式程序设计语言，有别于命令式系内过程式的C、Fortran和面向对象的Java、C#等结构化程序设计语言。<br>AutoLISP是由Autodesk公司开发的一种LISP程序语言，LISP是List Processor的缩写。通过autolisp编程，可以节省工程师很多时间。AutoLISP语言作为嵌入在AutoCAD内部的具有智能特点的编程语言，是开发应用AutoCAD不可缺少的工具。<br>其中，仅利用AutoLisp语言进行二次开发绘制圆形，就有多种方法：<br>（一） COMMAND命令<br>通过cad界面下的tool-》autolisp-》visual lisp editor 打开AutoLisp二次开发的IDE。Lisp提供的一种特别简单的编程方法就是使用“command”命令。</p>
-<p>在command命令下，只需要将你鼠标的操作流程在cad界面下序列化成为一串代码，就能够一次性完成一连串的操作。其缺点就是一次只能运行一个命令。<br>其绘制圆的代码如下：<br>(defun c:cir()<br>(setq point1 (getpoint)) ;define center point of the circle<br>(command “circle” point1 100 “”);command<br>)<br>将lisp文件保存，并拖入cad或通过netload命令加载，只需要简单的两行代码，就可完成一个圆的绘制。<br>（二） ENTMAKE命令<br>在lisp语言的视角下，每个cad图元都是一连串属性的集合。这种属性的集合被定义为实体组。每个实体组都拥有一串代码。让我们读取一个普通的圆的实体组代码：<br>((-1 . &lt;Entity name: 7ff422e04d60&gt;) (0 . “CIRCLE”) (330 . &lt;Entity name: 7ff422e039f0&gt;) (5 . “266”) (100 . “AcDbEntity”) (67 . 0) (410 . “Model”) (8 . “0”) (100 . “AcDbCircle”) (10 17.5337 30.5646 0.0) (40 . 100.0) (210 0.0 0.0 1.0))<br>其中，(0 . “CIRCLE”)代表实体组为圆，(10 17.5337 30.5646 0.0) 代表圆心。。。。只要阅读相关说明，就能读取每个实体组代码的含义。那么，我们是否能够在cad中利用相关的实体组来生成一个圆呢？entmake命令可以达到这个目的。<br>以下是利用entmake命令绘制圆的代码：<br>(defun c:cir()<br>(entmake ‘( (0 . “CIRCLE”) ;define circle<br>(62 . 1) ;define color<br>(10 0.0 0.0 0.0) ;define center<br>(40 . 50.0) ; define radius<br>)<br>)<br>)<br>还是先加载lisp，输入命令，大功告成。</p>
-<p>（三）反应器<br>反应器是AutoCAD和用户的应用程序之间的简单链接，它允许用函数来响应发生在AutoCAD内的事件。例如可以创建反应器来通知用户的应用程序某个图元被删除。此时应用程序就会执行一些动作去响应这个事件。在窗体上的按钮是一个事件驱动程序的简单例子，它使用事件和响应来执行动作。当选择该按钮时，它就激活事件，就象信号或广播。该事件被反应器侦查到并通过使用被称为回调过程来执行作为结果的动作。<br>以下是利用反应器绘制圆的代码：<br>(defun c:cir()<br>(setq thisdrawing (vla-get-activedocument (vlax-get-acad-object))) ;get drawing object<br>(setq mspace (vla-get-modelspace thisdrawing));get model space<br>(setq pt1 (vlax-3d-point (getpoint “\nCenter point: “)));define center of circle<br>(vla-AddCircle mspace pt1 50) ;add circle<br>)<br>二、VBA<br>Visual Basic for Applications（VBA）是Visual Basic的一种宏语言，是微软开发出来在其桌面应用程序中执行通用的自动化(OLE)任务的编程语言。主要能用来扩展Windows的应用程序功能，特别是Microsoft Office软件。VBA同时也是AutoCAD的集成开发环境，VBA的加入扩展了AutoCAD的集成用户化能力。AutoCAD的开发环境也是一个可视化开发环境。<br>但是当我们尝试在AutoCAD中打开VBA的IDE时，却往往提示无相关程序。这是因为自AutoCAD2010以后，AutoCAD就取消了VBA的IDE界面。如果希望利用VBA来进行AutoCAD的二次开发，需要安装AutoCAD VBA enabler，下载地址如下：<br>(1)<a target="_blank" rel="noopener" href="http://www.autodesk.com/vba-download">http://www.autodesk.com/vba-download</a><br>(2)<a target="_blank" rel="noopener" href="http://www.cad8.net/thread-12322-1-1.html">http://www.cad8.net/thread-12322-1-1.html</a><br>当安装完成后，重复之前的操作或者在cad命令行输入vbaide，于是就出现了如图所示cad界面下的VBA的IDE</p>
-<p>这个界面和Excel中的VBA界面如出一辙。<br>是不是有点一筹莫展的感觉，输入F2，如下图所示，就会出现关于AutoCAD的VBA二次开发各个函数的路径。</p>
-<p>下面就是利用VBA在AutoCAD中绘制圆形的代码：<br>Sub addcir()<br>Dim point1(0 To 2) As Double ‘define point1<br>Dim cir As AcadCircle ‘define circle object<br>point1(0) &#x3D; 0 ‘define coordinate of point1<br>point1(1) &#x3D; 0<br>point1(2) &#x3D; 0<br>Set cir &#x3D; ThisDrawing.ModelSpace.AddCircle(point1, 100)<br>End Sub<br>以下是绘制过程：</p>
-<p>三、C#.NET<br>之于之前提及的VBA,VLisp，它们的优缺点是显而易见的:ObjectArx功能强大,编程效率高,但它的缺点是编程者必须掌握VC++,而这门语言非常的难学;VBA和VLisp虽然简单易上手,但它们对于开发大型的程序好象无能为力。那究竟有没有一种语言能结合它们的优点而尽量避免它们的缺点呢? 回答是肯定的,那就是微软新推出的21世纪编程语言C#。<br>C#是通过AutoCAD ActiveX 这座桥梁来和AutoCAD之间进行通讯的。AutoCAD ActiveX 使用户能够从 AutoCAD 的内部或外部以编程方式来操作 AutoCAD。它是通过将 AutoCAD 对象显示到“外部世界”来做到这一点的。一旦这些对象被显示，许多不同的编程语言和环境就可以访问它们。关于AutoCAD ActiveX 的情况，大家可以参考AutoCAD自带的帮助。<br>关于C#对AutoCAD二次开发环境的说明：<br>由于AutoCAD的开发框架的不断升级，不同版本的CAD需要对应不同版本的netframework框架，相应的对应不同的Visual Studio。各个开发版本要求如下：<br>小编的开发环境是Visual Studio 2010版本以及AutoCAD 2012。<br>开发流程：<br>（1）在VS中创建类库。</p>
-<p>（2）引用cad内部程序集，包括acdbmgd.dll、acmgd.dll、AcCui.dll和accoremgd.dll等。需要注意添加完引用后需要右键单击引用属性，将复制本地调整为false。</p>
-<p>（3）设置目标框架与调试方法。选中项目右键属性。选择合适的外部程序（acad.exe）和合适的框架。</p>
-<p>以下是利用C#.net绘制圆形的代码：<br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using Autodesk.AutoCAD.DatabaseServices;<br>using Autodesk.AutoCAD.Geometry;<br>using Autodesk.AutoCAD.Runtime;<br>namespace Autodesk<br>{<br>public class Class1<br>{<br>[CommandMethod(“Drawcir”)]<br>&#x2F;&#x2F;定义画圆函数<br>public void Drawcir()<br>{<br>&#x2F;&#x2F;获取当前活动图形数据库<br>Database db &#x3D; HostApplicationServices.WorkingDatabase;<br>&#x2F;&#x2F;定义圆心<br>Point3d stPoint &#x3D; new Point3d(0, 0, 0);<br>&#x2F;&#x2F;定义圆<br>Circle cir&#x3D; new Circle(stPoint,Vector3d.ZAxis,100);<br>using (Transaction tr &#x3D; db.TransactionManager.StartTransaction())<br>{<br>BlockTable bt &#x3D; (BlockTable)tr.GetObject(db.BlockTableId, OpenMode.ForRead);<br>BlockTableRecord btr &#x3D; (BlockTableRecord)tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);<br>&#x2F;&#x2F;将圆添加至块表。该方法具有返回值，可返回实体对象的id<br>btr.AppendEntity(cir);<br>&#x2F;&#x2F;将对象添加到事务处理中<br>tr.AddNewlyCreatedDBObject(cir, true);<br>&#x2F;&#x2F;提交事务处理<br>tr.Commit();<br>}<br>}<br>}<br>}<br>需要特别注意其中橙色的添加引用的几段代码。<br>代码编写完成，在项目右键生成，相应的项目路径的bin文件夹下会生成该项目的dll文件。在cad中利用netload命令加载相关dll文件，就可以得到相关成果。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/" data-id="claqum2el002mh0tkdd5k7rxv" data-title="有关CAD的相关插件的整理" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-平凡的世界第二册摘录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2020-08-16T14:16:32.000Z" itemprop="datePublished">2020-08-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/" class="post-title-link">
+                    有关CAD的相关插件的整理
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    20-11-15
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/">平凡的世界第二册摘录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>1、如今，生活已使他们天各一方；但不论怎样，他在内心深深地感谢润叶，她给他那像土块一样平凡的一生留下了太阳般光辉的一页。<br>2、你知道，幸福不仅仅是吃饱穿暖，而是勇敢地去战胜困难……是的，他现在只能个一种更艰难的生活比较，而把眼前大街上幸福和幸运的人们忘掉。忘掉！忘掉温暖，忘掉温柔，忘掉一切享乐，而把饥饿、寒冷、受辱、受苦当做自己的正常生活——<br>3、每当背着石块爬坡的时候，他的意识就处于半麻痹状态。承重的石头几乎要把他挤压到土地里去。汗水像小溪一样在脸上纵横漫流，而他却腾不出手瞿揩一把；眼睛被汗水腌得火辣辣的疼，一路上只能半睁半闭。两条打颤的腿如同筛糠，随时都有倒下的危险。这个时候，世界上什么东西都不存在了，思维只集中在一点上:向前走，把石头背到箍窑的地方——那里对他来说，每一次都几乎是一个不可企及的伟大目标！<br>4、是的，小时候，我们常常把“亲戚”这两个字看得多么美好个重要。一旦长大成人，开始独立生活，我们便很快知道，亲戚关系常常是庸俗的；互相设法沾光，沾不上光就翻白眼；甚至你生活中最大的困难也常常是亲戚们造成的；生活同样会告诉你，亲戚往往不如朋友对你真诚。见鬼去吧，亲戚！<br>5、往昔的回忆使我们激动<br>      我们重新踏上旧日的路<br>      一切过去日子的感情<br>      又逐渐活在我们的心里<br>      使我们再次心紧的是<br>      曾经熟悉的震颤；<br>      为了回忆中的忧伤，<br>      真想吐出一声长叹……<br>7、是的，他在我们的时代属于这样的青年：有文化，但没有幸运地进入大学或参加工作，因此似乎没有充分的条件直接参与到目前社会发展的主潮之中。而另一方面，他们呦不甘心把自己局限在狭小的生活天地里。因此，他们往往带着一种悲壮的激情，在一条最为艰难的道路上进行人生的搏斗。他们顾不得高谈阔论或愤世嫉俗地忧患人类的命运。他们首先得改变自己的生存条件，同时也不放弃最主要的精神追求；他们既不鄙视普通人的世俗生活，但又竭力使自己对生活的认识达到更深的层次……<br>8、决不能松劲！他还应该像往常一样，精神抖擞地跳上这辆生活的马车，坐在驾辕的位置上，绷紧全身的肌肉和神经，吆喝着，呐喊着，继续走向前去……<br>9、他一下子忘情地扑倒在地铺上，把脸深深埋进被子里，流着泪久久吮吸着那股芬芳的香味……<br>10、在我们亲爱的大地上，有多少朴素的花朵默默地开放在荒野地里。这朵花没有人注目。也许惟有自身才怜爱自身的芬芳。可是，在我们普通人的生活中，在这平凡的世界里，也许多少绚丽的生命之花在悄然而并不为我们所知啊！<br>11、可是，人的感情，尤其男女之间的感情，是世界上最难解释的一种现象。<br>12、人都说爱情是甜蜜的，瞧这小伙的爱情多么苦涩！爱情啊，有可能是天堂之光，也有可能是地狱之火！但人又不能不去爱！是的，什么也别想阻止爱。不管这爱给人带来的是幸福还是不幸。爱往往是不清醒的。尤其对某些人来说，常常像奔涌的火山岩顾不得择道而行——结果把自己也烧坏了……<br>13、此刻，他真的有点相信命运了。他悲观而看破红尘地想，人一辈子都是瞎活。谁能掌握了自己的命运？哼，人常常为了一点小小的利益和欲望，就在那里机关算尽，你争我夺，喜怒无常，实在可笑！一切都是命里注定的！<br>14、那痛苦是一个健全人的痛苦——某种意义上也是一种幸福！为什么呢？因为那痛苦，就说明你对生活还抱有希望！可如今的痛苦是绝望的痛苦；绝望的痛苦甚至使人不再痛苦——既然生活没有了希望，还有什么必要再痛苦呢？<br>15、这是人生的心酸。在我们短促而又漫长的一生中，我们在苦苦地寻找人生的幸福。可幸福往往又与我们失之交臂。当我们为此而耗尽宝贵的青春年华，皱纹也悄悄爬上了眼角的时候，我们或许才能稍微懂得生活实际上意味着什么……<br>16、生活啊，生活！你有多少苦难，又有多少甘甜！天空不会永远暗，当乌云退尽的时候，蓝天上灿烂的阳光就会照亮大地。青草照样会鲜艳无比，花朵仍然会蓬勃开放。<br>17、哪怕他今生一世黯淡无光，可他在自己生命的历程中，仍然还有值得骄傲个怀恋的东西啊！而不至于像一些可怜额乡下人，老了的时候，坐在冬日里冰凉的土炕上，可以回忆和夸耀的仅仅是自己年轻时的饭量和力气……<br>18、生活不断向前，有时我会蓦然回首想起我们两的约会。快到约会期限的那几天我觉得有一种强烈的不安的感觉，仿佛过去这些年来我一心一意在为这次会面做准备……<br>19、刹那间我真想令时光停住，好让我回顾自己，回顾失去的年华，缅怀那个穿一身短小的连衣裙和廋窄的短衫的小女孩……让我追悔少年时代我心灵的愚钝无知，它轻易地错过了我一生中本可以获得的欢乐和幸福！<br>20、生活包含着更广阔的意义，而不在于我们实际得到了什么；关键是我们的心灵是否充实。对于生活的理想，应该像宗教徒对待宗教一样充满虔诚与热情！<br>第二遍看再次增加的一部分:<br>    1.<br>谁让你读了那么些书，又知道了双水村以外还有一个大世界……如果你从小就在这个天地里日出而作，日落而息，那你现在就会和众乡亲抱同一理想:经过几年的辛劳，像大哥一样娶一个满意的媳妇，生个胖儿子，加上你的体魄，会成为一名相当出色的庄稼人。不幸的是，你知道太多了，思考太多了，因此才有了这种不能为周围人所理解的苦恼……<br>    2.<br>虽然咱们出身底层人家，但不能小看自己。我们这样的生活，精神上并不见得就比那些上大学的和当干部的人差！你看的书比我多，你更能明白这些道理……<br>    3.<br>像我们这种人，实际上最重情意了。我们任何时候都不会逃避自己对家庭和父母应尽的责任。但我们又有自己的生活理想呀<br>    4.<br>书把他从沉重的生活中拉出来，使他的精神不致被劳动压得麻木不仁。通过不断地读书，少平认识到，只有一个人对世界了解得更广大，对人生看得更深刻，那么，他才有可能对自己所处的艰难和困苦有更高意义的理解;甚至也会心平气静地对待欢乐和幸福。<br>    5.<br>她才逐渐认识到，实际生活是冷酷的;因为种种原因，这些不能进入大学门，又进入不了公家门的农村青年，即使性格非凡，天赋很高，到头来仍然会被环境所征服。当然，不是说农村就一定干不出什么名堂;主要是精神境界很可能被小农意识的汪洋大海所淹没……(有对作者的话不做好多的评价，但是作者写这些话是有他自己的自身局限和历史局限的)<br>    6.<br>世界上有些人因为忙而感到生活的沉重，有些人因为闲而活得压抑。<br>    7.<br>普通人时刻都在为具体的生活而伤神费力——尽管在某些超凡脱俗的雅士看来，这些芸芸众生的努力是那么不值一提……<br>    8.<br>有了希望，人就会产生激情，并可以义无反顾地为之而付出代价;在这样的过程中，才能体会到人生的意义。什么是人生？人生就是永不休止的奋斗！只有选定了目标并在奋斗中感到自己的努力没有虚掷，这样的生活才是充实的，精神也会永远年轻！<br>    9.<br>我们出身于贫困的农民家庭——永远不要鄙薄我们的出身，它给我们带来的好处将一生受用不尽;但我们一定又要从我们出身的局限中解脱出来，从意识上彻底背叛农民的狭隘性，追求更好的生活意义。要知道，对于我们这样出身农民家庭的人来说，要做到这一点是多么不容易啊！首先要自立自强，勇敢地面对我们不熟悉的世界。不要怕苦难！如果能深刻理解苦难，苦难就会给人带来崇高感。如果生活需要你忍受痛苦，你一定要咬紧牙关坚持下去。有位了不起的人说过:痛苦难道是白忍受的吗？它应该使我们伟大！<br>    10.<br>俗话说，这山望见那山高。的确，在农村，人们在刚吃饱饭之后，就又有点不满足了。老百姓纷纷寻思，怎样才能把日子过得更红火一些？这心理极其正常——追求更好的生活是人的本性。<br>    11.<br>没有爱情，人的生活就不堪设想。爱情啊！它使荒芜变成繁荣，平庸变为伟大;使死去的复活，活着的闪闪发光。即便爱情是不尽的煎熬，不尽的折磨，像冰霜般严厉，烈火般炙烤，但爱情对心理和身体健康的男女永远是那样的自然;同时又永远让我们感到新奇、神秘和不可思议……</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/" data-id="claqum2e9002ah0tk9vchh7n4" data-title="平凡的世界第二册摘录" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-平凡的世界第一册" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/" class="article-date">
-  <time class="dt-published" datetime="2020-08-16T12:28:37.000Z" itemprop="datePublished">2020-08-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/" class="post-title-link">
+                    平凡的世界第二册摘录
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    20-08-16
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/">平凡的世界第一册</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-<p>1、是的，生活就是这样。在我们都是小孩子的时候，一个人和一个人可能有家庭条件的区别，但孩子们本身的差别并不明显。可一旦长大了，每个人的生活道路会有多大的差别呀，有的甚至是天壤之别！<br>2、人活着，这种亲人之间的感情是多么重要，即使人的一生充满了坎坷和艰辛，只要有这种感情存在，也会感到一种温暖的慰藉。假如没有这种感情，我们活在这世界上会有多么悲哀啊！<br>3、当然，普通并不等于庸俗。他也许一辈子就是个普通人，但他要做一个不平庸的人。在许许多多平平常常的事情中，应该表现出不平常的看法和做法来。<br>4、在最平常的事情中都可以显示出一个人人格的伟大来！<br>5、生活的大剪刀是多么的无情，它要按自己的安排来对每一个人的命运进行裁剪。<br>6、他心里猛然记起：春天的时候，他手里拿着润叶给他的纸条，也正是站在这个地方，望着大雁从南方飞来——现在大雁又 向南方飞走了。时间啊，这么飞快！可是生活的道路又如此曲折而漫长……<br>7、普通人和出类拔萃的人一样，也有自己的欢乐和痛苦，只不过不为多数人了解罢了。人们宁愿去关心一个蹩脚电影演员的吃喝拉撒和鸡毛蒜皮，而不愿了解一个普通人波涛汹涌的内心世界……<br>8、记得我初来之时，对你充满了怎样的畏惧和恐惧。现在当我要离开你的时候，不知为什么，对你充满了如此的不舍之情！是的，你曾打开窗户。让我向外面的世界张望。你还用生硬的手帕打掉我从乡里带来的一身黄土，把你充满炭烟味的标志印烙在我的身上。老实说，你也没有能拍打净我身上的黄土；但我身上也的确烙下了你的印记。<br>9、这没办法，一个男人一旦迷上了一个女人，就觉得这女人是他的生命、他的生命、他的太阳。除过这个女人，世界上所有的女人都暗淡失色了。<br>新增:</p>
-<pre><code>1. 
-</code></pre>
-<p>他现在可以用比较广阔一些的目光看待自己和周围的事物，因而对生活增加了一些自信和审视的能力，并且开始用各种角度从不同的侧面来观察某种情况和某种现象了。当然，从表面上看，他目前和以前没有什么不同，但他实际在很大程度上已经不在是原来的他了。他本质上仍然是农民的儿子，但他竭力想挣脱和超越他出身的阶层。<br>    2.<br>普通人和出类拔萃的人一样，也有自己的欢乐和痛苦，只不过不为大多数人了解罢了。人们宁愿去关心一个蹩脚电影演员的吃喝拉撒和鸡毛蒜皮，而不愿了解一个普通人波涛汹涌的内心世界……<br>    3.<br>只要是一个有良知的公民，当国家出现不幸的时候，个人的不幸马上退到次要的位置。<br>    4.<br>知识这种力量可以改变一个人，甚至可以重新塑造一个人。<br>    5.<br>她的力量使她无法支撑如此巨大的精神压力。当然，除过客观的压力以外。她主观的素养本来也不够深厚。是的，她现在还不能从更高意义上来理解自身和社会。尽管她是一个正直善良的人，懂事，甚至也有较鲜明的个性，但并不具有深刻的思想和广阔的眼界。因此，最终她还是不能掌握自己的命运。<br>    6.<br>它那叶想象的白帆又驶向了遥远的童年，在记忆中的每一个温暖的港湾里停泊了一下。<br>    7.<br>它超越不了严峻的现实，也不可能把纯粹的堂.吉诃德式的浪漫想法付诸行动——他其实又是一个冷静而不浮躁的人。<br>    8.<br>他如果当初不知道这世界如此之大也罢了，反正双水村和石圪节就是他的世界。但现在他通过书本，已经“走”了那么多地方，他的思想怎么再会仅仅局限于原来的那个小天地呢？<br>    9.<br>对于他来说，这是矛盾的，也是统一的。一方面，他摆脱不了农村的影响;另一方面，他又不愿意受农村额局限。因而不可避免地表现出既不纯粹是农村的状态，又非纯粹的城市型状态。在今后一生中，不论是生活在农村，还是生活在城市，他也许将永远会是这样一种混合型的精神气质。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/" data-id="claqum2e70025h0tk7l6rhuhk" data-title="平凡的世界第一册" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-about" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/01/25/about/" class="article-date">
-  <time class="dt-published" datetime="2019-01-25T11:09:48.000Z" itemprop="datePublished">2019-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/" class="post-title-link">
+                    平凡的世界第一册
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    20-08-16
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/01/25/about/">写在前面</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><p>博客建立的初期是在2020年8月份的样子，也是在一位程序员好友的怂恿下开始通过博客来记录一点东西，虽然自己也有其他的一些记笔记的方式，但是有些内容如果可以公开也是一种比较有意思的尝试。</p>
-<h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><p>非程序员，只是一名土木界的设计狗，只是希望用这样的一种方式来记录而已，也是一种新的方式，只是想找一个渠道写下来。慢慢的积累吧，才刚起步，自己就慢慢的积累，慢慢的成长。其实自己也比较懒，但是也想拓宽一下自己的思维方式，总之刚起步，还是有点乱吧。</p>
-<h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹ 兴趣爱好"></a>⛹ 兴趣爱好</h2><p>跑步：这个自己倒是又长期坚持，但是又不是那种高强度的，只是算自己的一种生活态度吧<br>健身：其实也没有长期坚持下来<br>踢球：也算是读书时代的一大爱好吧，在参加工作后，这样的爱好好像慢慢的被湮灭了，不过没关系，热爱不死心，不影响。<br>读书：书中只有黄金屋，书中自有颜如玉，在这样的一个纷繁变化，一不小心就会让自己浮躁的年代，读书是最好的沉淀过程，希望自己能够长期的坚持下去，并伴随自己的一生的习惯。<br>深度思考：只行动，不思考就会成为一种莽撞的行为，只是思考但是却不付诸行动就会成为空想，自己当然也不想做思想的巨人却是一个行动的矮子，当然如果有一个强大的大脑，辅助合适的目标和行动，我想很多事情会以很高效的方式被解决的。</p>
-<h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/01/25/about/" data-id="claqum2di000kh0tk92s53xaj" data-title="写在前面" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-gridea" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/12/hello-gridea/" class="article-date">
-  <time class="dt-published" datetime="2018-12-11T16:00:00.000Z" itemprop="datePublished">2018-12-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div class="post">
+            <div class="post-title">
+                <a href="/2019/01/25/about/" class="post-title-link">
+                    写在前面
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2019/01/25/about/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    19-01-25
+                </div>
+            </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/12/hello-gridea/">Hello Gridea</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意… … </p>
+        <div class="post">
+            <div class="post-title">
+                <a href="/2018/12/12/hello-gridea/" class="post-title-link">
+                    Hello Gridea
+                </a>
+            </div>
+            <div class="post-content">
+                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意… … </p>
+            </div>
+            <div class="post-more">
+                <a href="/2018/12/12/hello-gridea/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    18-12-12
+                </div>
+            </div>
+        </div>
         
-          <p class="article-more-link">
-            <a href="/2018/12/12/hello-gridea/#more">Read More</a>
-          </p>
+    </div> -->
+    <div class="search-wrapper">
+    <form id="search-form"> <!-- 搜索框相关 -->
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+        <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+    </form>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <p class='no-result'>No results found </p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+</div>
+    <div class="archive">
+    <ul class="post-archive">
         
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/12/hello-gridea/" data-id="claqum2de000dh0tk7um8dzne" data-title="Hello Gridea" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
-  </nav>
-
-</section>
+        <li class="post-item">
+            <span class="post-date">
+                21/09/21</span>
+            <a href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" class="post-title">
+                结构分析的哪些操作可以用python来实现
+            </a>
+        </li>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+        <li class="post-item">
+            <span class="post-date">
+                20/11/16</span>
+            <a href="/2020/11/16/CAD%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B/" class="post-title">
+                CAD二次开发简介
+            </a>
+        </li>
         
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
+        <li class="post-item">
+            <span class="post-date">
+                20/11/15</span>
+            <a href="/2020/11/15/%E6%9C%89%E5%85%B3CAD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6%E7%9A%84%E6%95%B4%E7%90%86/" class="post-title">
+                有关CAD的相关插件的整理
+            </a>
+        </li>
         
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
+        <li class="post-item">
+            <span class="post-date">
+                20/08/16</span>
+            <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%BA%8C%E5%86%8C%E6%91%98%E5%BD%95/" class="post-title">
+                平凡的世界第二册摘录
+            </a>
+        </li>
         
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
+        <li class="post-item">
+            <span class="post-date">
+                20/08/16</span>
+            <a href="/2020/08/16/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E5%86%8C/" class="post-title">
+                平凡的世界第一册
+            </a>
+        </li>
         
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
+        <li class="post-item">
+            <span class="post-date">
+                19/01/25</span>
+            <a href="/2019/01/25/about/" class="post-title">
+                写在前面
+            </a>
+        </li>
         
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
+        <li class="post-item">
+            <span class="post-date">
+                18/12/12</span>
+            <a href="/2018/12/12/hello-gridea/" class="post-title">
+                Hello Gridea
+            </a>
+        </li>
         
-      </ul>
-    </div>
-  </div>
+    </ul>
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<div class="page-nav">
+    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo;Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+</div>
+
+</div>
+
+<div class="page-nav">
+    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo;Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+</div>
+
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

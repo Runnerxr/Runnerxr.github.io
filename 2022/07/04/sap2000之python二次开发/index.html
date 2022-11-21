@@ -1,110 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>sap2000之python二次开发 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="慢慢来吧，有空的时候就整，这肯定也是一个比较好的方向，值得自己去积累与深挖的方向，并且自己要形成一些相应的标准文件来巩固自己所学。 通过api，用户可以编写程序控制sap2000，调用软件中的各种功能，实现自动建模、自动分析、自动调整参数、迭代运行，而且自己也一直在不停的往前学，往深的方向进行专研。 pywin32库为python提访问windows api的扩展，提供了非常完整的window常量">
-<meta property="og:type" content="article">
-<meta property="og:title" content="sap2000之python二次开发">
-<meta property="og:url" content="http://example.com/2022/07/04/sap2000%E4%B9%8Bpython%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="慢慢来吧，有空的时候就整，这肯定也是一个比较好的方向，值得自己去积累与深挖的方向，并且自己要形成一些相应的标准文件来巩固自己所学。 通过api，用户可以编写程序控制sap2000，调用软件中的各种功能，实现自动建模、自动分析、自动调整参数、迭代运行，而且自己也一直在不停的往前学，往深的方向进行专研。 pywin32库为python提访问windows api的扩展，提供了非常完整的window常量">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-04T15:43:41.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:21:45.841Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-sap2000之python二次开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/04/sap2000%E4%B9%8Bpython%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" class="article-date">
-  <time class="dt-published" datetime="2022-07-04T15:43:41.000Z" itemprop="datePublished">2022-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      sap2000之python二次开发
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            sap2000之python二次开发
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/07/04 Mon 23:43&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:21
+        </div>
+    </div>
+    <div class="article-content">
         <p>慢慢来吧，有空的时候就整，这肯定也是一个比较好的方向，值得自己去积累与深挖的方向，并且自己要形成一些相应的标准文件来巩固自己所学。</p>
 <p>通过api，用户可以编写程序控制sap2000，调用软件中的各种功能，实现<strong>自动建模</strong>、<strong>自动分析</strong>、<strong>自动调整参数</strong>、<strong>迭代运行</strong>，而且自己也一直在不停的往前学，往深的方向进行专研。</p>
 <p>pywin32库<br>为python提访问windows api的扩展，提供了非常完整的<strong>window常量</strong>、<strong>接口</strong>、<strong>线程</strong>以及<strong>com机制</strong></p>
 <h1 id="系统单位值："><a href="#系统单位值：" class="headerlink" title="系统单位值："></a>系统单位值：</h1><p>备注：主要有16种方式，在平时的使用种主要用到的是这样的几种：5、6、9、10<br>lb_in_F &#x3D; 1<br>lb_ft_F &#x3D; 2<br>kip_in_F &#x3D; 3<br>kip_ft_F &#x3D; 4<br>kN_mm_C &#x3D; 5<br>kN_m_C &#x3D; 6<br>kgf_mm_C &#x3D; 7<br>kgf_m_C &#x3D; 8<br>N_mm_C &#x3D; 9<br>N_m_C &#x3D; 10<br>Ton_mm_C &#x3D; 11<br>Ton_m_C &#x3D; 12<br>kN_cm_C &#x3D; 13<br>kgf_cm_C &#x3D; 14<br>N_cm_C &#x3D; 15<br>Ton_cm_C &#x3D; 16</p>
 <h1 id="访问sap2000"><a href="#访问sap2000" class="headerlink" title="访问sap2000"></a>访问sap2000</h1><p>根据自己的整理，这里主要提供了以下的两种方式：<br><strong>方式一：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># os模块负责程序与操作系统的交互，提供了访问操作系统底层的接口</span></span><br><span class="line"><span class="comment"># This module provides a portable way of using operating system dependent functionality.</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># sys模块负责程序与python解释器的交互，提供了一系列的函数和变量，用于操控python的运行时环境</span></span><br><span class="line"><span class="comment"># This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"><span class="comment"># comtypes包是纯python，轻量级的COM客户端和服务框架，基于ctypes的Python的FFI包，可以在python的环境中使用该包的各类模块</span></span><br><span class="line"><span class="keyword">import</span> comtypes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 首先根据类名建立COM对象，SAP2000的类名为SAP2000v1.Helper</span></span><br><span class="line"><span class="comment"># creat_com_object</span></span><br><span class="line">helper = comtypes.client.CreateObject(<span class="string">&#x27;SAP2000v1.Helper&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.根据路径来运行</span></span><br><span class="line"><span class="comment"># 使用函数CreateObject打开软件</span></span><br><span class="line">ProgramPath = <span class="string">&#x27;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#x27;</span></span><br><span class="line">mySapObject = helper.CreateObject(ProgramPath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.根据程序ID打开软件</span></span><br><span class="line">mySapObject = helper.CreateObjectProgID(<span class="string">&quot;CSI.SAP2000.API.SapObject&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用ApplicationStart函数运行SAP2000软件，并指定单位制</span></span><br><span class="line">mySapObject.ApplicationStart(<span class="number">9</span>)</span><br><span class="line">SapModel = mySapObject.SapModel</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># os模块负责程序与操作系统的交互，提供了访问操作系统底层的接口
+# This module provides a portable way of using operating system dependent functionality.
+import os
+# sys模块负责程序与python解释器的交互，提供了一系列的函数和变量，用于操控python的运行时环境
+# This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter
+import sys
+import comtypes.client
+# comtypes包是纯python，轻量级的COM客户端和服务框架，基于ctypes的Python的FFI包，可以在python的环境中使用该包的各类模块
+import comtypes
+
+# 首先根据类名建立COM对象，SAP2000的类名为SAP2000v1.Helper
+# creat_com_object
+helper = comtypes.client.CreateObject(&#39;SAP2000v1.Helper&#39;)
+
+# 1.根据路径来运行
+# 使用函数CreateObject打开软件
+ProgramPath = &#39;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#39;
+mySapObject = helper.CreateObject(ProgramPath)
+
+# 2.根据程序ID打开软件
+mySapObject = helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)
+
+# 使用ApplicationStart函数运行SAP2000软件，并指定单位制
+mySapObject.ApplicationStart(9)
+SapModel = mySapObject.SapModel
+</code></pre>
 <p><strong>方式二</strong>：其实差不多，可能是写法略微有点区别</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"><span class="keyword">import</span> comtypes</span><br><span class="line"></span><br><span class="line">helper = comtypes.client.CreateObject(<span class="string">&#x27;CSiAPIv1.Helper&#x27;</span>)</span><br><span class="line">mySapObject = helper.CreateObject(<span class="string">r&quot;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&quot;</span>)</span><br><span class="line"><span class="comment">#mySapObject = helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)</span></span><br><span class="line"></span><br><span class="line">mySapObject.ApplicationStart()</span><br><span class="line">SapModel = mySapObject.SapModel</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import os
+import sys
+import comtypes.client
+import comtypes
 
+helper = comtypes.client.CreateObject(&#39;CSiAPIv1.Helper&#39;)
+mySapObject = helper.CreateObject(r&quot;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&quot;)
+#mySapObject = helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)
 
+mySapObject.ApplicationStart()
+SapModel = mySapObject.SapModel
+</code></pre>
 <p>以下为一些非常简单的常规操作，也作为一个平时的记录点写下来，方便后面自己来查阅，侧重点是代码的理解与运行，并且都是自己调试过的，也大致能够理解的，能够有一些相应的实际意义的。</p>
 <h1 id="定义材料与截面"><a href="#定义材料与截面" class="headerlink" title="定义材料与截面"></a>定义材料与截面</h1><h2 id="定义材料"><a href="#定义材料" class="headerlink" title="定义材料"></a>定义材料</h2><p>在CSI_OAPI_Documentation开发文件中的CSI OAPI Functions-Definitions-Properties-Material中查看材料定义相关的函数<br>对于几种材料的编号要清楚：</p>
 <ol>
@@ -117,7 +117,9 @@
 <li>MATERIAL_TENDON(钢索)</li>
 </ol>
 <p>使用SapModel.PropMaterial.AddMaterial函数添加材料，例如添加C20混凝土</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">&quot;&quot;</span></span><br><span class="line">name,ret=SapModel.PropMaterial.AddMaterial(name,<span class="number">2</span>,<span class="string">&quot;&quot;</span>china,<span class="string">&quot;GB&quot;</span>,<span class="string">&quot;GB50010 C20&quot;</span> )</span><br></pre></td></tr></table></figure>
+<pre><code class="python">name=&quot;&quot;
+name,ret=SapModel.PropMaterial.AddMaterial(name,2,&quot;&quot;china,&quot;GB&quot;,&quot;GB50010 C20&quot; )
+</code></pre>
 <p>该函数主要有6个参数：Name,MatType,Region,Standard,Grade,UserName</p>
 <ol>
 <li>Name为返回的材料名，为ByRef类型，该参数要按照引用的方式传递，在函数中修改这个值会造成实参的值发生相应的改变</li>
@@ -126,174 +128,589 @@
 <li>UserName 为用户指定的材料名，为可选参数(Optional ByVal),如果不传递就会使用默认值</li>
 </ol>
 <p>如果添加多种材料，可以使用循环语句：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">&quot;Q235&quot;</span>,<span class="string">&quot;Q355&quot;</span>,<span class="string">&quot;Q420&quot;</span>,<span class="string">&quot;Q460&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> mname <span class="keyword">in</span> names:</span><br><span class="line">    name,ret=SapModel.PropMaterial.AddMaterial(name,<span class="number">1</span>,<span class="string">&quot;china&quot;</span>,<span class="string">&quot;GB&quot;</span>,mname)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">names = [&quot;Q235&quot;,&quot;Q355&quot;,&quot;Q420&quot;,&quot;Q460&quot;]
+for mname in names:
+    name,ret=SapModel.PropMaterial.AddMaterial(name,1,&quot;china&quot;,&quot;GB&quot;,mname)
+</code></pre>
 <h2 id="添加截面"><a href="#添加截面" class="headerlink" title="添加截面"></a>添加截面</h2><p>在CSI_OAPI_Documentation开发文件中的CSi OAPI Functions-Definitions-Properties-Frame中查看框架截面定义相关的函数。<br>通过API函数可以查询当前模型定义的截面、添加截面以及修改截面</p>
 <h3 id="混凝土截面添加"><a href="#混凝土截面添加" class="headerlink" title="混凝土截面添加"></a>混凝土截面添加</h3><p>矩形：SetRecangle函数<br>圆形：SetCircle函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SapModel.PropFrame.SetRectangle(<span class="string">&quot;Beam500x300&quot;</span>,<span class="string">&quot;C30&quot;</span>,<span class="number">0.5</span>,<span class="number">0.3</span>)</span><br><span class="line">SapModel.PropFrame,SetRecTangle(<span class="string">&quot;Col500x300&quot;</span>,<span class="string">&quot;C30&quot;</span>,<span class="number">0.5</span>,<span class="number">0.5</span>)</span><br><span class="line"><span class="comment"># 混凝土的配筋信息使用SetRebarBeam和SetRebarColumn函数</span></span><br><span class="line">SapModel.PropFrame.SetRebarBeam(<span class="string">&quot;Beam500X300&quot;</span>,<span class="string">&quot;HPB300&quot;</span>,<span class="string">&quot;HPB300&quot;</span>,<span class="number">0.002</span>,<span class="number">0.002</span>,<span class="number">0.00005</span>,<span class="number">0.00005</span>,<span class="number">0.00005</span>,<span class="number">0.00005</span>)</span><br><span class="line">SapModel.PropFrame.SetRebarColumn(<span class="string">&quot;Col500X500&quot;</span>,<span class="string">&quot;HPB300&quot;</span>,<span class="string">&quot;HPB300&quot;</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0.02</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="string">&quot;10d&quot;</span>,<span class="string">&quot;10d&quot;</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="钢结构截面的定义"><a href="#钢结构截面的定义" class="headerlink" title="钢结构截面的定义"></a>钢结构截面的定义</h3><h4 id="型钢库截面导入"><a href="#型钢库截面导入" class="headerlink" title="型钢库截面导入"></a>型钢库截面导入</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一：采用老版的pro格式的</span></span><br><span class="line">SapModel.PropFrame.ImportProp(<span class="string">&quot;L20X3&quot;</span>,<span class="string">&quot;Q235&quot;</span>,<span class="string">&quot;ChineseGB08.pro&quot;</span>,<span class="string">&quot;L20x3&quot;</span>)</span><br><span class="line"><span class="comment"># 方法二：采用新版的xml格式的</span></span><br><span class="line">ret = SapModel.PropFrame.ImportProp(<span class="string">&quot;L30X3&quot;</span>,<span class="string">&quot;Q235&quot;</span>,<span class="string">&quot;D:\Program Files\Computers and Structures\SAP2000 24\Property Libraries\Sections\ChineseGB08.xml&quot;</span>,<span class="string">&quot;L30X3&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="角钢截面"><a href="#角钢截面" class="headerlink" title="角钢截面"></a>角钢截面</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SapModel.PropFrame.SetAngle(<span class="string">&quot;L60X5&quot;</span>,<span class="string">&quot;Q235&quot;</span>,<span class="number">0.06</span>,<span class="number">0.06</span>,<span class="number">0.005</span>,<span class="number">0.005</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="圆管截面"><a href="#圆管截面" class="headerlink" title="圆管截面"></a>圆管截面</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SapModel.ProFrame.SetPipe(<span class="string">&quot;P100X2&quot;</span>,<span class="string">&quot;Q235&quot;</span>,<span class="number">100</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">SapModel.PropFrame.SetRectangle(&quot;Beam500x300&quot;,&quot;C30&quot;,0.5,0.3)
+SapModel.PropFrame,SetRecTangle(&quot;Col500x300&quot;,&quot;C30&quot;,0.5,0.5)
+# 混凝土的配筋信息使用SetRebarBeam和SetRebarColumn函数
+SapModel.PropFrame.SetRebarBeam(&quot;Beam500X300&quot;,&quot;HPB300&quot;,&quot;HPB300&quot;,0.002,0.002,0.00005,0.00005,0.00005,0.00005)
+SapModel.PropFrame.SetRebarColumn(&quot;Col500X500&quot;,&quot;HPB300&quot;,&quot;HPB300&quot;,1,1,0.02,0,3,3,&quot;10d&quot;,&quot;10d&quot;,0,2,2,False)
+</code></pre>
+<h3 id="钢结构截面的定义"><a href="#钢结构截面的定义" class="headerlink" title="钢结构截面的定义"></a>钢结构截面的定义</h3><h4 id="型钢库截面导入"><a href="#型钢库截面导入" class="headerlink" title="型钢库截面导入"></a>型钢库截面导入</h4><pre><code class="python"># 方法一：采用老版的pro格式的
+SapModel.PropFrame.ImportProp(&quot;L20X3&quot;,&quot;Q235&quot;,&quot;ChineseGB08.pro&quot;,&quot;L20x3&quot;)
+# 方法二：采用新版的xml格式的
+ret = SapModel.PropFrame.ImportProp(&quot;L30X3&quot;,&quot;Q235&quot;,&quot;D:\Program Files\Computers and Structures\SAP2000 24\Property Libraries\Sections\ChineseGB08.xml&quot;,&quot;L30X3&quot;)
+</code></pre>
+<h4 id="角钢截面"><a href="#角钢截面" class="headerlink" title="角钢截面"></a>角钢截面</h4><pre><code class="python">SapModel.PropFrame.SetAngle(&quot;L60X5&quot;,&quot;Q235&quot;,0.06,0.06,0.005,0.005)
+</code></pre>
+<h4 id="圆管截面"><a href="#圆管截面" class="headerlink" title="圆管截面"></a>圆管截面</h4><pre><code class="python">SapModel.ProFrame.SetPipe(&quot;P100X2&quot;,&quot;Q235&quot;,100,2)
+</code></pre>
 <h1 id="杆件绘制"><a href="#杆件绘制" class="headerlink" title="杆件绘制"></a>杆件绘制</h1><h2 id="采用点的方式"><a href="#采用点的方式" class="headerlink" title="采用点的方式"></a>采用点的方式</h2><p>在CSi OAPI Functions-Objects Model-Point object中查看Point绘制的函数</p>
 <ol>
 <li>SapModel.PointObj.AddCartesian</li>
 <li>SapModel.PointObj.AddCylindrical</li>
 <li>SapModel.PointObj.AddSpherical</li>
 </ol>
-<h3 id="按照笛卡尔坐标"><a href="#按照笛卡尔坐标" class="headerlink" title="按照笛卡尔坐标"></a>按照笛卡尔坐标</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name = <span class="string">&quot;&quot;</span></span><br><span class="line">locZ = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    name,ret=SapModel.PointObj.AddCartesian(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>+locZ*step,Name)</span><br></pre></td></tr></table></figure>
+<h3 id="按照笛卡尔坐标"><a href="#按照笛卡尔坐标" class="headerlink" title="按照笛卡尔坐标"></a>按照笛卡尔坐标</h3><pre><code class="python">Name = &quot;&quot;
+locZ = 1
+for step in range(4):
+    name,ret=SapModel.PointObj.AddCartesian(1,1,1+locZ*step,Name)
+</code></pre>
 <p>其他的几种方式省略</p>
 <h1 id="打开文件并获取杆件的数量以及标签"><a href="#打开文件并获取杆件的数量以及标签" class="headerlink" title="打开文件并获取杆件的数量以及标签"></a>打开文件并获取杆件的数量以及标签</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zn8QVG1aOtLgZD6swVdlTA">https://mp.weixin.qq.com/s/zn8QVG1aOtLgZD6swVdlTA</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment"># 这里采用try except的方式就可以以两种方式打开sap2000，当目前有打开的sap2000时直接获取当前的COM对象，如果提示为&quot;OSError, comtypes.COMError&quot;，直接根据程序的地址来创建COM对象</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment">#获得当前运行的COM对象</span></span><br><span class="line">    mySapObject = comtypes.client.GetActiveObject(<span class="string">&#x27;CSI.SAP2000.API.SapObject&#x27;</span>)</span><br><span class="line"><span class="comment"># 如果当前没有运行的com对象，就直接打开sap2000程序</span></span><br><span class="line"><span class="keyword">except</span>(OSError, comtypes.COMError):</span><br><span class="line">    <span class="comment">#指定SAP2000运行地址</span></span><br><span class="line">    ProgramPath = <span class="string">&#x27;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#x27;</span></span><br><span class="line">    <span class="comment">#根据ID值创建COM对象，SAP2000ID值为SAP2000v1.Helper</span></span><br><span class="line">    helper = comtypes.client.CreateObject(<span class="string">&#x27;SAP2000v1.Helper&#x27;</span>)</span><br><span class="line">    <span class="comment">#查询目标接口</span></span><br><span class="line">    <span class="comment"># QueryInterface客户可以通过此函数来查询某个组件是否支持某个特定的接口</span></span><br><span class="line">    <span class="comment"># comtypes.gen是子包，导入comtypes.client会自动创建</span></span><br><span class="line">    helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)</span><br><span class="line">    <span class="comment"># 采用指定运行路径的方式运行 SAP2000</span></span><br><span class="line">    <span class="comment"># 当所给定的路径不对的时候，程序也会报错，此时再嵌套一个try except语句，并打印&quot;当前的路径无法打开主程序&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        mySapObject = helper.CreateObject(ProgramPath)</span><br><span class="line">    <span class="keyword">except</span> (OSError, comtypes.COMError):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Cannot start a new instance of the program from &quot;</span> + ProgramPath)</span><br><span class="line">        <span class="comment"># 非正常退出程序</span></span><br><span class="line">        sys.exit(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用ApplicationStart函数运行sap2000软件，并指定单位制（此处按的默认值）</span></span><br><span class="line">mySapObject.ApplicationStart()</span><br><span class="line"><span class="comment">#生成SapModel</span></span><br><span class="line">SapModel = mySapObject.SapModel</span><br><span class="line"><span class="comment">#模型文件</span></span><br><span class="line">FilePath = <span class="string">r&#x27;E:\光伏支架相关文档\贵州光伏\贵州光伏（导入截面）\贵州光伏（导入截面）.sdb&#x27;</span></span><br><span class="line"><span class="comment">#打开模型文件</span></span><br><span class="line">SapModel.File.OpenFile(FilePath)</span><br><span class="line"><span class="comment">##获得模型杆件数量并显示</span></span><br><span class="line">FrameNum = <span class="number">0</span></span><br><span class="line">NameList = []</span><br><span class="line">ret = <span class="number">1</span></span><br><span class="line">[FrameNum,NameList,ret] = SapModel.FrameObj.GetNameList(FrameNum,NameList)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;杆件总数：&quot;</span>,FrameNum)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;构件列表：\n&quot;</span>,NameList)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;Press Any Key&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import comtypes.client
+import sys
+# 这里采用try except的方式就可以以两种方式打开sap2000，当目前有打开的sap2000时直接获取当前的COM对象，如果提示为&quot;OSError, comtypes.COMError&quot;，直接根据程序的地址来创建COM对象
+try:
+    #获得当前运行的COM对象
+    mySapObject = comtypes.client.GetActiveObject(&#39;CSI.SAP2000.API.SapObject&#39;)
+# 如果当前没有运行的com对象，就直接打开sap2000程序
+except(OSError, comtypes.COMError):
+    #指定SAP2000运行地址
+    ProgramPath = &#39;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#39;
+    #根据ID值创建COM对象，SAP2000ID值为SAP2000v1.Helper
+    helper = comtypes.client.CreateObject(&#39;SAP2000v1.Helper&#39;)
+    #查询目标接口
+    # QueryInterface客户可以通过此函数来查询某个组件是否支持某个特定的接口
+    # comtypes.gen是子包，导入comtypes.client会自动创建
+    helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)
+    # 采用指定运行路径的方式运行 SAP2000
+    # 当所给定的路径不对的时候，程序也会报错，此时再嵌套一个try except语句，并打印&quot;当前的路径无法打开主程序&quot;
+    try:
+        mySapObject = helper.CreateObject(ProgramPath)
+    except (OSError, comtypes.COMError):
+        print(&quot;Cannot start a new instance of the program from &quot; + ProgramPath)
+        # 非正常退出程序
+        sys.exit(-1)
 
-<h1 id="运行sap2000软件，打开指定的模型文件，并读取模型中的构件数"><a href="#运行sap2000软件，打开指定的模型文件，并读取模型中的构件数" class="headerlink" title="运行sap2000软件，打开指定的模型文件，并读取模型中的构件数"></a>运行sap2000软件，打开指定的模型文件，并读取模型中的构件数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment">#获得当前运行的COM对象</span></span><br><span class="line">    mySapObject = comtypes.client.GetActiveObject(<span class="string">&#x27;CSI.SAP2000.API.SapObject&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span>(OSError, comtypes.COMError):</span><br><span class="line">    <span class="comment">#指定SAP2000运行地址</span></span><br><span class="line">    ProgramPath = <span class="string">&#x27;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#x27;</span></span><br><span class="line">    <span class="comment">#根据ID值创建COM对象，SAP2000ID值为SAP2000v1.Helper</span></span><br><span class="line">    helper = comtypes.client.CreateObject(<span class="string">&#x27;SAP2000v1.Helper&#x27;</span>)</span><br><span class="line">    <span class="comment">#查询目标接口</span></span><br><span class="line">    helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)</span><br><span class="line">    <span class="comment"># 采用指定运行路径的方式运行 SAP2000</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        mySapObject = helper.CreateObject(ProgramPath)</span><br><span class="line">    <span class="keyword">except</span> (OSError, comtypes.COMError):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Cannot start a new instance of the program from &quot;</span> + ProgramPath)</span><br><span class="line">        sys.exit(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">mySapObject.ApplicationStart()</span><br><span class="line"><span class="comment">#生成SapModel</span></span><br><span class="line">SapModel = mySapObject.SapModel</span><br><span class="line"><span class="comment">#模型文件</span></span><br><span class="line">FilePath = <span class="string">r&#x27;E:\光伏支架相关文档\贵州光伏\贵州光伏（导入截面）\贵州光伏（导入截面）.sdb&#x27;</span></span><br><span class="line"><span class="comment">#打开模型文件</span></span><br><span class="line">SapModel.File.OpenFile(FilePath)</span><br><span class="line"><span class="comment">##获得模型杆件数量并显示</span></span><br><span class="line">FrameNum = <span class="number">0</span></span><br><span class="line">NameList = []</span><br><span class="line">ret = <span class="number">1</span></span><br><span class="line">[FrameNum,NameList,ret] = SapModel.FrameObj.GetNameList(FrameNum,NameList)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;杆件总数：&quot;</span>,FrameNum)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;构件列表：\n&quot;</span>,NameList)</span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;Press Any Key&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="以一根梁为例进行分析"><a href="#以一根梁为例进行分析" class="headerlink" title="以一根梁为例进行分析"></a>以一根梁为例进行分析</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前运行的sap2000</span></span><br><span class="line">SapObject = comtypes.client.GetActiveObject(<span class="string">&quot;CSI.SAP2000.API.SapObject&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#create SapModel object（创建模型对象）</span></span><br><span class="line">SapModel = SapObject.SapModel</span><br><span class="line"></span><br><span class="line"><span class="comment">#initialize model（初始化模型）</span></span><br><span class="line">SapModel.InitializeNewModel()</span><br><span class="line"></span><br><span class="line"><span class="comment">#create new blank model（创建新的空白模型）</span></span><br><span class="line">ret = SapModel.File.NewBlank()</span><br><span class="line">kN_mm_C = <span class="number">5</span></span><br><span class="line">ret = SapModel.SetPresentUnits(<span class="number">5</span>)  <span class="comment"># 设置模型单位</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加材料</span></span><br><span class="line">MATERIAL_STEEL=<span class="number">1</span> <span class="comment">#钢材</span></span><br><span class="line">MATERIAL_CONCRETE = <span class="number">2</span> <span class="comment">#混凝土</span></span><br><span class="line">MATERIAL_BEBAR = <span class="number">8</span> <span class="comment"># 钢筋</span></span><br><span class="line">mat=<span class="string">&quot;C40&quot;</span></span><br><span class="line">ret = SapModel.PropMaterial.AddMaterial(mat,<span class="number">2</span>,<span class="string">&quot;china&quot;</span>,<span class="string">&quot;GB&quot;</span>,<span class="string">&quot;GB50010 C40&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义框架截面属性</span></span><br><span class="line">sec = <span class="string">&quot;300x700&quot;</span></span><br><span class="line">ret = SapModel.PropFrame.SetRectangle(sec,<span class="string">&quot;C40&quot;</span>,<span class="number">700</span>,<span class="number">300</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 布置框架截面</span></span><br><span class="line">x1,y1,z1=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">x2,y2,z2=<span class="number">5000</span>,<span class="number">0</span>,<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立一根跨度为5m的梁</span></span><br><span class="line">SapModel.FrameObj.AddByCoord(x1,y1,z1,x2,y2,z2,<span class="string">&quot;L1&quot;</span>,sec,<span class="string">&quot;L1&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加支座约束</span></span><br><span class="line">Restraint=[<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>] <span class="comment"># 三平动，三转动，此处为简支梁</span></span><br><span class="line">PointName1=<span class="string">&quot; &quot;</span></span><br><span class="line">PointName2=<span class="string">&quot; &quot;</span></span><br><span class="line">[PointName1,PointName2,ret]=SapModel.Frameobj.GetPoints(<span class="string">&quot;L1&quot;</span>,PointName1,PointName2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简支梁支座（给两个节点添加设置好的支座）</span></span><br><span class="line">SapModel.PointObj.SetRestraint(PointName1,Restraint)</span><br><span class="line">SapModel.PointObj.SetRestraint(PointName2,Restraint)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义荷载模式 常用的如下：</span></span><br><span class="line"><span class="comment"># DEAD=1(默认已有) SUPERDEAD(附加恒载)=2，活载2，地震荷载5，用于底部剪力法，按照多质点算的</span></span><br><span class="line"><span class="comment"># 风荷载6，雪荷载7，屋面活荷载11，移动荷载9，温度荷载10</span></span><br><span class="line">LTYPE_DEAD=<span class="number">1</span> <span class="comment"># 恒载</span></span><br><span class="line">LTYPE_LIVE=<span class="number">3</span> <span class="comment"># 活荷载</span></span><br><span class="line">SapModel.LoadPatterns.Add(<span class="string">&quot;DEAD1&quot;</span>,LTYPE_DEAD,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">SapModel.LoadPatterns.Add(<span class="string">&quot;Live&quot;</span>,LTYPE_LIVE,<span class="number">0</span>,<span class="literal">False</span>) <span class="comment"># 自重系数0，flase:不创建荷载工况</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加荷载</span></span><br><span class="line">kN_m_C=<span class="number">6</span></span><br><span class="line">ret = SapModel.SetPresentUnits(<span class="number">6</span>)</span><br><span class="line">SapModel.FrameObj.SetLoadGravity(<span class="string">&quot;L1&quot;</span>,<span class="string">&quot;DEAD1&quot;</span>,<span class="number">0</span>,<span class="number">0</span>,-<span class="number">10</span>,<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># path=&quot;E:\GHtosap2000\Example2&quot;</span></span><br><span class="line"><span class="comment"># ModelPath = path +os.sep + &quot;test01.sdb&quot;</span></span><br><span class="line"><span class="comment"># SapModel.File.Save(ModelPath)</span></span><br><span class="line">path=<span class="string">r&#x27;E:\GHtosap2000\Example1\test01.sdb&#x27;</span></span><br><span class="line">SapModel.File.Save(path)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分析模型</span></span><br><span class="line">SapModel.Analyze.RunAnalysis()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果查看</span></span><br><span class="line">SapResult = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(<span class="string">&quot;L1&quot;</span>,PointName1,PointName2)</span><br><span class="line">SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()  <span class="comment"># 取消选择所有工况输出</span></span><br><span class="line">SapModel.Results.Setup.GetCaseSelectedForOutput(<span class="string">&quot;DEAD1&quot;</span>) <span class="comment"># 选择dead1工况进行输出</span></span><br><span class="line">ret = SapModel.Results.Setup.SetCaseSelectedForOutput(<span class="string">&quot;DEAD1&quot;</span>)</span><br><span class="line">NumberResults=<span class="number">0</span></span><br><span class="line">Obj,Elm,LoadCase,StepType,StepNum,F1,F2,F3,M1,M2,M3,=[],[],[],[],[],[],[],[],[],[],[]</span><br><span class="line">[NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3,ret] = SapModel.Results.JointReact(PointName1,<span class="number">0</span>,NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3)</span><br><span class="line"><span class="built_in">print</span>(F2)</span><br><span class="line"><span class="comment"># 关闭sap2000</span></span><br><span class="line"><span class="comment"># SapModel.ApplicationExit(True) # 关闭sap2000</span></span><br><span class="line">SapModel = <span class="number">0</span></span><br><span class="line">SapObject = <span class="number">0</span> <span class="comment"># 不设置成0应用程序没有完全关闭，仍然占用系统内存</span></span><br></pre></td></tr></table></figure>
+# 使用ApplicationStart函数运行sap2000软件，并指定单位制（此处按的默认值）
+mySapObject.ApplicationStart()
+#生成SapModel
+SapModel = mySapObject.SapModel
+#模型文件
+FilePath = r&#39;E:\光伏支架相关文档\贵州光伏\贵州光伏（导入截面）\贵州光伏（导入截面）.sdb&#39;
+#打开模型文件
+SapModel.File.OpenFile(FilePath)
+##获得模型杆件数量并显示
+FrameNum = 0
+NameList = []
+ret = 1
+[FrameNum,NameList,ret] = SapModel.FrameObj.GetNameList(FrameNum,NameList)
+print(&quot;杆件总数：&quot;,FrameNum)
+print(&quot;构件列表：\n&quot;,NameList)
+input(&quot;Press Any Key&quot;)
+</code></pre>
+<h1 id="运行sap2000软件，打开指定的模型文件，并读取模型中的构件数"><a href="#运行sap2000软件，打开指定的模型文件，并读取模型中的构件数" class="headerlink" title="运行sap2000软件，打开指定的模型文件，并读取模型中的构件数"></a>运行sap2000软件，打开指定的模型文件，并读取模型中的构件数</h1><pre><code class="python">import comtypes.client
+import sys
+try:
+    #获得当前运行的COM对象
+    mySapObject = comtypes.client.GetActiveObject(&#39;CSI.SAP2000.API.SapObject&#39;)
+except(OSError, comtypes.COMError):
+    #指定SAP2000运行地址
+    ProgramPath = &#39;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#39;
+    #根据ID值创建COM对象，SAP2000ID值为SAP2000v1.Helper
+    helper = comtypes.client.CreateObject(&#39;SAP2000v1.Helper&#39;)
+    #查询目标接口
+    helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)
+    # 采用指定运行路径的方式运行 SAP2000
+    try:
+        mySapObject = helper.CreateObject(ProgramPath)
+    except (OSError, comtypes.COMError):
+        print(&quot;Cannot start a new instance of the program from &quot; + ProgramPath)
+        sys.exit(-1)
 
+mySapObject.ApplicationStart()
+#生成SapModel
+SapModel = mySapObject.SapModel
+#模型文件
+FilePath = r&#39;E:\光伏支架相关文档\贵州光伏\贵州光伏（导入截面）\贵州光伏（导入截面）.sdb&#39;
+#打开模型文件
+SapModel.File.OpenFile(FilePath)
+##获得模型杆件数量并显示
+FrameNum = 0
+NameList = []
+ret = 1
+[FrameNum,NameList,ret] = SapModel.FrameObj.GetNameList(FrameNum,NameList)
+print(&quot;杆件总数：&quot;,FrameNum)
+print(&quot;构件列表：\n&quot;,NameList)
+input(&quot;Press Any Key&quot;)
+</code></pre>
+<h1 id="以一根梁为例进行分析"><a href="#以一根梁为例进行分析" class="headerlink" title="以一根梁为例进行分析"></a>以一根梁为例进行分析</h1><pre><code class="python">import comtypes.client
+import sys
+import os
+
+# 获取当前运行的sap2000
+SapObject = comtypes.client.GetActiveObject(&quot;CSI.SAP2000.API.SapObject&quot;)
+
+#create SapModel object（创建模型对象）
+SapModel = SapObject.SapModel
+
+#initialize model（初始化模型）
+SapModel.InitializeNewModel()
+
+#create new blank model（创建新的空白模型）
+ret = SapModel.File.NewBlank()
+kN_mm_C = 5
+ret = SapModel.SetPresentUnits(5)  # 设置模型单位
+
+# 添加材料
+MATERIAL_STEEL=1 #钢材
+MATERIAL_CONCRETE = 2 #混凝土
+MATERIAL_BEBAR = 8 # 钢筋
+mat=&quot;C40&quot;
+ret = SapModel.PropMaterial.AddMaterial(mat,2,&quot;china&quot;,&quot;GB&quot;,&quot;GB50010 C40&quot;)
+
+# 定义框架截面属性
+sec = &quot;300x700&quot;
+ret = SapModel.PropFrame.SetRectangle(sec,&quot;C40&quot;,700,300)
+
+# 布置框架截面
+x1,y1,z1=0,0,0
+x2,y2,z2=5000,0,0
+
+# 建立一根跨度为5m的梁
+SapModel.FrameObj.AddByCoord(x1,y1,z1,x2,y2,z2,&quot;L1&quot;,sec,&quot;L1&quot;)
+
+# 添加支座约束
+Restraint=[True,True,True,False,False,False] # 三平动，三转动，此处为简支梁
+PointName1=&quot; &quot;
+PointName2=&quot; &quot;
+[PointName1,PointName2,ret]=SapModel.Frameobj.GetPoints(&quot;L1&quot;,PointName1,PointName2)
+
+# 简支梁支座（给两个节点添加设置好的支座）
+SapModel.PointObj.SetRestraint(PointName1,Restraint)
+SapModel.PointObj.SetRestraint(PointName2,Restraint)
+
+# 定义荷载模式 常用的如下：
+# DEAD=1(默认已有) SUPERDEAD(附加恒载)=2，活载2，地震荷载5，用于底部剪力法，按照多质点算的
+# 风荷载6，雪荷载7，屋面活荷载11，移动荷载9，温度荷载10
+LTYPE_DEAD=1 # 恒载
+LTYPE_LIVE=3 # 活荷载
+SapModel.LoadPatterns.Add(&quot;DEAD1&quot;,LTYPE_DEAD,0,True)
+SapModel.LoadPatterns.Add(&quot;Live&quot;,LTYPE_LIVE,0,False) # 自重系数0，flase:不创建荷载工况
+
+# 添加荷载
+kN_m_C=6
+ret = SapModel.SetPresentUnits(6)
+SapModel.FrameObj.SetLoadGravity(&quot;L1&quot;,&quot;DEAD1&quot;,0,0,-10,True)
+
+# 保存模型
+
+# path=&quot;E:\GHtosap2000\Example2&quot;
+# ModelPath = path +os.sep + &quot;test01.sdb&quot;
+# SapModel.File.Save(ModelPath)
+path=r&#39;E:\GHtosap2000\Example1\test01.sdb&#39;
+SapModel.File.Save(path)
+
+
+# 分析模型
+SapModel.Analyze.RunAnalysis()
+
+# 结果查看
+SapResult = [0,0,0,0,0,0]
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(&quot;L1&quot;,PointName1,PointName2)
+SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()  # 取消选择所有工况输出
+SapModel.Results.Setup.GetCaseSelectedForOutput(&quot;DEAD1&quot;) # 选择dead1工况进行输出
+ret = SapModel.Results.Setup.SetCaseSelectedForOutput(&quot;DEAD1&quot;)
+NumberResults=0
+Obj,Elm,LoadCase,StepType,StepNum,F1,F2,F3,M1,M2,M3,=[],[],[],[],[],[],[],[],[],[],[]
+[NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3,ret] = SapModel.Results.JointReact(PointName1,0,NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3)
+print(F2)
+# 关闭sap2000
+# SapModel.ApplicationExit(True) # 关闭sap2000
+SapModel = 0
+SapObject = 0 # 不设置成0应用程序没有完全关闭，仍然占用系统内存
+</code></pre>
 <h1 id="运用python调用sap2000分析一根跨度为6m的梁-非解构"><a href="#运用python调用sap2000分析一根跨度为6m的梁-非解构" class="headerlink" title="运用python调用sap2000分析一根跨度为6m的梁(非解构)"></a>运用python调用sap2000分析一根跨度为6m的梁(非解构)</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU0Nzc5MDQxNw==&amp;mid=2247493688&amp;idx=1&amp;sn=d5dae0cc6d51cfae44f3ce46a9c0be68&amp;chksm=fb4ba306cc3c2a101eefeaeda634f2b13b5ac3e409af8b43fda65a1dc72fade9667306b1a7bf&amp;cur_album_id=1323908580084449280&amp;scene=190#rd">https://mp.weixin.qq.com/s?__biz=MzU0Nzc5MDQxNw==&amp;mid=2247493688&amp;idx=1&amp;sn=d5dae0cc6d51cfae44f3ce46a9c0be68&amp;chksm=fb4ba306cc3c2a101eefeaeda634f2b13b5ac3e409af8b43fda65a1dc72fade9667306b1a7bf&amp;cur_album_id=1323908580084449280&amp;scene=190#rd</a><br>备注：我认为这个简单的例子还是非常有实际的意义的，也是一个分析的出发点，而且里面还带有迭代的思想在里面，值得自己先把这些比较小的例子先吃透再来去看那些相对比较复杂的模型的分析，也希望自己能够不断的往前迈出大的步子。相较上一个例子，这一个例子写的就稍微的简练一点并且通用性和迭代性都会强一些。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Caculation</span>(<span class="params">SapModel,depth,force_z</span>):</span><br><span class="line">    <span class="comment">#新建SAP2000模型（初始化模型-创建空白模板）</span></span><br><span class="line">    SapModel.InitializeNewModel()</span><br><span class="line">    ret = SapModel.File.NewBlank()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义材料</span></span><br><span class="line">    <span class="comment">#AddMaterial</span></span><br><span class="line">    SapModel.PropMaterial.AddMaterial(<span class="string">&quot;C40&quot;</span>,<span class="number">2</span>,<span class="string">&quot;China&quot;</span>,<span class="string">&quot;GB&quot;</span>,<span class="string">&quot;GB50010 C40&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义截面</span></span><br><span class="line">    <span class="comment">#SetRectangle</span></span><br><span class="line">    SapModel.PropFrame.SetRectangle(<span class="string">&quot;Frame&quot;</span>,<span class="string">&quot;C40&quot;</span>,depth,<span class="number">400</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#建立模型</span></span><br><span class="line">    <span class="comment">#AddByCoord</span></span><br><span class="line">    <span class="comment"># 用笛卡尔坐标系建立了两个单元，都赋予了Frame截面</span></span><br><span class="line">    SapModel.FrameObj.AddByCoord(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3000</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="string">&quot;element1&quot;</span>,<span class="string">&quot;Frame&quot;</span>,<span class="string">&quot;element1&quot;</span>)</span><br><span class="line">    SapModel.FrameObj.AddByCoord(<span class="number">3000</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">6000</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="string">&quot;element2&quot;</span>,<span class="string">&quot;Frame&quot;</span>,<span class="string">&quot;element2&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#添加约束</span></span><br><span class="line">    <span class="comment">#GetPoints</span></span><br><span class="line">    <span class="comment">#setRestraint</span></span><br><span class="line">    s_Point1=<span class="string">&quot;&quot;</span></span><br><span class="line">    e_Point1=<span class="string">&quot;&quot;</span></span><br><span class="line">    [s_Point1,e_Point1,ret]=SapModel.FrameObj.GetPoints(<span class="string">&quot;element1&quot;</span>,s_Point1,e_Point1)</span><br><span class="line"></span><br><span class="line">    s_Point2=<span class="string">&quot;&quot;</span></span><br><span class="line">    e_Point2=<span class="string">&quot;&quot;</span></span><br><span class="line">    [s_Point2,e_Point2,ret]=SapModel.FrameObj.GetPoints(<span class="string">&quot;element2&quot;</span>,s_Point2,e_Point2)</span><br><span class="line"></span><br><span class="line">    R=[<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">True</span>]</span><br><span class="line">    SapModel.PointObj.setRestraint(s_Point1,R)</span><br><span class="line">    SapModel.PointObj.setRestraint(e_Point2,R)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#添加荷载</span></span><br><span class="line">    SapModel.LoadPatterns.Add(<span class="string">&quot;Live&quot;</span>,<span class="number">3</span>)</span><br><span class="line">    <span class="comment"># 此处荷载添加竖向的荷载，用froce_z代替</span></span><br><span class="line">    Load=[<span class="number">0</span>,<span class="number">0</span>,force_z,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 将荷载施加在单元1的J端</span></span><br><span class="line">    SapModel.PointObj.SetLoadForce(e_Point1, <span class="string">&quot;Live&quot;</span>, Load)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#保存模型（自定义一个路径）</span></span><br><span class="line">    path=<span class="string">r&#x27;E:\GHtosap2000\Example2\test02.sdb&#x27;</span></span><br><span class="line">    SapModel.File.Save(path)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#运行分析</span></span><br><span class="line">    SapModel.Analyze.RunAnalysis()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#提取结果</span></span><br><span class="line">    <span class="comment"># 取消勾选所有工况和荷载组合</span></span><br><span class="line">    SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()</span><br><span class="line">    <span class="comment"># 选择Live组合作为结果输出</span></span><br><span class="line">    ret = SapModel.Results.Setup.SetCaseSelectedForOutput(<span class="string">&quot;Live&quot;</span>)</span><br><span class="line">    NumberResults=<span class="number">0</span></span><br><span class="line">    Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3=[],[],[],[],[],[],[],[],[],[],[]</span><br><span class="line">    <span class="comment"># 提取节点反力 </span></span><br><span class="line">    <span class="comment">#NumberResults：程序返回的结果总数</span></span><br><span class="line">    <span class="comment">#Obj：与每一个结果关联的点对象的名称组成的数组，如果没有关联就默认为0</span></span><br><span class="line">    <span class="comment">#Elm：包含与每个结果关联的点元素名称的数组</span></span><br><span class="line">    <span class="comment">#LoadCase:包含与每个结果关联的分析工况和荷载组合的数组</span></span><br><span class="line">    <span class="comment">#StepType:包含结果每个步骤的数组</span></span><br><span class="line">    <span class="comment">#StepNum:包含每个结果步骤的编号的数组</span></span><br><span class="line">    <span class="comment">#F1,F2,F3：点在局部1 2 3轴的反作用组成的一维数组</span></span><br><span class="line">    <span class="comment">#M1 M2 M3:点在局部1 2 3轴的反作用矩组成的一维数组</span></span><br><span class="line"></span><br><span class="line">    [NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3,ret] = SapModel.Results.JointReact(s_Point1, <span class="number">0</span>, NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3)</span><br><span class="line">    <span class="comment"># 由于只关心反作用力，所以就只用打印三个反作用的数值</span></span><br><span class="line">    <span class="built_in">print</span>(F1)</span><br><span class="line">    <span class="built_in">print</span>(F2)</span><br><span class="line">    <span class="built_in">print</span>(F3)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取SAP2000对象</span></span><br><span class="line">mySapObject = comtypes.client.GetActiveObject(<span class="string">&quot;CSI.SAP2000.API.SapObject&quot;</span>)</span><br><span class="line">SapModel = mySapObject.SapModel</span><br><span class="line">depths=[<span class="number">500</span>,<span class="number">600</span>,<span class="number">700</span>,<span class="number">800</span>]</span><br><span class="line">force_zs=[<span class="number">1000</span>,<span class="number">2000</span>,<span class="number">3000</span>,<span class="number">4000</span>]</span><br><span class="line"><span class="comment"># 修改矩形截面的高度和施加的荷载值分别循环打印以下的一些结果</span></span><br><span class="line"><span class="comment"># 当截面为500x400,施加的力为1000</span></span><br><span class="line"><span class="comment"># 当截面为600x400，施加的力为2000</span></span><br><span class="line"><span class="comment"># 当截面为700x400，施加的力为3000</span></span><br><span class="line"><span class="comment"># 当截面为800x400，施加的力为4000</span></span><br><span class="line"><span class="keyword">for</span> i,depth <span class="keyword">in</span> <span class="built_in">enumerate</span>(depths):</span><br><span class="line">    force_z=force_zs[i]</span><br><span class="line">    Caculation(SapModel,depth,force_z)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import os
+import sys
+import comtypes.client
 
-<h1 id="Sap2000自带的python的例子"><a href="#Sap2000自带的python的例子" class="headerlink" title="Sap2000自带的python的例子"></a>Sap2000自带的python的例子</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个例子是sap2000种自带的例子，可以说是一个入门的例子</span></span><br><span class="line"><span class="comment"># 对里面的一些语法值得去推敲然后触类旁通，对其他的一些相应的概念进行扩展开来，对自己后面的深入学习肯定是有帮助的。</span></span><br><span class="line"><span class="keyword">import</span> os </span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> comtypes.client</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the following flag to True to attach to an existing instance of the program</span></span><br><span class="line"><span class="comment"># 将以下的标志设置为True附加到现有的程序实例中来</span></span><br><span class="line"><span class="comment"># otherwise a new instance of the program will be started</span></span><br><span class="line"><span class="comment"># 否则程序将启动新的实例</span></span><br><span class="line">AttachToInstance = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set the follwwing flag to True to manually specify the path to SAP2000.exe</span></span><br><span class="line"><span class="comment"># 将以下的标志设置为True来手动指定SAP2000.exe的路径</span></span><br><span class="line"><span class="comment"># this allows for a connection to a version of SAP200 other than the latest installation</span></span><br><span class="line"><span class="comment"># 这允许连接到除最新安装之外的sap2000版本</span></span><br><span class="line"><span class="comment"># otherwise the latest instaslled version of SAP2000 will be launched</span></span><br><span class="line"><span class="comment"># 否则将启动最新版本的安装</span></span><br><span class="line">SpecifyPath = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># if the above flag is set to True,specify the path to SAP2000.exe</span></span><br><span class="line"><span class="comment"># this allows for a connection to a version of SAP2000 other than the latest installation</span></span><br><span class="line"><span class="comment"># 如果上面的标志是True，就指定sap2000程序的运行路径，允许连接到除最新安装之外的sap2000的版本</span></span><br><span class="line">ProgramPath = <span class="string">&#x27;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># full path to the model 模型的完整路径</span></span><br><span class="line"><span class="comment"># set it to the desired path of your model  将其设置为模型的所需路径</span></span><br><span class="line">APIPath = <span class="string">&#x27;C:\CSiAPIexample&#x27;</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(APIPath):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 用于递归创建目录，如果子目录创建失败或者已经存在，会抛出一个OSError的异常</span></span><br><span class="line">        os.makedirs(APIPath)</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">ModelPath = APIPath + os.sep + <span class="string">&#x27;API_1-001.sdb&#x27;</span></span><br><span class="line"><span class="comment"># creat API helper object 创建API的辅助对象</span></span><br><span class="line">helper = comtypes.client.CreateObject(<span class="string">&#x27;SAP2000v1.Helper&#x27;</span>)</span><br><span class="line">helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> AttachToInstance:</span><br><span class="line">    <span class="comment"># attach to a running instance of SAP2000</span></span><br><span class="line">    <span class="comment"># 附加到正在运行的sap2000实例中</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># get the active SapObject 获取当前运行的sap2000的进程，其中函数参数为programID</span></span><br><span class="line">        <span class="comment"># 对于sap2000v23版本，这个参数为CSI.SAP2000.API.SapObject</span></span><br><span class="line">        mySapObject = helper.Getobject(<span class="string">&quot;CSI.SAP2000.API.SapObject&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> (OSError,comtypes.COMError):</span><br><span class="line">        <span class="comment"># 找不到正在运行的程序实例，或未能附加</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;No running instance of the program found or failed to attach.&quot;</span>)</span><br><span class="line">        <span class="comment"># 所有程序（方法、类等）停止，系统停止运行（主要用于含有多个类和方法并且相应的调用关系比较复杂的情况）</span></span><br><span class="line">        sys.exit(-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 没有正在运行的实例，需要启动新的sap2000,主要有以下的两种方式</span></span><br><span class="line">    <span class="comment"># 1、使用函数helper.CreateObject(ProgramPath),根据exe文件路径建立SapObject实例，参数为exe文件的路径</span></span><br><span class="line">    <span class="comment"># 2、也可以使用helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)函数根据软件的program ID启动建立SapObject实例</span></span><br><span class="line">    <span class="comment"># 下面的if 和else语句就是体现的两种不同的打开新的sap2000的方式，其中每一种方式都嵌套了一个try...except语句</span></span><br><span class="line">    <span class="comment"># 目的是为了告诉程序出现异常应该怎么做，即使是出现异常，程序也可以正常运行</span></span><br><span class="line">    <span class="keyword">if</span> SpecifyPath:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># create an instance of the SAPObject from the specified path</span></span><br><span class="line">            <span class="comment"># 1、使用函数helper.CreateObject(ProgramPath),根据exe文件路径建立SapObject实例，参数为exe文件的路径</span></span><br><span class="line">            mySapObject = helper.CreateObject(ProgramPath)</span><br><span class="line">        <span class="keyword">except</span> (OSError,comtypes.COMError):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Cannot start a new instance of the program from&quot;</span> + ProgramPath)</span><br><span class="line">            <span class="comment"># 打印：无法从ProgramPath启动程序的新实例</span></span><br><span class="line">            sys.exit(-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># create an instance of the SAPObject from the latest installed SAP2000</span></span><br><span class="line">            <span class="comment"># 2、也可以使用helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)函数根据软件的program ID启动建立SapObject实例</span></span><br><span class="line">            mySapObject = helper.CreateObjectProgID(<span class="string">&quot;CSI.SAP2000.API.SapObject&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span> (OSError,comtypes.COMError):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Cannot start a new instance of the program.&quot;</span>)</span><br><span class="line">            <span class="comment"># 打印：无法启动程序的新实例</span></span><br><span class="line">            sys.exit(-<span class="number">1</span>)</span><br><span class="line">   </span><br><span class="line">        <span class="comment"># start SAP2000 application</span></span><br><span class="line">        <span class="comment"># 经过上面的步骤建立了SapObject实例之后，通过mySapObject.ApplicationStrat()函数启动SAP2000</span></span><br><span class="line">        mySapObject.ApplicationStart()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下的这三条代码基本上是一体的，在后面写代码的过程中可以在理解之后直接这样写   </span></span><br><span class="line"><span class="comment">#create SapModel object</span></span><br><span class="line">SapModel = mySapObject.SapModel</span><br><span class="line"></span><br><span class="line"><span class="comment"># initialize model</span></span><br><span class="line"><span class="comment"># 使用SapModel.InitializeNewModel()函数初始化模型（如果函数里面带有1~16的数字，就可以设置默认单位制，这里没有进行相应的设置）</span></span><br><span class="line">SapModel.InitializeNewModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># creat new blank model</span></span><br><span class="line"><span class="comment"># 创建一个空白的模型</span></span><br><span class="line">ret = SapModel.File.NewBlank()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># define material property</span></span><br><span class="line"><span class="comment"># 定义材料属性</span></span><br><span class="line">MATERIAL_CONCRETE = <span class="number">2</span></span><br><span class="line">ret = SapModel.PropMaterial.SetMaterial(<span class="string">&#x27;CONC&#x27;</span>,MATERIAL_CONCRETE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># assign isotropic mechanical properties to material</span></span><br><span class="line"><span class="comment"># 将各项同性力学性能特性指定给材质，前面已经定义了CON截面，接下来的三个数分别是：弹性模量、泊松比以及热膨胀系数5.5e-6</span></span><br><span class="line">ret = SapModel.PropMaterial.SetMPIsotropic(<span class="string">&#x27;CONC&#x27;</span>,<span class="number">3600</span>,  <span class="number">0.2</span>, <span class="number">0.0000055</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义方形的截面属性，这里定义了截面为12inx12in的方形截面</span></span><br><span class="line"><span class="comment"># define rectangular frame section property</span></span><br><span class="line">ret = SapModel.PropFrame.SetRectangle(<span class="string">&#x27;R1&#x27;</span>,<span class="string">&#x27;CONC&#x27;</span>,<span class="number">12</span>,<span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义截面属性修正,这里模拟轴向刚度无穷大（将轴向面积设置为1000），并且忽略2、3轴的剪切变形（剪切面积为0）</span></span><br><span class="line"><span class="comment"># define frame section property modifiers</span></span><br><span class="line">ModValue = [<span class="number">1000</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">ret = SapModel.PropFrame.SetModifiers(<span class="string">&#x27;R1&#x27;</span>,ModValue)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># switch to k-ft units</span></span><br><span class="line"><span class="comment"># 转换模型的单位</span></span><br><span class="line"><span class="comment"># 这种单位可能不是太常用，但是在很多的示例模型中是用的最多的</span></span><br><span class="line">kip_ft_F=<span class="number">4</span></span><br><span class="line">ret = SapModel.SetPresentUnits(kip_ft_F)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># add frame object by coordinates</span></span><br><span class="line"><span class="comment"># 通过坐标系来添加框架单元</span></span><br><span class="line"><span class="comment"># 这种操作是最基础也是最重要的一部分，这里主要有三根框架单元，这里是缺省的截面，自动赋予之前定义好的方管截面</span></span><br><span class="line">FrameName1 = <span class="string">&#x27; &#x27;</span></span><br><span class="line">FrameName2 = <span class="string">&#x27; &#x27;</span></span><br><span class="line">FrameName3 = <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[FrameName1,ret] = SapModel.FrameObj.AddByCoord(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>,FrameName1,<span class="string">&#x27;R1&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;Global&#x27;</span>)</span><br><span class="line">[FrameName2,ret] = SapModel.FrameObj.AddByCoord(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">16</span>,FrameName2,<span class="string">&#x27;R1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;Global&#x27;</span>)</span><br><span class="line">[FrameName3,ret] = SapModel.FrameObj.AddByCoord(-<span class="number">4</span>,<span class="number">0</span>,<span class="number">10</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>,FrameName3,<span class="string">&#x27;R1&#x27;</span>,<span class="string">&#x27;3&#x27;</span>,<span class="string">&#x27;Global&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># assign point object restraint at base</span></span><br><span class="line"><span class="comment"># 在基础的节点施加约束</span></span><br><span class="line"><span class="comment"># PointName1 = &#x27; &#x27;</span></span><br><span class="line"><span class="comment"># PointName2 = &#x27; &#x27;</span></span><br><span class="line">PointName1 , PointName2 = <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 指定节点约束为：u1,u2,u3,r1，剩余的方向释放约束</span></span><br><span class="line">Restraint = [<span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>]</span><br><span class="line"><span class="comment"># 获取FrameName1的节点1和节点2</span></span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName1,PointName1,PointName2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将FrameName1的PointName1的约束设置为定义好的Restraint</span></span><br><span class="line">ret = SapModel.PointObj.SetRestraint(PointName1,Restraint)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># assign point object restraint at top</span></span><br><span class="line"><span class="comment"># 在顶部指定点对象约束</span></span><br><span class="line"><span class="comment"># 指定节点的约束为：u1,u2,剩余的方向释放约束</span></span><br><span class="line">Restraint = [<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>,<span class="literal">False</span>]</span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName2,PointName1,PointName2)</span><br><span class="line"><span class="comment"># 将FrameName1的PointName2的约束设置为定义好的Restraint</span></span><br><span class="line">ret = SapModel.PointObj.SetRestraint(PointName2,Restraint)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># refresh view,updata(initialize) zoom</span></span><br><span class="line"><span class="comment"># 刷新视图，初始化缩放</span></span><br><span class="line">ret = SapModel.View.RefreshView(<span class="number">0</span>,<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># add load patterns</span></span><br><span class="line"><span class="comment"># 添加荷载模式</span></span><br><span class="line"><span class="comment"># 选定的荷载模式为第8种的OTHER方式</span></span><br><span class="line">LTYPE_OTHER = <span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定名称为1~7的荷载模式</span></span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;1&#x27;</span>,LTYPE_OTHER,<span class="number">1</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;2&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;3&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;4&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;5&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;6&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line">ret = SapModel.LoadPatterns.Add(<span class="string">&#x27;7&#x27;</span>,LTYPE_OTHER,<span class="number">0</span>,<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># assign loading for load pattern 2</span></span><br><span class="line"><span class="comment"># 为第二种荷载模式施加荷载，在FrameName3两端的节点施加相应的节点荷载</span></span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName3,PointName1,PointName2)</span><br><span class="line">PointLoadValue = [<span class="number">0</span>,<span class="number">0</span>,-<span class="number">10</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">ret = SapModel.PointObj.SetLoadForce(PointName1,<span class="string">&#x27;2&#x27;</span>,PointLoadValue)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对FrameName3施加荷载模式名称为2的分布荷载</span></span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName3,<span class="string">&#x27;2&#x27;</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1.8</span>,<span class="number">1.8</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># assign loading for load pattern 3</span></span><br><span class="line"><span class="comment"># 为第三种荷载模式施加荷载，在FrameName3两端的节点进行相应的施加</span></span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName3,PointName1,PointName2)</span><br><span class="line">PointLoadValue = [<span class="number">0</span>,<span class="number">0</span>,-<span class="number">17.2</span>,<span class="number">0</span>,-<span class="number">54.4</span>,<span class="number">0</span>]</span><br><span class="line">ret = SapModel.PointObj.SetLoadForce(PointName2,<span class="string">&#x27;3&#x27;</span>,PointLoadValue)</span><br><span class="line"></span><br><span class="line"><span class="comment">#assign loading for load pattern 4</span></span><br><span class="line"><span class="comment">#对FrameName2施加荷载模式名称为4的分布荷载</span></span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,<span class="string">&#x27;4&#x27;</span>,<span class="number">1</span>,<span class="number">11</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#assign loading for load pattern 5</span></span><br><span class="line"><span class="comment">#对FrameName1,FrameName2施加荷载模式名称为5的分布荷载,坐标系选择为局部坐标系</span></span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName1,<span class="string">&#x27;5&#x27;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="string">&#x27;Local&#x27;</span>)</span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,<span class="string">&#x27;5&#x27;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">2</span>,<span class="string">&#x27;Local&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#assign loading for load pattern 6</span></span><br><span class="line"><span class="comment">#对FrameName1,FrameName2施加荷载模式名称为6的分布荷载,坐标系选择为局部坐标系</span></span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName1,<span class="string">&#x27;6&#x27;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0.9984</span>,<span class="number">0.3744</span>,<span class="string">&#x27;Local&#x27;</span>)</span><br><span class="line">ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,<span class="string">&#x27;6&#x27;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,-<span class="number">0.3744</span>,<span class="number">0</span>,<span class="string">&#x27;Local&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#assign loading for load pattern 7</span></span><br><span class="line"><span class="comment">#对FrameName2局部轴的跨中位置施加荷载模式名称为7的节点荷载</span></span><br><span class="line">ret = SapModel.FrameObj.SetLoadPoint(FrameName2,<span class="string">&#x27;7&#x27;</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0.5</span>,-<span class="number">15</span>,<span class="string">&#x27;Local&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># switch to k_in units</span></span><br><span class="line">kip_in_F=<span class="number">3</span></span><br><span class="line">ret = SapModel.SetPresentUnits(kip_in_F)</span><br><span class="line"></span><br><span class="line"><span class="comment"># save model</span></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">ret = SapModel.File.Save(ModelPath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># run model(this will creat the analysis model)</span></span><br><span class="line"><span class="comment"># 运行模型，在运行的过程种会创建一个分析模型</span></span><br><span class="line">ret = SapModel.Analyze.RunAnalysis()</span><br><span class="line"></span><br><span class="line"><span class="comment">#initialize for Sap2000 results</span></span><br><span class="line"><span class="comment"># 初始化sap2000的计算结果</span></span><br><span class="line">SapResult=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName2,PointName1,PointName2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get Sap2000 results for load cases 1 through 7</span></span><br><span class="line"><span class="comment"># 初始化荷载模式从1~7的sap2000的计算结果</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">7</span>):</span><br><span class="line">        <span class="comment"># 结果数量，这里预先定义为0</span></span><br><span class="line">        NumberResults = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 分别是对象、单元、荷载、分析步类型、分析步数量、以及6个方向的位移</span></span><br><span class="line">        Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3 = [],[],[],[],[],[],[],[],[],[],[]</span><br><span class="line">        <span class="comment"># 定义对象单元也为0（不知道理解的对不对）</span></span><br><span class="line">        ObjectElm = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 删除所有对荷载和荷载组合的选择</span></span><br><span class="line">        ret = SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()</span><br><span class="line">        <span class="comment"># 按照循环来选择相应的荷载和荷载组合，i从0取到6，将7个荷载模式都循环一遍</span></span><br><span class="line">        ret = SapModel.Results.Setup.SetCaseSelectedForOutput(<span class="built_in">str</span>(i+<span class="number">1</span>))</span><br><span class="line">        <span class="comment"># 如果是运行到前三个荷载模式</span></span><br><span class="line">        <span class="keyword">if</span> i &lt;= <span class="number">3</span>:</span><br><span class="line">            [NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3, ret] = SapModel.Results.JointDispl(PointName2, ObjectElm, NumberResults, Obj, Elm, ACase, StepType, StepNum,U1,U2,U3,R1,R2,R3)</span><br><span class="line">            <span class="comment"># 这段代码没有理解，下面的代码同理</span></span><br><span class="line">            SapResult[i] = U3[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># 运行到后面4个荷载模式</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            [NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3, ret] = SapModel.Results.JointDispl(PointName1, ObjectElm, NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3)</span><br><span class="line">            SapResult[i] = U1[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># fill independent results</span></span><br><span class="line"><span class="comment"># 填写独立的结果</span></span><br><span class="line">IndResult = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">IndResult[<span class="number">0</span>] = -<span class="number">0.02639</span></span><br><span class="line">IndResult[<span class="number">1</span>] = <span class="number">0.06296</span></span><br><span class="line">IndResult[<span class="number">2</span>] = <span class="number">0.06296</span></span><br><span class="line">IndResult[<span class="number">3</span>] = -<span class="number">0.2963</span></span><br><span class="line">IndResult[<span class="number">4</span>] = <span class="number">0.3125</span></span><br><span class="line">IndResult[<span class="number">5</span>] = <span class="number">0.11556</span></span><br><span class="line">IndResult[<span class="number">6</span>] = <span class="number">0.00651</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># fill percent diffence</span></span><br><span class="line">PercentDiff = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">7</span>):</span><br><span class="line">    PercentDiff[i]=(SapResult[i]/IndResult[i])-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># display results</span></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">7</span>):</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">    <span class="built_in">print</span>(SapResult[i])</span><br><span class="line">    <span class="built_in">print</span>(IndResult[i])</span><br><span class="line">    <span class="built_in">print</span>(PercentDiff[i])</span><br></pre></td></tr></table></figure>
-      
+
+def Caculation(SapModel,depth,force_z):
+    #新建SAP2000模型（初始化模型-创建空白模板）
+    SapModel.InitializeNewModel()
+    ret = SapModel.File.NewBlank()
+
+    #定义材料
+    #AddMaterial
+    SapModel.PropMaterial.AddMaterial(&quot;C40&quot;,2,&quot;China&quot;,&quot;GB&quot;,&quot;GB50010 C40&quot;)
+
+    #定义截面
+    #SetRectangle
+    SapModel.PropFrame.SetRectangle(&quot;Frame&quot;,&quot;C40&quot;,depth,400)
+
+    #建立模型
+    #AddByCoord
+    # 用笛卡尔坐标系建立了两个单元，都赋予了Frame截面
+    SapModel.FrameObj.AddByCoord(0,0,0,3000,0,0,&quot;element1&quot;,&quot;Frame&quot;,&quot;element1&quot;)
+    SapModel.FrameObj.AddByCoord(3000,0,0,6000,0,0,&quot;element2&quot;,&quot;Frame&quot;,&quot;element2&quot;)
+
+    #添加约束
+    #GetPoints
+    #setRestraint
+    s_Point1=&quot;&quot;
+    e_Point1=&quot;&quot;
+    [s_Point1,e_Point1,ret]=SapModel.FrameObj.GetPoints(&quot;element1&quot;,s_Point1,e_Point1)
+
+    s_Point2=&quot;&quot;
+    e_Point2=&quot;&quot;
+    [s_Point2,e_Point2,ret]=SapModel.FrameObj.GetPoints(&quot;element2&quot;,s_Point2,e_Point2)
+
+    R=[True,True,True,True,True,True]
+    SapModel.PointObj.setRestraint(s_Point1,R)
+    SapModel.PointObj.setRestraint(e_Point2,R)
+
+    #添加荷载
+    SapModel.LoadPatterns.Add(&quot;Live&quot;,3)
+    # 此处荷载添加竖向的荷载，用froce_z代替
+    Load=[0,0,force_z,0,0,0]
+    # 将荷载施加在单元1的J端
+    SapModel.PointObj.SetLoadForce(e_Point1, &quot;Live&quot;, Load)
+
+    #保存模型（自定义一个路径）
+    path=r&#39;E:\GHtosap2000\Example2\test02.sdb&#39;
+    SapModel.File.Save(path)
+
+    #运行分析
+    SapModel.Analyze.RunAnalysis()
+
+    #提取结果
+    # 取消勾选所有工况和荷载组合
+    SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()
+    # 选择Live组合作为结果输出
+    ret = SapModel.Results.Setup.SetCaseSelectedForOutput(&quot;Live&quot;)
+    NumberResults=0
+    Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3=[],[],[],[],[],[],[],[],[],[],[]
+    # 提取节点反力 
+    #NumberResults：程序返回的结果总数
+    #Obj：与每一个结果关联的点对象的名称组成的数组，如果没有关联就默认为0
+    #Elm：包含与每个结果关联的点元素名称的数组
+    #LoadCase:包含与每个结果关联的分析工况和荷载组合的数组
+    #StepType:包含结果每个步骤的数组
+    #StepNum:包含每个结果步骤的编号的数组
+    #F1,F2,F3：点在局部1 2 3轴的反作用组成的一维数组
+    #M1 M2 M3:点在局部1 2 3轴的反作用矩组成的一维数组
+
+    [NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3,ret] = SapModel.Results.JointReact(s_Point1, 0, NumberResults, Obj, Elm, LoadCase, StepType, StepNum, F1, F2, F3, M1, M2, M3)
+    # 由于只关心反作用力，所以就只用打印三个反作用的数值
+    print(F1)
+    print(F2)
+    print(F3)
+
+#获取SAP2000对象
+mySapObject = comtypes.client.GetActiveObject(&quot;CSI.SAP2000.API.SapObject&quot;)
+SapModel = mySapObject.SapModel
+depths=[500,600,700,800]
+force_zs=[1000,2000,3000,4000]
+# 修改矩形截面的高度和施加的荷载值分别循环打印以下的一些结果
+# 当截面为500x400,施加的力为1000
+# 当截面为600x400，施加的力为2000
+# 当截面为700x400，施加的力为3000
+# 当截面为800x400，施加的力为4000
+for i,depth in enumerate(depths):
+    force_z=force_zs[i]
+    Caculation(SapModel,depth,force_z)
+</code></pre>
+<h1 id="Sap2000自带的python的例子"><a href="#Sap2000自带的python的例子" class="headerlink" title="Sap2000自带的python的例子"></a>Sap2000自带的python的例子</h1><pre><code class="python"># 这个例子是sap2000种自带的例子，可以说是一个入门的例子
+# 对里面的一些语法值得去推敲然后触类旁通，对其他的一些相应的概念进行扩展开来，对自己后面的深入学习肯定是有帮助的。
+import os 
+import sys
+import comtypes.client
+
+# set the following flag to True to attach to an existing instance of the program
+# 将以下的标志设置为True附加到现有的程序实例中来
+# otherwise a new instance of the program will be started
+# 否则程序将启动新的实例
+AttachToInstance = False
+
+# set the follwwing flag to True to manually specify the path to SAP2000.exe
+# 将以下的标志设置为True来手动指定SAP2000.exe的路径
+# this allows for a connection to a version of SAP200 other than the latest installation
+# 这允许连接到除最新安装之外的sap2000版本
+# otherwise the latest instaslled version of SAP2000 will be launched
+# 否则将启动最新版本的安装
+SpecifyPath = False
+
+# if the above flag is set to True,specify the path to SAP2000.exe
+# this allows for a connection to a version of SAP2000 other than the latest installation
+# 如果上面的标志是True，就指定sap2000程序的运行路径，允许连接到除最新安装之外的sap2000的版本
+ProgramPath = &#39;D:\Program Files\Computers and Structures\SAP2000 24\SAP2000.exe&#39;
+
+# full path to the model 模型的完整路径
+# set it to the desired path of your model  将其设置为模型的所需路径
+APIPath = &#39;C:\CSiAPIexample&#39;
+if not os.path.exists(APIPath):
+    try:
+        # 用于递归创建目录，如果子目录创建失败或者已经存在，会抛出一个OSError的异常
+        os.makedirs(APIPath)
+    except OSError:
+        pass
+ModelPath = APIPath + os.sep + &#39;API_1-001.sdb&#39;
+# creat API helper object 创建API的辅助对象
+helper = comtypes.client.CreateObject(&#39;SAP2000v1.Helper&#39;)
+helper = helper.QueryInterface(comtypes.gen.SAP2000v1.cHelper)
+
+if AttachToInstance:
+    # attach to a running instance of SAP2000
+    # 附加到正在运行的sap2000实例中
+    try:
+        # get the active SapObject 获取当前运行的sap2000的进程，其中函数参数为programID
+        # 对于sap2000v23版本，这个参数为CSI.SAP2000.API.SapObject
+        mySapObject = helper.Getobject(&quot;CSI.SAP2000.API.SapObject&quot;)
+    except (OSError,comtypes.COMError):
+        # 找不到正在运行的程序实例，或未能附加
+        print(&quot;No running instance of the program found or failed to attach.&quot;)
+        # 所有程序（方法、类等）停止，系统停止运行（主要用于含有多个类和方法并且相应的调用关系比较复杂的情况）
+        sys.exit(-1)
+else:
+    # 没有正在运行的实例，需要启动新的sap2000,主要有以下的两种方式
+    # 1、使用函数helper.CreateObject(ProgramPath),根据exe文件路径建立SapObject实例，参数为exe文件的路径
+    # 2、也可以使用helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)函数根据软件的program ID启动建立SapObject实例
+    # 下面的if 和else语句就是体现的两种不同的打开新的sap2000的方式，其中每一种方式都嵌套了一个try...except语句
+    # 目的是为了告诉程序出现异常应该怎么做，即使是出现异常，程序也可以正常运行
+    if SpecifyPath:
+        try:
+            # create an instance of the SAPObject from the specified path
+            # 1、使用函数helper.CreateObject(ProgramPath),根据exe文件路径建立SapObject实例，参数为exe文件的路径
+            mySapObject = helper.CreateObject(ProgramPath)
+        except (OSError,comtypes.COMError):
+            print(&quot;Cannot start a new instance of the program from&quot; + ProgramPath)
+            # 打印：无法从ProgramPath启动程序的新实例
+            sys.exit(-1)
+    else:
+        try:
+            # create an instance of the SAPObject from the latest installed SAP2000
+            # 2、也可以使用helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)函数根据软件的program ID启动建立SapObject实例
+            mySapObject = helper.CreateObjectProgID(&quot;CSI.SAP2000.API.SapObject&quot;)
+        except (OSError,comtypes.COMError):
+            print(&quot;Cannot start a new instance of the program.&quot;)
+            # 打印：无法启动程序的新实例
+            sys.exit(-1)
+   
+        # start SAP2000 application
+        # 经过上面的步骤建立了SapObject实例之后，通过mySapObject.ApplicationStrat()函数启动SAP2000
+        mySapObject.ApplicationStart()
+
+
+# 以下的这三条代码基本上是一体的，在后面写代码的过程中可以在理解之后直接这样写   
+#create SapModel object
+SapModel = mySapObject.SapModel
+
+# initialize model
+# 使用SapModel.InitializeNewModel()函数初始化模型（如果函数里面带有1~16的数字，就可以设置默认单位制，这里没有进行相应的设置）
+SapModel.InitializeNewModel()
+
+# creat new blank model
+# 创建一个空白的模型
+ret = SapModel.File.NewBlank()
+
+
+# define material property
+# 定义材料属性
+MATERIAL_CONCRETE = 2
+ret = SapModel.PropMaterial.SetMaterial(&#39;CONC&#39;,MATERIAL_CONCRETE)
+
+# assign isotropic mechanical properties to material
+# 将各项同性力学性能特性指定给材质，前面已经定义了CON截面，接下来的三个数分别是：弹性模量、泊松比以及热膨胀系数5.5e-6
+ret = SapModel.PropMaterial.SetMPIsotropic(&#39;CONC&#39;,3600,  0.2, 0.0000055)
+
+# 定义方形的截面属性，这里定义了截面为12inx12in的方形截面
+# define rectangular frame section property
+ret = SapModel.PropFrame.SetRectangle(&#39;R1&#39;,&#39;CONC&#39;,12,12)
+
+# 定义截面属性修正,这里模拟轴向刚度无穷大（将轴向面积设置为1000），并且忽略2、3轴的剪切变形（剪切面积为0）
+# define frame section property modifiers
+ModValue = [1000,0,0,1,1,1,1,1,1]
+ret = SapModel.PropFrame.SetModifiers(&#39;R1&#39;,ModValue)
+
+
+# switch to k-ft units
+# 转换模型的单位
+# 这种单位可能不是太常用，但是在很多的示例模型中是用的最多的
+kip_ft_F=4
+ret = SapModel.SetPresentUnits(kip_ft_F)
+
+
+# add frame object by coordinates
+# 通过坐标系来添加框架单元
+# 这种操作是最基础也是最重要的一部分，这里主要有三根框架单元，这里是缺省的截面，自动赋予之前定义好的方管截面
+FrameName1 = &#39; &#39;
+FrameName2 = &#39; &#39;
+FrameName3 = &#39; &#39;
+
+
+[FrameName1,ret] = SapModel.FrameObj.AddByCoord(0,0,0,0,0,10,FrameName1,&#39;R1&#39;,&#39;1&#39;,&#39;Global&#39;)
+[FrameName2,ret] = SapModel.FrameObj.AddByCoord(0,0,10,8,0,16,FrameName2,&#39;R1&#39;,&#39;2&#39;,&#39;Global&#39;)
+[FrameName3,ret] = SapModel.FrameObj.AddByCoord(-4,0,10,0,0,10,FrameName3,&#39;R1&#39;,&#39;3&#39;,&#39;Global&#39;)
+
+# assign point object restraint at base
+# 在基础的节点施加约束
+# PointName1 = &#39; &#39;
+# PointName2 = &#39; &#39;
+PointName1 , PointName2 = &#39;&#39;, &#39;&#39;
+# 指定节点约束为：u1,u2,u3,r1，剩余的方向释放约束
+Restraint = [True, True, True, True, False, False]
+# 获取FrameName1的节点1和节点2
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName1,PointName1,PointName2)
+
+# 将FrameName1的PointName1的约束设置为定义好的Restraint
+ret = SapModel.PointObj.SetRestraint(PointName1,Restraint)
+
+
+# assign point object restraint at top
+# 在顶部指定点对象约束
+# 指定节点的约束为：u1,u2,剩余的方向释放约束
+Restraint = [True,True,False,False,False,False]
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName2,PointName1,PointName2)
+# 将FrameName1的PointName2的约束设置为定义好的Restraint
+ret = SapModel.PointObj.SetRestraint(PointName2,Restraint)
+
+
+# refresh view,updata(initialize) zoom
+# 刷新视图，初始化缩放
+ret = SapModel.View.RefreshView(0,False)
+
+
+# add load patterns
+# 添加荷载模式
+# 选定的荷载模式为第8种的OTHER方式
+LTYPE_OTHER = 8
+
+# 设定名称为1~7的荷载模式
+ret = SapModel.LoadPatterns.Add(&#39;1&#39;,LTYPE_OTHER,1,True)
+ret = SapModel.LoadPatterns.Add(&#39;2&#39;,LTYPE_OTHER,0,True)
+ret = SapModel.LoadPatterns.Add(&#39;3&#39;,LTYPE_OTHER,0,True)
+ret = SapModel.LoadPatterns.Add(&#39;4&#39;,LTYPE_OTHER,0,True)
+ret = SapModel.LoadPatterns.Add(&#39;5&#39;,LTYPE_OTHER,0,True)
+ret = SapModel.LoadPatterns.Add(&#39;6&#39;,LTYPE_OTHER,0,True)
+ret = SapModel.LoadPatterns.Add(&#39;7&#39;,LTYPE_OTHER,0,True)
+
+
+# assign loading for load pattern 2
+# 为第二种荷载模式施加荷载，在FrameName3两端的节点施加相应的节点荷载
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName3,PointName1,PointName2)
+PointLoadValue = [0,0,-10,0,0,0]
+ret = SapModel.PointObj.SetLoadForce(PointName1,&#39;2&#39;,PointLoadValue)
+
+# 对FrameName3施加荷载模式名称为2的分布荷载
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName3,&#39;2&#39;,1,10,0,1,1.8,1.8)
+
+
+# assign loading for load pattern 3
+# 为第三种荷载模式施加荷载，在FrameName3两端的节点进行相应的施加
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName3,PointName1,PointName2)
+PointLoadValue = [0,0,-17.2,0,-54.4,0]
+ret = SapModel.PointObj.SetLoadForce(PointName2,&#39;3&#39;,PointLoadValue)
+
+#assign loading for load pattern 4
+#对FrameName2施加荷载模式名称为4的分布荷载
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,&#39;4&#39;,1,11,0,1,2,2)
+
+#assign loading for load pattern 5
+#对FrameName1,FrameName2施加荷载模式名称为5的分布荷载,坐标系选择为局部坐标系
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName1,&#39;5&#39;,1,2,0,1,2,2,&#39;Local&#39;)
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,&#39;5&#39;,1,2,0,1,-2,-2,&#39;Local&#39;)
+
+#assign loading for load pattern 6
+#对FrameName1,FrameName2施加荷载模式名称为6的分布荷载,坐标系选择为局部坐标系
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName1,&#39;6&#39;,1,2,0,1,0.9984,0.3744,&#39;Local&#39;)
+ret = SapModel.FrameObj.SetLoadDistributed(FrameName2,&#39;6&#39;,1,2,0,1,-0.3744,0,&#39;Local&#39;)
+
+
+#assign loading for load pattern 7
+#对FrameName2局部轴的跨中位置施加荷载模式名称为7的节点荷载
+ret = SapModel.FrameObj.SetLoadPoint(FrameName2,&#39;7&#39;,1,2,0.5,-15,&#39;Local&#39;)
+
+# switch to k_in units
+kip_in_F=3
+ret = SapModel.SetPresentUnits(kip_in_F)
+
+# save model
+# 保存模型
+ret = SapModel.File.Save(ModelPath)
+
+# run model(this will creat the analysis model)
+# 运行模型，在运行的过程种会创建一个分析模型
+ret = SapModel.Analyze.RunAnalysis()
+
+#initialize for Sap2000 results
+# 初始化sap2000的计算结果
+SapResult=[0,0,0,0,0,0,0]
+[PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName2,PointName1,PointName2)
+
+# get Sap2000 results for load cases 1 through 7
+# 初始化荷载模式从1~7的sap2000的计算结果
+for i in range(0,7):
+        # 结果数量，这里预先定义为0
+        NumberResults = 0
+        # 分别是对象、单元、荷载、分析步类型、分析步数量、以及6个方向的位移
+        Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3 = [],[],[],[],[],[],[],[],[],[],[]
+        # 定义对象单元也为0（不知道理解的对不对）
+        ObjectElm = 0
+        # 删除所有对荷载和荷载组合的选择
+        ret = SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()
+        # 按照循环来选择相应的荷载和荷载组合，i从0取到6，将7个荷载模式都循环一遍
+        ret = SapModel.Results.Setup.SetCaseSelectedForOutput(str(i+1))
+        # 如果是运行到前三个荷载模式
+        if i &lt;= 3:
+            [NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3, ret] = SapModel.Results.JointDispl(PointName2, ObjectElm, NumberResults, Obj, Elm, ACase, StepType, StepNum,U1,U2,U3,R1,R2,R3)
+            # 这段代码没有理解，下面的代码同理
+            SapResult[i] = U3[0]
+        # 运行到后面4个荷载模式
+        else:
+            [NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3, ret] = SapModel.Results.JointDispl(PointName1, ObjectElm, NumberResults, Obj, Elm, ACase, StepType, StepNum, U1, U2, U3, R1, R2, R3)
+            SapResult[i] = U1[0]
+
+
+
+
+# fill independent results
+# 填写独立的结果
+IndResult = [0,0,0,0,0,0,0]
+IndResult[0] = -0.02639
+IndResult[1] = 0.06296
+IndResult[2] = 0.06296
+IndResult[3] = -0.2963
+IndResult[4] = 0.3125
+IndResult[5] = 0.11556
+IndResult[6] = 0.00651
+
+# fill percent diffence
+PercentDiff = [0,0,0,0,0,0,0]
+for i in range(0,7):
+    PercentDiff[i]=(SapResult[i]/IndResult[i])-1
+
+# display results
+# 打印结果
+for i in range(0,7):
+    print()
+    print(SapResult[i])
+    print(IndResult[i])
+    print(PercentDiff[i])
+</code></pre>
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/04/sap2000%E4%B9%8Bpython%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" data-id="claqum2ds0019h0tk0z9ag6v3" data-title="sap2000之python二次开发" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/07/15/python%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91cad/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python二次开发cad
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/06/16/%E5%85%B3%E4%BA%8Epython%E7%9A%84%E4%B8%80%E4%BA%9B%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E7%94%9F%E6%88%90%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">关于python的一些高级特性-生成器/迭代器</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

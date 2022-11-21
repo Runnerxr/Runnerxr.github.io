@@ -1,102 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>IO编程-与异步IO | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="IO编程中，Stream（流）的概念：Input stream 就是数据从外面（磁盘、网络）流进内存，output stream就是数据从内存流到外面去。对于浏览网页来说：浏览器与服务器之间至少要建立两根水管，才可以既能发数据，又能收数据。由于CPU和内存的速度远远高于外设的速度，解决IO编程中速度严重不匹配的情况(两者区别：是否等待IO执行的结果)  一种是CPU等着，程序暂停执行后序代码，等数">
-<meta property="og:type" content="article">
-<meta property="og:title" content="IO编程-与异步IO">
-<meta property="og:url" content="http://example.com/2022/06/15/IO%E7%BC%96%E7%A8%8B-%E4%B8%8E%E5%BC%82%E6%AD%A5IO/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="IO编程中，Stream（流）的概念：Input stream 就是数据从外面（磁盘、网络）流进内存，output stream就是数据从内存流到外面去。对于浏览网页来说：浏览器与服务器之间至少要建立两根水管，才可以既能发数据，又能收数据。由于CPU和内存的速度远远高于外设的速度，解决IO编程中速度严重不匹配的情况(两者区别：是否等待IO执行的结果)  一种是CPU等着，程序暂停执行后序代码，等数">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://runnerxr.github.io/post-images/1655396352806.png">
-<meta property="article:published_time" content="2022-06-15T12:04:42.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:22:32.840Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1655396352806.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-IO编程-与异步IO" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/15/IO%E7%BC%96%E7%A8%8B-%E4%B8%8E%E5%BC%82%E6%AD%A5IO/" class="article-date">
-  <time class="dt-published" datetime="2022-06-15T12:04:42.000Z" itemprop="datePublished">2022-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      IO编程-与异步IO
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            IO编程-与异步IO
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/06/15 Wed 20:04&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:22
+        </div>
+    </div>
+    <div class="article-content">
         <p>IO编程中，Stream（流）的概念：Input stream 就是数据从外面（磁盘、网络）流进内存，output stream就是数据从内存流到外面去。对于浏览网页来说：浏览器与服务器之间至少要建立两根水管，才可以既能发数据，又能收数据。<br>由于CPU和内存的速度远远高于外设的速度，解决IO编程中速度严重不匹配的情况(两者区别：是否等待IO执行的结果)</p>
 <ol>
 <li>一种是CPU等着，程序暂停执行后序代码，等数据写入磁盘再接着往下执行，称为同步IO</li>
@@ -109,9 +73,18 @@
 <li>多线程与多进程</li>
 <li>异步IO,当代码需要执行一个耗时的IO操作的时候，<strong>只发出指令，并不等待IO结果</strong>，去执行其他代码，一段时间结束后，当IO返回结果的时候，通知CPU执行处理</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">do_some_coad()</span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;/path/to/file&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">r = f.read()  <span class="comment"># &lt;==线程停在此处等待IO操作结果</span></span><br><span class="line"><span class="comment"># IO操作完成后线程才能继续执行</span></span><br><span class="line">do_some_code(r)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">do_some_coad()
+f = open(&#39;/path/to/file&#39;,&#39;r&#39;)
+r = f.read()  # &lt;==线程停在此处等待IO操作结果
+# IO操作完成后线程才能继续执行
+do_some_code(r)
+</code></pre>
 <p>异步IO模型需要一个消息循环，在消息循环中，主线不断地重复“读取消息-处理消息”这一过程：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">loop=get_event_loop()</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    event = loop.get_event()</span><br><span class="line">    process_event(event)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">loop=get_event_loop()
+while True:
+    event = loop.get_event()
+    process_event(event)
+</code></pre>
 <p>这里附上一个比较好地理解的方式：<br>老张爱喝茶，废话不说，煮开水。 出场人物：老张，水壶两把（普通水壶，简称水壶；会响的水壶，简称响水壶）。<br>1 老张把水壶放到火上，立等水开。（同步阻塞） 老张觉得自己有点傻<br>2 老张把水壶放到火上，去客厅看电视，时不时去厨房看看水开没有。（同步非阻塞） 老张还是觉得自己有点傻，于是变高端了，买了把会响笛的那种水壶。水开之后，能大声发出嘀~~~~的噪音。<br>3 老张把响水壶放到火上，立等水开。（异步阻塞） 老张觉得这样傻等意义不大<br> 4 老张把响水壶放到火上，去客厅看电视，水壶响之前不再去看它了，响了再去拿壶。（异步非阻塞） 老张觉得自己聪明了。<br>所谓<strong>同步异步</strong>，只是对于<strong>水壶</strong>而言。 普通水壶，同步；响水壶，异步。 虽然都能干活，但响水壶可以在自己完工之后，提示老张水开了。这是普通水壶所不能及的。 <strong>同步只能让调用者去轮询自己</strong>（情况2中），造成老张效率的低下。</p>
 <p>所谓<strong>阻塞非阻塞</strong>，仅仅对于<strong>老张</strong>而言。 立等的老张，阻塞；看电视的老张，非阻塞。 情况1和情况3中老张就是阻塞的，媳妇喊他都不知道。虽然3中响水壶是异步的，可对于立等的老张没有太大的意义。所以<strong>一般异步是配合非阻塞使用的，这样才能发挥异步的效用</strong>。</p>
 <h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>协程又称微线程，英文名字为Coroutine,以下为与子程序的对比：</p>
@@ -123,8 +96,20 @@
 <p>另外的资料辅助理解：</p>
 <ol>
 <li>协程不是计算机提供的，程序员人为创造</li>
-<li>通过一个线程实现代码的相互切换<br>以下用两个函数来理解：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">A</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">B</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;z&#x27;</span>)</span><br></pre></td></tr></table></figure>
-如果由协程来执行，在执行A的过程中，<strong>可以随时中断，去执行B</strong>，B也可能在执行过程中中断再去执行A,相应的可能的结果为：<br>1<br>2<br>x<br>y<br>3<br>z<br>但是在A中是没有调用B的，协程的调用比<strong>函数的调用要复杂</strong>一点。执行看似有点像多线程，但是实际上是一个线程执行，相比多线程的优势如下：</li>
+<li>通过一个线程实现代码的相互切换<br>以下用两个函数来理解：</li>
+</ol>
+<pre><code class="python">def A():
+    print(&#39;1&#39;)
+    print(&#39;2&#39;)
+    print(&#39;3&#39;)
+
+def B():
+    print(&#39;x&#39;)
+    print(&#39;y&#39;)
+    print(&#39;z&#39;)
+</code></pre>
+<p>如果由协程来执行，在执行A的过程中，<strong>可以随时中断，去执行B</strong>，B也可能在执行过程中中断再去执行A,相应的可能的结果为：<br>1<br>2<br>x<br>y<br>3<br>z<br>但是在A中是没有调用B的，协程的调用比<strong>函数的调用要复杂</strong>一点。执行看似有点像多线程，但是实际上是一个线程执行，相比多线程的优势如下：</p>
+<ol>
 <li>协程极<strong>高的执行效率</strong>，子程序切换不是线程切换，是<strong>程序自身控制</strong>，也就<strong>没有线程切换的开销</strong>，当线程数量越多的时候，协程的性能优势就越明显。</li>
 <li>不需要多线程的锁机制，只有一个线程，<strong>不存在同时写变量冲突</strong>，在协程中<strong>控制共享资源不加锁</strong>，只需要<strong>判断状态</strong>就好了，执行效率比多线程的效率高很多。</li>
 <li>如何利用多核CPU？：<strong>多进程+协程</strong>，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能</li>
@@ -134,8 +119,49 @@
 <li>greenlet，早期模块</li>
 <li>yield关键字</li>
 <li>asyncio装饰器（python3.4）</li>
-<li>async await关键字（python3.5）[最主流的，也是官方最推荐的方式]<br>以一个例子来举例：<br>传统的生产者-消费者模型是<strong>一个线程写消息</strong>，<strong>一个线程取消息</strong>，通过<strong>锁机制</strong>控制队列和等待，但是一不小心可能死锁，现在换一种方式：<strong>如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率会大大提高</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">consumer</span>():</span><br><span class="line">    r=<span class="string">&#x27; &#x27;</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n=<span class="keyword">yield</span> r  <span class="comment"># yield对应挂起（yield语句执行后，进入暂停，赋值语句在下一次启动生成器的时候首先被执行）</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[CONSUMER] Consuming %s...&#x27;</span> % n)</span><br><span class="line">        r = <span class="string">&#x27;200 OK&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">produce</span>(<span class="params">c</span>):</span><br><span class="line">    <span class="comment"># send在接受None参数的情况下，等同于next(generator)的功能，同时send也可以接受其他的参数，后面举例说明</span></span><br><span class="line">    c.send(<span class="literal">None</span>)  <span class="comment"># 调用c.send(None)，启动生成器</span></span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; <span class="number">5</span>:</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[PRODUCER] Producing %s...&#x27;</span> % n)</span><br><span class="line">        r = c.send(n)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[PRODUCER] Consumer return: %s&#x27;</span> % r)</span><br><span class="line">    c.close()</span><br><span class="line"></span><br><span class="line">c = consumer()</span><br><span class="line">produce(c)</span><br><span class="line"><span class="comment"># 执行结果如下：</span></span><br><span class="line">[PRODUCER] Producing <span class="number">1.</span>..</span><br><span class="line">[CONSUMER] Consuming <span class="number">1.</span>..</span><br><span class="line">[PRODUCER] Consumer <span class="keyword">return</span>: <span class="number">200</span> OK</span><br><span class="line">[PRODUCER] Producing <span class="number">2.</span>..</span><br><span class="line">[CONSUMER] Consuming <span class="number">2.</span>..</span><br><span class="line">[PRODUCER] Consumer <span class="keyword">return</span>: <span class="number">200</span> OK</span><br><span class="line">[PRODUCER] Producing <span class="number">3.</span>..</span><br><span class="line">[CONSUMER] Consuming <span class="number">3.</span>..</span><br><span class="line">[PRODUCER] Consumer <span class="keyword">return</span>: <span class="number">200</span> OK</span><br><span class="line">[PRODUCER] Producing <span class="number">4.</span>..</span><br><span class="line">[CONSUMER] Consuming <span class="number">4.</span>..</span><br><span class="line">[PRODUCER] Consumer <span class="keyword">return</span>: <span class="number">200</span> OK</span><br><span class="line">[PRODUCER] Producing <span class="number">5.</span>..</span><br><span class="line">[CONSUMER] Consuming <span class="number">5.</span>..</span><br><span class="line">[PRODUCER] Consumer <span class="keyword">return</span>: <span class="number">200</span> OK</span><br></pre></td></tr></table></figure>
-以下为对这段代码的解释：<br>consumer函数就是一个generator ,把一个consumer 传入produce后</li>
+<li>async await关键字（python3.5）[最主流的，也是官方最推荐的方式]<br>以一个例子来举例：<br>传统的生产者-消费者模型是<strong>一个线程写消息</strong>，<strong>一个线程取消息</strong>，通过<strong>锁机制</strong>控制队列和等待，但是一不小心可能死锁，现在换一种方式：<strong>如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率会大大提高</strong></li>
+</ol>
+<pre><code class="python">def consumer():
+    r=&#39; &#39;
+    while True:
+        n=yield r  # yield对应挂起（yield语句执行后，进入暂停，赋值语句在下一次启动生成器的时候首先被执行）
+        if not n:
+            return 
+        print(&#39;[CONSUMER] Consuming %s...&#39; % n)
+        r = &#39;200 OK&#39;
+
+def produce(c):
+    # send在接受None参数的情况下，等同于next(generator)的功能，同时send也可以接受其他的参数，后面举例说明
+    c.send(None)  # 调用c.send(None)，启动生成器
+    n = 0
+    while n &lt; 5:
+        n = n + 1
+        print(&#39;[PRODUCER] Producing %s...&#39; % n)
+        r = c.send(n)
+        print(&#39;[PRODUCER] Consumer return: %s&#39; % r)
+    c.close()
+
+c = consumer()
+produce(c)
+# 执行结果如下：
+[PRODUCER] Producing 1...
+[CONSUMER] Consuming 1...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 2...
+[CONSUMER] Consuming 2...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 3...
+[CONSUMER] Consuming 3...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 4...
+[CONSUMER] Consuming 4...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 5...
+[CONSUMER] Consuming 5...
+[PRODUCER] Consumer return: 200 OK
+</code></pre>
+<p>以下为对这段代码的解释：<br>consumer函数就是一个generator ,把一个consumer 传入produce后</p>
+<ol>
 <li>调用c.send(None)，启动生成器</li>
 <li>一旦生产了东西，通过c.send(n),切换到consumer执行</li>
 <li>consumer通过yield拿到消息，处理，又通过yield把结果传回</li>
@@ -143,7 +169,18 @@
 <li>produce决定不生产，通过c.close()关闭consumer整个过程结束</li>
 </ol>
 <p>为了更好的理解上面的c.send(n)的用法，这里也是参照别人的例子来辅助理解：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">num</span>():</span><br><span class="line">    a = <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        a = <span class="keyword">yield</span> a</span><br><span class="line">c = num()</span><br><span class="line">c.send(<span class="literal">None</span>)</span><br><span class="line"><span class="built_in">print</span>(c.send(<span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(c.send(<span class="number">100</span>))</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">def num():
+    a = yield 1
+    while True:
+        a = yield a
+c = num()
+c.send(None)
+print(c.send(5))
+print(c.send(100))
+# 打印结果
+5
+100
+</code></pre>
 <p>对上面的运行的理解：</p>
 <ol>
 <li>首先使用c.send(None),返回生成器的第一个值 a&#x3D;yield 1(只是挂起，并没有执行赋值语句)</li>
@@ -153,24 +190,172 @@
 <li>有没有什么注意事项：在一个生成器函数未启动前，是不能传递值进去，也即<strong>在使用c.send(n)之前，必须先使用c.send(None)或者next(c)来返回生成器的第一个值</strong></li>
 </ol>
 <p>再次结合别人的整理来理解：<br>使用协程比较奇特：把数据传过去了，又神奇的接受到了数据，协程被创造出来就是<strong>用来解决异步任务的</strong>，不能够和多线程弄混，<strong>多线程是用来完成并发任务</strong>，异步和并发是两个不同的概念，同步和异步是一种<strong>描述指令执行或事件产生顺序</strong>，并发与并行指多个或多段可以独立运行的程序对系统资源（主要是CPU）的占用。异步任务最常见的就是读取文件，网络请求等IO操作。<br>以前处理异步任务都是使用回调（缺点就是地狱回调：回调函数套回调函数），协程的目标就是<strong>将这些烦人的异步代码可以像同步代码一样写</strong>，就是异步代码的同步化<br>协程的核心概念就是函数或一段程序能够被挂起，稍后在挂起的位置恢复，挂起和恢复是可以控制的，<strong>始终围绕的是挂起和恢复这两个概念</strong>，还有一个重要的组成—状态机，协程将原本连续的逻辑拆散，需要状态机来维护状态，每一次的挂起和恢复都会切换到对应的状态，以便下一次的操作可以知道该做什么？<br>这里结合这位答主更好的去理解：<br>另外还附上另一份参考资料：<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21823699">https://www.zhihu.com/question/21823699</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/SL_World/article/details/86597738">https://blog.csdn.net/SL_World/article/details/86597738</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">consumer</span>():</span><br><span class="line">    result = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[CONSUMER] 挂起&#x27;</span>)</span><br><span class="line">        <span class="comment"># 1. 启动协程后运行到yield，挂起函数，并将状态扭转为挂起。函数栈跳转到producer</span></span><br><span class="line">        <span class="comment"># 3.consumer函数从yield处恢复，从恢复状态中拿到sendData的值赋值给next。一个循环后到达yield，继续将函数挂起，并将状态扭转为挂起，result的值保存在状态中。函数栈跳到producer</span></span><br><span class="line">        <span class="built_in">next</span> = <span class="keyword">yield</span> result</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[CONSUMER] 恢复--并接受到数据%s&#x27;</span> % <span class="built_in">next</span>)</span><br><span class="line">        result = <span class="string">&#x27;200 OK&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">produce</span>(<span class="params">coroutine</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;[PRODUCER] 准备启动协程&#x27;</span>)</span><br><span class="line">    <span class="comment"># 这里采用next(coroutine)是启动协程，与c.send(None)的功能是一样的</span></span><br><span class="line">    <span class="comment"># 启动协程就是运行这个函数，比较特殊，普通的调用方式无法运行，需要使用next(c)或者c.send(None)</span></span><br><span class="line">    <span class="built_in">next</span>(coroutine)</span><br><span class="line">    sendData = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> sendData &lt; <span class="number">2</span>:</span><br><span class="line">        sendData = sendData + <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[PRODUCER] 发送数据 %s&#x27;</span> % sendData)</span><br><span class="line">        <span class="comment"># 2. producer函数继续执行到send方法，send恢复当前挂起，将状态扭转为恢复并将sendData的值保存在状态中。函数栈跳转到consumer</span></span><br><span class="line">        <span class="comment"># 4. producer函数send方法从挂起状态中拿到result的值赋值给result</span></span><br><span class="line">        result = coroutine.send(sendData)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[PRODUCER] 处理结果: %s&#x27;</span> % result)</span><br><span class="line">    coroutine.close()</span><br><span class="line"></span><br><span class="line">coroutine = consumer()</span><br><span class="line">produce(coroutine)</span><br><span class="line"><span class="comment"># 运行结果如下：</span></span><br><span class="line">[PRODUCER] 准备启动协程</span><br><span class="line">[CONSUMER] 挂起</span><br><span class="line">[PRODUCER] 发送数据 <span class="number">1</span></span><br><span class="line">[CONSUMER] 恢复--并接受到数据<span class="number">1</span></span><br><span class="line">[CONSUMER] 挂起</span><br><span class="line">[PRODUCER] 处理结果: <span class="number">200</span> OK</span><br><span class="line">[PRODUCER] 发送数据 <span class="number">2</span></span><br><span class="line">[CONSUMER] 恢复--并接受到数据<span class="number">2</span></span><br><span class="line">[CONSUMER] 挂起</span><br><span class="line">[PRODUCER] 处理结果: <span class="number">200</span> OK</span><br></pre></td></tr></table></figure>
+<pre><code class="python">def consumer():
+    result = &#39;&#39;
+    while True:
+        print(&#39;[CONSUMER] 挂起&#39;)
+        # 1. 启动协程后运行到yield，挂起函数，并将状态扭转为挂起。函数栈跳转到producer
+        # 3.consumer函数从yield处恢复，从恢复状态中拿到sendData的值赋值给next。一个循环后到达yield，继续将函数挂起，并将状态扭转为挂起，result的值保存在状态中。函数栈跳到producer
+        next = yield result
+        print(&#39;[CONSUMER] 恢复--并接受到数据%s&#39; % next)
+        result = &#39;200 OK&#39;
 
+def produce(coroutine):
+    print(&#39;[PRODUCER] 准备启动协程&#39;)
+    # 这里采用next(coroutine)是启动协程，与c.send(None)的功能是一样的
+    # 启动协程就是运行这个函数，比较特殊，普通的调用方式无法运行，需要使用next(c)或者c.send(None)
+    next(coroutine)
+    sendData = 0
+    while sendData &lt; 2:
+        sendData = sendData + 1
+        print(&#39;[PRODUCER] 发送数据 %s&#39; % sendData)
+        # 2. producer函数继续执行到send方法，send恢复当前挂起，将状态扭转为恢复并将sendData的值保存在状态中。函数栈跳转到consumer
+        # 4. producer函数send方法从挂起状态中拿到result的值赋值给result
+        result = coroutine.send(sendData)
+        print(&#39;[PRODUCER] 处理结果: %s&#39; % result)
+    coroutine.close()
+
+coroutine = consumer()
+produce(coroutine)
+# 运行结果如下：
+[PRODUCER] 准备启动协程
+[CONSUMER] 挂起
+[PRODUCER] 发送数据 1
+[CONSUMER] 恢复--并接受到数据1
+[CONSUMER] 挂起
+[PRODUCER] 处理结果: 200 OK
+[PRODUCER] 发送数据 2
+[CONSUMER] 恢复--并接受到数据2
+[CONSUMER] 挂起
+[PRODUCER] 处理结果: 200 OK
+</code></pre>
 <h2 id="asyncio"><a href="#asyncio" class="headerlink" title="asyncio"></a>asyncio</h2><p>直接内置了对异步IO的支持<br>asyncio的编程模型就是一个<strong>消息循环</strong>，从asyncio模块中直接<strong>获取一个EventLoop的引用</strong>，然后把需要执行的协程扔到<strong>EventLoop中执行</strong>，就实现了异步IO<br>用asyncio实现Hello world的代码：后面有点逐层深入的感觉，感觉理解起来并没有那么容易呀：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用asynicio实现Hello world</span></span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="comment"># 把一个generator标记为coroutine类型，然后把coroutine扔到EventLoop中执行</span></span><br><span class="line"><span class="meta">@asyncio.coroutine</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello world!&quot;</span>)</span><br><span class="line">    <span class="comment"># 异步调用asyncio.sleep(1):</span></span><br><span class="line">    <span class="comment"># yield from语法可以让我们方便地调用另一个generator</span></span><br><span class="line">    <span class="comment"># 把asyncio.sleep(1)看成是一个耗时1秒的IO操作</span></span><br><span class="line">    r=<span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello again!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取EventLoop:</span></span><br><span class="line">loop =asyncio.get_event_loop()</span><br><span class="line"><span class="comment"># 执行coroutine</span></span><br><span class="line">loop.run_until_complete(hello())</span><br><span class="line">loop.close</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 用asynicio实现Hello world
+import asyncio
+# 把一个generator标记为coroutine类型，然后把coroutine扔到EventLoop中执行
+@asyncio.coroutine
+def hello():
+    print(&quot;Hello world!&quot;)
+    # 异步调用asyncio.sleep(1):
+    # yield from语法可以让我们方便地调用另一个generator
+    # 把asyncio.sleep(1)看成是一个耗时1秒的IO操作
+    r=yield from asyncio.sleep(1)
+    print(&quot;Hello again!&quot;)
+
+# 获取EventLoop:
+loop =asyncio.get_event_loop()
+# 执行coroutine
+loop.run_until_complete(hello())
+loop.close
+</code></pre>
 <p>接下来用Task封装两个coroutine（这里需要理解，也是很重要的一点：也算是比较难理解的一点）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用Task封装两个coroutine</span></span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="meta">@asyncio.coroutine</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello word! (%s)&quot;</span> % threading.currentThrentThread())</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello again!(%s)&quot;</span> % threading.currentThread())</span><br><span class="line"></span><br><span class="line">loop = asyncio.get_event_loop()</span><br><span class="line">tasks = [hello(),hello()]</span><br><span class="line">loop.run_until_complete(asyncio.wait(tasks))</span><br><span class="line">loop.close()</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 用Task封装两个coroutine
+import threading
+import asyncio
+@asyncio.coroutine
+def hello():
+    print(&quot;Hello word! (%s)&quot; % threading.currentThrentThread())
+    yield from asyncio.sleep(1)
+    print(&quot;Hello again!(%s)&quot; % threading.currentThread())
+
+loop = asyncio.get_event_loop()
+tasks = [hello(),hello()]
+loop.run_until_complete(asyncio.wait(tasks))
+loop.close()
+</code></pre>
 <p>这里为了搞懂协程的知识以及这部分章节的理解又看了其他的一些理解（说实话才发现前面的理解的有点浅了，这些概念都还是十分抽象的），这里引用别人博客的文章来辅助理解。</p>
 <h2 id="从yield-from-到-async的使用"><a href="#从yield-from-到-async的使用" class="headerlink" title="从yield from 到 async的使用"></a>从yield from 到 async的使用</h2><p>“对同步和异步的看法，上面自己总结的时候也用了一些例子来说明”<br>【同步】：就是发出一个“调用”时，在没有得到结果之前，该“调用”就不返回，“调用者”需要一直等待该“调用”结束，才能进行下一步工作。<br>【异步】：“调用”在发出之后，就直接返回了，也就没有返回结果。“被调用者”完成任务后，通过状态来通知“调用者”继续回来处理该“调用”。<br>下面的这个例子通过顺序实现两个同步IO任务taskIO_1()和taskIO_2()很好的解释了如果cpu运行完毕之后要闲置很长时间取等待IO任务完成才能进行下一个任务计算这种模型的低效率。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用普通同步代码实现多个IO任务的案例</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taskIO_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;开始运行IO任务1...&#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)  <span class="comment"># 假设该任务耗时2s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IO任务1已完成，耗时2s&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taskIO_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;开始运行IO任务2...&#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">3</span>)  <span class="comment"># 假设该任务耗时3s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IO任务2已完成，耗时3s&#x27;</span>)</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line">taskIO_1()</span><br><span class="line">taskIO_2()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;所有IO任务总耗时%.5f秒&#x27;</span> % <span class="built_in">float</span>(time.time()-start))</span><br><span class="line"><span class="comment"># 运行结果如下：</span></span><br><span class="line">开始运行IO任务<span class="number">1.</span>..</span><br><span class="line">IO任务<span class="number">1</span>已完成，耗时2s</span><br><span class="line">开始运行IO任务<span class="number">2.</span>..</span><br><span class="line">IO任务<span class="number">2</span>已完成，耗时3s</span><br><span class="line">所有IO任务总耗时<span class="number">5.02295</span>秒</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 用普通同步代码实现多个IO任务的案例
+import time
+def taskIO_1():
+    print(&#39;开始运行IO任务1...&#39;)
+    time.sleep(2)  # 假设该任务耗时2s
+    print(&#39;IO任务1已完成，耗时2s&#39;)
+def taskIO_2():
+    print(&#39;开始运行IO任务2...&#39;)
+    time.sleep(3)  # 假设该任务耗时3s
+    print(&#39;IO任务2已完成，耗时3s&#39;)
+
+start = time.time()
+taskIO_1()
+taskIO_2()
+print(&#39;所有IO任务总耗时%.5f秒&#39; % float(time.time()-start))
+# 运行结果如下：
+开始运行IO任务1...
+IO任务1已完成，耗时2s
+开始运行IO任务2...
+IO任务2已完成，耗时3s
+所有IO任务总耗时5.02295秒
+</code></pre>
 <p>因此需要用到异步的方式来处理上述的任务，极大的增大效率，就是运用协程，在python生成器的关键字yield中可以实现中断功能，<strong>也即协程是基于生成器的变形实现的，之后虽然编码的形式有变化，但是基本原理不变</strong></p>
 <h3 id="使用yield-from和-asyncio-coroutine实现协程"><a href="#使用yield-from和-asyncio-coroutine实现协程" class="headerlink" title="使用yield from和@asyncio.coroutine实现协程"></a>使用yield from和@asyncio.coroutine实现协程</h3><p>协程都是通过使用yield from和asyncio中的@asyncio.coroutine来实现的，asyncio专门被用来实现异步IO操作<br>yield与yield from的区别：yield在生成器中有中断的功能，可以传出值，也可以从函数外部接收值，<strong>yield from的实现就是简化了yield操作。</strong><br>其中yield titles返回了titles完整列表<br>yield from titles等价于下面的这一小段代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> titles:　<span class="comment"># 等价于yield from titles</span></span><br><span class="line">    <span class="keyword">yield</span> title　</span><br></pre></td></tr></table></figure>
+<pre><code class="python">for title in titles:　# 等价于yield from titles
+    yield title　
+</code></pre>
 <p> 用下面的例子来解释这种区别：代码比较简单，但是对于概念的理解非常有帮助</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generator_1</span>(<span class="params">titles</span>):</span><br><span class="line">    <span class="keyword">yield</span> titles</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generator_2</span>(<span class="params">titles</span>):</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> titles</span><br><span class="line"></span><br><span class="line">titles = [<span class="string">&#x27;Python&#x27;</span>,<span class="string">&#x27;Java&#x27;</span>,<span class="string">&#x27;C++&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> generator_1(titles):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;生成器1:&#x27;</span>,title)</span><br><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> generator_2(titles):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;生成器2:&#x27;</span>,title)</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line">生成器<span class="number">1</span>: [<span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;Java&#x27;</span>, <span class="string">&#x27;C++&#x27;</span>]</span><br><span class="line">生成器<span class="number">2</span>: Python</span><br><span class="line">生成器<span class="number">2</span>: Java</span><br><span class="line">生成器<span class="number">2</span>: C++</span><br></pre></td></tr></table></figure>
+<pre><code class="python">def generator_1(titles):
+    yield titles
+def generator_2(titles):
+    yield from titles
+
+titles = [&#39;Python&#39;,&#39;Java&#39;,&#39;C++&#39;]
+for title in generator_1(titles):
+    print(&#39;生成器1:&#39;,title)
+for title in generator_2(titles):
+    print(&#39;生成器2:&#39;,title)
+# 打印结果如下：
+生成器1: [&#39;Python&#39;, &#39;Java&#39;, &#39;C++&#39;]
+生成器2: Python
+生成器2: Java
+生成器2: C++
+</code></pre>
 <p>于此同时，yield from还可以<strong>省去很多异常的处理，不需要我们去手动编写，内部已经实现了大部分的异常处理</strong><br>继续…<br>通过生成器来实现一个整数加和的程序，通过<strong>send()函数</strong>向生成器中传入<strong>要加和的数字</strong>，然后返回None结束，total保存最后加和的总数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generator_1</span>():</span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        x=<span class="keyword">yield</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;加&quot;</span>,x)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> x:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        total +=x</span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generator_2</span>():  <span class="comment"># 委托生成器</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        total = <span class="keyword">yield</span> <span class="keyword">from</span> generator_1() <span class="comment"># 子生成器</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;加和总数是：&quot;</span>,total)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(): <span class="comment"># 调用方</span></span><br><span class="line">    g1=generator_1()</span><br><span class="line">    g1.send(<span class="literal">None</span>)</span><br><span class="line">    g1.send(<span class="number">2</span>)</span><br><span class="line">    g1.send(<span class="number">3</span>)</span><br><span class="line">    g1.send(<span class="literal">None</span>)</span><br><span class="line">    <span class="comment"># g2 = generator_2()</span></span><br><span class="line">    <span class="comment"># g2.send(None)</span></span><br><span class="line">    <span class="comment"># g2.send(2)</span></span><br><span class="line">    <span class="comment"># g2.send(3)</span></span><br><span class="line">    <span class="comment"># g2.send(None)</span></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">def generator_1():
+    total = 0
+    while True:
+        x=yield
+        print(&quot;加&quot;,x)
+        if not x:
+            break
+        total +=x
+    return total
+
+def generator_2():  # 委托生成器
+    while True:
+        total = yield from generator_1() # 子生成器
+        print(&quot;加和总数是：&quot;,total)
+
+def main(): # 调用方
+    g1=generator_1()
+    g1.send(None)
+    g1.send(2)
+    g1.send(3)
+    g1.send(None)
+    # g2 = generator_2()
+    # g2.send(None)
+    # g2.send(2)
+    # g2.send(3)
+    # g2.send(None)
+main()
+</code></pre>
 <p>如果是按照上述这么写的话，会报错，但是如果将main()函数的代码改过来，就不会出错，此时g2即使传入了None也不报异常</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(): <span class="comment"># 调用方</span></span><br><span class="line">    <span class="comment"># g1=generator_1()</span></span><br><span class="line">    <span class="comment"># g1.send(None)</span></span><br><span class="line">    <span class="comment"># g1.send(2)</span></span><br><span class="line">    <span class="comment"># g1.send(3)</span></span><br><span class="line">    <span class="comment"># g1.send(None)</span></span><br><span class="line">    g2 = generator_2()</span><br><span class="line">    g2.send(<span class="literal">None</span>)</span><br><span class="line">    g2.send(<span class="number">2</span>)</span><br><span class="line">    g2.send(<span class="number">3</span>)</span><br><span class="line">    g2.send(<span class="literal">None</span>)</span><br><span class="line"><span class="comment"># 最后打印结果</span></span><br><span class="line">加 <span class="number">2</span></span><br><span class="line">加 <span class="number">3</span></span><br><span class="line">加 <span class="literal">None</span></span><br><span class="line">加和总数是: <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">def main(): # 调用方
+    # g1=generator_1()
+    # g1.send(None)
+    # g1.send(2)
+    # g1.send(3)
+    # g1.send(None)
+    g2 = generator_2()
+    g2.send(None)
+    g2.send(2)
+    g2.send(3)
+    g2.send(None)
+# 最后打印结果
+加 2
+加 3
+加 None
+加和总数是: 5
+</code></pre>
 <p>综合上面的几个例子做一点相应的梳理：</p>
 <ol>
 <li>子生成器：<strong>yield from后的</strong>generator_1()生成器函数是子生成器</li>
@@ -184,7 +369,47 @@
 <li>也因此我们在写代码的时候依据：<em>调用方-子生成器-委托生成器</em>的规范形式来书写（现在可能还无法体会，后面接触的多了也许会有相应的了解。）</li>
 </ol>
 <h2 id="如何结合-asyncio-coroutine实现协程"><a href="#如何结合-asyncio-coroutine实现协程" class="headerlink" title="如何结合@asyncio.coroutine实现协程"></a>如何结合@asyncio.coroutine实现协程</h2><p>对初始的那个例子进行相应的更改（同步IO修改成协程的用法）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用同步方式编写异步功能</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="meta">@asyncio.coroutine </span><span class="comment"># 标志协程的装饰器</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taskIO_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;开始进行IO任务1...&quot;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">2</span>) <span class="comment"># 假设该任务耗时2s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;IO任务1已完成,耗时2s&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> taskIO_1.__name__</span><br><span class="line"></span><br><span class="line"><span class="meta">@asyncio.coroutine </span><span class="comment"># 标志协程的装饰器</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taskIO_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;开始进行IO任务2...&quot;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">3</span>)  <span class="comment"># 假设该任务耗时3s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;IO任务2已完成,耗时3s&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> taskIO_2.__name__</span><br><span class="line"></span><br><span class="line"><span class="meta">@asyncio.coroutine </span><span class="comment"># 标志协程的装饰器</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():  <span class="comment"># 调用方</span></span><br><span class="line">    tasks=[taskIO_1(),taskIO_2()]  <span class="comment"># 把所有任务添加到task中</span></span><br><span class="line">    done,pending = <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.wait(tasks) <span class="comment"># 子生成器</span></span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> done: <span class="comment">#done和pending都是一个任务，所以返回结果需要逐个调用result()</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;协程无序返回值：&quot;</span>+r.result())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    start = time.time()</span><br><span class="line">    loop=asyncio.get_event_loop() <span class="comment"># 创建一个事件循环对象loop</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        loop.run_until_complete(main())  <span class="comment"># 完成事件循环，直到最后一个任务结束</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        loop.close()  <span class="comment"># 结束事件循环</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;所有IO任务总耗时%.5f秒&quot;</span> % <span class="built_in">float</span>(time.time()-start))</span><br><span class="line"><span class="comment"># 打印结果如下：</span></span><br><span class="line">开始进行IO任务<span class="number">2.</span>..</span><br><span class="line">开始进行IO任务<span class="number">1.</span>..</span><br><span class="line">IO任务<span class="number">1</span>已完成,耗时2s</span><br><span class="line">IO任务<span class="number">2</span>已完成,耗时3s</span><br><span class="line">协程无序返回值：taskIO_1</span><br><span class="line">协程无序返回值：taskIO_2</span><br><span class="line">所有IO任务总耗时<span class="number">3.02165</span>秒</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 使用同步方式编写异步功能
+import time
+import asyncio
+@asyncio.coroutine # 标志协程的装饰器
+def taskIO_1():
+    print(&quot;开始进行IO任务1...&quot;)
+    yield from asyncio.sleep(2) # 假设该任务耗时2s
+    print(&quot;IO任务1已完成,耗时2s&quot;)
+    return taskIO_1.__name__
+
+@asyncio.coroutine # 标志协程的装饰器
+def taskIO_2():
+    print(&quot;开始进行IO任务2...&quot;)
+    yield from asyncio.sleep(3)  # 假设该任务耗时3s
+    print(&quot;IO任务2已完成,耗时3s&quot;)
+    return taskIO_2.__name__
+
+@asyncio.coroutine # 标志协程的装饰器
+def main():  # 调用方
+    tasks=[taskIO_1(),taskIO_2()]  # 把所有任务添加到task中
+    done,pending = yield from asyncio.wait(tasks) # 子生成器
+    for r in done: #done和pending都是一个任务，所以返回结果需要逐个调用result()
+        print(&quot;协程无序返回值：&quot;+r.result())
+
+if __name__==&#39;__main__&#39;:
+    start = time.time()
+    loop=asyncio.get_event_loop() # 创建一个事件循环对象loop
+    try:
+        loop.run_until_complete(main())  # 完成事件循环，直到最后一个任务结束
+    finally:
+        loop.close()  # 结束事件循环
+    print(&quot;所有IO任务总耗时%.5f秒&quot; % float(time.time()-start))
+# 打印结果如下：
+开始进行IO任务2...
+开始进行IO任务1...
+IO任务1已完成,耗时2s
+IO任务2已完成,耗时3s
+协程无序返回值：taskIO_1
+协程无序返回值：taskIO_2
+所有IO任务总耗时3.02165秒
+</code></pre>
 <p>对这段代码进行相应的分析：<br>使用方法：</p>
 <ol>
 <li>@asyncio.coroutine装饰器是<strong>协程函数的标志</strong>，我们需要在每一个任务函数前加这个装饰器，并在函数中<strong>使用yield from</strong></li>
@@ -203,7 +428,37 @@
 <li>把yield from 替换为await</li>
 </ol>
 <p>将上面已经有的代码进行相应的更新：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重点要把上下两段代码做一下相应的比较就知道相应的修改的地方了</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">taskIO_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;开始进行IO任务1...&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)  <span class="comment"># 假设该任务耗时2s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;IO任务1已完成,耗时2s&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> taskIO_1.__name__</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">taskIO_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;开始进行IO任务2...&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">3</span>)  <span class="comment"># 假设该任务耗时3s</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;IO任务2已完成,耗时3s&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> taskIO_2.__name__</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():  <span class="comment"># 调用方</span></span><br><span class="line">    tasks=[taskIO_1(),taskIO_2()]  <span class="comment"># 把所有任务添加到task中</span></span><br><span class="line">    done,pending = <span class="keyword">await</span> asyncio.wait(tasks) <span class="comment"># 子生成器</span></span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> done: <span class="comment">#done和pending都是一个任务，所以返回结果需要逐个调用result()</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;协程无序返回值：&quot;</span>+r.result())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    start = time.time()</span><br><span class="line">    loop=asyncio.get_event_loop() <span class="comment"># 创建一个事件循环对象loop</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        loop.run_until_complete(main())  <span class="comment"># 完成事件循环，直到最后一个任务结束</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        loop.close()  <span class="comment"># 结束事件循环</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;所有IO任务总耗时%.5f秒&quot;</span> % <span class="built_in">float</span>(time.time()-start))</span><br></pre></td></tr></table></figure>
+<pre><code class="python"># 重点要把上下两段代码做一下相应的比较就知道相应的修改的地方了
+import time
+import asyncio
+async def taskIO_1():
+    print(&quot;开始进行IO任务1...&quot;)
+    await asyncio.sleep(2)  # 假设该任务耗时2s
+    print(&quot;IO任务1已完成,耗时2s&quot;)
+    return taskIO_1.__name__
+
+async def taskIO_2():
+    print(&quot;开始进行IO任务2...&quot;)
+    await asyncio.sleep(3)  # 假设该任务耗时3s
+    print(&quot;IO任务2已完成,耗时3s&quot;)
+    return taskIO_2.__name__
+
+async def main():  # 调用方
+    tasks=[taskIO_1(),taskIO_2()]  # 把所有任务添加到task中
+    done,pending = await asyncio.wait(tasks) # 子生成器
+    for r in done: #done和pending都是一个任务，所以返回结果需要逐个调用result()
+        print(&quot;协程无序返回值：&quot;+r.result())
+
+
+if __name__==&#39;__main__&#39;:
+    start = time.time()
+    loop=asyncio.get_event_loop() # 创建一个事件循环对象loop
+    try:
+        loop.run_until_complete(main())  # 完成事件循环，直到最后一个任务结束
+    finally:
+        loop.close()  # 结束事件循环
+    print(&quot;所有IO任务总耗时%.5f秒&quot; % float(time.time()-start))
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>引出问题：</p>
 <ol>
 <li>同步编程的并发性不高</li>
@@ -215,148 +470,23 @@
 </ol>
 <p>针对以上的3点需求，就有了协程的出现，<strong>多进程核多线程是内核级别的程序，而协程是函数级别的程序，是可以通过程序员进行调试的</strong><br><img src="https://runnerxr.github.io/post-images/1655396352806.png"></p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/15/IO%E7%BC%96%E7%A8%8B-%E4%B8%8E%E5%BC%82%E6%AD%A5IO/" data-id="claqum2d60003h0tkdn12d5f8" data-title="IO编程-与异步IO" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/06/15/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          进程和线程
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/06/15/Linux%E7%9A%84%E7%9A%84%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Linux的的相关知识点</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>

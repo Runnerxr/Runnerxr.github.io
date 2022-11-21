@@ -1,100 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>python的网站开发知识 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Web开发CS框架：最早的软件都是运行在大型机上的，后来随着PC机的兴起，软件开始主要运行在桌面上，而数据库这样的软件运行在服务器端，这种Client&#x2F;Server模式（客户&#x2F;服务器模式）简称CS架构。BS框架：随着时间推移，CS架构不适合Web，最大的原因是Web应用程序的修改和升级非常迅速，而CS架构需要每个客户端逐个升级桌面App，因此，Browser&#x2F;Serv">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python的网站开发知识">
-<meta property="og:url" content="http://example.com/2022/05/18/python%E7%9A%84%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Web开发CS框架：最早的软件都是运行在大型机上的，后来随着PC机的兴起，软件开始主要运行在桌面上，而数据库这样的软件运行在服务器端，这种Client&#x2F;Server模式（客户&#x2F;服务器模式）简称CS架构。BS框架：随着时间推移，CS架构不适合Web，最大的原因是Web应用程序的修改和升级非常迅速，而CS架构需要每个客户端逐个升级桌面App，因此，Browser&#x2F;Serv">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-18T00:52:37.000Z">
-<meta property="article:modified_time" content="2022-11-16T15:28:10.049Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Hexo
+    </title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">Hexo</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-python的网站开发知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/18/python%E7%9A%84%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" class="article-date">
-  <time class="dt-published" datetime="2022-05-18T00:52:37.000Z" itemprop="datePublished">2022-05-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      python的网站开发知识
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            python的网站开发知识
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/05/18 Wed 08:52&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/11/16 Wed 23:28
+        </div>
+    </div>
+    <div class="article-content">
         <h1 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h1><p>CS框架：<br>最早的软件都是运行在大型机上的，后来随着PC机的兴起，<strong>软件开始主要运行在桌面上</strong>，而<strong>数据库</strong>这样的软件运行在<strong>服务器端</strong>，这种Client&#x2F;Server模式（客户&#x2F;服务器模式）简称CS架构。<br>BS框架：<br>随着时间推移，CS架构不适合Web，最大的原因是<strong>Web应用程序的修改和升级非常迅速</strong>，而CS架构需要每个客户端逐个升级桌面App，因此，<strong>Browser&#x2F;Server</strong>模式（浏览器&#x2F;服务器模式）开始流行，简称BS架构。<br>在BS架构下，客户端只需要浏览器，应用程序的逻辑和数据都存储在服务器端。<strong>浏览器只需要请求服务器</strong>，获取Web页面，并<strong>把Web页面展示给用户</strong>即可。</p>
 <ol>
 <li>具有极强的交互性：web页面是用HTML编写的，HTML具有超强的表现力，服务端升级后，客户端无需任何部署就可以使用到新的版本</li>
@@ -119,11 +85,55 @@
 </ol>
 <p>略….</p>
 <h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h2><p>网页就是HTML,网页中不但包含文字，还有图片、视频、Flash小游戏，有复杂的排版、动画效果，所以，HTML定义了一套语法规则，来告诉浏览器如何把一个丰富多彩的页面显示出来。<br>最简单的HTML的形式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 用一系列的Tag组成的</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;Hello&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code># 用一系列的Tag组成的
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <p>CSS简介：<br>CSS是Cascading Style Sheets（层叠样式表）的简称，CSS<strong>用来控制HTML里的所有元素如何展现</strong>，比如，给标题元素<h1>加一个样式，变成48号字体，灰色，带阴影：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;Hello&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    h1 &#123;</span><br><span class="line">      color: #333333;</span><br><span class="line">      font-size: 48px;</span><br><span class="line">      text-shadow: 3px 3px 3px #666666;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello&lt;/title&gt;
+  &lt;style&gt;
+    h1 &#123;
+      color: #333333;
+      font-size: 48px;
+      text-shadow: 3px 3px 3px #666666;
+    &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <p>JavaScript简介:<br>JavaScript是<strong>为了让HTML具有交互性而作为脚本语言添加的</strong>，JavaScript既可以<strong>内嵌到HTML中</strong>，也可以从<strong>外部链接到HTML中</strong>。如果我们希望当用户点击标题时把标题变成红色，就必须通过JavaScript来实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="selector-tag">h1</span> &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">      <span class="attribute">color</span>: <span class="number">#333333</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">      <span class="attribute">font-size</span>: <span class="number">48px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">      <span class="attribute">text-shadow</span>: <span class="number">3px</span> <span class="number">3px</span> <span class="number">3px</span> <span class="number">#666666</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">function</span> <span class="title function_">change</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;h1&#x27;</span>)[<span class="number">0</span>].<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;#ff0000&#x27;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">onclick</span>=<span class="string">&quot;change()&quot;</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="JavaScript">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello&lt;/title&gt;
+  &lt;style&gt;
+    h1 &#123;
+      color: #333333;
+      font-size: 48px;
+      text-shadow: 3px 3px 3px #666666;
+    &#125;
+  &lt;/style&gt;
+  &lt;script&gt;
+    function change() &#123;
+      document.getElementsByTagName(&#39;h1&#39;)[0].style.color = &#39;#ff0000&#39;;
+    &#125;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 onclick=&quot;change()&quot;&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <p>小结：</p>
 <ol>
 <li>如果要学习Web开发，首先要对HTML、CSS和JavaScript作一定的了解。HTML定义了页面的内容，CSS来控制页面元素的样式，而JavaScript负责页面的交互逻辑</li>
@@ -157,156 +167,49 @@
 <li>轻量级标记语言Markdown, 将文本转换为有效的HTML</li>
 </ol>
 <h1 id="Day2-编写Web-APP骨架"><a href="#Day2-编写Web-APP骨架" class="headerlink" title="Day2-编写Web APP骨架"></a>Day2-编写Web APP骨架</h1><p>Web App建立在<strong>asyncio的基础上</strong>，用<strong>aiohttp</strong>写一个基本的app.py<br>经过参考别人的代码之后，基本已经算是可以到处相应的网页了，没有什么其他的问题。<br>这里把相关的代码贴在这里</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging;logging.basicConfig(level=logging.INFO)</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> aiohttp <span class="keyword">import</span> web</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义服务器响应请求的的返回为 &quot;Awesome Website&quot;</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">return</span> web.Response(body=<span class="string">b&#x27;&lt;h1&gt;Awesome Website&lt;/h1&gt;&#x27;</span>, content_type=<span class="string">&#x27;text/html&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立服务器应用，持续监听本地9000端口的http请求，对首页&quot;/&quot;进行响应</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init</span>():</span><br><span class="line">    app = web.Application()</span><br><span class="line">    app.router.add_get(<span class="string">&#x27;/&#x27;</span>, index)</span><br><span class="line">    web.run_app(app, host=<span class="string">&#x27;127.0.0.1&#x27;</span>, port=<span class="number">9000</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    init()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">import logging;logging.basicConfig(level=logging.INFO)
+import asyncio
+from aiohttp import web
 
+
+# 定义服务器响应请求的的返回为 &quot;Awesome Website&quot;
+async def index(request):
+    return web.Response(body=b&#39;&lt;h1&gt;Awesome Website&lt;/h1&gt;&#39;, content_type=&#39;text/html&#39;)
+
+
+# 建立服务器应用，持续监听本地9000端口的http请求，对首页&quot;/&quot;进行响应
+def init():
+    app = web.Application()
+    app.router.add_get(&#39;/&#39;, index)
+    web.run_app(app, host=&#39;127.0.0.1&#39;, port=9000)
+
+
+if __name__ == &quot;__main__&quot;:
+    init()
+</code></pre>
 <h1 id="编写ORM"><a href="#编写ORM" class="headerlink" title="编写ORM"></a>编写ORM</h1><p>刚开始看这一块，发现这里面需要学习的地方还是有很多的，有些地方是需要自己花时间去慢慢来领悟的，不是那么快就可以真正搞清楚的，一时半会。总之也是跟着一起学习的一个过程。<br>对关系映射（object Realational Mapping）,是一种为了解决面向对象与关系数据库存在的互不匹配的现象的技术：<strong>通过使用描述对象与数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中</strong></p>
 <p>在一个Web App中，所有数据，包括用户信息、发布的日志、评论等，都存储在数据库中。在awesome-python3-webapp中，我们选择MySQL作为数据库。<br>首先把常用的<strong>SELECT</strong>、<strong>INSERT</strong>、<strong>UPDATE</strong>和<strong>DELETE</strong>操作用函数封装起来。<br>Web框架使用了基于<strong>asyncio</strong>的<strong>aiohttp</strong>，这是基于协程的异步模型。在协程中，不能调用普通的同步IO操作，因为所有用户都是由一个线程服务的，协程的执行速度必须非常快，才能处理大量用户的请求。而耗时的IO操作不能在协程中以同步的方式调用，否则，等待一个IO操作时，系统无法响应任何其他用户。[异步编程的原则：一旦决定使用异步，系统的每一层都必须是异步的，开弓没有回头箭]<br>aiomysql为MySQL数据库提供了异步IO的驱动。</p>
 <h2 id="创建连接池"><a href="#创建连接池" class="headerlink" title="创建连接池"></a>创建连接池</h2><p>创建一个全局的连接池，每个http请求都可以从连接池中直接获取数据库连接，可以不用频繁的打开和关闭数据库，能复用就尽量的复用</p>
 <p>连接池由全局变量__pool存储，缺省的情况下将编码设置为utf8 ，自动提交事务</p>
 <h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><p>要执行SELECT语句，用select函数执行，需要传入SQL语句和SQL参数</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/18/python%E7%9A%84%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" data-id="claqum2dq0015h0tkagoadb2c" data-title="python的网站开发知识" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/05/30/%E5%8D%95%E8%B0%83%E6%A0%88%E4%BB%A5%E5%8F%8A%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          单调栈以及单调队列
-        
-      </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
     </a>
-  
-  
-    <a href="/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前缀和</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+</div>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/totop.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/21/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<script src="/js/search.js"></script>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>
