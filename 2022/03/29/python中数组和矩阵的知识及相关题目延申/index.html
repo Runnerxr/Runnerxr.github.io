@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python中数组和矩阵的知识及相关题目延申（只能算基础知识部分） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="牛客网一些简单的题型 12345678910111213141516for i in range(5):    scores &#x3D; [float(i) for i in input().split()]    s &#x3D;0    for i in range(5):        print(scores[i], end&#x3D;&quot; &quot;)        s +&#x3D;scores[i]    pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）">
+<meta property="og:url" content="http://example.com/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="牛客网一些简单的题型 12345678910111213141516for i in range(5):    scores &#x3D; [float(i) for i in input().split()]    s &#x3D;0    for i in range(5):        print(scores[i], end&#x3D;&quot; &quot;)        s +&#x3D;scores[i]    pr">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-29T09:44:35.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:44:06.161Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python中数组和矩阵的知识及相关题目延申" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="article-date">
+  <time class="dt-published" datetime="2022-03-29T09:44:35.000Z" itemprop="datePublished">2022-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>牛客网一些简单的题型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    scores = [<span class="built_in">float</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">input</span>().split()]</span><br><span class="line">    s =<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        <span class="built_in">print</span>(scores[i], end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">        s +=scores[i]</span><br><span class="line">    <span class="built_in">print</span>(s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># while True:</span></span><br><span class="line"><span class="comment">#     try:</span></span><br><span class="line"><span class="comment">#         a = list(map(float,input().split()))</span></span><br><span class="line"><span class="comment">#         for i in a:</span></span><br><span class="line"><span class="comment">#             print(&#x27;&#123;:.1f&#125;&#x27;.format(i),end=&quot; &quot;)</span></span><br><span class="line"><span class="comment">#         print(&#x27;&#123;:.1f&#125;&#x27;.format(sum(a)))</span></span><br><span class="line"><span class="comment">#     except:</span></span><br><span class="line"><span class="comment">#         break</span></span><br></pre></td></tr></table></figure>
+<p>二维矩阵：自己用代码貌似还不熟练<br>在leetcoad上面这些题目也挺多的</p>
+<ul>
+<li>283 Move Zeroes (Easy)</li>
+<li>566 Reshape the Matrix (Easy)</li>
+<li>485 Max Consecutive Ones (Easy)</li>
+<li>240 Search a 2D Matrix II (Medium)</li>
+<li>378 Kth Smallest Element in a Sorted Matrix ((Medium))</li>
+<li>645 Set Mismatch (Easy)</li>
+<li>287 Find the Duplicate Number (Medium)</li>
+<li>667 Beautiful Arrangement II (Medium)</li>
+<li>697 Degree of an Array (Easy)</li>
+<li>766 Toeplitz Matrix (Easy)</li>
+<li>565 Array Nesting (Medium)</li>
+<li>769 Max Chunks To Make Sorted (Medium)</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" data-id="claqu8zyx0011iwtker6udsvw" data-title="python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/25/%E5%88%86%E6%B2%BB%E6%B3%95%E7%9A%84%E6%80%9D%E6%83%B3%E5%8F%8A%E7%9B%B8%E5%85%B3%E4%BE%8B%E9%A2%98%EF%BC%88Divide%20and%20conquer%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">分治法的思想及相关例题（Divide and conquer）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

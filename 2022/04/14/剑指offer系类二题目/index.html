@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>剑指offer系类二题目 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="剑指offer52-两个链表的第一个公共节点题目描述：输入两个链表，找出它们的第一个公共节点。解题的思路：  采用双指针的解法，并且在遍历的过程中用到了三目运算符 两个指针在走到它们各自链表的结尾的时候需要跳到另一个链表的头开始遍历 最终它们要么在某一个节点相遇，要么在None相遇（也即没有相遇）1234567891011121314151617181920class Solution:    d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer系类二题目">
+<meta property="og:url" content="http://example.com/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="剑指offer52-两个链表的第一个公共节点题目描述：输入两个链表，找出它们的第一个公共节点。解题的思路：  采用双指针的解法，并且在遍历的过程中用到了三目运算符 两个指针在走到它们各自链表的结尾的时候需要跳到另一个链表的头开始遍历 最终它们要么在某一个节点相遇，要么在None相遇（也即没有相遇）1234567891011121314151617181920class Solution:    d">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653759440127.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653728756744.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653728762861.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653742753659.gif">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653747990962.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653756671508.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653754809436.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653757513872.png">
+<meta property="article:published_time" content="2022-04-14T02:15:50.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:41:37.235Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1653759440127.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-剑指offer系类二题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-04-14T02:15:50.000Z" itemprop="datePublished">2022-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      剑指offer系类二题目
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="剑指offer52-两个链表的第一个公共节点"><a href="#剑指offer52-两个链表的第一个公共节点" class="headerlink" title="剑指offer52-两个链表的第一个公共节点"></a>剑指offer52-两个链表的第一个公共节点</h1><p>题目描述：输入两个链表，找出它们的第一个公共节点。<br><img src="https://runnerxr.github.io/post-images/1653759440127.png"><br>解题的思路：</p>
+<ol>
+<li>采用双指针的解法，并且在遍历的过程中用到了三目运算符</li>
+<li>两个指针在走到它们各自链表的结尾的时候需要跳到另一个链表的头开始遍历</li>
+<li>最终它们要么在某一个节点相遇，要么在None相遇（也即没有相遇）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getIntersectionNode</span>(<span class="params">self, headA: ListNode, headB: ListNode</span>) -&gt; ListNode:</span><br><span class="line">        <span class="comment"># 思考这是一道链表的题目，用什么方法比较好</span></span><br><span class="line">        <span class="comment"># 要找出公共节点，尝试使用双指针的思路来解题</span></span><br><span class="line">        <span class="comment"># 相交的位置的值是相同的</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 进行边界的判断</span></span><br><span class="line">        <span class="comment"># 如果两个链表其中一个为空的话</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> headA <span class="keyword">or</span> <span class="keyword">not</span> headB:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="comment"># 同时从两个链表的头部开始遍历</span></span><br><span class="line">        pA,pB=headA,headB</span><br><span class="line">        <span class="comment"># 指针pA和pB不断的向后遍历，直到找到相交点</span></span><br><span class="line">        <span class="comment"># 如果两个链表不相交，则None是它们的相交点，因此不会跳不出循环</span></span><br><span class="line">        <span class="keyword">while</span> pA!=pB:</span><br><span class="line">            <span class="comment"># 指针pA一开始在链表A上遍历，当走到链表A的尾部的时候（即指向None）,跳到链表B上面</span></span><br><span class="line">            pA=pA.<span class="built_in">next</span> <span class="keyword">if</span> pA <span class="keyword">else</span> headB</span><br><span class="line">            <span class="comment"># 指针pB一开始在链表B上遍历，当走到链表B的尾部的时候（即指向None）,跳到链表A上面</span></span><br><span class="line">            pB=pB.<span class="built_in">next</span> <span class="keyword">if</span> pB <span class="keyword">else</span> headA</span><br><span class="line">        <span class="keyword">return</span> pA</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="剑指offer54-二叉搜索树的第k大节点"><a href="#剑指offer54-二叉搜索树的第k大节点" class="headerlink" title="剑指offer54-二叉搜索树的第k大节点"></a>剑指offer54-二叉搜索树的第k大节点</h1><p>题目描述：给定一棵二叉搜索树，请找出其中第 k 大的节点的值。<br>基础知识：</p>
+<ol>
+<li>对于任意一个二叉搜索树<br>解题思路：</li>
+<li>将二叉树按照中序遍历的方式输出</li>
+<li>将中序遍历倒序输出</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">kthLargest</span>(<span class="params">self, root: TreeNode, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 解题思路：将二叉搜索树转换成为一个中序遍历的序列/链表</span></span><br><span class="line">        <span class="comment"># 然后将列表进行排序（倒序），输出相应的值</span></span><br><span class="line">        <span class="comment"># 实际上用一根线从右往左扫描就行了</span></span><br><span class="line">        <span class="comment"># 采用递归的写法（中序遍历）</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">root</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> []</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 遍历左子树</span></span><br><span class="line">                dfs(root.left)</span><br><span class="line">                <span class="comment"># 加入根节点</span></span><br><span class="line">                res.append(root.val)</span><br><span class="line">                <span class="comment"># 遍历右子树</span></span><br><span class="line">                dfs(root.right)</span><br><span class="line">        dfs(root)</span><br><span class="line">        <span class="comment"># print(res)</span></span><br><span class="line">        <span class="keyword">return</span> res[::-<span class="number">1</span>][k-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="剑指offer57I-和为s的两个数字"><a href="#剑指offer57I-和为s的两个数字" class="headerlink" title="剑指offer57I-和为s的两个数字"></a>剑指offer57I-和为s的两个数字</h1><p>输入一个<strong>递增排序</strong>的数组和一个数字s，在数组中<strong>查找两个数</strong>，使得<strong>它们的和正好是s</strong>。如果有<strong>多对</strong>数字的和等于s，则<strong>输出任意一对</strong>即可。<br>示例 1：<br>输入：nums &#x3D; [2,7,11,15], target &#x3D; 9<br>输出：[2,7] 或者 [7,2]<br>示例 2：<br>输入：nums &#x3D; [10,26,30,31,47,60], target &#x3D; 40<br>输出：[10,30] 或者 [30,10]</p>
+<p>一开始自己做了一遍，用的元组的方法，不过最后只AC了70%的案例<br>这里附上相应的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        nums=<span class="built_in">tuple</span>(nums)</span><br><span class="line">        <span class="comment"># print(nums)</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="comment"># 如果元素不在元组中，将该值加入元组中</span></span><br><span class="line">            <span class="keyword">if</span> target-nums[i] <span class="keyword">in</span> nums:</span><br><span class="line">                res.append(nums[i])</span><br><span class="line">                res.append(target-nums[i])</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>看了题解之后，想到有更加有效的方法，整理如下：<br>利用<strong>哈希表</strong>可以通过遍历组合找到数组组合。用字典存储已经遍历的结果，如果target-c也在字典中，则输出[c,target-c]即为题目中需要的结果，时间和空间的复杂度均为O(N)<br>在考试的时候写出这样的答案我觉得已经不错了，只要是能够AC的，相比纯暴力的解法要好多了，也对哈希字典有了更多的了解。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        hashmap=<span class="built_in">dict</span>()</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 特殊情况的判定：nums的长度为1</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="comment"># 如果发现target-c也在哈希表中，直接输出[c,target-c]</span></span><br><span class="line">            <span class="keyword">if</span> target-c <span class="keyword">in</span> hashmap:</span><br><span class="line">                <span class="keyword">return</span> [c,target-c]</span><br><span class="line">            hashmap[c]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    nums=[<span class="number">10</span>,<span class="number">26</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">47</span>,<span class="number">60</span>]</span><br><span class="line">    target=<span class="number">40</span></span><br><span class="line">    res=Solution().twoSum(nums,target)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>由于是<strong>排序的数组</strong>，可以使用双指针将空间复杂度降低为O(1)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="comment"># 设置两个指针分别指向数组的开头和末尾位置</span></span><br><span class="line">        left,right=<span class="number">0</span>,n-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;right:</span><br><span class="line">            <span class="comment"># 定义一个数组sum</span></span><br><span class="line">            <span class="built_in">sum</span>=nums[left]+nums[right]</span><br><span class="line">            <span class="comment"># 如果发现之和小于target</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">sum</span>&lt;target:</span><br><span class="line">                <span class="comment"># 说明需要将左指针右移</span></span><br><span class="line">                left+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">sum</span>==target:</span><br><span class="line">                <span class="keyword">return</span> [nums[left],nums[right]]</span><br><span class="line">            <span class="comment"># 如果发现之和大于target,说明需要将右指针左移</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right-=<span class="number">1</span></span><br><span class="line">        <span class="comment"># 循环结束仍没有返回</span></span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
+<h1 id="剑指offer57II-和为s的连续正数序列"><a href="#剑指offer57II-和为s的连续正数序列" class="headerlink" title="剑指offer57II-和为s的连续正数序列"></a>剑指offer57II-和为s的连续正数序列</h1><p>自己采用的是暴力的解法，结果是超出了时间的限制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 暴力解法</span></span><br><span class="line"><span class="comment"># 不能完全通过（AC大约70%）</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findContinuousSequence</span>(<span class="params">self, target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        n=target//<span class="number">2</span>+<span class="number">1</span></span><br><span class="line">        res=[]</span><br><span class="line">        nums=[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># print(nums)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">                temp=<span class="built_in">sum</span>(nums[i:j])</span><br><span class="line">                <span class="keyword">if</span> temp==target:</span><br><span class="line">                    res.append(nums[i:j])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>看看题解有没有什么比较好的方法：（滑动窗口的思路）<br><img src="https://runnerxr.github.io/post-images/1653728756744.png"><br><img src="https://runnerxr.github.io/post-images/1653728762861.png"><br>自己写的时候一直调试失败，打败我的真的是一些细节的部分，实在是太细了<br>调试了好几遍，还是在仔细对比K神的基础上才发现问题所在，有一些细节：</p>
+<ol>
+<li>当<code>sum&lt;target</code>的时候,此时需要先把右边窗口扩大后再加入到sum值中</li>
+<li>当<code>sum&gt;target</code>的时候,需要sum中的值减小后，然后再将左侧的窗口向右滑动</li>
+<li>当<code>sum=target</code>的时候，这个时候的窗口仍然需要滑动，sum值仍然需要更新<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据K神的代码更改的版本</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findContinuousSequence</span>(<span class="params">self, target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># 采用滑动窗口的思路来解题</span></span><br><span class="line">        <span class="comment"># 滑动窗口用错方式了</span></span><br><span class="line">        <span class="comment"># n=target//2+1</span></span><br><span class="line">        <span class="comment"># nums=[i for i in range(1,n+1)]</span></span><br><span class="line">        <span class="comment"># 定义了三个值：分别是第一个，第二个以及两数之和</span></span><br><span class="line">        i,j,s=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">        <span class="comment"># 用于储存结果</span></span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">while</span> i&lt;j:</span><br><span class="line">            <span class="comment"># 此时的正是要求的区间值，加入结果数组中</span></span><br><span class="line">            <span class="keyword">if</span> s==target:</span><br><span class="line">                <span class="comment"># res.append(nums[i-1:j+1])</span></span><br><span class="line">                res.append(<span class="built_in">list</span>(<span class="built_in">range</span>(i, j + <span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 如果发现之和小于目标值，将右边的值+1，同时将和更新</span></span><br><span class="line">            <span class="keyword">if</span> s&lt;=target:</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">                s+=j</span><br><span class="line">            <span class="comment"># 如果发现之和大于目标值，将左边的值+1，同时将和更新</span></span><br><span class="line">            <span class="keyword">elif</span> s&gt;target:</span><br><span class="line">                s-=i</span><br><span class="line">                i+=<span class="number">1</span>      </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+后来仔细想了想，自己的代码就是在细节上没有处理好，当判定sum&#x3D;&#x3D;target的时候，也需要移动数和改变sum的值，这里摘录后面自己修改后的版本<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"><span class="comment"># 剑指offer58I-翻转单词顺序</span></span><br><span class="line">还有一个案例没有通过，没通过的主要原因：<span class="string">&quot;a good   example&quot;</span> ,在good和example这两个单词中间有两个空格，但是在我的代码中并没有将这个考虑进去。</span><br><span class="line">**发现问题**：原因是我在用split()函数的时候，没有区分split()和split(<span class="string">&quot; &quot;</span>)的区别</span><br><span class="line"><span class="number">1.</span> s.split()  :在用空格分割字符串的时候可以将多个空格连在一起进行分割</span><br><span class="line"><span class="number">2.</span> s.split(<span class="string">&#x27; &#x27;</span>) :在用空格分割的时候就会存在问题，因为有的单词之间存在多个空格的情况，比如说的这个例子</span><br><span class="line">![](https://runnerxr.github.io/post-images/<span class="number">1653730469306.</span>png)</span><br><span class="line">这种方法实际上是借用语言的特性，简单的调用内置的API函数来完成的</span><br><span class="line">```python</span><br><span class="line"><span class="comment"># 进行发现问题后通过的版本</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseWords</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># 翻转句子中的单词顺序，单词内的顺序不变，标点符号和普通字母一样处理</span></span><br><span class="line">        <span class="comment"># 采用字符串的空格的切分方式</span></span><br><span class="line">        <span class="comment"># 先将字符串中的多个空格转化为只有一个空格，并转化为列表的形式</span></span><br><span class="line">        a=s.split()</span><br><span class="line">        <span class="comment"># print(a)</span></span><br><span class="line">        <span class="comment"># 列表翻转</span></span><br><span class="line">        b=a[::-<span class="number">1</span>]</span><br><span class="line">        <span class="comment"># print(b)</span></span><br><span class="line">        <span class="comment"># 用join函数对字符串进行连接，同时去除头部和尾部的空格</span></span><br><span class="line">        res=<span class="string">&#x27; &#x27;</span>.join(b).lstrip().rstrip()</span><br><span class="line">        <span class="comment"># print(res)</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+这里再次参考别人一些比较 优秀的解法：用双指针<br>具体的算法解析：</li>
+<li>倒序遍历字符串，记录单词的左右索引边界i j </li>
+<li>每确定一个单词的边界，则将其添加到单词的列表中</li>
+<li>最终将单词的列表拼接为字符串，并返回</li>
+</ol>
+<p>如果采用自己编写函数的方式去解决的话就稍微偏麻烦一点（python的语言字符串不可变）<br>需要将字符串转化为可变的数据结构，在转化的过程中去除空格<br>具体的代码后面有空再另行整理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他解法待整理：K神和官方题解</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="剑指offer58II-左旋转字符串"><a href="#剑指offer58II-左旋转字符串" class="headerlink" title="剑指offer58II-左旋转字符串"></a>剑指offer58II-左旋转字符串</h1><p>自己写的稍微有点简单</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseLeftWords</span>(<span class="params">self, s: <span class="built_in">str</span>, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># 左旋转本质就是字符串的切分</span></span><br><span class="line">        a=s[:n]</span><br><span class="line">        b=s[n:]</span><br><span class="line">        <span class="keyword">return</span> b+a</span><br></pre></td></tr></table></figure>
+<p>有空的话建议看看K神的其他做法<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/solution/mian-shi-ti-58-ii-zuo-xuan-zhuan-zi-fu-chuan-qie-p/">https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/solution/mian-shi-ti-58-ii-zuo-xuan-zhuan-zi-fu-chuan-qie-p/</a></p>
+<h1 id="剑指offer59I-滑动窗口的最大值（已经做过的）"><a href="#剑指offer59I-滑动窗口的最大值（已经做过的）" class="headerlink" title="剑指offer59I-滑动窗口的最大值（已经做过的）"></a>剑指offer59I-滑动窗口的最大值（已经做过的）</h1><p>自己独立做出来了，想想之前做的另外的一个版本的方法是怎么样的<br>在别处已经做完了，此处省略</p>
+<h1 id="剑指offer59II-队列的最大值"><a href="#剑指offer59II-队列的最大值" class="headerlink" title="剑指offer59II-队列的最大值"></a>剑指offer59II-队列的最大值</h1><p>虽然是模仿的，但是也要追根溯源的把概念搞清楚<br>看到题解的时候发现这一部分写的十分的详细，而且内容也是特别的多，看来也是自己学习的一个地方呀，得好好整理一下，好好的补充一下知识点。我自己写的这种方式可能时间复杂度不同，需要满足O(1）的要求。所以还是得学习一下：<br>对于一个普通的队列，push_back 和 pop_front 的时间复杂度都是 O(1)，因此我们直接使用队列的相关操作就可以实现这两个函数。但是对于实现最大值有另外的理解<br><strong>解决思路：</strong><br>只需<strong>记住当前最大值</strong>出队后，队列里的<strong>下一个最大值</strong>即可（维护一个最大值的变量）。<br>具体方法是使用一个<strong>双端队列 deque</strong>，在每次入队时，如果 deque 队尾元素小于即将入队的元素 value，则将小于 value 的元素全部出队后，再将 value入队；否则直接入队。<br><img src="https://runnerxr.github.io/post-images/1653742753659.gif"><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/solution/jian-zhi-offer-59-ii-dui-lie-de-zui-da-z-0pap/">https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/solution/jian-zhi-offer-59-ii-dui-lie-de-zui-da-z-0pap/</a><br>说实话这一块的理解有点复杂，暂时不准备去管了。</p>
+<h1 id="剑指offer61-扑克牌中的顺子"><a href="#剑指offer61-扑克牌中的顺子" class="headerlink" title="剑指offer61-扑克牌中的顺子"></a>剑指offer61-扑克牌中的顺子</h1><p>主要是要分析，当有两张大小王的时候，剩下的牌中，最大值与最小值的差值可以为多少的问题？<br>答案：除了大小王之后的其他的牌的最大值与最小值的差值不能超过4(下面是用的一张图来辅助理解的。有助于加深印象，也是本题的一个关键点)<br>用一个哈希表：看是否有重复的牌（有重复的肯定不能形成顺子）<br>根据题意，此 5张牌是顺子的 充分条件 如下：<br><img src="https://runnerxr.github.io/post-images/1653747990962.png"><br>    * 除大小王外，所有牌 无重复 ；<br>    * 设此 5 张牌中最大的牌为 maxcard ，最小的牌为 mincard （大小王除外），则需满足：<code>pythonmax−min&lt;5max - min &lt; 5 max−min&lt;5</code></p>
+<p>  要自己来写：</p>
+<ol>
+<li>hashset+遍历<br>1. 遍历5张牌，遇到大小王就直接跳过<br>2. 判别重复：利用set实现判重<br>3. 或者最大最小的牌（需要借助辅助变量遍历统计得到）</li>
+<li>排序之后再比较<br>1. 先对数组进行排序<br>2. 判别重复，通过遍历数组看nums[i]&#x3D;&#x3D;nums[i+1]<br>3. 获取最大与最小牌</li>
+</ol>
+<p>以下分别结合K神的两种解法的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 采用set集合+遍历的方式</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isStraight</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 看了K神的题解之后自己马上过来实际操作一下</span></span><br><span class="line">        hashset=<span class="built_in">set</span>()</span><br><span class="line">        mincard,maxcard=<span class="number">14</span>,<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="comment"># 定义两个变量用来记录最大值与最小值，同时如果遇到0（表示是大小王，直接跳过）</span></span><br><span class="line">            <span class="keyword">if</span> c==<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="comment"># 不断地更新最大牌与最小牌的值</span></span><br><span class="line">            mincard=<span class="built_in">min</span>(mincard,c)</span><br><span class="line">            maxcard=<span class="built_in">max</span>(maxcard,c)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 当遍历到c的时候发现重复了，有对子存在，直接返回False</span></span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> hashset:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 将元素加入到set集合中</span></span><br><span class="line">            hashset.add(c)</span><br><span class="line">        <span class="comment"># 下面来判定最大值与最小值直接的差值是否小于5</span></span><br><span class="line">        <span class="keyword">return</span> maxcard-mincard &lt; <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 采用排序+遍历的方式</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isStraight</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 先对数组进行排序</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="comment"># 用一个数组记录0的个数</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i]==<span class="number">0</span>:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i-<span class="number">1</span>]==nums[i]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 返回最终的结果</span></span><br><span class="line">        <span class="comment"># 因为已经经过了排序，所以最大值一定是最右边的数</span></span><br><span class="line">        <span class="comment"># 0的个数正好就是最小牌对应的下标（非王牌）</span></span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">4</span>]-nums[count]&lt;<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="剑指offer62-圆圈中最后剩下的数字"><a href="#剑指offer62-圆圈中最后剩下的数字" class="headerlink" title="剑指offer62-圆圈中最后剩下的数字"></a>剑指offer62-圆圈中最后剩下的数字</h1><p>这题没有思路，做不出来？？（主要是没有找到规律）<br>看题解的之后再好好的整理一下，其实我的写法已经有那么一点接近了<br>是著名的约瑟环问题，可以采用动态规划的思路来解题<br>输入n,m，计入问题为<br><strong>从链表的角度来分析：</strong><br>假设当前删除的位置的idx，那么下一个要删除的位置是idx+m,由于当前的位置删除了，会往后移动一位，所以实际的下一个位置是：idx+m-1,由于数到末尾会从头继续需要取模：(idx+m-1)%n<br><img src="https://runnerxr.github.io/post-images/1653756671508.png"><br><strong>从数学的角度来看问题</strong><br>0 1 2 3 4<br>第一轮：从0开始的第三个数(总共5个数)，<strong>删除2 <strong>（原余数的下标）<br>剩余3 4 0 1<br>第二轮：从3开始的第三个数(总共4个数)，</strong>删除0</strong><br>剩余 1 3 4<br>第三轮：从1开始的第三个数(总共3个数)，<strong>删除4</strong><br>剩余 1 3 1 3<br>第四轮：从1开始的第三个数(总共2个数)，<strong>删除1</strong><br>剩余3 </p>
+<p>根据分析的结果来反推是如何得到这样的一个3的：虽然自己已经明白了这样的一个过程，但是要我写却依然是无法写出来的<br>由于最后一定是剩下一个数，所以索引为0，现在反推在上一轮中该数在哪个索引？<br>（0+3）% 2&#x3D;1<br>在这个基础上继续的往上进行反推，当前索引为1的数，在本轮的上一轮中哪个索引？<br>（1+3）%3&#x3D;1<br>在这个基础上继续的往上进行反推，当前索引为1的数，在本轮的上一轮中哪个索引？<br>（1+3）%4&#x3D;0<br>在这个基础上继续的往上进行反推，当前索引为0的数，在本轮的上一轮中哪个索引？<br>（0+3）%5&#x3D;2<br>由于已经到了上一轮剩余的数字的个数为5的情况（等于给定数组的长度），此时<strong>不再向上反推</strong>，因为此时索引2就为原数组中<strong>经过这种方式的删除后剩余的元素</strong>：3</p>
+<p>这里我又参考了另外的一个人题解：<strong>只关心最终活着的那个人的序号变化</strong>（感这句话说的非常好，在反推的时候就是在确定这个数的索引变化）<br>约瑟夫问题：<br><code>N个人围成一圈，第一个人从1开始报数，报M的将被杀掉，下一个人接着从1开始报。如此反复，最后剩下一个，求最后的胜利者。</code></p>
+<p><strong>问题的转化</strong>：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/huan-ge-jiao-du-ju-li-jie-jue-yue-se-fu-huan-by-as/">https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/huan-ge-jiao-du-ju-li-jie-jue-yue-se-fu-huan-by-as/</a></p>
+<p>还是用人来举例，给u每个人一个编号（索引值），每个人用字母代替<br><img src="https://runnerxr.github.io/post-images/1653754809436.png"><br>从8个人开始，每次杀掉一个人，去掉被杀掉的那个人，然后把杀掉的那个人<strong>之后的第一个人</strong>作为开头重新编号。</p>
+<ol>
+<li>第一次C被杀掉，人数变成7，D作为开头（最终活下来的G的编号从6–3）</li>
+<li>第二次F被杀掉，人数变成6，G作为开头（最终活下来的G的编号从3–0）</li>
+<li>第三次A被杀掉，人数变成5，B作为开头（最终活下来的G的编号从0–3）</li>
+<li>第四次E被杀掉，人数变成4，G作为开头（最终活下来的G的编号从3–0）</li>
+<li>第五次B被杀掉，人数变成3，D作为开头（最终活下来的G的编号从0–1）</li>
+<li>第六次H被杀掉，人数变成2，D作为开头（最终活下来的G的编号从1–1）</li>
+<li>第七次D被杀掉，人数变成1，G作为开头（最终活下来的G的编号从1–0）:最终编号肯定是为0，G活下来了。</li>
+</ol>
+<p><strong>最终活着的人的编号反推</strong>：<br>知道了G的索引号的变化过程来进行相应的反推过程<br>从N&#x3D;7到N&#x3D;8的过程<br>先把被杀掉的C补充回来，然后右移动m个人，把溢出的补充在最前面<br><img src="https://runnerxr.github.io/post-images/1653757513872.png"></p>
+<p>这里给出一份递归的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lastRemaining</span>(<span class="params">self, n: <span class="built_in">int</span>, m: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 递归的出口</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (self.lastRemaining(n-<span class="number">1</span>,m)+m)%n</span><br></pre></td></tr></table></figure>
+
+<h1 id="剑指offer63-股票的最大利润（已经做过的）"><a href="#剑指offer63-股票的最大利润（已经做过的）" class="headerlink" title="剑指offer63-股票的最大利润（已经做过的）"></a>剑指offer63-股票的最大利润（已经做过的）</h1><p>见动态规划部分的题解</p>
+<h1 id="剑指offer64-1-2-3-…-n"><a href="#剑指offer64-1-2-3-…-n" class="headerlink" title="剑指offer64-1+2 +3+…+n"></a>剑指offer64-1+2 +3+…+n</h1><p>要求：不能使用乘除法、for while if else switch case等关键字以及条件判断语句（A?B:C）<br>略</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/" data-id="claqu8zzd0021iwtk5ow77u7e" data-title="剑指offer系类二题目" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/16/%E5%85%B3%E4%BA%8E%E5%AD%97%E5%85%B8%E6%A0%91%E4%B8%8E%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于字典树与并查集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">剑指offer系类一题目</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

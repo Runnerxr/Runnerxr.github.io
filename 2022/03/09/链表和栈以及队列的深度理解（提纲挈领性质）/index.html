@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>链表和栈以及队列的深度理解（提纲挈领性质） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数据结构再怎么变，主要是通过数组和链表链表不用顺序实现，用指针实现，在内存中不连续，也即链表将一系列不连续的内存联系起来，将那种碎片化内存进行合理的利用，解决空间的问题。因此链表就允许插入、删除表上的任意位置上的节点，但是不允许随即随存。 数组与链表的区别： 区别：  链表是链式的存储结构；数组是顺序的存储结构。 链表通过指针来连接元素与元素，数组则是把所有元素按次序依次存储。 链表的插入删除元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表和栈以及队列的深度理解（提纲挈领性质）">
+<meta property="og:url" content="http://example.com/2022/03/09/%E9%93%BE%E8%A1%A8%E5%92%8C%E6%A0%88%E4%BB%A5%E5%8F%8A%E9%98%9F%E5%88%97%E7%9A%84%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%EF%BC%88%E6%8F%90%E7%BA%B2%E6%8C%88%E9%A2%86%E6%80%A7%E8%B4%A8%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据结构再怎么变，主要是通过数组和链表链表不用顺序实现，用指针实现，在内存中不连续，也即链表将一系列不连续的内存联系起来，将那种碎片化内存进行合理的利用，解决空间的问题。因此链表就允许插入、删除表上的任意位置上的节点，但是不允许随即随存。 数组与链表的区别： 区别：  链表是链式的存储结构；数组是顺序的存储结构。 链表通过指针来连接元素与元素，数组则是把所有元素按次序依次存储。 链表的插入删除元素">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-09T14:10:11.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:36:45.268Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-链表和栈以及队列的深度理解（提纲挈领性质）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/09/%E9%93%BE%E8%A1%A8%E5%92%8C%E6%A0%88%E4%BB%A5%E5%8F%8A%E9%98%9F%E5%88%97%E7%9A%84%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%EF%BC%88%E6%8F%90%E7%BA%B2%E6%8C%88%E9%A2%86%E6%80%A7%E8%B4%A8%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2022-03-09T14:10:11.000Z" itemprop="datePublished">2022-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      链表和栈以及队列的深度理解（提纲挈领性质）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>数据结构再怎么变，主要是通过数组和链表</strong><br>链表不用顺序实现，<strong>用指针</strong>实现，在内存中不连续，也即链表将一系列不连续的内存联系起来，将那种碎片化内存进行合理的利用，解决空间的问题。因此链表就允许插入、删除表上的任意位置上的节点，但是不允许随即随存。<br> 数组与链表的区别：<br> 区别：</p>
+<ol>
+<li>链表是链式的存储结构；数组是顺序的存储结构。</li>
+<li>链表通过指针来连接元素与元素，数组则是把所有元素按次序依次存储。</li>
+<li>链表的插入删除元素相对数组较为简单，不需要移动元素，且较为容易实现长度扩充，但是寻找某个元素较为困难；</li>
+<li>数组寻找某个元素较为简单，但插入与删除比较复杂，由于最大长度需要再编程一开始时指定，故当达到最大长度时，扩充长度不如链表方便。<br>相同点：<br>两种结构均可实现数据的顺序存储，构造出来的模型呈线性结构。<br>把数据结构抽象化：<br>最高层的抽象，数据结构只有两种：数组和链表（顺序存储结构和链式存储结构）。<br>队列和栈这两种数据结构既可以使用链表也可以使用数组来实现</li>
+</ol>
+<ul>
+<li>用数组来实现：处理扩容和缩容的问题</li>
+<li>用链表来实现：需要更多的空间存储节点指针</li>
+</ul>
+<p>散列表：通过散列函数把键映映射到一个大的数组中。<br>对于解决散列冲突的方法，拉链法需要链表特性，操作简单，但需要空间；线性探查法就需要数组特性，以便连续寻址，省空间，但操作稍微复杂些。</p>
+<p>树：<br>用数组实现就是堆，堆是一个完全二叉树，用数组存储不需要节点指针，操作简单<br>用链表实现就是常见的树，不一定是完全二叉树。在链表的结构上，又衍生出各种设计：二叉搜索树、平衡二叉树、红黑树、区间树、B树等等<br><strong>对数据结构的操作,无非遍历 + 访问（增删查改）</strong><br>如何遍历 + 访问？我们仍然从最高层来看，各种数据结构的遍历 + 访问无非两种形式，线性的和非线性的。<br><strong>线性就是 for&#x2F;while <strong>为代表，</strong>非线性就是递归</strong>为代表。再具体一步，无非以下两种框架：<br>数组遍历框架，典型的线性遍历结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void traverse(int[] arr) &#123;</span><br><span class="line">    for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        // 访问 arr[i]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二叉树遍历框架，典型的非线性递归遍历结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void traverse(TreeNode root) &#123;</span><br><span class="line">    traverse(root.left)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相关的变式：<br><strong>链表遍历框架，兼具线性和非线性遍历结构</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void traverse(ListNode head) &#123;</span><br><span class="line">    for (ListNode p = head; p != null; p = p.next) &#123;</span><br><span class="line">        // 访问 p.val</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void traverse(ListNode head) &#123;</span><br><span class="line">    // 访问 head.val</span><br><span class="line">    traverse(head.next)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二叉树框架又可以具体扩展为 N 叉树的遍历框架：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void traverse(TreeNode root) &#123;</span><br><span class="line">    for (TreeNode child : root.children)</span><br><span class="line">        traverse(child)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>N 叉树的遍历又可以扩展为<strong>图的遍历</strong>，因为，图就是<strong>好几 N 叉棵树的结合体</strong>。你说图是可能出现环的？这个很好办，用个布尔数组 visited 做标记就行了，就不写代码了。</p>
+<p>所谓框架，就是说不管增删查改，这些<strong>代码都是永远无法脱离的结构</strong>，你可以把这个结构作为大纲，<strong>根据具体问题</strong>在框架上添加代码就行了。<br><strong>为什么算法总是和数据结构同时出现</strong><br><strong>数据结构是工具</strong>，<strong>算法</strong>是通过合适的工具<strong>解决问题的方法</strong>。<br>拿原始人举例，我们学会了数据结构，就像原始人拥有了石刀，石斧等工具。而根据制造工具的工艺不同，石刀又分尖锐的石刀和锯齿状石刀，前者适合打猎，后者适合切割；就像图这种数据结构通过不同的实现方法（链表、数组），可以表示为邻接表和邻接矩阵，前者适合处理非稠密图，后者适合处理稠密图。原始人想要造一栋房子，就要进行规划，石斧砍树，石刀磨尖角等等；就像我们设计算法，发挥数据结构的特性，去解决实际问题。</p>
+<p>算法利用数据结构，可以显式利用，比如说前文单调栈，就是巧妙地直接利用了栈结构先进后出的特性。稍微高级一点的算法设计思路，就是隐式利用数据结构，比如前文讲过的回溯算法、动态规划，以及传说中的的分治算法，都在利用树这种结构来解决问题。</p>
+<p>但是，无论怎样利用数据结构，多么高大上的算法，其解法都逃不出第二点中相应的框架，是不是？<br><strong>最后总结（重要）</strong></p>
+<p>对于一个初学算法的人来说，一定要学会从框架上看问题，而不要纠结于细节问题。<br>啥叫细节问题？比如说 i 到底应该加到 n 还是加到 n - 1 ？这个数组的大小到底应该开 n 还是 n + 1 ？<br>啥叫从框架上看问题？比如说前文动态规划中凑零钱的问题，如果你看了一眼代码就自动忽略细节问题，直接提取出 N 叉树遍历框架，你的框架思维就到位了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int coinChange(vector&lt;int&gt;&amp; coins, int amount) &#123;</span><br><span class="line">    if (amount == 0) return 0;</span><br><span class="line">    int ans = INT_MAX;</span><br><span class="line">    for (int coin : coins) &#123;</span><br><span class="line">        // 金额不可达</span><br><span class="line">        if (amount - coin &lt; 0) continue;</span><br><span class="line">        int subProb = coinChange(coins, amount - coin);</span><br><span class="line">        // 子问题无解</span><br><span class="line">        if (subProb == -1) continue;</span><br><span class="line">        ans = min(ans, subProb + 1);</span><br><span class="line">    &#125;</span><br><span class="line">    return ans == INT_MAX ? -1 : ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* N 叉树遍历框架 */</span><br><span class="line">int coinChange(vector&lt;int&gt;&amp; coins, int amount) &#123;</span><br><span class="line">    for (int coin : coins)</span><br><span class="line">        coinChange(coins, amount - coin);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，如果细节出错，你得不到正确的答案，但是只要有框架，你再错也错不到哪去，因为你的方向是对的。<br>但是，你要是心中没有框架，那么你根本无法解题，给了你答案，你也不会发现这就是个树的遍历问题。<br>这就是框架的力量，能够保证你在快睡着的时候，依然能写出正确的程序；就算你啥都不会，都能比别人高一个级别。<br>初学阶段，根本没到纠结细节的地步。细节出错，可以有各种方法查出来，比如到处打 log，没有找不到的 bug。相比之下，别人还束手无策的时候，你已经做出了一个错误的答案；当别人没有框架的指导，被无限细节劝退数据结构的时候，你已经通过框架理解了数据结构的精髓。这不就是一种巨大的成功吗？真的得给你鼓掌。</p>
+<hr>
+<p><strong>栈是先进后出的线性表</strong><br>s.top():获取栈底元素<br>s.empty():判断栈是否为空<br>s.push():往栈中添加一个元素<br>s.pop():栈顶元素的弹出<br>s.size()：获取栈的长度</p>
+<hr>
+<p><strong>队列是先进先出的线性表</strong><br>q.front():获取队列的队头元素<br>q.push():在队尾添加一个新的元素进队列中<br>q.pop()：把我们的队头元素进行弹出<br>q.empty()：判断我们的队列是否为空<br>q.size():去求队列中的元素的个数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/09/%E9%93%BE%E8%A1%A8%E5%92%8C%E6%A0%88%E4%BB%A5%E5%8F%8A%E9%98%9F%E5%88%97%E7%9A%84%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%EF%BC%88%E6%8F%90%E7%BA%B2%E6%8C%88%E9%A2%86%E6%80%A7%E8%B4%A8%EF%BC%89/" data-id="claqu90000031iwtk2atb9oph" data-title="链表和栈以及队列的深度理解（提纲挈领性质）" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/10/leetcoad239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          leetcoad239-滑动窗口的最大值
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/09/python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python数据结构---待持续更新</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

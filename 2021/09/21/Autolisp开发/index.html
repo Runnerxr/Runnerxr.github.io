@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Autolisp开发 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="主要事一些记录，也是最原始的一些东西 list函数：（可能会经常的用到，注意一下）在 AutoLISP 中, 此函数经常用来定义 2D 或 3D 点的变量(一个含有两实型数坐标或三实型数坐标的表)。变量清空的方法：（setq p1 nil):把变量p1置为空查询变量的值：！p1:查询变量p1的值prin1函数语法如下：  (prin1 [expr [file-desc]])setq 函数：基本赋值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Autolisp开发">
+<meta property="og:url" content="http://example.com/2021/09/21/Autolisp%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="主要事一些记录，也是最原始的一些东西 list函数：（可能会经常的用到，注意一下）在 AutoLISP 中, 此函数经常用来定义 2D 或 3D 点的变量(一个含有两实型数坐标或三实型数坐标的表)。变量清空的方法：（setq p1 nil):把变量p1置为空查询变量的值：！p1:查询变量p1的值prin1函数语法如下：  (prin1 [expr [file-desc]])setq 函数：基本赋值">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-21T03:33:37.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:38:33.397Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="工作之余的小的编程小知识">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Autolisp开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/21/Autolisp%E5%BC%80%E5%8F%91/" class="article-date">
+  <time class="dt-published" datetime="2021-09-21T03:33:37.000Z" itemprop="datePublished">2021-09-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Autolisp开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>主要事一些记录，也是最原始的一些东西</p>
+<p>list函数：（可能会经常的用到，注意一下）在 AutoLISP 中, 此函数经常用来定义 2D 或 3D 点的变量(一个含有两实型数坐标或三实型数坐标的表)。<br>变量清空的方法：（setq p1 nil):把变量p1置为空<br>查询变量的值：！p1:查询变量p1的值<br>prin1函数语法如下：  (prin1 [expr [file-desc]])<br>setq 函数：基本赋值函数，可以在对 setq 函数的一次调用中给多个符号赋值。  示例：下面的函数调用将变量 a 设为 5.0：命令： (setq a 5.0)5.0每次对 a 进行求值时，都返回实数 5.0。<br>princ:<br>此函数除了expr中的控制字符不以展开的方式显示出来以外, 其他均和prin1 函数相同。一般来说, prin1 函数是被设定来和 load 函数共用, 以输出表达式。而 princ函数则可输出由 read-line 函数所读进的文件。<br>print:<br>progn:函数除了在输出 expr 前会先输出新行, 同时也会在表达式后输出一空格以外, 其他功能均与 prin1 函数相同。语法如下：(progn [expr]…)<br>strcase函数：（学这个函数的背景：在输入的如论是大写还是小写，最后都会通过这个函数转化成统一的格式）语法如下： (strcase string [which])<br>strcase函数将接受string 参数所指定的字符串, 并且返回一个该字符串的拷贝, 其中所有字母的字符都按照第二个参数 which 的指定转换成大写或小写。如果 which 被省略或被判为 nil, 那么所有在 string 内的字母都会被转换成大写。如果 which 存在且其值为非 nil, 那么所有在 string中的字符均将被换成小写。<br>setvar函数(setvar varname value)用法：此函数可将 AutoCAD 系统变量设定给 value, 然后再返回其值。变量名称一定要以双引号括起。<br>范例cond函数：（相比于if函数更加的好用，if函数只是两者取其一）<br>polar函数 ：（polar pt angle distance）用法：此函数将返回距 UCS 某 pt 某 angle 某 distance 的 UCS3D 点。angle 是从 X 轴开始的角度, 以逆时针方向递增。虽然pt可能是3D点, angle 则永远相对于目前的基准绘图平面。<br>getdist函数：(getdist [pt] [prompt])用法：暂停等待用户输入距离换行“\n对象捕捉的参数：osmode<br>    * 关闭对象捕捉：（setvar “osmode” 0)<br>    * 获取对象捕捉：（getvar “osmode”）<br>    * 保留对象捕捉变量：</p>
+<pre><code>    * 最开始先设置一个变量（setq osm (getvar &quot;osmode&quot;)) 
+    * 程序用完之后再返回来：(setvar &quot;osmode&quot; osm)
+</code></pre>
+<p>strcat函数(strcat string1 [string2]…)用法：此函数将用来连接string1、string2等字符串, 并返回最后得到的字符串。rtos函数：将实型转化为字符串sqrt函数：计算一个数的平方根<br>car函数：返回列表(list)的第一个元素，如果是空表，那么car将返回nil(有点类似与二维数组中提取x坐标的感觉)<br>cdr函数：返回列表（list）中除第一个元素以外的所有元素的表<br>cadr函数：返回的是第二个元素<br>caddr函数：返回的是第三个元素<br>nth函数：此函数将返回List中的第n个元素（第一个元素是从0开始的，超过list中的数目后，函数将返回nil）<br>entget函数：获取图元或对象的定义数据<br>entlast函数：选中最后一个图元，并且把图元属性获取<br>entsel函数：提示用户通过指定一个点来选择单个对象（图元）<br>    entsel [msg])<br>    参数<br>    msg<br>    用于提示用户的字符串。如果省略该参数，则提示信息为“选择对象”。<br>assoc函数：从关联表中搜索一个元素，如果找到则返回该关联表条目<br>getpoint函数：<br>getcorner函数：此函数就如 getpoint 函数一样会返回在目前 UCS 中的一点, 不过, 此函数会要求 pt 参数, 并且由此基准点到屏幕上移动的十字光标间画出一矩形。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/21/Autolisp%E5%BC%80%E5%8F%91/" data-id="claqu8zy40000iwtk596w4smd" data-title="Autolisp开发" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/21/sap2000%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91+%E9%9D%9E%E8%A7%A3%E6%9E%84+Grasshopper/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sap2000的二次开发+非解构+Grasshopper
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/21/%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E7%9A%84%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E5%8F%AF%E4%BB%A5%E7%94%A8python%E6%9D%A5%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">结构分析的哪些操作可以用python来实现</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

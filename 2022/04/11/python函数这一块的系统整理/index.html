@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这一块应该没有什么难度的，但是对于初学小白来说也是非常重要的知识点 一些小的层面的函数常用的一些操作：调用函数定义函数函数的参数递归函数函数的高级特性：（印象笔记也整理了一部分，这里相当于是二次整理，只不过可能更加的详细了）  切片 迭代 列表生成式 生成器 迭代器  函数式编程： 大的层面方向的Python函数调用时，参数的传递方式详细内容移步：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）">
+<meta property="og:url" content="http://example.com/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这一块应该没有什么难度的，但是对于初学小白来说也是非常重要的知识点 一些小的层面的函数常用的一些操作：调用函数定义函数函数的参数递归函数函数的高级特性：（印象笔记也整理了一部分，这里相当于是二次整理，只不过可能更加的详细了）  切片 迭代 列表生成式 生成器 迭代器  函数式编程： 大的层面方向的Python函数调用时，参数的传递方式详细内容移步：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;d">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-11T15:18:22.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:41:14.975Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python函数这一块的系统整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2022-04-11T15:18:22.000Z" itemprop="datePublished">2022-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这一块应该没有什么难度的，但是对于初学小白来说也是非常重要的知识点</p>
+<h1 id="一些小的层面的"><a href="#一些小的层面的" class="headerlink" title="一些小的层面的"></a>一些小的层面的</h1><p>函数常用的一些操作：<br>调用函数<br>定义函数<br>函数的参数<br>递归函数<br>函数的高级特性：（印象笔记也整理了一部分，这里相当于是二次整理，只不过可能更加的详细了）</p>
+<ol>
+<li>切片</li>
+<li>迭代</li>
+<li>列表生成式</li>
+<li>生成器</li>
+<li>迭代器</li>
+</ol>
+<p>函数式编程：</p>
+<h1 id="大的层面方向的"><a href="#大的层面方向的" class="headerlink" title="大的层面方向的"></a>大的层面方向的</h1><p><strong>Python函数调用时，参数的传递方式</strong><br>详细内容移步：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/downey-blog/p/10483216.html">https://www.cnblogs.com/downey-blog/p/10483216.html</a>     有兴趣的话后面再吗，慢慢的去结合起来进行全方面的深度理解。</p>
+<p>对于C程序员来说，我们都知道C在函数调用时，采用的是值传递，即形参和实参分配不同的内存地址，在调用时将实参的值传给实参，在这种情况下，在函数内修改形参并不会影响到实参，但是这样带来一个问题，如果我们需要刻意地对实参进行修改，就不得不传递实参的指针到函数，然后在函数中修改指针指向的数据，以达到修改实参的目的。</p>
+<p>后来，C++中引入了引用这个概念，即在函数定义时，在形参前加一个&amp;符号，表示传递参数的引用，在写法上，除了多出一个&amp;符号，其他部分和C中传值调用一样，但是实际确是达到了可以在函数内修改实参内容的目的。这种参数传递的方式被称为传引用。</p>
+<p><strong>python的参数传递</strong></p>
+<p><strong>关于各个函数的调用的问题</strong><br>以及各个循环之间的参数是否互不影响的问题？？这也是我在做算法题遇到的一些很小的问题</p>
+<h1 id="python类中函数调用要加self"><a href="#python类中函数调用要加self" class="headerlink" title="python类中函数调用要加self"></a>python类中函数调用要加self</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jessonluo/p/4717140.html">https://www.cnblogs.com/jessonluo/p/4717140.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/stuscs/article/details/40110815">https://blog.csdn.net/stuscs/article/details/40110815</a><br>python中的类方法也是一种对象，既可以通过实例也可以通过类来访问方法，再python里面有两种风格</p>
+<ol>
+<li>未绑定的类方法：没有self<br>通过类来引用方法返回一个未绑定方法对象。要调用它，你必须显示地提供一个实例作为第一个参数。</li>
+<li>绑定的实例方法：有self<br>通过实例访问方法返回一个绑定的方法对象。Python自动地给方法绑定一个实例，所以我们调用它时不用再传一个实例参数。<br>两者的区别：两种方法都是对象，它们可以被传递、存入列表等待。两者运行时都需要一个实例作为第一参数（给予一个self值），但当通过一个实例调用一个绑定方法时Python自动会提供一个。<br>对象调用方法时, 实际上是通过类调用的a &#x3D; muffedcalculator()a.calc(expr)<br>实际上是这样调用的 muffledcalculator.calc(a, expr)这样self 就是 a, python隐含地把a 传进方法 替代了self, 就成了绑定的方法, 就可以执行了. 否则就是非绑定方法(这种方式虽然很抽象，但是子集读了几遍之后大概是理解了,self就像是一个替代品一样)<br><strong>self代表类的实例，而非类</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prt</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(self)</span><br><span class="line">        <span class="built_in">print</span>(self.__class__)</span><br><span class="line"></span><br><span class="line">t = Test()</span><br><span class="line">t.prt()</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># &lt;__main__.Test object at 0x000000000284E080&gt;</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;__main__.Test&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+从上面的例子中可以很明显的看出，self代表的是类的实例。而self.__class__则指向类。(没有太懂)<br><strong>self不必非写成self</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prt</span>(<span class="params">this</span>):</span><br><span class="line">        <span class="built_in">print</span>(this)</span><br><span class="line">        <span class="built_in">print</span>(this.__class__)</span><br><span class="line"></span><br><span class="line">t = Test()</span><br><span class="line">t.prt()</span><br><span class="line"><span class="comment"># 运行结果不变</span></span><br></pre></td></tr></table></figure>
+<strong>self是否可以不写</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prt</span>():</span><br><span class="line">        <span class="built_in">print</span>(self)</span><br><span class="line"></span><br><span class="line">t = Test()</span><br><span class="line">t.prt()</span><br><span class="line"><span class="comment"># 运行提示：prt() takes 0 positional arguments but 1 was given（prt在定义的时候没有参数，但是我们运行的时候强行传入了一个参数。t.prt()通过python解释成：Test.prt(t),程序提醒我们多传入了一个参数t）</span></span><br></pre></td></tr></table></figure>
+如果我们在定义和调用的时候都不传入实例，就是属于类方法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prt</span>():</span><br><span class="line">        <span class="built_in">print</span>(__class__)</span><br><span class="line">Test.prt()</span><br><span class="line"><span class="comment"># 输出：&lt;class &#x27;__main__.Test&#x27;&gt; </span></span><br></pre></td></tr></table></figure>
+<strong>在继承时，传入的是哪个实例，就是那个传入的实例，而不是指定义了self的类的实例</strong></li>
+</ol>
+<pre><code class="python"># 定义父类
+class Parent:
+    # 定义了一个pprt()函数
+    def pprt(self):
+        print(self)
+
+# 定义一个child类
+class Child(Parent):
+    # 定义了一个cprt()函数
+    def cprt(self):
+        print(self)
+
+c = Child()
+c.cprt()
+# 输出结果：&lt;__main__.Child object at 0x0000000002A47080&gt;
+# 指的是child类的实例
+c.pprt()
+# 输出结果：&lt;__main__.Child object at 0x0000000002A47080&gt;
+# 等同于child.pprt(c),self依然是child类的实例，由于self中没有定义pprt()方法，所以沿着继承树往上找，发现在父类Parent中定义了pprt()方法，所以就会成功调用。
+p = Parent()
+p.pprt()
+# 输出结果：&lt;__main__.Parent object at 0x0000000002A47240&gt;
+
+
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" data-id="claqu8zyz0015iwtkbxw29fkw" data-title="对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          剑指offer系类一题目
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

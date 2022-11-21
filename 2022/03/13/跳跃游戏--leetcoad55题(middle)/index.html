@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>跳跃游戏--leetcoad55题(middle)-后续补充动态规划的算法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="leetcoad链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;jump-game&#x2F;视频链接：https:&#x2F;&#x2F;www.algomooc.com&#x2F;972.html总的来说，这里举的两道跳跃游戏的题目，就是关键的那一点思想，懂了就是懂了，难的就在于贪心的理解。再次看题或者做题的时候，就要跳出题目的框架去仔细的理解，揣摩里面的贪心思想。其实投过这些题目可以反思很多问题，对于之前做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跳跃游戏--leetcoad55题(middle)-后续补充动态规划的算法">
+<meta property="og:url" content="http://example.com/2022/03/13/%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F--leetcoad55%E9%A2%98(middle)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="leetcoad链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;jump-game&#x2F;视频链接：https:&#x2F;&#x2F;www.algomooc.com&#x2F;972.html总的来说，这里举的两道跳跃游戏的题目，就是关键的那一点思想，懂了就是懂了，难的就在于贪心的理解。再次看题或者做题的时候，就要跳出题目的框架去仔细的理解，揣摩里面的贪心思想。其实投过这些题目可以反思很多问题，对于之前做">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653205948074.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653206773807.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653207421811.png">
+<meta property="og:image" content="https://runnerxr.github.io/post-images/1653321982119.png">
+<meta property="article:published_time" content="2022-03-13T03:08:52.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:36:00.950Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="算法专栏（用python注写）">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://runnerxr.github.io/post-images/1653205948074.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-跳跃游戏--leetcoad55题(middle)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/13/%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F--leetcoad55%E9%A2%98(middle)/" class="article-date">
+  <time class="dt-published" datetime="2022-03-13T03:08:52.000Z" itemprop="datePublished">2022-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      跳跃游戏--leetcoad55题(middle)-后续补充动态规划的算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>leetcoad链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jump-game/">https://leetcode-cn.com/problems/jump-game/</a><br>视频链接：<a target="_blank" rel="noopener" href="https://www.algomooc.com/972.html">https://www.algomooc.com/972.html</a><br>总的来说，这里举的两道跳跃游戏的题目，就是关键的那一点思想，懂了就是懂了，难的就在于贪心的理解。再次看题或者做题的时候，就要跳出题目的框架去仔细的理解，揣摩里面的贪心思想。其实投过这些题目可以反思很多问题，对于之前做过的题目反思：思路还是否记得，代码是否可以复盘，对于没有做过的题目，思路是否移植到该题上面，刷题的目的不就在于这上面嘛，加油！！！！，刷题也要有目的的去刷。</p>
+<p>题目描述：给定一个非负整数数组 nums ，你最初位于<strong>数组的 第一个下标</strong> 。<br>数组中的<strong>每个元素</strong>代表你在<strong>该位置可以跳跃的最大长度</strong>。<br>判断你是否<strong>能够到达最后一个下标</strong>。<br>示例一：<br>输入：nums &#x3D; [2,3,1,1,4]<br>输出：true<br>解释：可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。<br>示例二：<br>输入：nums &#x3D; [3,2,1,0,4]<br>输出：false<br>解释：无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。<br><strong>用贪心的做法来做：</strong><br>解题的关键：先让其跳到尽可能远的位置(也就是贪心所在)<br>别想那么多，就<strong>挨着跳</strong><br>相应的核心步骤如下：</p>
+<ol>
+<li>如果某一个作为起跳点的格子可以跳跃的距离是3，那么表示后面的三个格子都可以作为起跳点（反向理解也行：如果一个起跳点可以达到某个位置，那么这个位置左侧的所有位置都能到达）</li>
+<li>如果<strong>对每一个起跳点的格子都尝试跳一次</strong>，把<strong>能跳到的最远的距离不断更新</strong></li>
+<li>如果<strong>可以一直跳到最后</strong>，就成功了。（当index已经越过max_distance的时候，就可以返回True,没有越过，说明<strong>在某个地方直接停住了</strong>，不走了，直接返回False）</li>
+</ol>
+<p>以实例1举例来说<br><img src="https://runnerxr.github.io/post-images/1653205948074.png"><br><img src="https://runnerxr.github.io/post-images/1653206773807.png"><br>从索引为0的位置看起，他能到的最远的位置是索引为2的位置，在这个位置它能到达的最远位置是索引为4（此时的元素下标为2，值为2），但是我们想到<strong>既然能够达到索引为2的位置就必然能够达到索引为1的位置</strong>，从这个位置出发的时候发现，能够到达的最远位置为索引5（该位置的下标为1，值为4），那么比较两者，我会<strong>贪心的选择先达到索引为1的位置再说</strong>，现在从索引为1的位置开始重新出发：最远可以到达索引为5，它必然也能够索引为2 3 4的位置，我们挨个的让从索引为1的分别跳到索引为2 3 4 ，他们所能跳到的最远的距离分别是：索引为4 6 5 ，此时我们贪心的选择索引3这个位置，因为它能达到的最大位置已经超过了记录的值（5），<strong>这样我们就做了第二次选择</strong>：从索引为1跳到索引为的位置，<strong>最后从索引为3的位置跳到索引6</strong>，此时索引6正好已经达到了数组的末尾，说明可以达到。返回True<br>以下的两种解法都是自己在初学的时候做的一点记录，不能说有错，只是没有理解其中的精髓，现在再看又是一脸茫然，有用嘛，有用，有达到学习的效果嘛，不是那么大，在短时间的突击学习中，知识点没有那么牢靠的掌握,终究不是自己的知识。<br>从实例2我们也可以看出来，这种情况无论无何也无法达到数组的末尾<br><img src="https://runnerxr.github.io/post-images/1653207421811.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">canJump</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 定义最开始的位置和能到达的最远的下标</span></span><br><span class="line">        i,farthest=<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 如果采用while,循环结束的条件是什么？</span></span><br><span class="line">        <span class="keyword">while</span> i &lt;=farthest:</span><br><span class="line">            <span class="comment"># 更新farthest</span></span><br><span class="line">            farthest=<span class="built_in">max</span>(farthest,i+nums[i])</span><br><span class="line">            <span class="comment"># 如果发现farthest能够达到数组的末尾</span></span><br><span class="line">            <span class="keyword">if</span> farthest &gt;=n:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i +=<span class="number">1</span></span><br><span class="line">        <span class="comment"># 跳出循环之后，再次查看是否能否到达数组的末尾</span></span><br><span class="line">        <span class="comment"># 为什么还有判断?前面返回是因为通过前面的位置，几步就能跳到或者跳过末尾</span></span><br><span class="line">        <span class="comment"># 那什么时候是返回空的了？此时已经到了或超过数组的末尾了，是在最后一步才成功</span></span><br><span class="line">        <span class="keyword">if</span> i &gt;=n:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">4</span>]</span><br><span class="line">    res=Solution().canJump(nums)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>如果采用的for循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">canJump</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        farthest = <span class="number">0</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> i &gt;farthest:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            farthest = <span class="built_in">max</span>(farthest,nums[i] + i)</span><br><span class="line">        <span class="keyword">return</span> farthest &gt;=n-<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>采用吴师兄的算法思路来解题：</strong><br>jump[i] 就是当前的索引值 i 加上该位置可以跳跃的最大长度 nums[i]<br>相较来说，吴师兄的这个解法中规中矩的算是最好理解的一种思路吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">canJump</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment">#创建一个jump数组，用来存储下标值+跳得最远的距离</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        jump = <span class="built_in">list</span>(<span class="built_in">range</span>(n))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            jump[i] = i + nums[i]</span><br><span class="line">        <span class="comment">#初始化指针</span></span><br><span class="line">        index = <span class="number">0</span></span><br><span class="line">        <span class="comment">#初始化：记录可以达到的最远的距离</span></span><br><span class="line">        maxjump = jump[<span class="number">0</span>]</span><br><span class="line">        <span class="comment">#写一个循环：当当前的值小于整个数组的长度，并且当前值小于可以跳得最远的距离,如果不满足就跳出相应的循环</span></span><br><span class="line">        <span class="keyword">while</span> index &lt; n <span class="keyword">and</span> index &lt;=maxjump:</span><br><span class="line">            <span class="comment">#判断当前的元素能够跳得最远的距离是否大于记录的最远的距离</span></span><br><span class="line">            <span class="keyword">if</span> maxjump &lt; jump[index]:</span><br><span class="line">                <span class="comment">#将maxjump的值用jump[index]来更新</span></span><br><span class="line">                maxjump = jump[index]</span><br><span class="line">            index +=<span class="number">1</span></span><br><span class="line">        <span class="comment">#如果index能够达到数组的末尾（隐含的是index &gt;=n）</span></span><br><span class="line">        <span class="keyword">if</span> index &gt; n -<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment">#否则说明无法达到最后一个下标</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h1 id="leetcoad跳跃游戏II"><a href="#leetcoad跳跃游戏II" class="headerlink" title="leetcoad跳跃游戏II"></a>leetcoad跳跃游戏II</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://labuladong.gitee.io/algo/3/27/100/">https://labuladong.gitee.io/algo/3/27/100/</a><br>这一题是在上一题上进行翻版的，这里尝试既用贪心算法又用到动态规划的思路来解题，对这两种算法有一个结合的认识。<br>题目描述：给你一个非负整数数组 nums ，你最初位于数组的第一个位置。<br>数组中的<strong>每个元素代表你在该位置可以跳跃的最大长度</strong>。<br>你的目标是<strong>使用最少的跳跃次数到达数组的最后一个位置</strong>（这里就隐含了它肯定是能够达到数组的末尾的，注意和跳跃游戏这道题进行比较）。<br>假设你<strong>总是可以到达</strong>数组的最后一个位置。<br>示例 1:<br>输入: nums &#x3D; [2,3,1,1,4]<br>输出: 2<br>解释: 跳到最后一个位置的最小跳跃数是 2。<br>     从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。<br>示例 2:<br>输入: nums &#x3D; [2,3,0,1,4]<br>输出: 2<br>采用贪心的思路：<br><img src="https://runnerxr.github.io/post-images/1653321982119.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jump</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#  你可以选择跳1步  2步</span></span><br><span class="line">        n=<span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># 站在索引i，最多能跳到索引end</span></span><br><span class="line">        end=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 从索引[i,end]起跳，最远能跳到的距离</span></span><br><span class="line">        far=<span class="number">0</span></span><br><span class="line">        <span class="comment"># 记录跳跃次数</span></span><br><span class="line">        jump=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>):</span><br><span class="line">            far=<span class="built_in">max</span>(nums[i]+i,far)</span><br><span class="line">            <span class="keyword">if</span> end==i:</span><br><span class="line">                jump+=<span class="number">1</span></span><br><span class="line">                end=far</span><br><span class="line">        <span class="keyword">return</span> jump</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">4</span>]</span><br><span class="line">    res=Solution().jump(nums)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>贪心思路一：反向查找出出发位置<br>目标是达到数组的最后一个位置，<strong>考虑最后一步跳跃前所在的位置，该位置通过跳跃能够达到最后一个位置</strong>（重要的是这里的思考的逻辑和方向的问题）。如果有<strong>多个位置</strong>跳跃都能<strong>达到最后的一个位置</strong>，我们应该如何处理的问题？<br><strong>答案是</strong>：</p>
+<ol>
+<li>选择距离最后一个元素最远的那个位置（下标最小的那个位置），可以从左到右遍历数组之后，选择第一个满足要求的位置。</li>
+<li>继续贪心的选择倒数第二个跳跃前的位置</li>
+<li>依次类推，直到找到数组最开始的那个位置。</li>
+</ol>
+<p>贪心思路二：正向查找可到达的最大位置<br>贪心的进行正向的查找，<strong>每次找到可到达的最远位置</strong>，就可以在线性的时间内得到最少的跳跃次数</p>
+<p><strong>采用动态规划的思路来解题：</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/13/%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F--leetcoad55%E9%A2%98(middle)/" data-id="claqu8zzz002viwtkc4cu2s0j" data-title="跳跃游戏--leetcoad55题(middle)-后续补充动态规划的算法" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/13/markdown%E6%95%99%E7%A8%8B%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%86%99%E4%BD%9C%E5%BF%85%E5%A4%87%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown教程（深度写作必备）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/13/Python%E4%BA%A4%E4%BA%92%E6%A8%A1%E5%BC%8F%E5%AF%BC%E5%85%A5%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python交互模式导入自己写的模块的方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

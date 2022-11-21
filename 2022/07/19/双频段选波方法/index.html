@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>双频段选波方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="两段选取地震波的代码，这里收集在这里，方便后续可能会用到的一些东西：方法一：NewMark 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双频段选波方法">
+<meta property="og:url" content="http://example.com/2022/07/19/%E5%8F%8C%E9%A2%91%E6%AE%B5%E9%80%89%E6%B3%A2%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="两段选取地震波的代码，这里收集在这里，方便后续可能会用到的一些东西：方法一：NewMark 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-19T15:07:05.000Z">
+<meta property="article:modified_time" content="2022-11-16T15:21:04.202Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-双频段选波方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/19/%E5%8F%8C%E9%A2%91%E6%AE%B5%E9%80%89%E6%B3%A2%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2022-07-19T15:07:05.000Z" itemprop="datePublished">2022-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      双频段选波方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>两段选取地震波的代码，这里收集在这里，方便后续可能会用到的一些东西：<br>方法一：NewMark</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">function Res = Newmark(Acc,DT,T,kesi,IND)</span><br><span class="line">    % parameters</span><br><span class="line">    NT = max(size(T,1),size(T,2));</span><br><span class="line">    NPTS = max(size(Acc,1),size(Acc,2));</span><br><span class="line">    DDY = Acc;</span><br><span class="line">    %% Maxima of input motion</span><br><span class="line">    Emax(1) =max( abs(DDY));</span><br><span class="line">    Emax(2) = 0.0;</span><br><span class="line">    Emax(3) = 0.0;</span><br><span class="line">    DDYF = DDY(1);</span><br><span class="line">    DYF = 0.0;</span><br><span class="line">    YF = 0.0;</span><br><span class="line">    %% Computation of the maximun of a,v,d of the ground motion</span><br><span class="line">%     for i = 2:NPTS</span><br><span class="line">%         DDYM = DDY(i);</span><br><span class="line">%         DY = DYF + (DDYF+DDYM)*DT/2.0;</span><br><span class="line">%         Y = YF + DYF*DT + (DDYF/3.+ DDYM/6.)*DT*DT;</span><br><span class="line">%         Emax(1) = max(Emax(1),abs(DDYM));</span><br><span class="line">%         Emax(2) = max(Emax(2),abs(DY));</span><br><span class="line">%         Emax(3) = max(Emax(3),abs(Y));</span><br><span class="line">%         DDYF  = DDYM;</span><br><span class="line">%         DYF = DY;</span><br><span class="line">%         YF = Y;</span><br><span class="line">%     end</span><br><span class="line">    %Qmax = Emax(IND);%</span><br><span class="line">    %% Response Computation</span><br><span class="line">    H =kesi;</span><br><span class="line">    Res = zeros(1,NT);</span><br><span class="line">    for i = 1:NT</span><br><span class="line">        if (T(i) ==0.0 &amp; IND == 1)</span><br><span class="line">        		Res(i) = Emax(1);</span><br><span class="line">		elseif(T(i) ==0.0 &amp;  IND ~= 1)</span><br><span class="line">				Res(i) =0.0;</span><br><span class="line">        else</span><br><span class="line">           W = pi*2/T(i);</span><br><span class="line">           W2 = W*W;</span><br><span class="line">           HW = H*W;</span><br><span class="line">           WD = W*sqrt(1-H.^2);</span><br><span class="line">           WDT = WD*DT;</span><br><span class="line">           E = exp(-HW*DT);</span><br><span class="line">           CWDT = cos(WDT);</span><br><span class="line">           SWDT = sin(WDT);</span><br><span class="line">           A11 = E*(CWDT+HW*SWDT/WD);</span><br><span class="line">           A12 = E*SWDT/WD;</span><br><span class="line">           A21 = -E*W2*SWDT/WD;</span><br><span class="line">           A22 = E*(CWDT-HW*SWDT/WD);</span><br><span class="line">           SS = -HW*SWDT - WD*CWDT;</span><br><span class="line">           CC = -HW*CWDT + WD*SWDT;</span><br><span class="line">           S1 = (E*SS + WD)/W2;</span><br><span class="line">           C1 = (E*CC + HW)/W2;</span><br><span class="line">           S2 = (E*DT*SS + HW*S1 + WD*C1)/W2;</span><br><span class="line">           C2 = (E*DT*CC + HW*C1 - WD*S1)/W2;</span><br><span class="line">           S3 = DT*S1-S2;</span><br><span class="line">           C3 = DT*C1-C2;</span><br><span class="line">           B11 = -S2/WDT;</span><br><span class="line">           B12 = -S3/WDT;</span><br><span class="line">           B21 = (HW*S2 - WD*C2)/WDT;</span><br><span class="line">           B22 = (HW*S3 - WD*C3)/WDT;</span><br><span class="line">           Rmax(1) = 2.*HW*abs(DDY(1))*DT;</span><br><span class="line">           Rmax(2) = abs(DDY(1))*DT;</span><br><span class="line">           Rmax(3) = 0.0;</span><br><span class="line">           DXF = -DDY(1)*DT;</span><br><span class="line">           XF = 0.0;</span><br><span class="line">           for k = 2:NPTS</span><br><span class="line">               DDYM = DDY(k);</span><br><span class="line">               DDYF = DDY(k-1);</span><br><span class="line">               X = A12*DXF + A11*XF + B12*DDYM + B11*DDYF;</span><br><span class="line">               DX = A22*DXF + A21*XF + B22*DDYM + B21*DDYF;</span><br><span class="line">               DDX = -2.*HW*DX - W2*X;</span><br><span class="line">               Rmax(1) = max(Rmax(1),abs(DDX));</span><br><span class="line">               Rmax(2) = max(Rmax(2),abs(DX));</span><br><span class="line">               Rmax(3) = max(Rmax(3),abs(X));</span><br><span class="line">               DXF = DX;</span><br><span class="line">               XF = X;</span><br><span class="line">           end</span><br><span class="line">		   Res(i)=Rmax(IND);</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line">%% Newmark-Method To calculate the Response-SPEC of ground motion;</span><br><span class="line">%   Acc: the Ground Motion To be calculate;</span><br><span class="line">%   DT:  the time increment of the ground motion</span><br><span class="line">%   T:   the Perids of the Response_SPEC</span><br><span class="line">%   kesi:damping_ratio</span><br><span class="line">% IND: 1 Sa; 2 Sv; 3 Sd</span><br></pre></td></tr></table></figure>
+
+<p>方法二：谱加速度法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">clear;</span><br><span class="line">clc;</span><br><span class="line">S1= [];</span><br><span class="line">dirs=dir(&#x27;F:\1study\2earthquake\1seismic\*.AT2&#x27;);</span><br><span class="line">dircell=struct2cell(dirs)&#x27; ; </span><br><span class="line">filenames=dircell(:,1);</span><br><span class="line">filenames1=strcat(&#x27;F:\1study\2earthquake\1seismic\&#x27;,filenames);</span><br><span class="line">n=length(filenames1);</span><br><span class="line">PGA=0.07;  %%目标PGA</span><br><span class="line">%%</span><br><span class="line">% Tt1=0.831;   %%结构基本周期</span><br><span class="line">% Tt2=0.263;   %%结第二周期</span><br><span class="line">% Tt3=0.146;   %%结构第三周期</span><br><span class="line">%%</span><br><span class="line">Tt1=1.578;   %%结构基本周期</span><br><span class="line">Tt2=0.499;   %%结第二周期</span><br><span class="line">Tt3=0.275;   %%结构第三周期</span><br><span class="line">%%</span><br><span class="line">S=zeros(301,1);</span><br><span class="line">T=zeros(301,1);</span><br><span class="line">abc=zeros(n,5);</span><br><span class="line">%% fname为输入文件名，从PEER网站下载的地震加速度记录</span><br><span class="line">for j=1:n</span><br><span class="line">fname=char(filenames1(j));</span><br><span class="line">fin=fopen(fname,&#x27;r&#x27;);</span><br><span class="line">  for m=1:4</span><br><span class="line">    str = fgetl(fin);%the first 3 loops are meant be skiped.</span><br><span class="line">  end</span><br><span class="line">Par=textscan(str, &#x27;%*s %f %*s %f %*s&#x27;,&#x27;delimiter&#x27;,&#x27;=&#x27;);</span><br><span class="line">NPTS=Par&#123;1&#125;;DT=Par&#123;2&#125;;</span><br><span class="line">abc(j,2)=NPTS;</span><br><span class="line">abc(j,3)=DT;</span><br><span class="line">LINES = (floor(NPTS/5)+1);</span><br><span class="line">Acc = [];</span><br><span class="line">    for k = 1:LINES</span><br><span class="line">     str = fgetl(fin);</span><br><span class="line">         if(str ~= -1) % 判断读取结果是否有效</span><br><span class="line">         P = sscanf(str,&#x27;%f&#x27;);</span><br><span class="line">         Acc = [Acc;P];</span><br><span class="line">         end</span><br><span class="line">    end    </span><br><span class="line">[aa,bb]=max(abs(Acc));</span><br><span class="line">abc(j,4)=aa;     %%每条地震波原始的PGA</span><br><span class="line">abc(j,5)=PGA/aa;</span><br><span class="line">Acc=PGA/aa*Acc;  %%每条地震波PGA调幅</span><br><span class="line">%%</span><br><span class="line">     for l=0:1:300;  %%0-6s共301个点</span><br><span class="line">        i=l*0.02;</span><br><span class="line">        T(l+1,1) = i;</span><br><span class="line">        S(l+1,1) = Newmark(Acc,DT,i,0.03,1); </span><br><span class="line">     end</span><br><span class="line"> S1= [S1;S];</span><br><span class="line">sta=fclose(fin);</span><br><span class="line">end</span><br><span class="line">S2=reshape(S1,301,n);   %%每条地震波的加速度反应谱</span><br><span class="line">%%</span><br><span class="line">aaa=num2cell(abc);</span><br><span class="line">for q=1:n</span><br><span class="line">    aaa(q,1)=filenames(q);   %%输入地震波的信息</span><br><span class="line">end</span><br><span class="line">%%</span><br><span class="line">fname = &#x27;F:\1study\2earthquake\spectrum0.16.txt&#x27;;  %%读取设计反应谱</span><br><span class="line">fin=fopen(fname,&#x27;r&#x27;);</span><br><span class="line">A1 = importdata(fname);</span><br><span class="line">sta=fclose(fin);</span><br><span class="line">%%</span><br><span class="line">%%控制段</span><br><span class="line">T0=0.1;</span><br><span class="line">Tg=0.35;</span><br><span class="line">deltaT1=0.2;</span><br><span class="line">deltaT2=0.5;</span><br><span class="line">kz1=round((Tg-T0)/0.02)+1;</span><br><span class="line">kz2=round((deltaT1+deltaT2)/0.02)+1;</span><br><span class="line">kz3=round((Tt1-0.2)/0.02)+1;</span><br><span class="line">kz=kz1+kz2;</span><br><span class="line">rsme=zeros(1,n);</span><br><span class="line">for i=1:n</span><br><span class="line">    kzz1=0;</span><br><span class="line">    kzz2=0;</span><br><span class="line">    for j=6:(kz1+5)</span><br><span class="line">        kzz1=kzz1+(S2(j,i)-A1(j))^2;</span><br><span class="line">    end</span><br><span class="line">    for j=kz3:(kz3+kz2-1)</span><br><span class="line">        kzz2=kzz2+(S2(j,i)-A1(j))^2;</span><br><span class="line">    end</span><br><span class="line">    rsme(i)=sqrt((kzz1+kzz2)/kz);         %%均方根误差</span><br><span class="line">end</span><br><span class="line">%%</span><br><span class="line">[rsme1,index1]=sort(rsme);        %%从小到大排序</span><br><span class="line">ts=10;              %%所选地震波条数</span><br><span class="line">output=cell(ts+1,6);     %%最终选波结果</span><br><span class="line">output(1,1)=cellstr(&#x27;地震名称&#x27;);</span><br><span class="line">output(1,2)=cellstr(&#x27;NPTS值&#x27;);</span><br><span class="line">output(1,3)=cellstr(&#x27;NT值&#x27;);</span><br><span class="line">output(1,4)=cellstr(&#x27;原PGA值&#x27;);</span><br><span class="line">output(1,5)=cellstr(&#x27;调幅因子&#x27;);</span><br><span class="line">output(1,6)=cellstr(&#x27;RMSE值&#x27;);</span><br><span class="line">%%</span><br><span class="line">rsme2=num2cell(rsme);</span><br><span class="line">S3=zeros(301,ts);</span><br><span class="line">for i=1:ts</span><br><span class="line">    S3(:,i)=S2(:,index1(i));</span><br><span class="line">    output(i+1,1)=aaa(index1(i),1);   %%地震名称</span><br><span class="line">    output(i+1,2)=aaa(index1(i),2);   %%NPTS值</span><br><span class="line">    output(i+1,3)=aaa(index1(i),3);   %%NT值</span><br><span class="line">    output(i+1,4)=aaa(index1(i),4);   %%原PGA值</span><br><span class="line">    output(i+1,5)=aaa(index1(i),5);   %%调幅因子</span><br><span class="line">    output(i+1,6)=rsme2(index1(i));   %%RMSE值</span><br><span class="line">end</span><br><span class="line">%%</span><br><span class="line">% plot(T,S2)  %%画所有反应谱曲线</span><br><span class="line">plot(T,S3)  %%画选择后的反应谱曲线</span><br><span class="line">hold on</span><br><span class="line">plot(T,A1,&#x27;k&#x27;,&#x27;LineWidth&#x27;,2)  %%画设计反应谱曲线</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/19/%E5%8F%8C%E9%A2%91%E6%AE%B5%E9%80%89%E6%B3%A2%E6%96%B9%E6%B3%95/" data-id="claqu8zzg0025iwtk22la455x" data-title="双频段选波方法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/30/%E5%85%B3%E4%BA%8E%E6%9F%A5%E8%AF%A2%E8%87%AA%E5%B7%B1%E5%88%B0%E5%BA%95%E5%AE%89%E8%A3%85%E4%BA%86%E5%93%AA%E4%BA%9B%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于查询自己到底安装了哪些包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/19/sap2000%E4%B9%8BVBA%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sap2000之VBA二次开发</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gridea/" rel="tag">Gridea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" rel="tag">python知识小记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag">工作之余的小的编程小知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" rel="tag">算法专栏（用python注写）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" rel="tag">读书摘记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Gridea/" style="font-size: 10px;">Gridea</a> <a href="/tags/python%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/" style="font-size: 13.33px;">python知识小记</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99%E7%9A%84%E5%B0%8F%E7%9A%84%E7%BC%96%E7%A8%8B%E5%B0%8F%E7%9F%A5%E8%AF%86/" style="font-size: 16.67px;">工作之余的小的编程小知识</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%93%E6%A0%8F%EF%BC%88%E7%94%A8python%E6%B3%A8%E5%86%99%EF%BC%89/" style="font-size: 20px;">算法专栏（用python注写）</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%91%98%E8%AE%B0/" style="font-size: 10px;">读书摘记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%90%8C%E6%AD%A5/">搭建自己的博客并进行相应的同步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/03/vs%20code%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7%E5%8C%85/">关于vs code导入本地工具包和消除&#39;import [module] could not be resolved in pylance&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E5%85%B3%E4%BA%8Ematalab%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">关于matalab的数据分析</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/30/%E5%85%B3%E4%BA%8Epython%E7%88%AC%E8%99%AB%E4%B8%80%E7%82%B9%E5%B0%8F%E7%9A%84%E6%95%B4%E7%90%86/">关于python爬虫一点小的整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
