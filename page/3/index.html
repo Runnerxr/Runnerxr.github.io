@@ -121,8 +121,72 @@
                 <p>参考链接1:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FE411P7B3?p=2&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1FE411P7B3?p=2&amp;spm_id_from=pageDriver</a><br>参考链接2:<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU0Nzc5MDQxNw==&amp;mid=2247489688&amp;idx=1&amp;sn=04f844db1bd6de22bb15267b9e71716a&amp;chksm=fb4853a6cc3fdab08930dd06a6419850189fab72e754825d48adf39a390aa20765601c65dfc4&amp;cur_album_id=1323908580084449280&amp;scene=190#rd">https://mp.weixin.qq.com/s?__biz=MzU0Nzc5MDQxNw==&amp;mid=2247489688&amp;idx=1&amp;sn=04f844db1bd6de22bb15267b9e71716a&amp;chksm=fb4853a6cc3fdab08930dd06a6419850189fab72e754825d48adf39a390aa20765601c65dfc4&amp;cur_album_id=1323908580084449280&amp;scene=190#rd</a><br>版本控制：管理所有的文件，方便查看历史记录。备份以及恢复，多人开发的作用很大<br>当下最流行的<br>所有的版本数据都保存在<strong>服务器上</strong>，协同开发人员<strong>从服务器上同步更新</strong>或上传自己的修改<br>每个人都有全部的代码，不会因为网络或服务器坏了原因<br>存储在多个电脑上的不同版本的代码文件进行版本管理。类似于一个<strong>协同的办公软件</strong>，github能够提供对版本管理服务支持的一个<strong>服务器供应商</strong>（git类似于微信这款软件，github类似于微信服务器端，用来交换每个微信软件端的信息，微信只能用官方服务器，git允许任何电脑成为服务器），当然能够提供git服务器的还有码云（Gitee）、腾讯开发者平台（dev.tencent.com）<br>所有下载慢的话都可以找镜像</p>
 <p>会卸载：要删除环境变量，然后用卸载<br>安装完毕直接启动<br>GIT Bash<br>GIT CMD：windows<br>GIT GUI  :无用</p>
 <h1 id="常见的一些命令"><a href="#常见的一些命令" class="headerlink" title="常见的一些命令"></a>常见的一些命令</h1><p>cd    ：  改变目录<br>cd ..    回退到上一个目录，直接cd进入默认目录<br>pwd   ： 显示当前所在的目录路径<br>ls    ： 都是列出当前目录中的所有文件<br>touch :新建一个文件  如touch index.js就会在当前目录下新建一个index.js<br>rm  ：删除一个文件， rm index.js就会把index.js文件删除<br>mkdir  :新建一个目录，就是新建一个文件夹<br>rm -r 删除一个文件夹，rm -r src 删除src目录<br>mv  移动文件， mv index.html src        index.html 是我们要移动的文件，src是目标文件夹<br>reset 重新初始化终端&#x2F;清屏<br>clear 清屏<br>history 查看命令历史<br>help 帮助<br>exit 退出</p>
-<h1 id="表示注释"><a href="#表示注释" class="headerlink" title="表示注释"></a>表示注释</h1><p>查看配置：git config -1<br>查看系统配置：git config –system –list<br>查看本地的全局配置：git config –global –list<br>用户名和密码是必须要配置的，告诉服务器，表明你是谁<br>所有的配置文件都是保存在本地</p>
-<h1 id="创建仓库的版本："><a href="#创建仓库的版本：" class="headerlink" title="创建仓库的版本："></a>创建仓库的版本：</h1><p>还比较好懂，这里的大致步骤都是廖雪峰网站上的，所以整理的还是比较清晰的<br>自己已经创建好了一个仓库了（在对应的为位置上），多了一个.git的目录，用来跟踪管理版本库的，不要手动的去修改目录里面的文件（修改会破坏仓库）</p>
+<h1 id="表示注释"><a href="#表示注释" class="headerlink" title="表示注释"></a>表示注释</h1><p>查看配置：git config -1</p>
+<pre><code>Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file &lt;file&gt;     use given config file
+    --blob &lt;blob-id&gt;      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type &lt;&gt;         value is given this type
+    --bool                value is &quot;true&quot; or &quot;false&quot;
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default &lt;value&gt;     with --get, use default value when missing entry
+</code></pre>
+<p>查看系统配置：git config –system –list</p>
+<pre><code>diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=d:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslverify=false
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+</code></pre>
+<p>查看本地的全局配置：git config –global –list</p>
+<pre><code>user.name=Runnerxr
+user.email=xiongrui1690347341@163.com
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslverify=false
+</code></pre>
+<p>用户名和密码是必须要配置的，告诉服务器，表明你是谁<br>所有的配置文件都是保存在本地</p>
+<h1 id="创建仓库的版本："><a href="#创建仓库的版本：" class="headerlink" title="创建仓库的版本："></a>创建仓库的版本：</h1><p>还比较好懂，这里的大致步骤都是廖雪峰网站上的，所以整理的还是比较清晰的，这些整理也是为了后面自己能够更好的管理着一些代码，让自己的远程或者同步变得更加的合理和流畅。这里我还是认为这个版本库确实很厉害，而且在后面的日子里面会运用的非常的频繁。<br>自己已经创建好了一个仓库了（在对应的为位置上），多了一个.git的目录，用来跟踪管理版本库的，不要手动的去修改目录里面的文件（修改会破坏仓库）</p>
 <ol>
 <li>编写一个readme.txt文件<br> Git is a version control system.<br> Git is free software.</li>
 <li>git add readme.txt（第一步）</li>
@@ -147,13 +211,24 @@
 <li>git add readme.txt</li>
 <li>git status</li>
 <li>git commit -m “add distributed”</li>
-<li>git status<br>小结：</li>
+<li>git status</li>
+</ol>
+<p>小结：</p>
+<ol>
 <li>需要随时掌握工作区的状态，使用git status</li>
 <li>如果git status告诉文件被修改过，用git diff可以查看修改的内容</li>
 </ol>
-<h1 id="工作区和暂缓区"><a href="#工作区和暂缓区" class="headerlink" title="工作区和暂缓区"></a>工作区和暂缓区</h1><p>工作区：working directory<br>版本库：repository<br>git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。<br>直观的理解如下：<br>Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)<br>工作区&gt;&gt;&gt;&gt;暂存区&gt;&gt;&gt;&gt;仓库<br>git add把文件从工作区&gt;&gt;&gt;&gt;暂存区，git commit把文件从暂存区&gt;&gt;&gt;&gt;仓库，<br>git diff查看工作区和暂存区差异，<br>git diff –cached查看暂存区和仓库差异，<br>git diff HEAD 查看工作区和仓库的差异，<br>git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，<br>git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区。</p>
+<h1 id="工作区和暂缓区"><a href="#工作区和暂缓区" class="headerlink" title="工作区和暂缓区"></a>工作区和暂缓区</h1><p>工作区：working directory<br>版本库：repository<br>git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。<br>直观的理解如下：<br>Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)<br>工作区&gt;&gt;&gt;&gt;暂存区&gt;&gt;&gt;&gt;仓库</p>
+<ul>
+<li>git add把文件从工作区&gt;&gt;&gt;&gt;暂存区，git commit把文件从暂存区&gt;&gt;&gt;&gt;仓库，</li>
+<li>git diff查看工作区和暂存区差异，</li>
+<li>git diff –cached查看暂存区和仓库差异，</li>
+<li>git diff HEAD 查看工作区和仓库的差异，</li>
+<li>git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，</li>
+<li>git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区。</li>
+</ul>
 <h1 id="管理和修改"><a href="#管理和修改" class="headerlink" title="管理和修改"></a>管理和修改</h1><p>git跟踪管理的是修改，而非文件</p>
-<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>为了学习GIT搭建服务器是小题大做，可以用github提供的git仓库的托管服务，免费获取git的远程仓库<br>由于你的<strong>本地Git仓库和GitHub仓库之间的传输是通过SSH加密的</strong>，所以，需要一点设置：<br>第1步：<strong>创建SSH Key</strong>：在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
+<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>为了学习GIT搭建服务器是小题大做，可以用github提供的git仓库的托管服务，免费获取git的远程仓库（也就是最为一个初级的程序员最应该需要做到的地方）<br>由于你的<strong>本地Git仓库和GitHub仓库之间的传输是通过SSH加密的</strong>，所以，需要一点设置：<br>第1步：<strong>创建SSH Key</strong>：在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;xiongrui1690347341@163.com&quot;
 </code></pre>
 <p>放在了用户的主目录里面.ssh目录，找到id_rsa和id_rsa.pub    这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。<br>一路回车之后就会创建一个.ssh目录<br>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：<br>点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：<br>    1. 设置SHH Key的原因：github需要识别你推送的提交确实是你推送的，不是别人冒充的，git支持SSH协议，github只要知道了你的公钥，就可以确认只有你自己可以推送<br>        2. GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。<br>        3. 在GitHub上免费托管的Git仓库，任何人都可以看到<br>        4. 不想让别人看到Git库：<br>        1. 让GitHub把公开的仓库变成私有的：不可读更不可写<br>        2. 自己动手，搭建一个git服务器，别人看不见，用于公司内部的开发必备</p>
@@ -184,7 +259,7 @@
 <ol>
 <li>创建一个仓库，名字叫：gitskills</li>
 <li>勾选“Initialize this repository with a README”，自动创建一个README<br>.md文件</li>
-<li>远程仓库准备好了，然后用git clone  克隆一个本地库：”git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:Runnerxr&#x2F;gitskills.git”</li>
+<li>远程仓库准备好了，然后用git clone  克隆一个本地库：”git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:Runnerxr&#x2F;gitskills.git”</li>
 <li>如果有多人协同开发，每个人各自从远程克隆一份就行</li>
 <li>Github给的地址：（Git支持多种协议）<ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/Runnerxr/gitskills.git%EF%BC%88%E9%BB%98%E8%AE%A4%E7%9A%84git://%E4%BD%BF%E7%94%A8%E7%9A%84ssh,%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%EF%BC%89">https://github.com/Runnerxr/gitskills.git（默认的git://使用的ssh,是最快的）</a></li>
@@ -259,7 +334,7 @@
         <div class="post">
             <div class="post-title">
                 <a href="/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/" class="post-title-link">
-                    剑指Offer系类二题目
+                    剑指offer系类二题目
                 </a>
             </div>
             <div class="post-content">
@@ -280,7 +355,7 @@
         <div class="post">
             <div class="post-title">
                 <a href="/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" class="post-title-link">
-                    剑指Offer系类一题目
+                    剑指offer系类一题目
                 </a>
             </div>
             <div class="post-content">
@@ -301,7 +376,7 @@
         <div class="post">
             <div class="post-title">
                 <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" class="post-title-link">
-                    对Python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
+                    对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
                 </a>
             </div>
             <div class="post-content">
@@ -322,7 +397,7 @@
         <div class="post">
             <div class="post-title">
                 <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="post-title-link">
-                    Python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
+                    python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
                 </a>
             </div>
             <div class="post-content">
@@ -404,7 +479,7 @@
             <span class="post-date">
                 22/04/14</span>
             <a href="/2022/04/14/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%BA%8C%E9%A2%98%E7%9B%AE/" class="post-title">
-                剑指Offer系类二题目
+                剑指offer系类二题目
             </a>
         </li>
         
@@ -412,7 +487,7 @@
             <span class="post-date">
                 22/04/12</span>
             <a href="/2022/04/12/%E5%89%91%E6%8C%87offer%E7%B3%BB%E7%B1%BB%E4%B8%80%E9%A2%98%E7%9B%AE/" class="post-title">
-                剑指Offer系类一题目
+                剑指offer系类一题目
             </a>
         </li>
         
@@ -420,7 +495,7 @@
             <span class="post-date">
                 22/04/11</span>
             <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" class="post-title">
-                对Python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
+                对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
             </a>
         </li>
         
@@ -428,7 +503,7 @@
             <span class="post-date">
                 22/03/29</span>
             <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="post-title">
-                Python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
+                python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
             </a>
         </li>
         
