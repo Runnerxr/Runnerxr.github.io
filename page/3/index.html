@@ -50,6 +50,27 @@
         
         <div class="post">
             <div class="post-title">
+                <a href="/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-title-link">
+                    前缀和
+                </a>
+            </div>
+            <div class="post-content">
+                
+            </div>
+            <div class="post-more">
+                <a href="/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-title-link">
+                    Read More
+                </a>
+            </div>
+            <div class="post-meta">
+                <div class="post-date">
+                    22-05-17
+                </div>
+            </div>
+        </div>
+        
+        <div class="post">
+            <div class="post-title">
                 <a href="/2022/05/11/%E6%94%B6%E9%9B%86%E5%87%A0%E9%81%93%E8%80%83%E8%BF%87%E7%9A%84%E9%A2%98%E7%9B%AE/" class="post-title-link">
                     收集几道考过的题目
                 </a>
@@ -231,7 +252,15 @@ http.sslverify=false
 <h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>为了学习GIT搭建服务器是小题大做，可以用github提供的git仓库的托管服务，免费获取git的远程仓库（也就是最为一个初级的程序员最应该需要做到的地方）<br>由于你的<strong>本地Git仓库和GitHub仓库之间的传输是通过SSH加密的</strong>，所以，需要一点设置：<br>第1步：<strong>创建SSH Key</strong>：在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;xiongrui1690347341@163.com&quot;
 </code></pre>
-<p>放在了用户的主目录里面.ssh目录，找到id_rsa和id_rsa.pub    这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。<br>一路回车之后就会创建一个.ssh目录<br>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：<br>点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：<br>    1. 设置SHH Key的原因：github需要识别你推送的提交确实是你推送的，不是别人冒充的，git支持SSH协议，github只要知道了你的公钥，就可以确认只有你自己可以推送<br>        2. GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。<br>        3. 在GitHub上免费托管的Git仓库，任何人都可以看到<br>        4. 不想让别人看到Git库：<br>        1. 让GitHub把公开的仓库变成私有的：不可读更不可写<br>        2. 自己动手，搭建一个git服务器，别人看不见，用于公司内部的开发必备</p>
+<p>放在了用户的主目录里面.ssh目录，找到id_rsa和id_rsa.pub    这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。一路回车之后就会创建一个.ssh目录<br>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：<br>点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</p>
+<ul>
+<li>设置SHH Key的原因：github需要识别你推送的提交确实是你推送的，不是别人冒充的，git支持SSH协议，github只要知道了你的公钥，就可以确认只有你自己可以推送</li>
+<li>GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。</li>
+<li>在GitHub上免费托管的Git仓库，任何人都可以看到</li>
+<li>不想让别人看到Git库：</li>
+<li>让GitHub把公开的仓库变成私有的：不可读更不可写</li>
+<li>自己动手，搭建一个git服务器，别人看不见，用于公司内部的开发必备</li>
+</ul>
 <h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><p>在本地创建了一个git仓库，又想在GitHub创建一个Git仓库，<strong>并且让这两个仓库进行远程同步</strong>，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作<br>自己已经关联了一个仓库learngit，仓库是空的，<strong>从这个仓库克隆出新的仓库</strong>，也可以把一个<strong>已有的本地仓库与之关联</strong>，之后就可以把本地的内容推送到Github仓库了：命令如下：</p>
 <pre><code>git remote add origin git@github.com:Runnerxr/learngit.git
 </code></pre>
@@ -259,7 +288,7 @@ http.sslverify=false
 <ol>
 <li>创建一个仓库，名字叫：gitskills</li>
 <li>勾选“Initialize this repository with a README”，自动创建一个README<br>.md文件</li>
-<li>远程仓库准备好了，然后用git clone  克隆一个本地库：”git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:Runnerxr&#x2F;gitskills.git”</li>
+<li>远程仓库准备好了，然后用git clone  克隆一个本地库：”git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:Runnerxr&#x2F;gitskills.git”</li>
 <li>如果有多人协同开发，每个人各自从远程克隆一份就行</li>
 <li>Github给的地址：（Git支持多种协议）<ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/Runnerxr/gitskills.git%EF%BC%88%E9%BB%98%E8%AE%A4%E7%9A%84git://%E4%BD%BF%E7%94%A8%E7%9A%84ssh,%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%EF%BC%89">https://github.com/Runnerxr/gitskills.git（默认的git://使用的ssh,是最快的）</a></li>
@@ -394,27 +423,6 @@ http.sslverify=false
             </div>
         </div>
         
-        <div class="post">
-            <div class="post-title">
-                <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="post-title-link">
-                    python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
-                </a>
-            </div>
-            <div class="post-content">
-                
-            </div>
-            <div class="post-more">
-                <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="post-title-link">
-                    Read More
-                </a>
-            </div>
-            <div class="post-meta">
-                <div class="post-date">
-                    22-03-29
-                </div>
-            </div>
-        </div>
-        
     </div> -->
     <div class="search-wrapper">
     <form id="search-form"> <!-- 搜索框相关 -->
@@ -426,6 +434,14 @@ http.sslverify=false
 </div>
     <div class="archive">
     <ul class="post-archive">
+        
+        <li class="post-item">
+            <span class="post-date">
+                22/05/17</span>
+            <a href="/2022/05/17/%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-title">
+                前缀和
+            </a>
+        </li>
         
         <li class="post-item">
             <span class="post-date">
@@ -496,14 +512,6 @@ http.sslverify=false
                 22/04/11</span>
             <a href="/2022/04/11/python%E5%87%BD%E6%95%B0%E8%BF%99%E4%B8%80%E5%9D%97%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%95%B4%E7%90%86/" class="post-title">
                 对python函数这一块的系统整理（主要来自廖雪峰+平时的一些积累）
-            </a>
-        </li>
-        
-        <li class="post-item">
-            <span class="post-date">
-                22/03/29</span>
-            <a href="/2022/03/29/python%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A5%E8%AF%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%E5%BB%B6%E7%94%B3/" class="post-title">
-                python中数组和矩阵的知识及相关题目延申（只能算基础知识部分）
             </a>
         </li>
         
