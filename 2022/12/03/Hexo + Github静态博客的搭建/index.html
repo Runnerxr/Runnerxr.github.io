@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        bear的生活随笔
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">bear的生活随笔</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/Runnerxr" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            Hexo + Github静态博客的搭建
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/12/03 Sat 22:51&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2022/12/03 Sat 22:56
+        </div>
+    </div>
+    <div class="article-content">
+        <h1 id="Hexo-Github静态博客的搭建"><a href="#Hexo-Github静态博客的搭建" class="headerlink" title="Hexo + Github静态博客的搭建"></a>Hexo + Github静态博客的搭建</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  搭建博客是一直以来自己就想做的事情，18年的时候在好友的怂恿下开始写，不过都是些零零碎碎的。当时用的开源的Gridea这个静态博客，不过后来出了一些问题，所有就一直搁置这个问题（当然零零碎碎的一直在写），现在还是想继续进行下去，对自己写的或者整理的东西进行模块化梳理。相对于比较知名的wordpress以及typecho，hexo作为静态博客不需要自行搭建和维护服务器，可以部署在很多稳定且免费的环境中。</p>
+<h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装如下软件"><a href="#安装如下软件" class="headerlink" title="安装如下软件"></a>安装如下软件</h3><ol>
+<li>Git</li>
+<li>Node &amp; NPM</li>
+<li>Hexo</li>
+</ol>
+<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><p>  在资源管理器右键菜单或开始菜单里，可以找到 Git Bash ，打开后是个命令行界面。分别执行node-v，npm-v命令查看执行的版本：我安装的是8.19.2，没有下载的可以下载最新的版本。</p>
+<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><ol>
+<li>自行注册git账号，前往注册，已有github账号则跳过</li>
+<li>注册vercel账号，可直接与github账号绑定(这一步后面发现其实可以不用)</li>
+</ol>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>配置淘宝镜像，加速安装</p>
+<pre><code>npm config set registry https://registry.npmmirror.co
+</code></pre>
+<h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><pre><code>npm install -g hexo
+</code></pre>
+<p>执行如上命令，安装hexo结果如下则安装成功</p>
+<h3 id="执行初始化命令"><a href="#执行初始化命令" class="headerlink" title="执行初始化命令"></a>执行初始化命令</h3><pre><code>hexo init &#123;博客名称&#125;
+</code></pre>
+<p>若不指定博客名称，默认为初始化当前目录</p>
+<h3 id="本地运行查看博客"><a href="#本地运行查看博客" class="headerlink" title="本地运行查看博客"></a>本地运行查看博客</h3><pre><code>hexo serve
+</code></pre>
+<h3 id="发表文章"><a href="#发表文章" class="headerlink" title="发表文章"></a>发表文章</h3><p>  只需要将md结尾markdown格式的文件放入source_posts下就可以了，再重新执行hexo serve命令即可看到效果</p>
+<h3 id="部署到外网"><a href="#部署到外网" class="headerlink" title="部署到外网"></a>部署到外网</h3><p>  上传github* 创建Pulic仓库Repository name填自己的博客名称，其他不用修改，注意时Public仓库，private可能会构建失败。进入博客目录，即hexo init的那个目录鼠标右键打开Git Bash，顺序执行如下命令</p>
+<pre><code>git initgit add .
+git commit -m &quot;first commit&quot;
+git branch -M main
+git remote add origin &#123;github博客仓库url&#125;
+git push -u origin main
+</code></pre>
+<p>弹出对话框，输入github账号密码即可。</p>
+<p>后续博客文章新增或改动都需要重新上传，命令如下：</p>
+<pre><code>git add .git commit -m &quot;hexo blog commit&quot;git push
+</code></pre>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="几个需要注意的地方如下"><a href="#几个需要注意的地方如下" class="headerlink" title="几个需要注意的地方如下"></a>几个需要注意的地方如下</h2><ol>
+<li>环境的配置是十分重要的，比如node.js的安装。_config,yml文件是比较重要的一个文件，一些个性化的东西可以从这个文件中开始入手，注意每次改都要注意；</li>
+<li>关于主题的问题：这里用的是hexo自带的主题配置，选了一个稍微简单的一点，先暂时不要追求花里胡哨的界面，把一些简单的东西先做好，后面有能力和实力之后再尝试做一些创新的东西，主题里面默认的主题不要轻易的删除；</li>
+<li>关于每次上传都需要特定的代码，这是很重要的。</li>
+</ol>
+<h2 id="最基础的几个推送命令"><a href="#最基础的几个推送命令" class="headerlink" title="最基础的几个推送命令"></a>最基础的几个推送命令</h2><ul>
+<li>hexo generate 生成静态文件该命令可以进行相应的简写：hexo g</li>
+<li>hexo publish [layout] <filename>该命令可以用来发表草稿</li>
+<li>hexo server启动服务器，默认情况下，访问的网址为：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></li>
+<li>hexo deploy部署网站，相应的简写：hexo d</li>
+<li>hexo render <file1> [file2] …渲染文件</li>
+<li>hexo migrate <type>从其他的博客系统迁移内容</li>
+<li>hexo clean清除缓存文件 (db.json) 和已生成的静态文件 (public)。在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</li>
+</ul>
+<h2 id="Push远程仓库的一些步骤"><a href="#Push远程仓库的一些步骤" class="headerlink" title="Push远程仓库的一些步骤"></a>Push远程仓库的一些步骤</h2><p>首先在github建立新的仓库，作为你的博客的文件托管，命名需要以username.github.io命名</p>
+<p><a target="_blank" rel="noopener" href="http://username.github.io,这个网址就是相应的博客的地址,需要把里面的username替换为你的github账号.主要执行一下的一些操作/">http://username.github.io,这个网址就是相应的博客的地址，需要把里面的username替换为你的Github账号。主要执行一下的一些操作</a></p>
+<ol>
+<li>git config –global user.name “你的github用户名”</li>
+<li>git config –global user.email “你的github注册邮箱”</li>
+<li>生成ssh密钥文件</li>
+<li>ssh-keygen -t rsa -C “你的github注册邮箱”</li>
+<li>然后直接三个回车即可，默认不需要设置密码</li>
+<li>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</li>
+<li>添加进入github中的ssh key</li>
+<li>配置成功后</li>
+<li>hexo g</li>
+<li>hexo s</li>
+<li>Hexo d</li>
+<li>完成推送和部署</li>
+</ol>
+<h2 id="关于博客图床的搭建"><a href="#关于博客图床的搭建" class="headerlink" title="关于博客图床的搭建"></a>关于博客图床的搭建</h2><p> 看到别人安利一个图床神器picgo，截图后快捷键上传自动复制Markdown链接，非常的好用，所以在写文件的时候如果配图是可以用到这个软件的。</p>
+<h3 id="在配置图床中遇到的几个问题以及解决方案："><a href="#在配置图床中遇到的几个问题以及解决方案：" class="headerlink" title="在配置图床中遇到的几个问题以及解决方案："></a>在配置图床中遇到的几个问题以及解决方案：</h3><ol>
+<li><p>打开github加速就会出现：RequestError: Error: unable to verify the first certificate</p>
+</li>
+<li><ul>
+<li>解决方法：关掉github加速，为了便于访问github网站，可以用一些浏览器里面的加速插件可以达到同样的效果</li>
+<li>这样就不影响登录github网站，又可以在本地进行图床的配置以及图片上传。</li>
+</ul>
+</li>
+<li><p>如果关掉加速就会出现：Request failed with status code 404</p>
+</li>
+<li><ul>
+<li>仔细核对博客的配置，看看是否有问题，一个小点都可能会造成bug</li>
+</ul>
+</li>
+</ol>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>  很多东西都还不太成熟，都在部署和完善过程中，一些相应的东西我想在微信公众号和博客中进行相应的同步更新，暂时还是以文字为主。只能慢慢的推进，每一篇都想尽量做好，不过也才刚开始这样去做，难免会有这样那样的问题，好像不可避免，多写和整理几次就会有相应的经验了，就会更加的去注重相应的排版和文风。但是最最最重要的，不要头重脚轻，本末倒置，任何时候都是要以内容为主（虽然排版仍然是十分重要的。）</p>
+<h3 id="我的博客地址："><a href="#我的博客地址：" class="headerlink" title="我的博客地址："></a>我的博客地址：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://runnerxr.github.io/">https://runnerxr.github.io/</a></li>
+<li>title: bear的生活随笔</li>
+<li>subtitle: 随心所想，随手所记</li>
+<li>description: ‘记录生活、学习、工作’</li>
+</ul>
+<h3 id="配置博客参考链接："><a href="#配置博客参考链接：" class="headerlink" title="配置博客参考链接："></a>配置博客参考链接：</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/alxd60g0/">https://post.smzdm.com/p/alxd60g0/</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/587675343">https://zhuanlan.zhihu.com/p/587675343</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></li>
+</ol>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> bear <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+    </div>
+</body>
+
+</html>
