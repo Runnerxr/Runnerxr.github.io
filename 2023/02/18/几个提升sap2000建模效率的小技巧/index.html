@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        bear的生活随笔
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">bear的生活随笔</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/Runnerxr" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2023/02/18 Sat 09:43&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2023/02/18 Sat 09:43
+        </div>
+    </div>
+    <div class="article-content">
+        <h1 id="几个提升sap2000建模效率的小技巧"><a href="#几个提升sap2000建模效率的小技巧" class="headerlink" title="几个提升sap2000建模效率的小技巧"></a>几个提升sap2000建模效率的小技巧</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在使用sap2000的过程中总结了以下的一些技巧有助于提升平时的建模和分析速度。这只能暂时说一些非常常规的手段，仍是停留在手动或者键盘操作的方式。</p>
+<h2 id="技巧一：使用快捷键"><a href="#技巧一：使用快捷键" class="headerlink" title="技巧一：使用快捷键"></a>技巧一：使用快捷键</h2><p>​	快捷键应该说是最常规的提升建模和设计速度的方式，只要是使用sap2000比较多的时候，以下的一些快捷键都会随着使用频率的增加都会在不同程度的使用到。</p>
+<pre><code>通用的快捷键：
+Ctrl+N、Ctrl+O、Ctrl+S、Ctrl+P、Ctrl+Z、Ctrl+Y、Ctrl+X、Ctrl+C、Ctrl+V、Ctrl+M、Ctrl+A、Delete
+Ctrl+B选择标签
+Ctrl+D显示轴网
+Ctrl+E交互式数据库编辑
+Ctrl+G选择组
+Ctrl+J获取上次选择
+Ctrl+K反选
+Ctrl+Q清除选择
+Ctrl+R带属性复制
+Ctrl+T显示表
+Ctrl+U设置程序默认显示菜单
+Ctrl+W设置显示选项
+Shift+F5（F6/F7/F8）开始钢结构（混凝土/铝框架/冷弯钢框架）校核
+Ctrl+shift+F5(F6/F7/F8)显示钢结构（混凝土/铝框架/冷弯钢框架）设计信息
+F1内容及索引（帮助文档）
+F2窗口缩放
+F3恢复全视图
+F4显示未变形形状
+F5运行分析
+F6显示变形
+F12显示绘图函数
+Shift+F2放大一步
+Shift+F3缩小一步
+Shift+F4平移
+Ctrl+shift+A显示全部
+Ctrl+shift+C修改/显示注释和日志
+Ctrl+shift+F显示输入和日志文件
+Ctrl+shift+G指定到组（这个配合组的功能非常好用）
+Ctrl+shift+J仅显示选择（配合CTRL+J的功能一起使用）
+Ctrl+shift+L选择相交线
+Ctrl+shift+R生成报告
+Ctrl+shift+S保存为
+Ctrl+shift+T打印表格
+Ctrl+shift+O选择多边形
+Ctrl+shift+P选择相交多边形
+Ctrl+shift+V刷新视图
+Ctrl+shift+W刷新窗口
+Ctrl+shift+F2设置二维视图
+Ctrl+shift+F3设置三维视图
+</code></pre>
+<h2 id="技巧二：一键定义荷载模式、荷载工况、荷载组合"><a href="#技巧二：一键定义荷载模式、荷载工况、荷载组合" class="headerlink" title="技巧二：一键定义荷载模式、荷载工况、荷载组合"></a>技巧二：一键定义荷载模式、荷载工况、荷载组合</h2><blockquote>
+<p>在sap2000中有关定义荷载模式、荷载工况以及荷载组合往往比较费时间，现在想通过相对比较省时间的方法，快速的实现定义，能够将一些重复的操作慢慢的略去，这里只是其中的一种方式，也是自己现在经常用的一种。</p>
+</blockquote>
+<h3 id="1、建立新模型（空模板）"><a href="#1、建立新模型（空模板）" class="headerlink" title="1、建立新模型（空模板）"></a>1、建立新模型（空模板）</h3><p>​	在新模型（空模板）中，荷载模式中默认有dead模式，荷载工况中默认有dead和model两种工况，荷载组合中没有任何组合，如图2、3、4所示。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180844040.png" alt="图片"></p>
+<center>图1  新建空白文件</center>
+
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180854689.png" alt="image-20230218085410642"></p>
+<p>图2  定义荷载模式</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180854498.png" alt="image-20230218085446432"></p>
+<p>图3  定义荷载工况</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180855257.png" alt="image-20230218085509160"></p>
+<p>图4  定义荷载组合</p>
+<h3 id="2、逐项定义"><a href="#2、逐项定义" class="headerlink" title="2、逐项定义"></a>2、逐项定义</h3><p>分别在“定义荷载模式”“定义荷载工况”“定义荷载组合”中完成相关荷载的自定义，如图5、6、7所示。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180856437.png" alt="image-20230218085608293"></p>
+<p>图5  定义荷载模式</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180858493.png" alt="image-20230218085824449"></p>
+<p>图5  定义荷载模式</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180857976.png" alt="image-20230218085744929"></p>
+<p>图6 定义荷载工况</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180859356.png" alt="image-20230218085919210"></p>
+<p>图7  定义荷载组合</p>
+<h3 id="3、导出关于荷载定义的S2K文件"><a href="#3、导出关于荷载定义的S2K文件" class="headerlink" title="3、导出关于荷载定义的S2K文件"></a>3、导出关于荷载定义的S2K文件</h3><p>文件-导出-SAP2000文本文件（*.s2k），图8操作。弹出“选择数据库表格”，依次按照下图9中步骤执行，后点击确定并保存S2K文件到指定文件夹中。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180859028.png" alt="image-20230218085941982"></p>
+<p>图8  导出s2k文件</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180900420.png" alt="image-20230218090003372"></p>
+<p>图9  勾选需要导出的选项</p>
+<h3 id="4、编辑S2K文件"><a href="#4、编辑S2K文件" class="headerlink" title="4、编辑S2K文件"></a>4、编辑S2K文件</h3><p>以文本（text）格式打开导出的S2K文件，依次找到如下的三条信息</p>
+<ol>
+<li>TABLE: “LOAD CASE DEFINITIONS”</li>
+<li>TABLE: “CASE - STATIC 1 - LOAD ASSIGNMENTS”</li>
+<li>TABLE: “CASE - STATIC 1 - LOAD ASSIGNMENTS”</li>
+</ol>
+<p>  将此三段中关于dead和model的相关代码删除，保存文件并关闭。因为前文提到，软件新模型（空模板）中会自带这两种荷载模式和工况，所以此处把这里的文件删除后，保证在以后的新模型中不与已有的荷载模式和工况产生冲突，避免不必要的错误。</p>
+<p>将此三段中关于dead和model的相关代码删除，保存文件并关闭。因为前文提到，软件新模型（空模板）中会自带这两种荷载模式和工况，所以此处把这里的文件删除后，保证在以后的新模型中不与已有的荷载模式和工况产生冲突，避免不必要的错误。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvEJfAnAQm9kJSxbtibzysicibZY0eZqDdVb1Y612SgkCvQzmGe8icQoJpAQ/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvXN9NbB1CNsnGkYDEd3Fa9C9iayKrg07Y4tnufsD3fvfLJdX64cEkPow/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvXD4EWmOOqOPgH8ZgOlFcOVyJ649HnDs4ZIqfTtm15qv8qQhllj4sdw/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p>图10  部分文件源码截图</p>
+<p>5、导入S2K文件</p>
+<p>新模型调用保存好的S2K文件（包含荷载模式、荷载工况、荷载组合），文件-导入-SAP2000文本文件（*.s2k），图11操作。弹出对话框（图12），导入类型选择“合并旧模型”即可。导入S2K文件，然后检查导入日志（图13），确认无报错。检查已定义的模式、工况和组合，确认无误。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvjGyZ6vyQNI1AVTwmr2pDJtJvCwfjBKMYpaYC9xda2ibCf2dccfLhvQA/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p>图11 导入s2k文件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvF1I1aNGxLpKBBic0icJuT8jd34R5eicutRW68ibolrwwTMPtGZkCicOoZWg/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p>图12 合并旧模型</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvnSwR73XZf4UNgKgiaO1u8icxviaOxl4Oia0oRaGxkbx7lddibJ8ltg6W53g/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
+<p>图13 日志检查</p>
+<p>附上直接拿来使用的s2k模板：</p>
+<pre><code>File D:\光伏支架相关文档\结构以及计算模板-待定\模板文件\model.$2k was saved on m/d/yy at h:mm:ss
+ 
+TABLE:  &quot;ACTIVE DEGREES OF FREEDOM&quot;
+   UX=Yes   UY=Yes   UZ=Yes   RX=Yes   RY=Yes   RZ=Yes
+ 
+TABLE:  &quot;ANALYSIS OPTIONS&quot;
+   Solver=Advanced   SolverProc=Auto   Force32Bit=No   StiffCase=None   GeomMod=None   HingeOpt=&quot;In Elements&quot;   NumAThreads=0   MaxFileSize=0   NumDThreads=0   NumRThreads=0   UseMMFiles=&quot;Program Determined&quot;   AllowDiff=No
+ 
+TABLE:  &quot;AREA SECTION PROPERTIES&quot;
+   Section=ASEC1   Material=C30   MatAngle=0   AreaType=Shell   Type=Shell-Thin   DrillDOF=Yes   Thickness=250   BendThick=250   Color=Blue   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1   WMod=1
+ 
+TABLE:  &quot;AREA SECTION PROPERTY DESIGN PARAMETERS&quot;
+   Section=ASEC1   RebarMat=None   RebarOpt=Default
+ 
+TABLE:  &quot;AREA SECTION PROPERTY - TIME DEPENDENT&quot;
+   Section=ASEC1   TypeSize=Auto   AutoSFSize=1
+ 
+TABLE:  &quot;AUTO COMBINATION OPTION DATA 01 - GENERAL&quot;
+   DesignType=Steel   AutoGen=Yes
+   DesignType=Coldformed   AutoGen=Yes
+ 
+TABLE:  &quot;AUTO COMBINATION OPTION DATA 02 - USER DATA&quot;
+   DesignType=Steel   LSType=Strength   LCName=DEAD
+   DesignType=Steel   LSType=Strength   LCName=Wp
+   DesignType=Steel   LSType=Strength   LCName=Ws
+   DesignType=Steel   LSType=Strength   LCName=Snow
+   DesignType=Steel   LSType=Deflection   LCName=DEAD
+   DesignType=Steel   LSType=Deflection   LCName=Snow
+   DesignType=Coldformed   LSType=Strength   LCName=DEAD
+   DesignType=Coldformed   LSType=Strength   LCName=Wp
+   DesignType=Coldformed   LSType=Strength   LCName=Ws
+   DesignType=Coldformed   LSType=Strength   LCName=Snow
+   DesignType=Coldformed   LSType=Deflection   LCName=DEAD
+   DesignType=Coldformed   LSType=Deflection   LCName=Snow
+ 
+TABLE:  &quot;AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL&quot;
+   WaveChar=Default   WaveType=&quot;From Theory&quot;   KinFactor=1   SWaterDepth=45000   WaveHeight=18000   WavePeriod=12   WaveTheory=Linear
+ 
+TABLE:  &quot;CASE - MODAL 1 - GENERAL&quot;
+   Case=MODAL   ModeType=Eigen   MaxNumModes=12   MinNumModes=1   EigenShift=0   EigenCutoff=0   EigenTol=1E-09   AutoShift=Yes
+ 
+TABLE:  &quot;CASE - STATIC 1 - LOAD ASSIGNMENTS&quot;
+   Case=DEAD   LoadType=&quot;Load pattern&quot;   LoadName=DEAD   LoadSF=1
+   Case=Wp   LoadType=&quot;Load pattern&quot;   LoadName=Wp   LoadSF=1
+   Case=Ws   LoadType=&quot;Load pattern&quot;   LoadName=Ws   LoadSF=1
+   Case=Snow   LoadType=&quot;Load pattern&quot;   LoadName=Snow   LoadSF=1
+ 
+TABLE:  &quot;COMBINATION DEFINITIONS&quot;
+   ComboName=1.3D+1.5Wp+1.5*0.7S   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=31f50dd3-03de-4159-965d-88e3e0e84fa6
+   ComboName=1.3D+1.5Wp+1.5*0.7S   CaseName=Wp   ScaleFactor=1.5
+   ComboName=1.3D+1.5Wp+1.5*0.7S   CaseName=Snow   ScaleFactor=1.05
+   ComboName=1.3D+1.5Ws+1.5*0.7S   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=fb5781b6-078a-4408-ac8f-641177b29926
+   ComboName=1.3D+1.5Ws+1.5*0.7S   CaseName=Snow   ScaleFactor=1.05
+   ComboName=1.3D+1.5Ws+1.5*0.7S   CaseName=Ws   ScaleFactor=1.5
+   ComboName=1.3D+1.5Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=9ca47bf4-600c-4387-bcbd-6ad11446f9c5
+   ComboName=1.3D+1.5Wp   CaseName=Wp   ScaleFactor=1.5
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=4d8aa9b8-a7b2-4082-b1cd-1f3258fb552f
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   CaseName=Wp   ScaleFactor=0.9
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   CaseName=Snow   ScaleFactor=1.5
+   ComboName=D+1.5Ws   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=e7458b0d-fdde-40af-a620-9fbb907c62cf
+   ComboName=D+1.5Ws   CaseName=Snow   ScaleFactor=1.5
+   ComboName=D+S+Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=d42955de-f1f0-4ad8-9901-645087927f0a
+   ComboName=D+S+Wp   CaseName=Wp   ScaleFactor=1
+   ComboName=D+S+Wp   CaseName=Snow   ScaleFactor=1
+   ComboName=D+S+Ws   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=73d361b6-cbf6-4435-a456-05c20b9cba7b
+   ComboName=D+S+Ws   CaseName=Snow   ScaleFactor=1
+   ComboName=D+S+Ws   CaseName=Ws   ScaleFactor=1
+   ComboName=D+0.7S+Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=544c2630-5ef2-4a63-b179-920a39df296f
+   ComboName=D+0.7S+Wp   CaseName=Wp   ScaleFactor=1
+   ComboName=D+0.7S+Wp   CaseName=Snow   ScaleFactor=0.7
+   ComboName=D+S+0.6Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None
+</code></pre>
+<h2 id="技巧三：自定义截面"><a href="#技巧三：自定义截面" class="headerlink" title="技巧三：自定义截面"></a>技巧三：自定义截面</h2><blockquote>
+<p>​	遇到规整的截面的时候可能直接自定义或者里面内含的截面库，但是有一些复杂的不规则的截面往往想要导入进行计算就非常麻烦。当然现在随着软件的更新迭代以及一些接口的逐步使用，很多方法也不止一种，这里延续了之前版本的一种最原始的也是最根本的一种方式来自定义截面。</p>
+</blockquote>
+<p>1、准备好需要导入截面的DXF文件在CAD中绘制截面信息时需要注意几个问题：</p>
+<ul>
+<li><p>单位，注意绘制截面时的单位制，该单位制需要与【导入设置】窗口中的单位制保持一致。</p>
+</li>
+<li><p>图层，导入DXF文件时，程序依据图层读取截面信息，因此需要将不同的对象绘制在不同的图层，以便在【导入设置】窗口中对不同的对象指定不同的属性。</p>
+</li>
+<li><p>图元类型，截面设计器支持导入CAD的图元类型包括闭合多段线、直线、圆、点。不同的图元根据所指定材料的种类不同可以模拟为不同的对象，其对应关系可以通过下列表格确定。不同图元的材料及补充信息则需要在导入时的【导入设置】窗口中进行设置。</p>
+</li>
+</ul>
+<p>在sap2000中建立复杂截面</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180905370.png" alt="image-20230205163343849"></p>
+<p>主要的步骤如下：</p>
+<p>1、在cad中勾出想要的截面</p>
+<p>2、这些线炸成直线，消重连接成闭合的多段线</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180905369.png" alt="image-20230205163741256"></p>
+<p>3、选中这些多线段，list 回车得到这些多线段的顶点坐标。</p>
+<p>4、将这些顶点坐标保存为txt文件，简单处理只留等号&#x3D;作为分隔符。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906072.png" alt="image-20230205163843343"></p>
+<p><img src="C:\Users\XR\AppData\Roaming\Typora\typora-user-images\image-20230205163901461.png" alt="image-20230205163901461"></p>
+<p>5、用excel打开此txt文件，以分隔符作为分列的标识。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906580.png" alt="image-20230205164010612"></p>
+<p>6、进入sap2000，添加截面进入截面设计器。随便画个开洞截面，保存退到主界面。</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906434.png" alt="image-20230205164049421"></p>
+<p>7、进入编辑–》交互数据库编辑，找到你刚才定义的截面，确定</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906398.png" alt="image-20230205164128687"></p>
+<p>8、把第5步得到的坐标复制到打开的excel里，不要关掉程序自动打开的excel文件，点retrieve from exel</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906671.png" alt="image-20230205164200195"></p>
+<p>9、返回到截面设计器中查看，已经得到想要的截面</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180906928.png" alt="image-20230205164241116"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>  后面会以光伏支架结构为例，对利用python来自动建模进行一些相应的探索，选用光伏支架结构的原因。</p>
+<ol>
+<li>结构形式相对比较的简单，参数化或者自动建模体量要小一些</li>
+<li>现在的光伏及衍生的东西比较多，而且市场上的竞争也是比较的激烈，这一块做细，或者说能够高效的出一些方案计算结果，无疑是一种有利的措施。</li>
+</ol>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> bear <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+    </div>
+</body>
+
+</html>
