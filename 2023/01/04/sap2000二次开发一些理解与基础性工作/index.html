@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        bear的生活随笔
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">bear的生活随笔</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/Runnerxr" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            sap2000二次开发的理解与基础工作开展
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2023/01/04 Wed 23:51&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2023/02/19 Sun 00:17
+        </div>
+    </div>
+    <div class="article-content">
+        <h1 id="sap2000二次开发的理解与基础工作开展"><a href="#sap2000二次开发的理解与基础工作开展" class="headerlink" title="sap2000二次开发的理解与基础工作开展"></a>sap2000二次开发的理解与基础工作开展</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	随着数字化进程的加快，不甘心满足于传统行业的阵痛，于是在业余时间开始寻求一些相应的解决办法、“谋生”与创新。所以这篇文章我也暂时是讲一些比较笼统的概念，在后面的时间和文章里面慢慢的对一些细节进行相应的整理与分享。只有通过不断消化整理之后的东西才是真正属于自己的。但其实这一过程如果不是在一个团队中真正的成长并沉淀下来的，周期应该也是有点长的。（先不想那么多，往前走了再说……）。</p>
+<p>​	sap2000是我最早接触的通用有限元软件(同类型的当然也还有abaqus)，因为它不仅功能强大，而且操作相对比较简便，可以自动划分网格，即使对有限元的原理没什么理解，也可以建模计算，获得的结果往往是可以作为参考的。所以我觉得学习结构分析软件可以从sap2000入手，先掌握建模方法，可以算出结果，获得小小的成就感之后，再深入学习有限元知识和软件的计算原理。</p>
+<p>​	sap2000还有一个优势，就是它是<strong>基于面向对象技术</strong>开发的，而且<strong>接口开放</strong>。使用者既可以利于软件提供的图形操作界面来建模和分析，<strong>也可以通过编程连接其接口来建模分析。前者的优势是非常直观，适合小体量的结构，而后者对于大型结构非常有效，可以减少很多工作量。</strong></p>
+<p>​	sap2000的API接口支持多种语言，包括VBA, VB, C#, C++,Fortran, Matlab。早期可能比较好用的是VBA，因为<strong>VBA可以直接通过宏与Microsoft Word和Excel连接，而Excel中又提供了很多可以直接在单元格中操作的简易函数，将单元格、函数、VBA、sap2000结合使用，可以实现用户的很多需求</strong>（比如允许用户自动建模、分析和设计模型所需要的许多过程，得到自定义的分析和设计结果以及与第三方软件的交互，为与其他程序的双向交换模型提供了一条非常好的路径）。相比之下，Visual Studio的开发方式下，显示数据和计算就没有Excel那样方便直观，想显示图形界面还要操作很多控件增加了工作量，后面随着各种语言的发展，单纯的用VBA可能有些效率和代码的简易程度就略显不足。excle、matlab、Visual Studio、 C#开发、内部调用（插件的开发与集成）、交互式编辑可能是未来会经常用到的（也许时间很长，也许时间会很短）。<strong>自己一有时间就要往这个方面去想，去琢磨，等到真正用的时候会发现相应的优势所在。</strong></p>
+<p>​	自己目前主打的就是将sap2000与python两个软件有机结合起来，做到在使用的过程中更加的灵活和方便，有助于后面的深入的学习和交互<strong>。python是解释型语言，关键字少，结构也简单</strong>，既支持面向过程的函数编程，也支持面向对象的抽象编程，具有丰富的库文件，可以进行各种类型项目的开发，而sap2000就像前面所说的：也是属于基于面向对象开发的（当然有自己暂时对python更加熟悉一点，同时也限于自己的认知水平）。对于IDE编译器来说：自己目前使用的比较多的是Visual Studio Code，鉴于代码是用Python写的，使用PyCharm来写的话据说会更加的方便，能够提高相应的开发效率（调试、语法高亮、项目管理、代码跳转、智能提示、自动完成、单元测试、以及版本控制。）<br>​	关于PyCharm开发环境的配置：在Python中通过COM组件调用sap2000的接口进行软件的控制，使用Python不能直接调用COM组件，需要借助可以访问COM组件的comtypes库。（comtypes是一个轻量级的python库，通过这个库文件，直接对COM组件进行对象的创建，实现对sap2000的调用）</p>
+<h2 id="配置基本环境的文件"><a href="#配置基本环境的文件" class="headerlink" title="配置基本环境的文件"></a>配置基本环境的文件</h2><ol>
+<li>sap2000v1.dll :用C#或C++或python进行编程</li>
+<li>sap2000v1.tlb :用于vba的编程</li>
+</ol>
+<p>说明参考书：CSI_OAPI_Documentation.chm</p>
+<p>各个spa2000版本之间经常会有一些更新与差异，也需要使用者去多多的甄别与学习。</p>
+<h2 id="主要的接口函数及功能"><a href="#主要的接口函数及功能" class="headerlink" title="主要的接口函数及功能"></a>主要的接口函数及功能</h2><ul>
+<li><strong>General Functions</strong>：提供通用函数，包括程序的启动、关闭、单位、容差等</li>
+<li><strong>Analysis Model</strong>：提供获得模型各个对象的计算信息</li>
+<li><strong>Edit</strong>：对应菜单栏中编辑选项所提供的功能</li>
+<li><strong>File</strong>：对应菜单栏中文件选项下的新模型提供的功能</li>
+<li><strong>Definitions</strong>:对应菜单栏中定义选项所提供的功能：材料、截面、荷载模式、荷载组合以及反应谱函数的定义等、点、线、面单元、连接单元等</li>
+<li><strong>Object Model</strong>:提供各种对象（面、实体、杆等）的编辑和定义的功能：荷载、组、构件参数指定</li>
+<li><strong>Analysis Results</strong>:提供获取分析结果相关功能：包括指定分析选项、运行分析、获取应力、内力、位移等</li>
+<li><strong>Design</strong>:对应菜单栏中的设计选项提供的功能：包括设置首选项、覆盖项以及提取设计结果</li>
+<li><strong>Select</strong>:对象菜单栏中的选择选项中提供的功能：包括按组选择、按属性选择、按区域选择Options</li>
+</ul>
+<h2 id="通过API能够完成什么？"><a href="#通过API能够完成什么？" class="headerlink" title="通过API能够完成什么？"></a>通过API能够完成什么？</h2><ol>
+<li>对软件的控制</li>
+<li>对模型的操作<ol>
+<li>启动、关闭程序</li>
+<li>打开和保存文件</li>
+<li>隐藏、显示程序界面（让程序后台运行）</li>
+<li>控制程序运行计算和设计（实现迭代运算）</li>
+<li>指定条件选择单元（想选什么就选什么）</li>
+</ol>
+</li>
+<li>获取计算结果</li>
+<li>获取设计结果<ol>
+<li>设计参数的设置</li>
+<li>不满足设计的杆件数量</li>
+<li>获取设计总信息</li>
+</ol>
+</li>
+</ol>
+<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><blockquote>
+<p>​	以一个小点作为切入口，对自己感兴趣的这一块好好的打磨一下。（自己的第一步是从python语言入手的，但是实际的操作过程中可能还有其他的一些语言，自己慢慢的摸索着去掌握的）。里面有些东西还是很深的，需要自己耐着性子的去琢磨琢磨，这才是解决问题的关键所在。弄懂二次开发里面的东西，一边在实际项目中成长，一边时刻打磨这一块的内容。</p>
+<ol>
+<li><p><strong>必须要对系统各模块要了解</strong>，只有这样才能了解<strong>自己需要去开发哪些功能</strong>，<strong>怎么开发</strong>，并且在开发过程中能<strong>合理分类</strong>。</p>
+</li>
+<li><p><strong>熟悉数据结构</strong>、代码逻辑，不要让代码显得混乱，不能开发到最后自己也看不懂自己写的代码，这是一个好的程序员的基本要求（虽然自己连一个业余的程序员可能都算不上）。</p>
+</li>
+<li><p><strong>要了解开发接口</strong>，主要是了解<strong>各个函数的功能，参数和返回值</strong>。</p>
+</li>
+<li><p>开发语言最好选择自己熟悉的，这样上手会比较快。不推荐使用VB编写，VB的代码显得有些混乱，定义也不够合理，虽然API文档是用VB作为示例的，但是如果你熟悉你的开发语言的话上手会很快，没必要选择VB去牺牲很多效率。很多人还是推荐C#，作为新生的语言，它合简单易用与功能强大与一体，无论用JAVA的还是C++的人都可以在一两天内了解它。</p>
+</li>
+<li><p>开发后置难度太大，作为商业开发还可以，个人就算了。<strong>前置开发些材料模块和截面模块之类的，使之符合自己使用习惯，提高前期效率</strong>，个人用户开发做到这些就差不多了。</p>
+</li>
+</ol>
+<p>	</p>
+</blockquote>
+<h2 id="星标公众号推荐"><a href="#星标公众号推荐" class="headerlink" title="星标公众号推荐"></a>星标公众号推荐</h2><p>​	一些公众号里面的一些东西还是不错的，都是涉及到一切跨界的东西，不仅是跨界，更多的是将所做的东西正真转化成为了产品，也就是它落地了，都是值得行业内学习的知识，以下是整理的我认为还可以的公众号，就当做免费推广了🍗🍗。</p>
+<ol>
+<li>非解构</li>
+<li>Istructure</li>
+<li>建筑结构参数化</li>
+<li>Dino结构笔记</li>
+<li>NoteplusShareTheWorld</li>
+<li>Nikko结构空间</li>
+<li>以诗为码</li>
+<li>……</li>
+</ol>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>​	接下来的一篇会以帮助文件中自带的一个python二次开发的例子作为引子（例子来源是sap2000的验证问题示例1-001，这个例子从头开始创建示例来验证这个问题，运行分析、提取结果并将结果与手算的值进行比较。），将一些基础性的东西慢慢展开。这个案例在筑信达的官方推送中也做了一个比较详细的分析，值得自己将两者结合起来一起看比较好，有助于理解的更加的深刻，所用的例子虽然很小，但是很有用。</p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> bear <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+    </div>
+</body>
+
+</html>

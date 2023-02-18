@@ -48,16 +48,16 @@
         <div class="article">
     <!-- <div class="article-title">
         <h2>
-            
+            几个提升sap2000建模效率的小技巧
         </h2>
     </div> -->
     <div class="article-meta">
         <div class="article-date">
             <i class="fas fa-edit"></i>
-            2023/02/18 Sat 09:43&nbsp;&nbsp;&nbsp;
+            2023/02/09 Thu 23:51&nbsp;&nbsp;&nbsp;
             <span class="just-a-temp"><span>
             <i class="fas fa-redo"></i>
-            2023/02/18 Sat 09:43
+            2023/02/19 Sun 00:09
         </div>
     </div>
     <div class="article-content">
@@ -112,25 +112,34 @@ Ctrl+shift+F3设置三维视图
 <center>图1  新建空白文件</center>
 
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180854689.png" alt="image-20230218085410642"></p>
-<p>图2  定义荷载模式</p>
+<center>图2  定义荷载模式</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180854498.png" alt="image-20230218085446432"></p>
-<p>图3  定义荷载工况</p>
+<center>图3  定义荷载工况</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180855257.png" alt="image-20230218085509160"></p>
-<p>图4  定义荷载组合</p>
+<center>图4  定义荷载组合</center>
+
 <h3 id="2、逐项定义"><a href="#2、逐项定义" class="headerlink" title="2、逐项定义"></a>2、逐项定义</h3><p>分别在“定义荷载模式”“定义荷载工况”“定义荷载组合”中完成相关荷载的自定义，如图5、6、7所示。</p>
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180856437.png" alt="image-20230218085608293"></p>
-<p>图5  定义荷载模式</p>
+<center>图5  定义荷载模式</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180858493.png" alt="image-20230218085824449"></p>
-<p>图5  定义荷载模式</p>
+<center>图5  定义荷载模式</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180857976.png" alt="image-20230218085744929"></p>
-<p>图6 定义荷载工况</p>
+<center>图6 定义荷载工况</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180859356.png" alt="image-20230218085919210"></p>
-<p>图7  定义荷载组合</p>
+<center>图7  定义荷载组合</center>
+
 <h3 id="3、导出关于荷载定义的S2K文件"><a href="#3、导出关于荷载定义的S2K文件" class="headerlink" title="3、导出关于荷载定义的S2K文件"></a>3、导出关于荷载定义的S2K文件</h3><p>文件-导出-SAP2000文本文件（*.s2k），图8操作。弹出“选择数据库表格”，依次按照下图9中步骤执行，后点击确定并保存S2K文件到指定文件夹中。</p>
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180859028.png" alt="image-20230218085941982"></p>
-<p>图8  导出s2k文件</p>
+<center>图8  导出s2k文件</center>
+
 <p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202302180900420.png" alt="image-20230218090003372"></p>
-<p>图9  勾选需要导出的选项</p>
+<center>图9  勾选需要导出的选项</center>
+
 <h3 id="4、编辑S2K文件"><a href="#4、编辑S2K文件" class="headerlink" title="4、编辑S2K文件"></a>4、编辑S2K文件</h3><p>以文本（text）格式打开导出的S2K文件，依次找到如下的三条信息</p>
 <ol>
 <li>TABLE: “LOAD CASE DEFINITIONS”</li>
@@ -142,15 +151,19 @@ Ctrl+shift+F3设置三维视图
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvEJfAnAQm9kJSxbtibzysicibZY0eZqDdVb1Y612SgkCvQzmGe8icQoJpAQ/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvXN9NbB1CNsnGkYDEd3Fa9C9iayKrg07Y4tnufsD3fvfLJdX64cEkPow/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvXD4EWmOOqOPgH8ZgOlFcOVyJ649HnDs4ZIqfTtm15qv8qQhllj4sdw/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
-<p>图10  部分文件源码截图</p>
+<center>图10  部分文件源码截图</center>
+
 <p>5、导入S2K文件</p>
 <p>新模型调用保存好的S2K文件（包含荷载模式、荷载工况、荷载组合），文件-导入-SAP2000文本文件（*.s2k），图11操作。弹出对话框（图12），导入类型选择“合并旧模型”即可。导入S2K文件，然后检查导入日志（图13），确认无报错。检查已定义的模式、工况和组合，确认无误。</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvjGyZ6vyQNI1AVTwmr2pDJtJvCwfjBKMYpaYC9xda2ibCf2dccfLhvQA/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
-<p>图11 导入s2k文件</p>
+<center>图11 导入s2k文件</center>
+
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvF1I1aNGxLpKBBic0icJuT8jd34R5eicutRW68ibolrwwTMPtGZkCicOoZWg/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
-<p>图12 合并旧模型</p>
+<center>图12 合并旧模型</center>
+
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/AxgkV4uqQTS3HMDfCr3qTUwA88DI3wBvnSwR73XZf4UNgKgiaO1u8icxviaOxl4Oia0oRaGxkbx7lddibJ8ltg6W53g/640?wxfrom=5&wx_lazy=1&wx_co=1&wx_fmt=png" alt="图片"></p>
-<p>图13 日志检查</p>
+<center>图13 日志检查</center>
+
 <p>附上直接拿来使用的s2k模板：</p>
 <pre><code>File D:\光伏支架相关文档\结构以及计算模板-待定\模板文件\model.$2k was saved on m/d/yy at h:mm:ss
  
@@ -261,7 +274,162 @@ TABLE:  &quot;COMBINATION DEFINITIONS&quot;
 <li>结构形式相对比较的简单，参数化或者自动建模体量要小一些</li>
 <li>现在的光伏及衍生的东西比较多，而且市场上的竞争也是比较的激烈，这一块做细，或者说能够高效的出一些方案计算结果，无疑是一种有利的措施。</li>
 </ol>
-
+<hr>
+<hr>
+<p>将上面的东西分成几块来看</p>
+<pre><code>TABLE:  &quot;ACTIVE DEGREES OF FREEDOM&quot;
+   UX=Yes   UY=Yes   UZ=Yes   RX=Yes   RY=Yes   RZ=Yes
+</code></pre>
+<p>分析选项：</p>
+<pre><code>TABLE:  &quot;ANALYSIS OPTIONS&quot;
+   Solver=Advanced   SolverProc=Auto   Force32Bit=No   StiffCase=None   GeomMod=None   HingeOpt=&quot;In Elements&quot;   NumAThreads=0   MaxFileSize=0   NumDThreads=0   NumRThreads=0   UseMMFiles=&quot;Program Determined&quot;   AllowDiff=No
+</code></pre>
+<p>面截面属性</p>
+<pre><code>TABLE:  &quot;AREA SECTION PROPERTIES&quot;
+   Section=ASEC1   Material=C30   MatAngle=0   AreaType=Shell   Type=Shell-Thin   DrillDOF=Yes   Thickness=250   BendThick=250   Color=Blue   F11Mod=1   F22Mod=1   F12Mod=1   M11Mod=1   M22Mod=1   M12Mod=1   V13Mod=1   V23Mod=1   MMod=1   WMod=1
+</code></pre>
+<p>截面剖分设计参数</p>
+<pre><code>TABLE:  &quot;AREA SECTION PROPERTY DESIGN PARAMETERS&quot;
+   Section=ASEC1   RebarMat=None   RebarOpt=Default
+</code></pre>
+<p>与时间相关的截面属性</p>
+<pre><code>TABLE:  &quot;AREA SECTION PROPERTY - TIME DEPENDENT&quot;
+   Section=ASEC1   TypeSize=Auto   AutoSFSize=1
+</code></pre>
+<p>数据1-通用-自动组合选项</p>
+<pre><code>TABLE:  &quot;AUTO COMBINATION OPTION DATA 01 - GENERAL&quot;
+   DesignType=Steel   AutoGen=Yes
+   DesignType=Coldformed   AutoGen=Yes
+</code></pre>
+<p>数据2-用户自定义-自动组合选项</p>
+<p>这里主要定义了2种设计类型下的4种荷载</p>
+<pre><code>TABLE:  &quot;AUTO COMBINATION OPTION DATA 02 - USER DATA&quot;
+   DesignType=Steel   LSType=Strength   LCName=DEAD
+   DesignType=Steel   LSType=Strength   LCName=Wp
+   DesignType=Steel   LSType=Strength   LCName=Ws
+   DesignType=Steel   LSType=Strength   LCName=Snow
+   DesignType=Steel   LSType=Deflection   LCName=DEAD
+   DesignType=Steel   LSType=Deflection   LCName=Snow
+   DesignType=Coldformed   LSType=Strength   LCName=DEAD
+   DesignType=Coldformed   LSType=Strength   LCName=Wp
+   DesignType=Coldformed   LSType=Strength   LCName=Ws
+   DesignType=Coldformed   LSType=Strength   LCName=Snow
+   DesignType=Coldformed   LSType=Deflection   LCName=DEAD
+   DesignType=Coldformed   LSType=Deflection   LCName=Snow
+</code></pre>
+<p>自动生成的波浪荷载</p>
+<pre><code>TABLE:  &quot;AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL&quot;
+   WaveChar=Default   WaveType=&quot;From Theory&quot;   KinFactor=1   SWaterDepth=45000   WaveHeight=18000   WavePeriod=12   WaveTheory=Linear
+</code></pre>
+<p>自动生成的模态荷载工况</p>
+<pre><code>TABLE:  &quot;CASE - MODAL 1 - GENERAL&quot;
+   Case=MODAL   ModeType=Eigen   MaxNumModes=12   MinNumModes=1   EigenShift=0   EigenCutoff=0   EigenTol=1E-09   AutoShift=Yes
+</code></pre>
+<p>自定义的静态荷载工况</p>
+<ol>
+<li>荷载类型</li>
+<li>荷载名称</li>
+<li>比例系数</li>
+</ol>
+<pre><code>TABLE:  &quot;CASE - STATIC 1 - LOAD ASSIGNMENTS&quot;
+   Case=DEAD   LoadType=&quot;Load pattern&quot;   LoadName=DEAD   LoadSF=1
+   Case=Wp   LoadType=&quot;Load pattern&quot;   LoadName=Wp   LoadSF=1
+   Case=Ws   LoadType=&quot;Load pattern&quot;   LoadName=Ws   LoadSF=1
+   Case=Snow   LoadType=&quot;Load pattern&quot;   LoadName=Snow   LoadSF=1 
+</code></pre>
+<p>荷载组合定义</p>
+<ol>
+<li>Combo1&#x3D;1.3D+1.5Wp+1.5x0.7S</li>
+<li>Combo2&#x3D;1.3D+1.5Ws+1.5x0.7S</li>
+<li>Combo3&#x3D;1.3D+1.5Wp</li>
+<li>Combo4&#x3D;1.3D+1.5S+1.5x0.6xWp</li>
+<li>Combo5&#x3D;D+1.5Ws</li>
+<li>Combo6&#x3D;D+S+Wp</li>
+<li>Combo7&#x3D;D+S+Ws</li>
+<li>Combo8&#x3D;D+0.7S+Wp</li>
+<li>Combo9&#x3D;D+S+0.6Wp</li>
+</ol>
+<p>主要涉及的参数：</p>
+<ul>
+<li>组合名称</li>
+<li>组合类型</li>
+<li>荷载名称</li>
+<li>比例因子</li>
+<li>钢结构设计：强度&#x2F;挠度</li>
+</ul>
+<pre><code>TABLE:  &quot;COMBINATION DEFINITIONS&quot;
+   ComboName=1.3D+1.5Wp+1.5*0.7S   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=31f50dd3-03de-4159-965d-88e3e0e84fa6
+   ComboName=1.3D+1.5Wp+1.5*0.7S   CaseName=Wp   ScaleFactor=1.5
+   ComboName=1.3D+1.5Wp+1.5*0.7S   CaseName=Snow   ScaleFactor=1.05
+   ComboName=1.3D+1.5Ws+1.5*0.7S   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=fb5781b6-078a-4408-ac8f-641177b29926
+   ComboName=1.3D+1.5Ws+1.5*0.7S   CaseName=Snow   ScaleFactor=1.05
+   ComboName=1.3D+1.5Ws+1.5*0.7S   CaseName=Ws   ScaleFactor=1.5
+   ComboName=1.3D+1.5Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=9ca47bf4-600c-4387-bcbd-6ad11446f9c5
+   ComboName=1.3D+1.5Wp   CaseName=Wp   ScaleFactor=1.5
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.3   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=4d8aa9b8-a7b2-4082-b1cd-1f3258fb552f
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   CaseName=Wp   ScaleFactor=0.9
+   ComboName=1.3D+1.5S+1.5*0.6*Wp   CaseName=Snow   ScaleFactor=1.5
+   ComboName=D+1.5Ws   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=e7458b0d-fdde-40af-a620-9fbb907c62cf
+   ComboName=D+1.5Ws   CaseName=Snow   ScaleFactor=1.5
+   ComboName=D+S+Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=d42955de-f1f0-4ad8-9901-645087927f0a
+   ComboName=D+S+Wp   CaseName=Wp   ScaleFactor=1
+   ComboName=D+S+Wp   CaseName=Snow   ScaleFactor=1
+   ComboName=D+S+Ws   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=73d361b6-cbf6-4435-a456-05c20b9cba7b
+   ComboName=D+S+Ws   CaseName=Snow   ScaleFactor=1
+   ComboName=D+S+Ws   CaseName=Ws   ScaleFactor=1
+   ComboName=D+0.7S+Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=544c2630-5ef2-4a63-b179-920a39df296f
+   ComboName=D+0.7S+Wp   CaseName=Wp   ScaleFactor=1
+   ComboName=D+0.7S+Wp   CaseName=Snow   ScaleFactor=0.7
+   ComboName=D+S+0.6Wp   ComboType=&quot;Linear Add&quot;   AutoDesign=No   CaseName=DEAD   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=a276c928-2ecb-4c59-a2e9-7cad1377abe8
+   ComboName=D+S+0.6Wp   CaseName=Wp   ScaleFactor=0.6
+   ComboName=D+S+0.6Wp   CaseName=Snow   ScaleFactor=1
+</code></pre>
+<p>坐标系</p>
+<pre><code>TABLE:  &quot;COORDINATE SYSTEMS&quot;
+   Name=GLOBAL   Type=Cartesian   X=0   Y=0   Z=0   AboutZ=0   AboutY=0   AboutX=0
+</code></pre>
+<p>数据库文件</p>
+<pre><code> TABLE:  &quot;DATABASE DOCUMENTATION&quot;
+ 
+TABLE:  &quot;DATABASE FORMAT TYPES&quot;
+   UnitsCurr=Yes   OverrideE=No
+</code></pre>
+<p>各种函数的定义</p>
+<ul>
+<li>绘图函数</li>
+<li>功率谱密度函数</li>
+<li>稳态函数</li>
+<li>时程函数</li>
+</ul>
+<pre><code>TABLE:  &quot;FUNCTION - PLOT FUNCTIONS&quot;
+   PlotFunc=&quot;Input Energy&quot;   Type=Energy   Component=Input   Mode=All
+ 
+TABLE:  &quot;FUNCTION - POWER SPECTRAL DENSITY - USER&quot;
+   Name=UNIFPSD   Frequency=0   Value=1
+   Name=UNIFPSD   Frequency=1   Value=1
+ 
+TABLE:  &quot;FUNCTION - RESPONSE SPECTRUM - USER&quot;
+   Name=UNIFRS   Period=0   Accel=1   FuncDamp=0.05
+   Name=UNIFRS   Period=1   Accel=1
+ 
+TABLE:  &quot;FUNCTION - STEADY STATE - USER&quot;
+   Name=UNIFSS   Frequency=0   Value=1
+   Name=UNIFSS   Frequency=1   Value=1
+ 
+TABLE:  &quot;FUNCTION - TIME HISTORY - USER&quot;
+   Name=RAMPTH   Time=0   Value=0
+   Name=RAMPTH   Time=1   Value=1
+   Name=RAMPTH   Time=4   Value=1
+   Name=UNIFTH   Time=0   Value=1
+   Name=UNIFTH   Time=1   Value=1
+</code></pre>
+<p>网格线</p>
+<pre><code>TABLE:  &quot;GRID LINES&quot;
+   CoordSys=GLOBAL   AxisDir=X   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End   AllVisible=Yes   BubbleSize=1250
+   CoordSys=GLOBAL   AxisDir=Y   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+   CoordSys=GLOBAL   AxisDir=Z   XRYZCoord=0   LineType=Primary   LineColor=Gray8Dark   Visible=Yes   BubbleLoc=End
+</code></pre>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
     </div>
 
     <div class="totop">ToTOP</div>

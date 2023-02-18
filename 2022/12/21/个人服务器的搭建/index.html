@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        bear的生活随笔
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">bear的生活随笔</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/Runnerxr" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            个人服务器的搭建
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2022/12/21 Wed 23:51&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2023/02/19 Sun 00:20
+        </div>
+    </div>
+    <div class="article-content">
+        <h1 id="个人服务器的搭建"><a href="#个人服务器的搭建" class="headerlink" title="个人服务器的搭建"></a>个人服务器的搭建</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="搭建服务器的初衷"><a href="#搭建服务器的初衷" class="headerlink" title="搭建服务器的初衷"></a>搭建服务器的初衷</h2><p>  现阶段越来越多的场合需要用到服务器，当然也有各种各样云端的需求，本质上都是借助服务器来运转。我的想法是先尝试着搭建服务器（也借助了别人的一些帮忙），前期自己慢慢熟悉一些简单的操作和命令，后期通过一些付费的服务器实现相对比较复杂的功能，慢慢的从免费的个人服务器到付费服务器进行过渡，最后借助搭建的服务器将需求进行衍生和延申。</p>
+<h3 id="后期实现效果"><a href="#后期实现效果" class="headerlink" title="后期实现效果"></a>后期实现效果</h3><p>  我想后期实现一个相对比较实用又有趣的网站，像这样：<a target="_blank" rel="noopener" href="https://ovirgo.com/nav/%EF%BC%8C%E4%BA%A6%E6%88%96%E8%80%85%E6%98%AF%E5%83%8F%E8%BF%99%E6%A0%B7%EF%BC%9Ahttps://brucedone.com/%EF%BC%8C%E6%88%96%E8%80%85%E5%90%8E%E9%9D%A2%E8%BE%BE%E5%88%B0%E7%9A%84%E6%95%88%E6%9E%9C%E6%AF%94%E4%BB%96%E4%BB%AC%E6%9B%B4%E5%A5%BD%E3%80%82%E8%AF%9D%E8%99%BD%E7%84%B6%E6%98%AF%E8%BF%99%E4%B9%88%E8%AF%B4%EF%BC%8C%E4%B8%8D%E8%BF%87%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%BF%98%E6%B2%A1%E5%85%A5%E9%97%A8%E7%9A%84%E4%B8%9A%E4%BD%99%E9%80%89%E6%89%8B%EF%BC%8C%E5%BE%88%E5%A4%9A%E4%B8%9C%E8%A5%BF%E9%83%BD%E6%98%AF%E5%B9%B3%E6%97%B6%E8%BE%B9%E5%AD%A6%E4%B9%A0%EF%BC%8C%E8%BE%B9%E6%95%B4%E7%90%86%EF%BC%8C%E4%BB%8D%E7%84%B6%E6%9C%89%E5%BE%88%E5%A4%9A%E7%9A%84%E7%9F%A5%E8%AF%86%E7%9B%B2%E5%8C%BA%EF%BC%8C%E8%BF%98%E6%9C%89%E5%BE%88%E9%95%BF%E7%9A%84%E8%B7%AF%E9%9C%80%E8%A6%81%E8%B5%B0%E3%80%82">https://ovirgo.com/nav/，亦或者是像这样：https://brucedone.com/，或者后面达到的效果比他们更好。话虽然是这么说，不过作为一个还没入门的业余选手，很多东西都是平时边学习，边整理，仍然有很多的知识盲区，还有很长的路需要走。</a></p>
+<h3 id="搭建思路"><a href="#搭建思路" class="headerlink" title="搭建思路"></a>搭建思路</h3><ul>
+<li><p>第一步就是要做服务器的搭建工作</p>
+</li>
+<li><ul>
+<li>服务器的搭建不需要太大的一些内存，也不是特别的麻烦</li>
+<li>服务器搭建好了是看不到相应的成果的，所有需要有相应的UI，也即后面的第二步操作。</li>
+</ul>
+</li>
+<li><p>第二步就是把源码给推上去（需要进行代码的一些优化工作）</p>
+</li>
+<li><ul>
+<li>建议是搜索一些源码，然后自己修改，毕竟自己开发的难度多少还是有点大的</li>
+<li>这个就需要用到linux服务器来运行</li>
+</ul>
+</li>
+<li><p>其实博客也是可以在云服务器上进行相应的搭建的（不过自己暂时还是使用的免费的版本，后期如果有进一步的需求可以做这样的一些尝试）</p>
+</li>
+<li><ul>
+<li>购买云服务器</li>
+<li>如果有需要还要购买域名</li>
+</ul>
+</li>
+<li><p>过渡过程：先用虚拟机，在上面把相应的一些基础练习好，配合一些专业方面的手册进行一些练习</p>
+</li>
+</ul>
+<h3 id="几个用到的网站"><a href="#几个用到的网站" class="headerlink" title="几个用到的网站"></a>几个用到的网站</h3><ol>
+<li><a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/7/isos/x86_64/(%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%BC%80%E6%BA%90%E9%95%9C%E5%83%8F1)">http://mirrors.aliyun.com/centos/7/isos/x86_64/(阿里巴巴开源镜像1)</a></li>
+<li><a target="_blank" rel="noopener" href="https://renwole.com/archives/1526%EF%BC%88%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD2%EF%BC%89">https://renwole.com/archives/1526（官方原版镜像下载2）</a></li>
+<li><a target="_blank" rel="noopener" href="http://192.168.41.132/phpinfo.php%EF%BC%88%E6%9C%80%E7%BB%88%E6%90%AD%E5%BB%BA%E5%A5%BD%E7%9A%84%E7%BD%91%E5%9D%80%EF%BC%8C%E6%89%93%E5%BC%80%E8%A1%A8%E7%A4%BALNMP%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F%EF%BC%8C%E5%85%B7%E4%BD%93%E7%9A%84%E9%83%A8%E7%BD%B2%E8%A7%81%E5%90%8E%E6%96%87%EF%BC%89">http://192.168.41.132/phpinfo.php（最终搭建好的网址，打开表示LNMP环境部署成功，具体的部署见后文）</a></li>
+</ol>
+<p>备注：网站上centos镜像相当于一个系统盘，里面有系统安装需要的一些相关的信息，核心版本的比较小，没有桌面版本和其他的一些非必要的软件；后续是需要用命令行操作，然后根据自己的需要进行一些其他的软件安装。Linux系统下采用Nginx+MySQL+PHP这种网站服务器架构来一起搭建</p>
+<h3 id="第一步：使用VMware工具创建Linux虚拟机"><a href="#第一步：使用VMware工具创建Linux虚拟机" class="headerlink" title="第一步：使用VMware工具创建Linux虚拟机"></a>第一步：使用VMware工具创建Linux虚拟机</h3><p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132228871.png" alt="image-20221213222826555"></p>
+<h3 id="第二步：选择ISO映像文件"><a href="#第二步：选择ISO映像文件" class="headerlink" title="第二步：选择ISO映像文件"></a>第二步：选择ISO映像文件</h3><p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132228680.png" alt="image-20221213222857585"></p>
+<h3 id="第三步：选择网卡类型（不会使用其他类型的网卡情况下可选择桥接模式）"><a href="#第三步：选择网卡类型（不会使用其他类型的网卡情况下可选择桥接模式）" class="headerlink" title="第三步：选择网卡类型（不会使用其他类型的网卡情况下可选择桥接模式）"></a>第三步：选择网卡类型（不会使用其他类型的网卡情况下可选择桥接模式）</h3><p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132229119.png" alt="image-20221213222928067"></p>
+<h3 id="第四步：开启虚拟机（正式安装虚拟机系统），这里就不做过多解释。"><a href="#第四步：开启虚拟机（正式安装虚拟机系统），这里就不做过多解释。" class="headerlink" title="第四步：开启虚拟机（正式安装虚拟机系统），这里就不做过多解释。"></a>第四步：开启虚拟机（正式安装虚拟机系统），这里就不做过多解释。</h3><h3 id="第五步：设置虚拟机网卡（DHCP模式-启动网卡）"><a href="#第五步：设置虚拟机网卡（DHCP模式-启动网卡）" class="headerlink" title="第五步：设置虚拟机网卡（DHCP模式 启动网卡）"></a>第五步：设置虚拟机网卡（DHCP模式 启动网卡）</h3><p>网卡地址：vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132230589.png" alt="image-20221213223016539"></p>
+<h3 id="第六步：启动网络"><a href="#第六步：启动网络" class="headerlink" title="第六步：启动网络"></a>第六步：启动网络</h3><p>命令：</p>
+<pre><code>systemctl restart network 
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132230657.png" alt="image-20221213223045597"></p>
+<h3 id="第七步：配置本地yum源仓库（等于应用商城）"><a href="#第七步：配置本地yum源仓库（等于应用商城）" class="headerlink" title="第七步：配置本地yum源仓库（等于应用商城）"></a>第七步：配置本地yum源仓库（等于应用商城）</h3><p>1.使用rm -rf * 命令将 &#x2F;etc&#x2F;yum.repos.d&#x2F;目录下的文件删除<br>命令：</p>
+<pre><code>[root@localhost /]# rm -rf /etc/yum.repos.d/*
+</code></pre>
+<p>2.在&#x2F;etc&#x2F;yum.repos.d&#x2F;目录下重新创建yum源配置文件 命令与配置如下<br>命令：</p>
+<pre><code>vi /etc/yum.repos.d/CentOS-Media.repo
+</code></pre>
+<p>#配置文件</p>
+<pre><code>[c7-media]
+name=CentOS-$releasever - Media
+baseurl=file:///mnt
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+</code></pre>
+<h3 id="第八步：本地挂载yum源仓库"><a href="#第八步：本地挂载yum源仓库" class="headerlink" title="第八步：本地挂载yum源仓库"></a>第八步：本地挂载yum源仓库</h3><p>1.虚拟机连接镜像文件</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132231697.png" alt="image-20221213223159608"></p>
+<p>2.使用mount命令挂载yum源仓库</p>
+<p>命令：</p>
+<pre><code>mount /dev/cdrom /mnt/
+</code></pre>
+<p>截图：</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132234989.png" alt="image-20221213223431930"></p>
+<h3 id="第九步：安装搭建服务需要的软件工具"><a href="#第九步：安装搭建服务需要的软件工具" class="headerlink" title="第九步：安装搭建服务需要的软件工具"></a>第九步：安装搭建服务需要的软件工具</h3><p>命令：</p>
+<pre><code>yum install wget unzip -y 
+</code></pre>
+<h3 id="第十步：关闭防火墙与selinux"><a href="#第十步：关闭防火墙与selinux" class="headerlink" title="第十步：关闭防火墙与selinux"></a>第十步：关闭防火墙与selinux</h3><p>命令：</p>
+<pre><code>[root@localhost /]# systemctl stop firewalld 
+[root@localhost /]# setenforce 0
+</code></pre>
+<p>截图：</p>
+<p> <img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132235938.png" alt="image-20221213223523868"></p>
+<h3 id="第十一步：安装epel仓库（本地应用商店软件不全需要加一个线上的软件仓库）"><a href="#第十一步：安装epel仓库（本地应用商店软件不全需要加一个线上的软件仓库）" class="headerlink" title="第十一步：安装epel仓库（本地应用商店软件不全需要加一个线上的软件仓库）"></a>第十一步：安装epel仓库（本地应用商店软件不全需要加一个线上的软件仓库）</h3><p>命令：</p>
+<pre><code>wget -O /etc/yum.repos.d/epel.repo https://mirrors.aliyun.com/repo/epel-7.repo
+</code></pre>
+<h3 id="第十二步：安装Nginx服务器"><a href="#第十二步：安装Nginx服务器" class="headerlink" title="第十二步：安装Nginx服务器"></a>第十二步：安装Nginx服务器</h3><p>命令：</p>
+<pre><code>yum -y install nginx
+</code></pre>
+<p>运行以下命令查看Nginx版本</p>
+<pre><code>nginx -v
+</code></pre>
+<h3 id="第十三步：安装MySQL"><a href="#第十三步：安装MySQL" class="headerlink" title="第十三步：安装MySQL"></a>第十三步：安装MySQL</h3><p>1.运行以下命令更新YUM源</p>
+<pre><code>rpm -Uvh http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+</code></pre>
+<p>2.运行以下命令安装MySQL</p>
+<pre><code>yum -y install mysql-community-server --nogpgcheck
+</code></pre>
+<p>3.运行以下命令查看MySQL版本号</p>
+<pre><code>mysql -V
+</code></pre>
+<p>4.运行以下命令启动MySQL</p>
+<pre><code>systemctl start mysqld
+</code></pre>
+<h3 id="第十四步：安装PHP"><a href="#第十四步：安装PHP" class="headerlink" title="第十四步：安装PHP"></a>第十四步：安装PHP</h3><p>1.更新YUM源</p>
+<p>运行以下命令添加EPEL源</p>
+<pre><code>Yum install \
+https://repo.ius.io/ius-release-el7.rpm \
+https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</code></pre>
+<p>2.运行以下命令添加Webtatic源</p>
+<pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+</code></pre>
+<p>3.运行以下命令安装PHP(实际敲击命令行时，中间直接用空格连接)</p>
+<pre><code>yum -y install php70w-devel
+php70w.x86_64
+php70w-cli.x86_64
+php70w-common.x86_64
+php70w-gd.x86_64
+php70w-ldap.x86_64
+php70w-mbstring.x86_64
+php70w-mcrypt.x86_64
+php70w-pdo.x86_64
+php70w-mysqlnd
+php70w-fpm
+php70w-opcache
+php70w-pecl-redis
+php70w-pecl-mongodb
+</code></pre>
+<p>4.运行以下命令查看PHP版本。</p>
+<pre><code>php -v
+</code></pre>
+<h3 id="第十五步：配置Nginx"><a href="#第十五步：配置Nginx" class="headerlink" title="第十五步：配置Nginx"></a>第十五步：配置Nginx</h3><p>1.运行以下命令备份Nginx配置文件</p>
+<pre><code>cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+</code></pre>
+<p>2.修改Nginx配置文件 添加Nginx对PHP的支持<br>说明：若不添加此配置信息，后续您使用浏览器访问PHP页面时，页面将无法显示<br>#运行以下命令打开Nginx配置文件</p>
+<pre><code>vim /etc/nginx/nginx.conf
+添加或修改location /配置信息
+        location / &#123;
+           index index.php index.html index.htm;
+        &#125;
+添加或修改location ~ .php$配置信息。
+        #添加下列信息，配置Nginx通过fastcgi方式处理您的PHP请求
+        location ~ .php$ &#123;
+            root /usr/share/nginx/html;   
+            fastcgi_pass 127.0.0.1:9000;  
+            fastcgi_index index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            include fastcgi_params;   
+        &#125;        
+</code></pre>
+<p>配置截图如下：</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132247364.png" alt="image-20221213224747293"></p>
+<p>3.运行以下命令启动Nginx服务</p>
+<pre><code>systemctl start nginx
+</code></pre>
+<h3 id="第十六步：配置MySQL"><a href="#第十六步：配置MySQL" class="headerlink" title="第十六步：配置MySQL"></a>第十六步：配置MySQL</h3><p>1.运行以下命令查看&#x2F;var&#x2F;log&#x2F;mysqld.log文件，获取并记录root用户的初始密码</p>
+<p>命令：</p>
+<pre><code>grep &#39;temporary password&#39; /var/log/mysqld.log
+</code></pre>
+<p>2.命令行返回结果如下，其中ARQTRy3+n8*W为MySQL的初始密码。在下一步重置root用户密码时，会使用该初始密码</p>
+<p>返回结果如下：</p>
+<pre><code>2021-11-10T07:01:26.595215Z 1 [Note] A temporary password is generated for root@localhost: ARQTRy3+n8*W #红色字体为当前数据库密码
+</code></pre>
+<p>3.运行以下命令配置MySQL的安全性</p>
+<pre><code>mysql_secure_installation
+</code></pre>
+<h3 id="第十七步：配置PHP"><a href="#第十七步：配置PHP" class="headerlink" title="第十七步：配置PHP"></a>第十七步：配置PHP</h3><p>1.新建并编辑phpinfo.php文件，用于展示PHP信息</p>
+<p>运行以下命令新建phpinfo.php文件</p>
+<pre><code>vim &lt;网站根目录&gt;/phpinfo.php
+</code></pre>
+<p>&lt;网站根目录&gt;是在nginx.conf配置文件中location ~ .php$大括号内，配置的root参数值，如下图所示</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132249622.png" alt="image-20221213224919502"></p>
+<p>本配置的网站根目录为&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html，因此需要运行以下命令新建phpinfo.php文件，命令与配置如下：</p>
+<pre><code>vim /usr/share/nginx/html/phpinfo.php
+&lt;?php echo phpinfo(); ?&gt;
+</code></pre>
+<p>2.运行以下命令启动PHP-FPM。</p>
+<pre><code>systemctl start php-fpm
+</code></pre>
+<h3 id="第十八步：测试访问LNMP配置信息页面"><a href="#第十八步：测试访问LNMP配置信息页面" class="headerlink" title="第十八步：测试访问LNMP配置信息页面"></a>第十八步：测试访问LNMP配置信息页面</h3><p>在本地Windows主机打开浏览器，在浏览器的地址栏输入http:&#x2F;&#x2F;虚拟机ip地址&#x2F;phpinfo.php进行访问</p>
+<p>访问结果如下图所示，表示LNMP环境部署成功</p>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212132250324.png" alt="image-20221213225020275"></p>
+<hr>
+<hr>
+<h3 id="几个问题整理汇总"><a href="#几个问题整理汇总" class="headerlink" title="几个问题整理汇总"></a>几个问题整理汇总</h3><ol>
+<li>VMware安装在了c盘，这个影响大嘛（C:\Program Files (x86)\VMware\VMware Workstation）<ol>
+<li>VMware VIX文件夹</li>
+<li>VMware Workstation文件夹</li>
+<li>在站内，我的计算机有两个，这两个是都能运行嘛？（两个用的ISO镜像文件不同，还是说第二个只是试验）<ol>
+<li>CentOS 7 64位</li>
+<li>c2</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>FinalShell 3.9.5.7主要是用来干什么的？</li>
+<li>桌面上多余的几个文件我可以备份之后然后删除吧？</li>
+<li>第五步的网卡网址：vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33主要是用来干什么的？</li>
+<li>配置本地yum源仓库是用来干什么的？</li>
+<li>前8步是不是可以认为是在装虚拟机，然后后面的是在搭建服务器，每次需要重新搭建嘛？</li>
+<li>之前桌面上的这个inmp.txt，是什么语言编写的，里面的语句是在什么时候用到的？（我仔细对比了一下你之前发给我的文档，就是用在这个里面的）？</li>
+<li>在我F盘里的“CentOS-7-x86_64-DVD-2009.iso”，这个文件应该就是第二步的这个选择镜像文件吧？</li>
+<li>Centos 7安装php7报错（error: Failed dependencies: epel-release &gt;&#x3D; 7 is needed by webtatic-release-7-3.no）-解决办法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41820981/article/details/103324642">https://blog.csdn.net/qq_41820981/article/details/103324642</a></li>
+<li>linux 安装插件报错：Loaded plugins: fastestmirror—解决办法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/promsing/article/details/121912701">https://blog.csdn.net/promsing/article/details/121912701</a></li>
+</ol>
+<hr>
+<h2 id="什么是虚拟机？"><a href="#什么是虚拟机？" class="headerlink" title="什么是虚拟机？"></a>什么是虚拟机？</h2><p>  虚拟机是指行为方式类似于实际计算机的计算机文件。换言之，即<strong>在计算机内创建一台计算机</strong>。它像任何其他程序一样在窗口中运行，让最终用户在虚拟机上享受如在主机操作系统上的相同体验。虚拟机脱离系统其余部分进行了沙盒化，这意味着虚拟机中的软件不可转义或篡改计算机本身。这制造了一种理想的环境，可用于测试其他操作系统（包括 beta 版本）、访问感染病毒的数据、创建操作系统备份，以及在操作系统上运行原本不打算运行的软件或应用程序。</p>
+<p>  多个虚拟机可以在同一实体计算机上同时运行。对服务器而言，<strong>多个操作系统并排运行</strong>，并具有一个称为<strong>虚拟机监控程序的软件</strong>进行管理；而台式计算机通常使用一个操作系统在其程序窗口内运行其他操作系统。<strong>每个虚拟机都提供自己的虚拟硬件，包括 CPU、内存、硬盘、网络接口和其他设备</strong>。然后，虚拟硬件将映射到物理计算机的真实硬件上，这可减少物理硬件系统需求和伴随的相关维护成本以节省开销，还可降低功率和冷却需求。</p>
+<p>  虚拟机还是运行在你的主机系统里面的，所以安装出来的虚拟机系统是需要与你的主机硬件所共享的。VMware：是全球云基础架构和移动商务解决方案厂商，提供基于VMware的解决方案，企业通过数据中心改造和云整合业务，借助企业安全转型维系客户信任，实现任意云端和设备上运行、管理、连接及保护任意运用。</p>
+<h3 id="VMare的主要特点"><a href="#VMare的主要特点" class="headerlink" title="VMare的主要特点"></a>VMare的主要特点</h3><ul>
+<li>不需要分区或重新开机就能在同一台PC上使用两种以上的操作系统</li>
+<li>本机系统可以与虚拟机系统网络通信</li>
+<li>可以设定并且随时修改虚拟机操作系统的硬件环境，如内存配置、硬盘大小（注意：不能超过真实主机硬件上限）</li>
+<li>虚拟机快照可以保存操作系统当前状态，若后续Linux系统崩溃，可以使用快照恢复</li>
+</ul>
+<p><strong>VMware的使用</strong></p>
+<ul>
+<li><p>新建虚拟机</p>
+</li>
+<li><p>虚拟机硬件设置、网络设置</p>
+</li>
+<li><p>网络适配器：推荐选择桥接</p>
+</li>
+<li><p>快照</p>
+</li>
+<li><p>克隆</p>
+<p>当安装完VMware时，真实主机中会出现两个虚拟机网卡；还有真实主机自己本身的网卡：无线网卡和有线网卡</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Runnerxr/blogImage/main/img/202212142119555.png" alt="image-20221214211904369"></p>
+<ol>
+<li>选择桥接模式，虚拟机和真实机之间通信利用真实的网卡，有可能是无线网卡或有线网卡<ol>
+<li>好处：配置简单，只需要勾选桥接模式即可；可与同网段局域网内其他主机通信</li>
+<li>缺点：虚拟机需要占用真实机网段的一个ip，如我当前真实主机真实ip为192.168.20.92，虚拟机也要占用192.168.20.的一个ip</li>
+</ol>
+</li>
+<li>选择NAT模式，那虚拟机和真实主机之间通过VMnet8通信；只能与本机通信；虚拟机可上网</li>
+<li>选择Host-only模式，那虚拟机和真实主机之间通过VMnet1通信；只能与本机通信；虚拟机不可上网</li>
+</ol>
+<p>VMware使用：快照</p>
+<ul>
+<li>创建快照</li>
+<li>恢复快照（快照保存了某时刻虚拟机状态，等之后若需要时，可恢复到某个快照的状态）</li>
+<li>删除快照</li>
+</ul>
+<p>VMware使用：克隆</p>
+<hr>
+<h2 id="windows和linux的区别"><a href="#windows和linux的区别" class="headerlink" title="windows和linux的区别"></a>windows和linux的区别</h2><ol>
+<li><p>首先从界面上个人感觉windows的界面比linux漂亮，从视觉效果上来看windows给人感觉更好</p>
+</li>
+<li><p>软件的使用，linux软件都是开源的由全国各地技术执行者提供，windows上也有免费的但很多是需要授权才可以使用的。</p>
+</li>
+<li><p>在使用方面的区别是windows可以直接打开软件进行图形界面的操作，而linux系统经常通过命令行来执行。</p>
+</li>
+<li><p>从安全方面来，windows系统要经常通过打补丁来保证系统的安全，但Linux系统却不用，因为现在大部分的病毒软件在linux系统是无法运行的。就算是可以在linux上运行，由于linux是开源的全世界的人都在维护所以在安全方面更有保证。</p>
+</li>
+<li><p>在两种系统的作用方面主要分为两种，一种是普通用户的使用，另外一种是使用服务器来使用。不过现在由于软件的开发，两种系统都可以提供用户和服务器使用。</p>
+</li>
+</ol>
+<h3 id="linux优缺点一览"><a href="#linux优缺点一览" class="headerlink" title="linux优缺点一览"></a>linux优缺点一览</h3><p>​	<strong>什么是linux?</strong></p>
+<p>​	Linux是一套免费使用和自由传播的类Unix操作系统，是一个多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<h4 id="1-模块化程度高"><a href="#1-模块化程度高" class="headerlink" title="1.模块化程度高"></a><strong>1.模块化程度高</strong></h4><p>　　Linux的内核设计非常精巧，分成进程调度、内存管理、进程间通信、虚拟文件系统和网络接口五大部分;其独特的模块机制可根据用户的需要，实时地将某些模块插入或从内核中移走，使得Linux系统内核可以裁剪得非常小巧，很适合于嵌入式系统的需要。</p>
+<h4 id="2-源码公开"><a href="#2-源码公开" class="headerlink" title="2.源码公开"></a><strong>2.源码公开</strong></h4><p>　　由于Linux系统的开发从一开始就与GNU项目紧密地结合起来，所以它的大多数组成部分都直接来自GNU项目。任何人、任何组织只要遵守GPL条 款，就可以自由使用Linux 源代码，为用户提供了最大限度的自由度。这一点也正投嵌入式系统所好，因为嵌入式系统应用千差万别，设计者往往需要针对具体的应用对源码进行修改和优化， 所以是否能获得源代码 对于嵌入式系统的开发是至关重要的。加之Linux的软件资源十分丰富，每种通用程序在Linux上几乎都可以找到，并且数量还在不断增加。这一切就使设计者在其基础之上进行二次开发变得非常容易。另外，由于Linux源代码公开，也使用户不用担心有“后闸”等安全隐患。</p>
+<p>　　同时，源码开放给各教育机构提供极大的方便，从而也促进了Linux的学习、推广和应用</p>
+<h4 id="3-广泛的硬件支持"><a href="#3-广泛的硬件支持" class="headerlink" title="3.广泛的硬件支持"></a><strong>3.广泛的硬件支持</strong></h4><p>　　Linux能支持x86、ARM、MIPS、ALPHA和PowerPC等多种体系结构的微处理器。目前已成功地移植到数十种硬件平台，几乎能运行在所有流行的处理器上。</p>
+<p>　　由于世界范围内有众多开发者在为Linux的扩充贡献力量，所以Linux有着异常丰富的驱动程序资源，支持各种主流硬件设各和最新的硬件技术，甚至可在没有存储管理单元MMU 的处理器上运行，这些都进一步促进了Linux在嵌入式系统中的应用。</p>
+<h4 id="4-安全性及可靠性好"><a href="#4-安全性及可靠性好" class="headerlink" title="4.安全性及可靠性好"></a><strong>4.安全性及可靠性好</strong></h4><p>​	内核高效稳定。Linux内核的高效和稳定已在各个领域内得到了大量事实的验证。</p>
+<p>​	Linux中大量网络管理、网络服务等方面的功能，可使用户很方便地建立高效稳定的防火墙、路由器、工作站、服务器等。为提高安全性，它还提供了大量的网络管理软件、网络分析软件和网络安全软件等。</p>
+<h4 id="5-具有优秀的开发工具"><a href="#5-具有优秀的开发工具" class="headerlink" title="5.具有优秀的开发工具"></a><strong>5.具有优秀的开发工具</strong></h4><p>​	开发嵌入式系统的关键是需要有一套完善的开发和调试工具。传统的嵌入式开发调试工具是在线仿真器(In Circuit Emulator，ICE)，它通过取代目标板的微处理器，给目标程序提供一个完整的仿真环境，从而使开发者能非常清楚地了解到程序在目标板上的工作状态，便于监视和调试程序。在线仿真器的价格非常高，而且只适合做非常底层的调试。如果使用的是嵌人式Linux，一旦软硬件能支持正常的串口功能，即使不用在线仿真器，也可以很好地进行开发和调试工作，从而节省了一笔不小的开发费用。嵌入式Linux为开发者提供了一套完整的工具链(Tool Chain)，能够很方便地实现从操作系统到应用软件各个级别的调试。</p>
+<h4 id="6-有很好的网络支持利文件系统支持"><a href="#6-有很好的网络支持利文件系统支持" class="headerlink" title="6.有很好的网络支持利文件系统支持"></a><strong>6.有很好的网络支持利文件系统支持</strong></h4><p>​	Linux从诞生之日起就与Internet密不可分，支持各种标准的Internet网络协议，并且很容易移植到嵌入式系统当中。目前，Linux几乎支持所有主流的网络硬件、网络协议和文件系统，因此它是NFS的一个很好的平台。</p>
+<p>​	另一方面，由于Linux有很好的文件系统支持(例如，它支持Ext2、FAT32、romfs等文件系统)，是数据各份、同步和复制的良好平台，这些都为开发嵌入式系统应用打下了坚实的基础。</p>
+<h4 id="7-与UNIX完全兼容"><a href="#7-与UNIX完全兼容" class="headerlink" title="7.与UNIX完全兼容"></a><strong>7.与UNIX完全兼容</strong></h4><p>​	目前，在Linux中所包含的工具和实用程序，可以完成UNIX的所有主要功能。但由于Linux不是为实时而设计的，因而这就成了Linux在实时系统中应用的最大遗憾。不过，目前有众多的自由软件爱好者正在为此进行不懈的努力，也取得了诸多成果。</p>
+<hr>
+<h2 id="补充一些linux常用命令的基础知识"><a href="#补充一些linux常用命令的基础知识" class="headerlink" title="补充一些linux常用命令的基础知识"></a>补充一些linux常用命令的基础知识</h2><p>正常情况下按 A进入编辑模式修改文件后按ESC退出编辑模式，:wq命令保存退出，但经常会遇到以上显示，文件权限只读或者当前账号权限不足，导致无法修改，只需要 :wq! 命令，在后面加个感叹号!即可保存退出。</p>
+<p>：wq - &gt;保存退出<br>：wq！- &gt; 强制保存退出</p>
+<p>Linux关闭防火墙和Selinux</p>
+<p>1、查看防火墙状态</p>
+<pre><code>systemctl status firewalld
+</code></pre>
+<p>2、临时关闭防火墙</p>
+<pre><code>systemctl stop firewalld
+</code></pre>
+<p>3、开机启动关闭防火墙（永久关闭）</p>
+<pre><code>systemctl disable firewalld
+</code></pre>
+<p>4、开启防火墙</p>
+<pre><code>systemctl start firewalld
+</code></pre>
+<p>5、开机时自动开启防火墙</p>
+<pre><code>systemctl enable firewalld
+</code></pre>
+<p>以下的参考链接为一篇十分详细的linux命令的帖子，可以自己有空的时候多多的看看，但是想要完全掌握那一时半会是很难的（超详细版本）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwei0376/article/details/88245472">https://blog.csdn.net/liuwei0376/article/details/88245472</a></p>
+<p>同样这里我也收集了最常用的一些命令</p>
+<p>pwd 显示工作路径</p>
+<p>shutdown -h now 关闭系统  &#x2F;halt 关闭系统</p>
+<p>shutdown -r now 重启 &#x2F;reboot 重启</p>
+<p>systemctl stop firewalld 关闭防火墙</p>
+<p>ip addr 查看ip地址</p>
+<p>1、cd命令：这是一个基本的，也是经常需要使用的命令，用于切换当前的目录，它的参数是要切换到的目录的路径，可以是绝对路径，也可以是相对路径：</p>
+<pre><code>cd /home  进入更目录下面的home目录
+cd home 进入当前目录下的home目录
+cd... 返回上一层目录
+cd.../... 返回上两级目录
+cd./ 返回根目录
+cd -返回上次所在的目录
+</code></pre>
+<p>2、ls命令：是与查看文件与目录的命令，list之意，参数非常的多，常用的一些参数如下</p>
+<pre><code>ls 查看目录中的文件
+ls -a 列出全部的文件，连同隐藏的文件一起列出来
+ls -l 显示文件和目录的详细资料
+</code></pre>
+<p>3、mkdir命令：创建</p>
+<pre><code>mkdir dir1 创建一个叫做&quot;dir1&quot;的目录
+mkdir dir1 dir2 同时创建两个目录
+</code></pre>
+<p>4、rm命令：删除</p>
+<pre><code>rm -f file1 删除一个叫做&quot;file1&quot;的文件
+rmdir dir1 　　删除一个叫做 &#39;dir1&#39; 的目录&#39; （空目录才能删除）
+rm -rf dir1 　　删除一个叫做 &#39;dir1&#39; 的目录并同时删除其内容 
+rm -rf dir1 dir2　　 同时删除两个目录及它们的内容 
+</code></pre>
+<p>5、mv命令：该命令用于移动文件、目录或更名，move之意，它的常用参数如下：-f 如果目标文件已经存在，不会询问而直接覆盖</p>
+<pre><code>mv file1 file2  把文件file1重命名为file2 
+mv file1 file2 dir  把文件file1、file2移动到目录dir中
+</code></pre>
+<p>6、cp命令：该命令用于复制文件，copy之意，它还可以把多个文件一次性地复制到一个目录下， 它的常用参数如下：</p>
+<pre><code>cp -a file1 file2 连同文件的所有特性把文件file1复制成文件file2
+cp dir/* . 复制一个目录下的所有文件到当前工作目录 
+cp -a /tmp/dir1 . 复制一个目录到当前工作目录 
+cp -a dir1 dir2 复制一个目录 
+</code></pre>
+<p>7、find命令：find是一个基于查找的功能非常强大的命令</p>
+<pre><code>find / -name file1 从 &#39;/&#39; 开始进入根文件系统搜索文件和目录 
+find / -user user1 搜索属于用户 &#39;user1&#39; 的文件和目录 
+find /home/user1 -name \*.bin 在目录 &#39;/ home/user1&#39; 中搜索带有&#39;.bin&#39; 结尾的文件 
+find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件 
+find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件 
+</code></pre>
+<p>8、ps命令：该命令用于将某个时间点的进程运行情况选取下来并输出，process之意，它的常用参数如下：</p>
+<pre><code>-A ：所有的进程均显示出来 
+-a ：不与terminal有关的所有进程  
+-u ：有效用户的相关进程  
+-x ：一般与a参数一起使用，可列出较完整的信息  
+-l ：较长，较详细地将PID的信息列出  
+其实我们只要记住ps一般使用的命令参数搭配即可，它们并不多，如下：
+ps aux  查看系统所有的进程数据  
+ps ax  查看不与terminal有关的所有进程  
+ps -lA  查看系统所有的进程数据  
+ps axjf  查看连同一部分进程树状态
+</code></pre>
+<p>9、kill命令：该命令用于向某个工作（%jobnumber）或者是某个PID（数字）传送一个信号，它通常与ps和jobs命令一起使用，它的基本语法如下：</p>
+<pre><code>kill -signal PID 
+signal的常用参数如下：注：最前面的数字为信号的代号，使用时可以用代号代替相应的信号。
+
+1：SIGHUP，启动被终止的进程  
+2：SIGINT，相当于输入ctrl+c，中断一个程序的进行  
+9：SIGKILL，强制中断一个进程的进行  
+15：SIGTERM，以正常的结束进程方式来终止进程  
+17：SIGSTOP，相当于输入ctrl+z，暂停一个进程的进行  
+例如：
+\# 以正常的结束进程方式来终于第一个后台工作，可用jobs命令查看后台中的第一个工作进程  
+kill -SIGTERM %1   
+\# 重新改动进程ID为PID的进程，PID可用ps命令通过管道命令加上grep命令进行筛选获得  
+kill -SIGHUP PID 
+</code></pre>
+<p> 10、tar命令：该命令用于对文件进行打包，默认情况并不会压缩，如果指定了相应的参数，它还会调用相应的压缩程序（如gzip和bzip等）进行压缩和解压。它的常用参数如下：</p>
+<pre><code>1. 压缩：tar -jcv -f filename.tar.bz2 要被处理的文件或目录名称 
+2. 查询：tar -jtv -f filename.tar.bz2 
+3. 解压：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录 
+</code></pre>
+<p>11、chmod命令：该命令用于改变文件的权限，一般的用法如下：</p>
+<pre><code>chmod -R 777   chmod -R 777 意思就是将当前目录及目录下所有文件都给予777权限（所有权限）
+</code></pre>
+<p><strong>查看文件内容</strong> </p>
+<pre><code>cat file1 从第一个字节开始正向查看文件的内容 
+tac file1 从最后一行开始反向查看一个文件的内容 
+more file1 查看一个长文件的内容 
+less file1 类似于 &#39;more&#39; 命令，但是它允许在文件中和正向操作一样的反向操作 
+head -2 file1 查看一个文件的前两行 
+tail -2 file1 查看一个文件的最后两行 
+tail -f /var/log/messages 实时查看被添加到一个文件中的内容
+</code></pre>
+<p><strong>YUM 软件包升级器 - （Fedora, RedHat及类似系统）</strong> </p>
+<pre><code>yum install package_name 下载并安装一个rpm包 
+yum localinstall package_name.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系 
+yum update package_name.rpm 更新当前系统中所有安装的rpm包 
+yum update package_name 更新一个rpm包 
+yum remove package_name 删除一个rpm包 
+yum list 列出当前系统中安装的所有包 
+yum search package_name 在rpm仓库中搜寻软件包 
+yum clean packages 清理rpm缓存删除下载的包 
+yum clean headers 删除所有头文件 
+yum clean all 删除所有缓存的包和头文件 
+</code></pre>
+<hr>
+<h2 id="Linux一键安装Nginx-MySQL-PHP环境"><a href="#Linux一键安装Nginx-MySQL-PHP环境" class="headerlink" title="Linux一键安装Nginx +MySQL+PHP环境"></a>Linux一键安装Nginx +MySQL+PHP环境</h2><p>学习了半天发现自己好像连基本的环境都没有理清楚，所以自己还需要再单独的整理一下</p>
+<h2 id="一、LNMP-介绍"><a href="#一、LNMP-介绍" class="headerlink" title="一、LNMP 介绍"></a>一、LNMP 介绍</h2><p>LNMP 是指一组通常一起使用来运行动态网站或者服务器的自由软件名称首字母缩写，即 Linux + Nginx + MySQL +  PHP，相应的，还有 LAMP(Linux + Apache + MySQL + PHP)，以及 LNMPA(Linux + Nginx +  MySQL + PHP + Apache)。Apache 更耗内存，并且 Nginx 作为网络服务器完全够用。</p>
+<h2 id="二、LNMP-一键安装"><a href="#二、LNMP-一键安装" class="headerlink" title="二、LNMP 一键安装"></a>二、LNMP 一键安装</h2><h3 id="1-开启安装窗口"><a href="#1-开启安装窗口" class="headerlink" title="1.开启安装窗口"></a>1.开启安装窗口</h3><p>可选操作。因为安装 LNMP 是比较耗时的操作（安装 + 优化），基本需要 30 分钟左右，具体时间与你 VPS  的配置有关，所以建议大家单独开启一个安装窗口，这样就算中途断开 VPS 的连接，也可以再次连上去查看 LNMP 安装进度。开启安装窗口命令如下：</p>
+<pre><code>screen -S lnmp
+</code></pre>
+<p>这里如果提示 <code>screen: command not found</code>，则先安装 screen：</p>
+<pre><code># CentOS
+yum update -y &amp;&amp; yum -y install screen
+# Ubuntu/Debian
+apt-get update -y &amp;&amp; apt-get install screen -y
+</code></pre>
+<p>如果你在安装 LNMP 过程中中途断开，则可以通过 <code>screen -r lnmp</code> 命令重新打开安装窗口。</p>
+<h3 id="2-一键安装-LNMP"><a href="#2-一键安装-LNMP" class="headerlink" title="2.一键安装 LNMP"></a>2.一键安装 LNMP</h3><p>LNMP 一键脚本使用命令如下：</p>
+<pre><code>wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz &amp;&amp; tar zxf lnmp1.6.tar.gz &amp;&amp; cd lnmp1.6 &amp;&amp; ./install.sh lnmp
+</code></pre>
+<p>这里如果你想安装 LAMP 或者 LNMPA，那么只需要将 install.sh 后面的参数 lnmp 换成 lamp 或者 lnmpa。</p>
+<p>同样的，如果提示 <code>wget: command not found</code>，则先安装 wget：</p>
+<pre><code># CentOS
+yum update -y &amp;&amp; yum -y install wget
+# Ubuntu/Debian
+apt-get update -y &amp;&amp; apt-get install wget -y
+</code></pre>
+<p>选择 Nginx + MySQL + PHP 的版本，PHP 建议使用 7 以上的版本，其他可以默认：</p>
+<h2 id="三、LNMP-配置文件介绍"><a href="#三、LNMP-配置文件介绍" class="headerlink" title="三、LNMP 配置文件介绍"></a>三、LNMP 配置文件介绍</h2><p>一键安装 LNMP 环境后， Nginx + MySQL + PHP 的默认安装目录如下：</p>
+<blockquote>
+<p>Nginx 目录: &#x2F;usr&#x2F;local&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/nginx">nginx</a>&#x2F;<br> MySQL 目录 : &#x2F;usr&#x2F;local&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/mysql">mysql</a>&#x2F;<br> MySQL 数据库所在目录：&#x2F;usr&#x2F;local&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/mysql">mysql</a>&#x2F;var&#x2F;<br> PHP 目录 : &#x2F;usr&#x2F;local&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/php">php</a>&#x2F;<br> 默认网站目录 : &#x2F;home&#x2F;wwwroot&#x2F;default&#x2F;<br> Nginx 日志目录：&#x2F;home&#x2F;wwwlogs&#x2F;</p>
+</blockquote>
+<p>LNMP 默认的配置文件目录如下：</p>
+<blockquote>
+<p>Nginx 主配置(默认虚拟主机)文件：&#x2F;usr&#x2F;local&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/nginx">nginx</a>&#x2F;conf&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/nginx">nginx</a>.conf<br> 添加的虚拟主机配置文件：&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;vhost&#x2F;域名.conf<br> MySQL 配置文件：&#x2F;etc&#x2F;my.cnf<br> PHP 配置文件：&#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php.ini<br> php-fpm 配置文件：&#x2F;usr&#x2F;local&#x2F;php&#x2F;etc&#x2F;php-fpm.conf</p>
+</blockquote>
+<p>一般维护站点需要用到的命令如下：</p>
+<blockquote>
+<p>重启 nginx&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/mysql">mysql</a>&#x2F;php：lnmp nginx&#x2F;<a target="_blank" rel="noopener" href="http://www.16km.net/tag/mysql">mysql</a>&#x2F;php restart</p>
+<p>重启所有：lnmp restart</p>
+<p>添加站点：lnmp vhost add</p>
+<p>添加数据库：lnmp database add</p>
+<p>查看帮助：lnmp</p>
+</blockquote>
+<hr>
+<p>B站里面的一个视频</p>
+<p>备注：这个网站里面似乎写的比较详细，需要自己慢慢的去啃一下，我觉得是非常有必要的，值得自己去琢磨清楚。</p>
+<p>如果说本地有磁盘、有内存、有CPU，那么就可以使用VMare将我们的这一些资源划分出来，让它成为单独的一台一台机器。它主要是用来做虚拟化的。</p>
+<p>做研发的经常用到Linux（更专业，权限的划分很好、服务器的稳定性更加好）。</p>
+<p>搭建好了服务器之后还需要进行测试连接：</p>
+<p>我们需要让本地的windows和虚拟机上的centos可以相互访问，网络配置完成之后就可以使用windows上的ssh客户端我们刚搭建的虚拟机了。这里面涉及到一个虚拟机的主网的问题：让本地的机器和VMare以及虚拟机三者之间网络打通（这一块是需要自己再另外的看一些资料进行学习），里面涉及到的几个问题：</p>
+<p>网络联通的路线：</p>
+<p>VMarenet8就是VMare这台机器的网络的配置</p>
+<p>在虚拟机界面：编辑—虚拟机网络编辑器里面弹出的对话框：</p>
+<p><img src="C:\Users\XR\AppData\Roaming\Typora\typora-user-images\image-20221226212255250.png" alt="image-20221226212255250"></p>
+<p>这里面有VMnet1仅主机的类型，相应的子网地址是：192.168.237.0</p>
+<p>还有一个就是VMnet8中的NAT模式的连接，相应的子网地址是：192.168，85.0</p>
+<p>无线网卡可以接受外部的网络信号（本地上网都是通过这个无线网卡进行相应的上网的），VMarenet8（也就是虚拟网络编辑器里面的VMnet8）就可以把信号传给他</p>
+<hr>
+<h2 id="搭建具有后台的博客管理系统"><a href="#搭建具有后台的博客管理系统" class="headerlink" title="搭建具有后台的博客管理系统"></a>搭建具有后台的博客管理系统</h2><ol>
+<li><a target="_blank" rel="noopener" href="http://192.168.41.132/wp-admin/about.php%EF%BC%88%E8%BF%99%E4%B8%AA%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BD%91%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%90%8E%E6%9C%9F%E7%9C%9F%E7%9A%84%E6%98%AF%E5%8F%AF%E4%BB%A5%E6%85%A2%E6%85%A2%E7%9A%84%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E6%91%B8%E7%B4%A2%EF%BC%89">http://192.168.41.132/wp-admin/about.php（这个后台管理的博客系统的网址，这个后期真的是可以慢慢的来进行相应的摸索）</a></li>
+<li>然后</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f761fb0a7f1b">https://www.jianshu.com/p/f761fb0a7f1b</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/272541376">https://zhuanlan.zhihu.com/p/272541376</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1pj411f7Dp/?vd_source=9e107638935a61bd37e6161cb560baba">https://www.bilibili.com/video/BV1pj411f7Dp/?vd_source=9e107638935a61bd37e6161cb560baba</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxiaolongah/article/details/104457361">https://blog.csdn.net/wuxiaolongah/article/details/104457361</a> </li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxiaolongah/article/details/104457545">https://blog.csdn.net/wuxiaolongah/article/details/104457545</a> </li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxiaolongah/article/details/104457634">https://blog.csdn.net/wuxiaolongah/article/details/104457634</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.16km.net/study/2022/04/3466.html">http://www.16km.net/study/2022/04/3466.html</a></li>
+</ol>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> bear <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+    </div>
+</body>
+
+</html>
