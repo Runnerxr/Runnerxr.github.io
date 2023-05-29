@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        bear的生活随笔
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">bear的生活随笔</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/Runnerxr" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            双立柱光伏支架结构自动建模
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2023/04/09 Sun 21:37&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2023/05/29 Mon 20:56
+        </div>
+    </div>
+    <div class="article-content">
+        <h1 id="双立柱光伏支架结构自动建模"><a href="#双立柱光伏支架结构自动建模" class="headerlink" title="双立柱光伏支架结构自动建模"></a>双立柱光伏支架结构自动建模</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  该例子是一个双立柱的光伏支架结构，对相应的一些结构形式做了简化(案例是次要的，主要是对里面的一些逻辑要有十分清晰的认识才是关键的)，下面的图是单榀、平面图和三维框架结构图，对应的参数如下所示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cbDBK1HcBuEo2KAY1icSqIpzF8KketReKfJc6yp63MN3AHLeHJzZEMGSW2b07FepHxfR33bOQebF1A/640?wx_fmt=png" alt="img"></p>
+<p>图一 立面图</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cbDBK1HcBuEo2KAY1icSqIpzVAK3EsYkXu0jJpJRiclPJ309fuCiabkD025PcX9BSqSiauUbCHpNhorpQ/640?wx_fmt=png" alt="img"></p>
+<p>图二 平面图</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cbDBK1HcBuEo2KAY1icSqIpz0SfYuPk9kibzvjMmj8qKDzy62A1OfAEtuRibpDjxbADIlrpteWeWQpwQ/640?wx_fmt=png" alt="img"></p>
+<p>图三 三维图</p>
+<ol>
+<li>5榀框架</li>
+<li>每榀之间的间距是3.6m</li>
+<li>檩条的外挑距离是0.92m</li>
+<li>立柱南北向间距3.3m</li>
+<li>立柱边距0.65m</li>
+<li>斜梁最低点的高度1.8m</li>
+<li>立柱到支撑的距离0.6m</li>
+<li>斜梁倾角19°</li>
+<li>前撑杆到檩条的距离：0.4m</li>
+<li>后撑杆到檩条的距离：0.4m</li>
+<li>檩条间距：1.4m</li>
+</ol>
+<p>内容主要分为以下两部分：</p>
+<ul>
+<li>建模</li>
+<li>施加荷载</li>
+</ul>
+<pre><code class="python">import os
+import sys
+import comtypes.client
+import math
+from openpyxl import Workbook
+
+
+class SLiZhu:
+    def __init__(self,num,jj,b1,B,A,h1,h2,ang,d1,d2,ltjj):
+        self.num = int(num)#榀数
+        self.jj = float(jj)#榀间距
+        self.b1 = float(b1)#榀外挑距离
+        self.B = float(B)#立柱间距
+        self.A = float(A)#立柱边距
+        self.h1 = float(h1)#斜梁最低点的高度
+        self.h2= float(h2)#立柱到支撑的距离
+        self.ang= float(ang)*3.1415926/180#斜梁倾角
+        self.d1=float(d1)#前撑杆到第一根檩条的距离
+        self.d2=float(d2)#后撑杆到第三根檩条的距离
+        self.ltjj = ltjj #檩条间距
+        
+    def createmodel(self):
+        SapObject = comtypes.client.GetActiveObject(&quot;CSI.SAP2000.API.SapObject&quot;)
+        SapModel = SapObject.SapModel
+        ret = SapModel.SetPresentUnits(6)
+        ##&#39;add cold formed material
+        matName = &quot;ColdFormed&quot; 
+        ret = SapModel.PropMaterial.SetMaterial(matName,5, -1)
+        rho = 7.850  # 材料的质量密度
+        ret = SapModel.PropMaterial.SetWeightAndMass(matName, 2, rho)  # 设置材料的重度
+
+        e = 2.034e8  # 弹性模量
+        mu = 0.33  # 泊松比
+        alpha = 1.17e-5  # 线膨胀系数
+        ret = SapModel.PropMaterial.SetMPIsotropic(matName, e, mu, alpha)
+        ret = SapModel.PropFrame.SetPipe(&quot;column&quot;,matName, 60e-3,2.0e-3)
+        ret = SapModel.PropFrame.SetColdC(&quot;column2&quot;,matName,260e-3,75e-3,2.5e-3, 0,20e-3)
+        ret = SapModel.PropFrame.SetColdBox(&quot;column1&quot;,matName,100e-3,50e-3,2.0e-3,0)
+        ret = SapModel.PropFrame.SetColdC(&quot;beam&quot;,matName,100e-3,50e-3,2e-3, 0,20e-3)
+        ret = SapModel.PropFrame.SetColdC(&quot;LT&quot;,matName,80e-3,40e-3,2e-3, 0,20e-3)
+        ret = SapModel.PropFrame.SetColdC(&quot;QXC&quot;,matName,60e-3,40e-3,1.8e-3, 0,10e-3)
+        ret = SapModel.PropFrame.SetColdC(&quot;HXC&quot;,matName,60e-3,40e-3,1.8e-3, 0,10e-3)
+        
+        # 开始进行节点编号
+        for i in range(0,self.num+2):
+            if i ==0:
+                #x z y
+                ret =SapModel.PointObj.AddCartesian(-self.b1,0,self.h1,&quot;&quot;,&quot;Pt%s&quot;%(i+1))
+                ret =SapModel.PointObj.AddCartesian(-self.b1,self.ltjj*math.cos(self.ang),self.h1+self.ltjj*math.sin(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(i+2))
+                ret =SapModel.PointObj.AddCartesian(-self.b1,2*self.A+self.B-self.ltjj*math.cos(self.ang),self.h1+(2*self.A+self.B-self.ltjj*math.cos(self.ang))*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(i+3))
+                ret =SapModel.PointObj.AddCartesian(-self.b1,2*self.A+self.B,self.h1+(2*self.A+self.B)*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(i+4))
+
+  
+            elif i&lt;self.num+1 and i &gt;0:                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A,0      ,&quot;&quot;,&quot;Pt%s&quot;%(5+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A,self.h2,&quot;&quot;,&quot;Pt%s&quot;%(6+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A,self.h1+self.A*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(7+12*(i-1)))
+
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A + self.B,0      ,&quot;&quot;,&quot;Pt%s&quot;%(8+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A + self.B,self.h2,&quot;&quot;,&quot;Pt%s&quot;%(9+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),self.A + self.B,self.h1+(self.A + self.B)*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(10+12*(i-1)))
+                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),0,self.h1,&quot;&quot;,&quot;Pt%s&quot;%(11+12*(i-1)))                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1), self.ltjj*math.cos(self.ang) ,self.h1+self.ltjj*math.sin(self.ang) ,&quot;&quot;,&quot;Pt%s&quot;%(12+12*(i-1)))                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),(self.ltjj+self.d1)*math.cos(self.ang),self.h1+(self.ltjj+self.d1)*math.sin(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(13+12*(i-1)))
+                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),2*self.A+self.B-(self.ltjj + self.d2)*math.cos(self.ang),self.h1+(2*self.A+self.B-(self.ltjj + self.d2)*math.cos(self.ang))*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(14+12*(i-1)))                
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),2*self.A+self.B-self.ltjj*math.cos(self.ang),self.h1+(2*self.A+self.B-self.ltjj*math.cos(self.ang))*math.tan(self.ang) ,&quot;&quot;,&quot;Pt%s&quot;%(15+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(i-1),2*self.A+self.B                             ,self.h1+(2*self.A+self.B)*math.tan(self.ang) ,&quot;&quot;,&quot;Pt%s&quot;%(16+12*(i-1)))
+            elif i == self.num+1:
+                ret =SapModel.PointObj.AddCartesian(self.jj*(self.num-1)+self.b1,0                           , self.h1,&quot;&quot;,&quot;Pt%s&quot;%(5+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(self.num-1)+self.b1,self.ltjj*math.cos(self.ang), self.h1+self.ltjj*math.sin(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(6+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(self.num-1)+self.b1,2*self.A+self.B-self.ltjj*math.cos(self.ang) , self.h1+(2*self.A+self.B-self.ltjj*math.cos(self.ang))*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(7+12*(i-1)))
+                ret =SapModel.PointObj.AddCartesian(self.jj*(self.num-1)+self.b1,2*self.A+self.B,self.h1+(2*self.A+self.B)*math.tan(self.ang),&quot;&quot;,&quot;Pt%s&quot;%(8+12*(i-1)))
+
+        ret = SapModel.SetPresentUnits(6)
+        # 开始进行单元编号，采用首尾两节点确定一个单元的编号方式
+        # 对首段悬挑檩条进行编号
+        ret= SapModel.FrameObj.AddByPoint(&quot;Pt1&quot;,&quot;Pt11&quot;,&quot;1&quot;,&quot;LT&quot;,&quot;1&quot;)
+        ret= SapModel.FrameObj.SetLocalAxes(&quot;1&quot;,self.ang*180/3.14)
+        ret= SapModel.FrameObj.AddByPoint(&quot;Pt2&quot;,&quot;Pt12&quot;,&quot;2&quot;,&quot;LT&quot;,&quot;2&quot;)
+        ret= SapModel.FrameObj.SetLocalAxes(&quot;2&quot;,self.ang*180/3.14)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt3&quot;,&quot;Pt15&quot;,&quot;3&quot;,&quot;LT&quot;,&quot;3&quot;)
+        ret= SapModel.FrameObj.SetLocalAxes(&quot;3&quot;,self.ang*180/3.14)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt4&quot;,&quot;Pt16&quot;,&quot;4&quot;,&quot;LT&quot;,&quot;4&quot;)
+        ret= SapModel.FrameObj.SetLocalAxes(&quot;4&quot;,self.ang*180/3.14)
+        
+        # 第一榀框架的四段立柱及与梁相交位置的弯矩释放
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt5&quot;,&quot;Pt6&quot;,&quot;5&quot;,&quot;column&quot;,&quot;5&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt6&quot;,&quot;Pt7&quot;,&quot;6&quot;,&quot;column&quot;,&quot;6&quot;)        
+        ret = SapModel.FrameObj.SetReleases(&quot;6&quot;,[False,False,False,False,False,False],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt8&quot;,&quot;Pt9&quot;,&quot;7&quot;,&quot;column&quot;,&quot;7&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt9&quot;,&quot;Pt10&quot;,&quot;8&quot;,&quot;column&quot;,&quot;8&quot;)
+        ret = SapModel.FrameObj.SetReleases(&quot;8&quot;,[False,False,False,False,False,False],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+        # 第一榀框架的7段斜梁的单元编号
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt11&quot;,&quot;Pt7&quot;,&quot;9&quot;,&quot;beam&quot;,&quot;9&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt7&quot;,&quot;Pt12&quot;,&quot;10&quot;,&quot;beam&quot;,&quot;10&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt12&quot;,&quot;Pt13&quot;,&quot;11&quot;,&quot;beam&quot;,&quot;11&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt13&quot;,&quot;Pt14&quot;,&quot;12&quot;,&quot;beam&quot;,&quot;12&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt14&quot;,&quot;Pt15&quot;,&quot;13&quot;,&quot;beam&quot;,&quot;13&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt15&quot;,&quot;Pt10&quot;,&quot;14&quot;,&quot;beam&quot;,&quot;14&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt10&quot;,&quot;Pt16&quot;,&quot;15&quot;,&quot;beam&quot;,&quot;15&quot;)
+        # 第一榀框架的两段支撑的单元编号以及相应的弯矩释放
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt6&quot;,&quot;Pt13&quot;,&quot;16&quot;,&quot;QXC&quot;,&quot;16&quot;)
+        ret = SapModel.FrameObj.AddByPoint(&quot;Pt9&quot;,&quot;Pt14&quot;,&quot;17&quot;,&quot;HXC&quot;,&quot;17&quot;)        
+        ret = SapModel.FrameObj.SetReleases(&quot;16&quot;,[False,False,False,True,True,True],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])        
+        ret = SapModel.FrameObj.SetReleases(&quot;17&quot;,[False,False,False,True,True,True],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+        # 当只有一榀框架的时候
+        if self.num ==1:
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt11&quot;,&quot;Pt17&quot;,&quot;LT&quot;,&quot;18&quot;)
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;18&quot;,self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt12&quot;,&quot;Pt18&quot;,&quot;LT&quot;,&quot;19&quot;)
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;19&quot;,self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt15&quot;,&quot;Pt19&quot;,&quot;LT&quot;,&quot;20&quot;)
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;20&quot;,self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt16&quot;,&quot;Pt20&quot;,&quot;LT&quot;,&quot;21&quot;)
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;21&quot;,self.ang*180/3.14)
+        # 对第j+1第榀框架进行编号，以下的这个循环包含第二榀到第5榀的部分,j值取值1~4(含)
+        for j in range(1,self.num):
+            # 对第j+1榀的柱进行单元编号
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(5+12*j),&quot;Pt%d&quot;%(6+12*j),&quot;%d&quot;%(1+17*j),&quot;column&quot;,&quot;%d&quot;%(1+17*j))    
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(6+12*j),&quot;Pt%d&quot;%(7+12*j),&quot;%d&quot;%(2+17*j),&quot;column&quot;,&quot;%d&quot;%(2+17*j))
+            ret = SapModel.FrameObj.SetReleases(&quot;%d&quot;%(2+17*j),[False,False,False,False,False,False],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(8+12*j),&quot;Pt%d&quot;%( 9+12*j),&quot;%d&quot;%(3+17*j),&quot;column&quot;,&quot;%d&quot;%(3+17*j))    
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(9+12*j),&quot;Pt%d&quot;%(10+12*j),&quot;%d&quot;%(4+17*j),&quot;column&quot;,&quot;%d&quot;%(4+17*j))
+            ret = SapModel.FrameObj.SetReleases(&quot;%d&quot;%(4+17*j),[False,False,False,False,False,False],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+            # 对第j+1榀的梁进行单元编号
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(11+12*j),&quot;Pt%d&quot;%(7+12*j),&quot;%d&quot;%(5+17*j),&quot;beam&quot;,&quot;%d&quot;%(5+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(7+12*j),&quot;Pt%d&quot;%(12+12*j),&quot;%d&quot;%(6+17*j),&quot;beam&quot;,&quot;%d&quot;%(6+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(12+12*j),&quot;Pt%d&quot;%(13+12*j),&quot;%d&quot;%(7+17*j),&quot;beam&quot;,&quot;%d&quot;%(7+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(13+12*j),&quot;Pt%d&quot;%(14+12*j),&quot;%d&quot;%(8+17*j),&quot;beam&quot;,&quot;%d&quot;%(8+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(14+12*j),&quot;Pt%d&quot;%(15+12*j),&quot;%d&quot;%(9+17*j),&quot;beam&quot;,&quot;%d&quot;%(9+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(15+12*j),&quot;Pt%d&quot;%(10+12*j),&quot;%d&quot;%(10+17*j),&quot;beam&quot;,&quot;%d&quot;%(10+17*j))
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(10+12*j),&quot;Pt%d&quot;%(16+12*j),&quot;%d&quot;%(11+17*j),&quot;beam&quot;,&quot;%d&quot;%(11+17*j))
+            # 对第j+1榀的支撑进行单元编号
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(6+12*j),&quot;Pt%d&quot;%(13+12*j),&quot;%d&quot;%(12+17*j),&quot;QXC&quot;,&quot;%d&quot;%(12+17*j))            
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(9+12*j),&quot;Pt%d&quot;%(14+12*j),&quot;%d&quot;%(13+17*j),&quot;HXC&quot;,&quot;%d&quot;%(13+17*j))
+            ret = SapModel.FrameObj.SetReleases(&quot;%d&quot;%(12+17*j),[False,False,False,True,True,True],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+            ret = SapModel.FrameObj.SetReleases(&quot;%d&quot;%(13+17*j),[False,False,False,True,True,True],[False,False,False,False,True,True], [False,False,False,False,True,True],[False,False,False,False,True,True])
+            # 对第j榀和第j+1榀之间的檩条进行编号
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(11+12*(j-1)),&quot;Pt%d&quot;%(23+12*(j-1)),&quot;%d&quot;%(14+17*j),&quot;LT&quot;,&quot;%d&quot;%(14+17*j))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(14+17*j),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(12+12*(j-1)),&quot;Pt%d&quot;%(24+12*(j-1)),&quot;%d&quot;%(15+17*j),&quot;LT&quot;,&quot;%d&quot;%(15+17*j))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(15+17*j),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(15+12*(j-1)),&quot;Pt%d&quot;%(27+12*(j-1)),&quot;%d&quot;%(16+17*j),&quot;LT&quot;,&quot;%d&quot;%(16+17*j))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(16+17*j),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%d&quot;%(16+12*(j-1)),&quot;Pt%d&quot;%(28+12*(j-1)),&quot;%d&quot;%(17+17*j),&quot;LT&quot;,&quot;%d&quot;%(17+17*j))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(17+17*j),self.ang*180/3.14)
+    # 当有多榀框架的时候(对末端檩条悬挑进行编号)
+        if self.num &gt;1:
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%s&quot;%(11+12*(self.num-1)),&quot;Pt%s&quot;%(5+12*(self.num)),&quot;%d&quot;%(1+17*self.num),&quot;LT&quot;,&quot;%d&quot;%(1+17*self.num))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(1+17*self.num),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%s&quot;%(12+12*(self.num-1)),&quot;Pt%s&quot;%(6+12*(self.num)),&quot;%d&quot;%(2+17*self.num),&quot;LT&quot;,&quot;%d&quot;%(2+17*self.num))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(2+17*self.num),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%s&quot;%(15+12*(self.num-1)),&quot;Pt%s&quot;%(7+12*(self.num)),&quot;%d&quot;%(3+17*self.num),&quot;LT&quot;,&quot;%d&quot;%(3+17*self.num))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(3+17*self.num),self.ang*180/3.14)
+            ret = SapModel.FrameObj.AddByPoint(&quot;Pt%s&quot;%(16+12*(self.num-1)),&quot;Pt%s&quot;%(8+12*(self.num)),&quot;%d&quot;%(4+17*self.num),&quot;LT&quot;,&quot;%d&quot;%(4+17*self.num))
+            ret= SapModel.FrameObj.SetLocalAxes(&quot;%d&quot;%(4+17*self.num),self.ang*180/3.14)
+
+        #设置支座约束
+        # k的取值在0~4之间(含)
+        for k in range(self.num):
+            ret = SapModel.PointObj.SetRestraint(&quot;Pt%d&quot;%(5+12*k),[True,True,True,True,True,True])
+            ret = SapModel.PointObj.SetRestraint(&quot;Pt%d&quot;%(8+12*k),[True,True,True,True,True,True])
+            
+###########################################################################
+    def load(self):
+        SapObject = comtypes.client.GetActiveObject(&quot;CSI.SAP2000.API.SapObject&quot;)
+        SapModel = SapObject.SapModel
+        #设置荷载工况
+        
+        ret = SapModel.LoadPatterns.Add(&#39;W+x&#39;, 6, 0, True)
+        ret = SapModel.LoadPatterns.Add(&#39;W-x&#39;, 6, 0, True)
+        ret = SapModel.LoadPatterns.Add(&#39;S&#39;, 6, 0, True)
+        ret = SapModel.LoadPatterns.Add(&#39;EX&#39;,5, 0,True)
+        ret = SapObject.SapModel.LoadPatterns.AutoSeismic.SetChinese2010(&quot;EX&quot;, 1, 0.05, 2, 0, False, 0, 0, 0.3, 1, 0.04, 0.3, 1, 1)#0.04表示最大水平影响系数，0.04表示阻尼比，0.3特征周期
+        
+        # 对首段的4根悬挑檩条施加分布荷载，，用单元编号进行相应的定位，ii的取值从0~3(含)
+        for ii in range(4):            
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(ii+1), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16,0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(ii+1), &#39;W+x&#39;, 1, 2, 0, 1,-0.306,-0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(ii+1), &#39;W-x&#39;, 1, 2, 0, 1,0.36,0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(ii+1), &#39;S&#39;, 1, 10, 0, 1, 0.28,0.28,)
+
+#################################################################################
+        # 对中间跨的4根檩条施加分布荷载，，用单元编号进行相应的定位，jj的取值从1~5(含)
+        # 这里对单元的编号有一定的讲究：一榀框架有13个单元，之前有4个檩条单元
+        # 这里如果想更加精简的话可以通过双层循环，在选定的两榀之间的4根檩条之间循环施加4种荷载工况，可以减少一定的代码量(可读性差一点)
+        for jj in range(1,self.num+1):            
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(5+13*(jj+1)+4*(jj-1)), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(6+13*(jj+1)+4*(jj-1)), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(7+13*(jj+1)+4*(jj-1)), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(8+13*(jj+1)+4*(jj-1)), &#39;DEAD&#39;, 1,10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(5+13*(jj+1)+4*(jj-1)), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(6+13*(jj+1)+4*(jj-1)), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(7+13*(jj+1)+4*(jj-1)), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(8+13*(jj+1)+4*(jj-1)), &#39;S&#39;, 1,10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(5+13*(jj+1)+4*(jj-1)), &#39;W+x&#39;, 1, 2, 0, 1,-0.306,-0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(6+13*(jj+1)+4*(jj-1)), &#39;W+x&#39;, 1, 2, 0, 1,-0.306,-0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(7+13*(jj+1)+4*(jj-1)), &#39;W+x&#39;, 1, 2, 0, 1,-0.306,-0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(8+13*(jj+1)+4*(jj-1)), &#39;W+x&#39;, 1, 2, 0, 1,-0.306,-0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(5+13*(jj+1)+4*(jj-1)), &#39;W-x&#39;, 1, 2, 0, 1,0.36,0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(6+13*(jj+1)+4*(jj-1)), &#39;W-x&#39;, 1, 2, 0, 1,0.36,0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(7+13*(jj+1)+4*(jj-1)), &#39;W-x&#39;, 1, 2, 0, 1,0.36,0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(8+13*(jj+1)+4*(jj-1)), &#39;W-x&#39;, 1, 2, 0, 1,0.36,0.36,&quot;Local&quot;)
+        # 对末端的4根檩条循环添加4种荷载模式   
+        # 同首段的檩条施加荷载类似，这里也可以适当的减少代码量
+        if self.num &gt;1:
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(1+17*self.num), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(2+17*self.num), &#39;DEAD&#39;, 1, 10, 0, 1,0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(3+17*self.num), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(4+17*self.num), &#39;DEAD&#39;, 1, 10, 0, 1, 0.16, 0.16,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(1+17*self.num), &#39;W+x&#39;, 1, 2, 0, 1, -0.306, -0.306,&quot;Local&quot;)#0.153,0.306
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(2+17*self.num), &#39;W+x&#39;, 1, 2, 0, 1, -0.306, -0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(3+17*self.num), &#39;W+x&#39;, 1, 2, 0, 1, -0.306, -0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(4+17*self.num), &#39;W+x&#39;, 1, 2, 0, 1, -0.306, -0.306,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(1+17*self.num), &#39;W-x&#39;, 1, 2, 0, 1, 0.36, 0.36 ,&quot;Local&quot;)#0.18,0.36
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(2+17*self.num), &#39;W-x&#39;, 1, 2, 0, 1, 0.36, 0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(3+17*self.num), &#39;W-x&#39;, 1, 2, 0, 1, 0.36, 0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(4+17*self.num), &#39;W-x&#39;, 1, 2, 0, 1, 0.36, 0.36,&quot;Local&quot;)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(1+17*self.num), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(2+17*self.num), &#39;S&#39;, 1, 10, 0, 1,0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(3+17*self.num), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            ret = SapModel.FrameObj.SetLoadDistributed(&quot;%d&quot;%(4+17*self.num), &#39;S&#39;, 1, 10, 0, 1, 0.28, 0.28,)
+            
+        #定义荷载组合
+        # 组合一：ZCS_COMB1=D+W+x+0.7S
+        ret = SapModel.RespCombo.Add(&quot;ZCS_COMB1&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB1&quot;,0, &quot;DEAD&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB1&quot;,0, &quot;W+x&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB1&quot;,0, &quot;S&quot;, 0.7)
+      
+        # 组合二：ZCS_COMB2=D+W-x+0.7S
+        ret = SapModel.RespCombo.Add(&quot;ZCS_COMB2&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB2&quot;,0, &quot;DEAD&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB2&quot;,0, &quot;W-x&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB2&quot;,0, &quot;S&quot;, 0.7)
+        
+        # 组合三：ZCS_COMB3=D+0.6W+x+S
+        ret = SapModel.RespCombo.Add(&quot;ZCS_COMB3&quot;, 0)        
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB3&quot;,0, &quot;DEAD&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB3&quot;,0, &quot;W+x&quot;, 0.6)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB3&quot;,0, &quot;S&quot;, 1)
+        
+      # 组合四：ZCS_COMB4=D+0.6W-x+S
+        ret = SapModel.RespCombo.Add(&quot;ZCS_COMB4&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB4&quot;,0, &quot;DEAD&quot;, 1)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB4&quot;,0, &quot;W-x&quot;, 0.6)
+        ret = SapModel.RespCombo.SetCaseList(&quot;ZCS_COMB4&quot;,0, &quot;S&quot;, 1)
+        
+        ################################################################
+        # 组合一：CZL_COMB1=1.3D+1.5W+x+1.05S
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB1&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB1&quot;,0, &quot;DEAD&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB1&quot;,0, &quot;W+x&quot;, 1.5)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB1&quot;,0, &quot;S&quot;, 1.05)
+        # 组合二：CZL_COMB2=1.3D+1.5W-x+1.05S
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB2&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB2&quot;,0, &quot;DEAD&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB2&quot;,0, &quot;W-x&quot;, 1.5)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB2&quot;,0, &quot;S&quot;, 1.05)
+        # 组合三：CZL_COMB3=1.3D+0.9W+x+1.5S
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB3&quot;, 0)        
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB3&quot;,0, &quot;DEAD&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB3&quot;,0, &quot;W+x&quot;, 0.9)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB3&quot;,0, &quot;S&quot;, 1.5)
+        # 组合四：CZL_COMB4=1.3D+0.9W-x+1.5S
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB4&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB4&quot;,0, &quot;DEAD&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB4&quot;,0, &quot;W-x&quot;, 0.9)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB4&quot;,0, &quot;S&quot;, 1.5)
+        # 组合五：CZL_COMB5=1.2D+1.3Ex+0.3W+x
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB5&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB5&quot;,0, &quot;DEAD&quot;, 1.2)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB5&quot;,0, &quot;Ex&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB5&quot;,0, &quot;W+x&quot;, 0.3)
+        # 组合六：CZL_COMB6=1.2D+1.3Ex+0.3W-x
+        ret = SapModel.RespCombo.Add(&quot;CZL_COMB6&quot;, 0)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB6&quot;,0, &quot;DEAD&quot;, 1.2)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB6&quot;,0, &quot;Ex&quot;, 1.3)
+        ret = SapModel.RespCombo.SetCaseList(&quot;CZL_COMB6&quot;,0, &quot;W-x&quot;,0.3)
+
+my = SLiZhu(5,3.6,0.92,3.3,0.65,1.8,0.6,19,0.4,0.4,1.4)
+my.createmodel()
+my.load()
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfYdWugIQs3HwcuRd0ib9o6CUuM5HhcGqWRW1Y2Ttu6jzkk3xxbZJSDLQ/640?wx_fmt=png" alt="img"></p>
+<p>图四 节点编号</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKf9ficHaZFiaViahGuyy1nryjiaFNUlj0EnJ8RRXibGibsYKNptic1D3ib3yYribQ/640?wx_fmt=png" alt="img"></p>
+<p>图五 单元编号</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfaCY1ulEgO6DZ2jfJt32DDY4bngpw44alVjaJeO7icKQxyISn4jqR9Kw/640?wx_fmt=png" alt="img"></p>
+<p>图六 恒荷载</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfzhX78mFJ4UIZ4XKAT5IoKZJ4aI8gIXBJ0hvOPibiax1dxepqBuPws1dA/640?wx_fmt=png" alt="img"></p>
+<p>图七 雪荷载</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfVdVicsMaP061HR4UI21bib9gUnBMt82QIH3icNmLyUTZrU715bQkSSjnA/640?wx_fmt=png" alt="img"></p>
+<p>图八 风压力</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfupQ2LVGIrD6guOGudyU7PUPT3OREbQJe9iagl8W6XFVJLqGFcrP4fBA/640?wx_fmt=png" alt="img"></p>
+<p>图九 风吸力</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfmCVYDxvbSZQUgNGnteU8Pxc4oUQ3N8cdzUw36ibNRMuvFf2Ta05Sxyw/640?wx_fmt=png" alt="img"></p>
+<p>图十 荷载工况</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UguyAwFy2cYBPicQicLe5xfs1C0Pt2GuKfJxDLp9kGZiaEtDYwFJW2YK7NmufZZ4xSe0zlSgGiaq0hWic4BXudNpzqA/640?wx_fmt=png" alt="img"></p>
+<p>图十一 荷载组合</p>
+<p>后记</p>
+<p>  以上只是涉及到自动建模的一个过程，实际上后面还有分析的过程，包括对内力的提取，进行规范的检核与输出，这一块自己还要花时间去琢磨一下，而且在理解上，每个人都有不同的理解。如果是单纯的为了节省建模的时间，其实做到这里其实已经差不多了，但是对于像其他软件比较成熟的模块来说：这样的便捷性还是不够，而且一旦有些参数变化，就需要对代码就行相应的修改，想要大面积的推广也不是特别的容易(现在已经有成熟的模块，其实没必要去折腾，但是本着学习的想法去整理也不失为一种乐趣，毕竟谁不想能够打破黑匣子，自己能够去操控)。</p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> bear <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+
+<script src="/js/totop.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+    </div>
+</body>
+
+</html>

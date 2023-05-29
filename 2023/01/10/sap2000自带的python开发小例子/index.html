@@ -57,7 +57,7 @@
             2023/01/10 Tue 23:51&nbsp;&nbsp;&nbsp;
             <span class="just-a-temp"><span>
             <i class="fas fa-redo"></i>
-            2023/02/19 Sun 00:38
+            2023/05/21 Sun 20:51
         </div>
     </div>
     <div class="article-content">
@@ -221,7 +221,50 @@ SapResult = [0,0,0,0,0,0,0]
 [PointName1,PointName2,ret] = SapModel.FrameObj.GetPoints(FrameName2,PointName1,PointName2)
 </code></pre>
 <p><strong>初始化荷载模式从1~7的sap2000的计算结果</strong>：这里采用的是for循环的方式保存建立的模型，并进行分析，在分析完成后提取工况下的位移结果，使用SapModel.Results.JointDispl函数得到节点位移结果，在输出位移结果前，<strong>清除设置的荷载工况</strong>，然后<strong>在设置要输出结果的荷载工况</strong>，<strong>再使用节点位移函数输出结果</strong>，保存建立的模型，并运行分析，分析完成后<strong>读取某一节点所有工况的位移</strong>。</p>
-<h3 id="对结果进行相应的打印"><a href="#对结果进行相应的打印" class="headerlink" title="对结果进行相应的打印"></a>对结果进行相应的打印</h3><ol>
+<pre><code class="python"># 初始化荷载模式1~7的sap2000的计算结果
+for i in range(0,7):
+    NumberResults = 0
+    # 对象，单元，工况、分析步类型、分析步数量以及6个方向的位移
+    Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3 = [],[],[],[],[],[],[],[],[],[],[]
+    ObjectElm = 0
+    # 对于输出的结果：删除所有对荷载模式和荷载组合的选择
+    ret = SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput()
+    # 按照循环来选择相应的荷载和荷载组合，将7个荷载模式都循环一遍
+    ret = SapModel.Results.Setup.SetCaseSelectedForOutput(str(i+1))
+
+    # 运行前四个荷载模式
+    if i &lt;=3:
+        [NumberResult,Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3,ret] = SapModel.Results.JointDispl(PointName2,ObjectElm,NumberResults,Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3)
+        # 提取前三个荷载模式下的Z方向的节点位移
+        SapResult[i] = U3[0]
+    # 运行后面的三个荷载模式
+    else:
+        [NumberResult,Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3,ret] = SapModel.Results.JointDispl(PointName1,ObjectElm,NumberResults,Obj,Elm,ACase,StepType,StepNum,U1,U2,U3,R1,R2,R3)
+        # 提取后四个荷载模式下的X方向的节点位移
+        SapResult[i] = U1[0]
+</code></pre>
+<h3 id="对结果进行相应的打印"><a href="#对结果进行相应的打印" class="headerlink" title="对结果进行相应的打印"></a>对结果进行相应的打印</h3><pre><code class="python"># 填写独立的结果,因为有七个荷载模式，组成了一个数组
+IndResult = [0,0,0,0,0,0,0]
+IndResult[0] = -0.02639
+IndResult[1] = 0.06296
+IndResult[2] = 0.06296
+IndResult[3] = -0.2963
+IndResult[4] = 0.3125
+IndResult[5] = 0.11556
+IndResult[6] = 0.00651
+
+# 填写差异百分比
+PercentDiff = [0,0,0,0,0,0,0]
+for i in range(0,7):
+    PercentDiff[i] = (SapResult[i]/IndResult[i])-1
+for i in range(0,7):
+    # 换行并分别打印：sap2000的计算结果、独立的结果（手算）以及相应的差异百分比
+    print()
+    print(SapResult[i])
+    print(IndResult[i])
+    print(PercentDiff[i])
+</code></pre>
+<ol>
 <li>第一行是软件计算结果</li>
 <li>第二行是手算结结果</li>
 <li>第三行是误差百分比</li>
@@ -254,86 +297,6 @@ SapResult = [0,0,0,0,0,0,0]
 0.00651
 0.0002106801564976113
 </code></pre>
-<h2 id="附带一些语法的理解"><a href="#附带一些语法的理解" class="headerlink" title="附带一些语法的理解"></a>附带一些语法的理解</h2><h3 id="SetRestrain"><a href="#SetRestrain" class="headerlink" title="SetRestrain"></a>SetRestrain</h3><p>语法：SapModel.PointObj.SetRestraint</p>
-<h3 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h3><p>语法：SapObject.SapModel.LoadPatterns.Add</p>
-<h4 id="主要的一些荷载模式"><a href="#主要的一些荷载模式" class="headerlink" title="主要的一些荷载模式"></a>主要的一些荷载模式</h4><ol>
-<li>恒载</li>
-<li>附加恒载</li>
-<li>活载</li>
-<li>…</li>
-<li>地震</li>
-<li>风荷载</li>
-<li>雪荷载</li>
-<li>其他荷载</li>
-<li>移动荷载</li>
-<li>温度荷载</li>
-<li>屋面活荷载</li>
-<li>….其他的种类特别的多….</li>
-</ol>
-<h3 id="SelfWTMultiplier-自乘系数"><a href="#SelfWTMultiplier-自乘系数" class="headerlink" title="SelfWTMultiplier(自乘系数)"></a>SelfWTMultiplier(自乘系数)</h3><h3 id="AddLoadCase-添加荷载工况"><a href="#AddLoadCase-添加荷载工况" class="headerlink" title="AddLoadCase(添加荷载工况)"></a>AddLoadCase(添加荷载工况)</h3><p>如果为True,则添加与新的荷载模式对应的线性静态荷载工况</p>
-<h3 id="SetLoadForce"><a href="#SetLoadForce" class="headerlink" title="SetLoadForce"></a>SetLoadForce</h3><p>语法：SetLoadPointSetLoadDistributed</p>
-<h3 id="SetModifiers"><a href="#SetModifiers" class="headerlink" title="SetModifiers"></a>SetModifiers</h3><p>语法：SapObject.SapModel.FrameObject.SetModifiers</p>
-<h4 id="相关的一些参数："><a href="#相关的一些参数：" class="headerlink" title="相关的一些参数："></a>相关的一些参数：</h4><p>Name:现有的框架或组的名称，具体取决于项目类型的值</p>
-<p>值：8个无单位的修饰参数组成的一个数组</p>
-<ul>
-<li>0：横截面修改</li>
-<li>1：局部2轴的剪切面积</li>
-<li>2：局部3轴的剪切面积</li>
-<li>3：扭转常数的修改</li>
-<li>4：局部2轴的惯性矩的修改</li>
-<li>5：局部3轴的惯性矩的修改</li>
-<li>6：质量修改</li>
-<li>7：重量修改</li>
-</ul>
-<p>项目对象：</p>
-<ul>
-<li>0：对象</li>
-<li>1：组</li>
-<li>2：所选择的对象</li>
-</ul>
-<h3 id="DeselectAllCasesAndCombosForOutput"><a href="#DeselectAllCasesAndCombosForOutput" class="headerlink" title="DeselectAllCasesAndCombosForOutput"></a>DeselectAllCasesAndCombosForOutput</h3><p>语法：</p>
-<p>SapObject.SapModel.Results.Setup.DeselectAllCasesAndCombosForOutput</p>
-<p>备注:</p>
-<ol>
-<li>该功能取消悬着输出的所有荷载工况和和咋组合</li>
-<li>如果成功取消选择case和combo，则函数返回0，否则返回非0</li>
-</ol>
-<h3 id="SetCaseSelectedForOutput"><a href="#SetCaseSelectedForOutput" class="headerlink" title="SetCaseSelectedForOutput"></a>SetCaseSelectedForOutput</h3><p>语法：SapObject.SapModel.Results.Setup.SetCaseSelectedForOutput</p>
-<p>参数：</p>
-<p>Name:现有的荷载工况的名称</p>
-<p>Selected:如果要选择指定的荷载工况进行输出，此项就为True，否则就为False</p>
-<p>备注:</p>
-<ol>
-<li>函数用于设置为输出标志选择的荷载工况</li>
-<li>如果成功设置所选标志，函数就返回0，否则就返回非0</li>
-</ol>
-<h3 id="Results-JointDispl"><a href="#Results-JointDispl" class="headerlink" title="Results.JointDispl"></a>Results.JointDispl</h3><p>语法：SapObject.SapModel.Results.JointDispl</p>
-<p>备注:</p>
-<p>现有的点对象、点元素或点对象的名称，具体取决于</p>
-<p>Item TypeElm itemItem TypeElm item中需要枚举的以下的项目</p>
-<ul>
-<li>0：对象元素，结果请求针对与Name项指定的点对象对应的点元素</li>
-<li>1：元素，结果请求针对Name项指定的point元素</li>
-<li>2：组元素，结果请求针对Name项指定的组中直接或间接指定的所有点元素</li>
-<li>3：选择元素，直接或间接选择的所有点元素的结果将被忽略，Name项将被忽略</li>
-</ul>
-<h3 id="NumbeResults-程序返回结果的总数"><a href="#NumbeResults-程序返回结果的总数" class="headerlink" title="NumbeResults(程序返回结果的总数)"></a>NumbeResults(程序返回结果的总数)</h3><p>对象：…….元素：包含与每个结果关联的点元素名称</p>
-<p>荷载模式：包含与每个结果关联的分析的工况或荷载组合的名称</p>
-<p>分析步类型：包含每个结果的步骤类型（如果有）</p>
-<p>分析步数量：包含每个结果的步骤</p>
-<p>备注:</p>
-<p>函数用于反应指定关键点节点位移，这里展示出来的位移是相对位移</p>
-<h3 id="SetCaseSelecedForOutput"><a href="#SetCaseSelecedForOutput" class="headerlink" title="SetCaseSelecedForOutput"></a>SetCaseSelecedForOutput</h3><p>语法：SapObject.SapModel.Results.Setup.SetCaseSelectedForOutput</p>
-<p>参数说明：</p>
-<ol>
-<li>Name:存在的荷载模式</li>
-<li>Selected:如果要选择指定的荷载工况进行输出，则输出为True，否者输出为False</li>
-</ol>
-<p>备注:</p>
-<ol>
-<li>这个函数用于设置输出标志选择的荷载工况</li>
-<li>如果成功设置所选标志，则函数返回0，否则返回非0</li>
-</ol>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>​	后续话还需要进行相应的输出，还是以例子的形式展示出来。</p>
 
     </div>
